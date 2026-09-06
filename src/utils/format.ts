@@ -85,3 +85,22 @@ const CATEGORY_LABELS: Record<EventCategory, string> = {
 export function formatCategory(category: EventCategory): string {
   return CATEGORY_LABELS[category];
 }
+
+const SOURCE_LABELS: Record<string, string> = {
+  allevents: 'allevents.in',
+  biblioteket: 'Stockholms stadsbibliotek',
+  'evenemangskollen': 'Evenemangskollen',
+  eventbrite: 'Eventbrite',
+  kulturhuset: 'Kulturhuset',
+  luma: 'Luma',
+  loppiskartan: 'loppiskartan.se',
+  meetup: 'Meetup',
+  'resident-advisor': 'Resident Advisor',
+  ticketmaster: 'Ticketmaster',
+  'visit-stockholm': 'Visit Stockholm',
+};
+
+/** Human-readable name for a pipeline source id; falls back to the raw id. */
+export function formatSource(source: string): string {
+  return SOURCE_LABELS[source] ?? source;
+}

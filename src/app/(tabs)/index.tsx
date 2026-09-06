@@ -8,6 +8,8 @@ import { EventList } from '@/components/event-list';
 import { FeaturedStrip } from '@/components/featured-strip';
 import { ScreenHeader } from '@/components/screen-header';
 import { SearchBar } from '@/components/search-bar';
+import { SourceFilter, type SourceFilterValue } from '@/components/source-filter';
+import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 import { useEvents } from '@/hooks/use-events';
@@ -21,8 +23,14 @@ export default function EventsScreen() {
   const [category, setCategory] = useState<CategoryFilterValue>('all');
   const [query, setQuery] = useState('');
   const [dateRange, setDateRange] = useState<DateRangeValue>('all');
+  const [source, setSource] = useState<SourceFilterValue>('all');
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
-  const isDefaultView = category === 'all' && query.trim() === '' && dateRange === 'all';
+  const filtersActive =
+    category !== 'all' || dateRange !== 'all' || source !== 'all';
+
+  const isDefaultView =
+    !filtersActive && query.trim() === '';
 
   const featured = useMemo(
     () => (isDefaultView ? featuredEvents(events) : []),
@@ -34,12 +42,15 @@ export default function EventsScreen() {
     if (category !== 'all') {
       result = result.filter((event) => event.category === category);
     }
+    if (source !== 'all') {
+      result = result.filter((event) => event.source === source);
+    }
     result = filterByDateRange(result, dateRange);
     if (isDefaultView) {
       result = result.filter((event) => !event.isFeatured);
     }
     return rankEvents(result);
-  }, [events, query, category, dateRange, isDefaultView]);
+  }, [events, query, category, source, dateRange, isDefaultView]);
 
   return (
     <ThemedView style={styles.container}>
@@ -52,12 +63,19 @@ export default function EventsScreen() {
           emptyMessage="No events match your filters."
           ListHeaderComponent={
             <DiscoverHeader
+              events={events}
+              listCount={listEvents.length}
               category={category}
               onCategoryChange={setCategory}
               query={query}
               onQueryChange={setQuery}
               dateRange={dateRange}
               onDateRangeChange={setDateRange}
+              source={source}
+              onSourceChange={setSource}
+              filtersOpen={filtersOpen}
+              onToggleFilters={() => setFiltersOpen((open) => !open)}
+              filtersActive={filtersActive}
               featured={featured}
             />
           }
@@ -68,31 +86,65 @@ export default function EventsScreen() {
 }
 
 type DiscoverHeaderProps = {
+  events: StockholmEvent[];
+  listCount: number;
   category: CategoryFilterValue;
   onCategoryChange: (value: CategoryFilterValue) => void;
   query: string;
   onQueryChange: (value: string) => void;
   dateRange: DateRangeValue;
   onDateRangeChange: (value: DateRangeValue) => void;
+  source: SourceFilterValue;
+  onSourceChange: (value: SourceFilterValue) => void;
+  filtersOpen: boolean;
+  onToggleFilters: () => void;
+  filtersActive: boolean;
   featured: StockholmEvent[];
 };
 
 function DiscoverHeader({
+  events,
+  listCount,
   category,
   onCategoryChange,
   query,
   onQueryChange,
   dateRange,
   onDateRangeChange,
+  source,
+  onSourceChange,
+  filtersOpen,
+  onToggleFilters,
+  filtersActive,
   featured,
 }: DiscoverHeaderProps) {
+  const showFilterRows = filtersOpen || filtersActive;
+
   return (
     <View style={styles.header}>
       <ScreenHeader title="Stockholm Events" subtitle="What’s on in the city" />
-      <SearchBar value={query} onChange={onQueryChange} />
+      <SearchBar
+        value={query}
+        onChange={onQueryChange}
+        filtersOpen={filtersOpen}
+        onToggleFilters={onToggleFilters}
+      />
+      {showFilterRows && (
+        <View style={styles.filterRows}>
+          <CategoryFilter value={category} onChange={onCategoryChange} />
+          <DateFilter value={dateRange} onChange={onDateRangeChange} />
+          <SourceFilter events={events} value={source} onChange={onSourceChange} />
+        </View>
+      )}
       <FeaturedStrip events={featured} />
-      <CategoryFilter value={category} onChange={onCategoryChange} />
-      <DateFilter value={dateRange} onChange={onDateRangeChange} />
+      <View style={styles.sectionRow}>
+        <ThemedText type="subtitle">
+          All events{' '}
+          <ThemedText type="small" themeColor="textSecondary">
+            {listCount}
+          </ThemedText>
+        </ThemedText>
+      </View>
     </View>
   );
 }
@@ -108,5 +160,12 @@ const styles = StyleSheet.create({
     gap: Spacing.two,
     marginHorizontal: -Spacing.four,
     paddingBottom: Spacing.two,
+  },
+  filterRows: {
+    gap: 0,
+  },
+  sectionRow: {
+    paddingHorizontal: Spacing.four,
+    paddingTop: Spacing.two,
   },
 });

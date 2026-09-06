@@ -31,7 +31,11 @@ yarn-error.*
 *.pem
 
 # local env files
+.env
 .env*.local
+
+# Expo CLI home (created when running with a redirected config dir)
+.expo-home/
 
 # typescript
 *.tsbuildinfo

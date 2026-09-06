@@ -2,9 +2,8 @@ import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { EventMap } from '@/components/event-map';
-import { ScreenHeader } from '@/components/screen-header';
+import { SearchBar } from '@/components/search-bar';
 import { ThemedView } from '@/components/themed-view';
-import { Spacing } from '@/constants/theme';
 import { useEvents } from '@/hooks/use-events';
 
 export default function MapScreen() {
@@ -12,11 +11,12 @@ export default function MapScreen() {
 
   return (
     <ThemedView style={styles.container}>
-      <SafeAreaView edges={['top']} style={styles.safeArea}>
-        <ScreenHeader title="Map" subtitle="Events across Stockholm" />
-        <View style={styles.mapWrap}>
-          <EventMap events={events} loading={loading} error={error} onRetry={reload} />
-        </View>
+      {/* Map runs under the safe area so the image is full-bleed like the reference. */}
+      <View style={styles.mapWrap}>
+        <EventMap events={events} loading={loading} error={error} onRetry={reload} />
+      </View>
+      <SafeAreaView edges={['top']} style={styles.overlay}>
+        <SearchBar value="" onChange={() => {}} placeholder="What are you looking for?" />
       </SafeAreaView>
     </ThemedView>
   );
@@ -26,11 +26,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  safeArea: {
-    flex: 1,
-  },
   mapWrap: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+  },
+  overlay: {
     flex: 1,
-    marginTop: Spacing.three,
+    justifyContent: 'flex-start',
+    pointerEvents: 'box-none',
   },
 });

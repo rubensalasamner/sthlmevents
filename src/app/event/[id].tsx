@@ -1,20 +1,20 @@
 import { Image } from 'expo-image';
-import { Stack, useLocalSearchParams } from 'expo-router';
+import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
-import { CategoryPill } from '@/components/category-pill';
 import { ExternalLink } from '@/components/external-link';
 import { FavoriteButton } from '@/components/favorite-button';
-import { ScreenHeader } from '@/components/screen-header';
+import { Icon } from '@/components/icon';
 import { ShareButton } from '@/components/share-button';
+import { SourceTag } from '@/components/source-tag';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 import { useEvent } from '@/hooks/use-events';
 import { useTheme } from '@/hooks/use-theme';
 import {
-  formatCategory,
-  formatEventWhen,
+  formatEventDate,
+  formatEventTimeRange,
   formatPrice,
   ticketCtaLabel,
   venueLine,
@@ -24,6 +24,7 @@ export default function EventDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { data: event, loading, error } = useEvent(id);
   const theme = useTheme();
+  const router = useRouter();
 
   if (loading) {
     return (
@@ -45,49 +46,72 @@ export default function EventDetailScreen() {
 
   return (
     <ThemedView style={styles.container}>
-      <Stack.Screen
-        options={{
-          title: event.title,
-          headerRight: () => (
-            <View style={styles.headerActions}>
-              <ShareButton event={event} />
-              <FavoriteButton eventId={event.id} />
-            </View>
-          ),
-        }}
-      />
+      <Stack.Screen options={{ headerShown: false }} />
       <ScrollView contentContainerStyle={styles.content}>
-        <Image
-          source={{ uri: event.imageUrl }}
-          style={styles.image}
-          contentFit="cover"
-          transition={200}
-        />
+        <View>
+          <Image
+            source={{ uri: event.imageUrl }}
+            style={styles.image}
+            contentFit="cover"
+            transition={200}
+          />
 
-        <View style={styles.body}>
-          <CategoryPill label={formatCategory(event.category)} />
-
-          <ScreenHeader title={event.title} />
-
-          <ThemedView type="backgroundElement" style={styles.infoCard}>
-            <InfoRow label="When">{formatEventWhen(event)}</InfoRow>
-            <InfoRow label="Where">{venueLine([event.venue.name, event.venue.address, event.venue.district])}</InfoRow>
-            <InfoRow label="Price">{formatPrice(event.priceSek)}</InfoRow>
-            <InfoRow label="Organizer">{event.organizer}</InfoRow>
-          </ThemedView>
-
-          <ThemedText type="default">{event.description}</ThemedText>
-
-          {event.ticketUrl && (
-            <ExternalLink href={event.ticketUrl} asChild>
-              <Pressable style={({ pressed }) => pressed && styles.pressed}>
-                <ThemedView type="backgroundSelected" style={styles.ticketButton}>
-                  <ThemedText type="smallBold">{ticketCtaLabel(event)}</ThemedText>
-                </ThemedView>
+          <View style={styles.topBar}>
+            <ThemedView style={styles.circleButton}>
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel="Go back"
+                onPress={() => router.back()}
+                style={({ pressed }) => pressed && styles.pressed}>
+                <Icon sf="chevron.left" material="arrow_back" size={20} color={theme.text} />
               </Pressable>
-            </ExternalLink>
-          )}
+            </ThemedView>
+            <View style={styles.topActions}>
+              <ThemedView style={styles.circleButton}>
+                <ShareButton event={event} />
+              </ThemedView>
+              <ThemedView style={styles.circleButton}>
+                <FavoriteButton eventId={event.id} />
+              </ThemedView>
+            </View>
+          </View>
         </View>
+
+        <ThemedView style={styles.sheet}>
+          <View style={styles.sheetBody}>
+            <View style={styles.pillRow}>
+              <SourceTag source={event.source} />
+            </View>
+
+            <ThemedText type="subtitle">{event.title}</ThemedText>
+
+            <ThemedText type="small" themeColor="textSecondary">
+              {venueLine([event.venue.name, event.venue.district])}
+            </ThemedText>
+
+            <ThemedText type="default">{event.description}</ThemedText>
+
+            <ThemedView type="backgroundElement" style={styles.infoCard}>
+              <InfoRow label="When">
+                {formatEventDate(event.startsAt)}
+                {event.endsAt ? ` · ${formatEventTimeRange(event)}` : ''}
+              </InfoRow>
+              <InfoRow label="Where">{venueLine([event.venue.name, event.venue.address])}</InfoRow>
+              <InfoRow label="Price">{formatPrice(event.priceSek)}</InfoRow>
+              <InfoRow label="Organizer">{event.organizer}</InfoRow>
+            </ThemedView>
+
+            {event.ticketUrl && (
+              <ExternalLink href={event.ticketUrl} asChild>
+                <Pressable style={({ pressed }) => pressed && styles.pressed}>
+                  <ThemedView type="backgroundSelected" style={styles.ticketButton}>
+                    <ThemedText type="smallBold">{ticketCtaLabel(event)}</ThemedText>
+                  </ThemedView>
+                </Pressable>
+              </ExternalLink>
+            )}
+          </View>
+        </ThemedView>
       </ScrollView>
     </ThemedView>
   );
@@ -110,27 +134,58 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  headerActions: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: Spacing.two,
-  },
   centered: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     gap: Spacing.three,
+    padding: Spacing.four,
   },
   content: {
     paddingBottom: Spacing.six,
   },
   image: {
     width: '100%',
-    aspectRatio: 16 / 9,
+    aspectRatio: 4 / 5,
   },
-  body: {
+  topBar: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    padding: Spacing.three,
+  },
+  topActions: {
+    flexDirection: 'row',
+    gap: Spacing.two,
+  },
+  circleButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  sheet: {
+    flex: 1,
+    marginTop: -Spacing.five,
+    borderTopLeftRadius: Spacing.four,
+    borderTopRightRadius: Spacing.four,
+    overflow: 'hidden',
+  },
+  sheetBody: {
     padding: Spacing.four,
     gap: Spacing.three,
+  },
+  pillRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    gap: Spacing.two,
   },
   infoCard: {
     borderRadius: Spacing.four,
@@ -147,13 +202,12 @@ const styles = StyleSheet.create({
   infoValue: {
     flex: 1,
   },
-  pressed: {
-    opacity: 0.7,
-  },
   ticketButton: {
     alignItems: 'center',
     paddingVertical: Spacing.three,
     borderRadius: Spacing.five,
-    marginTop: Spacing.two,
+  },
+  pressed: {
+    opacity: 0.7,
   },
 });

@@ -1,6 +1,6 @@
-import { SymbolView } from 'expo-symbols';
 import { Platform, Pressable, Share, StyleSheet } from 'react-native';
 
+import { Icon } from '@/components/icon';
 import { Spacing } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
 import type { StockholmEvent } from '@/types/event';
@@ -38,7 +38,12 @@ export function ShareButton({ event, size = 22 }: ShareButtonProps) {
       hitSlop={Spacing.two}
       onPress={onPress}
       style={({ pressed }) => [styles.button, pressed && styles.pressed]}>
-      <SymbolView name="square.and.arrow.up" size={size} tintColor={theme.textSecondary} />
+      <Icon
+        sf="square.and.arrow.up"
+        material="share"
+        size={size}
+        color={theme.textSecondary}
+      />
     </Pressable>
   );
 }

@@ -1,6 +1,6 @@
-import { SymbolView } from 'expo-symbols';
 import { Pressable, StyleSheet } from 'react-native';
 
+import { Icon } from '@/components/icon';
 import { useFavorites } from '@/context/favorites-context';
 import { Spacing } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
@@ -22,10 +22,11 @@ export function FavoriteButton({ eventId, size = 22 }: FavoriteButtonProps) {
       hitSlop={Spacing.two}
       onPress={() => toggleFavorite(eventId)}
       style={({ pressed }) => [styles.button, pressed && styles.pressed]}>
-      <SymbolView
-        name={active ? 'heart.fill' : 'heart'}
-        tintColor={active ? '#ff375f' : theme.textSecondary}
+      <Icon
+        sf={active ? 'heart.fill' : 'heart'}
+        material={active ? 'favorite' : 'favorite_border'}
         size={size}
+        color={active ? '#ff375f' : theme.textSecondary}
       />
     </Pressable>
   );
