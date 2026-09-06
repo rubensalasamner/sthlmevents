@@ -1,0 +1,28 @@
+{
+  "name": "sthlmevents-pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Event ingestion pipeline: source adapters -> normalized StockholmEvent[].",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "bash -c 'shopt -s globstar nullglob; node --import tsx --test src/**/*.test.ts'",
+    "fetch:visit-stockholm": "tsx src/run.ts visit-stockholm",
+    "fetch:eventbrite": "tsx src/run.ts eventbrite",
+    "fetch:resident-advisor": "tsx src/run.ts resident-advisor",
+    "fetch:ticketmaster": "tsx src/run.ts ticketmaster",
+    "fetch:luma": "tsx src/run.ts luma",
+    "fetch:allevents": "tsx src/run.ts allevents",
+    "fetch:meetup": "tsx src/run.ts meetup",
+    "fetch:evenemangskollen": "tsx src/run.ts evenemangskollen",
+    "fetch:biblioteket": "tsx src/run.ts biblioteket",
+    "fetch:kulturhuset": "tsx src/run.ts kulturhuset",
+    "snapshot": "tsx src/generate-snapshot.ts",
+    "serve:snapshot": "tsx src/serve-snapshot.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "~5.9.0"
+  }
+}

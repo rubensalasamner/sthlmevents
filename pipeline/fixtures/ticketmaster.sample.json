@@ -1,0 +1,78 @@
+{
+  "_embedded": {
+    "events": [
+      {
+        "id": "1549892649",
+        "name": "Mamma Mia! The Party",
+        "url": "https://www.ticketmaster.se/event/mamma-mia-tickets/1549892649",
+        "info": "The immersive ABBA dinner-and-show experience.",
+        "images": [
+          { "url": "https://s1.ticketm.net/small.jpg", "width": 300, "ratio": "16_9" },
+          { "url": "https://s1.ticketm.net/large.jpg", "width": 1136, "ratio": "16_9" }
+        ],
+        "dates": { "start": { "localDate": "2026-09-03", "localTime": "18:30:00", "dateTime": "2026-09-03T16:30:00Z" } },
+        "classifications": [
+          { "primary": true, "segment": { "name": "Arts & Theatre" }, "genre": { "name": "Theatre" }, "subGenre": { "name": "Musical" } }
+        ],
+        "priceRanges": [],
+        "promoter": { "name": "MM! The Party in Stockholm AB" },
+        "_embedded": {
+          "venues": [
+            {
+              "name": "Tyrol",
+              "city": { "name": "Stockholm" },
+              "address": { "line1": "Lilla Allmänna Gränd 2" },
+              "postalCode": "115 21",
+              "location": { "longitude": "18.096259", "latitude": "59.324127" }
+            }
+          ],
+          "attractions": [{ "name": "Mamma Mia! The Party" }]
+        }
+      },
+      {
+        "id": "2000111",
+        "name": "Håkan Hellström",
+        "url": "https://www.ticketmaster.se/event/hakan-tickets/2000111",
+        "images": [{ "url": "https://s1.ticketm.net/hakan.jpg", "width": 2048, "ratio": "16_9" }],
+        "dates": { "start": { "localDate": "2026-10-10", "localTime": "20:00:00", "dateTime": "2026-10-10T18:00:00Z" } },
+        "classifications": [
+          { "primary": true, "segment": { "name": "Music" }, "genre": { "name": "Pop" } }
+        ],
+        "priceRanges": [{ "type": "standard", "currency": "SEK", "min": 395, "max": 795 }],
+        "promoter": { "name": "Live Nation" },
+        "_embedded": {
+          "venues": [
+            {
+              "name": "Avicii Arena",
+              "city": { "name": "Stockholm" },
+              "address": { "line1": "Globentorget 2" },
+              "location": { "longitude": "18.0834", "latitude": "59.2934" }
+            }
+          ]
+        }
+      },
+      {
+        "id": "3000222",
+        "name": "Stand-up Comedy Night",
+        "url": "https://www.ticketmaster.se/event/standup-tickets/3000222",
+        "images": [{ "url": "https://s1.ticketm.net/comedy.jpg", "width": 1024 }],
+        "dates": { "start": { "localDate": "2026-09-20", "timeTBA": true } },
+        "classifications": [
+          { "primary": true, "segment": { "name": "Arts & Theatre" }, "genre": { "name": "Comedy" } }
+        ],
+        "_embedded": {
+          "venues": [{ "name": "Cirkus", "city": { "name": "Stockholm" }, "location": { "longitude": "18.096", "latitude": "59.328" } }]
+        }
+      },
+      {
+        "id": "4000333",
+        "name": "To Be Announced",
+        "url": "https://www.ticketmaster.se/event/tba/4000333",
+        "dates": { "start": { "dateTBD": true } },
+        "classifications": [{ "primary": true, "segment": { "name": "Music" } }],
+        "_embedded": { "venues": [{ "name": "TBA", "city": { "name": "Stockholm" } }] }
+      }
+    ]
+  },
+  "page": { "size": 100, "totalElements": 3, "totalPages": 1, "number": 0 }
+}

@@ -1,0 +1,78 @@
+{
+  "data": {
+    "eventListings": {
+      "totalResults": 3,
+      "data": [
+        {
+          "event": {
+            "id": "2506426",
+            "title": "Euphoria - Trance club night",
+            "date": "2026-09-02T00:00:00.000",
+            "startTime": "2026-09-02T17:00:00.000",
+            "endTime": "2026-09-03T00:00:00.000",
+            "cost": "0",
+            "content": "Come enjoy the best of trance on the rooftop of Slakthuset!",
+            "contentUrl": "/events/2506426",
+            "flyerFront": null,
+            "isTicketed": false,
+            "dateUpdated": "2026-08-05T20:04:46.507Z",
+            "venue": {
+              "id": "44750",
+              "name": "Slakthuset",
+              "contentUrl": "/clubs/44750",
+              "area": { "name": "Stockholm" },
+              "location": { "latitude": 59.291777, "longitude": 18.079366 }
+            },
+            "artists": [{ "name": "Mira Iranpour" }, { "name": "Marcus Christiansen" }],
+            "promoters": [{ "name": "Black Planet (Berlin) " }],
+            "genres": [{ "name": "Trance" }]
+          }
+        },
+        {
+          "event": {
+            "id": "2481400",
+            "title": "Luigi Tozzi & Claudio PRC (LIVE)",
+            "date": "2026-09-04T00:00:00.000",
+            "startTime": "2026-09-04T21:00:00.000",
+            "endTime": "2026-09-05T03:00:00.000",
+            "cost": "25 ",
+            "content": "",
+            "contentUrl": "/events/2481400",
+            "flyerFront": "https://images.ra.co/flyer.jpg",
+            "isTicketed": true,
+            "dateUpdated": "2026-07-14T08:13:11.660Z",
+            "venue": {
+              "id": "21368",
+              "name": "Trädgården",
+              "contentUrl": "/clubs/21368",
+              "area": { "name": "Stockholm" },
+              "location": { "latitude": 59.304501, "longitude": 18.078484 }
+            },
+            "artists": [{ "name": "Luigi Tozzi" }, { "name": "Claudio PRC" }],
+            "promoters": [{ "name": "Under Bron" }],
+            "genres": [{ "name": "Techno" }, { "name": "House" }]
+          }
+        },
+        {
+          "event": {
+            "id": "9999001",
+            "title": "Secret Warehouse Party",
+            "date": null,
+            "startTime": null,
+            "endTime": null,
+            "cost": null,
+            "content": "TBA",
+            "contentUrl": "/events/9999001",
+            "flyerFront": null,
+            "isTicketed": false,
+            "dateUpdated": null,
+            "venue": null,
+            "artists": null,
+            "promoters": null,
+            "genres": null
+          }
+        }
+      ]
+    }
+  }
+}
