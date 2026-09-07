@@ -46,6 +46,33 @@ commit. One-time setup:
   source rather than failing the run.
 - Or run it manually via **Run workflow** to test.
 
+### 2b. Cloudflare R2 — optional snapshot hosting
+
+The same workflow uploads the snapshot to an R2 bucket when these
+**repository secrets** are set (all four are required for the upload to run;
+without them the step skips and Vercel remains the only host):
+
+| Secret | Value |
+| --- | --- |
+| `R2_ACCOUNT_ID` | Cloudflare account ID (dashboard right sidebar) |
+| `R2_ACCESS_KEY_ID` | R2 API token access key (R2 → Manage R2 API tokens) |
+| `R2_SECRET_ACCESS_KEY` | Matching secret key |
+| `R2_BUCKET` | Bucket name |
+
+Bucket setup: create it in R2, then allow public reads — either enable the
+**r2.dev public access** switch (fine for a hobby app) or connect a custom
+domain (recommended, unlimited and cached). Add a CORS policy allowing `GET`
+from `*` so the web app can fetch the file. R2's free tier (10 GB storage,
+10 M reads/month, zero egress) covers this use case many times over.
+
+Then point native builds at it:
+
+```bash
+eas env:create --name EXPO_PUBLIC_SNAPSHOT_URL \
+  --value "https://pub-<id>.r2.dev/events.snapshot.json" \
+  --visibility plain
+```
+
 ### 3. EAS — native builds with remote data
 
 The APK/ITA builds fetch the live snapshot from Vercel at startup and fall

@@ -17,6 +17,14 @@ concurrency:
   group: daily-snapshot
   cancel-in-progress: false
 
+# Optional Cloudflare R2 upload (free tier). When the R2_* secrets are absent
+# the upload step skips and Vercel remains the only snapshot host.
+env:
+  R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+  R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+  R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+  R2_BUCKET: ${{ secrets.R2_BUCKET }}
+
 jobs:
   snapshot:
     runs-on: ubuntu-latest
@@ -58,3 +66,18 @@ jobs:
           file_pattern: src/data/events.snapshot.json pipeline/.cache/*.json
           commit_user_name: github-actions[bot]
           commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
+
+      - name: Upload snapshot to Cloudflare R2
+        # Skips entirely when R2 secrets are not configured; the committed
+        # snapshot (served by Vercel) stays the source of truth in that case.
+        if: env.R2_ACCOUNT_ID != '' && env.R2_BUCKET != ''
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: |
+          aws s3 cp src/data/events.snapshot.json \
+            "s3://${R2_BUCKET}/events.snapshot.json" \
+            --endpoint-url "https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com" \
+            --content-type application/json \
+            --cache-control 'public, max-age=3600'
+          echo "Snapshot uploaded to R2 bucket ${R2_BUCKET}"
