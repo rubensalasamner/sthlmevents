@@ -45,24 +45,43 @@ async function main(): Promise<void> {
 
   const collected: StockholmEvent[] = [];
   const sources: string[] = [];
+  const failures: string[] = [];
   for (const adapter of adapters) {
     process.stdout.write(`Fetching "${adapter.id}"... `);
     let events: StockholmEvent[];
     try {
       events = await adapter.fetch();
     } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
       // A missing per-source credential (e.g. EVENEMANGSKOLLEN_API_KEY) should
-      // skip that source, not kill the whole snapshot; real fetch failures for
-      // open sources still abort the run.
-      if (error instanceof Error && /API_KEY/.test(error.message)) {
-        console.log(`skipped (${error.message.split('. ')[0]})`);
+      // skip that source, not kill the whole snapshot.
+      if (/API_KEY/.test(message)) {
+        console.log(`skipped (${message.split('. ')[0]})`);
         continue;
       }
-      throw error;
+      // A blocked or down source (bot protection, 5xx) must not abort the
+      // daily refresh: yesterday's events from that source simply drop out of
+      // today's snapshot. An empty run is still fatal — see below.
+      console.log(`failed (${message}) — continuing with remaining sources`);
+      failures.push(adapter.id);
+      continue;
     }
     console.log(`${events.length} events`);
     collected.push(...events);
     sources.push(adapter.id);
+  }
+
+  if (collected.length === 0) {
+    throw new Error(
+      failures.length > 0
+        ? `All sources failed (${failures.join(', ')}) — refusing to overwrite the snapshot with an empty one`
+        : 'All sources returned zero events — refusing to overwrite the snapshot',
+    );
+  }
+  if (failures.length > 0) {
+    console.warn(
+      `WARNING: ${failures.length} source(s) failed and are missing from this snapshot: ${failures.join(', ')}`,
+    );
   }
 
   const { events: unique, duplicatesRemoved } = dedupeEvents(collected);
