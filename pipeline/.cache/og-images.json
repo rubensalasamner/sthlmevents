@@ -15054,5 +15054,17 @@
   "https://kulturbiljetter.se/varukorg/8958/41780/n%C3%A4r-findus-var-liten-och-f%C3%B6rsvann-fr%C3%A5n-3-%C3%A5r-vardag/": {
     "image": null,
     "fetchedAt": 1788811071424
+  },
+  "https://www.drejeriet.com/service-page/sj%C3%A4lvst%C3%A4ndig-drejning?referral=service_list_widget": {
+    "image": "https://static.wixstatic.com/media/735ad2_3ce6a98b82a141578871a18ce1ac7d54~mv2.jpg/v1/fit/w_6720,h_4480,al_c,q_90/735ad2_3ce6a98b82a141578871a18ce1ac7d54~mv2.jpg",
+    "fetchedAt": 1788813632679
+  },
+  "https://biljett.debaser.se/kfg08bf9c0a346n": {
+    "image": null,
+    "fetchedAt": 1788813632887
+  },
+  "https://shop.showtic.se/ataubtmxx87fmfm": {
+    "image": null,
+    "fetchedAt": 1788813633514
   }
 }
