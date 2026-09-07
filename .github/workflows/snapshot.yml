@@ -43,6 +43,7 @@ jobs:
           CATEGORIZER_API_KEY: ${{ secrets.CATEGORIZER_API_KEY }}
           CATEGORIZER_BASE_URL: ${{ secrets.CATEGORIZER_BASE_URL }}
           CATEGORIZER_MODEL: ${{ secrets.CATEGORIZER_MODEL }}
+          KULTURBILJETTER_API_KEY: ${{ secrets.KULTURBILJETTER_API_KEY }}
         run: npm run snapshot --prefix pipeline
 
       - name: Ensure cache files exist

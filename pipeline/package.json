@@ -17,6 +17,7 @@
     "fetch:evenemangskollen": "tsx src/run.ts evenemangskollen",
     "fetch:biblioteket": "tsx src/run.ts biblioteket",
     "fetch:kulturhuset": "tsx src/run.ts kulturhuset",
+    "fetch:kulturbiljetter": "tsx src/run.ts kulturbiljetter",
     "snapshot": "tsx src/generate-snapshot.ts",
     "serve:snapshot": "tsx src/serve-snapshot.ts"
   },

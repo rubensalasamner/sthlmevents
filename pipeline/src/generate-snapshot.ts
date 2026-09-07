@@ -27,7 +27,7 @@ const GEOCODE_CACHE_URL = new URL('../.cache/geocodes.json', import.meta.url);
 const CATEGORY_CACHE_URL = new URL('../.cache/categories.json', import.meta.url);
 
 const ATTRIBUTION =
-  'Includes event data from Visit Stockholm (Stockholm Business Region), CC BY 4.0; loppiskartan.se; public Eventbrite listings; Resident Advisor (ra.co); Ticketmaster; Luma (lu.ma); allevents.in; Meetup; Evenemangskollen; Stockholms stadsbibliotek; and Kulturhuset Stadsteatern.';
+  'Includes event data from Visit Stockholm (Stockholm Business Region), CC BY 4.0; loppiskartan.se; public Eventbrite listings; Resident Advisor (ra.co); Ticketmaster; Luma (lu.ma); allevents.in; Meetup; Evenemangskollen; Stockholms stadsbibliotek; Kulturhuset Stadsteatern; and Kulturbiljetter.';
 
 type Snapshot = {
   generatedAt: string;

@@ -92,6 +92,7 @@ const SOURCE_LABELS: Record<string, string> = {
   'evenemangskollen': 'Evenemangskollen',
   eventbrite: 'Eventbrite',
   kulturhuset: 'Kulturhuset',
+  kulturbiljetter: 'Kulturbiljetter',
   luma: 'Luma',
   loppiskartan: 'loppiskartan.se',
   meetup: 'Meetup',

@@ -51,10 +51,11 @@ to refresh the app's data.
 | `visit-stockholm` | Visit Stockholm SBR Public API (`api.visitstockholm.com/api/public-v1`) | Open, no key | CC BY 4.0 (attribution required) |
 | `loppiskartan` | loppiskartan.se dated flea-market calendar | HTML scrape (pure, tested parser), filtered to "Stockholms län" | Flea markets / one-off loppisar; free entry; no coordinates |
 
+| `kulturhuset` | Kulturhuset Stadsteatern kalender (Elasticsearch index) | Open, no key |
+| `kulturbiljetter` | Kulturbiljetter Events API v3 (`api/v3/events`) | API key (`Authorization: Token …`), request via info@kulturbiljetter.se |
+
 ### Deferred / blocked sources (researched)
 
-- **Kulturbiljetter** (`api/v3/events/`): real REST API but requires an
-  `Authorization` header — needs a requested API key.
 - **Stockholms stadsbibliotek** `/evenemang`: client-rendered; events load from
   an endpoint not present in the static bundle — needs headless discovery.
 - **Parkteatern / Kulturhuset Stadsteatern** `/kalender`: client-rendered, no

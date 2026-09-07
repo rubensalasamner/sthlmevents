@@ -4,6 +4,7 @@ import { BiblioteketAdapter } from './biblioteket/adapter.js';
 import { EvenemangskollenAdapter } from './evenemangskollen/adapter.js';
 import { EventbriteAdapter } from './eventbrite/adapter.js';
 import { KulturhusetAdapter } from './kulturhuset/adapter.js';
+import { KulturbiljetterAdapter } from './kulturbiljetter/adapter.js';
 import { LoppiskartanAdapter } from './loppiskartan/adapter.js';
 import { LumaAdapter } from './luma/adapter.js';
 import { MeetupAdapter } from './meetup/adapter.js';
@@ -24,6 +25,7 @@ export const SOURCE_ADAPTERS: Record<string, SourceAdapter> = {
   evenemangskollen: new EvenemangskollenAdapter(),
   biblioteket: new BiblioteketAdapter(),
   kulturhuset: new KulturhusetAdapter(),
+  kulturbiljetter: new KulturbiljetterAdapter(),
 };
 
 export function allAdapters(): SourceAdapter[] {

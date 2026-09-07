@@ -1,0 +1,150 @@
+{
+  "1291": {
+    "title": "En midsummernattsdröm",
+    "presentation_short": "<p>Klassisk komedi i Stockholms hjärta</p>",
+    "presentation_long": "<p>Shakespeares älskade komedi <strong>om förvillelser</strong> i skogen utanför Aten. Med dvärgen Puck och feerna Titania och Oberon.</p>",
+    "unixtime_release": 1756684800,
+    "price_min": "150.00",
+    "price_max": "295.00",
+    "organizer": {
+      "organizer_id": 790,
+      "name": "Stockholms Teaterkompani",
+      "logo": "https://kulturbiljetter.se/storage/organizer-790-thumb.jpg"
+    },
+    "images": {
+      "0": "https://kulturbiljetter.se/storage/event-1291-hero.jpg"
+    },
+    "trailers": null,
+    "dates": {
+      "0": {
+        "date_id": 1021,
+        "location_id": 1191,
+        "unixtime_open": 1784610000,
+        "unixtime_start": 1784613600,
+        "ticket_amount": 100,
+        "ticket_available": 42,
+        "date_only": false,
+        "url_checkout": "https://kulturbiljetter.se/varukorg/1291/1021/en-midsummernattsdrom/"
+      },
+      "1": {
+        "date_id": 1022,
+        "location_id": 1191,
+        "unixtime_open": 1784696400,
+        "unixtime_start": 1784700000,
+        "ticket_amount": 100,
+        "ticket_available": 0,
+        "date_only": false,
+        "url_checkout": "https://kulturbiljetter.se/varukorg/1291/1022/en-midsummernattsdrom/"
+      },
+      "2": {
+        "date_id": 1023,
+        "location_id": 1192,
+        "unixtime_open": 1785301200,
+        "unixtime_start": 1785304800,
+        "ticket_amount": 80,
+        "ticket_available": 10,
+        "date_only": false,
+        "url_checkout": "https://kulturbiljetter.se/varukorg/1291/1023/en-midsummernattsdrom/"
+      }
+    },
+    "locations": {
+      "0": {
+        "location_id": 1191,
+        "name": "Galateateatern",
+        "street": "Södermannagatan 21",
+        "vicinity": "Södermalm",
+        "city": "Stockholm"
+      },
+      "1": {
+        "location_id": 1192,
+        "name": "Närhetens scen",
+        "street": "Dalagatan 3",
+        "vicinity": null,
+        "city": "Uppsala"
+      }
+    },
+    "url_checkout": "https://kulturbiljetter.se/varukorg/1291/en-midsummernattsdrom/",
+    "url_event_page": "https://kulturbiljetter.se/evenemang/1291/en-midsummernattsdrom/",
+    "url_organizer_serp": "https://kulturbiljetter.se/arrangör/790/stockholms-teaterkompani/"
+  },
+  "1293": {
+    "title": "Standup med Loco Loco",
+    "presentation_short": "<p>Kvällens roligaste standup</p>",
+    "presentation_long": "<p>Tre komiker, en scen, en kväll fylld av skratt.</p>",
+    "unixtime_release": 1756684800,
+    "price_min": null,
+    "price_max": null,
+    "organizer": {
+      "organizer_id": 790,
+      "name": "Kulturbaren",
+      "logo": null
+    },
+    "images": null,
+    "trailers": null,
+    "dates": {
+      "0": {
+        "date_id": 2001,
+        "location_id": 1300,
+        "unixtime_open": 1784782800,
+        "unixtime_start": 1784786400,
+        "ticket_amount": 60,
+        "ticket_available": 25,
+        "date_only": false,
+        "url_checkout": "https://kulturbiljetter.se/varukorg/1293/2001/standup-med-loco-loco/"
+      }
+    },
+    "locations": {
+      "0": {
+        "location_id": 1300,
+        "name": "Kafé Claramas",
+        "street": "Krukmakargatan 14",
+        "vicinity": "Södermalm",
+        "city": "Stockholm"
+      }
+    },
+    "url_checkout": "https://kulturbiljetter.se/varukorg/1293/standup-med-loco-loco/",
+    "url_event_page": "https://kulturbiljetter.se/evenemang/1293/standup-med-loco-loco/",
+    "url_organizer_serp": "https://kulturbiljetter.se/arrangör/790/kulturbaren/"
+  },
+  "1294": {
+    "title": "Göteborgs kammarmusikfestival",
+    "presentation_short": "<p>Kammarmusik på västkusten</p>",
+    "presentation_long": "<p>En kväll med Haydn och Brahms i Göteborgs konserthus.</p>",
+    "unixtime_release": 1756684800,
+    "price_min": "200.00",
+    "price_max": "400.00",
+    "organizer": {
+      "organizer_id": 897,
+      "name": "Göteborg Live",
+      "logo": null
+    },
+    "images": {
+      "0": "https://kulturbiljetter.se/storage/event-1294-hero.jpg"
+    },
+    "trailers": null,
+    "dates": {
+      "0": {
+        "date_id": 3001,
+        "location_id": 1400,
+        "unixtime_open": 1784782800,
+        "unixtime_start": 1784786400,
+        "ticket_amount": 200,
+        "ticket_available": 100,
+        "date_only": false,
+        "url_checkout": "https://kulturbiljetter.se/varukorg/1294/3001/goteborgs-kammarmusikfestival/"
+      }
+    },
+    "locations": {
+      "0": {
+        "location_id": 1400,
+        "name": "Göteborgs konserthus",
+        "street": "Götaplatsen 2",
+        "vicinity": null,
+        "city": "Göteborg"
+      }
+    },
+    "url_checkout": "https://kulturbiljetter.se/varukorg/1294/goteborgs-kammarmusikfestival/",
+    "url_event_page": "https://kulturbiljetter.se/evenemang/1294/goteborgs-kammarmusikfestival/",
+    "url_organizer_serp": "https://kulturbiljetter.se/arrangör/897/goteborg-live/"
+  }
+}
