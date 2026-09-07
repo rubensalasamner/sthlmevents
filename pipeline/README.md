@@ -39,10 +39,12 @@ TTL). Events with no resolvable image keep their category fallback.
 
 ### Snapshot -> app
 
-`generate-snapshot` runs a source + enrichment and writes
-`../src/data/events.snapshot.json`, which the app's `StaticEventSource` serves.
-This is the "no database" bridge: re-run it on a schedule (the daily-cron model)
-to refresh the app's data.
+`generate-snapshot` runs a source + enrichment pass and writes
+`../src/data/events.snapshot.json` (minified). Local dev and the web export
+serve it via the app's `StaticEventSource`; EAS builds exclude it (`.easignore`)
+and fetch it at runtime from R2 (`EXPO_PUBLIC_SNAPSHOT_URL`). This is the
+"no database" bridge: the daily-cron workflow refreshes the file and uploads it,
+and installed apps pick up fresh data on next launch without a rebuild.
 
 ## Sources
 

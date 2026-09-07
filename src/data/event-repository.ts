@@ -9,22 +9,20 @@ import type { EventSource } from '@/data/event-source';
  * repository, never on a concrete source. Swap the strategy here (or via
  * `setEventSource`) when a real API is ready.
  *
- * Defaults to the remote snapshot URL (daily-cron model) when configured via
- * `EXPO_PUBLIC_SNAPSHOT_URL`, falling back to the bundled snapshot and then
- * mock data. Without the env var the bundled snapshot is used directly.
+ * Daily-cron model: try the remote snapshot (`EXPO_PUBLIC_SNAPSHOT_URL`,
+ * hosted on R2), then the bundled snapshot when the pipeline file was bundled
+ * in (EAS builds exclude it via `.easignore`), then mock data. Sources that
+ * resolve empty — including a missing snapshot file — are skipped by the
+ * fallback chain.
  */
 
 const REMOTE_URL = process.env.EXPO_PUBLIC_SNAPSHOT_URL;
 
-const snapshotSource = new StaticEventSource();
-
 function createDefaultSource(): EventSource {
-  if (!REMOTE_URL) return snapshotSource;
-  return new FallbackEventSource([
-    new RemoteEventSource(REMOTE_URL),
-    snapshotSource,
-    new MockEventSource(),
-  ]);
+  const sources: EventSource[] = [];
+  if (REMOTE_URL) sources.push(new RemoteEventSource(REMOTE_URL));
+  sources.push(new StaticEventSource(), new MockEventSource());
+  return sources.length === 1 ? sources[0]! : new FallbackEventSource(sources);
 }
 
 let activeSource: EventSource | null = null;

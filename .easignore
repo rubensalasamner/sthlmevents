@@ -1,0 +1,4 @@
+# Keep EAS build uploads small: the snapshot is fetched at runtime from
+# EXPO_PUBLIC_SNAPSHOT_URL (R2), so the 8 MB bundled copy is dead weight.
+# Local dev, `expo export` (web on Vercel) and tests still use the file.
+src/data/events.snapshot.json

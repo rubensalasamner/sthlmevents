@@ -10,15 +10,17 @@ npm install
 npx expo start
 ```
 
-The app reads the bundled snapshot (`src/data/events.snapshot.json`). To work
-on the data pipeline, see `pipeline/README.md`.
+The app fetches the snapshot at runtime from `EXPO_PUBLIC_SNAPSHOT_URL` (see
+Deployment). The bundled copy (`src/data/events.snapshot.json`) is used by local
+dev, the web export and tests — EAS builds exclude it via `.easignore` to keep
+uploads small. To work on the data pipeline, see `pipeline/README.md`.
 
 ## Deployment (daily-cron model)
 
-The app has no backend. Data flows one way:
+Data flows one way:
 
 ```
-pipeline (daily) -> events.snapshot.json -> Vercel -> app (remote fetch, bundled fallback)
+pipeline (daily) -> events.snapshot.json -> R2 + Vercel -> app (remote fetch)
 ```
 
 ### 1. Vercel — web app + snapshot hosting
@@ -75,8 +77,11 @@ eas env:create --name EXPO_PUBLIC_SNAPSHOT_URL \
 
 ### 3. EAS — native builds with remote data
 
-The APK/ITA builds fetch the live snapshot from Vercel at startup and fall
-back to the bundled copy offline. Point them at the deployed snapshot:
+The APK/IPA builds fetch the live snapshot at startup — from R2 when
+`EXPO_PUBLIC_SNAPSHOT_URL` points there, so they pick up the daily refresh
+without rebuilds. EAS builds exclude the bundled snapshot (`.easignore`); the
+fallback chain ends in mock data so the app still boots fully offline.
+Point them at the deployed snapshot:
 
 ```bash
 eas env:create --name EXPO_PUBLIC_SNAPSHOT_URL \

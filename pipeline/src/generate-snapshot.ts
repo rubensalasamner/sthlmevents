@@ -163,7 +163,9 @@ async function main(): Promise<void> {
     events: sorted,
   };
 
-  await writeFile(OUTPUT_URL, JSON.stringify(snapshot, null, 2), 'utf8');
+  // Minified: ~20% smaller on R2 and inside the APK. Pretty-printing was only
+  // useful for reviewing daily diffs; the data is bot-committed anyway.
+  await writeFile(OUTPUT_URL, JSON.stringify(snapshot), 'utf8');
   console.log(
     `Wrote ${sorted.length} events (${resolved}/${attempted} images resolved) to ${OUTPUT_URL.pathname}`,
   );
