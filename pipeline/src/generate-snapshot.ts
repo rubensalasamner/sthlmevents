@@ -102,23 +102,31 @@ async function main(): Promise<void> {
   console.log(`Geocoded ${geocoded} events across ${geocodeAttempts} venue lookups`);
 
   const categorizerApiKey = process.env.CATEGORIZER_API_KEY;
-  let categorized = unique;
+  let categorized = located;
   if (categorizerApiKey) {
     const categoryCache = new FileKeyedCache<'music' | 'art' | 'food' | 'sports' | 'theatre' | 'nightlife' | 'family' | 'shopping' | 'market' | 'popup' | 'comedy' | 'other' | null>(CATEGORY_CACHE_URL.pathname);
     await categoryCache.load();
-    const result = await categorizeEvents(located, {
-      categorizer: new OpenAiCategorizer({
-        apiKey: categorizerApiKey,
-        baseUrl: process.env.CATEGORIZER_BASE_URL,
-        model: process.env.CATEGORIZER_MODEL,
-      }),
-      cache: categoryCache,
-      onProgress: (done, total) => process.stdout.write(`\r  categorize ${done}/${total}`),
-    });
-    process.stdout.write('\n');
+    try {
+      const result = await categorizeEvents(located, {
+        categorizer: new OpenAiCategorizer({
+          apiKey: categorizerApiKey,
+          baseUrl: process.env.CATEGORIZER_BASE_URL,
+          model: process.env.CATEGORIZER_MODEL,
+        }),
+        cache: categoryCache,
+        onProgress: (done, total) => process.stdout.write(`\r  categorize ${done}/${total}`),
+      });
+      process.stdout.write('\n');
+      categorized = result.events;
+      console.log(`LLM categorized ${result.categorized} of ${result.attempted} sent texts`);
+    } catch (error) {
+      // The category pass is an enhancement, never a gate: a provider outage
+      // must not discard an otherwise complete snapshot. Cached answers from
+      // earlier batches are still saved; the rest keep their keyword category.
+      const message = error instanceof Error ? error.message : String(error);
+      console.warn(`\nCategorizer failed (${message}) — continuing with keyword-based categories`);
+    }
     await categoryCache.save();
-    categorized = result.events;
-    console.log(`LLM categorized ${result.categorized} of ${result.attempted} sent texts`);
   } else {
     console.log('Categorizer skipped (CATEGORIZER_API_KEY not set)');
   }

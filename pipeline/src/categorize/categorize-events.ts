@@ -66,10 +66,20 @@ export async function categorizeEvents(
     }
   }
 
+  let failures = 0;
   for (let offset = 0; offset < uncached.length; offset += batchSize) {
     if (offset > 0) await sleep(BATCH_DELAY_MS);
     const batch = uncached.slice(offset, offset + batchSize);
-    const results = await options.categorizer.categorize(batch);
+    let results: (EventCategory | null)[];
+    try {
+      results = await options.categorizer.categorize(batch);
+    } catch {
+      // One bad batch (e.g. the model repeatedly returns invalid JSON) must
+      // not forfeit the rest of the run: skip it, leave those texts uncached
+      // so a later run retries them, and keep going.
+      failures += 1;
+      continue;
+    }
     attempted += batch.length;
     results.forEach((result, index) => {
       const text = batch[index];
@@ -77,6 +87,9 @@ export async function categorizeEvents(
       if (text !== undefined) cache.set(CACHE_KEY_PREFIX + text, result);
     });
     options.onProgress?.(Math.min(offset + batchSize, uncached.length), uncached.length);
+  }
+  if (failures > 0) {
+    console.warn(`\n${failures} categorization batch(es) failed and were skipped`);
   }
 
   let categorized = 0;

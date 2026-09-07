@@ -44,8 +44,10 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /**
  * Classifies texts via an OpenAI-compatible chat-completions endpoint. One
- * request per `categorize` call; the calling stage controls batching. Rate
- * limits (429) are retried with exponential backoff — free tiers throttle.
+ * request per `categorize` call; the calling stage controls batching.
+ * Transient failures are retried with exponential backoff: rate limits
+ * (429), provider hiccups (5xx), and Groq's `json_validate_failed` (400) —
+ * the model sometimes emits empty JSON for a batch, and a resend succeeds.
  */
 export class OpenAiCategorizer implements BatchCategorizer {
   constructor(private readonly options: OpenAiCategorizerOptions) {}
@@ -63,9 +65,8 @@ export class OpenAiCategorizer implements BatchCategorizer {
         return await this.categorizeOnce(inputs);
       } catch (error) {
         lastError = error;
-        // Transport/parse errors are not retryable; only 429/5xx are.
         const message = error instanceof Error ? error.message : String(error);
-        if (!/categorizer API (429|5\d\d)/.test(message)) throw error;
+        if (!/categorizer API (429|5\d\d)|json_validate_failed/.test(message)) throw error;
       }
     }
     throw lastError;
