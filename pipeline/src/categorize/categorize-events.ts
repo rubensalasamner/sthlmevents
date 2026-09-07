@@ -20,6 +20,10 @@ export type CategorizeEventsResult = {
 
 const CACHE_KEY_PREFIX = 'cat:';
 
+/** Free LLM tiers allow ~30 requests/min; pause between batches. */
+const BATCH_DELAY_MS = 2_500;
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 function classificationInput(event: StockholmEvent): string {
   return [event.title, event.description].filter(Boolean).join('\n').slice(0, 600);
 }
@@ -63,6 +67,7 @@ export async function categorizeEvents(
   }
 
   for (let offset = 0; offset < uncached.length; offset += batchSize) {
+    if (offset > 0) await sleep(BATCH_DELAY_MS);
     const batch = uncached.slice(offset, offset + batchSize);
     const results = await options.categorizer.categorize(batch);
     attempted += batch.length;

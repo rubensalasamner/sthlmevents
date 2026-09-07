@@ -37,9 +37,15 @@ const SYSTEM_PROMPT =
   'genuinely unclear — never invent categories. Reply with JSON only: ' +
   '{"categories": ["music", null, ...]} with the same order and length as the items.';
 
+/** Free LLM tiers are rate-limited per minute; pause between batches. */
+const BATCH_DELAY_MS = 2_500;
+const MAX_RETRIES = 4;
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 /**
  * Classifies texts via an OpenAI-compatible chat-completions endpoint. One
- * request per `categorize` call; the calling stage controls batching.
+ * request per `categorize` call; the calling stage controls batching. Rate
+ * limits (429) are retried with exponential backoff — free tiers throttle.
  */
 export class OpenAiCategorizer implements BatchCategorizer {
   constructor(private readonly options: OpenAiCategorizerOptions) {}
@@ -47,6 +53,25 @@ export class OpenAiCategorizer implements BatchCategorizer {
   async categorize(inputs: readonly string[]): Promise<(EventCategory | null)[]> {
     if (inputs.length === 0) return [];
 
+    let lastError: unknown;
+    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+      if (attempt > 0) {
+        const backoffMs = BATCH_DELAY_MS * 2 ** (attempt - 1);
+        await sleep(backoffMs);
+      }
+      try {
+        return await this.categorizeOnce(inputs);
+      } catch (error) {
+        lastError = error;
+        // Transport/parse errors are not retryable; only 429/5xx are.
+        const message = error instanceof Error ? error.message : String(error);
+        if (!/categorizer API (429|5\d\d)/.test(message)) throw error;
+      }
+    }
+    throw lastError;
+  }
+
+  private async categorizeOnce(inputs: readonly string[]): Promise<(EventCategory | null)[]> {
     const doFetch = this.options.fetchImpl ?? fetch;
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), this.options.timeoutMs ?? 30_000);
