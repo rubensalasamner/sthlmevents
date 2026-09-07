@@ -1,56 +1,71 @@
-# Welcome to your Expo app 👋
+# sthlmevents
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Stockholm events app: Expo (iOS/Android/web) + a data pipeline that aggregates
+events from 11 sources into a daily JSON snapshot.
 
 ## Get started
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
 ```bash
-npm run reset-project
+npm install
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+The app reads the bundled snapshot (`src/data/events.snapshot.json`). To work
+on the data pipeline, see `pipeline/README.md`.
 
-### Other setup steps
+## Deployment (daily-cron model)
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+The app has no backend. Data flows one way:
 
-## Learn more
+```
+pipeline (daily) -> events.snapshot.json -> Vercel -> app (remote fetch, bundled fallback)
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### 1. Vercel — web app + snapshot hosting
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+`vercel.json` configures the build (`npx expo export --platform web` → `dist/`)
+and routes:
 
-## Join the community
+- `/` — the web app (clean URLs, SPA fallback for unknown routes)
+- `/event/:id` — event detail deep links
+- `/events.snapshot.json` — the snapshot, served with CORS `*` so installed
+  native apps can fetch it too
 
-Join our community of developers creating universal apps.
+Import the repo in Vercel and deploy — no extra settings needed.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 2. GitHub Actions — daily snapshot refresh
+
+`.github/workflows/snapshot.yml` runs the pipeline at 03:40 UTC daily and
+commits the refreshed snapshot. Vercel redeploys automatically on the new
+commit. One-time setup:
+
+- Add the API keys from `pipeline/.env.example` as **repository secrets**
+  (`TICKETMASTER_API_KEY`, `TICKETMASTER_API_SECRET`,
+  `EVENEMANGSKOLLEN_API_KEY`, `EVENEMANGSKOLLEN_ANON_KEY`,
+  `CATEGORIZER_API_KEY` — the rest are optional). Missing keys skip that
+  source rather than failing the run.
+- Or run it manually via **Run workflow** to test.
+
+### 3. EAS — native builds with remote data
+
+The APK/ITA builds fetch the live snapshot from Vercel at startup and fall
+back to the bundled copy offline. Point them at the deployed snapshot:
+
+```bash
+eas env:create --name EXPO_PUBLIC_SNAPSHOT_URL \
+  --value https://<your-app>.vercel.app/events.snapshot.json \
+  --visibility plain
+```
+
+Set it per-environment if desired (`eas env` scopes: development / preview /
+production). Then build:
+
+```bash
+eas build -p android --profile preview   # APK for direct download/sharing
+eas build -p all --profile production    # store builds
+```
+
+The `preview` APK link that EAS prints can be shared with friends; on Android
+they allow "install from unknown sources" and install. iOS side-loading isn't
+possible outside TestFlight (requires the Apple Developer Program); iPhone
+users can use the web deployment in the meantime.

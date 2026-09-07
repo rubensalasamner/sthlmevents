@@ -1,0 +1,54 @@
+name: Daily snapshot
+
+# The daily-cron model: regenerate the event snapshot from all pipeline
+# sources, commit it, and let Vercel redeploy with fresh data. The app picks
+# the new snapshot up from EXPO_PUBLIC_SNAPSHOT_URL (or its bundled copy).
+
+on:
+  schedule:
+    # 03:40 UTC ≈ 05:40 Stockholm. Off the busy 00:00 cron minute.
+    - cron: '40 3 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm ci --prefix pipeline
+
+      - name: Generate snapshot
+        env:
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+          TICKETMASTER_API_SECRET: ${{ secrets.TICKETMASTER_API_SECRET }}
+          EVENEMANGSKOLLEN_API_KEY: ${{ secrets.EVENEMANGSKOLLEN_API_KEY }}
+          EVENEMANGSKOLLEN_ANON_KEY: ${{ secrets.EVENEMANGSKOLLEN_ANON_KEY }}
+          CATEGORIZER_API_KEY: ${{ secrets.CATEGORIZER_API_KEY }}
+          CATEGORIZER_BASE_URL: ${{ secrets.CATEGORIZER_BASE_URL }}
+          CATEGORIZER_MODEL: ${{ secrets.CATEGORIZER_MODEL }}
+        run: npm run snapshot --prefix pipeline
+
+      - name: Commit and push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(data): daily snapshot refresh [skip ci]'
+          file_pattern: src/data/events.snapshot.json pipeline/.cache/*.json
+          commit_user_name: github-actions[bot]
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
