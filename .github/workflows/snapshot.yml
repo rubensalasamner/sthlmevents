@@ -45,6 +45,11 @@ jobs:
           CATEGORIZER_MODEL: ${{ secrets.CATEGORIZER_MODEL }}
         run: npm run snapshot --prefix pipeline
 
+      - name: Ensure cache files exist
+        # git add fails on pathspecs that match nothing; placeholders keep the
+        # commit step stable even when the pipeline wrote no caches.
+        run: mkdir -p pipeline/.cache && touch pipeline/.cache/og-images.json pipeline/.cache/geocodes.json pipeline/.cache/categories.json
+
       - name: Commit and push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
