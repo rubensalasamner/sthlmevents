@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    aspectRatio: 3 / 4,
+    aspectRatio: 16 / 9,
   },
   imageOverlay: {
     position: 'absolute',
@@ -100,8 +100,8 @@ const styles = StyleSheet.create({
     gap: Spacing.one,
   },
   title: {
-    fontSize: 20,
-    lineHeight: 26,
+    fontSize: 17,
+    lineHeight: 22,
   },
   pressed: {
     opacity: 0.85,
