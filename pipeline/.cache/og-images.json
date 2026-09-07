@@ -14014,5 +14014,1045 @@
   "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/29333/122854/": {
     "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/29333/122854/Kulturhuset%20Stadsteatern",
     "fetchedAt": 1788796310591
+  },
+  "https://www.meetup.com/frenchconnectionstockholm/events/316384720/": {
+    "image": "https://secure.meetupstatic.com/photos/event/5/9/7/b/600_506422907.jpeg",
+    "fetchedAt": 1788811062392
+  },
+  "https://www.meetup.com/sthlm-sports-outdoors/events/316407384/": {
+    "image": "https://secure.meetupstatic.com/photos/event/6/f/4/b/600_532708491.jpeg",
+    "fetchedAt": 1788811062417
+  },
+  "https://kulturbiljetter.se/varukorg/8836/40432/ett-sargat-hj%C3%A4rta/": {
+    "image": null,
+    "fetchedAt": 1788811062759
+  },
+  "https://kulturbiljetter.se/varukorg/7808/40248/i-bl%C3%A5m%C3%A5larens-fotsp%C3%A5r-en-skymningsvandring-i-eug%C3%A8ne-janssons-stockholm/": {
+    "image": null,
+    "fetchedAt": 1788811062760
+  },
+  "https://kulturbiljetter.se/varukorg/8992/41348/mage-rygg-trygg/": {
+    "image": null,
+    "fetchedAt": 1788811062768
+  },
+  "https://kulturbiljetter.se/varukorg/8887/41659/g%C3%A4stspel-new-nordic-poling-dk-m-fl/": {
+    "image": null,
+    "fetchedAt": 1788811062771
+  },
+  "https://kulturbiljetter.se/varukorg/8836/40433/ett-sargat-hj%C3%A4rta/": {
+    "image": null,
+    "fetchedAt": 1788811062794
+  },
+  "https://kulturbiljetter.se/varukorg/8836/40435/ett-sargat-hj%C3%A4rta/": {
+    "image": null,
+    "fetchedAt": 1788811062797
+  },
+  "https://lu.ma/g9z5pd0q": {
+    "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/uh/8f573219-f27d-4505-836f-9a31849ec89a.png",
+    "fetchedAt": 1788811062802
+  },
+  "https://kulturbiljetter.se/varukorg/7808/40247/i-bl%C3%A5m%C3%A5larens-fotsp%C3%A5r-en-skymningsvandring-i-eug%C3%A8ne-janssons-stockholm/": {
+    "image": null,
+    "fetchedAt": 1788811063076
+  },
+  "https://kulturbiljetter.se/varukorg/9013/41509/morbror-vanja-skogsdemonen/": {
+    "image": null,
+    "fetchedAt": 1788811063090
+  },
+  "https://kulturbiljetter.se/varukorg/8887/40718/g%C3%A4stspel-new-nordic-poling-dk-m-fl/": {
+    "image": null,
+    "fetchedAt": 1788811063091
+  },
+  "https://kulturbiljetter.se/varukorg/8887/40719/g%C3%A4stspel-new-nordic-poling-dk-m-fl/": {
+    "image": null,
+    "fetchedAt": 1788811063120
+  },
+  "https://kulturbiljetter.se/varukorg/9013/41510/morbror-vanja-skogsdemonen/": {
+    "image": null,
+    "fetchedAt": 1788811063127
+  },
+  "https://kulturbiljetter.se/varukorg/8957/41159/n%C3%A4r-findus-var-liten-och-f%C3%B6rsvann-fr%C3%A5n-3-%C3%A5r-helg/": {
+    "image": null,
+    "fetchedAt": 1788811063136
+  },
+  "https://kulturbiljetter.se/varukorg/8887/40717/g%C3%A4stspel-new-nordic-poling-dk-m-fl/": {
+    "image": null,
+    "fetchedAt": 1788811063193
+  },
+  "https://kulturbiljetter.se/varukorg/9044/41618/h%C3%B6kis-visrum-presenterar-hasse-lind/": {
+    "image": null,
+    "fetchedAt": 1788811063221
+  },
+  "https://kulturbiljetter.se/varukorg/8916/40903/mycket-v%C3%A4sen-f%C3%B6r-lite-jazz/": {
+    "image": null,
+    "fetchedAt": 1788811063258
+  },
+  "https://www.meetup.com/frescati-badminton-meetup-group/events/316254888/": {
+    "image": "https://secure.meetupstatic.com/photos/event/6/d/9/7/600_519628055.jpeg",
+    "fetchedAt": 1788811063361
+  },
+  "https://kulturbiljetter.se/varukorg/8636/39662/johan-steng%C3%A5rd-50-%C3%A5r-p%C3%A5-mitt-s%C3%A4tt-my-way/": {
+    "image": null,
+    "fetchedAt": 1788811063412
+  },
+  "https://kulturbiljetter.se/varukorg/8992/41355/mage-rygg-trygg/": {
+    "image": null,
+    "fetchedAt": 1788811063423
+  },
+  "https://kulturbiljetter.se/varukorg/7533/40668/det-kommer-tigrar-2-5-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811063453
+  },
+  "https://kulturbiljetter.se/varukorg/8992/41349/mage-rygg-trygg/": {
+    "image": null,
+    "fetchedAt": 1788811063459
+  },
+  "https://kulturbiljetter.se/varukorg/8958/41162/n%C3%A4r-findus-var-liten-och-f%C3%B6rsvann-fr%C3%A5n-3-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811063466
+  },
+  "https://kulturbiljetter.se/varukorg/8836/40434/ett-sargat-hj%C3%A4rta/": {
+    "image": null,
+    "fetchedAt": 1788811063506
+  },
+  "https://kulturbiljetter.se/varukorg/7533/40669/det-kommer-tigrar-2-5-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811063517
+  },
+  "https://kulturbiljetter.se/varukorg/8992/41350/mage-rygg-trygg/": {
+    "image": null,
+    "fetchedAt": 1788811063554
+  },
+  "https://kulturbiljetter.se/varukorg/8958/41163/n%C3%A4r-findus-var-liten-och-f%C3%B6rsvann-fr%C3%A5n-3-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811063598
+  },
+  "https://kulturbiljetter.se/varukorg/7533/40670/det-kommer-tigrar-2-5-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811063694
+  },
+  "https://kulturbiljetter.se/varukorg/9054/41669/h%C3%B6kis-visrum-presenterar-valter-kinbom/": {
+    "image": null,
+    "fetchedAt": 1788811063749
+  },
+  "https://kulturbiljetter.se/varukorg/9030/41561/doktor-glas/": {
+    "image": null,
+    "fetchedAt": 1788811063773
+  },
+  "https://kulturbiljetter.se/varukorg/8889/40727/g%C3%A4stspel-walter-berge-och-h-c-fell/": {
+    "image": null,
+    "fetchedAt": 1788811063789
+  },
+  "https://kulturbiljetter.se/varukorg/8885/40753/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811063808
+  },
+  "https://kulturbiljetter.se/varukorg/9014/41515/sistag%C3%A5ngsv%C3%A4ljare/": {
+    "image": null,
+    "fetchedAt": 1788811063808
+  },
+  "https://kulturbiljetter.se/varukorg/7533/40699/det-kommer-tigrar-2-5-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811063837
+  },
+  "https://kulturbiljetter.se/varukorg/9030/41562/doktor-glas/": {
+    "image": null,
+    "fetchedAt": 1788811063856
+  },
+  "https://kulturbiljetter.se/varukorg/8889/40728/g%C3%A4stspel-walter-berge-och-h-c-fell/": {
+    "image": null,
+    "fetchedAt": 1788811063895
+  },
+  "https://kulturbiljetter.se/varukorg/9024/41550/give-peace-a-chance/": {
+    "image": null,
+    "fetchedAt": 1788811063946
+  },
+  "https://kulturbiljetter.se/varukorg/8984/41317/kl%C3%B6siga-katters-klubb-3-9-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811064019
+  },
+  "https://kulturbiljetter.se/varukorg/9014/41516/sistag%C3%A5ngsv%C3%A4ljare/": {
+    "image": null,
+    "fetchedAt": 1788811064083
+  },
+  "https://kulturbiljetter.se/varukorg/9031/41568/ska-man-va-r%C3%A4dd-nu/": {
+    "image": null,
+    "fetchedAt": 1788811064112
+  },
+  "https://kulturbiljetter.se/varukorg/9030/41563/doktor-glas/": {
+    "image": null,
+    "fetchedAt": 1788811064128
+  },
+  "https://kulturbiljetter.se/varukorg/9033/41582/einstein-funderar-familj-fr%C3%A5n-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811064150
+  },
+  "https://kulturbiljetter.se/varukorg/6310/40618/f%C3%A5glarnas-skolg%C3%A5rd-5-10-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811064152
+  },
+  "https://kulturbiljetter.se/varukorg/9031/41569/ska-man-va-r%C3%A4dd-nu/": {
+    "image": null,
+    "fetchedAt": 1788811064160
+  },
+  "https://kulturbiljetter.se/varukorg/8885/40747/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811064187
+  },
+  "https://kulturbiljetter.se/varukorg/5542/40581/jag-kan-2-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811064214
+  },
+  "https://kulturbiljetter.se/varukorg/8885/40621/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811064282
+  },
+  "https://kulturbiljetter.se/varukorg/5542/40582/jag-kan-2-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811064350
+  },
+  "https://ra.co/events/2531148": {
+    "image": null,
+    "fetchedAt": 1788811064362
+  },
+  "https://kulturbiljetter.se/varukorg/8885/40622/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811064400
+  },
+  "https://kulturbiljetter.se/varukorg/9023/41549/h%C3%B6kis-visrum-presenterar-ro-t/": {
+    "image": null,
+    "fetchedAt": 1788811064438
+  },
+  "https://kulturbiljetter.se/varukorg/5542/40583/jag-kan-2-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811064453
+  },
+  "https://kulturbiljetter.se/varukorg/9030/41564/doktor-glas/": {
+    "image": null,
+    "fetchedAt": 1788811064476
+  },
+  "https://kulturbiljetter.se/varukorg/8885/40623/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811064479
+  },
+  "https://kulturbiljetter.se/varukorg/9031/41570/ska-man-va-r%C3%A4dd-nu/": {
+    "image": null,
+    "fetchedAt": 1788811064521
+  },
+  "https://kulturbiljetter.se/varukorg/8978/41251/bokstavsbyr%C3%A5n/": {
+    "image": null,
+    "fetchedAt": 1788811064617
+  },
+  "https://kulturbiljetter.se/varukorg/9030/41565/doktor-glas/": {
+    "image": null,
+    "fetchedAt": 1788811064675
+  },
+  "https://kulturbiljetter.se/varukorg/5542/40606/jag-kan-2-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811064695
+  },
+  "https://kulturbiljetter.se/varukorg/9049/41661/lungs-by-duncan-macmillan/": {
+    "image": null,
+    "fetchedAt": 1788811064725
+  },
+  "https://kulturbiljetter.se/varukorg/9031/41571/ska-man-va-r%C3%A4dd-nu/": {
+    "image": null,
+    "fetchedAt": 1788811064753
+  },
+  "https://kulturbiljetter.se/varukorg/8885/40748/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811064781
+  },
+  "https://kulturbiljetter.se/varukorg/7533/41023/det-kommer-tigrar-2-5-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811064804
+  },
+  "https://kulturbiljetter.se/varukorg/8885/40839/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811064843
+  },
+  "https://kulturbiljetter.se/varukorg/8978/41252/bokstavsbyr%C3%A5n/": {
+    "image": null,
+    "fetchedAt": 1788811064943
+  },
+  "https://kulturbiljetter.se/varukorg/7533/40671/det-kommer-tigrar-2-5-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811064997
+  },
+  "https://kulturbiljetter.se/varukorg/9045/41619/visv%C3%A5gen-p%C3%A5-sk%C3%B6ldpadds%C3%B6n/": {
+    "image": null,
+    "fetchedAt": 1788811065027
+  },
+  "https://kulturbiljetter.se/varukorg/8978/41253/bokstavsbyr%C3%A5n/": {
+    "image": null,
+    "fetchedAt": 1788811065053
+  },
+  "https://kulturbiljetter.se/varukorg/7533/40672/det-kommer-tigrar-2-5-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811065077
+  },
+  "https://kulturbiljetter.se/varukorg/8978/41254/bokstavsbyr%C3%A5n/": {
+    "image": null,
+    "fetchedAt": 1788811065105
+  },
+  "https://kulturbiljetter.se/varukorg/6310/40616/f%C3%A5glarnas-skolg%C3%A5rd-5-10-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811065145
+  },
+  "https://kulturbiljetter.se/varukorg/9077/41755/h%C3%B6kis-visrum-presenterar-black-larsson/": {
+    "image": null,
+    "fetchedAt": 1788811065170
+  },
+  "https://www.skansen.se/se-och-gora/marknader-temadagar/hostmarknad/": {
+    "image": "https://www.skansen.se/wp-content/uploads/2023/09/Hostmarknad_pa_Skansentoppbild.jpg",
+    "fetchedAt": 1788811065214
+  },
+  "https://kulturbiljetter.se/varukorg/8952/41118/resv%C3%A4skan-fr%C3%A5n-2-5-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811065269
+  },
+  "https://kulturbiljetter.se/varukorg/8978/41255/bokstavsbyr%C3%A5n/": {
+    "image": null,
+    "fetchedAt": 1788811065353
+  },
+  "https://kulturbiljetter.se/varukorg/9090/41803/endagsvarelser/": {
+    "image": null,
+    "fetchedAt": 1788811065355
+  },
+  "https://kulturbiljetter.se/varukorg/8978/41256/bokstavsbyr%C3%A5n/": {
+    "image": null,
+    "fetchedAt": 1788811065390
+  },
+  "https://kulturbiljetter.se/varukorg/9090/41804/endagsvarelser/": {
+    "image": null,
+    "fetchedAt": 1788811065440
+  },
+  "https://kulturbiljetter.se/varukorg/8951/41117/resv%C3%A4skan-fr%C3%A5n-2-5-%C3%A5r-helg/": {
+    "image": null,
+    "fetchedAt": 1788811065480
+  },
+  "https://kulturbiljetter.se/varukorg/8953/41121/skogen-har-%C3%B6ron-7-12-%C3%A5r-helg/": {
+    "image": null,
+    "fetchedAt": 1788811065521
+  },
+  "https://kulturbiljetter.se/varukorg/8939/41037/titta-d%C3%A4r-1-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811065546
+  },
+  "https://kulturbiljetter.se/varukorg/9035/41596/en-h%C3%A4xas-dagbok-familj-4-10-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811065580
+  },
+  "https://kulturbiljetter.se/varukorg/9090/41805/endagsvarelser/": {
+    "image": null,
+    "fetchedAt": 1788811065602
+  },
+  "https://kulturbiljetter.se/varukorg/5067/41612/h%C3%B6kis-visrum-i-samarbete-med-studiefr%C3%A4mjandet-presenterar-%C3%B6ppen-scen/": {
+    "image": null,
+    "fetchedAt": 1788811065695
+  },
+  "https://kulturbiljetter.se/varukorg/9090/41806/endagsvarelser/": {
+    "image": null,
+    "fetchedAt": 1788811065698
+  },
+  "https://kulturbiljetter.se/varukorg/9055/41670/h%C3%B6kis-visrum-presenterar-caroline-stefan/": {
+    "image": null,
+    "fetchedAt": 1788811065713
+  },
+  "https://kulturbiljetter.se/varukorg/8954/41123/skogen-har-%C3%B6ron-7-12-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811065772
+  },
+  "https://www.debaser.se/events/rootvalta": {
+    "image": "https://admin.debaser.se/uploads/img/29220_20260625092041.jpg",
+    "fetchedAt": 1788811065791
+  },
+  "https://kulturbiljetter.se/varukorg/9090/41807/endagsvarelser/": {
+    "image": null,
+    "fetchedAt": 1788811065811
+  },
+  "https://kulturbiljetter.se/varukorg/7533/40700/det-kommer-tigrar-2-5-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811065839
+  },
+  "https://kulturbiljetter.se/varukorg/8836/41026/ett-sargat-hj%C3%A4rta/": {
+    "image": null,
+    "fetchedAt": 1788811065884
+  },
+  "https://kulturbiljetter.se/varukorg/5542/40597/jag-kan-2-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811065897
+  },
+  "https://kulturbiljetter.se/varukorg/8836/41027/ett-sargat-hj%C3%A4rta/": {
+    "image": null,
+    "fetchedAt": 1788811065919
+  },
+  "https://kulturbiljetter.se/varukorg/9065/41717/hummel-brodin-duo-beebop-till-broadway/": {
+    "image": null,
+    "fetchedAt": 1788811066027
+  },
+  "https://kulturbiljetter.se/varukorg/9064/41716/kammarjazz-med-gustafsson-boman-larsson-trio-trio/": {
+    "image": null,
+    "fetchedAt": 1788811066052
+  },
+  "https://kulturbiljetter.se/varukorg/7969/40637/kurt-och-kio-3-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811066089
+  },
+  "https://kulturbiljetter.se/varukorg/9047/41642/popmusik-i-symfoniorkester-konsert-med-erik-segerstedt-samuel-gajicki-ungdomsorkester-och-s-t-eriks-orkesterf%C3%B6rening/": {
+    "image": null,
+    "fetchedAt": 1788811066117
+  },
+  "https://kulturbiljetter.se/varukorg/8939/41038/titta-d%C3%A4r-1-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811066143
+  },
+  "https://kulturbiljetter.se/varukorg/7969/40639/kurt-och-kio-3-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811066165
+  },
+  "https://kulturbiljetter.se/varukorg/9056/41671/fr%C3%A5n-teaterscenen/": {
+    "image": null,
+    "fetchedAt": 1788811066180
+  },
+  "https://kulturbiljetter.se/varukorg/8991/41341/verkligheten-%C3%A4r-rund/": {
+    "image": null,
+    "fetchedAt": 1788811066209
+  },
+  "https://kulturbiljetter.se/varukorg/8872/40506/fr%C3%A5n-swing-till-funk/": {
+    "image": null,
+    "fetchedAt": 1788811066229
+  },
+  "https://kulturbiljetter.se/varukorg/7969/40640/kurt-och-kio-3-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811066244
+  },
+  "https://kulturbiljetter.se/varukorg/8958/41751/n%C3%A4r-findus-var-liten-och-f%C3%B6rsvann-fr%C3%A5n-3-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811066351
+  },
+  "https://kulturbiljetter.se/varukorg/8885/40845/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811066375
+  },
+  "https://kulturbiljetter.se/varukorg/8991/41342/verkligheten-%C3%A4r-rund/": {
+    "image": null,
+    "fetchedAt": 1788811066413
+  },
+  "https://kulturbiljetter.se/varukorg/9060/41712/h%C3%B6kis-visrum-presenterar-clmj/": {
+    "image": null,
+    "fetchedAt": 1788811066432
+  },
+  "https://kulturbiljetter.se/varukorg/7969/40641/kurt-och-kio-3-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811066457
+  },
+  "https://kulturbiljetter.se/varukorg/9066/41718/konsert-connecting-with-erykha-badu/": {
+    "image": null,
+    "fetchedAt": 1788811066503
+  },
+  "https://www.debaser.se/events/grave": {
+    "image": "https://admin.debaser.se/uploads/img/29130_20260327100026.png",
+    "fetchedAt": 1788811066518
+  },
+  "https://kulturbiljetter.se/varukorg/9011/41504/mycket-v%C3%A4sen-f%C3%B6r-lite-jazz/": {
+    "image": null,
+    "fetchedAt": 1788811066532
+  },
+  "https://kulturbiljetter.se/varukorg/8991/41343/verkligheten-%C3%A4r-rund/": {
+    "image": null,
+    "fetchedAt": 1788811066551
+  },
+  "https://kulturbiljetter.se/varukorg/8983/41314/karusell-3-8-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811066579
+  },
+  "https://kulturbiljetter.se/varukorg/9034/41589/sagan-som-rymde-familj-fr%C3%A5n-3-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811066673
+  },
+  "https://kulturbiljetter.se/varukorg/8991/41344/verkligheten-%C3%A4r-rund/": {
+    "image": null,
+    "fetchedAt": 1788811066736
+  },
+  "https://kulturbiljetter.se/varukorg/5542/40584/jag-kan-2-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811066754
+  },
+  "https://kulturbiljetter.se/varukorg/8958/41748/n%C3%A4r-findus-var-liten-och-f%C3%B6rsvann-fr%C3%A5n-3-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811066772
+  },
+  "https://kulturbiljetter.se/varukorg/8885/40624/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811066829
+  },
+  "https://kulturbiljetter.se/varukorg/6940/41629/vau-vau-0-24-m%C3%A5n/": {
+    "image": null,
+    "fetchedAt": 1788811066841
+  },
+  "https://kulturbiljetter.se/varukorg/8998/41389/s%C3%B6dra-latins-jazzfestival/": {
+    "image": null,
+    "fetchedAt": 1788811066856
+  },
+  "https://kulturbiljetter.se/varukorg/5542/40585/jag-kan-2-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811066865
+  },
+  "https://kulturbiljetter.se/varukorg/8954/41124/skogen-har-%C3%B6ron-7-12-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811066875
+  },
+  "https://kulturbiljetter.se/varukorg/8885/40625/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811066901
+  },
+  "https://kulturbiljetter.se/varukorg/9053/41668/h%C3%B6kis-visrum-presenterar-duojadling-ohlsson/": {
+    "image": null,
+    "fetchedAt": 1788811067008
+  },
+  "https://kulturbiljetter.se/varukorg/5542/40586/jag-kan-2-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811067064
+  },
+  "https://kulturbiljetter.se/varukorg/8958/41164/n%C3%A4r-findus-var-liten-och-f%C3%B6rsvann-fr%C3%A5n-3-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811067077
+  },
+  "https://kulturbiljetter.se/varukorg/8885/40626/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811067096
+  },
+  "https://kulturbiljetter.se/varukorg/9063/41715/creature-feature/": {
+    "image": null,
+    "fetchedAt": 1788811067146
+  },
+  "https://kulturbiljetter.se/varukorg/9087/41792/efter-sista-andetaget/": {
+    "image": null,
+    "fetchedAt": 1788811067180
+  },
+  "https://kulturbiljetter.se/varukorg/8984/41318/kl%C3%B6siga-katters-klubb-3-9-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811067182
+  },
+  "https://kulturbiljetter.se/varukorg/8957/41160/n%C3%A4r-findus-var-liten-och-f%C3%B6rsvann-fr%C3%A5n-3-%C3%A5r-helg/": {
+    "image": null,
+    "fetchedAt": 1788811067188
+  },
+  "https://kulturbiljetter.se/varukorg/9087/41794/efter-sista-andetaget/": {
+    "image": null,
+    "fetchedAt": 1788811067204
+  },
+  "https://kulturbiljetter.se/varukorg/8192/40864/jag-kan-2-5-%C3%A5r-relaxed-performance/": {
+    "image": null,
+    "fetchedAt": 1788811067233
+  },
+  "https://kulturbiljetter.se/varukorg/8984/41319/kl%C3%B6siga-katters-klubb-3-9-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811067332
+  },
+  "https://kulturbiljetter.se/varukorg/9084/41774/solitude-ensamhet-skivsl%C3%A4pp-poesi-och-piano-och-visor-p%C3%A5-fyra-spr%C3%A5k/": {
+    "image": null,
+    "fetchedAt": 1788811067384
+  },
+  "https://kulturbiljetter.se/varukorg/8885/40749/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811067404
+  },
+  "https://kulturbiljetter.se/varukorg/7533/40673/det-kommer-tigrar-2-5-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811067419
+  },
+  "https://kulturbiljetter.se/varukorg/9089/41800/leffe-fyller-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811067470
+  },
+  "https://kulturbiljetter.se/varukorg/9045/41620/visv%C3%A5gen-p%C3%A5-sk%C3%B6ldpadds%C3%B6n/": {
+    "image": null,
+    "fetchedAt": 1788811067506
+  },
+  "https://kulturbiljetter.se/varukorg/7533/40674/det-kommer-tigrar-2-5-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811067507
+  },
+  "https://kulturbiljetter.se/varukorg/9089/41801/leffe-fyller-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811067520
+  },
+  "https://kulturbiljetter.se/varukorg/7533/40675/det-kommer-tigrar-2-5-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811067535
+  },
+  "https://kulturbiljetter.se/varukorg/9052/41667/h%C3%B6kis-visrum-presenterar-elins-backe/": {
+    "image": null,
+    "fetchedAt": 1788811067550
+  },
+  "https://kulturbiljetter.se/varukorg/9089/41802/leffe-fyller-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811067653
+  },
+  "https://kulturbiljetter.se/varukorg/8940/41201/muu-sa-grisen-fr%C3%A5n-3-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811067715
+  },
+  "https://kulturbiljetter.se/varukorg/9087/41793/efter-sista-andetaget/": {
+    "image": null,
+    "fetchedAt": 1788811067723
+  },
+  "https://kulturbiljetter.se/varukorg/7643/41639/stj%C3%A4rnhimlar/": {
+    "image": null,
+    "fetchedAt": 1788811067733
+  },
+  "https://kulturbiljetter.se/varukorg/8939/41040/titta-d%C3%A4r-1-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811067793
+  },
+  "https://kulturbiljetter.se/varukorg/7533/40701/det-kommer-tigrar-2-5-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811067822
+  },
+  "https://kulturbiljetter.se/varukorg/8668/39770/utvandrarna-1-0-ett-svenskt-epos-i-huckle-och-mis%C3%A4r/": {
+    "image": null,
+    "fetchedAt": 1788811067830
+  },
+  "https://kulturbiljetter.se/varukorg/9087/41795/efter-sista-andetaget/": {
+    "image": null,
+    "fetchedAt": 1788811067843
+  },
+  "https://kulturbiljetter.se/varukorg/9033/41584/einstein-funderar-familj-fr%C3%A5n-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811067867
+  },
+  "https://kulturbiljetter.se/varukorg/8885/40842/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811067883
+  },
+  "https://kulturbiljetter.se/varukorg/6940/41634/vau-vau-0-24-m%C3%A5n/": {
+    "image": null,
+    "fetchedAt": 1788811067985
+  },
+  "https://kulturbiljetter.se/varukorg/8668/39772/utvandrarna-1-0-ett-svenskt-epos-i-huckle-och-mis%C3%A4r/": {
+    "image": null,
+    "fetchedAt": 1788811068051
+  },
+  "https://kulturbiljetter.se/varukorg/8668/39771/utvandrarna-1-0-ett-svenskt-epos-i-huckle-och-mis%C3%A4r/": {
+    "image": null,
+    "fetchedAt": 1788811068053
+  },
+  "https://kulturbiljetter.se/varukorg/5067/41613/h%C3%B6kis-visrum-i-samarbete-med-studiefr%C3%A4mjandet-presenterar-%C3%B6ppen-scen/": {
+    "image": null,
+    "fetchedAt": 1788811068055
+  },
+  "https://kulturbiljetter.se/varukorg/9074/41746/h%C3%B6kis-visrum-presenterar-carolina-magdalena/": {
+    "image": null,
+    "fetchedAt": 1788811068107
+  },
+  "https://kulturbiljetter.se/varukorg/8668/39773/utvandrarna-1-0-ett-svenskt-epos-i-huckle-och-mis%C3%A4r/": {
+    "image": null,
+    "fetchedAt": 1788811068140
+  },
+  "https://kulturbiljetter.se/varukorg/8939/41206/titta-d%C3%A4r-1-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811068170
+  },
+  "https://kulturbiljetter.se/varukorg/8668/39774/utvandrarna-1-0-ett-svenskt-epos-i-huckle-och-mis%C3%A4r/": {
+    "image": null,
+    "fetchedAt": 1788811068171
+  },
+  "https://kulturbiljetter.se/varukorg/8939/41207/titta-d%C3%A4r-1-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811068189
+  },
+  "https://kulturbiljetter.se/varukorg/8668/39775/utvandrarna-1-0-ett-svenskt-epos-i-huckle-och-mis%C3%A4r/": {
+    "image": null,
+    "fetchedAt": 1788811068225
+  },
+  "https://kulturbiljetter.se/varukorg/8975/41230/h%C3%A4pp/": {
+    "image": null,
+    "fetchedAt": 1788811068308
+  },
+  "https://kulturbiljetter.se/varukorg/7969/40642/kurt-och-kio-3-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811068378
+  },
+  "https://kulturbiljetter.se/varukorg/8975/41231/h%C3%A4pp/": {
+    "image": null,
+    "fetchedAt": 1788811068379
+  },
+  "https://kulturbiljetter.se/varukorg/7969/40643/kurt-och-kio-3-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811068390
+  },
+  "https://kulturbiljetter.se/varukorg/7707/40344/das-kapital-ett-musikdramatiskt-agitatorium/": {
+    "image": null,
+    "fetchedAt": 1788811068432
+  },
+  "https://kulturbiljetter.se/varukorg/8975/41232/h%C3%A4pp/": {
+    "image": null,
+    "fetchedAt": 1788811068456
+  },
+  "https://kulturbiljetter.se/varukorg/7969/40644/kurt-och-kio-3-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811068496
+  },
+  "https://kulturbiljetter.se/varukorg/7707/40345/das-kapital-ett-musikdramatiskt-agitatorium/": {
+    "image": null,
+    "fetchedAt": 1788811068498
+  },
+  "https://kulturbiljetter.se/varukorg/7707/40348/das-kapital-ett-musikdramatiskt-agitatorium/": {
+    "image": null,
+    "fetchedAt": 1788811068522
+  },
+  "https://kulturbiljetter.se/varukorg/7969/40638/kurt-och-kio-3-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811068565
+  },
+  "https://kulturbiljetter.se/varukorg/8940/41054/muu-sa-grisen-fr%C3%A5n-3-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811068631
+  },
+  "https://kulturbiljetter.se/varukorg/5542/40598/jag-kan-2-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811068702
+  },
+  "https://kulturbiljetter.se/varukorg/7707/40350/das-kapital-ett-musikdramatiskt-agitatorium/": {
+    "image": null,
+    "fetchedAt": 1788811068706
+  },
+  "https://kulturbiljetter.se/varukorg/8939/41041/titta-d%C3%A4r-1-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811068719
+  },
+  "https://kulturbiljetter.se/varukorg/5542/40610/jag-kan-2-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811068770
+  },
+  "https://kulturbiljetter.se/varukorg/5542/40611/jag-kan-2-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811068793
+  },
+  "https://kulturbiljetter.se/varukorg/8668/39776/utvandrarna-1-0-ett-svenskt-epos-i-huckle-och-mis%C3%A4r/": {
+    "image": null,
+    "fetchedAt": 1788811068818
+  },
+  "https://kulturbiljetter.se/varukorg/8948/41102/skoja-bara-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811068822
+  },
+  "https://kulturbiljetter.se/varukorg/7707/40346/das-kapital-ett-musikdramatiskt-agitatorium/": {
+    "image": null,
+    "fetchedAt": 1788811068853
+  },
+  "https://kulturbiljetter.se/varukorg/9061/41713/h%C3%B6kis-visrum-presenterar-lars-persa/": {
+    "image": null,
+    "fetchedAt": 1788811068900
+  },
+  "https://kulturbiljetter.se/varukorg/8950/41111/hoppsan-fr%C3%A5n-4-%C3%A5r-f%C3%B6r-seniorer-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811068969
+  },
+  "https://kulturbiljetter.se/varukorg/7707/40347/das-kapital-ett-musikdramatiskt-agitatorium/": {
+    "image": null,
+    "fetchedAt": 1788811069031
+  },
+  "https://kulturbiljetter.se/varukorg/8948/41103/skoja-bara-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811069038
+  },
+  "https://kulturbiljetter.se/varukorg/8982/41307/boll-boll-boll-fr%C3%A5n-2-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811069053
+  },
+  "https://kulturbiljetter.se/varukorg/9035/41598/en-h%C3%A4xas-dagbok-familj-4-10-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811069107
+  },
+  "https://kulturbiljetter.se/varukorg/7707/40351/das-kapital-ett-musikdramatiskt-agitatorium/": {
+    "image": null,
+    "fetchedAt": 1788811069140
+  },
+  "https://kulturbiljetter.se/varukorg/8982/41308/boll-boll-boll-fr%C3%A5n-2-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811069144
+  },
+  "https://kulturbiljetter.se/varukorg/7533/40702/det-kommer-tigrar-2-5-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811069152
+  },
+  "https://kulturbiljetter.se/varukorg/8949/41109/hoppsan-fr%C3%A5n-4-%C3%A5r-f%C3%B6r-seniorer-helg/": {
+    "image": null,
+    "fetchedAt": 1788811069170
+  },
+  "https://kulturbiljetter.se/varukorg/7533/40676/det-kommer-tigrar-2-5-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811069226
+  },
+  "https://kulturbiljetter.se/varukorg/8885/40761/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811069307
+  },
+  "https://kulturbiljetter.se/varukorg/9045/41621/visv%C3%A5gen-p%C3%A5-sk%C3%B6ldpadds%C3%B6n/": {
+    "image": null,
+    "fetchedAt": 1788811069355
+  },
+  "https://kulturbiljetter.se/varukorg/7533/40677/det-kommer-tigrar-2-5-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811069355
+  },
+  "https://kulturbiljetter.se/varukorg/8885/40762/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811069378
+  },
+  "https://kulturbiljetter.se/varukorg/7533/40678/det-kommer-tigrar-2-5-6-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811069432
+  },
+  "https://kulturbiljetter.se/varukorg/9088/41799/h%C3%B6kis-visrum-presenterar-ted-bjurwilll/": {
+    "image": null,
+    "fetchedAt": 1788811069458
+  },
+  "https://kulturbiljetter.se/varukorg/8885/40629/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811069480
+  },
+  "https://kulturbiljetter.se/varukorg/8981/41304/en-g%C3%A5ng-till-3-5-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811069484
+  },
+  "https://kulturbiljetter.se/varukorg/8992/41358/mage-rygg-trygg/": {
+    "image": null,
+    "fetchedAt": 1788811069492
+  },
+  "https://kulturbiljetter.se/varukorg/8668/39777/utvandrarna-1-0-ett-svenskt-epos-i-huckle-och-mis%C3%A4r/": {
+    "image": null,
+    "fetchedAt": 1788811069555
+  },
+  "https://kulturbiljetter.se/varukorg/8992/41359/mage-rygg-trygg/": {
+    "image": null,
+    "fetchedAt": 1788811069625
+  },
+  "https://kulturbiljetter.se/varukorg/8992/41351/mage-rygg-trygg/": {
+    "image": null,
+    "fetchedAt": 1788811069674
+  },
+  "https://kulturbiljetter.se/varukorg/8668/39778/utvandrarna-1-0-ett-svenskt-epos-i-huckle-och-mis%C3%A4r/": {
+    "image": null,
+    "fetchedAt": 1788811069680
+  },
+  "https://kulturbiljetter.se/varukorg/8992/41352/mage-rygg-trygg/": {
+    "image": null,
+    "fetchedAt": 1788811069695
+  },
+  "https://kulturbiljetter.se/varukorg/5067/41614/h%C3%B6kis-visrum-i-samarbete-med-studiefr%C3%A4mjandet-presenterar-%C3%B6ppen-scen/": {
+    "image": null,
+    "fetchedAt": 1788811069762
+  },
+  "https://kulturbiljetter.se/varukorg/8992/41353/mage-rygg-trygg/": {
+    "image": null,
+    "fetchedAt": 1788811069793
+  },
+  "https://kulturbiljetter.se/varukorg/9076/41754/h%C3%B6kis-visrum-presenterar-ola-sandstr%C3%B6m/": {
+    "image": null,
+    "fetchedAt": 1788811069795
+  },
+  "https://kulturbiljetter.se/varukorg/8976/41237/allt-%C3%A4r-matte/": {
+    "image": null,
+    "fetchedAt": 1788811069806
+  },
+  "https://kulturbiljetter.se/varukorg/8956/41153/julfrossa-fr%C3%A5n-5-%C3%A5r-helg/": {
+    "image": null,
+    "fetchedAt": 1788811069821
+  },
+  "https://kulturbiljetter.se/varukorg/9034/41591/sagan-som-rymde-familj-fr%C3%A5n-3-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811069879
+  },
+  "https://kulturbiljetter.se/varukorg/8956/41144/julfrossa-fr%C3%A5n-5-%C3%A5r-helg/": {
+    "image": null,
+    "fetchedAt": 1788811069966
+  },
+  "https://kulturbiljetter.se/varukorg/8940/41055/muu-sa-grisen-fr%C3%A5n-3-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811070000
+  },
+  "https://kulturbiljetter.se/varukorg/8976/41238/allt-%C3%A4r-matte/": {
+    "image": null,
+    "fetchedAt": 1788811070004
+  },
+  "https://kulturbiljetter.se/varukorg/8976/41239/allt-%C3%A4r-matte/": {
+    "image": null,
+    "fetchedAt": 1788811070020
+  },
+  "https://kulturbiljetter.se/varukorg/8955/41129/julfrossa-fr%C3%A5n-5-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811070088
+  },
+  "https://kulturbiljetter.se/varukorg/8976/41241/allt-%C3%A4r-matte/": {
+    "image": null,
+    "fetchedAt": 1788811070115
+  },
+  "https://kulturbiljetter.se/varukorg/6940/41632/vau-vau-0-24-m%C3%A5n/": {
+    "image": null,
+    "fetchedAt": 1788811070120
+  },
+  "https://kulturbiljetter.se/varukorg/8956/41145/julfrossa-fr%C3%A5n-5-%C3%A5r-helg/": {
+    "image": null,
+    "fetchedAt": 1788811070141
+  },
+  "https://kulturbiljetter.se/varukorg/8940/41056/muu-sa-grisen-fr%C3%A5n-3-%C3%A5r/": {
+    "image": null,
+    "fetchedAt": 1788811070145
+  },
+  "https://kulturbiljetter.se/varukorg/8955/41132/julfrossa-fr%C3%A5n-5-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811070206
+  },
+  "https://kulturbiljetter.se/varukorg/9059/41680/j%C3%A4garna-p%C3%A5-karinhall/": {
+    "image": null,
+    "fetchedAt": 1788811070308
+  },
+  "https://kulturbiljetter.se/varukorg/9059/41681/j%C3%A4garna-p%C3%A5-karinhall/": {
+    "image": null,
+    "fetchedAt": 1788811070329
+  },
+  "https://kulturbiljetter.se/varukorg/8956/41147/julfrossa-fr%C3%A5n-5-%C3%A5r-helg/": {
+    "image": null,
+    "fetchedAt": 1788811070332
+  },
+  "https://kulturbiljetter.se/varukorg/8495/39176/presentkort-p%C3%A5-uusiteatteri-uusiteatterin-lahjakortti/": {
+    "image": null,
+    "fetchedAt": 1788811070352
+  },
+  "https://kulturbiljetter.se/varukorg/7180/39390/teater-tre-%C3%A5rskort/": {
+    "image": null,
+    "fetchedAt": 1788811070415
+  },
+  "https://kulturbiljetter.se/varukorg/8958/41779/n%C3%A4r-findus-var-liten-och-f%C3%B6rsvann-fr%C3%A5n-3-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811070433
+  },
+  "https://kulturbiljetter.se/varukorg/8958/41781/n%C3%A4r-findus-var-liten-och-f%C3%B6rsvann-fr%C3%A5n-3-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811070437
+  },
+  "https://kulturbiljetter.se/varukorg/8885/41810/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811070467
+  },
+  "https://kulturbiljetter.se/varukorg/9059/41685/j%C3%A4garna-p%C3%A5-karinhall/": {
+    "image": null,
+    "fetchedAt": 1788811070475
+  },
+  "https://kulturbiljetter.se/varukorg/8885/41811/tomtebobarnen-1-3-%C3%A5r-obs-spelas-p%C3%A5-lilla-3-samaritgr%C3%A4nd-3/": {
+    "image": null,
+    "fetchedAt": 1788811070538
+  },
+  "https://kulturbiljetter.se/varukorg/9059/41689/j%C3%A4garna-p%C3%A5-karinhall/": {
+    "image": null,
+    "fetchedAt": 1788811070638
+  },
+  "https://kulturbiljetter.se/varukorg/9059/41690/j%C3%A4garna-p%C3%A5-karinhall/": {
+    "image": null,
+    "fetchedAt": 1788811070656
+  },
+  "https://kulturbiljetter.se/varukorg/8956/41146/julfrossa-fr%C3%A5n-5-%C3%A5r-helg/": {
+    "image": null,
+    "fetchedAt": 1788811070657
+  },
+  "https://kulturbiljetter.se/varukorg/9080/41758/bellman-och-gustaf-iii-h%C3%B6stm%C3%B6te-s%C3%A4llskapet-gustaf-iii-bellmanss%C3%A4llskapet/": {
+    "image": null,
+    "fetchedAt": 1788811070686
+  },
+  "https://kulturbiljetter.se/varukorg/8991/41345/verkligheten-%C3%A4r-rund/": {
+    "image": null,
+    "fetchedAt": 1788811070750
+  },
+  "https://kulturbiljetter.se/varukorg/8955/41133/julfrossa-fr%C3%A5n-5-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811070760
+  },
+  "https://kulturbiljetter.se/varukorg/9059/41697/j%C3%A4garna-p%C3%A5-karinhall/": {
+    "image": null,
+    "fetchedAt": 1788811070763
+  },
+  "https://kulturbiljetter.se/varukorg/8976/41240/allt-%C3%A4r-matte/": {
+    "image": null,
+    "fetchedAt": 1788811070789
+  },
+  "https://kulturbiljetter.se/varukorg/9078/41756/h%C3%B6kis-visrum-presenterar-gunnar-k%C3%A4llstr%C3%B6m/": {
+    "image": null,
+    "fetchedAt": 1788811070794
+  },
+  "https://kulturbiljetter.se/varukorg/8955/41130/julfrossa-fr%C3%A5n-5-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811070870
+  },
+  "https://kulturbiljetter.se/varukorg/8955/41131/julfrossa-fr%C3%A5n-5-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811070980
+  },
+  "https://kulturbiljetter.se/varukorg/8956/41148/julfrossa-fr%C3%A5n-5-%C3%A5r-helg/": {
+    "image": null,
+    "fetchedAt": 1788811070983
+  },
+  "https://kulturbiljetter.se/varukorg/9059/41711/j%C3%A4garna-p%C3%A5-karinhall/": {
+    "image": null,
+    "fetchedAt": 1788811070984
+  },
+  "https://kulturbiljetter.se/varukorg/9059/41695/j%C3%A4garna-p%C3%A5-karinhall/": {
+    "image": null,
+    "fetchedAt": 1788811071008
+  },
+  "https://kulturbiljetter.se/varukorg/9059/41684/j%C3%A4garna-p%C3%A5-karinhall/": {
+    "image": null,
+    "fetchedAt": 1788811071085
+  },
+  "https://kulturbiljetter.se/varukorg/9059/41694/j%C3%A4garna-p%C3%A5-karinhall/": {
+    "image": null,
+    "fetchedAt": 1788811071087
+  },
+  "https://kulturbiljetter.se/varukorg/9059/41696/j%C3%A4garna-p%C3%A5-karinhall/": {
+    "image": null,
+    "fetchedAt": 1788811071089
+  },
+  "https://kulturbiljetter.se/varukorg/9059/41693/j%C3%A4garna-p%C3%A5-karinhall/": {
+    "image": null,
+    "fetchedAt": 1788811071110
+  },
+  "https://kulturbiljetter.se/varukorg/9059/41688/j%C3%A4garna-p%C3%A5-karinhall/": {
+    "image": null,
+    "fetchedAt": 1788811071114
+  },
+  "https://kulturbiljetter.se/varukorg/8957/41771/n%C3%A4r-findus-var-liten-och-f%C3%B6rsvann-fr%C3%A5n-3-%C3%A5r-helg/": {
+    "image": null,
+    "fetchedAt": 1788811071204
+  },
+  "https://kulturbiljetter.se/varukorg/9059/41692/j%C3%A4garna-p%C3%A5-karinhall/": {
+    "image": null,
+    "fetchedAt": 1788811071299
+  },
+  "https://kulturbiljetter.se/varukorg/8958/41777/n%C3%A4r-findus-var-liten-och-f%C3%B6rsvann-fr%C3%A5n-3-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811071299
+  },
+  "https://kulturbiljetter.se/varukorg/9059/41687/j%C3%A4garna-p%C3%A5-karinhall/": {
+    "image": null,
+    "fetchedAt": 1788811071315
+  },
+  "https://kulturbiljetter.se/varukorg/8958/41778/n%C3%A4r-findus-var-liten-och-f%C3%B6rsvann-fr%C3%A5n-3-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811071332
+  },
+  "https://kulturbiljetter.se/varukorg/8958/41776/n%C3%A4r-findus-var-liten-och-f%C3%B6rsvann-fr%C3%A5n-3-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811071414
+  },
+  "https://kulturbiljetter.se/varukorg/9059/41691/j%C3%A4garna-p%C3%A5-karinhall/": {
+    "image": null,
+    "fetchedAt": 1788811071415
+  },
+  "https://kulturbiljetter.se/varukorg/8958/41780/n%C3%A4r-findus-var-liten-och-f%C3%B6rsvann-fr%C3%A5n-3-%C3%A5r-vardag/": {
+    "image": null,
+    "fetchedAt": 1788811071424
   }
 }

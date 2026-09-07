@@ -478,5 +478,485 @@
   "cat:Stickbio: Practical Magic: Family Legacy\nPractical Magic: Family Legacy återvänder till Owens-familjens förtrollade värld. När en ny generation häxor börjar upptäcka familjens mörka hemligheter och övernaturliga krafter väcks den uråldriga förbannelsen till liv igen. Sandra Bullock och Nicole Kidman återvänder i en magisk berättelse om familj, kärlek och kampen för att bryta ett öde som förföljt släkten i århundraden.": {
     "value": "family",
     "fetchedAt": 1788795196885
+  },
+  "cat:I Blåmålarens fotspår - En skymningsvandring i Eugène Janssons Stockholm\nEugène Jansson har kallats för blåmålaren och målade under en lång tid ett flertal landskapsmålningar av Stockholm i ett speciellt blått ljus. I den här vandringen följer du med konstvetaren och den auktoriserade guiden Emil Åkerö från Art Tours Sthlm på en tur över Söders Höjder på Södermalm i skymningsljus. Emil är även doktorand i konstvetenskap vid Åbo Akademi med ett projekt om Eugène Jansson och Gösta Adrian-Nilssons konst. I visningen får man se var Jansson levde och verkade, men också var hans målningar utspelar s": {
+    "value": "art",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Ett Sargat Hjärta\nEn formulerad åsikt som landar fel. Det kan vara allt som krävs för att förlora sina vänner, sitt arbete och sitt sammanhang. Och det kan gå fort. Ett Sargat Hjärta är en berättelse om skam, skuld och straff, och de förödande konsekvenserna av det vi kallar cancelkultur. Är det rätt att förlora allt för en uttalad åsikt, ett diffust skitigt förflutet, något man gjort som varit förkastligt eller ett brott man anklagas för? Går det att förklara sig, be om ursäkt eller bli hörd, när minnen är fragmentariska och sanningen om det som hänt är omstridd? Och vem eller vilka dömer, nä": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Mage, rygg, trygg\nMage, rygg, trygg - ett dansdrama för bebisar i tre akter av Lisa Spets Målgrupp: 4-12 månader En föreställning som med värme tar bebisar och konst på allvar. Kerstin och Savanna bjuder in till tre små dansakter med glittrande skor, dansande fingrar och gungande knän. Här finns tid att titta, lyssna och pausa en stund tillsammans med din bebis. Koreografi: Lisa Spets Dans: Kerstin Abrahamsson & Savanna Hanneryd Scenografi & kostym: Katarina Wiklund Ljus: Ronald Salas Musik: Clyde Blomberg Dekorbygge: Clyde Blomberg Fotograf: Nadja Endler Skräddare: Christian Hedenfeldt Produk": {
+    "value": "family",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Entrébiljetter/Tickets": {
+    "value": null,
+    "fetchedAt": 1788810009212
+  },
+  "cat:Da-da-da\nTitta! Lyssna! Känn! För den allra yngsta publiken – bebisarna! Med inspiration från både huvudfotingar och konstens värld träffar vi figurer i välkända situationer. Som att mötas och skiljas, som att dyka upp och försvinna, som att finnas fast inte synas, som att vara nära och isär, som att vilja ha något man inte får och som att få något man inte vill ha.": {
+    "value": "family",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Bennypriset 2026\nHjärtligt välkommen till utdelningen av 2026 års Bennypris. Ceremonin äger rum måndagen den 14 september kl 18.00 i det K-märkta huset Trappan i Vällingby centrum.": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Laserskärare workshop\nI Lavas laserskärare kan du skära och gravera i material som plywood, MDF, läder och färgad (ej genomskinlig) akryl. Du kan skapa allt från egna smycken och askar till miniatyrmodeller och mycket mer. Kolla gärna på den här videon för att få inspiration och se vad som är möjligt!": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Språkcafé på svenska\nVill du träna svenska? Välkommen till vårt språkcafé som leds av volontärer från Röda Korset. Biblioteket bjuder på fika. Du behöver inte anmäla dig.": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Bokfika - vi läser tillsammans!\nKom och läs med oss! Var tredje vecka inspireras vi av metoden Shared reading. För dig som är nyfiken! Vi läser korta noveller/texter eller dikter, moderna såväl som klassiker. Inga förberedelser krävs utan texterna delas ut på plats. Vi läser och samtalar över en fika. Välkommen! Du behöver inte anmäla dig.": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:After School\nKom till vårt aktivitetsrum och skapa, fika och få boktips! Under hösten kommer vi bland annat skapa med gips, göra mobilsmycken och djurmasker. Bara att dyka upp! Från tio år.": {
+    "value": "family",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Språkcafé på franska\nSpråkcaféet vänder sig till dig som redan kan lite franska och vill öva på konversation.\nIngen föranmälan men begränsat antal platser.\nVälkommen!": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Kreativ eftermiddag!\nVarmt välkommen till Kreativ eftermiddag där vi utforskar olika uttryckssätt med inspiration från bilderböcker och konst. I ateljén utforskar vi olika material och tekniker! Varierande innehåll från vecka till vecka. För åldern 3-6 år. Vi ses varannan vecka i ateljén med start 8/9. Drop-in!": {
+    "value": "family",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Workshop: Lär dig teckna manga!\nVälkommen på en gratis workshop för dig mellan 10 och 19 år med funktionsnedsättning där du får lära dig om hur man tecknar manga. Manga är de klassiska japanska serierna som under de senaste decennierna har blivit allt mer populära även i västvärlden. Allt material finns på plats men du får gärna ta med ditt egna. OBS, för att boka din plats, klicka på länken längre ner.": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Invigning med besök av Berwaldhallen och Dramaten\nOBS! Evenemanget är uppskjutet. Vi kommer att komma med ett nytt datum.": {
+    "value": "theatre",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Språkcafé på svenska\nVill du träna svenska?\nVälkommen på språkcafé!\nVi träffas på tisdagar kl 17.30 - 18.30 och pratar, fikar och skrattar i Kulturbiblioteket, vån 2.": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Språkcafé på svenska\nKom och öva din svenska! Information om hur du anmäler dig till det här språkcaféet finns längre ner på sidan.": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Bästa biblioteksklubben!\nÄr du 9-12 år och tycker om att läsa, prata och diskutera det du läst med andra som läst samma? Då är du perfekt medlem i Bästa Biblioteksklubben! Här läser, pratar, leker och fikar vi, plus ger varandra våra bästa boktips! Självklart bestämmer vi tillsammans vad vi vill läsa vid nästa tillfälle. Välkommen!": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Läxhjälp på Skärholmens bibliotek\nBehöver du hjälp med läxorna? Varje tisdag och torsdag är våra volontärer från Röda Korset här och kan hjälpa dig. Alla åldrar är välkomna till läxhjälpen. Du behöver inte anmäla dig i förväg.": {
+    "value": "family",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Läxhjälp på Hässelby villastads bibliotek\nVill du ha hjälp med läxor och skolarbeten? Går du på låg, mellan eller högstadiet, eller gymnasiet? Hos oss kan du få hjälp i alla ämnen för alla stadier, ta med dina läxor och kom och träffa våra duktiga volontärer!": {
+    "value": "family",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Språkcafé på svenska\nTräna din svenska i samtal med våra volontärer och deltagare från alla världens länder! Vi bjuder på kaffe och Thé!\nVälkommen!": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Bokklubb: Vem har sagt något om kärlek?\nInför författarsamtalet med Elaf Ali tisdag 6 oktober läser vi hennes bok \"Vem har sagt något om kärlek?\" tillsammans och pratar om vad vi vill diskutera vidare med Elaf Ali. Vill du vara med i bokcirkeln? Välkommen efter stängning! Knacka på rutan så släpper vi in dig. Vi hjälper dig få tag i ett exemplar av boken.": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Eftermiddagshäng med fika\nI väntan på att Språkcaféverksamheten ska börja är du välkommen till Språkstudion på Kista bibliotek under tisdagseftermiddagar för att fika, prata svenska och träffa nya och gamla vänner!": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Specialvisning: Sensommarblom i parken\nTrädgårdsmästare Marina Rydberg tar er med på en inspirerande vandring med visning av träd och blommor i prinsens vackra park.": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:DubbelMusik: Folksångerna inspirerar\nDUBBELMUSIK SYD Rasmus Borg påbörjade sitt projekt “Sång och dans” 2014 med idén att bygga något nytt av något gammalt, lokalt och folkligt. Till grund för musiken ligger vis- och dansmelodier från Rasmus hemtrakter i Skåne. Melodierna har staplats på varandra, filtrerats och stöpts om till nya låtar som bär spår av sitt skånska och folkliga ursprung men som också talar ett eget språk. Man kan ana beröringspunkter med såväl jazzprofiler såsom Jimmy Giuffre, Jan Johansson som tidiga 1900-talets klassiska musik; Erik Satie, Gabriel Fauré och just Béla Bartók ": {
+    "value": "music",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Öppen kroki\nKom och upptäck hur kul och lärorikt det är att teckna kroki! Vi tecknar efter en levande modell i både korta och långa ställningar. Att teckna kroki är ett bra sätt att träna upp ögat och handen att fånga volym, proportioner och balans. Här får du, under sakkunnig vägledning, öva upp din förmåga att teckna modell. Vi erbjuder \"Öppen kroki\" varje tisdag från den 9 september till och med den 25 november. Varje tillfälle bokas separat. Nivå Alla kan delta oavsett förkunskaper. Bokningen öppnar samma dag som aktuellt krokitillfälle ges. I och med att bokning sker samma dag som aktivit": {
+    "value": "art",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Carola - Mosebacketerrassen\nCarola firar sin 60-årsdag med en unik födelsedagskonsert på Mosebacketerrassen Varmt välkommen till “Carolafesten – Halvvägs till himlen” Ett sexfaldigt hurra – för Carola som firar med en unik da’! 8 september fyller allas vår Carola 60 år och självklart vill hon fira det på platsen där allt började – Södra Teatern i Stockholm. När Carola var 11 år vann hon en talangtävling på Södra Teatern när hon sjöng “Krokodilbarnets klagan\"”och nu när hon fyller jämnt bjuder hon in vänner och familj för att fira dagen och natten lång på samma plats. Och självklart vill hon äv": {
+    "value": "music",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Konstnärssamtal: Christine Ödlund\nI samband med utställningen Det blommande - Konst & botanik arrangeras ett samtal med konstnär Christine Ödlund som medverkar i utställningen. Samtalet modereras av Art Notes chefredaktör Karolina Modig. Kvällen inled av museichef Karin Sidén som ger en kortfattad introduktion till utställningen Det blommande - Konst & botanik.": {
+    "value": "art",
+    "fetchedAt": 1788810009212
+  },
+  "cat:DJ's på Sergels torg\nSoundtrack till din lunch. På tisdagar kl. 11.30-13.30 huserar DJ's på Plattan. Lyssna och luncha i solen eller passa på att dansa loss.": {
+    "value": "music",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Aida - favorit i repris från The Met\nUnder augusti och september 2026 smygöppnar vi den kommande Met-säsongen med två favorit i repris-visningar! \"Aida\" är en repris från livesändningen säsongen 2024-2025, passa på att (åter)stifta bekantskap med ett av operarepertoarens mest älskade verk.": {
+    "value": "theatre",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Stafflimåleri\nVi tittar på grundfärgerna tillsammans och sedan målar vi fritt vid staffli. När alstren är färdiga signeras de, läggs på tork och hämtas när de torkat. Förkläden och möjlighet att skölja av sig finns, men ta gärna på er oömma kläder.": {
+    "value": "art",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Siri Hustvedt - Dance Around the Self\nI ett personligt porträtt delar författaren Siri Hustvedt med sig av livet, skapandet och kärleken till maken och kollegan Paul Auster.": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Stockholm Culture Exchange & Friend Making Meetup": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Interview coaching with Ericsson recruiter": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Shut Up & Write!® Södermalm": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Svensk-ryskt språkkafé | Кафе со шведско-русским языком": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Free impro try-out": {
+    "value": "comedy",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Social Game Night": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:After Work at Parken Söder": {
+    "value": "nightlife",
+    "fetchedAt": 1788810009212
+  },
+  "cat:True Crime in Old Town\nTrue crime old town event held in Swedish. private tours can be booked in English.": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:Sovereign AI Live: From Box to Production in One Lunch": {
+    "value": "other",
+    "fetchedAt": 1788810009212
+  },
+  "cat:12/9 BED BY 10 IS COMING TO STOCKHOLM | DEBASER\nBed By 10: Den ultimata klubbupplevelsen för 30+! 🎉 Ni har önskat – och självklart levererar vi! Efter att det första datumet sålt ut släpper vi ytterligare ett kväll med Bed By 10. Bed By 10 är en fest för dig över 30 som vill återuppleva höjdpunkterna från 80-, 90- och tidigt 2000-tal på klubben! Förvänta dig galna visuals, konfettiregn, CO2-kanoner och mycket mer när vår DJ spelar alla klassiska klubbhits 🚀 Good vibes only! Vårt event är för dig som älskar att dansa, umgås och njuta av grym musik – och ändå vara hemma och i säng före kl. 22 ": {
+    "value": "nightlife",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Stadsvandring med Christopher O'Regan - Grändernas hemligheter\nDu har kanske sett honom på TV, där han trollbinder sina tittare med berättelser om Sveriges historia. Med sina gedigna kunskaper och sin eleganta vältalighet levandegör Christopher som ingen annan det förflutna. Nu har Du möjligheten att få uppleva honom livs levande och följa med på en av hans underhållande stadsvandringar i Stockholm. Han har ett kvarts sekels erfarenhet på området, och under hans kunniga och charmerande vägledning får du möta människorna som en gång befolkade de skuggiga kvarteren i Gamla stan. Samlingsplats är": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:FIESTA LATINA PÅ THE NODE! 2 EVENT PÅ 2 DANSGOLV!\n¡FIESTA LATINA - THE NODE! 2 EVENT - 2 DANSGOLV 🇨🇴 Colombia Rumbera 🇨🇴 🎧 Dj’s Charlie & Pipe Nuñez Salsa - Reggaeton - Bachata - Vallenato 🇨🇺 Födelsedagsfest 🇨🇺 🎧 Dj Isra Son - Salsa - Timba - Reparto LÖRDAG 12 SEPTEMBER Öppet 22:00 - 03:00 The Node Adress: Under fontänen, Sergels Torg Välkomna | Bienvenidos | Welcome": {
+    "value": "nightlife",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Sam Morril\nSam Morril is a stand-up comedian based in New York City. In 2024, he released his fifth comedy special, YOU’VE CHANGED, on Amazon Prime, and performed the hour at The Theater at Madison Square Garden. His previous specials include SAME TIME TOMORROW Netflix, POSITIVE INFLUENCE Comedy Central, produced by Amy Schumer, and two self-released YouTube specials: I GOT THIS and UP ON THE ROOF, which have together garnered over 20 million views. Sam has made over a dozen appearances on late-night television, including THE LATE SHOW WITH STEPHEN COLBERT, CONAN, and THE LATE LATE SHOW WITH J": {
+    "value": "comedy",
+    "fetchedAt": 1788810108528
+  },
+  "cat:RAW STHLM | David Sundin, Kristoffer Appelquist mf\nPå scen:{.u-text--center} David Sundin{.u-text--center} Kristoffer Appelquist{.u-text--center} Malin Appeloft{.u-text--center} Klicka här för att läsa mer om komikerna och kvällenhttps://rawcomedyclub.se/evenemangskalender/{.c-button target=\"blank\"} {.u-text--center} Välkommen till Sveriges största standupklubb - RAW! Du hittar oss i Stockholm, Göteborg och Malmö! På RAW ser du en helt unik mix av Sveriges största och mest kända komiker blandat med morgondagens hetaste stjärnor. Dessutom; alltid grymma DJ:s som väljer perfekt musik och sätter ": {
+    "value": "comedy",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Les Liaisons Dangereuses\nEn ny iscensättning av hyllade Les Liaisons Dangereuses (Farliga förbindelser), regisserad av Marianne Elliott. Lesley Manville och Aidan Turner spelar huvudrollerna i detta gripande drama om makt, begär och förförelse; filmat på National Theatre i London.": {
+    "value": "theatre",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Fotoboksdagen\nVälkommen till Fotoboksdagen den 12 september på Kulturhuset Stadsteatern. Det bjuds på ett fullspäckat program med fotoboksmarknad, panelsamtal, workshops och mingel med fotografer, förlag och tryckerier. Dessutom firas Svenska Fotobokspriset som fyller 30 år!": {
+    "value": "market",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Knattebio: Bus och mysterier med Alfons Åberg\nVårt favoritbusfrö Alfons Åberg är tillbaka i ett nytt lekfullt Bok-Filmspaket regisserat av Tomas Alfredson.": {
+    "value": "theatre",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Blir du ledsen om jag dör?\n\"Blir du ledsen om jag dör?\" är guldbaggebelönade Rojda Sekersöz nya film baserad på Nicolas Lunabbas hyllade självbiografi med samma namn.": {
+    "value": "theatre",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Lavabazaar – konst- och designmarknad\nPå Lavabazaar kan du se och köpa konst och design skapad av unga: fanzines, smycken, kläder, prints, merch och mycket mer.": {
+    "value": "market",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Välkommen till visning med guide på Nationalmuseum! Introduktion.": {
+    "value": "art",
+    "fetchedAt": 1788810108528
+  },
+  "cat: Arninge-Brottby 20 km": {
+    "value": "sports",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Johan Stengård 50 år på mitt sätt / My Way\nSöndag 13 september 17.00, så har jag tillsammans med Joakim och Patrik en konsert i Hedvig Eleonora kyrka i Stockholm. Vi har bjudit in Clarice Granado, som med sin helt underbara röst kommer att förgylla kvällen. I programmet blir det bl a en underbar komposition för två sopraner, alltså sopran saxofon och sopran sång. Jag frågade Maestro Johan Landqvist om han möjligtvis skulle kunna komponera en duett som passar för Clarice Granados underbara sång och där jag kan vara hennes duettpartner. Jag kan bara säga att musiken är mycket vacker. För övrigt ": {
+    "value": "music",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Historical Safari-Old town Stockholm\nA walk in the oldest and most charming streets of Old town. You will hear about Stockholms almost 800 years of history through the lives of some of the most interesting and important Stockholmers. Their life tell us a lot about the time thet lived in. Tour in Swedish.": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Barnängen – The People Who Built Södermalm\nExplore Barnängen and eastern Södermalm, where industrial history and human stories come together. Discover one of Sweden&#x27;s most important textile mills and hear about work, poverty and social change. Passing Faggens Krog, Vita Bergen and ending near Sofia Church, this walk tells the story of the men, women and children who helped shape Stockholm and transformed Södermalm into the district we know today.": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Det kommer tigrar (2.5-6 år)\nDet kommer tigrar - fritt utifrån böckerna om Loranga, Masarin och Dartanjang av Barbro Lindgren. Följ med genom skogen, förbi sophögen och giraffen, hem till Masarin. Pappa Loranga sover under köksbordet, farfar Dartanjang tar febern i vedbon och solen går upp över garagebassängen – men vad är det som mullrar i fjärran? Det måste vara tigrar! Kommer de hit? Är de farliga? Och tycker de om att dansa? Tigrar ryter, stjärnor blinkar och sommaren tar aldrig slut. Låt dig svepas med av en lek som böljar mellan tigerjakt, gäddstim, tjurfäktning och bilrace i denna fysis": {
+    "value": "family",
+    "fetchedAt": 1788810108528
+  },
+  "cat:När Findus var liten och försvann (från 3 år) Vardag\nFindus flyttar in och Pettsons vardag får plötsligt färg; livet får en mening och varje dag blir ett äventyr! En dag hamnar Findus i en förfärlig knipa men mucklorna griper in och hjälper Pettson att komma till undsättning. En spännande föreställning om kärlek, nyfikenhet och tålamod som värmer både stora och små. Pettson skapar nämligen ett alldeles särskilt lugn och ger Findus gott om tid att bekanta sig med omgivningarna och goda förutsättningar att växa upp i den stora okända världen. Regi: Peter Engkvist På scen: Kaj Ahlgren och Lise Ed": {
+    "value": "family",
+    "fetchedAt": 1788810108528
+  },
+  "cat:After School\nGår du i mellanstadiet? Vill du ha boktips? Gillar du att skapa & pyssla? Då är du välkommen till After School på Telefonplans bibliotek! \n\nVi träffas på tisdagar klockan 15:30–16:30, fikar, pratar böcker och pysslar tillsammans. Du behöver inte anmäla dig förväg. Om du vill får du gärna ta med en bok att tipsa om.": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:I afton: Nina Hemmingsson\nNina Hemmingsson (f. 1971) har ­sedan ­debuten \"Jag är din flickvän nu\" etablerat sig som en av ­Sveriges främsta serietecknare och ­bild­konst­närer. Med sin omisskännliga stil, både vad gäller språket och den grova teckningslinjen gör hon serier som är svåra att värja sig mot. Som skönlitterär författare tecknar hon ett psykologiskt bråddjup med både skärpa, svärta & humor. Nu är hon aktuell med \"För att ni älskar mig väldigt mycket\" En samling poetiska betraktelser på Kaunitz-Olsson Förlag.\nModerator: Bibliotekarie Johanna Härenstam\nVÄLKOMNA!": {
+    "value": "art",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Språkcafé på svenska\nVill du träna svenska och lära känna nya vänner? Då är du varmt välkommen till vårt språkkafé. Vi ses tisdagar kl. 17-18 jämna veckor, samtalar, fikar och övar svenska tillsammans. Biblioteket bjuder på kaffe och te. Ingen föramälan behövs.": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Bokcirkel: Sommarboken & Anteckningar från en ö\nVad finns kvar när sommaren går mot sitt slut? I den här bokcirkeln samlas vi för att prata om Sommarboken av Tove Jansson och Anteckningar från en ö av Tove Jansson och Tuulikki Pietilä. Under samtalet utforskar vi naturen, vänskapen, skapandet och livet på ön, och delar våra egna läsupplevelser. Kom och avrunda sommaren tillsammans med andra läsare.l.": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Handarbetscafé\nTa med ditt projekt och handarbeta tillsammans med andra deltagare. Vi bjuder på fika.\nDrop-in!": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Läxhjälp\nVill du ha hjälp med läxor och skolarbeten? Går du på låg, mellan eller högstadiet, eller gymnasiet? Hos oss kan du få hjälp i alla ämnen för alla stadier, ta med dina läxor och kom och träffa våra duktiga volontärer!": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Workshop: Lär dig japanska!\nGillar du manga och språk? Delta i en spännande workshop där du får lära dig japanska med mangaöversättaren Molly Messner. Inga förkunskaper behövs.\n\nFör dig 10-19 år.": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Språkcafé på tyska\nVälkommen att träna din tyska över en fika i höst! Språkcaféet vänder sig till dig som redan kan lite tyska och vill öva på att prata. Samtalsledare är Nina och Florian. Willkommen!": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Häng på bibblan\nVi fikar, vi skapar kreativa saker och \npratar böcker med boktips från bibliotekarierna.\n\nDrop in från kl. 15:15 - 16:15!": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Tisdagskul\nVarannan tisdag kan du komma till Tensta bibliotek för att skapa, upptäcka nya böcker och fika. Vi kommer att experimentera med olika material och väcka vår fantasi tillsammans. För dig 9-12 år.": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Rostam": {
+    "value": null,
+    "fetchedAt": 1788810108528
+  },
+  "cat:Jazzklubb Hjorthagen HT26\nLIRA med Anders Linder - Rivig och glad underhållning Höstens program: - 15 september - LIRA med Anders Linder - 29 september - Kari Sjöstrand kvartett - 9-18 oktober - Stockholm Jazz Festival – Ung Scen - 27 oktober - Forslunds Fyra - 10 november - Gunilla Törnfeldt Kvintett - 24 november - Stella Gustin Band - 8 december - Claes Jansson, Hans Backenroth, Lennart Simonsson Trio - 15 december - JULAVSLUTNING med Hayati Kafé, Monica Dominique, Patrik Boman & Ronnie Gardiner": {
+    "value": "music",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Skapa & kaka - blomsterstilleben\nVälkommen till vår ateljé i Gamla huset för en eftermiddag med kaffe, kaka och skapande för dig som är ledig dagtid. Under 2 timmar skapar vi stilleben i akrylfärg och krita. Fokus ligger på kreativitet och utforskande, inte på prestation. Du skapar fritt utifrån din egen förmåga med handledning från en av våra pedagoger. Ingen förkunskap krävs. I biljetten ingår kaffe eller te och ett fikabröd, samt konstnärsmaterial och entré till museet under hela dagen. Passa gärna på att se våra fina utställningar innan eller efter evenemanget. Datum: Tid: 13.30 - 15.30 Pr": {
+    "value": "art",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Hemlig Tisdag\nHemlig Tisdag är kvällen där du inte vet vad som väntar – bara att det blir bra. 2–4 akter. Allt hemligt. Musik, performance, spoken word, konst eller något helt annat. Vem som helst. Vad som helst. Du får veta när det händer.": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Jazzklubb Hjorthagen - LIRA med Anders Linder\nHöstens program på Jazzklubb Hjorthagen bjuder på massor av fantastiska artister. En av Stockholms hetaste jazzklubbar helt enkelt! Denna vecka blir det LIRA med Anders Linder — Kvällen väntar sig rivig och glad underhållning för alla jazzvänner.": {
+    "value": "music",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Kavla upp ärmarna för klimatet - första cirkeln\n– så använder vi valresultatet för påskyndad omställning Valrörelsen tar slut 13 september. Men för klimatet är framtiden redan här. När rösterna är räknade och riktningen sätts, är frågan inte bara vad som händer, utan vad vi gör med det. Vi samlas redan två dagar efter valet, 15 september, klockan 17.30 – 20.00 för att förstå läget och börja agera tillsammans. • Tisdag 15 september klockan 17.30-20.00: Valanalys och första steg: Vad ser vi i valresultatet – och vad kan det betyda för klimatarbetet? Mattias Goldmann, 2030-sekretariatets VD, lede": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Dansa och sjung eller måla med din klass eller förskolegrupp\nVälkommen att delta i en rytmisk dans - och sångstund eller stafflimåleri tillsammans med Konstverkstans pedagoger. Aktiviteterna riktar sig till förskolegrupper och elever i årskurs F-3.": {
+    "value": "family",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Psykologer tittar på film: The Odyssey\nPsykologer tittar på film är tillbaka med ett nytt program. Under Hösten 2026 fokuserar vi på filmer som belyser familjer, relationer och inte minst män och fäder. Först ut är den omtalade filmatiseringen av Odysseus av Christopher Nolan.": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:City Walk: Hidden Lives and Dangerous Connections — Women in the Stockholm of Spies (in Swedish)\nWelcome to Stockholm in the 1940s. War rages across Europe – but in the capital, another kind unfolds, where women move at the heart of events. Join a guided city walk through the neighborhoods around Östermalmstorg, Nybrogatan, and Strandvägen – where diplomats, agents, and informants moved side by side. What did it take to navigate surveillance, loyalties, and mortal danger – and who could truly be trusted? The tour concludes in the Army Museum courtyard.": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Den äldsta sagan\nKom och lyssna på när skådespelerskan och folklivsforskaren Suzanne Danielsson berättar om Vanerna, ett folk som ska ha funnits före vikingarna. Hon tar avstamp i Völuspá och ställer sig frågan, går den att förstå idag? Efteråt blir det frågestund och fika. Boka plats på arsta.ssb@stockholm.se eller på biblioteket. Välkomna!": {
+    "value": "family",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Språkcafé på svenska\nVi träffas på onsdagar klockan 16:30 på Tensta bibliotek för att prata, fika och träna svenska tillsammans. Det spelar ingen roll hur bra du är på att prata svenska. Vi träffas för att öva och ha kul tillsammans!": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Lättläst bokcirkel\nI läsecirkeln läser vi böcker på lättläst svenska (nivå 1). Vi pratar om boken och övar på nya ord. Prova på att läsa och lära dig mer svenska med Språkbruket.\nVälkommen!": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Bokklubben Gasten: tjejer och icke-binära\nGillar du att läsa spänning och skräck? Träffa andra som läser samma bok och snacka? I så fall ska du gå med i bokklubben Gasten. På första träffen väljer vi ut böcker, pysslar och fikar tillsammans. Sen ses vi en gång i månaden på onsdagar och pratar om boken vi läst.\n\nDu behöver anmäla dig senast den 24 augusti för att gå med i bokklubben genom att maila namn och ålder till  josefine.tham@stockholm.se  OBS! Bokcirkeln är fullbokad.": {
+    "value": "other",
+    "fetchedAt": 1788810108528
+  },
+  "cat:Bokklubb för dig på mellanstadiet\nTill varje träff läser vi alla samma bok. På träffen pratar vi om boken, fikar och väljer nästa bok tillsammans. Vi ses en gång i månaden. Du bokar plats över disken på Årsta bibliotek. Boken finns att låna på biblioteket.": {
+    "value": "family",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Bokcirkel på dagtid\nVi träffas tre onsdagar under våren och diskuterar en gemensamt läst bok. Du kan anmäla dig till enstaka tillfällen eller alla. Anmälan sker via biblioteket.se eller på biblioteket. Vi bjuder på fika. Varmt välkommen! Vi ses i ateljén på plan 4 kl. 13-14": {
+    "value": "family",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Bokcirkel för vuxna\nVälkommen till bibliotekets bokcirkel för vuxna! En onsdag per månad träffas vi och pratar om en bok tillsammans. Biblioteket bjuder på fikat. Till denna träff läser vi Marzahn, mon amour av Katja Oskamp.": {
+    "value": "other",
+    "fetchedAt": 1788810152081
+  },
+  "cat:The New Rålis Times - tidningsrelease!\nRelease för tidsskriften \"The New Rålis Times!\"\nMingel, möte med redaktionen och nyproducerade dans och sångnummer! Tidsskriften finns till försäljning på plats.": {
+    "value": "music",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Filosoficafé på Telefonplans bibliotek\nFilosofera tillsammans på biblioteket! Inga förkunskaper behövs.\nMed våra filosoficaféer vill vi skapa utrymme för filosofiska samtal i vardagen. Erbjuda en mötesplats för att undersöka frågeställningar och begrepp. Vidga de egna perspektiven, möta andras perspektiv och tillsammans öka både nyfikenhet och förståelse. Du behöver inga förkunskaper i filosofi, vi använder vårt eget tänkande. \n\nBiblioteket bjuder på fika. Ingen föranmälan krävs.\n\nSamtalsledare: Joakim Fuks.\nI samarbete med ABF och Svenska sällskapet för filosofisk praxis.": {
+    "value": "other",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Silent Book Club på Björkhagens bibliotek\nVälkommen att medverka i Silent Book Club. Vi ses en gång i månaden på biblioteket, läser vår medhavda bok tillsammans under tystnad. Därefter pratar vi om vad vi läst till en kopp kaffe/te och enklare fika. Bokning krävs, begränsat antal platser. Passar vuxna och ungdomar från 15 år. Varmt välkommen!": {
+    "value": "family",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Talbokhörna\nLyssnar du på talböcker?\nVill du diskutera tillsammans med andra?\nDå är du välkommen till Blå rummet på Östermalms bibliotek!": {
+    "value": "other",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Språkcafé på Enskede bibliotek\nVill du träna din svenska? Välkommen på språkcafé på Enskede bibliotek. Vi träffas på onsdagar kl. 16-17.30 tillsammans med vår samtalsledare Annika. Biblioteket bjuder på kaffe/te och kaka. Anmäl dig till Studieförbundet Vuxenskolan.": {
+    "value": "other",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Skaparhäng: Manga edition!\nVi pysslar med mangatema och fikar tillsammans.\nFör dig 13-19 år.": {
+    "value": "family",
+    "fetchedAt": 1788810152081
+  },
+  "cat:UNG-onsdag: Pluggzonen\nProv, inlämningsuppgifter och muntliga redovisningar? Vi vet att det är mycket plugg på högstadiet och gymnasiet – därför finns nu pluggzonen. Vi skärmar av studierummet, låter dig sitta i lugn och ro, förhör dig på prov eller ger annat stöd i studierna. Självklart finns det frukt eller fika.": {
+    "value": "family",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Sensus Live: Thornberg, Fredrika Rei, Dinha Is\nÄntligen är det dags för en ny säsong av Sensus Live! Den 16 september intar vi Reimersholme Hotel för en kväll fylld av pop och spännande musikaliska uttryck. På scen möter vi tre akter med helt egna sound: Thornberg, Fredrika Rei och Dinah Is! » EN scen » TRE akter » FRI entré • DÖRRAR 18.00 • LIVE 19.30 • Ta med dig en vän, upptäck ny musik och kicka igång hösten tillsammans med oss! 👉 Vi ses på @Reimersholmehotel den 16 september! ----- Fb-evenemang: https://fb.me/e/4MT2F1bDg ----- Passa på att äta innan eller efter evenemanget: https://reime": {
+    "value": "music",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Axel Sjöberg - Bland kobbar och skär\nAxel Sjöberg anses vara den första skärgårdskonstnären, och nu har vi gjort en film om honom Axel Sjöberg - Bland kobbar och skär. Titeln är lånad från den bok han gav ut år 1900 på eget förlag. Han trodde på sig själv men det dröjde till 1918 innan han slog igenom och då med en stor utställning på Liljevalchs. Han levde fram till 1950 och är föregångare till Roland Svensson, vår mest kände skärgårds konstnär, som vi har gjort flera filmer om. Axel Sjöberg - Bland kobbar och skär inleder vårt skärgårdsprogram. Därefter visas Roland Svensson - Skärgårdsmålar": {
+    "value": "art",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Todd Day Wait\nTodd Day Wait is one of the last real American workhorse, pedal-to-the-metal troubadours — making his way from Missouri to California, to New Orleans, and now Nashville. His original material is deeply influenced by early American folk, country, and blues music from the 1920s through the 1960s, embodying the spirit and authenticity of traditional American music. Todd Day Wait — whom you may know from his millions of spins on GemsOnVHS or WesternAF — writes and performs his own brand of timeless country music. Harking back to legends like Jimmie Rodgers, Willie Nelson, Wynn Stewar": {
+    "value": "music",
+    "fetchedAt": 1788810152081
+  },
+  "cat:OnsdagsNöjet\nDet genrepas inför årets viktigaste drabbning för treåringarna; Kriteriet och Oaks med dubbla treåringslopp i hög klass. Nya försöksomgångar i Stall Courant Solvalla-serien kompletterar utbudet på banan denna onsdag. Huvudspelet från ATG är V86® och avgörs tillsammans med Jägersro.": {
+    "value": "sports",
+    "fetchedAt": 1788810152081
+  },
+  "cat:The Mutation  (사랑의 탄생)": {
+    "value": "other",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Föredrag med Hynek Pallas\nHur formades minnet av Förintelsen i det kommunistiska Tjeckoslovakien? I ett personligt föredrag berättar Hynek Pallas om sin bok Frimärkssamlaren – en släkthistoria präglad av överlevnad, förlust och hur historien har tolkats och tystats i efterhand. Med sin egen släkthistoria som utgångspunkt berättar Hynek Pallas under kvällens besök personligt om Frimärkssamlaren och hur minnet efter Förintelsen formades i det kommunistiska Tjeckoslovakien – hur en antisionistisk doktrin skapade ny antisemitism och tystnad inom familjer. I Frimärkssamlaren avtäcker Hynek Pallas s": {
+    "value": "other",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Live Sessions: David Ritschard\nSensommaren på Trädgården förgylls av Huddinges egna David Ritschard! En sann söderlegend återvänder till oss under Skanstullsbron för att vara med och avsluta sommaren. Senast 2023 fylldes Trädgården till bristningsgränsen när publiken samlades för att följa David vidare på hans resa mot den svenska toppen. Med låtar om människor som försöker få ihop livet, om hem som både lämnas och längtas tillbaka till och om Stockholm i all sin skavda romantik har David Ritschard skapat ett eget rum i svensk musik. Det är låtar för sena kvällar och tidiga morgnar. För de som": {
+    "value": "music",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Hope  (호프) -  Opening film": {
+    "value": "art",
+    "fetchedAt": 1788810152081
+  },
+  "cat:The Ugly (얼굴)": {
+    "value": "art",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Susanna Alakoski (Sverige)\nMöt Susanna Alakoski i samtal med Kristina Lindquist på Internationell författarscen den 16 september. Den Augustprisbelönade författaren är aktuell med \"Sverigefamiljen\" – den avslutande delen i den hyllade romansviten om fyra generationer kvinnor i Finland och Sverige som 2019 inleddes med Bomullsängeln.": {
+    "value": "other",
+    "fetchedAt": 1788810152081
+  },
+  "cat:La Grazia\nToni Servillo briljerar i en minnesvärd, tragikomisk roll som Italiens president i Paolo Sorrentinos publikfriande öppningsfilm i Venedig, \"La Grazia\" - en rolig, stundtals gripande berättelse om makt, ensamhet och tvivel, och om en man som kämpar för att fatta rätt beslut när det verkligen gäller.": {
+    "value": "art",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Ukraine Artistic Meeting 16 september\nDen 16 september är Ukraine Artistic Meetings tillbaka på Kulturhuset Stadsteatern. I centrum står nyskriven ukrainsk dramatik och konst som tar form ur erfarenheter av krig, förlust och förflyttning.": {
+    "value": "art",
+    "fetchedAt": 1788810152081
+  },
+  "cat:För döva öron\nInspirerad av relationen till sin egen syster ger regissören Eva Libertad i sin långfilmsdebut ett personligt, levande och djupt berörande porträtt av den komplexa och sällan skildrade relationen mellan den döva och den hörande världen.": {
+    "value": "art",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Hökis Visrum Presenterar Valter Kinbom\nValter Kinbom har under 25 år som slagverkare och instrumentbyggare haft en svältfödd trubadur inom sig. Nu är det dags för denne att komma ut och dela med sig av sina visor. Repertoaren består dels av Valters poetiska översättningar av kubanska favorittrubadurer, dels eget material samt en och annan svensk klassiker. Under hösten kommer Valter att släppa sitt första soloalbum. Konserten på visrummet blir en försmak av detta. Vi serverar fika i pausen för 40:- Vi öppnar kl 18.00 - kom och se vår fina Cornelisutställning! Hjärtligt välkomna.": {
+    "value": "music",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Poesicirkel för dig 15-35 år\nVi ses några gånger under året och läser ur och pratar om ett poesialbum. Du behöver inte ha läst någonting innan. Inga förkunskaper krävs.": {
+    "value": "other",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Bokcirkel i Skärholmen\nVi träffas var fjärde vecka och diskuterar en bok som vi har läst på förhand. Vi är ett gäng som har läst mycket. Sedan bokcirkeln startade är vi snart uppe i 200 böcker. Vi läser romaner på svenska och bestämmer en ny bok inför varje träff. Välkommen att anmäla dig om du vill vara med!": {
+    "value": "family",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Tornedalsk läsecirkel\nIdentifierar du dig som tornedaling, kvän eller lantalainen? Är du mellan 25-40 år? I höst startar en bokcirkel med tornedalskt tema. Vi träffas och fikar en torsdag kväll/månad. Ansvarig är Lovisa Dahlberg, tidigare vice ordförande i Met Nuoret. Läs mer nedan!": {
+    "value": "family",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Hemliga skåpets bokcirkel\nGillar du att läsa? Gillar du att prata om böcker? \nDå kanske Hemliga skåpets bokcirkel är något för dig!\n\nVi ses en gång i månaden i rummet ”Romanen”\npå Farsta bibliotek. Inför varje träff läser vi en bok\nsom vi valt tillsammans, och så pratar vi om den\nnär vi ses. Biblioteket bjuder på fika! \n\nNyfiken? Mejla gärna till farsta.ssb@stockholm.se": {
+    "value": "family",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Filosofikafé\nVälkommen på filosofikafé! Vi tänker tillsammans. I en öppen anda inspirerar vi varandra till dialog och nya insikter. Samarbete med Svenska Sällskapet för Filosofisk Praxis och ABF Stockholm. Samtalsledare är Kaisa Unander. Det är bara att komma och gratis.": {
+    "value": "other",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Novellcirkel för föräldralediga\nVarmt välkommen till bibliotekets novellcirkel föräldralediga! Vi ses en gång i månaden för att prata om en novell medan barnen kryper omkring. Biblioteket bjuder på fika. Novellen finns att hämta bakom informationsdisken tidigast vecka 31.": {
+    "value": "family",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Sjung på svenska - Practice Swedish by singing!\nDo you want to sing and practice Swedish? No prior knowledge of singing is needed, we learn together. Every other Thursday at kulturhuset Fanfaren! // Här är kören särskilt för dig som vill sjunga och träna på svenska –men alla är välkomna som vill ha roligt och träffa nya vänner! Du behöver inte ha några förkunskaper, vi lär oss tillsammans, och du behöver inte komma alla gånger om du inte vill/kan. Ledare är Anna Berglund. Kaffe och te serveras i pausen!": {
+    "value": "music",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Läxhjälp\nVill du ha hjälp med matten? Kom och får gratis hjälp av volontärer från Mattecentrum! Vi hjälper till med matteläxor upp till gymnasienivå. Mattecentrum är en ideel förening som driver räknestugor runt om i Sverige. Alla är välkomna oavsett vilken ålder eller vilken skola man går i. Går du i grundskolan, på gymnasiet, komvux eller är förälder som vill repetera för att hjälpa dina barn? Alla är välkomna!": {
+    "value": "family",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Kreativ torsdag på Östberga bibliotek\nVälkommen att skapa och pyssla tillsammans på biblioteket. Vi ses vid stora bordet vid fönstret! Ingen föranmälan, men kom gärna i tid! \nBibblan bjuder på fika :-)": {
+    "value": "family",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Svenskt språkcafé på ryska\nVill du träna svenska språket över en fika? På torsdagar kl 16.00-17.30 är du välkommen till Hagsätra bibliotek. Du får träffa våra volontärer Mona och Gunilla som leder samtalet och biblioteket bjuder på fika. Du behöver inte anmäla dig. Välkommen!": {
+    "value": "other",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Teatercirkel om Dramatens föreställning Misantropen\nVälkommen på en teatercirkel med utgångspunkt i Dramatens föreställning Misantropen! Vi ses vid tre tillfällen. Tillsammans läser vi manuset, går på föreställningen (kostnadsfritt), diskuterar föreställningen och frågor kopplade till ämnet samt får boktips på temat. Du som anmäler dig bör kunna närvara på samtliga träffar, se information om datum och tider längre ner! (Obs! Är evenemanget fullbokat finns ett fåtal extra platser för dig under 25 år. Mejla fanfaren@stockholm.se)!": {
+    "value": "theatre",
+    "fetchedAt": 1788810152081
+  },
+  "cat:PUNKT.skapar\nÖppen verkstad och häng för dig 13-19 år. Vill du sy, klippa, limma eller laga något? Vill du trycka t-shirts, testa linoleumtryck eller göra egna pins? Vill du göra fanzines, rita eller måla? Vill du låna Ipads och klippa kortfilm, rita eller skapa content till sociala medier? Vi testar olika material och teknik som finns på PUNKT!": {
+    "value": "family",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Tema Afghanistan: Louise Körnung och Alinaghi Lomani\nFörfattarna Alinaghi Lomani och Louise Körnung i ett samtal med utgångspunkt i deras respektive romaner, som bägge skildrar det moderna Afghanistan. Kom och lyssna på ett samtal om Afghanistan och om hur man skriver om det som är svårt.": {
+    "value": "other",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Författarsamtal: Christian Rück\nUnder detta författarbesök möter vi psykiatern, forskaren och författaren Christian Rück, aktuell med sin nya bok Generation Trauma. Med utgångspunkt i boken undersöker Rück vår tids syn på trauma, psykisk ohälsa och lidande, och ställer frågor om hur samhällets ökade fokus på psykiskt välbefinnande påverkar oss.": {
+    "value": "other",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Språkcafé på portugisiska\nVälkommen att träna din portugisiska över en fika! vi träffas en gång i månaden. Språkcaféet vänder sig till dig som kan lite portugisiska och vill öva på att prata. Samtalsledare är Gisseli och Eduardo.": {
+    "value": "other",
+    "fetchedAt": 1788810152081
+  },
+  "cat:Studiecirkel: Sagan om ringen\nTillsammans läser vi och diskuterar Sagan om ringen-trilogin på djupet. Inför varje träff läser vi delar av böckerna och under mötena leder cirkelledaren diskussionen utifrån frågeställningar vi kommer fram till tillsammans.\nMan behöver inte ha läst böckerna innan för att kunna vara del av bokcirkeln\n\nFörutom att läsa och diskutera böckerna kommer det finnas gott om möjlighet att uttöka cirkeltrräffarna till andra medier. Filmvisningar, spelkvällar och så vidare.\nStudiecirkeln bestämmer tillsammans exakt vad de vill göra tillsammans under första träffen.\nAnmäl dig": {
+    "value": "family",
+    "fetchedAt": 1788810152081
   }
 }

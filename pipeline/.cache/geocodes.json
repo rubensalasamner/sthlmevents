@@ -1642,5 +1642,219 @@
       "longitude": 18.0808678
     },
     "fetchedAt": 1788794993908
+  },
+  "Mariatorget, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3171154,
+      "longitude": 18.0604746
+    },
+    "fetchedAt": 1788809956971
+  },
+  "Torsgatan 41, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3404784,
+      "longitude": 18.0381837
+    },
+    "fetchedAt": 1788809958691
+  },
+  "Renstiernas Gata 48, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3103079,
+      "longitude": 18.0860885
+    },
+    "fetchedAt": 1788809960302
+  },
+  "Lågskärsvägen 13, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.2842192,
+      "longitude": 18.1134669
+    },
+    "fetchedAt": 1788809961904
+  },
+  "Strandvägen 7C, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3321585,
+      "longitude": 18.0804828
+    },
+    "fetchedAt": 1788809963631
+  },
+  "Konradsbergsgatan 2B, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3286896,
+      "longitude": 18.0149522
+    },
+    "fetchedAt": 1788809965243
+  },
+  "Hökarängsplan 3, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.256352,
+      "longitude": 18.0814415
+    },
+    "fetchedAt": 1788809966850
+  },
+  "Sveavägen 114, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3438099,
+      "longitude": 18.0560614
+    },
+    "fetchedAt": 1788809968099
+  },
+  "Hälsingegatan 3, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3415259,
+      "longitude": 18.0435034
+    },
+    "fetchedAt": 1788809969599
+  },
+  "Örsvängen 10, 174 51 Sundbyberg, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3753848,
+      "longitude": 17.9710316
+    },
+    "fetchedAt": 1788809970953
+  },
+  "Rosenlundsgatan 12, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3176616,
+      "longitude": 18.0551166
+    },
+    "fetchedAt": 1788809972582
+  },
+  "Västmannagatan 54, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3415686,
+      "longitude": 18.0479612
+    },
+    "fetchedAt": 1788809973977
+  },
+  "Samaritgränd 3, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.316459,
+      "longitude": 18.0551227
+    },
+    "fetchedAt": 1788809975562
+  },
+  "Kärrtorpsplan 14, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.2836447,
+      "longitude": 18.1144555
+    },
+    "fetchedAt": 1788809977171
+  },
+  "S:t Eriksgatan 84, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3403831,
+      "longitude": 18.0374122
+    },
+    "fetchedAt": 1788809978630
+  },
+  "Vegagatan 17, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3423089,
+      "longitude": 18.0500443
+    },
+    "fetchedAt": 1788809980264
+  },
+  "Hälsingegatan 3, Stockholm, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3415259,
+      "longitude": 18.0435034
+    },
+    "fetchedAt": 1788809981662
+  },
+  "Djurgårdsslätten 49-51, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3266228,
+      "longitude": 18.1052823
+    },
+    "fetchedAt": 1788809983998
+  },
+  "Bysistorget 2, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3186433,
+      "longitude": 18.0563694
+    },
+    "fetchedAt": 1788809985734
+  },
+  "Götgatan 73, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3114508,
+      "longitude": 18.0749962
+    },
+    "fetchedAt": 1788809987467
+  },
+  "St Eriksgatan 84, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1788809989204
+  },
+  "Påfågeln, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3403285,
+      "longitude": 18.0374329
+    },
+    "fetchedAt": 1788809990518
+  },
+  "Riksdalervägen 2, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.2971036,
+      "longitude": 17.9837373
+    },
+    "fetchedAt": 1788809992143
+  },
+  "Griffelvägen 11, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3109076,
+      "longitude": 18.1582815
+    },
+    "fetchedAt": 1788809993878
+  },
+  "Rosengatan 1, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3395727,
+      "longitude": 18.0620433
+    },
+    "fetchedAt": 1788809995603
+  },
+  "Skaraborgsgatan 14, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3172706,
+      "longitude": 18.0697883
+    },
+    "fetchedAt": 1788809996918
+  },
+  "Västmannagatan 56, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3417861,
+      "longitude": 18.0477456
+    },
+    "fetchedAt": 1788809998520
+  },
+  "Blomstervägen 11A, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3248573,
+      "longitude": 17.9791366
+    },
+    "fetchedAt": 1788810001463
+  },
+  "Artemisgatan 19,, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3556024,
+      "longitude": 18.0993257
+    },
+    "fetchedAt": 1788810003195
+  },
+  "Hornsgatan 92, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3177873,
+      "longitude": 18.0528664
+    },
+    "fetchedAt": 1788810004811
+  },
+  "Kristinehovsgatan 2, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3182373,
+      "longitude": 18.0413768
+    },
+    "fetchedAt": 1788810006421
   }
 }
