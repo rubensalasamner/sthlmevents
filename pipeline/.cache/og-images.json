@@ -15066,5 +15066,53 @@
   "https://shop.showtic.se/ataubtmxx87fmfm": {
     "image": null,
     "fetchedAt": 1788813633514
+  },
+  "https://www.meetup.com/stockholmexpat/events/316389759/": {
+    "image": "https://secure.meetupstatic.com/photos/event/a/e/0/1/600_535964545.jpeg",
+    "fetchedAt": 1788856485169
+  },
+  "https://allevents.in/stockholm/steve-earle-in-stockholm/3300029344173204": {
+    "image": "https://cdn-az.allevents.in/events4/banners/07b0d190-d71c-11f0-af59-a3cf0b704b41-rimg-w1200-h675-dca7a7a7-gmir.webp?v=1765517583",
+    "fetchedAt": 1788856485290
+  },
+  "https://www.meetup.com/psychology-discussion-fika/events/316391197/": {
+    "image": "https://secure.meetupstatic.com/photos/event/7/7/5/e/600_533970558.jpeg",
+    "fetchedAt": 1788856485334
+  },
+  "https://allevents.in/stockholm/tomas-andersson-wij-kyrkorna-2026-filadelfiakyrkan/200029694325140": {
+    "image": "https://cdn-az.allevents.in/events6/banners/b663e217e0b2c0a6da1901f1e75e310fd2a3d77e4b6760477f80f4dcf89bcc56-rimg-w1200-h675-dc181818-gmir?v=1788329537",
+    "fetchedAt": 1788856485454
+  },
+  "https://www.ticketmaster.se/event/rikas-biljetter/2066703482": {
+    "image": null,
+    "fetchedAt": 1788856485502
+  },
+  "https://www.meetup.com/stockholm-kayak-sup-group/events/316277476/": {
+    "image": "https://secure.meetupstatic.com/photos/event/5/2/4/7/600_535101063.jpeg",
+    "fetchedAt": 1788856485610
+  },
+  "https://www.meetup.com/flemingsberg-badminton-intermediate/events/316461405/": {
+    "image": "https://secure.meetupstatic.com/photos/event/e/8/7/3/600_507899507.jpeg",
+    "fetchedAt": 1788856485626
+  },
+  "https://secure.tickster.com/gma2jl7frm7u4cj": {
+    "image": null,
+    "fetchedAt": 1788856486609
+  },
+  "https://secure.tickster.com/kxwtyprnya03kvy": {
+    "image": null,
+    "fetchedAt": 1788856486627
+  },
+  "https://secure.tickster.com/20flfwhkgu6uakn": {
+    "image": null,
+    "fetchedAt": 1788856486643
+  },
+  "https://secure.tickster.com/ufyg5en4nxxuzdk": {
+    "image": null,
+    "fetchedAt": 1788856486680
+  },
+  "https://biljett.debaser.se/ue7ldjtfxm4kvnf": {
+    "image": null,
+    "fetchedAt": 1788856487313
   }
 }

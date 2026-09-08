@@ -1856,5 +1856,33 @@
       "longitude": 18.0413768
     },
     "fetchedAt": 1788810006421
+  },
+  "Tellusgången, Hägersten, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.298983,
+      "longitude": 17.9924024
+    },
+    "fetchedAt": 1788855684952
+  },
+  "Klarabergsgatan 50, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3324814,
+      "longitude": 18.0626743
+    },
+    "fetchedAt": 1788855686150
+  },
+  "Ebba Bååts Torg 20, Huddinge, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.2189231,
+      "longitude": 17.9497146
+    },
+    "fetchedAt": 1788855687881
+  },
+  "Hornstulls strand, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3144212,
+      "longitude": 18.0328135
+    },
+    "fetchedAt": 1788855689923
   }
 }
