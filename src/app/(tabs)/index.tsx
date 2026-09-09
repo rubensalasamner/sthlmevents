@@ -14,6 +14,7 @@ import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 import { useEvents } from '@/hooks/use-events';
 import type { StockholmEvent } from '@/types/event';
+import { collapseSeries } from '@/utils/collapse-series';
 import { filterByDateRange, type DateRangeValue } from '@/utils/date-range';
 import { featuredEvents, rankEvents } from '@/utils/ranking';
 import { searchEvents } from '@/utils/search';
@@ -49,7 +50,8 @@ export default function EventsScreen() {
     if (isDefaultView) {
       result = result.filter((event) => !event.isFeatured);
     }
-    return rankEvents(result);
+    // Collapse recurring occurrences (same title + venue) to one entry, then rank.
+    return rankEvents(collapseSeries(result).events);
   }, [events, query, category, source, dateRange, isDefaultView]);
 
   return (

@@ -45,3 +45,6 @@ example
 # generated native folders
 /ios
 /android
+
+# local dev artifacts
+.dev-qr.png

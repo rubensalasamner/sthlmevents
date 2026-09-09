@@ -35,6 +35,12 @@ export type StockholmEvent = {
   startsAt: string;
   /** ISO-8601 end timestamp, when known. */
   endsAt?: string;
+  /**
+   * Start times of later occurrences of the same recurring event, when the list
+   * collapsed them into this entry. Presentation-only; not part of the
+   * pipeline model.
+   */
+  nextDates?: string[];
   venue: EventVenue;
   /** Ticket price in SEK. `0` means free; `undefined` means unknown (not published by the source). */
   priceSek?: number;

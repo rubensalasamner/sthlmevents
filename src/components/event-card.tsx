@@ -3,6 +3,7 @@ import { Link } from 'expo-router';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import { FavoriteButton } from '@/components/favorite-button';
+import { MoreDatesBadge } from '@/components/more-dates-badge';
 import { SourceTag } from '@/components/source-tag';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
@@ -47,6 +48,9 @@ export function EventCard({ event, width }: { event: StockholmEvent; width?: num
             <ThemedText type="small" themeColor="textSecondary" numberOfLines={1}>
               {venueLine([event.venue.name, event.venue.district])} · {formatPrice(event.priceSek)}
             </ThemedText>
+            {event.nextDates && event.nextDates.length > 0 && (
+              <MoreDatesBadge count={event.nextDates.length} />
+            )}
           </View>
         </ThemedView>
       </Pressable>
