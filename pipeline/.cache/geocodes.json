@@ -1884,5 +1884,67 @@
       "longitude": 18.0328135
     },
     "fetchedAt": 1788855689923
+  },
+  "Sveavägen 14, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3339549,
+      "longitude": 18.0651906
+    },
+    "fetchedAt": 1788942230494
+  },
+  "Kungsgatan 53, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3343411,
+      "longitude": 18.0591021
+    },
+    "fetchedAt": 1788942231766
+  },
+  "Bottom floor of Kulturhuset, Sergels Torg, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1788942233203
+  },
+  "Kafé Plattan, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3319164,
+      "longitude": 18.0644231
+    },
+    "fetchedAt": 1788942234599
+  },
+  "Narvavägen 13, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3347713,
+      "longitude": 18.0909854
+    },
+    "fetchedAt": 1788942236928
+  },
+  "Various venues, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1788942238349
+  },
+  "Lindhagensgatan 137a, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3383666,
+      "longitude": 18.0066798
+    },
+    "fetchedAt": 1788942239791
+  },
+  "Sveavägen 45, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3391926,
+      "longitude": 18.0596609
+    },
+    "fetchedAt": 1788942241272
+  },
+  "Olika biografer, Stockholm, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1788942242773
+  },
+  "Kulturhuset, Sergelstorg 3, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1788942244143
+  },
+  "Stockholm, Klarabiografen, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1788942245552
   }
 }
