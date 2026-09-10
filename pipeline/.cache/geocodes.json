@@ -1946,5 +1946,48 @@
   "Stockholm, Klarabiografen, Stockholm, Sweden": {
     "value": null,
     "fetchedAt": 1788942245552
+  },
+  "Dalagatan 28, 113 24, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3395594,
+      "longitude": 18.0479107
+    },
+    "fetchedAt": 1789028670407
+  },
+  "Götgatan 37, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.316064,
+      "longitude": 18.0724738
+    },
+    "fetchedAt": 1789028671780
+  },
+  "Kornhamnstorg 6, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3227013,
+      "longitude": 18.0699569
+    },
+    "fetchedAt": 1789028673342
+  },
+  "Narvavägen 6, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3334111,
+      "longitude": 18.0930865
+    },
+    "fetchedAt": 1789028674903
+  },
+  "FRYSHUSET, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3011252,
+      "longitude": 18.0883711
+    },
+    "fetchedAt": 1789028676457
+  },
+  "Kungsstensgatan 45, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789028677781
+  },
+  "Folkuniversitetets tornrum plan 7, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789028679346
   }
 }
