@@ -12,6 +12,7 @@ import { SourceFilter, type SourceFilterValue } from '@/components/source-filter
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
+import { useFilters } from '@/context/filters-context';
 import { useEvents } from '@/hooks/use-events';
 import type { StockholmEvent } from '@/types/event';
 import { collapseSeries } from '@/utils/collapse-series';
@@ -22,18 +23,12 @@ import { searchEvents } from '@/utils/search';
 
 export default function EventsScreen() {
   const { data: events, loading, error, reload } = useEvents();
-  const [category, setCategory] = useState<CategoryFilterValue>('all');
-  const [query, setQuery] = useState('');
-  const [dateRange, setDateRange] = useState<DateRangeValue>('all');
-  const [source, setSource] = useState<SourceFilterValue>('all');
+  const { category, query, dateRange, source, setCategory, setQuery, setDateRange, setSource, isActive: filtersActive } =
+    useFilters();
   const [filtersOpen, setFiltersOpen] = useState(false);
   const now = useMemo(() => new Date(), []);
 
-  const filtersActive =
-    category !== 'all' || dateRange !== 'all' || source !== 'all';
-
-  const isDefaultView =
-    !filtersActive && query.trim() === '';
+  const isDefaultView = !filtersActive && query.trim() === '';
 
   const featured = useMemo(
     () => (isDefaultView ? featuredEvents(events) : []),
