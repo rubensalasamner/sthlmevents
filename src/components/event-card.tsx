@@ -62,11 +62,10 @@ const styles = StyleSheet.create({
   card: {
     borderRadius: Spacing.four,
     overflow: 'hidden',
-    flex: 1,
   },
   image: {
     width: '100%',
-    aspectRatio: 16 / 9,
+    aspectRatio: 21 / 9,
   },
   imageOverlay: {
     position: 'absolute',
@@ -100,12 +99,13 @@ const styles = StyleSheet.create({
     padding: Spacing.one,
   },
   body: {
-    padding: Spacing.three,
-    gap: Spacing.one,
+    paddingVertical: Spacing.two,
+    paddingHorizontal: Spacing.three,
+    gap: Spacing.half,
   },
   title: {
-    fontSize: 17,
-    lineHeight: 22,
+    fontSize: 15,
+    lineHeight: 20,
   },
   pressed: {
     opacity: 0.85,

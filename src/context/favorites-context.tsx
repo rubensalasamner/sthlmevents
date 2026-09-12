@@ -30,12 +30,16 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     let cancelled = false;
-    loadFavoriteIds().then((stored) => {
-      if (!cancelled) {
-        hydratedRef.current = true;
-        setFavoriteIds(stored);
-      }
-    });
+    loadFavoriteIds()
+      .then((stored) => {
+        if (!cancelled) {
+          hydratedRef.current = true;
+          setFavoriteIds(stored);
+        }
+      })
+      .catch((err: unknown) => {
+        console.error('[favorites] hydration FAILED:', err);
+      });
     return () => {
       cancelled = true;
     };
@@ -57,7 +61,9 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
       // React will render. Skipped pre-hydration so an early tap can't clobber
       // the stored list with the empty initial state.
       queueMicrotask(() => {
-        if (next) void saveFavoriteIds(next);
+        if (next) {
+          void saveFavoriteIds(next);
+        }
       });
     }
   }, []);

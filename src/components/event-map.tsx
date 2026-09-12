@@ -1,3 +1,4 @@
+import Constants from 'expo-constants';
 import { requireNativeModule } from 'expo-modules-core';
 import { useRouter } from 'expo-router';
 import { Platform, StyleSheet } from 'react-native';
@@ -37,10 +38,10 @@ function hasNativeMaps(): boolean {
   return nativeMapsAvailable;
 }
 
-function MapUnavailable() {
+function MapUnavailable({ title = 'Map unavailable' }: { title?: string }) {
   return (
     <ThemedView style={styles.unavailable}>
-      <ThemedText type="subtitle">Map unavailable</ThemedText>
+      <ThemedText type="subtitle">{title}</ThemedText>
       <ThemedText type="small" themeColor="textSecondary" style={styles.unavailableText}>
         Maps need a development build and can&apos;t run inside Expo Go. Everything else works —
         browse events from the Events tab.
@@ -49,11 +50,22 @@ function MapUnavailable() {
   );
 }
 
+// The native module existing is not enough: without a Google Maps key in the
+// embedded manifest, mounting GoogleMaps.View crashes the whole app natively.
+function hasMapsApiKey(): boolean {
+  const apiKey = Constants.expoConfig?.android?.config?.googleMaps?.apiKey;
+  return typeof apiKey === 'string' && apiKey.length > 0;
+}
+
 export function EventMap({ events }: EventMapProps) {
   const router = useRouter();
 
   if (!hasNativeMaps()) {
     return <MapUnavailable />;
+  }
+
+  if (!hasMapsApiKey()) {
+    return <MapUnavailable title="Map not configured" />;
   }
 
   // Required lazily: importing expo-maps is only safe once the native module
