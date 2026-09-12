@@ -77,15 +77,50 @@ export function windowFor(range: DateRangeValue, now: Date): { from: Date; to: D
   }
 }
 
+export type DateRangeMatch = {
+  /** Events that start inside the window — the primary "what's on" list. */
+  primary: StockholmEvent[];
+  /**
+   * Events that merely span the window (started earlier, still live) —
+   * shown after the primary list, flagged ongoing by the UI.
+   */
+  secondary: StockholmEvent[];
+};
+
+/**
+ * Splits events by a date range into "starts here" vs "carries over". A range
+ * matches when the event's interval overlaps the window (inclusive start,
+ * exclusive end); events that *start* inside it rank above ones merely in
+ * progress, so yesterday-late-night and running-exhibition entries never crowd
+ * out the day's own openings.
+ */
+export function splitByDateRange(
+  events: readonly StockholmEvent[],
+  range: DateRangeValue,
+  now: Date = new Date(),
+): DateRangeMatch {
+  const window = windowFor(range, now);
+  if (!window) return { primary: [...events], secondary: [] };
+
+  const primary: StockholmEvent[] = [];
+  const secondary: StockholmEvent[] = [];
+  for (const event of events) {
+    const startMs = new Date(event.startsAt).getTime();
+    const startsInside = startMs >= window.from.getTime() && startMs < window.to.getTime();
+    if (startsInside) {
+      primary.push(event);
+    } else if (overlapsWindow(event, window)) {
+      secondary.push(event);
+    }
+  }
+  return { primary, secondary };
+}
+
 export function filterByDateRange(
   events: readonly StockholmEvent[],
   range: DateRangeValue,
   now: Date = new Date(),
 ): StockholmEvent[] {
-  const window = windowFor(range, now);
-  if (!window) return [...events];
-
-  // Interval overlap, not start-only: a running exhibition (started last
-  // month, ends next year) must surface under "Today" as well.
-  return events.filter((event) => overlapsWindow(event, window));
+  const { primary, secondary } = splitByDateRange(events, range, now);
+  return [...primary, ...secondary];
 }

@@ -29,6 +29,20 @@ export function isOngoing(event: StockholmEvent, now: Date): boolean {
   return startMs <= nowMs && endMs >= nowMs;
 }
 
+/** Minimum span (ms) for an in-progress event to count as long-running. */
+export const LONG_RUNNING_MS = 30 * 24 * 60 * 60 * 1000;
+
+/**
+ * True when the event is currently running AND spans at least 30 days —
+ * exhibitions and similar fixtures that crowd a "what's on today" feed.
+ * Short multi-day runs (a weekend festival) are deliberately excluded.
+ */
+export function isLongRunning(event: StockholmEvent, now: Date): boolean {
+  const { startMs, endMs } = eventInterval(event);
+  const nowMs = now.getTime();
+  return startMs <= nowMs && endMs >= nowMs && endMs - startMs >= LONG_RUNNING_MS;
+}
+
 export function overlapsWindow(event: StockholmEvent, window: DateWindow): boolean {
   const { startMs, endMs } = eventInterval(event);
   const fromMs = window.from.getTime();
