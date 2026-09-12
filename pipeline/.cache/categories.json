@@ -492,8 +492,8 @@
     "fetchedAt": 1788810009212
   },
   "cat:Entrébiljetter/Tickets": {
-    "value": null,
-    "fetchedAt": 1788810009212
+    "value": "other",
+    "fetchedAt": 1789200539544
   },
   "cat:Da-da-da\nTitta! Lyssna! Känn! För den allra yngsta publiken – bebisarna! Med inspiration från både huvudfotingar och konstens värld träffar vi figurer i välkända situationer. Som att mötas och skiljas, som att dyka upp och försvinna, som att finnas fast inte synas, som att vara nära och isär, som att vilja ha något man inte får och som att få något man inte vill ha.": {
     "value": "family",
@@ -748,8 +748,8 @@
     "fetchedAt": 1788810108528
   },
   "cat:Rostam": {
-    "value": null,
-    "fetchedAt": 1788810108528
+    "value": "other",
+    "fetchedAt": 1789200539544
   },
   "cat:Jazzklubb Hjorthagen HT26\nLIRA med Anders Linder - Rivig och glad underhållning Höstens program: - 15 september - LIRA med Anders Linder - 29 september - Kari Sjöstrand kvartett - 9-18 oktober - Stockholm Jazz Festival – Ung Scen - 27 oktober - Forslunds Fyra - 10 november - Gunilla Törnfeldt Kvintett - 24 november - Stella Gustin Band - 8 december - Claes Jansson, Hans Backenroth, Lennart Simonsson Trio - 15 december - JULAVSLUTNING med Hayati Kafé, Monica Dominique, Patrik Boman & Ronnie Gardiner": {
     "value": "music",
@@ -4402,5 +4402,541 @@
   "cat:THE REAL GROUP – EN SPRAKANDE JUL\nTHE REAL GROUP - EN SPRAKANDE JUL En sprakande julshow med en av världens främsta vokalgrupper! Genom sin långa karriär har The Real Group kommit att bli synonymt med vokalmusik i världsklass – nu kommer de till Södra Teatern för en av tre exklusiva julkonserter i Sverige, fylld av såväl stämningsfulla julklassiker som sprakande energi. En julkonsert med The Real Group kan beskrivas som ett musikaliskt tomtebloss, där konsertbesökarna tas med på en resa som rymmer allt som hör julen till. Genom årens lopp har publiken fått hela paletten: önskelista, julbad, lu": {
     "value": "music",
     "fetchedAt": 1789115225694
+  },
+  "cat:Agents & Jazz Hackathon": {
+    "value": "music",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Community Night at Fleberg Studios!": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Intercambio sueco español/Utbyte svenska spanska": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Första träffen: Promenad till Gamla stan": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Jag Kan! (2-5 år)\nJag Kan! är ett kroppspoetiskt teateräventyr för de yngsta, om lyckan i att klara av. Om hur kämpigt det kan vara att lära nytt och hur stolt man blir när man plötsligt kan det man nyss inte kunde. Föreställningen vill inspirera till självtillit och självkänsla; modet att pröva igen när det går på tok och uppmuntra till kreativ problemlösning. Genom teaterns lek, humor och rörelse gestaltar vi prövandet och övandet och triumfen som är gemensam för 3-åringen och 63-åringen: Jag Kan! Föreställningens längd: ca 30 min Idé: Kersti Björkman & Per Dahlström Medverkande: Per Dahlstr": {
+    "value": "theatre",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Newkid\nNewkid till Södra Teatern den 25 och 26 september med “Akust-ish” Efter år av stora scener, pyro och konserter byggda för att kännas större än livet självt vill Newkid nu komma närmare. Den 25 och 26 september intar han Södra Teatern i Stockholm med “Akust-ish”, en kväll där låtarna, berättelserna och känslan får stå i centrum. – “Settingen är inte helt akustisk, men ish.” säger Newkid själv om konceptet. Och kanske är det just där kärnan finns. Ett mer avskalat format, utan att förlora energin eller storheten i musiken. Ett rum där låtarna får andas på ett nytt sätt och där publiken ko": {
+    "value": "music",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Lantern Walk – Folklore and Beings from the age of 6\nWhat do you see in the light of the lantern? Welcome to a walk where, in the dusk, you will walk and hear stories about what lived in the forests in the old days... The walk will take approximately 1 hour, when we arrive at the campfire and the stories continue there": {
+    "value": "family",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Riddarmaskerad på Livrustkammaren\n-Nu är det äntligen dags för årets stora Riddarmaskerad! Livrustkammarens barnverksamhet Riddarklubben hälsar dig välkommen till Livrustkammaren, så kamma håret, ta på dig din finaste prinsessklänning eller riddarrustning och ta del av en fartfylld historisk dag! Gyklaren LuQas kommer finnas på plats och underhålla hela familjen! Föreställningen är utformad för att spelas på gator och torg så som en gycklarföreställning kunde spelas på medeltiden. Upplev jonglering, improvisation och imponerade tricks, allt kryddat med en stor dos av humor. Ett måste för HELA ": {
+    "value": "family",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Audiorama: the end - Saturday\nAfter almost 20 years of cultural service, Aurdiorama are concluding with a two-day festival at Fylkingen, October 24–25, 2026. The festival combines our two formats, which we have presented over the years: Tape and Dramaton. A festival for fixed media and live music. A festival for radio plays and sound art. More info and program: fylkingen.se": {
+    "value": "music",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Short Film Competition 2026\nOFFICIAL SELECTION SHORT FILM COMPETITION 2026 Ta del av ett spännande kortfilmspaket med följande filmer: Anax Coming Home Gimme Haiku 27 Väsen Hollow Lullaby Strive Tasty Encounters The Calendar of Nechrubel The Cure They Lurk Beneath Eyelids Sektion: Monsters of Fil Genre: Div. Längd: 108 min Engelsk text": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:The Ones who Grieve\nNÄR TRON BLIR TILL TERROR I slutet av 1800-talet, på en avlägsen gård där tiden tycks ha stannat, kvävs den unga Zélie under sin fars järnhårda, religiösa grepp. Jacob är ingen vanlig tyrann – hans tro har förvridits till vansinne. När sjukdomen “den svarta slöjan” sveper in över bygden förvandlas de smittade inte till lik, utan till evigt lidande varelser som varken kan leva eller dö. Elektricitetens första torn reser sig i fjärran. Vetenskap och vidskepelse krockar. I detta kaos ser Zélie en utväg… Quarxx, den franske genrevisionären bakom Tous les dieux du ciel och Pande": {
+    "value": "theatre",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Intermediate - Advanced ENGLISH": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Basic + Intermediate SWEDISH": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Blood on the Clocktower for Queers": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Sunday Sauna & Social gathering": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Light x Lovable x KPMG Finance Hackathon": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Roller skating class ": {
+    "value": "sports",
+    "fetchedAt": 1789200539544
+  },
+  "cat:OpenAI Builder Lounge Stockholm": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Builders & Brews Stockholm": {
+    "value": "food",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Workshop Nationalmuseum. Tema: mode. Vi arbetar med modeskisser i collageteknik.": {
+    "value": "art",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Från Norr Mälarstrand till Bastugatan\nFrån Norr Mälarstrand till Bastugatan - en musikalisk vandring i Olle Adolphsons fotspår. En stor del av Olles tidiga produktion kretsar kring Riddarfjärden mellan Norr Mälarstrand och Söders höjder. Här kan nämnas visor som Sigge Skoog, Gustav Lindströms visa, Det stora slagsmålet vid Tegelbacken, Post festum och Trubbel. Följ med en vandring med Olles levnadstecknare Jan Malmborg och hans musikaliska uttolkare Nils Assarson runt den älskade vattenspegeln. Vandringen uppskjuts vid regn": {
+    "value": "music",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Superhunden Charlie\nSuperhunden Charlie är ett fartfyllt animerat familjeäventyr om hunden Charlie som blir bortförd av utomjordingar och återvänder med superkrafter. Medan Charlie blir en världsberömd superhjälte växer avståndet till hans bästa vän Danny. När en makthungrig katt hotar världen måste Charlie upptäcka vad som verkligen gör någon till en hjälte.": {
+    "value": "family",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Möt Celsing! Arkitektur- och konstvandring i Kulturhuset\nHur kom egentligen Kulturhuset Stadsteatern till? Välkommen på visning om arkitekturhistorien bakom ett av 1900-talets viktigaste svenska byggnadsverk. Under en timmes vandring får du veta mer om Kulturhusets centrala roll i efterkrigstidens cityomvandling, arkitekten Peter Celsings visioner och samspelet med konsten i husets utformning.": {
+    "value": "art",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Iron Monkey (Tsui Hark - Retrospektiv)\nKlarabiografen och Timeless presenterar ett Tsui Hark-retrospektiv under hösten 2026. Tsui Hark betraktas som en av Hong Kong-filmens främsta regissörer och vi visar stolt några av milstolparna från genrens gyllene era.": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Premiär och regissörssamtal: Bad Apples\nI den svarta komedin Bad Apples pressas läraren Maria till bristningsgränsen av klassens våldsammaste elev. När hon tar till drastiska metoder för att få bort honom återvänder lugnet – men hur långt är hon beredd att gå? Saoirse Ronan spelar huvudrollen i svenske Jonatan Etzlers skruvade skolsatir.": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Finskt berättarcafé\nTervetuloa kertomaan, mitä olet kuullut tai itse kokenut arjessa, juhlassa, matkalla, muualla - herkkiä hetkiä tai noloja tapauksia!": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Afternoon tea för seniorer\nVarmt välkommen till afternoon tea för seniorer! Vi berättar om allt som biblioteket kan erbjuda dig och visar runt i våra lokaler. Du får veta mer om ljudböcker, e-böcker och talböcker. Har du inget lånekort kan vi ordna det på plats. Vi informerar även om höstens program och aktiviteter på biblioteket, som författarträffar och andra arrangemang. Vi avslutar med en gemensam fika och delar med oss av några boktips. Vi möts i ateljén på barnavdelningen.": {
+    "value": "food",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Bokcirkel: Skuggas av Ann-Luise Bertell\nVidga dina vyer - var med i vår bokcirkel! Vi träffas för att prata om romanen Skuggas, en vacker kärleksskildring mot en mörkare bakgrund i Finland under fortsättningskriget. 40-åriga Rut brukar den ärvda gården när både hennes make och äldste son är inkallade. Till hennes hjälp med det tunga arbetet kommer Anton, en sovjetisk krigsfånge.": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Sportklubb\nGillar du sport?\nGillar du fika? \nÄr du 6-12 år? Perfekt! Kom och var med på sportklubb! \n\nVi träffas på barnavdelningen måndag 21 september klockan 16-17.\n\nBibliotekarien läser högt om sport och vi pratar om sport. Inga förberedelser krävs. Glöm inte att anmäla dig!\nPs. På träffen pratar du så mycket eller så lite du vill. Huvudsaken är att vi har kul tillsammans! Biblioteket bjuder på fika.": {
+    "value": "sports",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Bokcirkel för seniorer. Obs! Fullbokad!\nVi träffas ungefär en gång i månaden och diskuterar en utvald bok medan vi fikar. Vi läser moderna romaner såväl som klassiker och ibland en biografi. Biblioteket bjuder på fika! Obs! Fullbokad!": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Standup på finska!\nElämä on valintoja - usein ilman vaihto-oikeutta. Välkommen på en ståuppföreställning på finska med Pirjo Rajalakso.": {
+    "value": "comedy",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Babymingel\nVarmt välkommen till bibblan och mingla med oss och andra föräldrar och bebisar! Biblioteket bjuder på fika och babybokprat. Ingen föranmälan krävs. Vi ses på barnavdelningen!": {
+    "value": "family",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Bokcirkel - \"Öppen bok\"\nHässelby Gårds biblioteks bokcirkel \"Öppen bok\" diskuterar Johan Klings bok \"Människor helt utan betydelse\". En bok som utspelar sig i Stockholm under en varm sommardag i början av 1990-talet. Huvudpersonen Magnus är en ung man som rör sig genom staden, mellan vänner, fester och vardagliga möten. Under dagen försöker han navigera i relationer, förväntningar och sin egen osäkerhet. Med ett skarpt öga för detaljer skildrar Johan Kling en generation och ett Stockholm präglat av rastlöshet, ensamhet och känslan av att stå bredvid sitt eget liv.": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:IT-handledning\nBehöver du lite mer ingående hjälp med ett IT-ärende? Boka en tid för IT-handledning på Kista bibliotek! Vi kan hjälpa dig på svenska eller på arabiska. OBS: vi kan av säkerhetsskäl inte hjälpa till med bankärenden, utan hänvisar då istället till din banks kundservice.": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Kanadensiska författarbesök\nI september får Tranströmerbiblioteket och Hornstulls bibliotek besök av författare från den kanadensiska provinsen Québec. Läs om författarna och varje program via länkarna nedan.": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Språkcafé  på engelska\nSpråkcaféet vänder sig till dig som redan kan lite engelska och vill öva på att konversera.\nIngen föranmälan men begränsat antal platser. \nWelcome!": {
+    "value": "other",
+    "fetchedAt": 1789200539544
+  },
+  "cat:TR/ST": {
+    "value": "music",
+    "fetchedAt": 1789200539544
+  },
+  "cat:SERIEPREMIÄR: Djurgården - AIK\nPREMIÄRMATCHDERBY Det är inte tillåtet att bära kläder, accessoarer, flaggor eller andra föremål som representerar eller kan förknippas med bortalaget, exempelvis genom emblem, färger eller andra kännetecken. Besökare som inte följer denna regel kan nekas inträde eller avvisas från arenan.": {
+    "value": "sports",
+    "fetchedAt": 1789200539544
+  },
+  "cat:Kreativ workshop med AI\nÄr du ung och brinner för konst, kultur, tech och samhällsfrågor? Under workshopen får du utforska hur AI kan användas vid kreativt skrivande eller för att skapa visuella element som till exempel album covers – samt utveckla ett kritisk tänkande kring ämnen som desinformation och ett ansvarsfullt användning av AI. Workshopen leds av Mansour Sarr från DigitalDynamics.": {
+    "value": "art",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Författarsamtal: Joakim Medin\nJoakim Medin är prisbelönt journalist och författare. Som utrikesreporter rapporterar han om demokrati- och människorättsfrågor och väpnade konflikter speciellt med fokus på Turkiet, Syrien och kurdfrågan. Han har suttit fängslad i Syrien och senast förra året, i Turkiet. Medins senaste och sjätte bok \"Fängslad av Erdogan\", som kom ut i våras och är skriven tillsammans med hans hustru Sofie Axelsson Medin, handlar om parets kamp på in- och utsidan av det turkiska fängelset för att få honom frigiven.": {
+    "value": "other",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Läxhjälp\nBehöver du hjälp med läxor eller andra studier? \nVarje onsdag är våra volontärer från Röda Korset här och kan hjälpa dig som går på SFI eller i grundskolan.  \n\nDu behöver inte anmäla dig i förväg, men du behöver vara på plats före klockan 17:00.": {
+    "value": "other",
+    "fetchedAt": 1789200690739
+  },
+  "cat:The Temperance Movement": {
+    "value": "music",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Med doft av jasmin\nJasmin är en av de mest ikoniska blommorna i parfymindustrin, med en rik historia som sträcker sig från antiken till idag. I parfymindustrin används två varianter, Jasminum grandiflorum och Jasminum sambac, vars sensuella och fylliga doft har använts för att förhöja allt från religiösa ceremonier i Indien till parfymer i den europeiska parfymindustrin. I den här föreläsningen får du lära dig om jasminens historia, samt hur den odlas och används i parfymindustrin. I samarbete med de världsledande råvaruproducenterna Laboratoire Monique Rémy och IFF doftar vi på såväl råmateri": {
+    "value": "other",
+    "fetchedAt": 1789200690739
+  },
+  "cat:När historien blir ett slagfält\nVälkommen på boksläpp av Museer och omstridda kulturarv med Fedir Androshchuk, tidigare museichef för Nationalmuseet för Ukrainas historia i Kiev. I boken undersöker Androshchuk kulturarvets roll i skapandet av nationell identitet och hur historia och museer kan användas och missbrukas i politisk propaganda. När Ryssland i februari 2022 inledde den fullskaliga invasionen av Ukraina tvingades Androshchuk i praktiken bosätta sig på museet för att rädda samlingarna. Mot bakgrund av invasionen bedrev han under 2023–2025 forskningsprojektet Sverige och Ukraina i muse": {
+    "value": "other",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Living Room Live med Patrik Lundström\nLiving Room Live med Stengård Big Band och Patrik Lundström Det blir storbandsfest när Johan Stengård Big Band tillsammans med sångaren Patrik Lundström intar scenen. Johan Stengård är en av Sveriges främsta saxofonister och har under sin långa karriär samarbetat med både svenska och internationella storheter. Med sitt sexton man starka Big Band bjuder han på musik från storbandsjazzens gyllene era, med klassiker förknippade med bland andra Frank Sinatra och Count Basie. Patrik Lundström, känd som sångare i Blond och från musikalen Buddy, är kvällens vokal": {
+    "value": "music",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Elton John meets Freddie Mercury\nElton John meets Freddie Mercury Johan Boding & Jonas Gideon, två nära vänner som nu gör braksuccé med sin gemensamma show Elton John meets Freddie Mercury! Efter utsålda konserthus och hyllningar från publiken som aldrig vill ta slut så är det nu klart att duon med sitt fantastiska band gör en stor Sverigeturné hösten 2026. Publiken kommer bjudas på en helt unik konsertupplevelse då de tillsammans med några av Sveriges främsta musiker tolkar Elton John och Freddie Mercurys imponerande låtskatt i en sprakande och visuell show. Publiken kommer garanterat få en u": {
+    "value": "music",
+    "fetchedAt": 1789200690739
+  },
+  "cat:De kallar det för hiphop\nStockholm Vlogg: Svensk hiphop när den är som ärligast. Inga cash, inga bilar, inga framgångar. Se Stockholm Vlogg live och påminns om vad som spelar roll! Rasmus V: Folk kallar det för hiphop. Han kallar det live. Undrar du vad han menar får du ta reda på det på plats. ----- Fb-evenemang: https://fb.me/e/6w96d4mvo Restaurang: 17:00. Dörrar: 18:30. På scen: 20:00. ----- Passa på att äta innan eller efter evenemanget: https://reimersholmehotel.se/restaurang/ Sova över? Vi har rum. Använd koden MUSIK för 10% på alla ordinarie rumspriser när du bokar på https://reimershol": {
+    "value": "music",
+    "fetchedAt": 1789200690739
+  },
+  "cat:OnsdagsNöjet\nIkväll finns möjlighet att testa succén Nyfiken på Trav. Tagga en kompis eller unna dig själv en helkväll på Solvalla med föreläsning av framstående tränare, middag och känn farten i startbilen till ett oslagbart pris! Huvudspelet från ATG är V86® och avgörs tillsammans med Bergsåker.": {
+    "value": "sports",
+    "fetchedAt": 1789200690739
+  },
+  "cat:6/11 TOBIAS STEN | DEBASER STRAND\nDet norska stjärnskottet Tobias Sten har på rekordtid etablerat sig som en av Norges mest omtalade artister och som en ny, stark röst på den nordiska countryscenen. Den 22-årige artisten har andats country sedan barnsben. Med personliga och ärliga låtar hämtade ur egna erfarenheter, kombinerat med stark närvaro och känsla i sina framträdanden, har han snabbt byggt upp en engagerad och växande publik. Den självbetitlade debutplattan släpptes i maj 2025 och gick direkt in som etta på den norska albumlistan. Flera av låtarna placerade sig högt på hitlistorna, och": {
+    "value": "music",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Mässa c-moll - WA Mozart\nEtt av Mozarts mest betydelsefulla verk. Hedvig Eleonora Kammarkör Orkester ur Kungl. Hovkapellet Kathrin Lorenzen, sopran Maria Demérus, sopran Carl Unander-Scharin, tenor Arvid Eriksson, bas Pär Fridberg, dirigent": {
+    "value": "music",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Reading: The Meat Kings (Inc.) of Brooklyn Heights\nHos Cafarelli & Sons, en ikonisk kötthandlare i hjärtat av New York, är en sak säker och det är att ingen sitter säkert. Ägaren Paula kämpar för att hålla verksamheten vid liv. För hennes personalstyrka ställs tillvaron allt mer på sin spets – i slutet av säsongen kommer någon av dem att ryka. Och arbetsmarknaden skriker inte direkt efter folk med deras bakgrund. Lojaliteter skiftar, allianser formas och bryts. Hur långt är de beredda att gå i jakten på ett bättre liv? ”The Meat Kings! Inc. of Brooklyn Heights” är en rapp, charmig och brutal b": {
+    "value": "food",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Allt enligt Gert\nMöt människan bakom arkitekturen. Hur tänker Gert Wingårdh när han ritar hus? Vad väcker hans nyfikenhet, vad får honom att tvivla och varifrån kommer modet att tänka stort? I ett nära och personligt samtal möter författaren och programledaren Josefine Sundström en av Sveriges mest välkända arkitekter. Det blir en kväll om kreativitet, drivkraft och livsval, men också om motgångar, oväntade infall och människan bakom de uppmärksammade byggnaderna. Arkitekten Gert Wingårdh firar 75 år i livet, och 50 år som arkitekt. Med sin smittande entusiasm, sitt skarpa öga för form och sin": {
+    "value": "other",
+    "fetchedAt": 1789200690739
+  },
+  "cat:NPF lördag: Kom och prova instrumentet Funki!\nKom och prova instrumentet Funki!\nEtt instrument som alla kan spela på! \n\nJosefine och Maria har utvecklat musikinstrument som alla kan spela på. Instrumenten heter Funki. De är speciellt gjorda för att tillgängliggöra musikskapande tillsammans för fler, även om man inte spelar något traditionellt instrument. \n\nInstrumenten kräver inga förkunskaper, det är bara att komma och prova på att spela tillsammans!  \n\nVill du veta mer om Funki? Gå in på www.funki.se": {
+    "value": "music",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Axel von Fersen charmkurs - Platinum Edition\nSuccén är tillbaka på Livrustkammaren i en ny version! ”Jag såg på damerna och visste, att jag kunde ha en fullständig framgång, om jag bara ville.” Axel von Fersens liv är fyllt av makalösa äventyr. I Frankrike får han självaste drottningen på fall, i Amerika blir han tolk åt General Washington. Vill du bli likadan? Axel von Fersens charmkurs Platinum Edition är en underhållande afton med Caroline Donath. Efter föreställningen får alla deltagare ett fint diplom för sina nya färdigheter. Man kan därefter titulera sig ”Avancerad Charmör”. Platinum ed": {
+    "value": "other",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Dave Lofts": {
+    "value": "other",
+    "fetchedAt": 1789200690739
+  },
+  "cat:261114 Zoe Pia & Tenores di Orosei": {
+    "value": "music",
+    "fetchedAt": 1789200690739
+  },
+  "cat:TAYC - Börsen, Stockholm\n🇫🇷 TAYC LIVE IN STOCKHOLM 🇸🇪 Stockholm, get ready. TayC returns to Sweden for an exclusive live concert at Börsen, Stockholm. After unforgettable sold-out shows in Sweden, one of France’s biggest R&B and Afrolove artists is back for another special night. 📅 14 November 2026 🕗 20:00 – 23::00 📍 Börsen, Stockholm 🔞 18+ The night kicks off with Robin Kadir, one of Sweden’s leading DJs within Hip Hop, R&B & Urban. Expect heavy beats, high energy and the perfect build-up before TayC takes the stage. Get ready for TayC’s biggest records, his signature Afrolove sound a": {
+    "value": "music",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Totoo trollkarl": {
+    "value": "other",
+    "fetchedAt": 1789200690739
+  },
+  "cat:RAW STHLM | Özz Nujen, Johanna Wagrell mfl\nPå scen:{.u-text--center} Özz Nujen{.u-text--center} Johanna Wagrell{.u-text--center} Catrin Martinsson{.u-text--center} Isak Wahlberg{.u-text--center} Klicka här för att läsa mer om komikerna och kvällenhttps://rawcomedyclub.se/evenemangskalender/{.c-button target=\"blank\"} {.u-text--center} Välkommen till Sveriges största standupklubb - RAW! Du hittar oss i Stockholm, Göteborg och Malmö! På RAW ser du en helt unik mix av Sveriges största och mest kända komiker blandat med morgondagens hetaste stjärnor. Dessutom; alltid grymma DJ:s som väljer perfekt ": {
+    "value": "comedy",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Gates of Ishtar + A Canorous Quintet + Ablaze My Sorrow\nNittiotalet var en avgörande period för svensk melodisk death metal, då scenen fortfarande formades och soundet ännu var i rörelse. Tre band som var med och definierade eran återvänder nu i samband med 30 års-jubileumskonserter: Gates of Ishtar, A Canorous Quintet och Ablaze My Sorrow. Tillsammans representerar de en tid då melodi och aggression tog form sida vid sida – som fortfarande ekar i dag.": {
+    "value": "music",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Timelessfest: Det femte elementet\nI en framtid där världen hotas av en uråldrig kosmisk ondska står civilisationens sista hopp till ett mystiskt vapen: det femte elementet. Taxichauffören Korben Dallas får en oväntad körning och hamnar mitt i den galaktiska krisens zenit. Det femte elementet är Luc Bessons färgsprakande rymdopera med Bruce Willis, Milla Jovovich och Gary Oldman.": {
+    "value": "music",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Korsstygnsbroderi för unga\nProva på korsstygnsbroderi och upptäck det magiska i att skapa något med dina egna händer! Under workshopen får du lära dig grunderna i korsstygnsbroderi, broderiets historia i Sverige och Danmark, samt de psykologiska fördelarna med handarbete. Arrangörer är Tilda från Sverige och Mie från Danmark från gruppen Stille Stygn. Efter workshopen får du en liten goodiebag full med material för att kunna fortsätta brodera på egen hand. Vi bjuder på fika!": {
+    "value": "art",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Workshop: Skapa julpynt i mässing\nWorkshop: Skapa julpynt i mässing Söndag 15 november kl. 13 och 14.30 Med Smedjan Blackeberg Hur klädde man julgranarna förr? Gärna med sådant som man tillverkat själv! I denna workshop slöjdar vi pynt i mässingsplåt under handledning av Smedjan Blackeberg. Kvällen inleds med glöggmingel i palatsköket, följt av en workshop i Tavelgalleriet på översta våningen i huset. Material, handledning och fika ingår. Pris: vuxen 475 kr, barn 350 kr. Rek. ålder från 7 år med vuxens hjälp.": {
+    "value": "art",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Gareth": {
+    "value": "other",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Knattebio: Mera monster, Alfons\nTre nya historier om Alfons Åberg som bor med sin pappa och katten Pussel. Ibland är Alfons barnslig, som när han vägrar äta middag, men ibland är han stor som när han är barnvakt åt Småtting.": {
+    "value": "family",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Bokklubb Ansjovis (för dig 9-12 år)\nGillar du böcker?\nGillar du fika? \nÄr du 9-12 år? Perfekt! Kom och var med på bokklubb! \n\nVi träffas på barnavdelningen måndag 16 november klockan 15-16.\n\nTexten uppdateras med vilken bok vi läser till träffen när deltagarna i bokklubben valt på träffen innan. Boken finns att låna på Tranströmerbibliotekets barnavdelning. Glöm inte att anmäla dig!\nPs. På träffen pratar du så mycket eller så lite du vill. Huvudsaken är att vi har kul tillsammans! Biblioteket bjuder på fika.": {
+    "value": "family",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Författarbesök: Evin Cetin om \"Barnsoldater\"\nMöt juristen och författaren Evin Cetin i ett samtal om den uppmärksammade boken Barnsoldater. Med starka berättelser från verkligheten skildras hur unga rekryteras in i kriminella nätverk – och hur det hade kunnat förebyggas. Moderator: Iman Elmi, Socialpedagog, Järva stadsdelsförvaltning\n\nProgrammet är en del av Järva fritt från våld och inviger temaveckan.": {
+    "value": "other",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Hansson de Wolfe United\nNya konserter med Hansson de Wolfe United! Hansson de Wolfe United på scen igen hösten 2026 i Malmö, Jönköping, Göteborg, Stockholm och Uppsala. Ett av de stora banden på svenska. Med mer än en kvarts miljon sålda studioalbum, 5 guld och med låtar som Var kommer barnen in och Oberoende vad fursten säger nu mer aktuella än någonsin samt Existens-maximum, Iskalla killen full av mänsklig värme m.fl. - har Hansson de Wolfe United skapat ett helt eget musikaliskt landskap som fångat flera generationer lyssnare. Bandet: Lorne de Wolfe – sång, klaviatur Jonas Isacsson – gitarr": {
+    "value": "music",
+    "fetchedAt": 1789200690739
+  },
+  "cat:The Obsessed + Klastos | Stockholm\nDoom metal-legendarerna The Obsessed kommer till Kollektivet Livet den 16 november som en del av deras Europaturné 2026 Support: Klatos. Få namn väger lika tungt inom amerikansk doom som Scott “Wino” Weinrich. Som frontfigur i The Obsessed har han sedan slutet av 70-talet varit med och format ett helt musikaliskt uttryck – rått, psykedeliskt och kompromisslöst tungt. Genom band som Saint Vitus, Spirit Caravan och The Obsessed har Wino blivit en kultfigur långt bortom doom-scenen, respekterad av metalheads, punkare och alla som uppskattar musik med smuts under": {
+    "value": "music",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Marcella Mravec och Flora Wiström\nDen 16 november besöker författarna Marcella Mravec och Flora Wiström Bokmåndag för att samtala med varandra om sina respektive senaste projekt, Hennes ögon och Stortaxi.": {
+    "value": "other",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Videoredigering med DaVinci Resolve workshop\nVill du lära dig om att klippa och redigera film på dator? Kom och lär dig videoredigering på Lava!": {
+    "value": "other",
+    "fetchedAt": 1789200690739
+  },
+  "cat:All Inclusive: Aaron Kroon & Guests\nAll Inclusive: Aaron Kroon &amp; Guests is Sweden’s largest event on inclusive leadership. At Oscarsteatern, Aaron Kroon brings together some of Sweden’s most prominent leaders, public figures and changemakers for personal and unexpected conversations about leadership, courage and compassion. An evening of laughter, reflection and new perspectives – created to inspire hope and action in the winter darkness.": {
+    "value": "other",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Kris, kaos & katastrof \nMåndag morgon i ett klassrum någonstans. Fem elever och en lärare samlas för ett omprov i svenska. I uppgift ska de svara på frågan “hur ser ditt liv ut om 20 år?”. Men vad svarar man när man inte ens vet hur nästa vecka ser ut? Eller måste hantera gängkriminella brorsor och överbeskyddande morsor? Kommer fuckboys fortsätta ghosta oss i all framtid? Tänk om ett sken uppenbarar sig och Jesus återvänder? Eller världen plötsligt brinner upp? Snart är eleverna så intrasslade i varandra att de knappt hör larmet som tjuter utanför klassrumsdörren… Kris, kaos & katastrof är en": {
+    "value": "other",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Workshop: Bind din julkrans\nFlorist Kristina Öhman delar med sig av sina erfarenheter och ger praktiska råd och tips i skapandet av vackra och dekorativa kransar till jul.": {
+    "value": "art",
+    "fetchedAt": 1789200690739
+  },
+  "cat:17/11 TOPHOUSE | RAYNES | DEBASER NOVA\nTophouses musik är omedelbar och oemotståndlig: lättillgänglig men ändå med djup och tidlös kvalitet. Mixen av folkmusik och polerad americana, spetsad med lite country och keltiska influenser är synnerligen slagkraftig. Bandet bildades i Missoula, Montana 2016 och har sedan dess utvecklats till ett explosivt liveband som byggt en stor fanbase från scratch. Från gratisspelningar i parkeringsgarage till utsålda konserter med en publik som sjunger med och kan varenda ord. I februari landade EPn WDYTWH och hösten 2026 kommer de äntligen till Stockholm och De": {
+    "value": "music",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Samtal: Ungernrevolten 1956 – 70 år senare\nVad kan en revolution från 1956 lära oss om frihet, stormakters makt och vår egen tid? Hösten 1956 reste sig människor i Ungern mot den kommunistiska regimen och dåvarande Sovjetunionens inflytande. 4 november gick sovjetiska styrkor in i Ungern och slog ned upproret med militärt våld. Tusentals människor dödades och omkring 200 000 ungrare flydde landet. Vad kan Ungernrevolten lära oss om stormakters anspråk och människors vilja att försvara frihet och självbestämmande? Kan vi dra några paralleller till vår egen tid? Möt författaren och forskaren Gel": {
+    "value": "other",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Skoja' bara (vardag)\nEn klassrumsföreställning om att gå långt över gränsen Mellanstadiet är en turbulent tid när jaget, gruppen och förmågan att påverka omvärlden ska utforskas. Leken kan snabbt övergå i allvar. Ett skämt kan drivas för långt och plötsligt bli på liv och död. I den här klassrumsföreställningen utforskar vi den psykologiska, tysta mobbningen som kan vara så svår för omvärlden att upptäcka. Vi möter två skådespelare som berättar om sin mellanstadietid, en tid när båda kämpade för sin överlevnad och för att hitta sin plats. Pjäsen baseras på det konstnärliga teamets egna erfaren": {
+    "value": "other",
+    "fetchedAt": 1789200690739
+  },
+  "cat:OnsdagsNöjet\nIkväll är det revanschmöjligheter från såväl Kriteriet som Oaks med förhöjda prissummor. Dessutom körs Stall Courant Solvallaserien, Kentucky Fibbers Lopp och SHF:s Tvååringslopp. Topptrav mitt i veckan med stora pengar i potten! Huvudspelet från ATG är V86® och avgörs tillsammans med Bjerke.": {
+    "value": "sports",
+    "fetchedAt": 1789200690739
+  },
+  "cat:Medeltida sigill\nVilken funktion hade de medeltida sigillen? Under medeltiden var sigill mer än en identitetshandling. De länkade samman dokument med specifika personer, manifesterade auktoritet och verifierade en ägares närvaro. Sambandet mellan ett personligt sigill och dess ägare följde tydliga normer: sigillet avbildade ägaren i en idealiserad form. Det dröjde dock länge innan sigill började användas av grupper, kollektiv, som till exempel gillen eller ordnar. I föredraget berättar Wilhelm Ljungar, doktorand i historia, om medeltida sigill, deras användning och bilder, och ger oss en unik ": {
+    "value": "other",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Dinnershow X-MAS Edition Golden Hits\nI biljetten ingår: show, trerättersmeny, nattklubbsentré, karaoke och garderob. Det bästa har vi kvar att berätta: meny och underhållning presenteras längre fram. Åldergräns: 13 år i målsmans sällskap. Köpta biljetter återbetalas ej. Spelperiod: 20 augusti 2026 - 12 juni 2027. med reservation för ändringar. Är ni ett större sällskap på 10 personer eller fler eller ett företag? maila: bokning@goldenhits.se": {
+    "value": "food",
+    "fetchedAt": 1789200733417
+  },
+  "cat:DEN FULE\nSince 1990, Den Fule has been a force to be reckoned with on the Scandinavian folk and world music scene. We were awarded a Swedish Grammis in 1993 for our debut album Lugumleik and have since released three albums: Skalv in 1995, Halling i Köket in 2007, and Contrebande in 2012. In addition to Scandinavia, we have toured in Germany, the USA, India, Turkey, and Senegal. Den Fule 2025 consists of Sten Källman, Stefan Bergman, Christian Jormin, and Henrik Cederblom, but previous incarnations of the band have also included Jonas Simonson, Ellika Frisell, Ola Bäckström, and Henrik Wallgre": {
+    "value": "music",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Höstkonsert\nHöstkonsert Medverkande musiker: Paul Waltman violin, Simona Bonfiglioli violin, Albin Uusijärvi viola, Daniel Thorell, cello, Anna Christensson piano Musik av: Gabriel Fauré och Erich Wolfgang Korngold": {
+    "value": "music",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Musikmiddag med Operapärlor Mozart + Da Ponte\nMusikmiddag Start 18:00 Wasahofs sydfranska fisksoppa Operamusik Slut ca 20:00": {
+    "value": "food",
+    "fetchedAt": 1789200733417
+  },
+  "cat:En kväll om Ellen Key\nI den här föreläsningen får du möta kvinnorättskämparen Ellen Key, en av Sveriges mest banbrytande tänkare. Vid Vätterns strand i Östergötland sjuder det av nya tankar kring bildning, demokrati och kvinnors frigörelse. Här formas idéer som kommer att prägla ett helt sekel. Här finns Ellen Key, pionjär, författare och kvinnosakskämpe. Hon argumenterar för reformer som ska göra kvinnor ekonomiskt oberoende, och för ett liv där både tanken och människan får en plats. Med skarp blick knyter hon samman kvinnors rätt till kunskap med de växande möjligheterna i arbetslivet kring": {
+    "value": "other",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Med doft av patchouli\nPatchouli är ett av de mest mytomspunna råmaterialen i parfymindustrin, med en lång historia som sträcker sig från 1800-talets silkeshandel till den psykedeliska hippierörelsen. Idag utgör den, trots sin ibland polariserande doft, en oumbärlig ingrediens i en stor mängd nutida och historiska parfymer. I den här föreläsningen får du lära dig allt om patchoulins historia, samt hur den odlas och används i parfymindustrin. I samarbete med de världsledande råvaruproducenterna Laboratoire Monique Rémy och IFF doftar vi på såväl råmaterial som isolerade doftmolekyler, sida vid s": {
+    "value": "other",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Bilderboksdagen\nVälkommen till den första upplagan av Bilderboksdagen – en eftermiddag och kväll som utforskar och uppmärksammar bilderboken som konstform. Möt några av Nordens och världens främsta bilderboksskapare i samtal och workshops, och upplev den första prisutdelningen av Kulturhuset Stadsteaterns nyinstiftade Bilderbokspris.": {
+    "value": "art",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Kulturhuset Stadsteaterns Bilderbokspris\nKulturhuset Stadsteaterns nyinstiftade Bilderbokspris med en prissumma på 200 000 kr tilldelas en upphovsperson i utveckling som har stor betydelse för bilderbokens framtid och egenart. Det är ett unikt pris som premierar och uppmärksammar bilderboksskapare och bilderboken som konstform. Kulturhuset Stadsteaterns Bilderbokspris är en del av Bilderboksdagen och delas 2026 ut för första gången.": {
+    "value": "art",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Hökis Visrum Presenterar Lars Persa\nVisor du skulle ha hört förr. Om allt ifrån krigets brutalitet och tillfälligheternas nycker till personalfestens uppsluppenhet och vårens obotliga längtan tillsammans med någon jämtländsk cover. Av och med Lars Persa Persson, ackompanjerad av Per Burman. Vi serverar fika i pausen för 40:- Vi öppnar kl 18.00 - kom och se vår fina Cornelisutställning! Hjärtligt välkomna.": {
+    "value": "music",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Hoppsan! (från 4 år & för seniorer) Vardag\nEn betraktelse över det rörande livet från 4 år och för seniorer I denna föreställning bjuder vi publiken på stor igenkänning i komiska situationer tillsammans med massor av musik. Med korta scener fyllda av tänkvärda ord och dråpliga rörelser gestaltar vi människan vars kroppsliga utveckling vi har studerat in i minsta detalj. Upplev livets koreografi från den allra första rörelsen till den allra sista. Föreställningen baseras på den allra äldsta generationens livserfarenheter. Vi har ställt nyfikna frågor till seniorerna och vi brinner av iver att f": {
+    "value": "comedy",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Öppen föreläsning: AI och demokratin\nVad blir konsekvenserna när AI får makten att besluta om till exempel vem som ska få ta ett lån, hur någon ska dömas för ett brott eller vem som får komma in i ett land? Varför är det viktigt att vi som medborgare får demokratiskt inflytande över AI? Vad blir konsekvenserna annars? Välkommen till ett samtal med statsvetaren Eva Erman. Programledare är Karin Gyllenklev, vetenskapsjournalist.": {
+    "value": "other",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Bokcirkel- Väggen av Marlen Haushofer\nHöstens bokcirklar på Östberga bibliotek har tema gräns. Tre torsdagskvällar ses vi och pratar om en bok som på något sätt berör temat. Denna gång tar vi oss an Väggen av Marlen Haushofer. Låna och läs boken innan träffen.": {
+    "value": "other",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Tonårscirkel\nÄr du tonåring och gillar att läsa? Då är detta bokcirkeln för dig. Vi läser samma bok, ses en gång i månaden och fikar och pratar om det vi läst. \n\nAnmälan till bibliotekspersonalen eller på mejl: brommaplan.ssb@stockholm.se": {
+    "value": "other",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Archspire + Crown Magnetar + The Zenith Passage\nArchspire kommer till Kollektivet Livet den 19 november!!! Konserten arrangeras av FKP Scorpio & Kollektivet Livet Support: Crown Magnetar + The Zenith Passage + Analepsy Archspire kommer till Kollektivet Livet den 19 november med ”Too Fast To Die” i ryggen. Femte albumet, första helt oberoende släppet och ännu ett argument för varför de fortfarande är ett av de mest orimliga banden i modern tech death. Uppföljaren till Juno-belönade ”Bleed the Future” trycker deras signatur ännu längre ut i vansinnet: det är mer fart, mer precision, mer total ko": {
+    "value": "music",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Föredrag Drottning Kristinas hovfester\nDrottning Kristinas hov har kallats ett av Europas mest praktfulla och nöjeslystna. I en tid då Sveriges nya stormaktsställning behövde manifesteras blev festligheterna ett politiskt verktyg – och ett skådespel utan motstycke. Hovbaletter, banketter, riddarspel, djurhetsningar och fyrverkerier var inte bara underhållning, utan en del av maktens scenografi. Intendent Sofia Nestor berättar om dessa storslagna 1600-talsevenemang och hur nöjen, politik och kultur vävdes samman i drottning Kristinas värld.": {
+    "value": "other",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Workshop: Bind din julkrans\nFlorist Kristina Öhman delar med sig av sina erfarenheter och ger praktiska råd och tips i skapandet av vackra och dekorativa kransar till jul. Pris: 795 kr inkl. material till krans samt glögg/kaffe och lussebulle.": {
+    "value": "family",
+    "fetchedAt": 1789200733417
+  },
+  "cat:The Magnolia": {
+    "value": "other",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Lunchtrav\nLunchtrav med möjligheten till möten på Bistro Stig H. Du har perfekt vy över banan och varför inte utmana dina arbetskamrater om vem som hittar flest rätt? Det här är Stockholms mest spännande och innehållsrika lunch. Helt enkelt en perfekt start på en fredags after work! Huvudspelet från ATG är V65®": {
+    "value": "food",
+    "fetchedAt": 1789200733417
+  },
+  "cat:20/11 MURDA | DEBASER STRAND\nDen turkiska rapparen, sångaren och låtskrivaren Murda kommer till Sverige med sin UZAY TOUR 2026. Den 20 november 2026 intar han Debaser i Stockholm för en kväll med modern hiphop, trap och massor av sina största hits. Murda är en av de mest framstående rösterna inom modern turkisk rap. Efter att först ha slagit igenom i Nederländerna har han under flera år toppat raplistorna och byggt upp en internationell publik med över en miljard streams. Genom samarbeten med artister som Ezhel, MERO och Hadise, samt en rad framgångsrika singlar och album, har Murda etablerat ": {
+    "value": "music",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Simon Gärdenfors & Anton Magnusson - Festar\nSveriges mest kompromisslösa humorduo är tillbaka i högform på stand up-scenen! Dubbelshowen \"Simon Gärdenfors & Anton Magnusson - Festar\" är skåneduons fjärde gemensamma sverigeturné. Med deras unika kemi och syrliga vardagsobservationer utlovas som vanligt högoktaniga nya skämt, skruvade historier och oväntade sanningar från första minuten. Missa inte chansen att se två av Sveriges mest intressanta komiker live - ingen går säker! Längd: 120 min inkl. paus Producent: Markus Wiklund Ferrer, A Love Supreme Om Simon Gärdenfors Simon Gärdenfors är född ": {
+    "value": "comedy",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Boll? Boll. Boll! (från 2-6 år)\nBoll? Boll. Boll! (2-6 år) Ljuvlig visuell och musikalisk smällkaramell för de allra minsta En visuell och musikalisk smällkaramell som med sång, rörelse och musik lotsar barnen genom en sagolik värld fylld av böljande hav och glupska (men snälla) monster, drömska horisonter och en oändlig massa bollar i alla storlekar och färger. Samarbete och konflikt, rivalitet och kärlek - Känslorna är många när bollarna tar plats på scenen! Boll? Boll. Boll! är 30 minuter lång.": {
+    "value": "family",
+    "fetchedAt": 1789200733417
+  },
+  "cat:21/11 READY FOR IT? | Debaser Klubben\nTaylor Swift, our Mastermind, brought us together with the very first Swiftie club in Sweden EVER… and somehow, 5 years later, we’re still bejeweled together on the dancefloor. Now it’s time to celebrate every era, every bridge screamed at the top of our lungs, every friendship made, and every unforgettable night we’ve shared together. Join us for a whole evening and night of Taylor magic and no, we definitely don’t stop at Midnight as we revisit iconic moments from every club night through the years. Expect heartbreak anthems, fearless dancing, champagne ": {
+    "value": "nightlife",
+    "fetchedAt": 1789200733417
+  },
+  "cat:RAW STHLM | Ahmed Berhan, Henrik Nyblom mfl\nPå scen:{.u-text--center} Ahmed Berhan{.u-text--center} Henrik Nyblom{.u-text--center} Zinat Pirzadeh{.u-text--center} Elina Du Rietz{.u-text--center} Klicka här för att läsa mer om komikerna och kvällenhttps://rawcomedyclub.se/evenemangskalender/{.c-button target=\"blank\"} {.u-text--center} Välkommen till Sveriges största standupklubb - RAW! Du hittar oss i Stockholm, Göteborg och Malmö! På RAW ser du en helt unik mix av Sveriges största och mest kända komiker blandat med morgondagens hetaste stjärnor. Dessutom; alltid grymma DJ:s som väljer perfekt ": {
+    "value": "comedy",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Tvådagarskurs: Lär dig väva i bandgrind\nTvådagarskurs: Lär dig väva i bandgrind Att väva band i bandgrind är en gammal vävmetod som praktiserats och praktiseras runtom i världen, och i stor utsträckning i olika delar av Sappmí. Tekniken bygger på att man spänner upp en smal väv mellan vävarens kropp och en fast punkt på till exempel en vägg. Därefter vävs bandet med hjälp av bandgrinden. Kursen startar med en introduktion till bandgrindens historia. Du kommer lära dig att sätta upp väven, hur vävningen går till, och hur enklare mönster planeras och skapas. Du kommer påbörja vävningen av ett ba": {
+    "value": "other",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Näääk & Nimo\nNäääk & Nimo till Kägelbanan Legendariska duon Näääk & Nimo är en av svensk hiphop mest älskade live-akter, men det var ett par år sedan de senaste gigade tillsammans i hemstaden. Den 21 November återförenas de för ett exklusivt Stockholms-gig på Kägelbanan. Räkna med en kväll att minnas när de intar scenen och levererar sina klassiska låtar. Åldersgräns: 18 år Stående konsert Mer information inför ditt besök hittar du på respektive evenemangs sida på www.sodrateatern.com/pa-scen. Några dagar innan konserten mailar vi också ett välkomstbrev till alla biljettköpare.": {
+    "value": "music",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Drottningen dansar\nVälkommen att ta del av en interaktiv dansteater för hela familjen! Följ med till 1600-talets spännande värld och stifta bekantskap med barockens livfulla dans och musik. Här möter du en stark personlighet - drottning Kristina. Som publik blir du del av hennes hov och får medverka i en hovbalett som utförs på Kristinas alldeles egna sätt. Vad som helst kan hända när drottningen dansar! Entré till museet ingår i biljetten och gäller hela dagen.": {
+    "value": "theatre",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Imperial Triumphant + Knoll\nImperial Triumphant + Knoll kommer till Kollektivet Livet den 21 november IMPERIAL TRIUMPHANT New York-trion Imperial Triumphant har under det senaste decenniet etablerat sig som ett av de mest särpräglade banden inom modern extrem metal. Med sina guldfärgade masker, sin fascination för stadens arkitektur och en kompromisslös musikalisk vision har de skapat ett uttryck där avantgardistisk metal möter jazz, experimentell musik och filmisk storslagenhet. Bandets musik kretsar ständigt kring samma tema: New York City. Dess skyskrapor, historia och mörka undersidor fung": {
+    "value": "music",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Italienska vindagen 2026\nVarmt välkommen till dagen då du kan prova viner från många av Italiens hörn! Svenska vinimportörer och producenter finns på plats och hjälper dig att hitta dina favoritviner. I år kan du också få tips för en härlig semester i Italien på tema vin & gastronomi. Du kommer även att kunna provsmaka italienska ostar, charkuterier och många andra delikatesser. Matprodukterna går också att handla på plats! Datum: Lördagen 21 november 2026 Tider: Dagen är indelad i 3 pass: kl.12.00 - 14:00 kl.15.00 - 17.00 kl.18.00 - 20.00 Plats: Grand Hotel i Stockholm- Vinterträdgården": {
+    "value": "food",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Jul i palatset\nJul i palatset - dramavisning Julen står för dörren och huset formligen sjuder av förberedelser. Det är fullt upp, och Anna tappar helt tidsorienteringen när hon springer med julkakan till serveringsrummet, med den hårt pressade amanuensen i hälarna. Ändå kan de inte låta bli att berätta om julen, firandet och familjen. Följ med på denna dramatiserade visning. Jul i palatset är en dramatiserad visning för vuxna, rekommenderas för barn från 10 år. Visningen är ca 1 h. Bra att veta inför besöket; Tillgänglighet – museet saknar hiss Hallwylska museet har fem våningsplan. Eftersom d": {
+    "value": "theatre",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Staffan Hellstrand + The Nomads\nHösten 1996 släppte Staffan Hellstrand det hyllade albumet ”Pascha Jims Dagbok” - där han kompades av svenska gagagerocklegendarerna The Nomads. Nu möts Staffan och The Nomads igen när plattan fyller 30 år. Den 21 november framför de albumet i sin helhet i Studion.": {
+    "value": "music",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Hoppsan! (från 4 år & för seniorer) Helg\nEn betraktelse över det rörande livet från 4 år och för seniorer I denna föreställning bjuder vi publiken på stor igenkänning i komiska situationer tillsammans med massor av musik. Med korta scener fyllda av tänkvärda ord och dråpliga rörelser gestaltar vi människan vars kroppsliga utveckling vi har studerat in i minsta detalj. Upplev livets koreografi från den allra första rörelsen till den allra sista. Föreställningen baseras på den allra äldsta generationens livserfarenheter. Vi har ställt nyfikna frågor till seniorerna och vi brinner av iver att få ": {
+    "value": "family",
+    "fetchedAt": 1789200733417
+  },
+  "cat:261122 Södra bergens Balalajkor": {
+    "value": "music",
+    "fetchedAt": 1789200733417
+  },
+  "cat:By a Thread\nEn cirkusföreställning från det australiensiska kompaniet One Fell Swoop som utforskar relationen mellan tillit och risk genom en innovativ luftakrobatisk konstruktion. Långa spolar av vitt rep löper genom block och trissor och lindas runt kroppar, vilket tydligt kopplar samman artisternas rörelser ovanför marken. Gästspel 22 november på Klarascenen, Kulturhuset Stadsteatern.": {
+    "value": "theatre",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Knattebio: Lilla Anna och Långa Farbrorn\nDet finns inga kompisar som är mer olika än Lilla Anna och Långa Farbrorn. Hon är kort, han är väldigt lång. Lilla Anna är modig, Långa Farbrorn är skrajsen.": {
+    "value": "other",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Amistat": {
+    "value": "other",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Stickbio: Verity\nBaserad på Colleen Hoovers bästsäljande roman är detta en psykologisk thriller som följer den hyllade författaren Verity Crawford (Anne Hathaway) och Lowen Ashleigh (Dakota Johnson), en kämpande författare som flyttar till den avlägsna Crawford-egendomen för att spökskriva åt Verity.": {
+    "value": "other",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Author Talk: Nelio Biedermann (Switzerland)\nMeet Nelio Biedermann in conversation with Cecilia Hansson. Switzerland’s new literary star made his debut as an author at the age of 20 and has achieved a major international breakthrough with his second novel, &quot;Lázár&quot;. Join him on International Writers&#x27; Stage November International Writers&#x27; Stage for a conversation about the book.": {
+    "value": "other",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Only The Poets": {
+    "value": "other",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Nelio Biedermann (Schweiz)\nMöt Nelio Biedermann i samtal med Cecilia Hansson. Schweiz nya litterära stjärna debuterade som författare redan som 20-åring och har med sin andra roman \"Lázár\" fått ett stort internationellt genombrott. Möt honom på Internationell författarscen 24 november för ett samtal om boken – en episk släktsaga om hemligheter, arv och Europas stormiga historia.": {
+    "value": "other",
+    "fetchedAt": 1789200733417
+  },
+  "cat:Systrarna på Sophiahemmet\nFörfattaren Ruth Kvarnström-Jones kommer nu med den tredje boken i sviten Stockholms pärlor. Hör henne berätta om de kvinnor som under slutet av 1800-talet var med och byggde upp Sophiahemmet. År 1883 kallar Drottning Sophia sina närmaste förtrogna till ett hemligt möte på Kungliga slottet. Hon bär på en djärv vision om att grunda en sjuksköterskeskola i Florence Nightingales anda. Så småningom skapas Sophiahemmet som blir en plats där kvinnor får chansen att ta ett större ansvar under en tid med stora samhälls- och medicinska förändringar. Ruth Kvarnström-Jones berät": {
+    "value": "other",
+    "fetchedAt": 1789200777532
+  },
+  "cat:RAW Christmas | Zinat Pirzadeh, Jörgen Sjöberg mfl\nPå scen:{.u-text--center} Zinat Pirzadeh{.u-text--center} Jörgen Sjöberg{.u-text--center} mfl.{.u-text--center} Klicka här för att se alla som uppträder detta datumhttps://rawcomedyclub.se/evenemangskalender/{.c-button target=\"blank\"} {.u-text--center} Nu är supersuccén ”A very RAW Christmas” tillbaka för 15:e året i rad på anrika Hilton Stockholm Slussen. Kombinationen av klassiskt julbord, fantastisk standup show och magisk utsikt mitt i city är svårslaget och många företag och gäster återkommer år efter år. Ni börjar kvällen med glögg och p": {
+    "value": "comedy",
+    "fetchedAt": 1789200777532
+  },
+  "cat:Uli Jon Roth - Vigin Killer 50th Anniversary Tour\nGuitar legend and rock visionary Uli Jon Roth celebrates the 50th anniversary of the legendary Scorpions album Virgin Killer in 2026. With his unmistakable playing style and innovative guitar sounds, Uli not only shaped the early work of the Scorpions but also inspired generations of guitarists worldwide. From 1974 to 1978, Roth served as the Scorpions‘ lead guitarist and co-creator of classics such as Fly To The Rainbow, In Trance, and, of course, Virgin Killer, which achieved gold status worldwide. His virtuosic solos and melodic runs made hi": {
+    "value": "music",
+    "fetchedAt": 1789200777532
+  },
+  "cat:Ryttargalan 2026\nVälkommen till Ryttargalan 2026! Onsdagen den 2 december fyller vi anrika Vasateatern i Stockholm med fest, spänning och gemenskap. Under denna oförglömliga kväll hyllar vi sportens största hjältar och eldsjälar, från Årets häst till ridsportens ovärderliga ridlärare. Säkra din biljett till ridsportårets absoluta höjdpunkt och mingla med den svenska ridsporteliten. Varmt välkommen till Ryttargalan!": {
+    "value": "sports",
+    "fetchedAt": 1789200777532
+  },
+  "cat:Bob Hansson\nSnällast vinner! – En invasion av hopp. Bob Hansson släppte nyligen sin bok ”Snällast vinner” som både rönt stor uppmärksamhet och blivit en försäljningssuccé. Nu åker han ut med en föreställning med boken som grund. Vår tid är mörk men den här föreställningen är ett solarium för själen. Se honom i Hörsalen den 2 december!": {
+    "value": "theatre",
+    "fetchedAt": 1789200777532
+  },
+  "cat:Hökis Visrum Presenterar Ola Sandström\nOla Sandström är en hyllad gitarrist, sångare och artist som tonsatt Karin Boye, Tomas Tranströmer, Stig Dagerman och Signe Aurell. Han har turnerat flitigt i Riksteaterns regi men även spelat solo på Stockholms respektive-Göteborgs Stadsteater. Ola kommer till Hökis visrum med sina egna visor blandat med tonsättningar och instrumentalmusik. Vi serverar fika i pausen för 40:- Vi öppnar kl 18.00 - kom och se vår fina Cornelisutställning! Hjärtligt välkomna.": {
+    "value": "music",
+    "fetchedAt": 1789200777532
+  },
+  "cat:RAW Christmas | David Sundin, Victor Linnér, Dessi\nPå scen: {.u-text--center} David Sundin{.u-text--center} Victor Linnér{.u-text--center} Dessi{.u-text--center} Klicka här för att se alla som uppträder detta datumhttps://rawcomedyclub.se/evenemangskalender/{.c-button target=\"blank\"} {.u-text--center} Nu är supersuccén ”A very RAW Christmas” tillbaka för 15:e året i rad på anrika Hilton Stockholm Slussen. Kombinationen av klassiskt julbord, fantastisk standup show och magisk utsikt mitt i city är svårslaget och många företag och gäster återkommer år efter år. Ni börjar kvällen med glögg och pe": {
+    "value": "comedy",
+    "fetchedAt": 1789200777532
+  },
+  "cat:Voidgarden\nVoidgarden releasefest! Postpunk på Reimersholme Hotel – 4 december Förband: Brännbart & Sadly Sunday Mörkret kallar dig till ett firande av det oändliga tomrummet. Ett firande bortom tid och rum, bland de uråldriga trädrötterna och de sedan fordom vissna blommorna. Bevittna pånyttfödelsen av gamla väsen och spelmän som än en gång skola vandra denna mörka stig, men akta ditt sinne, ty deras dystra sånger kan komma att locka dig mot samma öde. Den 4 december på Reimersholme Hotel firar Voidgarden releasen av debutalbumet Funeral. Under kvällen framförs musik av Voidgarden samt förban": {
+    "value": "music",
+    "fetchedAt": 1789200777532
+  },
+  "cat:A Zero8 Christmas (19.30)\nVälkommen till A Zero8 Christmas, vår årliga julkonsert, denna gång i underbara Högalidskyrkan lördag den 5 december. I år ger vi två konserter – det finns två tider att välja på. Vi bjuder på älskade svenska julklassiker, klassisk körmusik och nya arrangemang med influenser från barbershop, allt i Zero8:s karakteristiska klang. Lördag 5 december i Högalidskyrkan, Stockholm Kl. 16.30 och 19.30 Konsertlängd: ca 1 timme och 15 minuter Biljetter: 350 kr ordinarie. Pensionär samt studenter och barn/ungdomar 6–18 år 275 kr. Denna konsert lämpar sig inte för barn under 6 år": {
+    "value": "music",
+    "fetchedAt": 1789200777532
+  },
+  "cat:5/12 DUNDERTÅGET | DEBASER STRAND\nEfter den bejublade återkomsten på Sweden Rock Festival kommer Dundertåget till Stockholm för en efterlängtad konsert på Debaser Strand. Det som från början skulle vara en enda, exklusiv återförening blev något mer. Efter den starka responsen på sommarens Sweden Rock-spelning och en stor efterfrågan på fler konserter har Dundertåget nu beslutat sig för att göra ytterligare en spelning – på hemmaplan i Stockholm. Den 5 december kliver Dundertåget upp på scen på Debaser Strand. – Vi hade egentligen inte tänkt göra mer än Sweden Rock. Men efter spelningen kände v": {
+    "value": "music",
+    "fetchedAt": 1789200777532
+  },
+  "cat:Julkonsert Sollentuna Goss- och Diskantkör\nStämningsfull Lucia- och Julkonsert med Sollentuna Gosskör och Sollentuna Diskantkör i vackra Riddarhuset. Dirigent: Maria Stadell. Pianist: Daniel Hormazabal. I pausen serveras goda smörrebröd, öl, vin och fika. Välkommen!": {
+    "value": "music",
+    "fetchedAt": 1789200777532
+  },
+  "cat:NOVOGODISNJA BAJKA- DEDA MRAZ I SEDAM PATULJAKA\nNOVOGODIŠNJA BAJKA – DEDA MRAZ I SEDAM PATULJAKA U jednoj neobičnoj novogodišnjoj noći, Deda Mraz i njegovih sedam patuljaka suočavaju se sa velikim izazovom – deca više ne veruju u čaroliju. Nova godina za njih više nisu bajke i čuda, već samo pokloni i skupe želje. Ova priča nas podseća da, bez obzira koliko odrastemo, u nama uvek treba da postoji malo mesto koje veruje u čuda. ✨ Jer Deda Mraz nije samo onaj koji donosi poklone – on vraća veru u čaroliju. Moguće je doneti paketić za decu, Deda Mraz će ih rado podeliti!": {
+    "value": "family",
+    "fetchedAt": 1789200777532
+  },
+  "cat:KlimakterieResan 4.0\nKLIMAKTERIERESAN 4.0 – EN HEL DAG FÖR KVINNORS HÄLSA, KUNSKAP OCH ANDRA VÅREN Välkommen till KlimakterieResan 4.0 – en storslagen mötesplats för kvinnor mitt i livet, där forskning, kunskap, inspiration, gemenskap och nya perspektiv möts. Den 14 april 2027 samlas kvinnor från hela Sverige på House of People i Stockholm för en dag fylld av föreläsningar, samtal, forskning, erfarenheter, inspiration, aktiviteter och möten kring klimakteriet och kvinnors hälsa. På scen möter du forskare, gynekologer och andra kunniga experter inom kvinnors hälsa. Bland andra medverkar Dr. Nin": {
+    "value": "other",
+    "fetchedAt": 1789200777532
+  },
+  "cat:Iluka": {
+    "value": null,
+    "fetchedAt": 1789200777532
+  },
+  "cat:22/3 SAUL WILLIAMS | DEBASER STRAND\nSaul Williams till Sverige våren 2027 – intar Debaser Strand den 22 mars! Den genreöverskridande poeten, musikern, författaren och skådespelaren Saul Williams kommer till Debaser den 22 mars. Med nya albumet Leap Life i ryggen väntar en kväll där spoken word, hiphop, jazz och experimentell musik möts i Williams säregna musikaliska universum. I närmare tre decennier har Saul Williams varit en kompromisslös och inflytelserik röst i gränslandet mellan musik, poesi, litteratur och film. Han fick sitt internationella genombrott med den prisbelönta filmen SLAM, so": {
+    "value": "music",
+    "fetchedAt": 1789200777532
+  },
+  "cat:1/4 SYNNE VO | DEBASER STRAND\nMed låtar som Lykke te, MVH och Heime har Synne Vo på rekordtid blivit en av Norges allra mest populära artister, och tagit både festivalscener, ett utsålt Oslo Spektrum och otaliga spellistor med storm. Debutalbumet Kanskje det går te helvete, från 2024, fick högsta betyg av både Aftenposten och Dagsavisen, och kort därpå fick hon dessutom en hit med sin tolkning av Timbuktus Alla vill till himmelen men ingen vill dö. Under 2026 fick publiken lära känna Synne ännu bättre genom hennes medverkan i den norska Så mycket bättre-varianten, Hver gang vi møtes, där hon h": {
+    "value": "music",
+    "fetchedAt": 1789200777532
   }
 }

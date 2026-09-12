@@ -2070,5 +2070,87 @@
   "Münchenbryggeriet - Mälarsalen, Stockholm, Sweden": {
     "value": null,
     "fetchedAt": 1789114883324
+  },
+  "Arenatältet, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789200515341
+  },
+  "Slussen, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3193166,
+      "longitude": 18.0722002
+    },
+    "fetchedAt": 1789200516759
+  },
+  "Mäster Pers gränd 17, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3128636,
+      "longitude": 18.0870656
+    },
+    "fetchedAt": 1789200518050
+  },
+  "Café Blåbär, Upplandsgatan 54, 113 28 Stockholm, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789200519524
+  },
+  "Café Blåbär, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3336956,
+      "longitude": 18.0374829
+    },
+    "fetchedAt": 1789200520939
+  },
+  "t-centralen, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3318941,
+      "longitude": 18.060944
+    },
+    "fetchedAt": 1789200522353
+  },
+  "Hornstulls strand 17, 117 39,, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3139475,
+      "longitude": 18.0345157
+    },
+    "fetchedAt": 1789200523733
+  },
+  "kungsgatan 43, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.335207,
+      "longitude": 18.0626348
+    },
+    "fetchedAt": 1789200525239
+  },
+  "Hammarby Slussväg 17, 118 60, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3038408,
+      "longitude": 18.0699831
+    },
+    "fetchedAt": 1789200526655
+  },
+  "Folkungagatan 45, 118 26 Stockholm, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3142373,
+      "longitude": 18.0727889
+    },
+    "fetchedAt": 1789200528100
+  },
+  "Wallingatan 32, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3363115,
+      "longitude": 18.0539639
+    },
+    "fetchedAt": 1789200529475
+  },
+  "Rum för barn, Kulturhuset, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789200530743
+  },
+  "Barnhusgatan 12–14, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3365333,
+      "longitude": 18.0581937
+    },
+    "fetchedAt": 1789200532016
   }
 }
