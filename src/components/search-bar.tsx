@@ -9,16 +9,12 @@ type SearchBarProps = {
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
-  filtersOpen?: boolean;
-  onToggleFilters?: () => void;
 };
 
 export function SearchBar({
   value,
   onChange,
   placeholder = 'What are you looking for?',
-  filtersOpen = false,
-  onToggleFilters,
 }: SearchBarProps) {
   const theme = useTheme();
 
@@ -48,25 +44,6 @@ export function SearchBar({
           </Pressable>
         )}
       </ThemedView>
-
-      {onToggleFilters && (
-        <Pressable
-          accessibilityRole="button"
-          accessibilityLabel="Toggle filters"
-          onPress={onToggleFilters}
-          style={({ pressed }) => [styles.filterButtonWrap, pressed && styles.pressed]}>
-          <ThemedView
-            type={filtersOpen ? 'backgroundSelected' : 'backgroundElement'}
-            style={styles.filterButton}>
-            <Icon
-              sf={filtersOpen ? 'line.3.horizontal.decrease.circle.fill' : 'line.3.horizontal.decrease.circle'}
-              material="tune"
-              size={20}
-              color={theme.text}
-            />
-          </ThemedView>
-        </Pressable>
-      )}
     </View>
   );
 }
@@ -91,16 +68,6 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 16,
     paddingVertical: Spacing.one,
-  },
-  filterButtonWrap: {
-    borderRadius: Spacing.five,
-  },
-  filterButton: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   pressed: {
     opacity: 0.7,

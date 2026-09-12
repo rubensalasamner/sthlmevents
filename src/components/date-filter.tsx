@@ -1,8 +1,10 @@
-import { ScrollView, StyleSheet } from 'react-native';
-
-import { CategoryPill } from '@/components/category-pill';
-import { Spacing } from '@/constants/theme';
+import { SegmentedControl, type SegmentedOption } from '@/components/segmented-control';
 import { DATE_RANGES, DATE_RANGE_LABELS, type DateRangeValue } from '@/utils/date-range';
+
+const OPTIONS: readonly SegmentedOption<DateRangeValue>[] = DATE_RANGES.map((range) => ({
+  value: range,
+  label: DATE_RANGE_LABELS[range],
+}));
 
 type DateFilterProps = {
   value: DateRangeValue;
@@ -11,26 +13,11 @@ type DateFilterProps = {
 
 export function DateFilter({ value, onChange }: DateFilterProps) {
   return (
-    <ScrollView
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      contentContainerStyle={styles.content}>
-      {DATE_RANGES.map((range) => (
-        <CategoryPill
-          key={range}
-          label={DATE_RANGE_LABELS[range]}
-          selected={value === range}
-          onPress={() => onChange(range)}
-        />
-      ))}
-    </ScrollView>
+    <SegmentedControl
+      options={OPTIONS}
+      value={value}
+      onChange={onChange}
+      accessibilityLabel="Filter by date"
+    />
   );
 }
-
-const styles = StyleSheet.create({
-  content: {
-    gap: Spacing.two,
-    paddingHorizontal: Spacing.four,
-    paddingVertical: Spacing.two,
-  },
-});

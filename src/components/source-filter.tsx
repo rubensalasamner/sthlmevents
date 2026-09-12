@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 
 import { CategoryPill } from '@/components/category-pill';
@@ -16,23 +16,47 @@ type SourceFilterProps = {
 
 /**
  * Dev-only companion to `SourceTag`: narrow the list to one ingestion source.
- * Choices are derived from the loaded events, and the whole control renders
- * nothing in production builds.
+ * Collapsed by default — a small chip that expands to a pill row on tap — so
+ * the debug control stays out of the visual hierarchy. Renders nothing in
+ * production builds.
  */
 export function SourceFilter({ events, value, onChange }: SourceFilterProps) {
+  const [expanded, setExpanded] = useState(false);
+
   const sources = useMemo(() => {
     const distinct = new Set(events.map((event) => event.source));
     return [...distinct].sort((a, b) => formatSource(a).localeCompare(formatSource(b)));
   }, [events]);
 
-  if (!__DEV__) return null;
+  if (!__DEV__ || sources.length === 0) return null;
+
+  if (!expanded) {
+    return (
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.content}>
+        <CategoryPill
+          label={`DEV · ${sources.length} sources`}
+          onPress={() => setExpanded(true)}
+        />
+      </ScrollView>
+    );
+  }
 
   return (
     <ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.content}>
-      <CategoryPill label="All sources" selected={value === 'all'} onPress={() => onChange('all')} />
+      <CategoryPill
+        label="All sources"
+        selected={value === 'all'}
+        onPress={() => {
+          onChange('all');
+          setExpanded(false);
+        }}
+      />
       {sources.map((source) => (
         <CategoryPill
           key={source}

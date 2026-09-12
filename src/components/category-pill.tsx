@@ -3,6 +3,7 @@ import { Pressable, StyleSheet } from 'react-native';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
+import { useTheme } from '@/hooks/use-theme';
 
 type CategoryPillProps = {
   label: string;
@@ -11,11 +12,13 @@ type CategoryPillProps = {
 };
 
 export function CategoryPill({ label, selected = false, onPress }: CategoryPillProps) {
+  const theme = useTheme();
+
   const content = (
     <ThemedView
-      type={selected ? 'backgroundSelected' : 'backgroundElement'}
-      style={styles.pill}>
-      <ThemedText type="small" themeColor={selected ? 'text' : 'textSecondary'}>
+      type={selected ? 'backgroundElement' : 'backgroundElement'}
+      style={[styles.pill, selected && { backgroundColor: theme.accent }]}>
+      <ThemedText type="small" themeColor={selected ? 'accentInk' : 'textSecondary'}>
         {label}
       </ThemedText>
     </ThemedView>
@@ -24,7 +27,11 @@ export function CategoryPill({ label, selected = false, onPress }: CategoryPillP
   if (!onPress) return content;
 
   return (
-    <Pressable onPress={onPress} style={({ pressed }) => pressed && styles.pressed}>
+    <Pressable
+      accessibilityRole="button"
+      accessibilityState={{ selected }}
+      onPress={onPress}
+      style={({ pressed }) => pressed && styles.pressed}>
       {content}
     </Pressable>
   );

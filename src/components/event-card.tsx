@@ -7,11 +7,15 @@ import { MoreDatesBadge } from '@/components/more-dates-badge';
 import { SourceTag } from '@/components/source-tag';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { Spacing } from '@/constants/theme';
+import { Fonts, Spacing } from '@/constants/theme';
+import { useTheme } from '@/hooks/use-theme';
 import type { StockholmEvent } from '@/types/event';
+import { BADGE_INK, CATEGORY_BADGE_COLORS } from '@/utils/category-colors';
 import { formatCategory, formatEventWhen, formatPrice, venueLine } from '@/utils/format';
 
 export function EventCard({ event, width }: { event: StockholmEvent; width?: number }) {
+  const theme = useTheme();
+
   return (
     <Link href={`/event/${event.id}`} asChild>
       <Pressable style={({ pressed }) => [width ? { width } : null, pressed && styles.pressed]}>
@@ -25,7 +29,7 @@ export function EventCard({ event, width }: { event: StockholmEvent; width?: num
             />
             <View style={styles.imageOverlay}>
               <View style={styles.badgeColumn}>
-                <ThemedView style={styles.categoryBadge}>
+                <ThemedView style={[styles.categoryBadge, { backgroundColor: CATEGORY_BADGE_COLORS[event.category] }]}>
                   <ThemedText type="smallBold" style={styles.badgeText}>
                     {formatCategory(event.category).toUpperCase()}
                   </ThemedText>
@@ -39,7 +43,7 @@ export function EventCard({ event, width }: { event: StockholmEvent; width?: num
           </View>
 
           <View style={styles.body}>
-            <ThemedText type="small" themeColor="textSecondary">
+            <ThemedText type="smallBold" themeColor="accent">
               {formatEventWhen(event)}
             </ThemedText>
             <ThemedText type="subtitle" numberOfLines={2} style={styles.title}>
@@ -83,13 +87,12 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   categoryBadge: {
-    backgroundColor: '#ffb1d8',
     paddingVertical: Spacing.half,
     paddingHorizontal: Spacing.two,
     borderRadius: Spacing.one,
   },
   badgeText: {
-    color: '#1a1a1a',
+    color: BADGE_INK,
     fontSize: 11,
     lineHeight: 14,
     letterSpacing: 0.5,
@@ -104,8 +107,10 @@ const styles = StyleSheet.create({
     gap: Spacing.half,
   },
   title: {
-    fontSize: 15,
-    lineHeight: 20,
+    fontFamily: Fonts.display,
+    fontSize: 16,
+    lineHeight: 21,
+    letterSpacing: -0.2,
   },
   pressed: {
     opacity: 0.85,

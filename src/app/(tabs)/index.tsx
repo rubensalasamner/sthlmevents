@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -11,7 +11,7 @@ import { SearchBar } from '@/components/search-bar';
 import { SourceFilter, type SourceFilterValue } from '@/components/source-filter';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { Spacing } from '@/constants/theme';
+import { Fonts, Spacing } from '@/constants/theme';
 import { useFilters } from '@/context/filters-context';
 import { useEvents } from '@/hooks/use-events';
 import type { StockholmEvent } from '@/types/event';
@@ -24,12 +24,11 @@ import { searchEvents } from '@/utils/search';
 
 export default function EventsScreen() {
   const { data: events, loading, error, reload } = useEvents();
-  const { category, query, dateRange, source, setCategory, setQuery, setDateRange, setSource, isActive: filtersActive } =
+  const { category, query, dateRange, source, setCategory, setQuery, setDateRange, setSource } =
     useFilters();
-  const [filtersOpen, setFiltersOpen] = useState(false);
   const now = useMemo(() => new Date(), []);
 
-  const isDefaultView = !filtersActive && query.trim() === '';
+  const isDefaultView = !filtersActive(category, dateRange, source) && query.trim() === '';
 
   const featured = useMemo(
     () => (isDefaultView ? featuredEvents(events) : []),
@@ -88,9 +87,6 @@ export default function EventsScreen() {
               onDateRangeChange={setDateRange}
               source={source}
               onSourceChange={setSource}
-              filtersOpen={filtersOpen}
-              onToggleFilters={() => setFiltersOpen((open) => !open)}
-              filtersActive={filtersActive}
               featured={featured}
             />
           }
@@ -98,6 +94,15 @@ export default function EventsScreen() {
       </SafeAreaView>
     </ThemedView>
   );
+}
+
+/** True when any filter deviates from its default. */
+function filtersActive(
+  category: CategoryFilterValue,
+  dateRange: DateRangeValue,
+  source: SourceFilterValue,
+): boolean {
+  return category !== 'all' || dateRange !== 'all' || source !== 'all';
 }
 
 type DiscoverHeaderProps = {
@@ -111,9 +116,6 @@ type DiscoverHeaderProps = {
   onDateRangeChange: (value: DateRangeValue) => void;
   source: SourceFilterValue;
   onSourceChange: (value: SourceFilterValue) => void;
-  filtersOpen: boolean;
-  onToggleFilters: () => void;
-  filtersActive: boolean;
   featured: StockholmEvent[];
 };
 
@@ -128,32 +130,18 @@ function DiscoverHeader({
   onDateRangeChange,
   source,
   onSourceChange,
-  filtersOpen,
-  onToggleFilters,
-  filtersActive,
   featured,
 }: DiscoverHeaderProps) {
-  const showFilterRows = filtersOpen || filtersActive;
-
   return (
     <View style={styles.header}>
       <ScreenHeader title="Stockholm Events" subtitle="What’s on in the city" />
-      <SearchBar
-        value={query}
-        onChange={onQueryChange}
-        filtersOpen={filtersOpen}
-        onToggleFilters={onToggleFilters}
-      />
-      {showFilterRows && (
-        <View style={styles.filterRows}>
-          <CategoryFilter value={category} onChange={onCategoryChange} />
-          <DateFilter value={dateRange} onChange={onDateRangeChange} />
-          <SourceFilter events={events} value={source} onChange={onSourceChange} />
-        </View>
-      )}
+      <SearchBar value={query} onChange={onQueryChange} />
+      <DateFilter value={dateRange} onChange={onDateRangeChange} />
+      <CategoryFilter value={category} onChange={onCategoryChange} />
+      <SourceFilter events={events} value={source} onChange={onSourceChange} />
       <FeaturedStrip events={featured} />
       <View style={styles.sectionRow}>
-        <ThemedText type="subtitle">
+        <ThemedText type="subtitle" style={styles.sectionTitle}>
           All events{' '}
           <ThemedText type="small" themeColor="textSecondary">
             {listCount}
@@ -176,11 +164,11 @@ const styles = StyleSheet.create({
     marginHorizontal: -Spacing.four,
     paddingBottom: Spacing.two,
   },
-  filterRows: {
-    gap: 0,
-  },
   sectionRow: {
     paddingHorizontal: Spacing.four,
     paddingTop: Spacing.two,
+  },
+  sectionTitle: {
+    fontFamily: Fonts.display,
   },
 });

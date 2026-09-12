@@ -6,10 +6,10 @@ export const DATE_RANGES = ['all', 'today', 'weekend', 'week'] as const;
 export type DateRangeValue = (typeof DATE_RANGES)[number];
 
 export const DATE_RANGE_LABELS: Record<DateRangeValue, string> = {
-  all: 'Any time',
-  today: 'Today',
-  weekend: 'This weekend',
-  week: 'This week',
+  all: 'Allt',
+  today: 'Idag',
+  weekend: 'Helgen',
+  week: 'Veckan',
 };
 
 // "Today" is a day in the city's calendar, not the phone's: a user in

@@ -1,26 +1,34 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
-
 import '@/global.css';
 
 import { Platform } from 'react-native';
 
+/**
+ * "Blå Timmen" — dark-first Nordic dusk with a single ice-blue accent and an
+ * amber micro-accent. Light mode is the frost/daytime counterpart with a
+ * darkened accent so contrast stays WCAG-AA on light surfaces.
+ */
 export const Colors = {
   light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
+    text: '#0B0E14',
+    background: '#F2F5F9',
+    backgroundElement: '#E4EAF2',
+    backgroundSelected: '#D3DEEA',
+    textSecondary: '#57667A',
+    accent: '#0D6FA9',
+    accentInk: '#FFFFFF',
+    accent2: '#9A5B0B',
+    favorite: '#E5345E',
   },
   dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
+    text: '#F2F5F9',
+    background: '#0B0E14',
+    backgroundElement: '#151B26',
+    backgroundSelected: '#1F2735',
+    textSecondary: '#97A3B6',
+    accent: '#7CD4FF',
+    accentInk: '#06121C',
+    accent2: '#FFC46B',
+    favorite: '#FF375F',
   },
 } as const;
 
@@ -36,18 +44,24 @@ export const Fonts = Platform.select({
     rounded: 'ui-rounded',
     /** iOS `UIFontDescriptorSystemDesignMonospaced` */
     mono: 'ui-monospace',
+    display: 'SpaceGrotesk_700Bold',
+    displayMedium: 'SpaceGrotesk_500Medium',
   },
   default: {
     sans: 'normal',
     serif: 'serif',
     rounded: 'normal',
     mono: 'monospace',
+    display: 'SpaceGrotesk_700Bold',
+    displayMedium: 'SpaceGrotesk_500Medium',
   },
   web: {
     sans: 'var(--font-display)',
     serif: 'var(--font-serif)',
     rounded: 'var(--font-rounded)',
     mono: 'var(--font-mono)',
+    display: 'SpaceGrotesk_700Bold',
+    displayMedium: 'SpaceGrotesk_500Medium',
   },
 });
 
