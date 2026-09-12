@@ -18,6 +18,7 @@ import type { StockholmEvent } from '@/types/event';
 import { collapseSeries } from '@/utils/collapse-series';
 import { splitByDateRange, type DateRangeValue } from '@/utils/date-range';
 import { isLongRunning } from '@/utils/event-interval';
+import { isOutOfTown } from '@/utils/event-locality';
 import { featuredEvents, rankEvents } from '@/utils/ranking';
 import { searchEvents } from '@/utils/search';
 
@@ -48,16 +49,18 @@ export default function EventsScreen() {
     const dropFeatured = (list: StockholmEvent[]) =>
       isDefaultView ? list.filter((event) => !event.isFeatured) : list;
     // Collapse recurring occurrences (same title + venue) per group, then
-    // rank each group. Long-running fixtures (months-long exhibitions) sink
-    // to the very end so the day's own events lead the flow.
+    // rank each group. Within each ranked group out-of-town events sink via
+    // rankEvents; long-running fixtures (months-long exhibitions) and
+    // out-of-town ones then go to the very end of the flow.
     const { events: collapsedPrimary } = collapseSeries(primary);
     const { events: collapsedSecondary } = collapseSeries(secondary);
-    const longRunning = collapsedSecondary.filter((event) => isLongRunning(event, now));
-    const rest = collapsedSecondary.filter((event) => !isLongRunning(event, now));
+    const isTail = (event: StockholmEvent) => isLongRunning(event, now) || isOutOfTown(event);
+    const tail = collapsedSecondary.filter(isTail);
+    const rest = collapsedSecondary.filter((event) => !isTail(event));
     return [
       ...rankEvents(dropFeatured(collapsedPrimary)),
       ...rankEvents(dropFeatured(rest)),
-      ...longRunning.filter((event) => !event.isFeatured),
+      ...tail.filter((event) => !event.isFeatured),
     ];
     // `now` is intentionally not a dependency: a feed rebuild per second is
     // pointless, and staleness only shifts section membership by moments.
