@@ -3688,8 +3688,8 @@
     "fetchedAt": 1789029062081
   },
   "cat:Jake Xerxes Fussell": {
-    "value": null,
-    "fetchedAt": 1789029062081
+    "value": "other",
+    "fetchedAt": 1789288639269
   },
   "cat:RAW Christmas | Karin Adelsköld, Farzad Nouri mfl\nPå scen: {.u-text--center} Karin Adelsköld{.u-text--center} Farzad Nouri{.u-text--center} mfl.{.u-text--center} Klicka här för att se alla som uppträder detta datumhttps://rawcomedyclub.se/evenemangskalender/{.c-button target=\"blank\"} {.u-text--center} Nu är supersuccén ”A very RAW Christmas” tillbaka för 15:e året i rad på anrika Hilton Stockholm Slussen. Kombinationen av klassiskt julbord, fantastisk standup show och magisk utsikt mitt i city är svårslaget och många företag och gäster återkommer år efter år. Ni börjar kvällen med glögg och pe": {
     "value": "comedy",
@@ -3732,8 +3732,8 @@
     "fetchedAt": 1789029062081
   },
   "cat:Merit Hemmingson": {
-    "value": null,
-    "fetchedAt": 1789029062081
+    "value": "other",
+    "fetchedAt": 1789288639269
   },
   "cat:RAW Christmas | Ahmed Berhan, Karin Adelsköld mfl\nPå scen:{.u-text--center} Ahmed Berhan{.u-text--center} Karin Adelsköld{.u-text--center} mfl.{.u-text--center} Klicka här för att se alla som uppträder detta datumhttps://rawcomedyclub.se/evenemangskalender/{.c-button target=\"blank\"} {.u-text--center} Nu är supersuccén ”A very RAW Christmas” tillbaka för 15:e året i rad på anrika Hilton Stockholm Slussen. Kombinationen av klassiskt julbord, fantastisk standup show och magisk utsikt mitt i city är svårslaget och många företag och gäster återkommer år efter år. Ni börjar kvällen med glögg och pep": {
     "value": "comedy",
@@ -3788,8 +3788,8 @@
     "fetchedAt": 1789029062081
   },
   "cat:OnsdagsNöjet\nNordindagen där vi firar Gunnar, Gösta och Sören som har var sitt lopp under kvällen rejält stärkta gällande prispengar. Vi kommer få se tre-, fyra-, femåringar och äldre av mycket hög klass göra upp. Huvudspelet från ATG är V86® och avgörs tillsammans med Jägersro.": {
-    "value": null,
-    "fetchedAt": 1789029062081
+    "value": "sports",
+    "fetchedAt": 1789288639269
   },
   "cat:RAW Christmas Isak Jansson, Catrin Martinsson mfl\nPå scen:{.u-text--center} Isak Jansson{.u-text--center} Catrin Martinsson{.u-text--center} mfl.{.u-text--center} Klicka här för att se alla som uppträder detta datumhttps://rawcomedyclub.se/evenemangskalender/{.c-button target=\"blank\"} {.u-text--center} Nu är supersuccén ”A very RAW Christmas” tillbaka för 15:e året i rad på anrika Hilton Stockholm Slussen. Kombinationen av klassiskt julbord, fantastisk standup show och magisk utsikt mitt i city är svårslaget och många företag och gäster återkommer år efter år. Ni börjar kvällen med glögg och p": {
     "value": "comedy",
@@ -4938,5 +4938,161 @@
   "cat:1/4 SYNNE VO | DEBASER STRAND\nMed låtar som Lykke te, MVH och Heime har Synne Vo på rekordtid blivit en av Norges allra mest populära artister, och tagit både festivalscener, ett utsålt Oslo Spektrum och otaliga spellistor med storm. Debutalbumet Kanskje det går te helvete, från 2024, fick högsta betyg av både Aftenposten och Dagsavisen, och kort därpå fick hon dessutom en hit med sin tolkning av Timbuktus Alla vill till himmelen men ingen vill dö. Under 2026 fick publiken lära känna Synne ännu bättre genom hennes medverkan i den norska Så mycket bättre-varianten, Hver gang vi møtes, där hon h": {
     "value": "music",
     "fetchedAt": 1789200777532
+  },
+  "cat:OnsdagsNöjet\nNäst sista chansen för året att testa succén Nyfiken på Trav. Tagga en kompis eller unna dig själv en helkväll på Solvalla med föreläsning av framstående tränare, middag och känn farten i startbilen till ett oslagbart pris! Huvudspelet från ATG är V86® och avgörs tillsammans med Åby.": {
+    "value": "sports",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Annika Norlin\nI höst kan du vid två tillfällen möta svenska författare och musiker som berättar om hur deras låtskrivande samspelar med det skönlitterära berättandet. Den 25 november gästar den flerfaldigt Grammisbelönade låtskrivaren och författaren Annika Norlin för ett samtal med Poul Perris om \"Jag ville ju komma så nära\", en samlingsbok med låttexter och unika inblickar i skapandet ur hela hennes karriär.": {
+    "value": "music",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Kinky Boots - The Musical\nSäg ”Yeah!” och låt Kinky Boots lyfta humöret till svindlande höjder! Denna färgsprakande feelgood-musikal berättar historien om oväntad vänskap, modet att vara sig själv och kraften i att följa sina drömmar. Premiär på Klarabiografen den 25 november!": {
+    "value": "theatre",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Hökis Visrum Presenterar Ted Bjurwilll\nTed Bjurwill spelar sina egna sånger om livet, kärleken och kriget. Vi serverar fika i pausen för 40:- Vi öppnar kl 18.00 - kom och se vår fina Cornelisutställning! Hjärtligt välkomna.": {
+    "value": "music",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Föredrag Badin och livet vid Lovisa Ulrikas hov\nAdolf Ludvig Badin föddes som slav i Västindien 1750. Han kom som \"gåva\" till den svenska drottningen Lovisa Ulrika vid tio års ålder. Lovisa Ulrika lät honom till en början växa upp enligt de fria uppfostringsprinciper som Jean-Jacques Rousseau 1762 lanserade i boken Emile eller Om Uppfostran. Badin var fosterbror till de kungliga barnen Gustav född 1746, Karl född 1748, Fredrik Adolf född 1750 och Sofia Albertina född 1753. Han döptes i Slottskyrkan på Kungliga Slottet 1768. Badin stannade som hovlakej vid Lovisa Ulrikas hov till hennes död som": {
+    "value": "other",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Master Boot Record + Fulci + Arottenbit\nKonserten arrangeras av FKP Scorpio &amp; Kollektivet Livet. Två av extremmusikens mest särpräglade akter möts i höst när Master Boot Record och Fulci ger sig ut på en gemensam co-headliner-turné med Arottenbit som support. Bakom Master Boot Record står den italienske producenten Victor Love Vittorio D’amore, som sedan 2016 byggt upp ett unikt projekt där tung metal möter syntbaserad elektronik inspirerad av datorkultur och retrofuturistiska teman. Med album som ”Floppy Disk Overdrive”, ”Personal Computer” och ”Hardwarez” har projektet blivit ett av de m": {
+    "value": "music",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Julbord - eftermiddag 2026\n{style=text-align:center} Julbordskryssningen är 2,5 timme lång. Ångfartyget Blidösund avgår från Skeppsbron kajplats 101, nedanför Slottet. Ombordstigning tidigast 15 minuter före avgångstiden. {style=text-align:center} Bokningsvillkorhttps://blidosundsbolaget.se/kundtjanst/Bokningsvillkor2{class=\"c-button\" target=\"blank\" style=background:F2F0E6;color:312682} {style=text-align:center} Mindre sällskap kan få dela bord med andra gäster i vår vackra matsal ombord. {style=text-align:center} Står det bara ett fåtal platser kvar och ni är ett mindre sällskap? Hör av er ti": {
+    "value": "food",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Julbord - kväll 2026\n{style=text-align:center} Julbordskryssningen är 2,5 timme lång. Ångfartyget Blidösund avgår från Skeppsbron kajplats 101, nedanför Slottet. Ombordstigning tidigast 15 minuter före avgångstiden. {style=text-align:center} Bokningsvillkorhttps://blidosundsbolaget.se/kundtjanst/Bokningsvillkor2{class=\"c-button\" target=\"blank\" style=background:F2F0E6;color:312682} {style=text-align:center} Mindre sällskap kan få dela bord med andra gäster i vår vackra matsal ombord. {style=text-align:center} Står det bara ett fåtal platser kvar och ni är ett mindre sällskap? Hör av er till oss": {
+    "value": "food",
+    "fetchedAt": 1789288639269
+  },
+  "cat:X-CRUISE - PARTYBUSS GÖTEBORG - STOCKHOLM\nPARTYBUSSAR TILL X-CRUISE Festen börjar redan när du kliver på bussen. Glöm krångliga resor, byten och planering – vi har fixat allt. Hoppa på PARTYBUSSEN från din hemort och åk tillsammans med andra peppade gäster direkt till terminalen. Musik, stämning och förväntan hela vägen – det här är inte bara transport, det är en del av upplevelsen. När helgen är över väntar samma smidiga resa hem på söndagen. Du slipper stressen och kan bara fokusera på det som verkligen spelar roll: festen. Bekvämlighet är lyx – och det här är den enklaste vägen till X-CRUIS": {
+    "value": "nightlife",
+    "fetchedAt": 1789288639269
+  },
+  "cat:261127 Västanvinden": {
+    "value": "sports",
+    "fetchedAt": 1789288639269
+  },
+  "cat:MARCUS BERGGREN  – ”HITTAR HEM”\nMARCUS BERGGREN - HITTAR HEM Blinkade man missade man nog att han har varit borta från standup men nu är den hyllade och orädde komikern Marcus Berggren tillbaka till standup-scenen. Efter en utsåld vår på Lisebergsteatern i Göteborg blir det turné i höst. Har föreställningen blivit som du tänkt dig? -Jag gör min drömföreställning, den som jag själv hade velat se. Det är en vild blandning av stand-up, musik, poesi, improvisation och publikinteraktion. Men det är först nu som jag har haft kunskapen att kunna göra den. Jag känner mig som en sån karatelärling som v": {
+    "value": "comedy",
+    "fetchedAt": 1789288639269
+  },
+  "cat:X-CRUISE VIP - WINTER EDITION - 27 - 29 NOVEMBER\n✨ FÖRTJÄNA DET LILLA EXTRA – BOKA VIP-ACCESS TILL X-CRUISE! ✨ Ge din X-CRUISE en lyxig twist med vår VIP-ACCESS – perfekt för dig som vill uppleva resan med stil och komfort. 🛋️🌟 🎟 Detta får du med VIP-ACCESS: ✔ Tillgång till vårt VIP-område med sköna soffgrupper där du alltid hittar plats, helt utan reservation. ✔ Snabbare service och en lugnare atmosfär – undvik trängseln och njut fullt ut. ✔ Exklusiv underhållning och massor av överraskningar som bara VIP-gäster får uppleva. 🎯 Så här funkar det: Hämta ut ditt VIP-band vid lucka 29 i termi": {
+    "value": "nightlife",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Aurell & Gullberg – Killarna mot tjejerna\nKom närmare gott folk, showen ska precis börja! Varmt välkomna till en musikalisk humorshow, ikväll kommer ni få se inte bara en - utan två av rikets allra bästa musikaliska humorister göra upp i en tonal kamp, fritt från blodigt allvar. Från varsin del av landet har de rest för att ikväll mötas i en musikalisk holmgång, två esteter i en kamp om publikens kärlek och applåder. Kära publik, det är dags att sätta igång. Det är Ola Aurell och Elvira Gullberg. Det är Killarna mot tjejerna! Ola Aurell har med sina egensinniga sånger byggt sig en stor och tro": {
+    "value": "comedy",
+    "fetchedAt": 1789288639269
+  },
+  "cat:RAW Christmas | Farao Groth, Victor Linnér, Kodjo\nPå scen:{.u-text--center} Kodjo Akolor{.u-text--center} Farao Groth{.u-text--center} Victor Linnér{.u-text--center} Klicka här för att se alla som uppträder detta datumhttps://rawcomedyclub.se/evenemangskalender/{.c-button target=\"blank\"} {.u-text--center} Nu är supersuccén ”A very RAW Christmas” tillbaka för 15:e året i rad på anrika Hilton Stockholm Slussen. Kombinationen av klassiskt julbord, fantastisk standup show och magisk utsikt mitt i city är svårslaget och många företag och gäster återkommer år efter år. Ni börjar kvällen med glögg oc": {
+    "value": "comedy",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Vieux Farka Touré\nDen 27 november kommer en av vår tids mest särpräglade gitarrister till Kulturhuset Stadsteatern. Vieux Farka Touré för vidare det musikaliska arvet från Mali in i nutiden. Med ökenbluesens Songhai-rötter som grund låter han rock, funk och internationella samarbeten möta en personlig och rytmisk gitarrstil. Passa på att se honom live!": {
+    "value": "music",
+    "fetchedAt": 1789288639269
+  },
+  "cat:En gång till! (3-5 år)\nGästspel med Teater Gyllene Draken. En rörelsebaserad föreställning om upprepandets glädje och kroppens fantastiska uttrycksmöjligheter Ett barn står och väntar med partyhatt och en ballong i handen. Ett annat barn smyger försiktigt fram för att hälsa… Idag ska de leka… födelsedag! Det gör de varje dag. En gång till! är en föreställning där leken tar de mest överraskande vändningar. Med mimens uttryck förflyttas de till nya världar och förvandlas de till olika djur och varelser. Att leka är att samspela och komma överens. Men inte alltid så lätt. När leken är slut kommer": {
+    "value": "family",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Any Given Day\nKonserten arrangeras av FKP Scorpio & Kollektivet Livet Support: Get The Shot Opener: Sable Hills ANY GIVEN DAY spelar i Stockholm! I november 2026 återvänder det tyska metalcorebandet ANY GIVEN DAY till Europa för sin nästa turné – fokuserade, självsäkra och redo att visa upp den musikaliska resa de gjort de senaste åren. Med nya låtar som träffar hårt och publikfavoriter som påminner om varför bandet för länge sedan etablerat sig långt utanför Tysklands gränser, är de mer än redo att kliva upp på scen igen. För första gången innehåller turnén egna headline-spelningar i bland an": {
+    "value": "music",
+    "fetchedAt": 1789288639269
+  },
+  "cat:David Eugene Edwards": {
+    "value": "music",
+    "fetchedAt": 1789288639269
+  },
+  "cat:LaLa - Sing Along Party 28 November 2026\nVälkommen till LaLa Sing Along Party på magiska Eataly, Biblioteksgatan 5. Festen där du sjunger med till alla stora hits, powerballader, klubb-dängor, rock-låtar och schlagers. Allt i en galen mix av våra DJ:s. Vi välkomnar dig som vill festa och sjunga med. För här handlar det om att ”LaLa” med i refrängerna och njuta av livet. Vi drar igång prick 21.00 till 00.00. För en helkväll bokar du matbord eller drinkbord i olika prisnivåer från 19.00. Vill du bara ha något enkelt att äta finns ett Grab & Go-erbjudande på plats: en valfri av Eatalys hembakade ": {
+    "value": "nightlife",
+    "fetchedAt": 1789288639269
+  },
+  "cat:STL med V85®\nSTL-omgång med de bästa äldre hästarna som finns tillgängliga och unghästar av högsta kvalitet Ordinarie klasser kompletteras med Big Noon-Pokalen där fyraåringarna jagar från 20 meters tillägg, samt Wallenius Cup där de treåriga damerna gör upp över sprinterdistans. Huvudspelet från ATG är V85®": {
+    "value": "sports",
+    "fetchedAt": 1789288639269
+  },
+  "cat:HARRIET NAUER - LIVE AT WINTERVIKEN\nETT UNIVERSUM AV SAGOR, MYTER OCH ÄKTA KÄNSLOR Harriet Nauer tar med sig debut­album Vampire Country på turné – och det som började som en vårsväng vägrade stanna där. Både arrangörerna och publiken ville ha mer, så nu rullar hon vidare hela sommaren och in i hösten. Det här är inte bara musik – det är ett helt känslo­landskap. Harriet Nauer låter sköra ballader samsas med mörka, stökiga ljud­bilder, atmosfäriska synthar och episka körer. FÖRBESTÄLL WINTERVIKENS LILLA JULBORD SPECIAL: Denna kväll erbjuds Wintervikens \"Lilla Julbord\" istället för den ordinari": {
+    "value": "music",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Julbord i Vinterträdgården 2026": {
+    "value": "food",
+    "fetchedAt": 1789288639269
+  },
+  "cat:RAW Christmas |  David Sundin, Ann Westin mfl\nPå scen:{.u-text--center} David Sundin{.u-text--center} Ann Westin{.u-text--center} mfl.{.u-text--center} Klicka här för att se alla som uppträder detta datumhttps://rawcomedyclub.se/evenemangskalender/{.c-button target=\"blank\"} {.u-text--center} Nu är supersuccén ”A very RAW Christmas” tillbaka för 15:e året i rad på anrika Hilton Stockholm Slussen. Kombinationen av klassiskt julbord, fantastisk standup show och magisk utsikt mitt i city är svårslaget och många företag och gäster återkommer år efter år. Ni börjar kvällen med glögg och pepparkakor ": {
+    "value": "comedy",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Courtesy of\nFörra höstens helt utsålda kväll på The Node blev något alldeles extra. Nu är Courtesy Of tillbaka – den här gången på Nalen Klubb, lördagen den 28 november, för en helkväll med livemusik, nya låtar, gästartister och 100 % party. Vårt utsålda gig på The Node förra hösten var helt fantastiskt. Men det var framför allt ni som var där som gjorde kvällen. Ni som sjöng med. Ni som dansade hela vägen in i kaklet. Ni som skapade den där magiska stämningen. TACK! Nu kör vi igen – och den här gången tänker vi ta festen ytterligare ett snäpp.": {
+    "value": "music",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Adventskonsert med Lunae kammarkör\nMedverkande: Lunae kammarkör, Bengt Ollén, dirigent.": {
+    "value": "music",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Julbord - lunch 2026\n{style=text-align:center} Julbordskryssningen är 2,5 timme lång. Ångfartyget Blidösund avgår från Skeppsbron kajplats 101, nedanför Slottet. Ombordstigning tidigast 15 minuter före avgångstiden. {style=text-align:center} Bokningsvillkorhttps://blidosundsbolaget.se/kundtjanst/Bokningsvillkor2{class=\"c-button\" target=\"blank\" style=background:F2F0E6;color:312682} {style=text-align:center} Mindre sällskap kan få dela bord med andra gäster i vår vackra matsal ombord. {style=text-align:center} Står det bara ett fåtal platser kvar och ni är ett mindre sällskap? Hör av er till oss": {
+    "value": "food",
+    "fetchedAt": 1789288639269
+  },
+  "cat:MARCUS BERGGREN – ”HITTAR HEM”\nMARCUS BERGGREN - HITTAR HEM Blinkade man missade man nog att han har varit borta från standup men nu är den hyllade och orädde komikern Marcus Berggren tillbaka till standup-scenen. Efter en utsåld vår på Lisebergsteatern i Göteborg blir det turné i höst. Har föreställningen blivit som du tänkt dig? -Jag gör min drömföreställning, den som jag själv hade velat se. Det är en vild blandning av stand-up, musik, poesi, improvisation och publikinteraktion. Men det är först nu som jag har haft kunskapen att kunna göra den. Jag känner mig som en sån karatelärling som va": {
+    "value": "comedy",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Trollflöjten (Favorit i repris)\nMetropolitan Opera skapade historia i december 2006 när de gjorde sin första livesändning till biografer världen över. Det var med den förkortade engelskspråkiga versionen av Mozarts Trollflöjten, som du nu kan uppleva på bio igen.": {
+    "value": "theatre",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Pianoafton med Matti Hirvonen & Stina Ekblad\n”Notskriftens tusenfotingar rör sig” – Pianisten Matti Hirvonen bjuder tillsammans med skådespelerskan Stina Ekblad på ett program där pianomusik och lyrik vävs samman. Temat är dikter som utforskar musiken, och musik som har inspirerat poesin. I ett lyhört växelspel får vi höra texter av Tranströmer, Diktonius, von Schoultz samt läsning ur Kalevala, sida vid sida med pianostycken av Schubert, R. Schumann och Sibelius. Program: Franz Schubert: Ur Impromptus op. 142 Robert Schumann: Davidsbündlertänze Jean Sibelius: Ur Impromptus op. 5 och Stycken fö": {
+    "value": "music",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Adventskonsert\nOscarskyrkans traditionella adventskonserter med brasskvintett, slagverk och orgel och församlingens samtliga körer och musiker. Barn under 18 år har fri entré, ingen biljett behövs.": {
+    "value": "music",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Familjesöndag: baka pepparkakor på Ektorpet\nAdventsaktivitet - vi bakar prinsens goda pepparkakor på café Ektorpet! Aktiviteten lämpar sig för barn och vuxna tillsammans. Rekommenderad ålder från 5 år och uppåt. Degen innehåller gluten och laktos. Tid: 10.00-11.30": {
+    "value": "family",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Snuttefilm - för de små\nSöndagsbio är bio för de allra yngsta filmälskarna mellan 2–5 år! Biljetterna kostar 20 kr och bokas här på hemsidan. Vi bjuder på saft och popcorn till filmvisningen. Här blir det första biobesöket något alldeles extra med noga utvalda filmer som är mellan 20–55 minuter långa.": {
+    "value": "family",
+    "fetchedAt": 1789288639269
+  },
+  "cat:A Chinese Ghost Story - I demonernas våld (Tsui Hark - Retrospektiv)\nKlarabiografen och Timeless presenterar ett Tsui Hark-retrospektiv under hösten 2026. Tsui Hark betraktas som en av Hong Kong-filmens främsta regissörer och vi visar stolt några av milstolparna från genrens gyllene era.": {
+    "value": "other",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Konsten att kommunicera med PG Wettsjö\nMed energi, humor och massor av träffsäkra exempel bjuder PG Wettsjö på en föreläsning som både underhåller och ger värdefulla insikter. Du får konkreta verktyg som gör det enklare att kommunicera, bygga bättre relationer och hantera även de personer som ibland kan kännas lite extra utmanande. Du lämnar föreläsningen med ny energi, ett leende på läpparna och en djupare förståelse för både dig själv och människorna omkring dig. Skratta, känn igen dig – och förstå varför vi människor gör som vi gör PG Wettsjö, en av Sveriges mest uppskattade föreläsare, bju": {
+    "value": "other",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Johanna Andersson och Caroline Wilbois\nDen 30 november kommer dietisterna och föreläsarna Johanna Andersson och Caroline Wilbois till Bokmåndag i Vällingby för att samtala med Mia Winge om boken Ät för din ålder – Kokbok och guide för dig i klimakteriet. Om matens betydelse för hälsa och energi och om myter och fakta runt klimakteriet.": {
+    "value": "other",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Julkonsert med Gladys & Gladness Singers\nEn stämningsfull kväll där julens älskade toner möter soul, gospel och smäktande ballader. Låt dig omslutas av värme, gemenskap och musik som berör hjärtat. Musiker: Rodney Alvén, piano Per Perlan Hansson, bas Jens Lindell, trummor Insläpp från 18.15.": {
+    "value": "music",
+    "fetchedAt": 1789288639269
+  },
+  "cat:OnsdagsNöjet\nVem är vinterns kung bland tvååringarna? Loppet ingår i Kriterieserien och är höjdpunkten denna onsdag då vi även börjar sammanställa våra kusk- och tränarserier inför finalerna i december. Testa en travnära upplevelse och kom bakom kulisserna på stallbacken. Huvudspelet från ATG är V86® och avgörs tillsammans med Bergsåker.": {
+    "value": "sports",
+    "fetchedAt": 1789288639269
+  },
+  "cat:Sköna söndag: Japansk flöjtmeditation\nDenna Sköna Söndag spelar Gunnar Linder meditativa musikstycken på shakuhachiflöjt. Musikstyckena är från 1700- och 1800-talens Japan och ger dig möjlighet att uppleva en annorlunda tonvärld där du kan sjunka in i varje enskild tons mikrokosmos. Ta med egen yogamatta att ligga på eller låna på plats. Shakuhachi har sina rötter – som så mycket annat japanskt – i Kina, men har sedan 600-talet en helt egen utveckling i Japan. Under Edo-perioden 1603–1868 trakterades instrumentet av en grupp samurajmunkar som kallade sig komusō, ”munkar av tomhet och intighet”": {
+    "value": "music",
+    "fetchedAt": 1789288649614
+  },
+  "cat:Circle of life\nBob Chilcott: Circle song Under pandemin fick den brittiske kompositören Bob Chilcott en beställning från Houston Chamber Singers om att skapa ett längre, sammanhängande verk. Resultatet blev Circlesong, en färgstark och storslagen kantat som beskriver livets cykel. Texterna, som är hämtade från den amerikanska urbefolkningens dikter, beskriver universum och människans existens som en obruten cirkel. I verkets första sats befinner vi oss på den andliga plats där människan vilar innan hon föds. Genom kantatens olika delar får vi sedan följa livets naturliga förlopp genom födelse,": {
+    "value": "music",
+    "fetchedAt": 1789288649614
   }
 }

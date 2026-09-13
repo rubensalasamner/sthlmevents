@@ -1919,7 +1919,7 @@
   },
   "Various venues, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1788942238349
+    "fetchedAt": 1789288419811
   },
   "Lindhagensgatan 137a, Stockholm, Sweden": {
     "value": {
@@ -1937,15 +1937,15 @@
   },
   "Olika biografer, Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1788942242773
+    "fetchedAt": 1789288435408
   },
   "Kulturhuset, Sergelstorg 3, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1788942244143
+    "fetchedAt": 1789288436580
   },
   "Stockholm, Klarabiografen, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1788942245552
+    "fetchedAt": 1789288438132
   },
   "Dalagatan 28, 113 24, Stockholm, Sweden": {
     "value": {
@@ -1984,11 +1984,11 @@
   },
   "Kungsstensgatan 45, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789028677781
+    "fetchedAt": 1789288439765
   },
   "Folkuniversitetets tornrum plan 7, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789028679346
+    "fetchedAt": 1789288440975
   },
   "Bråvallagatan 12, Stockholm, Sweden": {
     "value": {
@@ -2152,5 +2152,72 @@
       "longitude": 18.0581937
     },
     "fetchedAt": 1789200532016
+  },
+  "Hornsgatan 104, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3173943,
+      "longitude": 18.0497827
+    },
+    "fetchedAt": 1789288421023
+  },
+  "Timmermansgatan 46, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3142974,
+      "longitude": 18.0612305
+    },
+    "fetchedAt": 1789288422760
+  },
+  "Skånegatan 79, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3128306,
+      "longitude": 18.083171
+    },
+    "fetchedAt": 1789288423971
+  },
+  "Sveavägen 44, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3368083,
+      "longitude": 18.062649
+    },
+    "fetchedAt": 1789288425579
+  },
+  "Hägerstensvägen 100A, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3060441,
+      "longitude": 18.0066425
+    },
+    "fetchedAt": 1789288426854
+  },
+  "11428, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3382751,
+      "longitude": 18.0718928
+    },
+    "fetchedAt": 1789288428107
+  },
+  "Fredsgatan 2, 111 52, Stockholm, In Medelhavsmuseet, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789288429425
+  },
+  "Bagdad Café, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3294942,
+      "longitude": 18.0674875
+    },
+    "fetchedAt": 1789288430996
+  },
+  "Tyghusplan, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.326875,
+      "longitude": 18.0818124
+    },
+    "fetchedAt": 1789288432562
+  },
+  "Illerbacken 5, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3749615,
+      "longitude": 18.1429541
+    },
+    "fetchedAt": 1789288433776
   }
 }
