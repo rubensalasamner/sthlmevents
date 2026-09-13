@@ -23,8 +23,10 @@ export type EventMapProps = {
 let nativeMapsChecked = false;
 let nativeMapsAvailable = false;
 
-// expo-maps ships native code that is absent in Expo Go; probing the native
-// module once lets the map screen degrade gracefully instead of crashing.
+/**
+ * Expo Go ships no native maps module; built apps do. This gate exists so the
+ * map screen degrades gracefully in Expo Go instead of crashing.
+ */
 function hasNativeMaps(): boolean {
   if (!nativeMapsChecked) {
     nativeMapsChecked = true;
@@ -43,18 +45,22 @@ function MapUnavailable({ title = 'Map unavailable' }: { title?: string }) {
     <ThemedView style={styles.unavailable}>
       <ThemedText type="subtitle">{title}</ThemedText>
       <ThemedText type="small" themeColor="textSecondary" style={styles.unavailableText}>
-        Maps need a development build and can&apos;t run inside Expo Go. Everything else works —
-        browse events from the Events tab.
+        {title === 'Map not configured'
+          ? 'The maps API key is missing in this build. Everything else works — browse events from the Events tab.'
+          : 'Maps can’t run inside Expo Go. Everything else works — browse events from the Events tab.'}
       </ThemedText>
     </ThemedView>
   );
 }
 
-// The native module existing is not enough: without a Google Maps key in the
-// embedded manifest, mounting GoogleMaps.View crashes the whole app natively.
+/**
+ * The native module existing is not enough: without a Google Maps key in the
+ * embedded manifest, mounting GoogleMaps.View crashes the whole app natively.
+ * Expo strips the key itself from the JS-visible config in built apps, so the
+ * gate reads the `extra.mapsConfigured` flag baked in at build time.
+ */
 function hasMapsApiKey(): boolean {
-  const apiKey = Constants.expoConfig?.android?.config?.googleMaps?.apiKey;
-  return typeof apiKey === 'string' && apiKey.length > 0;
+  return Constants.expoConfig?.extra?.mapsConfigured === true;
 }
 
 export function EventMap({ events }: EventMapProps) {

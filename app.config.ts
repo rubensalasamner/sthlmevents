@@ -35,4 +35,10 @@ export default {
       },
     },
   },
+  extra: {
+    ...appJson.extra,
+    // Expo strips android.config.googleMaps.apiKey from the embedded JS
+    // config in built apps, so the map gate reads this flag instead.
+    mapsConfigured: Boolean(mapsApiKey),
+  },
 };
