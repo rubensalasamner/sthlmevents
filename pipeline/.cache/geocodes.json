@@ -2073,7 +2073,7 @@
   },
   "Arenatältet, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789200515341
+    "fetchedAt": 1789462731753
   },
   "Slussen, Stockholm, Sweden": {
     "value": {
@@ -2144,7 +2144,7 @@
   },
   "Rum för barn, Kulturhuset, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789200530743
+    "fetchedAt": 1789462728551
   },
   "Barnhusgatan 12–14, Stockholm, Sweden": {
     "value": {
@@ -2251,5 +2251,40 @@
       "longitude": 17.9375018
     },
     "fetchedAt": 1789377445734
+  },
+  "Lindhagensgatan 133, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3378472,
+      "longitude": 18.0073023
+    },
+    "fetchedAt": 1789462724360
+  },
+  "Västgötagatan 2, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3135007,
+      "longitude": 18.0705395
+    },
+    "fetchedAt": 1789462725552
+  },
+  "Jan Stenbecks torg, 16440 Kista, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.4028586,
+      "longitude": 17.9470373
+    },
+    "fetchedAt": 1789462727186
+  },
+  "Löfströms Alle 5, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3630461,
+      "longitude": 17.9595073
+    },
+    "fetchedAt": 1789462730183
+  },
+  "Katarina Kyrka, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3170646,
+      "longitude": 18.0781301
+    },
+    "fetchedAt": 1789462733347
   }
 }
