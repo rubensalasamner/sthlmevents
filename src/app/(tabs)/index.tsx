@@ -17,9 +17,7 @@ import { useEvents } from '@/hooks/use-events';
 import type { StockholmEvent } from '@/types/event';
 import { collapseSeries } from '@/utils/collapse-series';
 import { splitByDateRange, type DateRangeValue } from '@/utils/date-range';
-import { isLongRunning } from '@/utils/event-interval';
-import { isOutOfTown } from '@/utils/event-locality';
-import { featuredEvents, rankEvents } from '@/utils/ranking';
+import { featuredEvents, orderFeed } from '@/utils/ranking';
 import { searchEvents } from '@/utils/search';
 
 export default function EventsScreen() {
@@ -43,24 +41,15 @@ export default function EventsScreen() {
     if (source !== 'all') {
       result = result.filter((event) => event.source === source);
     }
+    // The window decides membership only; ordering is uniform for every
+    // range: not-yet-started by date, then running-now by soonest END
+    // (dying-tonight above months-long), per the feed spec.
     const { primary, secondary } = splitByDateRange(result, dateRange);
     // In default view the featured carousel owns the promoted events.
     const dropFeatured = (list: StockholmEvent[]) =>
       isDefaultView ? list.filter((event) => !event.isFeatured) : list;
-    // Collapse recurring occurrences (same title + venue) per group, then
-    // rank each group. Within each ranked group out-of-town events sink via
-    // rankEvents; long-running fixtures (months-long exhibitions) and
-    // out-of-town ones then go to the very end of the flow.
-    const { events: collapsedPrimary } = collapseSeries(primary);
-    const { events: collapsedSecondary } = collapseSeries(secondary);
-    const isTail = (event: StockholmEvent) => isLongRunning(event, now) || isOutOfTown(event);
-    const tail = collapsedSecondary.filter(isTail);
-    const rest = collapsedSecondary.filter((event) => !isTail(event));
-    return [
-      ...rankEvents(dropFeatured(collapsedPrimary)),
-      ...rankEvents(dropFeatured(rest)),
-      ...tail.filter((event) => !event.isFeatured),
-    ];
+    const { events: collapsed } = collapseSeries([...primary, ...secondary]);
+    return orderFeed(dropFeatured(collapsed), now);
     // `now` is intentionally not a dependency: a feed rebuild per second is
     // pointless, and staleness only shifts section membership by moments.
     // eslint-disable-next-line react-hooks/exhaustive-deps

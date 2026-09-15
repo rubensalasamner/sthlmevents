@@ -8,15 +8,43 @@ import {
 import { useFonts } from 'expo-font';
 import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
+import * as SystemUI from 'expo-system-ui';
 import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { AnimatedSplashOverlay } from '@/components/animated-icon';
+import { Colors } from '@/constants/theme';
 import { FavoritesProvider } from '@/context/favorites-context';
 import { FiltersProvider } from '@/context/filters-context';
 
 SplashScreen.preventAutoHideAsync();
+
+/** Navigation themes aligned with the Blå Timmen tokens so edge-to-edge
+ * system surfaces (nav-bar inset, screen background) never flash white. */
+const BlaTimmenLight = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: Colors.light.accent,
+    background: Colors.light.background,
+    card: Colors.light.background,
+    text: Colors.light.text,
+    border: Colors.light.backgroundSelected,
+  },
+};
+
+const BlaTimmenDark = {
+  ...DarkTheme,
+  colors: {
+    ...DarkTheme.colors,
+    primary: Colors.dark.accent,
+    background: Colors.dark.background,
+    card: Colors.dark.background,
+    text: Colors.dark.text,
+    border: Colors.dark.backgroundSelected,
+  },
+};
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -33,11 +61,15 @@ export default function RootLayout() {
     }
   }, [fontsLoaded, fontsError]);
 
+  useEffect(() => {
+    SystemUI.setBackgroundColorAsync(Colors.dark.background).catch(() => {});
+  }, []);
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <FavoritesProvider>
         <FiltersProvider>
-          <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+          <ThemeProvider value={colorScheme === 'dark' ? BlaTimmenDark : BlaTimmenLight}>
             {fontsLoaded || fontsError ? (
               <>
                 <AnimatedSplashOverlay />
