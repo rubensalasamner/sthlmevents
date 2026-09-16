@@ -3,7 +3,7 @@
 > **Syfte:** den här filen är projektets "minne" mellan datorer och sessioner.
 > Läs den först om du (människa eller AI-agent) plockar upp projektet efter en
 > paus. Den uppdateras när vi fattar beslut eller når slutsatser — inte för
-> varje kodändring. Senast uppdaterad: **2026-09-15**.
+> varje kodändring. Senast uppdaterad: **2026-09-16**.
 
 ---
 
@@ -88,7 +88,42 @@ $5-krediten. Kör INTE dagligen (blir ~$18/mån, över krediten).
 | luma | ✅ live | 20 events |
 | kulturbiljetter | ⏸ skip | kräver API-key (info@kulturbiljetter.se) |
 
-**Inte utforskat än:** Instagram-flödet via Apify (se §6 nästa steg).
+### Instagram via Apify (probad 2026-09-16, adapter INTE byggd än)
+
+**Utforskad aktör:** `apify/instagram-hashtag-scraper` (officiell, 3.39 rating
+— låg, men API-funktionerna verifierades i två riktiga probe-körningar).
+Input-schema (build 0.0.2188): `hashtags[]` (fungerar som hashtag ELLER
+keyword-läge med `keywordSearch: true`), `resultsType: posts|reels|stories`,
+`resultsLimit` (per hashtag, inte globalt). **$0.0026/post** — en femtedel av
+FB-priset. Alternativ aktör `apify/instagram-search-scraper` (4.84 rating)
+har `searchType: place` men returnerar plats-sidor, inte tidsstämplade posts.
+
+**Probe-resultat (31 posts, ~$0.21, input: 4 termer × 20 limit):**
+- 61 % Stockholm-signal i caption, 48 % datum-signal, bara 2 noise-poster.
+- **ALLA** posts har timestamp, bild och engagement (likes/comments).
+- **NOLL** har strukturerad plats (`location.name`) — venue måste parsas ur
+  caption (t.ex. "A-HOUSE UGGELVIKSGATAN 2A" står i texten).
+- Datum finns ENDAST i caption-text ("Fri 25/9 10-18.00", "16–17 September").
+- FB:s datumfönster-trick har ingen IG-motsvarighet (inget datumfilter).
+
+**Slutsats:** källan är VÄRD att bygga — captions på prosenter som
+"@loppisstockholm"-konton innehåller riktiga eventuppgifter. Men den kräver
+en caption-parsing-steg (svenska datumregex + venue-extraktion) som FB inte
+behövde. Den koden ligger delvis färdig i
+`pipeline/src/sources/apify-instagram/ig-analyze.ts` (flagPost-heuristiker,
+testade). Kvar: date-parser → `StockholmEvent`-mapper, venue-extraktion,
+dedup mot FB (samma event postas ofta i båda kanalerna).
+
+**Praktiskt:** `npm run probe:ig` (~$0.21), `npm run apify:usage` (kredit-
+koll). Körning den 14:e varje månad (usage-cykeln startar den 14:e, inte den
+1:a — Credits återställs då).
+
+### Kostnadsläge (verifierat via usage-API 2026-09-16)
+
+- Månadscykel: 14:e → 13:e. `PAID_ACTORS_PER_EVENT` är den enda stora posten.
+- Förbrukat i cykeln som började 2026-09-14: **$2.81** (FB-runs + IG-probes)
+  av $5-krediten → ~$2.19 kvar till den 13:e oktober. Planera veckokörningar
+  efter det: en FB-run (~$0.60) + IG-run (~$0.30) per vecka går jämt upp.
 
 ## 4. Design- och rangingsbeslut (spikade)
 
@@ -183,13 +218,12 @@ Nya adapters följer mönstret: `types.ts` (rå shape + klient) → `mapper.ts`
 
 ## 6. Nästa steg (prioriterat)
 
-1. **Instagram-flödet via Apify** — INTE utforskat än. Arbetshypotes:
-   IG-events lever som inlägg/story, inte event-objekt; scrapning via
-   hashtag (t.ex. #stockholmevents #sample sale) eller plats-tagg. Apify-aktörer:
-   `apify/instagram-hashtag-scraper`, `apify/instagram-scraper`. Innehåller
-   risk: IG är hårdare bot-skyddat än FB-events; PPE-priser liknande.
-   **Första steg**: GUI-test på 1–2 hashtags, se om outputs innehåller
-   datum + plats + bild. Kör INTE flera queries än 2–3 (kredit!).
+1. **Bygg IG-adaptern** — probad och grönljusad (se §3). Kvar att bygga:
+   caption-date-parser (svenska format "25/9", "16–17 September", "imorgon"),
+   venue-extraktion ur caption, mapper → `StockholmEvent`, dedup mot FB.
+   Rating-varning: hashtag-scraper har 3.39 i rating — överväg fallback till
+   `instagram-scraper` (4.70, $0.0027, kan hashtags via direct URLs) om
+   hashtag-scraper blir instabilt i drift.
 2. **Schemalägg Facebook-körningen** (veckovis räcker — kostnadsmodellen).
    GitHub Actions workflow finns (`snapshot.yml`, daglig cron) men saknar
    `APIFY_TOKEN` som repo-secret. Lägg till den + byt till vecko-cron eller
