@@ -1,0 +1,74 @@
+[
+  {
+    "shortCode": "CxMarimekko01",
+    "caption": "🌸 Marimekko 🌸\nNär? 11/9 - 08.00-18.00\n12/9 - 09.00-18.00\n13/9 - 10.00-18.00\n14/9 - 12.00-16.00\nVar? Marimekko Stockholm, Biblioteksgatan 5\nVälkommen!",
+    "timestamp": "2026-09-10T08:00:00.000Z",
+    "imageUrl": "https://example.com/marimekko.jpg",
+    "url": "https://www.instagram.com/p/CxMarimekko01/",
+    "likesCount": 184,
+    "commentsCount": 12,
+    "ownerUsername": "marimekko",
+    "ownerFullName": "Marimekko",
+    "location": null
+  },
+  {
+    "shortCode": "CxLoppis2km01",
+    "caption": "2 kilometer Loppis Hägerstensvägen 100-180, Stockholm\n06 Sep 10:00-16:00\n2 KM long flea market between Aspudden and Mälarhöjden. Köp snyggt begagnat!",
+    "timestamp": "2026-09-01T09:00:00.000Z",
+    "imageUrl": "https://example.com/loppis2km.jpg",
+    "url": "https://www.instagram.com/p/CxLoppis2km01/",
+    "likesCount": 96,
+    "commentsCount": 5,
+    "ownerUsername": "loppisstockholm",
+    "ownerFullName": "Loppis Stockholm",
+    "location": null
+  },
+  {
+    "shortCode": "CxAxelArigato1",
+    "caption": "Axel Arigato Sample Sale 2026\nFri 25/9 10-18.00\nSat 26/9 10-18:00\nSun 27/9 10-13:00\nA-HOUSE UGGELVIKSGATAN 2A\nUp to 80% off",
+    "timestamp": "2026-09-14T10:00:00.000Z",
+    "imageUrl": "https://example.com/axel.jpg",
+    "url": "https://www.instagram.com/p/CxAxelArigato1/",
+    "likesCount": 342,
+    "commentsCount": 28,
+    "ownerUsername": "axelarigato",
+    "ownerFullName": "Axel Arigato",
+    "location": null
+  },
+  {
+    "shortCode": "CxGiveawayXx1",
+    "caption": "GIVEAWAY! Vinn ett presentkort 500kr. Follow oss och länk i bio!",
+    "timestamp": "2026-09-15T12:00:00.000Z",
+    "imageUrl": "https://example.com/giveaway.jpg",
+    "url": "https://www.instagram.com/p/CxGiveawayXx1/",
+    "likesCount": 2100,
+    "commentsCount": 350,
+    "ownerUsername": "somebrand",
+    "ownerFullName": "Some Brand",
+    "location": null
+  },
+  {
+    "shortCode": "CxBucketListx1",
+    "caption": "MY SEPTEMBER BUCKET LIST IN STOCKHOLM 🍂✨ September is bringing everything from autumn markets and outdoor adventures to cozy cafés. Save this post!",
+    "timestamp": "2026-09-02T15:00:00.000Z",
+    "imageUrl": "https://example.com/bucket.jpg",
+    "url": "https://www.instagram.com/p/CxBucketListx1/",
+    "likesCount": 530,
+    "commentsCount": 41,
+    "ownerUsername": "sthlmguide",
+    "ownerFullName": "Stockholm Guide",
+    "location": null
+  },
+  {
+    "shortCode": "CxBabySale0001",
+    "caption": "Join us in Stockholm for our Sample Sale on 16–17 September. Discover baby essentials, bedding and clothing for the little ones at great prices.",
+    "timestamp": "2026-09-12T09:00:00.000Z",
+    "imageUrl": "https://example.com/baby.jpg",
+    "url": "https://www.instagram.com/p/CxBabySale0001/",
+    "likesCount": 57,
+    "commentsCount": 3,
+    "ownerUsername": "babybrand",
+    "ownerFullName": "Baby Brand",
+    "location": null
+  }
+]

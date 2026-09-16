@@ -1,6 +1,7 @@
 import type { SourceAdapter } from './source-adapter.js';
 import { AlleventsAdapter } from './allevents/adapter.js';
 import { ApifyFacebookAdapter } from './apify-facebook/adapter.js';
+import { ApifyInstagramAdapter } from './apify-instagram/adapter.js';
 import { BiblioteketAdapter } from './biblioteket/adapter.js';
 import { EvenemangskollenAdapter } from './evenemangskollen/adapter.js';
 import { EventbriteAdapter } from './eventbrite/adapter.js';
@@ -18,6 +19,7 @@ export const SOURCE_ADAPTERS: Record<string, SourceAdapter> = {
   'visit-stockholm': new VisitStockholmAdapter(),
   loppiskartan: new LoppiskartanAdapter(),
   'apify-facebook': new ApifyFacebookAdapter(),
+  'apify-instagram': new ApifyInstagramAdapter(),
   eventbrite: new EventbriteAdapter(),
   'resident-advisor': new ResidentAdvisorAdapter(),
   ticketmaster: new TicketmasterAdapter(),
