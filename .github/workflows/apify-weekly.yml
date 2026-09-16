@@ -1,0 +1,64 @@
+name: Weekly Apify refresh
+
+# The Apify sources cost real money per event delivered, so they run on their
+# own weekly schedule instead of the daily free-cron (snapshot.yml). The run
+# is a partial refresh (`--only`): only Facebook + Instagram events are
+# refetched; every other source's events are kept from the committed snapshot.
+# Worst case spend per run: FB ~$0.60 + IG ~$0.30 ≈ $0.90 of the $5/month
+# Apify credit (billing cycle runs the 14th -> 13th).
+
+on:
+  schedule:
+    # Mondays 03:50 UTC ≈ 05:50 Stockholm — off the busy minutes, after the
+    # weekend (IG posts about upcoming events cluster early in the week).
+    - cron: '50 3 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-apify
+  cancel-in-progress: false
+
+env:
+  APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+
+jobs:
+  apify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --prefix pipeline
+
+      - name: Refresh Apify sources (Facebook + Instagram)
+        # Missing token -> the adapters throw -> generate-snapshot skips the
+        # Apify sources but still rewrites the snapshot; committing then would
+        # silently DROP the previous Apify events (nothing kept them). The
+        # guard below fails the job instead so stale data stays committed.
+        if: env.APIFY_TOKEN != ''
+        run: npm run snapshot:apify --prefix pipeline
+
+      - name: Fail loudly when the token is missing
+        if: env.APIFY_TOKEN == ''
+        run: |
+          echo "::error::APIFY_TOKEN secret is not set. Add it under"
+          echo "::error::Settings > Secrets and variables > Actions."
+          echo "::error::Skipping the run so the committed Apify events stay."
+          exit 1
+
+      - name: Commit and push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(data): weekly Apify refresh (Facebook + Instagram) [skip ci]'
+          file_pattern: src/data/events.snapshot.json pipeline/.cache/*.json
+          commit_user_name: github-actions[bot]
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com

@@ -1,8 +1,12 @@
 name: Daily snapshot
 
-# The daily-cron model: regenerate the event snapshot from all pipeline
-# sources, commit it, and let Vercel redeploy with fresh data. The app picks
-# the new snapshot up from EXPO_PUBLIC_SNAPSHOT_URL (or its bundled copy).
+# The daily-cron model: regenerate the event snapshot from the FREE sources,
+# commit it, and let Vercel redeploy with fresh data. The app picks the new
+# snapshot up from EXPO_PUBLIC_SNAPSHOT_URL (or its bundled copy).
+#
+# The PAID Apify sources (apify-facebook, apify-instagram) are excluded here
+# and run weekly in apify-weekly.yml — a daily run would burn the $5 monthly
+# Apify credit in under a week (FB ~$0.60/run, IG ~$0.30/run).
 
 on:
   schedule:
@@ -43,16 +47,12 @@ jobs:
           npm ci --prefix pipeline
 
       - name: Generate snapshot
-        env:
-          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
-          TICKETMASTER_API_SECRET: ${{ secrets.TICKETMASTER_API_SECRET }}
-          EVENEMANGSKOLLEN_API_KEY: ${{ secrets.EVENEMANGSKOLLEN_API_KEY }}
-          EVENEMANGSKOLLEN_ANON_KEY: ${{ secrets.EVENEMANGSKOLLEN_ANON_KEY }}
-          CATEGORIZER_API_KEY: ${{ secrets.CATEGORIZER_API_KEY }}
-          CATEGORIZER_BASE_URL: ${{ secrets.CATEGORIZER_BASE_URL }}
-          CATEGORIZER_MODEL: ${{ secrets.CATEGORIZER_MODEL }}
-          KULTURBILJETTER_API_KEY: ${{ secrets.KULTURBILJETTER_API_KEY }}
-        run: npm run snapshot --prefix pipeline
+        # The daily cron refreshes the FREE sources only. The paid Apify
+        # sources (apify-facebook, apify-instagram) run weekly in
+        # apify-weekly.yml — a daily run would burn the $5 monthly credit in
+        # under a week. A partial refresh skips them without touching their
+        # committed events.
+        run: npm run snapshot --prefix pipeline -- --only visit-stockholm,loppiskartan,eventbrite,resident-advisor,ticketmaster,luma,meetup,allevents,evenemangskollen,biblioteket,kulturhuset,kulturbiljetter
 
       - name: Ensure cache files exist
         # git add fails on pathspecs that match nothing; placeholders keep the
