@@ -5,15 +5,21 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { EventMap } from '@/components/event-map';
 import { SearchBar } from '@/components/search-bar';
 import { ThemedView } from '@/components/themed-view';
+import { useFavorites } from '@/context/favorites-context';
 import { useFilters } from '@/context/filters-context';
 import { useEvents } from '@/hooks/use-events';
+import { useUserLocation } from '@/hooks/use-user-location';
+import type { StockholmEvent } from '@/types/event';
 import { collapseSeries } from '@/utils/collapse-series';
 import { splitByDateRange } from '@/utils/date-range';
+import { filterByDistance, sortByDistance } from '@/utils/geo';
 import { searchEvents } from '@/utils/search';
 
 export default function MapScreen() {
   const { data: events, loading, error, reload } = useEvents();
-  const { category, query, dateRange, source, setQuery } = useFilters();
+  const { category, query, dateRange, source, nearMe, nearRadiusKm, setQuery } = useFilters();
+  const { favoriteIds } = useFavorites();
+  const { location } = useUserLocation(nearMe);
 
   const filtered = useMemo(() => {
     let result = searchEvents(events, query);
@@ -23,25 +29,48 @@ export default function MapScreen() {
     if (source !== 'all') {
       result = result.filter((event) => event.source === source);
     }
-    // The map mirrors the Discover selection: primary + secondary (ongoing
-    // carryover) both deserve a pin when the user narrows to a window.
     const { primary, secondary } = splitByDateRange(result, dateRange);
-    const selected = dateRange === 'all' ? result : [...primary, ...secondary];
-    // One pin per event, not one per occurrence of a recurring event.
-    return collapseSeries(selected).events;
-  }, [events, category, query, dateRange, source]);
+    let selected = dateRange === 'all' ? result : [...primary, ...secondary];
+
+    if (nearMe && location) {
+      selected = filterByDistance(selected, location, nearRadiusKm);
+      selected = sortByDistance(selected, location);
+    }
+
+    // Favourites always stay on the map (distinct bubble colour) even when a
+    // filter would otherwise hide them — personal pins without an account.
+    const favorites = events.filter((event) => favoriteIds.has(event.id));
+    return collapseSeries(uniqueById([...selected, ...favorites])).events;
+  }, [events, category, query, dateRange, source, nearMe, nearRadiusKm, location, favoriteIds]);
 
   return (
     <ThemedView style={styles.container}>
-      {/* Map runs under the safe area so the image is full-bleed like the reference. */}
       <View style={styles.mapWrap}>
-        <EventMap events={filtered} loading={loading} error={error} onRetry={reload} />
+        <EventMap
+          events={filtered}
+          favoriteIds={favoriteIds}
+          userLocation={nearMe ? location : null}
+          loading={loading}
+          error={error}
+          onRetry={reload}
+        />
       </View>
       <SafeAreaView edges={['top']} style={styles.overlay}>
         <SearchBar value={query} onChange={setQuery} />
       </SafeAreaView>
     </ThemedView>
   );
+}
+
+function uniqueById(events: readonly StockholmEvent[]): StockholmEvent[] {
+  const seen = new Set<string>();
+  const out: StockholmEvent[] = [];
+  for (const event of events) {
+    if (seen.has(event.id)) continue;
+    seen.add(event.id);
+    out.push(event);
+  }
+  return out;
 }
 
 const styles = StyleSheet.create({

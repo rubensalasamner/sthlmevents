@@ -4,6 +4,7 @@ import { Icon } from '@/components/icon';
 import { Spacing } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
 import type { StockholmEvent } from '@/types/event';
+import { eventShareUrl } from '@/utils/event-share-url';
 import { formatEventDate } from '@/utils/format';
 
 type ShareButtonProps = {
@@ -15,17 +16,15 @@ export function ShareButton({ event, size = 22 }: ShareButtonProps) {
   const theme = useTheme();
 
   const onPress = async () => {
-    const url = event.ticketUrl ?? event.sourceUrl;
+    const url = eventShareUrl(event);
     const message = [
       event.title,
       `${formatEventDate(event.startsAt)} · ${event.venue.name}, ${event.venue.district}`,
       url,
-    ]
-      .filter(Boolean)
-      .join('\n');
+    ].join('\n');
 
     try {
-      await Share.share(Platform.OS === 'ios' && url ? { message, url } : { message });
+      await Share.share(Platform.OS === 'ios' ? { message, url } : { message });
     } catch {
       // Sharing was dismissed or is unavailable on this platform.
     }

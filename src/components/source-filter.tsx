@@ -12,15 +12,15 @@ type SourceFilterProps = {
   events: readonly StockholmEvent[];
   value: SourceFilterValue;
   onChange: (value: SourceFilterValue) => void;
+  /** Revealed via the Discover title easter egg — hidden by default even in __DEV__. */
+  unlocked?: boolean;
 };
 
 /**
- * Dev-only companion to `SourceTag`: narrow the list to one ingestion source.
- * Collapsed by default — a small chip that expands to a pill row on tap — so
- * the debug control stays out of the visual hierarchy. Renders nothing in
- * production builds.
+ * Dev companion to `SourceTag`: narrow the list to one ingestion source.
+ * Only mounts in __DEV__, and only after the title unlock (5 taps).
  */
-export function SourceFilter({ events, value, onChange }: SourceFilterProps) {
+export function SourceFilter({ events, value, onChange, unlocked = false }: SourceFilterProps) {
   const [expanded, setExpanded] = useState(false);
 
   const sources = useMemo(() => {
@@ -28,7 +28,7 @@ export function SourceFilter({ events, value, onChange }: SourceFilterProps) {
     return [...distinct].sort((a, b) => formatSource(a).localeCompare(formatSource(b)));
   }, [events]);
 
-  if (!__DEV__ || sources.length === 0) return null;
+  if (!__DEV__ || !unlocked || sources.length === 0) return null;
 
   if (!expanded) {
     return (

@@ -24,7 +24,7 @@ const localDate = new Intl.DateTimeFormat('en-CA', {
 });
 
 /** Offset (ms) between UTC and Stockholm wall-clock at the given instant. */
-function tzOffsetMs(instant: Date): number {
+export function stockholmTzOffsetMs(instant: Date): number {
   const parts = new Intl.DateTimeFormat('en-US', {
     timeZone: STOCKHOLM_TZ,
     hour12: false,
@@ -48,7 +48,23 @@ function tzOffsetMs(instant: Date): number {
 export function stockholmMidnight(dayOffset: number, now: Date): Date {
   const [year, month, day] = localDate.format(now).split('-').map(Number);
   const civilUtc = Date.UTC(year, month - 1, day + dayOffset);
-  return new Date(civilUtc - tzOffsetMs(new Date(civilUtc)));
+  return new Date(civilUtc - stockholmTzOffsetMs(new Date(civilUtc)));
+}
+
+/**
+ * Stockholm wall-clock on the civil day `dayOffset` from `now`'s Stockholm
+ * date, at `hour`:`minute`. Prefer this over `midnight + N hours` — fixed
+ * hour deltas land wrong across DST transitions.
+ */
+export function stockholmLocalDateTime(
+  dayOffset: number,
+  hour: number,
+  minute: number,
+  now: Date,
+): Date {
+  const [year, month, day] = localDate.format(now).split('-').map(Number);
+  const civilUtc = Date.UTC(year, month - 1, day + dayOffset, hour, minute);
+  return new Date(civilUtc - stockholmTzOffsetMs(new Date(civilUtc)));
 }
 
 /** Inclusive-start, exclusive-end window for a range, relative to `now`. */
@@ -123,4 +139,53 @@ export function filterByDateRange(
 ): StockholmEvent[] {
   const { primary, secondary } = splitByDateRange(events, range, now);
   return [...primary, ...secondary];
+}
+
+/**
+ * Stockholm weekday as JS `Date#getUTCDay` numbers (0=Sun … 6=Sat), using the
+ * city's civil calendar — not the phone's timezone.
+ */
+export function stockholmWeekday(now: Date): number {
+  const [year, month, day] = localDate.format(now).split('-').map(Number);
+  return new Date(Date.UTC(year, month - 1, day)).getUTCDay();
+}
+
+/**
+ * Contextual Discover default: Thu–Sun open on "Helgen", Mon–Wed on "Idag".
+ * Habit loop — open the app and see what's relevant *now*, not the full dump.
+ */
+export function defaultDateRange(now: Date = new Date()): DateRangeValue {
+  const weekday = stockholmWeekday(now);
+  // Sun=0, Thu=4, Fri=5, Sat=6
+  if (weekday === 0 || weekday >= 4) return 'weekend';
+  return 'today';
+}
+
+/** Section / hero copy for the active date window. */
+export function dateRangeHeading(range: DateRangeValue): string {
+  switch (range) {
+    case 'today':
+      return 'Today';
+    case 'weekend':
+      return 'This weekend';
+    case 'week':
+      return 'This week';
+    case 'all':
+    default:
+      return 'All events';
+  }
+}
+
+export function dateRangeSubtitle(range: DateRangeValue): string {
+  switch (range) {
+    case 'today':
+      return 'What’s happening today';
+    case 'weekend':
+      return 'What’s on this weekend';
+    case 'week':
+      return 'What’s on this week';
+    case 'all':
+    default:
+      return 'What’s on in the city';
+  }
 }

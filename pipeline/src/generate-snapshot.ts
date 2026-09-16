@@ -4,6 +4,8 @@ import { fileURLToPath } from 'node:url';
 import { loadEnv } from './shared/load-env.js';
 import { enrichEventsWithImages } from './enrich/enrich-images.js';
 import { FileImageCache } from './enrich/image-cache.js';
+import { hostFragileImages } from './enrich/host-fragile-images.js';
+import { readR2ConfigFromEnv } from './enrich/r2-client.js';
 import { categorizeEvents } from './categorize/categorize-events.js';
 import { OpenAiCategorizer } from './categorize/categorizer.js';
 import { FallbackCategorizer } from './categorize/fallback-categorizer.js';
@@ -32,6 +34,7 @@ const CATEGORIZER_MODEL_CHAIN = (process.env.CATEGORIZER_MODEL ?? '')
 
 const OUTPUT_URL = new URL('../../src/data/events.snapshot.json', import.meta.url);
 const CACHE_URL = new URL('../.cache/og-images.json', import.meta.url);
+const HOSTED_IMAGES_CACHE_URL = new URL('../.cache/hosted-images.json', import.meta.url);
 const GEOCODE_CACHE_URL = new URL('../.cache/geocodes.json', import.meta.url);
 const CATEGORY_CACHE_URL = new URL('../.cache/categories.json', import.meta.url);
 
@@ -217,7 +220,35 @@ async function main(): Promise<void> {
   process.stdout.write('\n');
   await cache.save();
 
-  const sorted = [...enriched].sort(
+  let afterHost = enriched;
+  const r2 = readR2ConfigFromEnv();
+  if (r2) {
+    const hostedCache = new FileKeyedCache<string>(HOSTED_IMAGES_CACHE_URL.pathname);
+    await hostedCache.load();
+    let lastHostLogged = 0;
+    const hostedResult = await hostFragileImages(enriched, {
+      r2,
+      cache: hostedCache,
+      concurrency: 4,
+      onProgress: (done, total) => {
+        if (done - lastHostLogged >= 5 || done === total) {
+          lastHostLogged = done;
+          process.stdout.write(`\r  host images ${done}/${total}`);
+        }
+      },
+    });
+    if (hostedResult.attempted > 0) process.stdout.write('\n');
+    await hostedCache.save();
+    afterHost = hostedResult.events;
+    console.log(
+      `Hosted ${hostedResult.hosted}/${hostedResult.attempted} fragile images on R2` +
+        (hostedResult.failed > 0 ? ` (${hostedResult.failed} → category fallback)` : ''),
+    );
+  } else {
+    console.log('R2 image hosting skipped (R2_* / R2_PUBLIC_BASE_URL not set)');
+  }
+
+  const sorted = [...afterHost].sort(
     (a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime(),
   );
 

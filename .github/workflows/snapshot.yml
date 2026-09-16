@@ -22,12 +22,15 @@ concurrency:
   cancel-in-progress: false
 
 # Optional Cloudflare R2 upload (free tier). When the R2_* secrets are absent
-# the upload step skips and Vercel remains the only snapshot host.
+# the upload step skips and Vercel remains the only snapshot host. The same
+# credentials (+ R2_PUBLIC_BASE_URL) also let the pipeline re-host fragile
+# Facebook/Instagram images during snapshot generation.
 env:
   R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
   R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
   R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
   R2_BUCKET: ${{ secrets.R2_BUCKET }}
+  R2_PUBLIC_BASE_URL: ${{ secrets.R2_PUBLIC_BASE_URL }}
 
 jobs:
   snapshot:
@@ -57,7 +60,7 @@ jobs:
       - name: Ensure cache files exist
         # git add fails on pathspecs that match nothing; placeholders keep the
         # commit step stable even when the pipeline wrote no caches.
-        run: mkdir -p pipeline/.cache && touch pipeline/.cache/og-images.json pipeline/.cache/geocodes.json pipeline/.cache/categories.json
+        run: mkdir -p pipeline/.cache && touch pipeline/.cache/og-images.json pipeline/.cache/geocodes.json pipeline/.cache/categories.json pipeline/.cache/hosted-images.json
 
       - name: Commit and push
         uses: stefanzweifel/git-auto-commit-action@v5

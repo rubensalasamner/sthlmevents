@@ -14,10 +14,16 @@ SourceAdapter.fetch()  ->  StockholmEvent[]
                     dedupe (cross-source)          <- implemented
                                  |
                                  v
-           enrich (og:image, cached)          <- implemented
+                         geocode (Nominatim)       <- implemented
                                  |
                                  v
-   shared stages (later): geocode -> rank -> upsert -> expire
+                    categorize (optional LLM)      <- implemented
+                                 |
+                                 v
+           enrich (og:image, cached)               <- implemented
+                                 |
+                                 v
+     host fragile images (fbcdn/IG → R2)           <- implemented
                                  |
                                  v
         generate-snapshot -> src/data/events.snapshot.json
@@ -37,6 +43,11 @@ event's `ticketUrl` for its Open Graph / Twitter card image, deduplicating by
 URL and caching results in `.cache/og-images.json` (30-day TTL, 3-day negative
 TTL). Events with no resolvable image keep their category fallback.
 
+Facebook/Instagram CDN URLs expire (signed `oe=` params). When `R2_*` and
+`R2_PUBLIC_BASE_URL` are set, `hostFragileImages` downloads those assets,
+uploads them under `images/` on R2, and rewrites `imageUrl`. Failures become
+the category fallback so the snapshot never keeps a dying link. Cache:
+`.cache/hosted-images.json`.
 ### Snapshot -> app
 
 `generate-snapshot` runs a source + enrichment pass and writes

@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
 import { Spacing } from '@/constants/theme';
@@ -8,14 +8,31 @@ type ScreenHeaderProps = {
   title: string;
   subtitle?: string;
   children?: ReactNode;
+  /** Optional — e.g. 5-tap unlock for the DEV source filter. */
+  onTitlePress?: () => void;
 };
 
-export function ScreenHeader({ title, subtitle, children }: ScreenHeaderProps) {
+export function ScreenHeader({ title, subtitle, children, onTitlePress }: ScreenHeaderProps) {
+  const titleNode = (
+    <ThemedText type="title" style={styles.title}>
+      {title}
+    </ThemedText>
+  );
+
   return (
     <View style={styles.container}>
-      <ThemedText type="title" style={styles.title}>
-        {title}
-      </ThemedText>
+      {onTitlePress ? (
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={title}
+          onPress={onTitlePress}
+          // Keep the hit target title-sized; no visual chrome for the easter egg.
+          style={({ pressed }) => pressed && styles.titlePressed}>
+          {titleNode}
+        </Pressable>
+      ) : (
+        titleNode
+      )}
       {subtitle && (
         <ThemedText type="small" themeColor="textSecondary">
           {subtitle}
@@ -35,5 +52,8 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 36,
     lineHeight: 42,
+  },
+  titlePressed: {
+    opacity: 0.85,
   },
 });

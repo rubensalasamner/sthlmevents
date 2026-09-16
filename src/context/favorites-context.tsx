@@ -13,6 +13,12 @@ import {
   loadFavoriteIds,
   saveFavoriteIds,
 } from '@/data/favorites-storage';
+import { getEventSource } from '@/data/event-repository';
+import {
+  cancelRemindersForEvent,
+  rescheduleAllFavoriteReminders,
+  scheduleRemindersForEvent,
+} from '@/notifications/reminders';
 
 type FavoritesContextValue = {
   favoriteIds: ReadonlySet<string>;
@@ -31,10 +37,20 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     let cancelled = false;
     loadFavoriteIds()
-      .then((stored) => {
+      .then(async (stored) => {
+        if (cancelled) return;
+        hydratedRef.current = true;
+        setFavoriteIds(stored);
+
+        // Rebuild OS schedules for favourites that survived a reinstall /
+        // permission revoke. Best-effort — never blocks hydration.
+        if (stored.size === 0) return;
+        const source = getEventSource();
+        const events = (
+          await Promise.all([...stored].map((id) => source.getById(id)))
+        ).filter((event): event is NonNullable<typeof event> => event !== null);
         if (!cancelled) {
-          hydratedRef.current = true;
-          setFavoriteIds(stored);
+          void rescheduleAllFavoriteReminders(events);
         }
       })
       .catch((err: unknown) => {
@@ -46,7 +62,7 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const toggleFavorite = useCallback((id: string) => {
-    let next: Set<string>;
+    let next: Set<string> | undefined;
     setFavoriteIds((current) => {
       next = new Set(current);
       if (next.has(id)) {
@@ -61,9 +77,18 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
       // React will render. Skipped pre-hydration so an early tap can't clobber
       // the stored list with the empty initial state.
       queueMicrotask(() => {
-        if (next) {
-          void saveFavoriteIds(next);
-        }
+        if (!next) return;
+        void saveFavoriteIds(next);
+        // Reminder schedule follows the resulting membership, not a flip flag
+        // (React may re-run the updater in Strict Mode).
+        void (async () => {
+          if (next!.has(id)) {
+            const event = await getEventSource().getById(id);
+            if (event) await scheduleRemindersForEvent(event);
+          } else {
+            await cancelRemindersForEvent(id);
+          }
+        })();
       });
     }
   }, []);

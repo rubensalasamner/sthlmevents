@@ -1,4 +1,4 @@
-import type { StockholmEvent } from '@/types/event';
+import type { EventCategory, StockholmEvent } from '@/types/event';
 import { eventInterval, isLongRunning } from '@/utils/event-interval';
 import { isOutOfTown } from '@/utils/event-locality';
 
@@ -7,6 +7,15 @@ export type FeedTier = 'upcoming' | 'ongoing' | 'past';
 
 /** Feed bands, in feed order: live programme, then out-of-town, then long fixtures. */
 export type FeedBand = 'programme' | 'outOfTown' | 'longRunning';
+
+export type OrderFeedOptions = {
+  /**
+   * Soft personalization: preferred categories sort above others within the
+   * same band/tier/featured bucket. Never a hard filter — empty feed stays empty
+   * only when the date/near filters say so.
+   */
+  preferredCategories?: ReadonlySet<EventCategory>;
+};
 
 const TIER_ORDER: Record<FeedTier, number> = { upcoming: 0, ongoing: 1, past: 2 };
 
@@ -38,11 +47,15 @@ export function feedBand(event: StockholmEvent, now: Date): FeedBand {
  * Final Discover-feed order, date-first per product spec: everything not yet
  * started (soonest first), then what is running right now ordered by how soon
  * it ENDS — an event dying tonight must surface above a months-long run —
- * then the recently ended. Within a band: featured leads, quality breaks
- * date ties, id keeps the order deterministic. Pure and side-effect free so
- * the backend can reuse it verbatim.
+ * then the recently ended. Within a band: featured leads, optional interest
+ * boost, quality breaks date ties, id keeps the order deterministic.
  */
-export function orderFeed(events: readonly StockholmEvent[], now: Date): StockholmEvent[] {
+export function orderFeed(
+  events: readonly StockholmEvent[],
+  now: Date,
+  options: OrderFeedOptions = {},
+): StockholmEvent[] {
+  const preferred = options.preferredCategories;
   const decorated = events.map((event) => {
     const { startMs, endMs } = eventInterval(event);
     const tier = feedTier(event, now);
@@ -50,6 +63,9 @@ export function orderFeed(events: readonly StockholmEvent[], now: Date): Stockho
       event,
       band: BAND_ORDER[feedBand(event, now)],
       tier: TIER_ORDER[tier],
+      // 0 = matches interests (sorts first); 1 = no preference / no match.
+      interestRank:
+        preferred && preferred.size > 0 ? (preferred.has(event.category) ? 0 : 1) : 0,
       // Ongoing events compete on their end date; past ones run most recent
       // first. Negating folds both into the one ascending comparator.
       sortMs: tier === 'ongoing' ? endMs : tier === 'past' ? -startMs : startMs,
@@ -59,6 +75,7 @@ export function orderFeed(events: readonly StockholmEvent[], now: Date): Stockho
     if (a.band !== b.band) return a.band - b.band;
     if (a.tier !== b.tier) return a.tier - b.tier;
     if (a.event.isFeatured !== b.event.isFeatured) return a.event.isFeatured ? -1 : 1;
+    if (a.interestRank !== b.interestRank) return a.interestRank - b.interestRank;
     if (a.sortMs !== b.sortMs) return a.sortMs - b.sortMs;
     if (b.event.qualityScore !== a.event.qualityScore) {
       return b.event.qualityScore - a.event.qualityScore;

@@ -18,7 +18,7 @@ snapshot. Layout- och funktionsinspiration: GET LOCL (iOS). Tema: "Blå Timmen"
 - Pipeline-README (`pipeline/README.md`): arkitektur, källor, usage.
 - **Denna fil**: beslut, kostnadsfakta, kvarvarande steg, gotchas.
 
-## 2. Nuvarande läge (2026-09-15)
+## 2. Nuvarande läge (2026-09-16)
 
 - **13 aktiva källor**, 5767 events i snapshoten (varav 22 Facebook, 9 Instagram).
 - **Facebook-källan (Apify) är LIVE**: adapter + filter + mapper + datumfönster
@@ -26,8 +26,35 @@ snapshot. Layout- och funktionsinspiration: GET LOCL (iOS). Tema: "Blå Timmen"
 - **Instagram-källan (Apify) är LIVE** (2026-09-16): caption-parsing-adapter,
   9 unika events i första körningen efter dedup mot FB. Vecko-cadens,
   $0.30 hard-cap per run (se §3 Instagram-sektionen).
+- **Favoritpåminnelser LIVE** (2026-09-16): lokala notiser via
+  `expo-notifications` — dagen före 09:00 Stockholm + 2h innan start. Kräver
+  **ny native build** (plugin + POST_NOTIFICATIONS). Permission frågas vid
+  första favorit, inte vid appstart. Tap → eventdetalj.
+- **Lägg till i kalender LIVE** (2026-09-16): `Add to calendar` på eventdetaljen
+  öppnar OS-kalenderdialog (förifyllt) via `expo-calendar/legacy`; web → Google
+  Calendar-URL. Samma native build som notiser.
+- **Helg-/kvälls-default LIVE** (2026-09-16): Discover öppnar på `weekend`
+  torsdag–söndag (Stockholm-weekday), annars `today`. Featured-strip +
+  sektionsrubrik speglar fönstret (“This weekend” / “Today”).
+- **Närhet LIVE** (2026-09-16): “Near me” + ≤2/5 km på Discover (lazy GPS via
+  `expo-location`); kartan zoomar mot användaren, favoriter får accent-bubbla
+  och visas även när filter döljer dem. Kräver samma ny native build
+  (location-plugin).
+- **Progressiv intresse-onboarding LIVE** (2026-09-16): ingen cold-start-wizard.
+  Efter 1 favorit **eller** 3 eventöppningar → sheet “What are you into?”
+  (8 chips, Not now). Soft boost i `orderFeed` (inte hårt filter). Kompakt
+  “Vibes”-länk i sektionsraden (inte egen filterstrip). Lagras lokalt
+  (`sthlmevents.interests.v1`).
+- **Share → app/web LIVE** (2026-09-16): Share delar
+  `https://<web>/event/<id>` (eller `sthlmevents://…` utan web-origin), inte
+  Ticketmaster. `EXPO_PUBLIC_WEB_ORIGIN` sätter App Links / Universal Links-
+  host i `app.config.ts`.
+- **Fragile image hosting** (2026-09-16): pipeline-steg hostar fbcdn/IG-bilder
+  till R2 när `R2_*` + `R2_PUBLIC_BASE_URL` är satta; misslyckanden →
+  kategori-fallback. Appen har `EventImage` onError→fallback som säkerhetsnät.
 - UI: Blå Timmen-tema implementerat, filterstripp v1 (segmentkontroll för datum,
-  pillrow för kategorier, dev-only source-chip), feed-ranking enligt §4.
+  pillrow för kategorier, Near me, dev-only source-chip), feed-ranking enligt §4.
+  Kartan: tid-bubbles + peek-card + favoritbubblor (se §4).
 - Känd bugg-kvarleva: IG-titlar kan innehålla emoji/skräprader —
   `firstTitleLine` hackar vid 80 tecken men rensar inte alla emoji. Kosmetiskt.
 
@@ -64,9 +91,9 @@ körningar/mån). Input-schema (build 0.0.83, verifierad): `searchQueries`,
 6. `duration` är text ("3 days", "6 hr") → parsas till `endsAt`.
 7. Ingen beskrivning i sökresultaten → `description` tom, `priceSek` förblir
    undefined ("See details" i UI:t). LLM-kategorisering senare kan förbättra.
-8. fbcdn-bild-URL:er är signerade med utgångsdatum (oe-param) — de fungerar
-   i snapshoten men är ephemera; vid långsiktigt behov: ladda ner och hosta
-   bilder själva (R2). Inte akut.
+8. fbcdn-bild-URL:er är signerade med utgångsdatum (oe-param). Pipeline-steget
+   `hostFragileImages` laddar ner och lägger dem på R2 när credentials finns;
+   annars ligger de kvar (appen har onError-fallback).
 9. Interest-signal: `usersGoing + usersInterested` är en stark kvalitetsproxy
    (ARAKII 1326 vs US-fundraiser-brus <10). Mapper ger 0–100-poäng.
 
@@ -156,6 +183,9 @@ vinner på strukturerat datum).
   quality → id. Band: programme → outOfTown → longRunning (>30 dagar).
   Tier inom band: upcoming (startsAt) → ongoing (endsAt snarast) → past.
   Syfte: "händer nu" överst, månads-långa events längst ner.
+- **Kartmarkörer v1**: frost-pills (Blå Timmen-yta `#F2F5F9`) med kategori-
+  border/accent-stripe, titel i mörk ink + tid i secondary. Default = tid;
+  från zoom ≥13 / ≤20 events: titel+tid två rader. Storlek sm/md/lg med zoom.
 - **Dedup**: normaliserad titel + Stockholm-lokal dag; rikaste data vinner.
   Facebook-vs-loppiskartan: noll kollisioner hittills (olika eventtyper).
 - **Snapshot**: minifierad JSON, appen läser via `StaticEventSource` vid
@@ -175,45 +205,63 @@ npm run snapshot      # ~4.5 min, gratis, alla 12 källor
 snapshot och byter bara ut valda. Misslyckas Apify-runen behålls gamla
 FB-events (stale beats missing). Output: `src/data/events.snapshot.json`.
 
-### Starta dev-server + QR (WSL2)
+### Starta development build (WSL2 + Android) — verifierat 2026-09-16
+
+**Det som funkade** (USB, efter ny EAS development-build):
 
 ```bash
-npx expo start --tunnel --port 8081
+# WSL — --localhost är viktigt (annars blir QR/URL WSL-bridge 172.x)
+npx expo start --port 8081 --dev-client --localhost
+# Metro ska visa: …/?url=http%3A%2F%2F127.0.0.1%3A8081
 ```
 
-**KRITISK GOTCHA (kostade oss en timme):** i icke-interaktivt läge skriver
-Expo INTE ut tunnel-URL:en i loggen. Den **rekonstruerade** URL:en från
-`.expo/settings.json` (`urlRandomness`) är FEL — den saknar ngrok-suffixet.
+```powershell
+# Windows PowerShell (USB + USB-felsökning; adb måste lista telefonen)
+curl http://127.0.0.1:8081/status
+# → packager-status:running
 
-**Riktig URL hämtas från ngroks API:**
-
-```bash
-curl -s http://127.0.0.1:4040/api/tunnels | grep -o '"public_url":"[^"]*"'
-# => "http://jyoqfks-<användarnamn>-8081.exp.direct"
+adb reverse tcp:8081 tcp:8081
+adb shell am start -a android.intent.action.VIEW -d "exp+sthlmevents://expo-development-client/?url=http%3A%2F%2Flocalhost%3A8081"
 ```
 
-Format: `exp://<randomness>-<ngrok-konto>-<port>.exp.direct` (alltid
-gemener). Verifiera alltid med `curl https://<url>/status` → ska svara
-`packager-status:running` INNAN QR genereras. QR-bygge:
+Lyckat tecken i WSL: `Android Bundled …`. Appen öppnar Discover.
 
-```bash
-node -e "
-const QRCode = require('/tmp/node_modules/qrcode');
-const url = 'exp://jyoqfks-rubensalasamner-8081.exp.direct';  // från ngrok-API:t
-QRCode.toFile('assets/images/dev-qr.png', url, { width: 512, margin: 2 }, () => console.log('ok'));
-"
-```
+**APK-install (när Expo Install-sidan hänger på telefon-WiFi):** ladda ner
+APK på PC från build-sidan, sen:
+`adb install -r "$env:USERPROFILE\Downloads\application-<build-id>.apk"`
+(`~` funkar inte till adb.exe på Windows.)
 
-Payloaden ska vara **plain `exp://`** — inte `exp+sthlmevents://...dev-client`
--wrappern (den fungerade inte via kamerascan). Dev-klienten på telefonen
-förstår plain `exp://` och öppnar rätt.
+#### Fel vi såg och varför
 
-**Diagnos-tabell om "error loading app":**
-- Metro-loggen visar **inga** "Bundling"-rader → telefonen nådde aldrig
-  servern (nätverk/URL-problem, INTE kodfel).
-- "Bundling"-rader syns + fel på telefonen → JS-crash, läs stacktracen.
-- Ngrok-metriken ljuger inte: `connections.count > 0` = telefonen kom fram.
+| Symptom | Orsak | Fix |
+|---|---|---|
+| “problem loading the project” efter QR utan tunnel | Metro ger `http://172.19.0.1:8081` (WSL-bridge); telefonen når den inte | `--localhost` + `adb reverse` + öppna via `am start` (scanna inte QR) |
+| Samma fel med `adb reverse` men Metro utan `--localhost` | Appen öppnas men Metro-loggen får **inga** Bundled-rader | Lägg till `--localhost`; verifiera `curl` från Windows |
+| `npx expo start --tunnel` → `Cannot read properties of undefined (reading 'body')` | Expo:s delade ngrok trasig/överbelastad (känd 2026) | Skippa `--tunnel` tills vidare; USB-receptet ovan |
+| Tunnel droppar mid-session (`Tunnel connection has been closed`) | Instabil ngrok | Starta om eller använd USB |
+| `adb: no devices` i WSL | USB sitter på Windows, inte WSL | Kör `adb` i **Windows** PowerShell |
+| Expo Install på telefon hänger vid nedladdning | CDN/redirect via mobil-WiFi | Ladda ner APK på PC → `adb install` |
 
+#### Utan USB (nästa steg att testa)
+
+Expo `--tunnel` är opålitlig just nu. Alternativ när kabeln ska bort:
+
+1. **Egen ngrok** (rekommenderat): konto + authtoken → `ngrok http 8081`, sen
+   starta Metro med `EXPO_PACKAGER_PROXY_URL=https://<din-ngrok-url>` och öppna
+   den URL:en i development client (Enter URL / `am start` med https-URL).
+2. **LAN** om telefon + PC på samma WiFi *utan* client isolation: hitta
+   Windows LAN-IP, portforward WSL:8081 → Windows om behövs, starta med
+   `REACT_NATIVE_PACKAGER_HOSTNAME=<lan-ip>`, öppna `http://<lan-ip>:8081`
+   i dev client. Fungerar ofta sämre på företags-WiFi.
+3. **Cloudflare Tunnel** (`cloudflared tunnel --url http://localhost:8081`) —
+   samma mönster som egen ngrok.
+
+När trådlöst är verifierat: uppdatera den här sektionen med det recept som
+faktiskt fungerade (kommando + URL-form).
+
+**Äldre gotcha (tunnel-QR):** rekonstruerad URL från `.expo/settings.json` saknar
+ngrok-suffix — hämta riktig URL från `curl -s http://127.0.0.1:4040/api/tunnels`
+när en egen/fungerande tunnel kör.
 ### Miljövariabler
 
 - `pipeline/.env` (gitignored): `APIFY_TOKEN`, TICKETMASTER_*, EVENEMANGSKOLLEN_*,
@@ -241,15 +289,25 @@ Nya adapters följer mönstret: `types.ts` (rå shape + klient) → `mapper.ts`
    Workflows är redan uppsatta: `apify-weekly.yml` (måndagar 03:50 UTC, FB+IG
    ~$0.90/run) + `snapshot.yml` (daglig, exkluderar Apify-källorna via
    `--only <free sources>`). Testa med "Run workflow" på `apify-weekly.yml`.
-3. **LLM-kategorisering** (CATEGORIZER_API_KEY): förbättrar FB-events
+2. **Ny EAS-build** — `expo-notifications` + `expo-calendar` + `expo-location`
+   är native; JS-only reload räcker inte. Efter build: favorisera → notiser;
+   eventdetalj → Add to calendar; Discover → Near me → GPS-prompt. Sätt också
+   `EXPO_PUBLIC_WEB_ORIGIN` (Vercel-URL) i EAS env så Share/App Links pekar rätt.
+   Dev-loop (WSL): se §5 “Starta development build” — USB + `--localhost` +
+   `adb reverse` är verifierat; trådlöst (egen ngrok/LAN) kvar att testa.
+3. **R2_PUBLIC_BASE_URL** som repo-secret (utöver befintliga R2_*) — aktiverar
+   FB/IG-bildhosting i daglig + veckovis snapshot. Utan den behålls signerade
+   CDN-URL:er (appen faller tillbaka till kategori-bild vid 404).
+4. **LLM-kategorisering** (CATEGORIZER_API_KEY): förbättrar FB-events
    (alla har `popup`-default). Groq gratisnivå räcker (llama-3.3-70b).
-4. **FB-bilder långsiktigt**: ladda ner fbcdn-bilder till R2 i pipeline
-   (signerade URL:er dör), så appen inte visar döda bilder efter dagar.
 5. **Pris-extraktion för sample sales**: FB har ingen prisdata; om "Fri
    entré" efterfrågas krävs LLM-extraktion ur beskrivning eller detail-pass
    (fördubblad kostnad). Beslut: vänta.
 6. **Utforska tier 2 queries** (quiz, standup, brunch osv.) när tier 1-yield
    är känd över 2–4 veckor. Aktivera i `queries.ts` via `queriesForTier`.
+7. **Universal Links AASA / assetlinks.json** på Vercel-hosten (Apple Team ID +
+   Android SHA-256) — Share-URL:en funkar redan i webbläsaren; detta behövs
+   bara för att https-länken ska öppna den installerade appen automatiskt.
 
 ## 7. Arkitektursankeiser (för framtida refs)
 

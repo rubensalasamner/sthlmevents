@@ -14,9 +14,12 @@ import { useColorScheme } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { AnimatedSplashOverlay } from '@/components/animated-icon';
+import { InterestsPrompt } from '@/components/interests-prompt';
 import { Colors } from '@/constants/theme';
 import { FavoritesProvider } from '@/context/favorites-context';
 import { FiltersProvider } from '@/context/filters-context';
+import { InterestsProvider } from '@/context/interests-context';
+import { NotificationBootstrap } from '@/notifications/notification-bootstrap';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -68,19 +71,23 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <FavoritesProvider>
-        <FiltersProvider>
-          <ThemeProvider value={colorScheme === 'dark' ? BlaTimmenDark : BlaTimmenLight}>
-            {fontsLoaded || fontsError ? (
-              <>
-                <AnimatedSplashOverlay />
-                <Stack>
-                  <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-                  <Stack.Screen name="event/[id]" options={{ title: 'Event' }} />
-                </Stack>
-              </>
-            ) : null}
-          </ThemeProvider>
-        </FiltersProvider>
+        <InterestsProvider>
+          <FiltersProvider>
+            <ThemeProvider value={colorScheme === 'dark' ? BlaTimmenDark : BlaTimmenLight}>
+              {fontsLoaded || fontsError ? (
+                <>
+                  <NotificationBootstrap />
+                  <InterestsPrompt />
+                  <AnimatedSplashOverlay />
+                  <Stack>
+                    <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+                    <Stack.Screen name="event/[id]" options={{ title: 'Event' }} />
+                  </Stack>
+                </>
+              ) : null}
+            </ThemeProvider>
+          </FiltersProvider>
+        </InterestsProvider>
       </FavoritesProvider>
     </GestureHandlerRootView>
   );

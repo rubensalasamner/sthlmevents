@@ -51,9 +51,19 @@ export function useEvents() {
 }
 
 export function useEvent(id: string | undefined) {
+  const decoded = id ? safeDecode(id) : undefined;
   const loader = useCallback(
-    () => (id ? getEventSource().getById(id) : Promise.resolve(null)),
-    [id],
+    () => (decoded ? getEventSource().getById(decoded) : Promise.resolve(null)),
+    [decoded],
   );
   return useAsync<StockholmEvent | null>(loader, null);
+}
+
+/** Share / deep-link paths use encodeURIComponent; list links may already be plain. */
+function safeDecode(value: string): string {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
 }

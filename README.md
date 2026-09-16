@@ -79,6 +79,7 @@ without them the step skips and Vercel remains the only host):
 | `R2_ACCESS_KEY_ID` | R2 API token access key (R2 → Manage R2 API tokens) |
 | `R2_SECRET_ACCESS_KEY` | Matching secret key |
 | `R2_BUCKET` | Bucket name |
+| `R2_PUBLIC_BASE_URL` | Public base URL, no trailing slash (e.g. `https://pub-<id>.r2.dev`) — required for Facebook/Instagram image hosting during snapshot runs |
 
 Bucket setup: create it in R2, then allow public reads — either enable the
 **r2.dev public access** switch (fine for a hobby app) or connect a custom
@@ -86,14 +87,25 @@ domain (recommended, unlimited and cached). Add a CORS policy allowing `GET`
 from `*` so the web app can fetch the file. R2's free tier (10 GB storage,
 10 M reads/month, zero egress) covers this use case many times over.
 
+The pipeline also uploads fragile FB/IG images under `images/` in the same
+bucket when `R2_PUBLIC_BASE_URL` is set, rewriting those `imageUrl`s in the
+snapshot so signed CDN links don't die mid-week.
+
 Then point native builds at it:
 
 ```bash
 eas env:create --name EXPO_PUBLIC_SNAPSHOT_URL \
   --value "https://pub-<id>.r2.dev/events.snapshot.json" \
   --visibility plain
+
+eas env:create --name EXPO_PUBLIC_WEB_ORIGIN \
+  --value "https://<your-app>.vercel.app" \
+  --visibility plain
 ```
 
+`EXPO_PUBLIC_WEB_ORIGIN` is what Share uses (and what App Links / Universal
+Links bind to). Without it, Share falls back to the snapshot host when that
+is your Vercel deployment, or to `sthlmevents://event/…` on native.
 ### 3. EAS — native builds with remote data
 
 The APK/IPA builds fetch the live snapshot at startup — from R2 when

@@ -63,6 +63,11 @@ export function EventList({
       ListFooterComponent={<AttributionFooter attribution={getEventSource().attribution} />}
       ItemSeparatorComponent={() => <View style={styles.separator} />}
       contentContainerStyle={styles.content}
+      initialNumToRender={8}
+      maxToRenderPerBatch={6}
+      updateCellsBatchingPeriod={50}
+      windowSize={7}
+      removeClippedSubviews
       ListEmptyComponent={
         <ThemedView style={styles.emptyWrap}>
           <ThemedText themeColor="textSecondary" style={styles.message}>

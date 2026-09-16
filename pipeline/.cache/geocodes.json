@@ -1984,11 +1984,11 @@
   },
   "Kungsstensgatan 45, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789028677781
+    "fetchedAt": 1789503618711
   },
   "Folkuniversitetets tornrum plan 7, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789028679346
+    "fetchedAt": 1789503619897
   },
   "Bråvallagatan 12, Stockholm, Sweden": {
     "value": {
@@ -2230,5 +2230,47 @@
       "longitude": 18.0781301
     },
     "fetchedAt": 1789500626925
+  },
+  "Surbrunnsgatan 13, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3467506,
+      "longitude": 18.0630279
+    },
+    "fetchedAt": 1789546650463
+  },
+  "Loppis at Karlaplan (11:00–15:00), Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789546651838
+  },
+  "#samplesale #utförsäljning #samplesalestockholm #archivesale, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789546653053
+  },
+  "Hägerstensvägen 100-180, Stockholm, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3035169,
+      "longitude": 17.9750081
+    },
+    "fetchedAt": 1789546654413
+  },
+  "Stockholms Sample Sale: 13 August - 6 September, 2026., Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789546656331
+  },
+  "ACNE STUDIOS ARCHIVE POP-UP, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789546658065
+  },
+  "Marimekko, Norrmalmstorg 4, Stockholm., Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789546659795
+  },
+  "https://outletbutiken.wordpress.com, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789546661532
+  },
+  "A-house, Uggleviksgatan 2A, Stockholm., Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789546662712
   }
 }

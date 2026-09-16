@@ -1,7 +1,9 @@
-import { Image } from 'expo-image';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
+import { useEffect } from 'react';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
+import { AddToCalendarButton } from '@/components/add-to-calendar-button';
+import { EventImage } from '@/components/event-image';
 import { ExternalLink } from '@/components/external-link';
 import { FavoriteButton } from '@/components/favorite-button';
 import { Icon } from '@/components/icon';
@@ -10,6 +12,7 @@ import { SourceTag } from '@/components/source-tag';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
+import { useInterests } from '@/context/interests-context';
 import { useEvent } from '@/hooks/use-events';
 import { useTheme } from '@/hooks/use-theme';
 import {
@@ -23,8 +26,13 @@ import {
 export default function EventDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { data: event, loading, error } = useEvent(id);
+  const { recordEventOpen } = useInterests();
   const theme = useTheme();
   const router = useRouter();
+
+  useEffect(() => {
+    if (event?.id) recordEventOpen(event.id);
+  }, [event?.id, recordEventOpen]);
 
   if (loading) {
     return (
@@ -49,12 +57,7 @@ export default function EventDetailScreen() {
       <Stack.Screen options={{ headerShown: false }} />
       <ScrollView contentContainerStyle={styles.content}>
         <View>
-          <Image
-            source={{ uri: event.imageUrl }}
-            style={styles.image}
-            contentFit="cover"
-            transition={200}
-          />
+          <EventImage uri={event.imageUrl} category={event.category} style={styles.image} />
 
           <View style={styles.topBar}>
             <ThemedView style={styles.circleButton}>
@@ -110,6 +113,8 @@ export default function EventDetailScreen() {
                 </Pressable>
               </ExternalLink>
             )}
+
+            <AddToCalendarButton event={event} />
           </View>
         </ThemedView>
       </ScrollView>

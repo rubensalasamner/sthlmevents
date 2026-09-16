@@ -2,7 +2,12 @@ import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
 
 import type { StockholmEvent } from '@/types/event';
-import { filterByDateRange, splitByDateRange } from './date-range.js';
+import {
+  defaultDateRange,
+  filterByDateRange,
+  splitByDateRange,
+  stockholmWeekday,
+} from './date-range.js';
 
 function event(overrides: Partial<StockholmEvent> = {}): StockholmEvent {
   return {
@@ -80,5 +85,27 @@ describe('filterByDateRange parity with splitByDateRange', () => {
       combined.map((e) => e.id),
       ['a', 'b'],
     );
+  });
+});
+
+describe('defaultDateRange (Stockholm weekday)', () => {
+  // Civil dates in Stockholm; times chosen so UTC still lands on that local day.
+  test('Mon–Wed → today', () => {
+    // Mon 2026-09-14 12:00 CEST
+    assert.equal(defaultDateRange(new Date('2026-09-14T10:00:00.000Z')), 'today');
+    // Wed 2026-09-16 12:00 CEST
+    assert.equal(defaultDateRange(new Date('2026-09-16T10:00:00.000Z')), 'today');
+  });
+
+  test('Thu–Sun → weekend', () => {
+    assert.equal(defaultDateRange(new Date('2026-09-17T10:00:00.000Z')), 'weekend'); // Thu
+    assert.equal(defaultDateRange(new Date('2026-09-18T10:00:00.000Z')), 'weekend'); // Fri
+    assert.equal(defaultDateRange(new Date('2026-09-19T10:00:00.000Z')), 'weekend'); // Sat
+    assert.equal(defaultDateRange(new Date('2026-09-20T10:00:00.000Z')), 'weekend'); // Sun
+  });
+
+  test('stockholmWeekday matches civil calendar, not UTC midnight trap', () => {
+    // 2026-09-16 00:30 CEST = 2026-09-15T22:30Z — still Wednesday in Stockholm.
+    assert.equal(stockholmWeekday(new Date('2026-09-15T22:30:00.000Z')), 3);
   });
 });

@@ -23,7 +23,10 @@
       "predictiveBackGestureEnabled": false,
       "permissions": [
         "android.permission.ACCESS_COARSE_LOCATION",
-        "android.permission.ACCESS_FINE_LOCATION"
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.READ_CALENDAR",
+        "android.permission.WRITE_CALENDAR"
       ]
     },
     "web": {
@@ -46,6 +49,28 @@
         {
           "requestLocationPermission": true,
           "locationPermission": "Allow sthlmevents to show events near you on the map."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow sthlmevents to sort and filter events near you."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#0D6FA9",
+          "defaultChannel": "event-reminders",
+          "sounds": []
+        }
+      ],
+      [
+        "expo-calendar",
+        {
+          "calendarPermission": "Allow sthlmevents to add events you save to your calendar.",
+          "writeOnlyAccess": true,
+          "writeOnlyCalendarPermission": "Allow sthlmevents to add events to your calendar."
         }
       ]
     ],

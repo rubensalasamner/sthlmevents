@@ -1,32 +1,24 @@
-import { Image } from 'expo-image';
 import { Link } from 'expo-router';
 import { Pressable, StyleSheet, View } from 'react-native';
 
+import { EventImage } from '@/components/event-image';
 import { FavoriteButton } from '@/components/favorite-button';
 import { MoreDatesBadge } from '@/components/more-dates-badge';
 import { SourceTag } from '@/components/source-tag';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Fonts, Spacing } from '@/constants/theme';
-import { useTheme } from '@/hooks/use-theme';
 import type { StockholmEvent } from '@/types/event';
 import { BADGE_INK, CATEGORY_BADGE_COLORS } from '@/utils/category-colors';
 import { formatCategory, formatEventWhen, formatPrice, venueLine } from '@/utils/format';
 
 export function EventCard({ event, width }: { event: StockholmEvent; width?: number }) {
-  const theme = useTheme();
-
   return (
     <Link href={`/event/${event.id}`} asChild>
       <Pressable style={({ pressed }) => [width ? { width } : null, pressed && styles.pressed]}>
         <ThemedView type="backgroundElement" style={styles.card}>
           <View>
-            <Image
-              source={{ uri: event.imageUrl }}
-              style={styles.image}
-              contentFit="cover"
-              transition={200}
-            />
+            <EventImage uri={event.imageUrl} category={event.category} style={styles.image} />
             <View style={styles.imageOverlay}>
               <View style={styles.badgeColumn}>
                 <ThemedView style={[styles.categoryBadge, { backgroundColor: CATEGORY_BADGE_COLORS[event.category] }]}>

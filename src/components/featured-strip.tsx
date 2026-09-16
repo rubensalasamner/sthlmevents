@@ -9,15 +9,17 @@ const CARD_WIDTH = 240;
 
 type FeaturedStripProps = {
   events: StockholmEvent[];
+  /** Override the strip heading (e.g. "This weekend" on Thu–Sun default). */
+  heading?: string;
 };
 
-export function FeaturedStrip({ events }: FeaturedStripProps) {
+export function FeaturedStrip({ events, heading = 'Featured' }: FeaturedStripProps) {
   if (events.length === 0) return null;
 
   return (
     <View style={styles.wrap}>
       <ThemedText type="subtitle" style={styles.heading}>
-        Featured <ThemedText type="small" themeColor="textSecondary">{events.length}</ThemedText>
+        {heading} <ThemedText type="small" themeColor="textSecondary">{events.length}</ThemedText>
       </ThemedText>
       <ScrollView
         horizontal
