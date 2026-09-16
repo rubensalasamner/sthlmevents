@@ -1,7 +1,9 @@
 # sthlmevents
 
 Stockholm events app: Expo (iOS/Android/web) + a data pipeline that aggregates
-events from 11 sources into a daily JSON snapshot.
+events from 13 sources into a daily JSON snapshot. Project decisions, verified
+cost models and dev-flow gotchas live in `PROJECT_LOG.md` — read it first when
+picking the project up across sessions.
 
 ## Get started
 
@@ -15,12 +17,12 @@ Deployment). The bundled copy (`src/data/events.snapshot.json`) is used by local
 dev, the web export and tests — EAS builds exclude it via `.easignore` to keep
 uploads small. To work on the data pipeline, see `pipeline/README.md`.
 
-## Deployment (daily-cron model)
+## Deployment (cron model)
 
 Data flows one way:
 
 ```
-pipeline (daily) -> events.snapshot.json -> R2 + Vercel -> app (remote fetch)
+pipeline (daily free + weekly paid) -> events.snapshot.json -> R2 + Vercel -> app (remote fetch)
 ```
 
 ### 1. Vercel — web app + snapshot hosting
@@ -47,6 +49,23 @@ commit. One-time setup:
   `CATEGORIZER_API_KEY` — the rest are optional). Missing keys skip that
   source rather than failing the run.
 - Or run it manually via **Run workflow** to test.
+
+The daily run refreshes the **free sources only**. The two paid Apify sources
+(Facebook + Instagram events) are excluded — a daily run would burn their
+shared $5/month Apify credit in under a week.
+
+### 2a. GitHub Actions — weekly Apify refresh (paid sources)
+
+`.github/workflows/apify-weekly.yml` runs the two Apify sources every Monday
+at 03:50 UTC (~$0.90/run: Facebook ~$0.60 + Instagram ~$0.30, well inside the
+$5 monthly credit, which resets on the 14th). It's a partial refresh —
+`npm run snapshot:apify` refetches only Facebook + Instagram events and keeps
+every other source's events from the committed snapshot. One-time setup:
+
+- Add `APIFY_TOKEN` (from Apify → Settings → API & Integrations) as a
+  **repository secret**. Without it the workflow fails loudly and the
+  committed Apify events stay untouched (stale beats missing).
+- Test it manually via **Run workflow**.
 
 ### 2b. Cloudflare R2 — optional snapshot hosting
 
