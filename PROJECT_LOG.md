@@ -236,10 +236,11 @@ Nya adapters följer mönstret: `types.ts` (rå shape + klient) → `mapper.ts`
 
 ## 6. Nästa steg (prioriterat)
 
-1. **Schemalägg Apify-körningarna** (FB + IG veckovis — kostnadsmodellen).
-   GitHub Actions workflow finns (`snapshot.yml`, daglig cron) men saknar
-   `APIFY_TOKEN` som repo-secret. Lägg till den + byt till vecko-cron eller
-   kör `--only apify-facebook` i ett separat vecko-jobb.
+1. **Lägg till `APIFY_TOKEN` som repo-secret** (endast manuell kvarvarande
+   steg): Settings → Secrets and variables → Actions → New repository secret.
+   Workflows är redan uppsatta: `apify-weekly.yml` (måndagar 03:50 UTC, FB+IG
+   ~$0.90/run) + `snapshot.yml` (daglig, exkluderar Apify-källorna via
+   `--only <free sources>`). Testa med "Run workflow" på `apify-weekly.yml`.
 3. **LLM-kategorisering** (CATEGORIZER_API_KEY): förbättrar FB-events
    (alla har `popup`-default). Groq gratisnivå räcker (llama-3.3-70b).
 4. **FB-bilder långsiktigt**: ladda ner fbcdn-bilder till R2 i pipeline
