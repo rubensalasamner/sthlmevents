@@ -20,14 +20,16 @@ snapshot. Layout- och funktionsinspiration: GET LOCL (iOS). Tema: "Blå Timmen"
 
 ## 2. Nuvarande läge (2026-09-15)
 
-- **12 aktiva källor**, 5554 events i snapshoten (varav 23 från Facebook).
+- **13 aktiva källor**, 5767 events i snapshoten (varav 22 Facebook, 9 Instagram).
 - **Facebook-källan (Apify) är LIVE**: adapter + filter + mapper + datumfönster
-  byggt, testat (194 pipeline-tester gröna) och verifierad i en riktig snapshot-
-  körning. Manuell körning endast så länge (se §5).
+  byggt, testat och verifierad i flera riktiga snapshot-körningar.
+- **Instagram-källan (Apify) är LIVE** (2026-09-16): caption-parsing-adapter,
+  9 unika events i första körningen efter dedup mot FB. Vecko-cadens,
+  $0.30 hard-cap per run (se §3 Instagram-sektionen).
 - UI: Blå Timmen-tema implementerat, filterstripp v1 (segmentkontroll för datum,
   pillrow för kategorier, dev-only source-chip), feed-ranking enligt §4.
-- Känd bugg-kvarleva: inga öppna. (`Pop Up Shop` med past-datum filtrerades
-  bort i senaste körningen; datumfönstret fungerar.)
+- Känd bugg-kvarleva: IG-titlar kan innehålla emoji/skräprader —
+  `firstTitleLine` hackar vid 80 tecken men rensar inte alla emoji. Kosmetiskt.
 
 ## 3. Datagivning — vad vi vet (fakta, inte gissningar)
 
@@ -88,10 +90,10 @@ $5-krediten. Kör INTE dagligen (blir ~$18/mån, över krediten).
 | luma | ✅ live | 20 events |
 | kulturbiljetter | ⏸ skip | kräver API-key (info@kulturbiljetter.se) |
 
-### Instagram via Apify (probad 2026-09-16, adapter INTE byggd än)
+### Instagram via Apify (käll-id: `apify-instagram`) — LIVE sedan 2026-09-16
 
-**Utforskad aktör:** `apify/instagram-hashtag-scraper` (officiell, 3.39 rating
-— låg, men API-funktionerna verifierades i två riktiga probe-körningar).
+**Aktör:** `apify/instagram-hashtag-scraper` (officiell, 3.39 rating
+— låg, men API-funktionerna verifierades i probe + live-snapshot-körning).
 Input-schema (build 0.0.2188): `hashtags[]` (fungerar som hashtag ELLER
 keyword-läge med `keywordSearch: true`), `resultsType: posts|reels|stories`,
 `resultsLimit` (per hashtag, inte globalt). **$0.0026/post** — en femtedel av
@@ -106,17 +108,33 @@ har `searchType: place` men returnerar plats-sidor, inte tidsstämplade posts.
 - Datum finns ENDAST i caption-text ("Fri 25/9 10-18.00", "16–17 September").
 - FB:s datumfönster-trick har ingen IG-motsvarighet (inget datumfilter).
 
-**Slutsats:** källan är VÄRD att bygga — captions på prosenter som
-"@loppisstockholm"-konton innehåller riktiga eventuppgifter. Men den kräver
-en caption-parsing-steg (svenska datumregex + venue-extraktion) som FB inte
-behövde. Den koden ligger delvis färdig i
-`pipeline/src/sources/apify-instagram/ig-analyze.ts` (flagPost-heuristiker,
-testade). Kvar: date-parser → `StockholmEvent`-mapper, venue-extraktion,
-dedup mot FB (samma event postas ofta i båda kanalerna).
+**Slutsats (proben):** källan är värd att bygga som **long-tail-komplement** —
+unika fynd (Marimekko-rean, 2km-loppis) fanns ingen annanstans, men ~50% av
+IG-fynden fanns redan via FB (Axel Arigato, Korean Film Festival). Dedup-
+steget sköter överlappet automatiskt (samma titel + dag → slås ihop, FB
+vinner på strukturerat datum).
 
-**Praktiskt:** `npm run probe:ig` (~$0.21), `npm run apify:usage` (kredit-
-koll). Körning den 14:e varje månad (usage-cykeln startar den 14:e, inte den
-1:a — Credits återställs då).
+**Adaptern (byggd 2026-09-16, verifierad live):**
+- `caption.ts`: date-parser för "25/9", "16–17 September", "06 Sep 10:00-16:00",
+  "imorgon", bare weekday; time-span-parser med date-span-masking ("11/9 -
+  08.00" innehåller pseudo-span "9 - 08" — datumeftersläpet maskas bort innan
+  tidssökning); venue-extraktion (rad med gatan/vägen/huset + stadsord).
+- Gotcha: JS `\b` är ASCII-only — regex med å/ä/é-ord är farliga (`\bentré\b`
+  matchar aldrig). Använd unicode-lookarounds.
+- Gotcha 2: global regex med `lastIndex` + skip av match → tappar nästa match;
+  maska fysiskt (ersätt span med mellanslag) istället.
+- All-day events: midnight Stockholm = 22:00Z dagen före (CEST) —
+  assertion-tester måste matcha det.
+- Första live-körningen: **9 unika IG-events** i snapshoten (5767 totalt) efter
+  dedup; 26 av 31 posts slängdes (noise/roundups/dubletter) — önskvärt filter.
+- Kända svagheter: IG-titlar kan innehålla emoji-brus; venue-extraktionen
+  slänger ibland med brand-prefix; `resultsLimit` per term, ingen datumkontroll
+  (FB:s datumfönster-trick har ingen IG-motsvarighet).
+
+**Praktiskt:** `npm run snapshot:ig` (bara IG, ~$0.21), `npm run snapshot:apify`
+(FB+IG tillsammans, ~$0.80), `npm run probe:ig`, `npm run apify:usage`
+(kreditkoll). Vecko-cadens. Usage-cykeln startar den **14:e** varje månad
+(inte den 1:a — Credits återställs då).
 
 ### Kostnadsläge (verifierat via usage-API 2026-09-16)
 
@@ -218,13 +236,7 @@ Nya adapters följer mönstret: `types.ts` (rå shape + klient) → `mapper.ts`
 
 ## 6. Nästa steg (prioriterat)
 
-1. **Bygg IG-adaptern** — probad och grönljusad (se §3). Kvar att bygga:
-   caption-date-parser (svenska format "25/9", "16–17 September", "imorgon"),
-   venue-extraktion ur caption, mapper → `StockholmEvent`, dedup mot FB.
-   Rating-varning: hashtag-scraper har 3.39 i rating — överväg fallback till
-   `instagram-scraper` (4.70, $0.0027, kan hashtags via direct URLs) om
-   hashtag-scraper blir instabilt i drift.
-2. **Schemalägg Facebook-körningen** (veckovis räcker — kostnadsmodellen).
+1. **Schemalägg Apify-körningarna** (FB + IG veckovis — kostnadsmodellen).
    GitHub Actions workflow finns (`snapshot.yml`, daglig cron) men saknar
    `APIFY_TOKEN` som repo-secret. Lägg till den + byt till vecko-cron eller
    kör `--only apify-facebook` i ett separat vecko-jobb.
