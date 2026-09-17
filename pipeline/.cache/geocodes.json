@@ -622,7 +622,7 @@
   },
   "Valutavägen, Hägersten, Next to hägerstensåsen T-Bana station (Red Line), Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1788794769940
+    "fetchedAt": 1789635285200
   },
   "Hägerstensåsens Bollplan, Stockholm, Sweden": {
     "value": {
@@ -875,7 +875,7 @@
   },
   "Kungstensgatan 45, 11359 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789114839257
+    "fetchedAt": 1789635286792
   },
   "Folkuniversitetet Stockholm, Stockholm, Sweden": {
     "value": {
@@ -2272,5 +2272,72 @@
   "A-house, Uggleviksgatan 2A, Stockholm., Stockholm, Sweden": {
     "value": null,
     "fetchedAt": 1789546662712
+  },
+  "Hornsgatan 66, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3186196,
+      "longitude": 18.0595765
+    },
+    "fetchedAt": 1789635283703
+  },
+  "Timmermansgatan 46, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3142974,
+      "longitude": 18.0612305
+    },
+    "fetchedAt": 1789635288274
+  },
+  "Sjötullsbacken 8, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3223387,
+      "longitude": 18.1487116
+    },
+    "fetchedAt": 1789635289714
+  },
+  "Näckströmsgatan 8, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3323032,
+      "longitude": 18.0733441
+    },
+    "fetchedAt": 1789635291110
+  },
+  "Lilla Allmänna Gränd 2, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3241989,
+      "longitude": 18.0963222
+    },
+    "fetchedAt": 1789635292616
+  },
+  "Styckmästergatan 10, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789635293933
+  },
+  "T-Centralen, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3318941,
+      "longitude": 18.060944
+    },
+    "fetchedAt": 1789635295280
+  },
+  "Östermalmstorg, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3354775,
+      "longitude": 18.0776894
+    },
+    "fetchedAt": 1789635296530
+  },
+  "Fryshuset, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3011252,
+      "longitude": 18.0883711
+    },
+    "fetchedAt": 1789635297928
+  },
+  "Slaktkyrkan, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.292423,
+      "longitude": 18.080131
+    },
+    "fetchedAt": 1789635299433
   }
 }
