@@ -66,13 +66,14 @@ without a rebuild.
 | `loppiskartan` | loppiskartan.se dated flea-market calendar | HTML scrape (pure, tested parser), filtered to "Stockholms län" | Flea markets / one-off loppisar; free entry; no coordinates |
 | `apify-facebook` | Facebook Events via `apify/facebook-events-scraper` | Apify token, **paid** ($0.013/event, weekly cron) | Long-tail: sample sales, utförsäljningar, pop-ups. Date-windowed search URLs |
 | `apify-instagram` | Instagram posts via `apify/instagram-hashtag-scraper` | Apify token, **paid** ($0.0026/post, weekly cron) | Long-tail complement; dates/venues parsed from captions (IG has no event objects) |
+| `apify-instagram-profiles` | Curated IG profiles via `apify/instagram-post-scraper` | Apify token, **paid** (~$0.0027/post, weekly cron) | Allowlist in `profiles.ts` (starts with `@stockholm_samplesale`); caption reuse, no OCR |
 | `kulturhuset` | Kulturhuset Stadsteatern kalender (Elasticsearch index) | Open, no key |
 | `kulturbiljetter` | Kulturbiljetter Events API v3 (`api/v3/events`) | API key (`Authorization: Token …`), request via info@kulturbiljetter.se |
 
-**Cost control (Apify):** both sources share the Free plan's $5 monthly credit
+**Cost control (Apify):** paid sources share the Free plan's $5 monthly credit
 (cycle 14th→13th). `--only` partial refreshes, per-run caps
 (`maxTotalChargeUsd`, `resultsLimit`/`maxEvents`) and the weekly cadence keep
-combined spend at ~$0.90/run ≈ $3.90/month worst case. Monitor with
+combined spend at ~$0.94/run ≈ $4.10/month worst case. Monitor with
 `npm run apify:usage`. Verified details and gotchas: `../PROJECT_LOG.md` §3.
 
 ### Deferred / blocked sources (researched)
@@ -103,12 +104,13 @@ npm test
 npm run fetch:visit-stockholm      # live fetch, prints a summary
 tsx src/run.ts visit-stockholm 1   # first page only
 
-npm run snapshot                   # all 13 sources (incl. paid Apify; needs APIFY_TOKEN)
-npm run snapshot:apify             # paid sources only: Facebook + Instagram (~$0.90)
+npm run snapshot                   # all sources (incl. paid Apify; needs APIFY_TOKEN)
+npm run snapshot:apify             # paid: Facebook + IG keyword + IG profiles (~$0.94)
 npm run snapshot:fb                # Facebook only (~$0.60)
-npm run snapshot:ig                # Instagram only (~$0.21)
+npm run snapshot:ig                # Instagram keyword only (~$0.21)
+npm run snapshot:ig-profiles       # curated IG profiles only (~$0.04)
 npm run apify:usage                # Apify credit usage this billing cycle
-npm run probe:ig                   # one-off Instagram yield probe (~$0.21)
+npm run probe:ig                   # one-off Instagram keyword probe (~$0.21)
 
 tsx src/generate-snapshot.ts 2     # limit to 2 pages while developing
 ```

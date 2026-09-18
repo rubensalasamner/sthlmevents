@@ -134,7 +134,7 @@
   },
   "sankt Göransgatan 143, Kungsholmen i, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789720210002
+    "fetchedAt": 1788794652782
   },
   "Stadshagen IP, Stockholm, Sweden": {
     "value": {
@@ -622,7 +622,7 @@
   },
   "Valutavägen, Hägersten, Next to hägerstensåsen T-Bana station (Red Line), Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789635285200
+    "fetchedAt": 1788794769940
   },
   "Hägerstensåsens Bollplan, Stockholm, Sweden": {
     "value": {
@@ -875,7 +875,7 @@
   },
   "Kungstensgatan 45, 11359 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789635286792
+    "fetchedAt": 1789114839257
   },
   "Folkuniversitetet Stockholm, Stockholm, Sweden": {
     "value": {
@@ -1125,10 +1125,6 @@
       "longitude": 18.0592885
     },
     "fetchedAt": 1788794881809
-  },
-  "Söder Mälarstrand kajplats 15, 118 20 Stockholm, Stockholm, Sweden": {
-    "value": null,
-    "fetchedAt": 1789500585402
   },
   "Fartyget Vieille Montagne, Stockholm, Sweden": {
     "value": null,
@@ -2063,10 +2059,6 @@
     },
     "fetchedAt": 1789114874768
   },
-  "Söder Mälarstrand 29, plan 7, Stockholm, Sweden": {
-    "value": null,
-    "fetchedAt": 1789500619369
-  },
   "Münchenbryggeriet - Mälarsalen, Stockholm, Sweden": {
     "value": null,
     "fetchedAt": 1789500620689
@@ -2242,10 +2234,6 @@
     "value": null,
     "fetchedAt": 1789546651838
   },
-  "#samplesale #utförsäljning #samplesalestockholm #archivesale, Stockholm, Sweden": {
-    "value": null,
-    "fetchedAt": 1789546653053
-  },
   "Hägerstensvägen 100-180, Stockholm, Stockholm, Sweden": {
     "value": {
       "latitude": 59.3035169,
@@ -2261,108 +2249,159 @@
     "value": null,
     "fetchedAt": 1789546658065
   },
-  "Marimekko, Norrmalmstorg 4, Stockholm., Stockholm, Sweden": {
-    "value": null,
-    "fetchedAt": 1789546659795
-  },
   "https://outletbutiken.wordpress.com, Stockholm, Sweden": {
     "value": null,
     "fetchedAt": 1789546661532
   },
+  "Bondegatan 46, Stockholm, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3133194,
+      "longitude": 18.0832156
+    },
+    "fetchedAt": 1789727624562
+  },
+  "#samplesalestockholm #utförsäljning #samplesale, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789727625874
+  },
+  "A-House, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.2932228,
+      "longitude": 18.0754729
+    },
+    "fetchedAt": 1789727627776
+  },
+  "Grev Turegatan 10, Stockholm, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3356279,
+      "longitude": 18.0754367
+    },
+    "fetchedAt": 1789727632373
+  },
+  "St Eriksgatan 79, Stockholm, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789727635162
+  },
+  "Birger Jarlsgatan 16, Stockholm, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3349658,
+      "longitude": 18.0741982
+    },
+    "fetchedAt": 1789727636669
+  },
+  "Birkagatan 29, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3415552,
+      "longitude": 18.0355481
+    },
+    "fetchedAt": 1789727637971
+  },
+  "Uggleviksgatan 2A, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789729855998
+  },
   "A-house, Uggleviksgatan 2A, Stockholm., Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789546662712
+    "fetchedAt": 1789729857346
   },
-  "Hornsgatan 66, Stockholm, Sweden": {
+  "Bondegatan 46, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.3186196,
-      "longitude": 18.0595765
+      "latitude": 59.3133194,
+      "longitude": 18.0832156
     },
-    "fetchedAt": 1789635283703
+    "fetchedAt": 1789729859152
   },
-  "Timmermansgatan 46, Stockholm, Sweden": {
+  "Norrmalmstorg 4, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.3142974,
-      "longitude": 18.0612305
+      "latitude": 59.3334522,
+      "longitude": 18.0737624
     },
-    "fetchedAt": 1789635288274
+    "fetchedAt": 1789729860456
   },
-  "Sjötullsbacken 8, Stockholm, Sweden": {
+  "Dahlbergsallén 15, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.3223387,
-      "longitude": 18.1487116
+      "latitude": 59.3405722,
+      "longitude": 18.0894559
     },
-    "fetchedAt": 1789635289714
+    "fetchedAt": 1789729862309
   },
-  "Näckströmsgatan 8, Stockholm, Sweden": {
+  "Uggelviksgatan 2A, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.3323032,
-      "longitude": 18.0733441
+      "latitude": 59.343526,
+      "longitude": 18.0686718
     },
-    "fetchedAt": 1789635291110
+    "fetchedAt": 1789729863630
   },
-  "Lilla Allmänna Gränd 2, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.3241989,
-      "longitude": 18.0963222
-    },
-    "fetchedAt": 1789635292616
-  },
-  "Styckmästergatan 10, Stockholm, Sweden": {
+  "Söder Mälarstrand kajplats 15, 118 20 Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789635293933
+    "fetchedAt": 1789729865507
   },
-  "T-Centralen, Stockholm, Sweden": {
+  "Narvavägen 17, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.3318941,
-      "longitude": 18.060944
+      "latitude": 59.3347713,
+      "longitude": 18.0909854
     },
-    "fetchedAt": 1789635295280
+    "fetchedAt": 1789729866851
   },
-  "Östermalmstorg, Stockholm, Sweden": {
+  "Tjurbergsgatan 29, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.3354775,
-      "longitude": 18.0776894
+      "latitude": 59.3098793,
+      "longitude": 18.0728284
     },
-    "fetchedAt": 1789635296530
+    "fetchedAt": 1789729868115
   },
-  "Fryshuset, Stockholm, Sweden": {
+  "Djurgårdsstrand 15, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.3011252,
-      "longitude": 18.0883711
+      "latitude": 59.326916,
+      "longitude": 18.0935543
     },
-    "fetchedAt": 1789635297928
+    "fetchedAt": 1789729869408
   },
-  "Slaktkyrkan, Stockholm, Sweden": {
+  "Mälarstrand 25, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.292423,
-      "longitude": 18.080131
+      "latitude": 59.3210447,
+      "longitude": 18.0559517
     },
-    "fetchedAt": 1789635299433
+    "fetchedAt": 1789729870711
   },
-  "Kungsholms strand 167, Stockholm, Sweden": {
+  "Mälarstrand 29, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.3383355,
-      "longitude": 18.0248134
+      "latitude": 59.3206016,
+      "longitude": 18.0540494
     },
-    "fetchedAt": 1789720206994
+    "fetchedAt": 1789729872390
   },
-  "Sergels Torg, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.3322005,
-      "longitude": 18.0640284
-    },
-    "fetchedAt": 1789720208599
-  },
-  "Patentgatan 2, 112 67 Stockholm, Sweden, Stockholm, Sweden": {
+  "Sergelstorg 3, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789720212537
+    "fetchedAt": 1789729874266
   },
-  "Patentgatan 2, Stockholm, Sweden": {
+  "Mårtendalsgatan 2, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789729875667
+  },
+  "Körbärsvägen 9, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789729877703
+  },
+  "Turegatan 10, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.3229315,
-      "longitude": 18.005623
+      "latitude": 59.3356279,
+      "longitude": 18.0754367
     },
-    "fetchedAt": 1789720214127
+    "fetchedAt": 1789729878992
+  },
+  "Eriksgatan 79, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3399923,
+      "longitude": 18.0366563
+    },
+    "fetchedAt": 1789729880316
+  },
+  "Jarlsgatan 16, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3349658,
+      "longitude": 18.0741982
+    },
+    "fetchedAt": 1789729881741
   }
 }

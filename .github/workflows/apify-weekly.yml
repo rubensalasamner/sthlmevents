@@ -2,10 +2,11 @@ name: Weekly Apify refresh
 
 # The Apify sources cost real money per event delivered, so they run on their
 # own weekly schedule instead of the daily free-cron (snapshot.yml). The run
-# is a partial refresh (`--only`): only Facebook + Instagram events are
-# refetched; every other source's events are kept from the committed snapshot.
-# Worst case spend per run: FB ~$0.60 + IG ~$0.30 ≈ $0.90 of the $5/month
-# Apify credit (billing cycle runs the 14th -> 13th).
+# is a partial refresh (`--only`): only Facebook + Instagram (keyword + curated
+# profiles) events are refetched; every other source's events are kept from the
+# committed snapshot. Worst case spend per run: FB ~$0.60 + IG keyword ~$0.30
+# + IG profiles ~$0.04 ≈ $0.94 of the $5/month Apify credit (billing cycle
+# runs the 14th -> 13th).
 
 on:
   schedule:
@@ -46,7 +47,7 @@ jobs:
       - name: Install dependencies
         run: npm ci --prefix pipeline
 
-      - name: Refresh Apify sources (Facebook + Instagram)
+      - name: Refresh Apify sources (Facebook + Instagram keyword + profiles)
         # Missing token -> the adapters throw -> generate-snapshot skips the
         # Apify sources but still rewrites the snapshot; committing then would
         # silently DROP the previous Apify events (nothing kept them). The
@@ -65,7 +66,7 @@ jobs:
       - name: Commit and push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'chore(data): weekly Apify refresh (Facebook + Instagram) [skip ci]'
+          commit_message: 'chore(data): weekly Apify refresh (Facebook + Instagram + profiles) [skip ci]'
           file_pattern: src/data/events.snapshot.json pipeline/.cache/*.json
           commit_user_name: github-actions[bot]
           commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com

@@ -4,9 +4,10 @@ name: Daily snapshot
 # commit it, and let Vercel redeploy with fresh data. The app picks the new
 # snapshot up from EXPO_PUBLIC_SNAPSHOT_URL (or its bundled copy).
 #
-# The PAID Apify sources (apify-facebook, apify-instagram) are excluded here
-# and run weekly in apify-weekly.yml — a daily run would burn the $5 monthly
-# Apify credit in under a week (FB ~$0.60/run, IG ~$0.30/run).
+# The PAID Apify sources (apify-facebook, apify-instagram,
+# apify-instagram-profiles) are excluded here and run weekly in
+# apify-weekly.yml — a daily run would burn the $5 monthly Apify credit in
+# under a week (FB ~$0.60/run, IG keyword ~$0.30/run, IG profiles ~$0.04/run).
 
 on:
   schedule:
@@ -51,10 +52,10 @@ jobs:
 
       - name: Generate snapshot
         # The daily cron refreshes the FREE sources only. The paid Apify
-        # sources (apify-facebook, apify-instagram) run weekly in
-        # apify-weekly.yml — a daily run would burn the $5 monthly credit in
-        # under a week. A partial refresh skips them without touching their
-        # committed events.
+        # sources (apify-facebook, apify-instagram, apify-instagram-profiles)
+        # run weekly in apify-weekly.yml — a daily run would burn the $5
+        # monthly credit in under a week. A partial refresh skips them without
+        # touching their committed events.
         run: npm run snapshot --prefix pipeline -- --only visit-stockholm,loppiskartan,eventbrite,resident-advisor,ticketmaster,luma,meetup,allevents,evenemangskollen,biblioteket,kulturhuset,kulturbiljetter
 
       - name: Ensure cache files exist

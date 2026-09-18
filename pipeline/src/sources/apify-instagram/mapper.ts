@@ -37,7 +37,11 @@ function captionOf(raw: IgPostRaw): string {
  *  - IG image URLs are CDN-signed but longer-lived than fbcdn; still
  *    refreshed every snapshot run like every other source
  */
-export function mapInstagramPost(raw: IgPostRaw, parsed: ParsedCaption): StockholmEvent {
+export function mapInstagramPost(
+  raw: IgPostRaw,
+  parsed: ParsedCaption,
+  source: string = APIFY_INSTAGRAM_SOURCE,
+): StockholmEvent {
   const date = parsed.date!;
   const time = parsed.startTime ?? undefined;
   const startsAt = stockholmLocalToUtcIso(
@@ -56,7 +60,7 @@ export function mapInstagramPost(raw: IgPostRaw, parsed: ParsedCaption): Stockho
   const postId = raw.shortCode ?? raw.id ?? captionOf(raw).slice(0, 40);
 
   return {
-    id: `${APIFY_INSTAGRAM_SOURCE}:${postId}`,
+    id: `${source}:${postId}`,
     title: firstTitleLine(captionOf(raw)),
     description: captionOf(raw),
     category: 'popup',
@@ -70,7 +74,7 @@ export function mapInstagramPost(raw: IgPostRaw, parsed: ParsedCaption): Stockho
     },
     priceSek: undefined,
     organizer: raw.ownerFullName ?? raw.ownerUsername ?? 'Instagram',
-    source: APIFY_INSTAGRAM_SOURCE,
+    source,
     sourceId: postId,
     sourceUrl: raw.url ?? (raw.shortCode ? `https://www.instagram.com/p/${raw.shortCode}/` : undefined),
     updatedAt: new Date().toISOString(),

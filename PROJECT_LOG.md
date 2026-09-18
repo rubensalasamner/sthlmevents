@@ -3,7 +3,7 @@
 > **Syfte:** den här filen är projektets "minne" mellan datorer och sessioner.
 > Läs den först om du (människa eller AI-agent) plockar upp projektet efter en
 > paus. Den uppdateras när vi fattar beslut eller når slutsatser — inte för
-> varje kodändring. Senast uppdaterad: **2026-09-16**.
+> varje kodändring. Senast uppdaterad: **2026-09-17**.
 
 ---
 
@@ -18,14 +18,21 @@ snapshot. Layout- och funktionsinspiration: GET LOCL (iOS). Tema: "Blå Timmen"
 - Pipeline-README (`pipeline/README.md`): arkitektur, källor, usage.
 - **Denna fil**: beslut, kostnadsfakta, kvarvarande steg, gotchas.
 
-## 2. Nuvarande läge (2026-09-16)
+## 2. Nuvarande läge (2026-09-17)
 
-- **13 aktiva källor**, 5767 events i snapshoten (varav 22 Facebook, 9 Instagram).
+- **14 aktiva källor** (13 + curated IG-profiler). Snapshot-räkning oförändrad
+  tills nästa `snapshot:apify` / veckokörning plockar in profil-events.
 - **Facebook-källan (Apify) är LIVE**: adapter + filter + mapper + datumfönster
   byggt, testat och verifierad i flera riktiga snapshot-körningar.
-- **Instagram-källan (Apify) är LIVE** (2026-09-16): caption-parsing-adapter,
+- **Instagram keyword (Apify) är LIVE** (2026-09-16): caption-parsing-adapter,
   9 unika events i första körningen efter dedup mot FB. Vecko-cadens,
   $0.30 hard-cap per run (se §3 Instagram-sektionen).
+- **Instagram profiles (Apify) LIVE** (2026-09-18): curated allowlist
+  (`stockholm_samplesale`), `apify/instagram-post-scraper`, caption-parser/
+  mapper. Första partial snapshot: **14 raw → 12 kvar** efter dedup
+  (5781→5777 totalt). Kostnad **$0.0405**. Street-extraktion fix (2026-09-18):
+  `extractStreetAddress` + geocode street-first → **10/12 med coords**
+  (DEDICATED/Marimekko/A Day’s March m.fl. på kartan). Ingår i vecko-cron.
 - **Favoritpåminnelser LIVE** (2026-09-16): lokala notiser via
   `expo-notifications` — dagen före 09:00 Stockholm + 2h innan start. Kräver
   **ny native build** (plugin + POST_NOTIFICATIONS). Permission frågas vid
@@ -37,8 +44,9 @@ snapshot. Layout- och funktionsinspiration: GET LOCL (iOS). Tema: "Blå Timmen"
   torsdag–söndag (Stockholm-weekday), annars `today`. Featured-strip +
   sektionsrubrik speglar fönstret (“This weekend” / “Today”).
 - **Närhet LIVE** (2026-09-16): “Near me” + ≤2/5 km på Discover (lazy GPS via
-  `expo-location`); kartan zoomar mot användaren, favoriter får accent-bubbla
-  och visas även när filter döljer dem. Kräver samma ny native build
+  `expo-location`); kartan zoomar mot användaren. Favoriter får accent-bubbla
+  **bara när de matchar aktiva filter** (bypass borttagen 2026-09-18 — annars
+  stack kartan oense med Discover). Kräver samma ny native build
   (location-plugin).
 - **Progressiv intresse-onboarding LIVE** (2026-09-16): ingen cold-start-wizard.
   Efter 1 favorit **eller** 3 eventöppningar → sheet “What are you into?”
@@ -163,19 +171,51 @@ vinner på strukturerat datum).
 (kreditkoll). Vecko-cadens. Usage-cykeln startar den **14:e** varje månad
 (inte den 1:a — Credits återställs då).
 
-### Kostnadsläge (verifierat via usage-API 2026-09-16)
+**`apify:usage` (fixad 2026-09-17):** API:t returnerar
+`totalUsageCreditsUsdAfterVolumeDiscount` (inte `totalUsageUsd`). Scriptet
+läser också `/users/me/limits` → `maxMonthlyUsageUsd` och skriver used/cap/
+remaining. Usage-totalen kan lagga några sekunder efter en run — mät före
+**och** efter med kort väntan.
+
+### `@stockholm_samplesale` profil-probe (2026-09-17)
+
+**Aktör:** `apify/instagram-post-scraper` (username-läge), `resultsLimit: 15`,
+`maxTotalChargeUsd: 0.10`.
+
+**Kostnad (mätt via usage före/efter, efter API-lag):** $2.8800 → $2.9205 =
+**$0.0405** för 15 posts → **$0.0027/post** (matchar free-plan $2.70/1k).
+
+**Yield:** 15/15 hade caption (ingen tom); **14/15** fick parsebart datum via
+befintlig `caption.ts`; venue-extraktion träffade något på alla (ibland
+svagt — hashtag-rad eller postnummer). **OCR behövs inte** för detta konto —
+gul flyer-text dupliceras i caption.
+
+**Missar / parser-luckor:** engelska "May 22-May 31, 2026" (en post utan
+datum); multi-day-poster väljer ofta sista `d/m`-raden + tid från den raden
+(inte alltid hela spannet korrekt); "September N" kan ge felaktig dag i
+edge cases. Tillräckligt bra för curated allowlist-källa + dedup.
+
+**Slutsats:** källa `apify-instagram-profiles` (allowlist i `profiles.ts`,
+börjar med `stockholm_samplesale`) återanvänder caption-parser/mapper; keyword-
+IG hålls separat. ~15 senaste posts/vecka ≈ **$0.04**/körning. Lägg till fler
+konton först efter caption-probe (ingen OCR som default).
+
+### Kostnadsläge (verifierat via usage-API 2026-09-17)
 
 - Månadscykel: 14:e → 13:e. `PAID_ACTORS_PER_EVENT` är den enda stora posten.
-- Förbrukat i cykeln som började 2026-09-14: **$2.81** (FB-runs + IG-probes)
-  av $5-krediten → ~$2.19 kvar till den 13:e oktober. Planera veckokörningar
-  efter det: en FB-run (~$0.60) + IG-run (~$0.30) per vecka går jämt upp.
+- Förbrukat i cykeln som började 2026-09-14: **$2.92** av $5-krediten →
+  **~$2.08 kvar** till den 13:e oktober (inkl. samplesale-proben $0.04).
+  Planera veckokörningar: FB (~$0.60) + IG-keyword (~$0.30) + ev. profil-
+  allowlist (~$0.04) per vecka.
 
 ## 4. Design- och rangingsbeslut (spikade)
 
 - **Tema "Blå Timmen"**: mörk först, ljusläge sekundärt. Tokens i
   `src/constants/theme.ts` (background/backgroundElement/backgroundSelected/
   text/textSecondary/accent/accentInk/accent2/favorite). WCAG-kontraster
-  kollade i canvas-fasen.
+  kollade i canvas-fasen. Temamallar / labbar versionerade i
+  `docs/design/` (`theme-proposals`, `theme-lab`, `filter-lab` — Cursor
+  canvas-filer, öppnas som `.canvas.tsx`).
 - **Filterstripp v1**: `SegmentedControl` (generisk) för datum
   (Idag/Helgen/Veckan/Allt), scrollande `CategoryPill`-rad, dev-only
   källchip som expanderar. Filter är permanenta, ingen toggle.

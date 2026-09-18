@@ -1,5 +1,10 @@
 import type { StockholmEvent } from '../shared/event.js';
 import { NullKeyedCache, type KeyedCache } from '../shared/file-cache.js';
+import {
+  extractStreetAddress,
+  isHashtagVenue,
+  isPostalCodeVenue,
+} from '../shared/street-address.js';
 import type { Coordinate, Geocoder } from './geocoder.js';
 
 export type GeocodeEventsOptions = {
@@ -29,19 +34,31 @@ function isSpecific(part: string | undefined): boolean {
   return Boolean(part) && !GENERIC_TERMS.has(part!.trim().toLowerCase());
 }
 
+function isGeocodeNoise(part: string): boolean {
+  return isHashtagVenue(part) || isPostalCodeVenue(part);
+}
+
 /**
  * Ordered geocoding queries for a venue, most-likely-to-hit first. Nominatim
- * matches "venue name, city" reliably but chokes on long combined strings
- * ("street, venue, district, city"), so each component is its own variant and
- * the caller falls through on misses. Empty when nothing is more specific than
- * the city (geocoding "Stockholm" would mislocate the pin to city centre).
+ * matches "street N, Stockholm" reliably but chokes on brand-prefixed or
+ * multi-clause strings, so street+number is tried first when present. Empty
+ * when nothing is more specific than the city (geocoding "Stockholm" would
+ * mislocate the pin to city centre).
  */
 export function venueQueries(event: StockholmEvent): string[] {
   const { name, address, district } = event.venue;
   const variants: string[] = [];
 
-  if (isSpecific(address)) variants.push(`${address.trim()}${ANCHOR}`);
-  if (isSpecific(name)) variants.push(`${name.trim()}${ANCHOR}`);
+  const street =
+    extractStreetAddress(address ?? '') ?? extractStreetAddress(name ?? '');
+  if (street) variants.push(`${street}${ANCHOR}`);
+
+  if (isSpecific(address) && !isGeocodeNoise(address)) {
+    variants.push(`${address.trim()}${ANCHOR}`);
+  }
+  if (isSpecific(name) && !isGeocodeNoise(name)) {
+    variants.push(`${name.trim()}${ANCHOR}`);
+  }
   if (
     isSpecific(district) &&
     district.trim().toLowerCase() !== name?.trim().toLowerCase()

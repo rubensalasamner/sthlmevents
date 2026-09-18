@@ -36,13 +36,37 @@ class StubGeocoder implements Geocoder {
 }
 
 describe('venueQueries', () => {
-  test('orders variants address -> name -> district', () => {
+  test('orders variants street -> address -> name -> district', () => {
     const q = venueQueries(event({ venue: { name: 'Nalen', address: 'Regeringsgatan 74', district: 'Norrmalm' } }));
     assert.deepEqual(q, [
       'Regeringsgatan 74, Stockholm, Sweden',
       'Nalen, Stockholm, Sweden',
       'Norrmalm, Stockholm, Sweden',
     ]);
+  });
+
+  test('prefers extracted street from brand-prefixed address', () => {
+    const q = venueQueries(
+      event({
+        venue: {
+          name: 'Dedicated HQ, Tjurbergsgatan 29 Södermalm.',
+          address: 'Dedicated HQ, Tjurbergsgatan 29 Södermalm.',
+          district: '',
+        },
+      }),
+    );
+    assert.equal(q[0], 'Tjurbergsgatan 29, Stockholm, Sweden');
+  });
+
+  test('skips hashtag and postal-code venue noise', () => {
+    assert.deepEqual(
+      venueQueries(event({ venue: { name: '#samplesale #stockholm', address: '', district: '' } })),
+      [],
+    );
+    assert.deepEqual(
+      venueQueries(event({ venue: { name: '118 25 Stockholm', address: '118 25 Stockholm', district: '' } })),
+      [],
+    );
   });
 
   test('returns [] when nothing is more specific than the city', () => {
@@ -65,9 +89,10 @@ describe('geocodeEvents', () => {
     const { events, attempted, resolved } = await geocodeEvents([a], { geocoder, minIntervalMs: 0 });
 
     assert.deepEqual(geocoder.calls, [
+      'Mosebacke torg 1, Stockholm, Sweden',
       'Mosebacke torg 1-3, Stockholm, Sweden',
       'Mosebacketerrassen, Stockholm, Sweden',
-    ], 'address missed, venue name hit');
+    ], 'street extract missed, full address missed, venue name hit');
     assert.equal(attempted, 1);
     assert.equal(resolved, 1);
     assert.equal(events[0]!.venue.latitude, 59.3184);

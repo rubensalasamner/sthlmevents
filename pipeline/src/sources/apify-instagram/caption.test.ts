@@ -70,16 +70,28 @@ test('looksLikeStockholmPost: keeps real events, drops noise and non-events', ()
   assert.equal(looksLikeStockholmPost(roundup, parsedRoundup), false);
 });
 
-test('extractVenue: finds the address line with place keywords', () => {
-  assert.equal(
-    extractVenue(byShortCode('CxMarimekko01').caption!),
-    'Stockholm, Biblioteksgatan 5',
-  );
-  assert.equal(
-    extractVenue(byShortCode('CxAxelArigato1').caption!),
-    'A-HOUSE UGGELVIKSGATAN 2A',
-  );
+test('extractVenue: prefers street+number over brand lines, hashtags, postal codes', () => {
+  assert.equal(extractVenue(byShortCode('CxMarimekko01').caption!), 'Biblioteksgatan 5');
+  assert.equal(extractVenue(byShortCode('CxAxelArigato1').caption!), 'UGGELVIKSGATAN 2A');
   assert.equal(extractVenue('no place info at all here'), undefined);
+  assert.equal(
+    extractVenue(
+      "DEDICATED's Sample Sale\nDedicated HQ, Tjurbergsgatan 29 Södermalm.\n#samplesale",
+    ),
+    'Tjurbergsgatan 29',
+  );
+  assert.equal(
+    extractVenue(
+      "A Day's March\nSkyddsrummet\nSöder Mälarstrand 25\n118 25 Stockholm\n#samplesale",
+    ),
+    'Söder Mälarstrand 25',
+  );
+  assert.equal(
+    extractVenue(
+      'Flattered HQ, Erik Dahlbergsallén 15, 1st floor, Stockholm.\n#samplesalestockholm #utförsäljning',
+    ),
+    'Dahlbergsallén 15',
+  );
 });
 
 test('mapInstagramPost: builds a StockholmEvent from caption data', () => {
@@ -90,7 +102,7 @@ test('mapInstagramPost: builds a StockholmEvent from caption data', () => {
   assert.equal(event.source, 'apify-instagram');
   assert.equal(event.category, 'popup');
   assert.match(event.startsAt, /^2026-09-06T/);
-  assert.equal(event.venue.name, '2 kilometer Loppis Hägerstensvägen 100-180, Stockholm');
+  assert.equal(event.venue.name, 'Hägerstensvägen 100');
   assert.ok(event.qualityScore > 0);
   assert.equal(event.sourceUrl, 'https://www.instagram.com/p/CxLoppis2km01/');
 });

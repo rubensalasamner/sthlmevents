@@ -21,7 +21,8 @@
     "snapshot": "tsx src/generate-snapshot.ts",
     "snapshot:fb": "tsx src/generate-snapshot.ts --only apify-facebook",
     "snapshot:ig": "tsx src/generate-snapshot.ts --only apify-instagram",
-    "snapshot:apify": "tsx src/generate-snapshot.ts --only apify-facebook,apify-instagram",
+    "snapshot:ig-profiles": "tsx src/generate-snapshot.ts --only apify-instagram-profiles",
+    "snapshot:apify": "tsx src/generate-snapshot.ts --only apify-facebook,apify-instagram,apify-instagram-profiles",
     "probe:ig": "tsx src/sources/apify-instagram/probe.ts",
     "apify:usage": "tsx src/apify-usage.ts",
     "serve:snapshot": "tsx src/serve-snapshot.ts"

@@ -56,11 +56,12 @@ shared $5/month Apify credit in under a week.
 
 ### 2a. GitHub Actions — weekly Apify refresh (paid sources)
 
-`.github/workflows/apify-weekly.yml` runs the two Apify sources every Monday
-at 03:50 UTC (~$0.90/run: Facebook ~$0.60 + Instagram ~$0.30, well inside the
-$5 monthly credit, which resets on the 14th). It's a partial refresh —
-`npm run snapshot:apify` refetches only Facebook + Instagram events and keeps
-every other source's events from the committed snapshot. One-time setup:
+`.github/workflows/apify-weekly.yml` runs the paid Apify sources every Monday
+at 03:50 UTC (~$0.94/run: Facebook ~$0.60 + Instagram keyword ~$0.30 + curated
+IG profiles ~$0.04, well inside the $5 monthly credit, which resets on the
+14th). It's a partial refresh — `npm run snapshot:apify` refetches only those
+sources and keeps every other source's events from the committed snapshot.
+One-time setup:
 
 - Add `APIFY_TOKEN` (from Apify → Settings → API & Integrations) as a
   **repository secret**. Without it the workflow fails loudly and the

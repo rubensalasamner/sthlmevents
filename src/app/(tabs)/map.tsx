@@ -9,7 +9,6 @@ import { useFavorites } from '@/context/favorites-context';
 import { useFilters } from '@/context/filters-context';
 import { useEvents } from '@/hooks/use-events';
 import { useUserLocation } from '@/hooks/use-user-location';
-import type { StockholmEvent } from '@/types/event';
 import { collapseSeries } from '@/utils/collapse-series';
 import { splitByDateRange } from '@/utils/date-range';
 import { filterByDistance, sortByDistance } from '@/utils/geo';
@@ -37,11 +36,11 @@ export default function MapScreen() {
       selected = sortByDistance(selected, location);
     }
 
-    // Favourites always stay on the map (distinct bubble colour) even when a
-    // filter would otherwise hide them — personal pins without an account.
-    const favorites = events.filter((event) => favoriteIds.has(event.id));
-    return collapseSeries(uniqueById([...selected, ...favorites])).events;
-  }, [events, category, query, dateRange, source, nearMe, nearRadiusKm, location, favoriteIds]);
+    // Favourites keep their accent bubble when they match the active filters;
+    // they must not bypass category/date/search (that made the map disagree
+    // with Discover after e.g. Pop-up).
+    return collapseSeries(selected).events;
+  }, [events, category, query, dateRange, source, nearMe, nearRadiusKm, location]);
 
   return (
     <ThemedView style={styles.container}>
@@ -60,17 +59,6 @@ export default function MapScreen() {
       </SafeAreaView>
     </ThemedView>
   );
-}
-
-function uniqueById(events: readonly StockholmEvent[]): StockholmEvent[] {
-  const seen = new Set<string>();
-  const out: StockholmEvent[] = [];
-  for (const event of events) {
-    if (seen.has(event.id)) continue;
-    seen.add(event.id);
-    out.push(event);
-  }
-  return out;
 }
 
 const styles = StyleSheet.create({

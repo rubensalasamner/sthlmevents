@@ -88,6 +88,9 @@ export function formatCategory(category: EventCategory): string {
 
 const SOURCE_LABELS: Record<string, string> = {
   allevents: 'allevents.in',
+  'apify-facebook': 'Facebook (Apify)',
+  'apify-instagram': 'Instagram (Apify)',
+  'apify-instagram-profiles': 'Instagram profiles',
   biblioteket: 'Stockholms stadsbibliotek',
   'evenemangskollen': 'Evenemangskollen',
   eventbrite: 'Eventbrite',

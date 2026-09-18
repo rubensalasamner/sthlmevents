@@ -166,19 +166,26 @@ export function looksLikeStockholmPost(
   return STOCKHOLM_HINTS_RE.test(`${post.caption ?? ''} ${post.location?.name ?? ''}`);
 }
 
+import { extractStreetAddress, isHashtagVenue, isPostalCodeVenue } from '../../shared/street-address.js';
+
 /**
- * Venue extraction: IG gives no structured location, so the first caption
- * line/segment that carries a place signal wins. Falls back to the line
- * containing Stockholm hints. Returns `undefined` when nothing looks like a
- * place — the mapper then uses the generic fallback.
+ * Venue extraction: IG gives no structured location, so prefer an explicit
+ * street+number anywhere in the caption (geocodes reliably). Fall back to the
+ * first place-keyword line, skipping hashtag soup and postal-code-only lines.
  */
 export function extractVenue(caption: string): string | undefined {
+  const street = extractStreetAddress(caption);
+  if (street) return street;
+
   const lines = caption
     .split(/\n|•|👉|\u{1F4CD}/u) // newline, bullet, pointing finger, pin emoji
     .map((line) => line.replace(/\s+/g, ' ').trim())
-    .filter((line) => line.length >= 4 && line.length <= 80);
+    .filter((line) => line.length >= 4 && line.length <= 120)
+    .filter((line) => !isHashtagVenue(line) && !isPostalCodeVenue(line));
   const venueLine = lines.find((line) =>
-    /gatan|vägen|väg \d|torg|plan\b|galleria|hallen|huset|studio|gallery|butik|konsthall|slott|park\b|center|centrum|market|saluhall|house\b/i.test(line),
+    /gatan|vägen|väg \d|torg|plan\b|galleria|hallen|huset|studio|gallery|butik|konsthall|slott|park\b|center|centrum|market|saluhall|house\b|allén|strand/i.test(
+      line,
+    ),
   );
   if (venueLine) {
     return venueLine
