@@ -3,7 +3,7 @@
 > **Syfte:** den här filen är projektets "minne" mellan datorer och sessioner.
 > Läs den först om du (människa eller AI-agent) plockar upp projektet efter en
 > paus. Den uppdateras när vi fattar beslut eller når slutsatser — inte för
-> varje kodändring. Senast uppdaterad: **2026-09-17**.
+> varje kodändring. Senast uppdaterad: **2026-09-18**.
 
 ---
 
@@ -11,7 +11,9 @@
 
 Stockholm-events-app (Expo / React Native, iOS + Android + web) med en separat
 datagräm-pipeline som aggregerar events från flera källor till en daglig JSON-
-snapshot. Layout- och funktionsinspiration: GET LOCL (iOS). Tema: "Blå Timmen"
+snapshot. Layout: Magazine-home + Explore (karta, kluster/cap, peek) + agenda-lista —
+GET LOCL var den tidiga referensen, men 5k events kräver rails/karta/agenda
+istället för en filterstack. Tema: "Blå Timmen"
 (mörk nordisk blåpalett + Space Grotesk för rubriker).
 
 - Appens README (`README.md`): deployment (Vercel, R2, EAS, cron).
@@ -40,9 +42,9 @@ snapshot. Layout- och funktionsinspiration: GET LOCL (iOS). Tema: "Blå Timmen"
 - **Lägg till i kalender LIVE** (2026-09-16): `Add to calendar` på eventdetaljen
   öppnar OS-kalenderdialog (förifyllt) via `expo-calendar/legacy`; web → Google
   Calendar-URL. Samma native build som notiser.
-- **Helg-/kvälls-default LIVE** (2026-09-16): Discover öppnar på `weekend`
-  torsdag–söndag (Stockholm-weekday), annars `today`. Featured-strip +
-  sektionsrubrik speglar fönstret (“This weekend” / “Today”).
+- **Helg-/kvälls-default LIVE** (2026-09-16): Home öppnar på `weekend`
+  torsdag–söndag (Stockholm-weekday), annars `today`. Magazine-hero +
+  fönster-rail speglar fönstret (“This weekend” / “Today”).
 - **Närhet LIVE** (2026-09-16): “Near me” + ≤2/5 km på Discover (lazy GPS via
   `expo-location`); kartan zoomar mot användaren. Favoriter får accent-bubbla
   **bara när de matchar aktiva filter** (bypass borttagen 2026-09-18 — annars
@@ -51,7 +53,7 @@ snapshot. Layout- och funktionsinspiration: GET LOCL (iOS). Tema: "Blå Timmen"
 - **Progressiv intresse-onboarding LIVE** (2026-09-16): ingen cold-start-wizard.
   Efter 1 favorit **eller** 3 eventöppningar → sheet “What are you into?”
   (8 chips, Not now). Soft boost i `orderFeed` (inte hårt filter). Kompakt
-  “Vibes”-länk i sektionsraden (inte egen filterstrip). Lagras lokalt
+  “Vibes”-länk i Home-headern. Lagras lokalt
   (`sthlmevents.interests.v1`).
 - **Share → app/web LIVE** (2026-09-16): Share delar
   `https://<web>/event/<id>` (eller `sthlmevents://…` utan web-origin), inte
@@ -60,11 +62,26 @@ snapshot. Layout- och funktionsinspiration: GET LOCL (iOS). Tema: "Blå Timmen"
 - **Fragile image hosting** (2026-09-16): pipeline-steg hostar fbcdn/IG-bilder
   till R2 när `R2_*` + `R2_PUBLIC_BASE_URL` är satta; misslyckanden →
   kategori-fallback. Appen har `EventImage` onError→fallback som säkerhetsnät.
-- UI: Blå Timmen-tema implementerat, filterstripp v1 (segmentkontroll för datum,
-  pillrow för kategorier, Near me, dev-only source-chip), feed-ranking enligt §4.
-  Kartan: tid-bubbles + peek-card + favoritbubblor (se §4).
+- UI (2026-09-18): **Magazine home + map peek + agenda**. Tabs Home /
+  Explore / Saved. Filter ligger i ett sheet bakom en sammanfattningschip —
+  inte fyra always-on rader. EventPresentation-strategier: hero / poster /
+  compact (map peek). Eventdetalj följer Standard 2026-mocken: 3:2-kort
+  med titel på bilden, when/title/venue, pris+kategori-chips, beskrivning
+  under fakta, sticky Directions + Tickets. Saved är en kronologisk lista
+  (This week / Later). Ranking, Blå Timmen, weekend-default, vibes och
+  påminnelser oförändrade. Event-räknaren under Home-rubriken är gömd;
+  5-tap på rubriken (__DEV__) visar källfilter + räkning som tidigare.
+  Explore: ingen sök-overlay, ingen half-sheet. Defaultkamera neighbourhood
+  (zoom 13). `expo-maps` v57 saknar native clustering — JS-rutnät med
+  räknebubblor under zoom 13, därefter närmaste ~40 pins i viewport.
+  Pin-tap → peek-kort.
 - Känd bugg-kvarleva: IG-titlar kan innehålla emoji/skräprader —
   `firstTitleLine` hackar vid 80 tecken men rensar inte alla emoji. Kosmetiskt.
+- **Android OOM på IG-bilder** (2026-09-18): `Canvas: trying to draw too large
+  bitmap` (~240 MB) via `ExpoImageView`. `source.width/height` räcker **inte**
+  som decode-tak. Fix: `EventImage` använder `useImage({ maxWidth, maxHeight })`
+  (Expo-dokumenterat mot stora assets).
+  List-thumbs ska skicka `decodeWidth={56}`; default 400 är för hero/detail.
 
 ## 3. Datagivning — vad vi vet (fakta, inte gissningar)
 
@@ -216,9 +233,13 @@ konton först efter caption-probe (ingen OCR som default).
   kollade i canvas-fasen. Temamallar / labbar versionerade i
   `docs/design/` (`theme-proposals`, `theme-lab`, `filter-lab` — Cursor
   canvas-filer, öppnas som `.canvas.tsx`).
-- **Filterstripp v1**: `SegmentedControl` (generisk) för datum
-  (Idag/Helgen/Veckan/Allt), scrollande `CategoryPill`-rad, dev-only
-  källchip som expanderar. Filter är permanenta, ingen toggle.
+- **IA v2 (2026-09-18)**: Home är algoritmiska magazine-rails (hero + Free /
+  Markets / Nightlife / Music) — inte en 5k-lista. Explore är kartan med
+  overlay-chip + detent-sheet. “See all” / sök är agenda (tid-grupperade
+  compact rows). En `EventPresentation`-strategy per densitet; samma
+  `useFilteredEvents` för alla tre ytor så filtret inte ljuger.
+- **Filter**: sammanfattningschip öppnar sheet (datum, kategori, near-me,
+  dev-source). Inte always-on-stack. `reset()` rensar till kontextuell default.
 - **Feed-ranking** (`src/utils/ranking.ts`): band → tier → sortMs → featured →
   quality → id. Band: programme → outOfTown → longRunning (>30 dagar).
   Tier inom band: upcoming (startsAt) → ongoing (endsAt snarast) → past.

@@ -1,62 +1,45 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { EventMap } from '@/components/event-map';
-import { SearchBar } from '@/components/search-bar';
+import { FilterSheet } from '@/components/filter-sheet';
+import { FilterSummaryChip } from '@/components/filter-summary-chip';
 import { ThemedView } from '@/components/themed-view';
+import { Spacing } from '@/constants/theme';
 import { useFavorites } from '@/context/favorites-context';
-import { useFilters } from '@/context/filters-context';
-import { useEvents } from '@/hooks/use-events';
-import { useUserLocation } from '@/hooks/use-user-location';
-import { collapseSeries } from '@/utils/collapse-series';
-import { splitByDateRange } from '@/utils/date-range';
-import { filterByDistance, sortByDistance } from '@/utils/geo';
-import { searchEvents } from '@/utils/search';
+import { useFilteredEvents } from '@/hooks/use-filtered-events';
+import { mappableEvents } from '@/utils/map-marker';
 
 export default function MapScreen() {
-  const { data: events, loading, error, reload } = useEvents();
-  const { category, query, dateRange, source, nearMe, nearRadiusKm, setQuery } = useFilters();
+  const { events, listEvents, loading, error, reload, nearStatus, location } = useFilteredEvents();
   const { favoriteIds } = useFavorites();
-  const { location } = useUserLocation(nearMe);
-
-  const filtered = useMemo(() => {
-    let result = searchEvents(events, query);
-    if (category !== 'all') {
-      result = result.filter((event) => event.category === category);
-    }
-    if (source !== 'all') {
-      result = result.filter((event) => event.source === source);
-    }
-    const { primary, secondary } = splitByDateRange(result, dateRange);
-    let selected = dateRange === 'all' ? result : [...primary, ...secondary];
-
-    if (nearMe && location) {
-      selected = filterByDistance(selected, location, nearRadiusKm);
-      selected = sortByDistance(selected, location);
-    }
-
-    // Favourites keep their accent bubble when they match the active filters;
-    // they must not bypass category/date/search (that made the map disagree
-    // with Discover after e.g. Pop-up).
-    return collapseSeries(selected).events;
-  }, [events, category, query, dateRange, source, nearMe, nearRadiusKm, location]);
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const mappable = useMemo(() => mappableEvents(listEvents), [listEvents]);
 
   return (
     <ThemedView style={styles.container}>
       <View style={styles.mapWrap}>
         <EventMap
-          events={filtered}
+          events={mappable}
           favoriteIds={favoriteIds}
-          userLocation={nearMe ? location : null}
+          userLocation={location}
           loading={loading}
           error={error}
           onRetry={reload}
         />
       </View>
-      <SafeAreaView edges={['top']} style={styles.overlay}>
-        <SearchBar value={query} onChange={setQuery} />
+      <SafeAreaView edges={['top']} style={styles.overlay} pointerEvents="box-none">
+        <View style={styles.chipRow} pointerEvents="auto">
+          <FilterSummaryChip onPress={() => setFiltersOpen(true)} />
+        </View>
       </SafeAreaView>
+      <FilterSheet
+        events={events}
+        visible={filtersOpen}
+        onClose={() => setFiltersOpen(false)}
+        nearStatus={nearStatus}
+      />
     </ThemedView>
   );
 }
@@ -75,6 +58,11 @@ const styles = StyleSheet.create({
   overlay: {
     flex: 1,
     justifyContent: 'flex-start',
+    pointerEvents: 'box-none',
+  },
+  chipRow: {
+    paddingHorizontal: Spacing.four,
+    paddingTop: Spacing.two,
     pointerEvents: 'box-none',
   },
 });

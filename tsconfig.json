@@ -20,6 +20,7 @@
   ],
   "exclude": [
     "node_modules",
-    "pipeline"
+    "pipeline",
+    "docs"
   ]
 }

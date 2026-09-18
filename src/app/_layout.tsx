@@ -81,6 +81,7 @@ export default function RootLayout() {
                   <AnimatedSplashOverlay />
                   <Stack>
                     <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+                    <Stack.Screen name="agenda" options={{ title: 'All events' }} />
                     <Stack.Screen name="event/[id]" options={{ title: 'Event' }} />
                   </Stack>
                 </>

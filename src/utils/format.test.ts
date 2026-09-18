@@ -27,7 +27,7 @@ describe('ticketCtaLabel', () => {
   });
 
   test('paid events keep the purchase framing', () => {
-    assert.equal(ticketCtaLabel({ requiresAccount: undefined, priceSek: 275 }), 'Get tickets');
-    assert.equal(ticketCtaLabel({ requiresAccount: undefined, priceSek: undefined }), 'Get tickets');
+    assert.equal(ticketCtaLabel({ requiresAccount: undefined, priceSek: 275 }), 'Tickets');
+    assert.equal(ticketCtaLabel({ requiresAccount: undefined, priceSek: undefined }), 'Tickets');
   });
 });

@@ -47,6 +47,11 @@ export function formatEventTimeRange(event: StockholmEvent): string {
   return `${start} – ${timeFormatter.format(new Date(event.endsAt))}`;
 }
 
+/** Stockholm wall-clock, e.g. "19:00". */
+export function formatEventClock(isoDate: string): string {
+  return timeFormatter.format(new Date(isoDate));
+}
+
 export function formatPrice(priceSek: number | undefined): string {
   if (priceSek === undefined) return 'See details';
   return priceSek === 0 ? 'Free' : `${priceSek} kr`;
@@ -59,7 +64,7 @@ export function formatPrice(priceSek: number | undefined): string {
 export function ticketCtaLabel(event: Pick<StockholmEvent, 'requiresAccount' | 'priceSek'>): string {
   if (event.requiresAccount) return 'View on organizer site';
   if (event.priceSek === 0) return 'Event page';
-  return 'Get tickets';
+  return 'Tickets';
 }
 
 /** Joins non-empty parts with ", " — drops blanks instead of printing "undefined"/dangling commas. */

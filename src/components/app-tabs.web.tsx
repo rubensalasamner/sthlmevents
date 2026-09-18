@@ -19,11 +19,11 @@ export default function AppTabs() {
       <TabSlot style={{ height: '100%' }} />
       <TabList asChild>
         <CustomTabList>
-          <TabTrigger name="events" href="/" asChild>
-            <TabButton sf="calendar" material="calendar_month" label="Events" />
+          <TabTrigger name="home" href="/" asChild>
+            <TabButton sf="house.fill" material="home" label="Home" />
           </TabTrigger>
           <TabTrigger name="map" href="/map" asChild>
-            <TabButton sf="map.fill" material="location_on" label="Map" />
+            <TabButton sf="map.fill" material="location_on" label="Explore" />
           </TabTrigger>
           <TabTrigger name="saved" href="/saved" asChild>
             <TabButton sf="heart.fill" material="favorite" label="Saved" />

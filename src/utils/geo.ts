@@ -43,6 +43,13 @@ export function filterByDistance(
   });
 }
 
+/** Compact distance for cards and the map sheet. */
+export function formatDistanceKm(km: number): string {
+  if (km < 0.1) return '< 100 m';
+  if (km < 1) return `${Math.round(km * 1000)} m`;
+  return `${km < 10 ? km.toFixed(1) : Math.round(km)} km`;
+}
+
 /** Nearest-first. Events without coordinates are dropped (caller filters first). */
 export function sortByDistance(
   events: readonly StockholmEvent[],

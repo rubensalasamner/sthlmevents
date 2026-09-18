@@ -1,7 +1,7 @@
 import Constants from 'expo-constants';
 import type { ImageRef } from 'expo-image';
 import { requireNativeModule } from 'expo-modules-core';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 
 import { MapEventPeek } from '@/components/map-event-peek';
@@ -13,6 +13,16 @@ import { CATEGORY_BADGE_COLORS } from '@/utils/category-colors';
 import type { GeoPoint } from '@/utils/geo';
 import { loadBubbleIcon } from '@/utils/map-bubble-icon';
 import {
+  boundsAround,
+  boundsFromDeltas,
+  cameraMovedEnough,
+  MAP_CLUSTER_BELOW_ZOOM,
+  MAP_NEIGHBOURHOOD_ZOOM,
+  visibleMapPins,
+  type MapCameraSnapshot,
+  type MapPin,
+} from '@/utils/map-density';
+import {
   MAP_BUBBLE_SCALE,
   MAP_TITLE_MAX_EVENTS,
   mapBubbleContent,
@@ -22,7 +32,17 @@ import {
 } from '@/utils/map-marker';
 
 const STOCKHOLM = { latitude: 59.3293, longitude: 18.0686 };
-const DEFAULT_CAMERA = { coordinates: STOCKHOLM, zoom: 11 };
+
+type CameraMoveEvent = {
+  zoom?: number;
+  coordinates?: { latitude?: number; longitude?: number };
+  latitudeDelta?: number;
+  longitudeDelta?: number;
+};
+
+type MapCameraHandle = {
+  setCameraPosition?: (config: { coordinates: GeoPoint; zoom: number }) => void;
+};
 
 export type EventMapProps = {
   events: StockholmEvent[];
@@ -62,8 +82,8 @@ function MapUnavailable({ title = 'Map unavailable' }: { title?: string }) {
       <ThemedText type="subtitle">{title}</ThemedText>
       <ThemedText type="small" themeColor="textSecondary" style={styles.unavailableText}>
         {title === 'Map not configured'
-          ? 'The maps API key is missing in this build. Everything else works — browse events from the Events tab.'
-          : 'Maps can’t run inside Expo Go. Everything else works — browse events from the Events tab.'}
+          ? 'The maps API key is missing in this build. Everything else works — browse events from Home.'
+          : 'Maps can’t run inside Expo Go. Everything else works — browse events from Home.'}
       </ThemedText>
     </ThemedView>
   );
@@ -93,46 +113,80 @@ function useSelectedEvent(events: StockholmEvent[]) {
     [events, selectedId],
   );
 
-  return { selected, select: setSelectedId, clear: () => setSelectedId(null) };
+  return {
+    selectedId,
+    selected,
+    select: (id: string | null) => setSelectedId(id),
+    clear: () => setSelectedId(null),
+  };
 }
 
-/**
- * Discrete zoom tiers drive title unlock + bubble scale. Only commit when the
- * tier changes so pan ticks don't thrash PNG rebuilds.
- */
-function useBubbleMode(eventCount: number) {
-  const [tier, setTier] = useState<MapBubbleSizeTier>('sm');
-  const showTitles = eventCount <= MAP_TITLE_MAX_EVENTS || tier !== 'sm';
-  const uiScale = MAP_BUBBLE_SCALE[tier];
+function snapshotFromMove(event: CameraMoveEvent, fallback: MapCameraSnapshot): MapCameraSnapshot {
+  const latitude = event.coordinates?.latitude ?? fallback.center.latitude;
+  const longitude = event.coordinates?.longitude ?? fallback.center.longitude;
+  const center = { latitude, longitude };
+  const zoom = event.zoom ?? fallback.zoom;
+  const bounds =
+    event.latitudeDelta != null && event.longitudeDelta != null
+      ? boundsFromDeltas(center, event.latitudeDelta, event.longitudeDelta)
+      : boundsAround(center, zoom);
+  return { center, zoom, bounds };
+}
 
-  const onCameraMove = (zoom: number) => {
-    const next = mapBubbleSizeTier(zoom);
-    setTier((prev) => (prev === next ? prev : next));
+function useMapCamera(origin: GeoPoint) {
+  const [camera, setCamera] = useState<MapCameraSnapshot>(() => ({
+    center: origin,
+    zoom: MAP_NEIGHBOURHOOD_ZOOM,
+    bounds: boundsAround(origin, MAP_NEIGHBOURHOOD_ZOOM),
+  }));
+  const cameraRef = useRef(camera);
+  cameraRef.current = camera;
+
+  const onCameraMove = (event: CameraMoveEvent) => {
+    const next = snapshotFromMove(event, cameraRef.current);
+    if (!cameraMovedEnough(cameraRef.current, next)) return;
+    cameraRef.current = next;
+    setCamera(next);
   };
 
-  return { showTitles, uiScale, tier, onCameraMove };
+  return { camera, cameraRef, onCameraMove };
 }
 
-/** Load PNG bubble bitmaps for both platforms (two-line title+time). */
-function useBubbleIcons(
-  events: StockholmEvent[],
+function useBubbleMode(zoom: number, totalEvents: number) {
+  const [tier, setTier] = useState<MapBubbleSizeTier>(() => mapBubbleSizeTier(zoom));
+  const showTitles = totalEvents <= MAP_TITLE_MAX_EVENTS || zoom >= MAP_NEIGHBOURHOOD_ZOOM;
+  const uiScale = MAP_BUBBLE_SCALE[tier];
+
+  useEffect(() => {
+    const next = mapBubbleSizeTier(zoom);
+    setTier((prev) => (prev === next ? prev : next));
+  }, [zoom]);
+
+  return { showTitles, uiScale };
+}
+
+function pinSignature(
+  pin: MapPin,
+  showTitle: boolean,
+  uiScale: number,
+  favoriteIds: ReadonlySet<string>,
+): string {
+  if (pin.kind === 'cluster') {
+    return `${pin.id}:${pin.count}:${uiScale}`;
+  }
+  const content = mapBubbleContent(pin.event, { showTitle });
+  const favorite = favoriteIds.has(pin.event.id) ? '1' : '0';
+  return `${pin.id}:${content.primary}|${content.secondary ?? ''}:${pin.event.category}:${favorite}:${uiScale}`;
+}
+
+function usePinIcons(
+  pins: readonly MapPin[],
   showTitle: boolean,
   uiScale: number,
   favoriteIds: ReadonlySet<string>,
 ) {
   const [icons, setIcons] = useState<ReadonlyMap<string, ImageRef>>(new Map());
-
-  const signature = useMemo(
-    () =>
-      events
-        .map((event) => {
-          const content = mapBubbleContent(event, { showTitle });
-          const favorite = favoriteIds.has(event.id) ? '1' : '0';
-          return `${event.id}:${content.primary}|${content.secondary ?? ''}:${event.category}:${favorite}:${uiScale}`;
-        })
-        .join('||'),
-    [events, showTitle, uiScale, favoriteIds],
-  );
+  const signature = pins.map((pin) => pinSignature(pin, showTitle, uiScale, favoriteIds)).join('||');
 
   useEffect(() => {
     let cancelled = false;
@@ -140,13 +194,20 @@ function useBubbleIcons(
     void (async () => {
       const next = new Map<string, ImageRef>();
       await Promise.all(
-        events.map(async (event) => {
-          const content = mapBubbleContent(event, { showTitle });
-          const color = favoriteIds.has(event.id)
-            ? Colors.dark.favorite
-            : CATEGORY_BADGE_COLORS[event.category];
+        pins.map(async (pin) => {
           try {
-            next.set(event.id, await loadBubbleIcon(content, color, uiScale));
+            if (pin.kind === 'cluster') {
+              next.set(
+                pin.id,
+                await loadBubbleIcon({ primary: String(pin.count) }, Colors.dark.accent, uiScale),
+              );
+              return;
+            }
+            const content = mapBubbleContent(pin.event, { showTitle });
+            const color = favoriteIds.has(pin.event.id)
+              ? Colors.dark.favorite
+              : CATEGORY_BADGE_COLORS[pin.event.category];
+            next.set(pin.id, await loadBubbleIcon(content, color, uiScale));
           } catch {
             // Leave marker without a custom icon if the PNG fails to decode.
           }
@@ -175,6 +236,7 @@ export function EventMap({ events, favoriteIds, userLocation }: EventMapProps) {
 
   return (
     <NativeEventMap
+      key={userLocation ? 'near' : 'city'}
       events={events}
       favoriteIds={favoriteIds ?? new Set()}
       userLocation={userLocation ?? null}
@@ -191,89 +253,99 @@ function NativeEventMap({
   favoriteIds: ReadonlySet<string>;
   userLocation: GeoPoint | null;
 }) {
-  // Required lazily: importing expo-maps is only safe once the native module
-  // has been confirmed to exist.
   const { AppleMaps, GoogleMaps } = require('expo-maps') as typeof import('expo-maps');
-
+  const origin = userLocation ?? STOCKHOLM;
+  const mapRef = useRef<MapCameraHandle>(null);
   const mappable = useMemo(() => mappableEvents(events), [events]);
-  const { selected, select, clear } = useSelectedEvent(mappable);
-  const { showTitles, uiScale, onCameraMove } = useBubbleMode(mappable.length);
-  const bubbleIcons = useBubbleIcons(mappable, showTitles, uiScale, favoriteIds);
+  const { selectedId, selected, select, clear } = useSelectedEvent(mappable);
+  const { camera, cameraRef, onCameraMove } = useMapCamera(origin);
+  const pins = useMemo(
+    () => visibleMapPins(mappable, camera, { selectedId }),
+    [mappable, camera, selectedId],
+  );
+  const pinsRef = useRef(pins);
+  pinsRef.current = pins;
+  const { showTitles, uiScale } = useBubbleMode(camera.zoom, mappable.length);
+  const bubbleIcons = usePinIcons(pins, showTitles, uiScale, favoriteIds);
 
+  const originLat = origin.latitude;
+  const originLng = origin.longitude;
   const cameraPosition = useMemo(
-    () =>
-      userLocation
-        ? { coordinates: userLocation, zoom: 13 }
-        : DEFAULT_CAMERA,
-    [userLocation],
+    () => ({
+      coordinates: { latitude: originLat, longitude: originLng },
+      zoom: MAP_NEIGHBOURHOOD_ZOOM,
+    }),
+    [originLat, originLng],
   );
 
-  // Only mount once the PNG exists — otherwise the platform default pin flashes.
+  const onPinClick = (id: string | undefined) => {
+    if (!id) return;
+    const pin = pinsRef.current.find((item) => item.id === id);
+    if (!pin) return;
+    if (pin.kind === 'cluster') {
+      const zoom = Math.min(Math.max(cameraRef.current.zoom + 2, MAP_CLUSTER_BELOW_ZOOM), 16);
+      mapRef.current?.setCameraPosition?.({ coordinates: pin.point, zoom });
+      return;
+    }
+    select(pin.event.id);
+  };
+
   const markers = useMemo(
     () =>
-      mappable.flatMap((event) => {
-        const icon = bubbleIcons.get(event.id);
+      pins.flatMap((pin) => {
+        const icon = bubbleIcons.get(pin.id);
         if (!icon) return [];
         return [
           {
-            id: event.id,
-            coordinates: {
-              latitude: event.venue.latitude!,
-              longitude: event.venue.longitude!,
-            },
+            id: pin.id,
+            coordinates: pin.point,
             icon,
             showCallout: false as const,
             anchor: { x: 0.5, y: 1 },
           },
         ];
       }),
-    [mappable, bubbleIcons],
+    [pins, bubbleIcons],
   );
 
   const annotations = useMemo(
     () =>
-      mappable.flatMap((event) => {
-        const icon = bubbleIcons.get(event.id);
+      pins.flatMap((pin) => {
+        const icon = bubbleIcons.get(pin.id);
         if (!icon) return [];
         return [
           {
-            id: event.id,
-            coordinates: {
-              latitude: event.venue.latitude!,
-              longitude: event.venue.longitude!,
-            },
+            id: pin.id,
+            coordinates: pin.point,
             icon,
           },
         ];
       }),
-    [mappable, bubbleIcons],
+    [pins, bubbleIcons],
   );
 
   return (
     <View style={styles.root}>
       {Platform.OS === 'ios' ? (
         <AppleMaps.View
-          key={userLocation ? 'near' : 'city'}
+          // Native view handle; typed as never because expo-maps is required lazily.
+          ref={mapRef as never}
           style={styles.map}
           cameraPosition={cameraPosition}
           annotations={annotations}
-          onAnnotationClick={(annotation) => {
-            if (annotation.id) select(annotation.id);
-          }}
+          onAnnotationClick={(annotation) => onPinClick(annotation.id)}
           onMapClick={clear}
-          onCameraMove={(event) => onCameraMove(event.zoom)}
+          onCameraMove={onCameraMove}
         />
       ) : (
         <GoogleMaps.View
-          key={userLocation ? 'near' : 'city'}
+          ref={mapRef as never}
           style={styles.map}
           cameraPosition={cameraPosition}
           markers={markers}
-          onMarkerClick={(marker) => {
-            if (marker.id) select(marker.id);
-          }}
+          onMarkerClick={(marker) => onPinClick(marker.id)}
           onMapClick={clear}
-          onCameraMove={(event) => onCameraMove(event.zoom)}
+          onCameraMove={onCameraMove}
         />
       )}
       {selected ? <MapEventPeek event={selected} onDismiss={clear} /> : null}

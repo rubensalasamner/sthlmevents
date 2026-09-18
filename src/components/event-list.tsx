@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import { ActivityIndicator, FlatList, Pressable, StyleSheet, View } from 'react-native';
 
-import { EventCard } from '@/components/event-card';
+import { CompactRow } from '@/components/event-presentation/compact-row';
 import { AttributionFooter } from '@/components/attribution-footer';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
@@ -58,15 +58,15 @@ export function EventList({
     <FlatList
       data={events}
       keyExtractor={(item) => item.id}
-      renderItem={({ item }) => <EventCard event={item} />}
+      renderItem={({ item }) => <CompactRow event={item} />}
       ListHeaderComponent={ListHeaderComponent}
       ListFooterComponent={<AttributionFooter attribution={getEventSource().attribution} />}
       ItemSeparatorComponent={() => <View style={styles.separator} />}
       contentContainerStyle={styles.content}
-      initialNumToRender={8}
-      maxToRenderPerBatch={6}
+      initialNumToRender={12}
+      maxToRenderPerBatch={10}
       updateCellsBatchingPeriod={50}
-      windowSize={7}
+      windowSize={5}
       removeClippedSubviews
       ListEmptyComponent={
         <ThemedView style={styles.emptyWrap}>

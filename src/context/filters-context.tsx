@@ -32,6 +32,9 @@ type FiltersContextValue = FiltersState & {
   setNearRadiusKm: (value: NearRadiusKm) => void;
   /** True when any filter deviates from its contextual default. */
   isActive: boolean;
+  /** DEV source chips — unlocked by 5 taps on the Home heading. */
+  devSourcesUnlocked: boolean;
+  toggleDevSources: () => void;
   reset: () => void;
 };
 
@@ -52,6 +55,10 @@ export function FiltersProvider({ children }: { children: ReactNode }) {
   const [source, setSource] = useState<SourceFilterValue>('all');
   const [nearMe, setNearMe] = useState(false);
   const [nearRadiusKm, setNearRadiusKm] = useState<NearRadiusKm>(null);
+  const [devSourcesUnlocked, setDevSourcesUnlocked] = useState(false);
+  const toggleDevSources = useCallback(() => {
+    if (__DEV__) setDevSourcesUnlocked((open) => !open);
+  }, []);
 
   const isActive =
     category !== 'all' ||
@@ -84,6 +91,8 @@ export function FiltersProvider({ children }: { children: ReactNode }) {
       setNearMe,
       setNearRadiusKm,
       isActive,
+      devSourcesUnlocked,
+      toggleDevSources,
       reset,
     }),
     [
@@ -95,6 +104,8 @@ export function FiltersProvider({ children }: { children: ReactNode }) {
       nearRadiusKm,
       contextualDateDefault,
       isActive,
+      devSourcesUnlocked,
+      toggleDevSources,
       reset,
     ],
   );

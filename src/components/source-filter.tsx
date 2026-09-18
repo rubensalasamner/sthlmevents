@@ -18,7 +18,7 @@ type SourceFilterProps = {
 
 /**
  * Dev companion to `SourceTag`: narrow the list to one ingestion source.
- * Only mounts in __DEV__, and only after the title unlock (5 taps).
+ * Only mounts in __DEV__, and only after 5 taps on the Home heading.
  */
 export function SourceFilter({ events, value, onChange, unlocked = false }: SourceFilterProps) {
   const [expanded, setExpanded] = useState(false);

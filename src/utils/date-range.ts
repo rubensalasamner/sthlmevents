@@ -150,6 +150,11 @@ export function stockholmWeekday(now: Date): number {
   return new Date(Date.UTC(year, month - 1, day)).getUTCDay();
 }
 
+/** Stockholm civil date as YYYY-MM-DD. */
+export function stockholmDateKey(now: Date): string {
+  return localDate.format(now);
+}
+
 /**
  * Contextual Discover default: Thu–Sun open on "Helgen", Mon–Wed on "Idag".
  * Habit loop — open the app and see what's relevant *now*, not the full dump.
