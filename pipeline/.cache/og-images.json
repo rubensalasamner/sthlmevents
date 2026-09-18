@@ -13,7 +13,7 @@
   },
   "https://historiska.se/utstallningar/ny-utstallning-vikingar-2021/": {
     "image": null,
-    "fetchedAt": 1789200778152
+    "fetchedAt": 1789720214930
   },
   "https://www.sightseeingride.com/en/tours/stockholm-archipelago-tour/": {
     "image": "https://www.sightseeingride.com/uploads/og-image-sightseeing-ride.avif",
@@ -17646,5 +17646,185 @@
   "https://www.scandichotels.com/en/hotels/downtown-camper-by-scandic": {
     "image": null,
     "fetchedAt": 1789635309559
+  },
+  "https://www.meetup.com/stockholm-intj-meetup/events/315825736/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/1/5/2/600_471548530.jpeg",
+    "fetchedAt": 1789720214487
+  },
+  "https://www.meetup.com/truth-seekers-stockholm/events/316577483/": {
+    "image": "https://secure.meetupstatic.com/photos/event/a/9/8/600_535562712.jpeg",
+    "fetchedAt": 1789720214603
+  },
+  "https://www.meetup.com/sans-studio-paint-and-sip/events/316453778/": {
+    "image": "https://secure.meetupstatic.com/photos/event/c/2/2/9/600_536029705.jpeg",
+    "fetchedAt": 1789720214741
+  },
+  "https://new.erstadiakoni.se/kyrka-kultur/kalendarium/new-eyes-on-baroque/": {
+    "image": "https://cdn.sanity.io/images/iqyooa81/production/38c0f3089c4d3f1f990286aa0d88c7b208366c4f-1620x1080.jpg?rect=90,0,1440,1080&w=2400&h=1800&fit=crop&auto=format",
+    "fetchedAt": 1789720214804
+  },
+  "https://cafe.hardrock.com/stockholm/sv": {
+    "image": "https://cafe.hardrock.com/files/templates/1732/logoHRC01.png",
+    "fetchedAt": 1789720214869
+  },
+  "https://www.meetup.com/prata-svenska/events/315345828/": {
+    "image": "https://secure.meetupstatic.com/photos/event/7/7/a/4/600_499230628.jpeg",
+    "fetchedAt": 1789720214953
+  },
+  "https://www.instagram.com/elisabethfroberg.art/": {
+    "image": "https://static.cdninstagram.com/rsrc.php/v4/yD/r/R0fBIMurK8v.png",
+    "fetchedAt": 1789720214982
+  },
+  "https://www.tekniskamuseet.se/pa-gang/fira-astronomins-dag-och-natt/": {
+    "image": "https://www.tekniskamuseet.se/app/uploads/2023/11/getty-wisdome-bli-klok-kampanj.jpg",
+    "fetchedAt": 1789720215044
+  },
+  "https://www.meetup.com/intercambio/events/316340116/": {
+    "image": "https://secure.meetupstatic.com/photos/event/4/e/9/f/600_525500127.jpeg",
+    "fetchedAt": 1789720215127
+  },
+  "https://www.meetup.com/stockholm-social-life/events/316593191/": {
+    "image": "https://secure.meetupstatic.com/photos/event/a/7/0/3/600_530802755.jpeg",
+    "fetchedAt": 1789720215180
+  },
+  "https://instagram.com/readerssocialclub_sthlm": {
+    "image": "https://static.cdninstagram.com/rsrc.php/v4/yD/r/R0fBIMurK8v.png",
+    "fetchedAt": 1789720215259
+  },
+  "https://www.meetup.com/sthlm-sports-outdoors/events/316601063/": {
+    "image": "https://secure.meetupstatic.com/photos/event/8/7/9/3/600_452974707.jpeg",
+    "fetchedAt": 1789720215360
+  },
+  "https://ejbla.com/sv/c/5116": {
+    "image": null,
+    "fetchedAt": 1789720215456
+  },
+  "https://www.instagram.com/tropical_pirate_nights": {
+    "image": "https://static.cdninstagram.com/rsrc.php/v4/yD/r/R0fBIMurK8v.png",
+    "fetchedAt": 1789720215615
+  },
+  "Http://www.Bellmanhuset.se": {
+    "image": null,
+    "fetchedAt": 1789720215749
+  },
+  "https://elverket.com/produktioner/lars-lerin": {
+    "image": "https://cdn.sanity.io/images/nvb5rzwz/production/23cdf19bfc252bec558d8a24a20016a06d27deea-7680x5120.png?rect=0,544,7680,4032&w=1200&h=630&fit=crop&auto=format",
+    "fetchedAt": 1789720215755
+  },
+  "https://impro.se": {
+    "image": "https://impro.se/wp-content/uploads/2024/08/DIS_20220826_572-scaled.jpg",
+    "fetchedAt": 1789720215766
+  },
+  "https://www.meetup.com/scbcfootball/events/316594923/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/6/d/600_535560621.jpeg",
+    "fetchedAt": 1789720215771
+  },
+  "https://artipelag.se/pa-gang/aktivitet/after-hours-onsdagskvallar-pa-artipelag/": {
+    "image": null,
+    "fetchedAt": 1789720215778
+  },
+  "https://elverket.com/produktioner/prehistoric-planet-discovering-dinosaurs": {
+    "image": "https://cdn.sanity.io/images/nvb5rzwz/production/3eee5f8bc63bae22066f769263e99ffecc3f275a-2000x1414.png?rect=0,182,2000,1050&w=1200&h=630&fit=crop&auto=format",
+    "fetchedAt": 1789720215873
+  },
+  "https://www.meetup.com/frescati-badminton-meetup-group/events/316418801/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/7/b/5/600_529570165.jpeg",
+    "fetchedAt": 1789720215881
+  },
+  "https://www.meetup.com/stockholm-kayak-sup-group/events/316418954/": {
+    "image": "https://secure.meetupstatic.com/photos/event/e/3/5/e/600_534238206.jpeg",
+    "fetchedAt": 1789720215911
+  },
+  "http://french-tv.net": {
+    "image": null,
+    "fetchedAt": 1789720216018
+  },
+  "https://allevents.in/stockholm/jon-anderson-and-the-band-geeks-performing-yes-epics-classics-and-more/200029710402431": {
+    "image": "https://cdn-az.allevents.in/events7/banners/834237d60eed325672b26f583f6b552d8e644079d320d2368c589cea0a09bc3a-rimg-w1200-h675-dc181838-gmir?v=1788181319",
+    "fetchedAt": 1789720216199
+  },
+  "https://ra.co/events/2539816": {
+    "image": null,
+    "fetchedAt": 1789720216239
+  },
+  "https://www.konsthallc.se/en/program/messiah": {
+    "image": null,
+    "fetchedAt": 1789720216249
+  },
+  "https://allevents.in/stockholm/masego-fix-your-face-tour/210001331311061": {
+    "image": "https://cdn-az.allevents.in/events9/banners/190a738024f3d47560b63b03e0ce46357d16c9be93e463b7f3075ab8e3da36fe-rimg-w1024-h576-dc5f4237-gmir.jpg?v=1781320291",
+    "fetchedAt": 1789720216316
+  },
+  "https://allevents.in/stockholm/blue-house-jazz-cécile-mclorin-salvant/200030529922442": {
+    "image": "https://cdn-az.allevents.in/events6/banners/ab78e87c47c9d1141dbba4180dfb38c2f6a39557f01a28aa36ae15baef009f31-rimg-w1200-h832-dc180808-gmir?v=1788215980",
+    "fetchedAt": 1789720216336
+  },
+  "https://lu.ma/dghrmr5m": {
+    "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/xv/0409677e-84f6-436a-ba03-15c2347e0c4d.png",
+    "fetchedAt": 1789720216369
+  },
+  "https://www.facebook.com/events/858269003920390?": {
+    "image": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=858269003920390",
+    "fetchedAt": 1789720216508
+  },
+  "https://kungligasvenskabalettskolan.stockholm/": {
+    "image": null,
+    "fetchedAt": 1789720216510
+  },
+  "https://www.dougseegersmusic.com/": {
+    "image": null,
+    "fetchedAt": 1789720216513
+  },
+  "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32698/134811/": {
+    "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32698/134811/Kulturhuset%20Stadsteatern",
+    "fetchedAt": 1789720216596
+  },
+  "https://dinos.se/products/dinos-stockholm-tickets": {
+    "image": "https://storage.googleapis.com/visitor-engine-assets/cms/dinos/img/dinos-share.jpg",
+    "fetchedAt": 1789720216639
+  },
+  "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32700/134813/": {
+    "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32700/134813/Kulturhuset%20Stadsteatern",
+    "fetchedAt": 1789720216780
+  },
+  "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32701/134818/": {
+    "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32701/134818/Kulturhuset%20Stadsteatern",
+    "fetchedAt": 1789720216811
+  },
+  "https://seniorfestivalen.se/stockholm/": {
+    "image": null,
+    "fetchedAt": 1789720217187
+  },
+  "https://stadsmuseet.stockholm/aktuellt/kalendarium/2026/10/spokvisning-for-hela-familjen/": {
+    "image": "https://stadsmuseet.stockholm/optimized/large/globalassets/aktuellt/kalendarium/stadsmuseet/hosten-2026/spok-2.jpg",
+    "fetchedAt": 1789720217656
+  },
+  "https://www.kurastockholm.com/julbord": {
+    "image": "https://static.wixstatic.com/media/10f30c_e5b1fad6ca8d4158b4fa30a82355bf27%7Emv2.png/v1/fit/w_2500,h_1330,al_c/10f30c_e5b1fad6ca8d4158b4fa30a82355bf27%7Emv2.png",
+    "fetchedAt": 1789720217782
+  },
+  "https://stadsmuseet.stockholm/aktuellt/?t=event&c=367": {
+    "image": null,
+    "fetchedAt": 1789720217924
+  },
+  "https://stadsmuseet.stockholm/aktuellt/kalendarium/2026/10/rollspel-pa-hostlovet/": {
+    "image": "https://stadsmuseet.stockholm/optimized/large/globalassets/aktuellt/kalendarium/stadsmuseet/var-2026/sverol_miljo_48.jpg",
+    "fetchedAt": 1789720218114
+  },
+  "https://www.meetup.com/the-house-of-soft-beasts/events/316545080/": {
+    "image": "https://secure.meetupstatic.com/photos/event/7/5/1/7/600_536129975.jpeg",
+    "fetchedAt": 1789720218141
+  },
+  "https://stadsmuseet.stockholm/aktuellt/kalendarium/2026/10/paradise-lost-sodermalm/": {
+    "image": "https://stadsmuseet.stockholm/optimized/large/globalassets/aktuellt/kalendarium/stadsmuseet/varen-2023/paradise-lost-1920.jpg",
+    "fetchedAt": 1789720218160
+  },
+  "https://judiskamuseet.se/kalendarium/": {
+    "image": null,
+    "fetchedAt": 1789720218428
+  },
+  "https://musikal-30-dagar-kvar.lovable.app/": {
+    "image": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/06a16af807d0f23ce1439c27dc2df51a/id-preview-e2b1bef8--5c3acd7f-512e-49e1-a470-0cfc2f2bcb52.lovable.app-1789036711264.png",
+    "fetchedAt": 1789720218811
   }
 }

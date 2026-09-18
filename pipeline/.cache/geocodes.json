@@ -134,7 +134,7 @@
   },
   "sankt Göransgatan 143, Kungsholmen i, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1788794652782
+    "fetchedAt": 1789720210002
   },
   "Stadshagen IP, Stockholm, Sweden": {
     "value": {
@@ -2339,5 +2339,30 @@
       "longitude": 18.080131
     },
     "fetchedAt": 1789635299433
+  },
+  "Kungsholms strand 167, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3383355,
+      "longitude": 18.0248134
+    },
+    "fetchedAt": 1789720206994
+  },
+  "Sergels Torg, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3322005,
+      "longitude": 18.0640284
+    },
+    "fetchedAt": 1789720208599
+  },
+  "Patentgatan 2, 112 67 Stockholm, Sweden, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789720212537
+  },
+  "Patentgatan 2, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3229315,
+      "longitude": 18.005623
+    },
+    "fetchedAt": 1789720214127
   }
 }
