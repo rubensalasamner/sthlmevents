@@ -92,6 +92,18 @@ describe('apify-facebook mapper', () => {
     assert.ok(mapped.imageUrl.startsWith('https://scontent'));
   });
 
+  it('routes loppis titles to market, sample sales to popup', () => {
+    assert.equal(mapFacebookEvent(row('ARAKII Sample Sale')).category, 'popup');
+    assert.equal(
+      mapFacebookEvent({
+        ...row('ARAKII Sample Sale'),
+        name: 'Hornstulls loppis weekend',
+        description: null,
+      }).category,
+      'market',
+    );
+  });
+
   it('parses hour durations ("6 hr")', () => {
     const raw = row('Pop- Up Sale');
     const mapped = mapFacebookEvent(raw);

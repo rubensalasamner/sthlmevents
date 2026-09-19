@@ -1,4 +1,5 @@
 import type { StockholmEvent } from '../../shared/event.js';
+import { inferCommerceCategory } from '../../shared/commerce-category.js';
 import { fallbackImageFor } from '../../shared/images.js';
 import { stockholmLocalToUtcIso } from '../../shared/time.js';
 import { APIFY_INSTAGRAM_SOURCE, type IgPostRaw } from './types.js';
@@ -58,13 +59,15 @@ export function mapInstagramPost(
 
   const venueText = raw.location?.name ?? extractVenue(captionOf(raw)) ?? '';
   const postId = raw.shortCode ?? raw.id ?? captionOf(raw).slice(0, 40);
+  const caption = captionOf(raw);
+  const category = inferCommerceCategory(caption) ?? 'popup';
 
   return {
     id: `${source}:${postId}`,
-    title: firstTitleLine(captionOf(raw)),
-    description: captionOf(raw),
-    category: 'popup',
-    imageUrl: raw.imageUrl ?? raw.displayUrl ?? fallbackImageFor('popup'),
+    title: firstTitleLine(caption),
+    description: caption,
+    category,
+    imageUrl: raw.imageUrl ?? raw.displayUrl ?? fallbackImageFor(category),
     startsAt,
     endsAt,
     venue: {

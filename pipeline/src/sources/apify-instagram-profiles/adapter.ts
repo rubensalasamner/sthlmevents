@@ -30,6 +30,7 @@ export type ApifyInstagramProfilesAdapterOptions = {
  * scrapes hand-picked high-signal accounts (sample-sale roundups, etc.) whose
  * captions already carry dates and venues — verified for
  * @stockholm_samplesale (2026-09-17: 14/15 parseable without OCR).
+ * @stockholmsamplesale added 2026-09-19 (not yet caption-probed).
  *
  * Stockholm geo-filter is relaxed: allowlisted accounts are Stockholm-scoped
  * by curation. Posts still need a parseable caption date and must not be noise.

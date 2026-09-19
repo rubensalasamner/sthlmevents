@@ -3,7 +3,6 @@ import { ActivityIndicator, Alert, Pressable, StyleSheet } from 'react-native';
 
 import { Icon } from '@/components/icon';
 import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 import { addEventToCalendar } from '@/calendar/add-to-calendar';
 import { useTheme } from '@/hooks/use-theme';
@@ -13,6 +12,7 @@ type AddToCalendarButtonProps = {
   event: StockholmEvent;
 };
 
+/** Quiet text action — sticky Directions/Tickets own the primary chrome. */
 export function AddToCalendarButton({ event }: AddToCalendarButtonProps) {
   const theme = useTheme();
   const [busy, setBusy] = useState(false);
@@ -32,7 +32,6 @@ export function AddToCalendarButton({ event }: AddToCalendarButtonProps) {
       } else if (result.status === 'error') {
         Alert.alert('Could not add to calendar', result.message);
       }
-      // `saved` / `cancelled`: the OS sheet already communicated the outcome.
     } finally {
       setBusy(false);
     }
@@ -44,29 +43,29 @@ export function AddToCalendarButton({ event }: AddToCalendarButtonProps) {
       accessibilityLabel="Add to calendar"
       disabled={busy}
       onPress={onPress}
-      style={({ pressed }) => pressed && styles.pressed}>
-      <ThemedView type="backgroundElement" style={styles.button}>
-        {busy ? (
-          <ActivityIndicator color={theme.textSecondary} />
-        ) : (
-          <>
-            <Icon sf="calendar.badge.plus" material="calendar_add_on" size={18} color={theme.text} />
-            <ThemedText type="smallBold">Add to calendar</ThemedText>
-          </>
-        )}
-      </ThemedView>
+      hitSlop={Spacing.two}
+      style={({ pressed }) => [styles.row, pressed && styles.pressed]}>
+      {busy ? (
+        <ActivityIndicator color={theme.textSecondary} />
+      ) : (
+        <>
+          <Icon sf="calendar.badge.plus" material="calendar_add_on" size={16} color={theme.accent} />
+          <ThemedText type="smallBold" themeColor="accent">
+            Add to calendar
+          </ThemedText>
+        </>
+      )}
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
-  button: {
+  row: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    gap: Spacing.two,
-    paddingVertical: Spacing.three,
-    borderRadius: Spacing.five,
+    alignSelf: 'flex-start',
+    gap: Spacing.one,
+    paddingVertical: Spacing.two,
   },
   pressed: {
     opacity: 0.7,

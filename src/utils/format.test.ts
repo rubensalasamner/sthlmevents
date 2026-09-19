@@ -16,14 +16,14 @@ describe('venueLine', () => {
 });
 
 describe('ticketCtaLabel', () => {
-  test('account-required sources get a neutral view label', () => {
-    assert.equal(ticketCtaLabel({ requiresAccount: true, priceSek: undefined }), 'View on organizer site');
-    assert.equal(ticketCtaLabel({ requiresAccount: true, priceSek: 0 }), 'View on organizer site');
-    assert.equal(ticketCtaLabel({ requiresAccount: true, priceSek: 150 }), 'View on organizer site');
+  test('account-required sources get a short organizer label', () => {
+    assert.equal(ticketCtaLabel({ requiresAccount: true, priceSek: undefined }), 'Organizer');
+    assert.equal(ticketCtaLabel({ requiresAccount: true, priceSek: 0 }), 'Organizer');
+    assert.equal(ticketCtaLabel({ requiresAccount: true, priceSek: 150 }), 'Organizer');
   });
 
-  test('free events without account requirement link to the event page', () => {
-    assert.equal(ticketCtaLabel({ requiresAccount: undefined, priceSek: 0 }), 'Event page');
+  test('free events open the source page', () => {
+    assert.equal(ticketCtaLabel({ requiresAccount: undefined, priceSek: 0 }), 'Open');
   });
 
   test('paid events keep the purchase framing', () => {

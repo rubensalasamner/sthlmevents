@@ -66,7 +66,7 @@ without a rebuild.
 | `loppiskartan` | loppiskartan.se dated flea-market calendar | HTML scrape (pure, tested parser), filtered to "Stockholms län" | Flea markets / one-off loppisar; free entry; no coordinates |
 | `apify-facebook` | Facebook Events via `apify/facebook-events-scraper` | Apify token, **paid** ($0.013/event, weekly cron) | Long-tail: sample sales, utförsäljningar, pop-ups. Date-windowed search URLs |
 | `apify-instagram` | Instagram posts via `apify/instagram-hashtag-scraper` | Apify token, **paid** ($0.0026/post, weekly cron) | Long-tail complement; dates/venues parsed from captions (IG has no event objects) |
-| `apify-instagram-profiles` | Curated IG profiles via `apify/instagram-post-scraper` | Apify token, **paid** (~$0.0027/post, weekly cron) | Allowlist in `profiles.ts` (starts with `@stockholm_samplesale`); caption reuse, no OCR |
+| `apify-instagram-profiles` | Curated IG profiles via `apify/instagram-post-scraper` | Apify token, **paid** (~$0.0027/post, weekly cron) | Allowlist in `profiles.ts` (`@stockholm_samplesale`, `@stockholmsamplesale`); caption reuse, no OCR |
 | `kulturhuset` | Kulturhuset Stadsteatern kalender (Elasticsearch index) | Open, no key |
 | `kulturbiljetter` | Kulturbiljetter Events API v3 (`api/v3/events`) | API key (`Authorization: Token …`), request via info@kulturbiljetter.se |
 

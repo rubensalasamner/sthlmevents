@@ -35,11 +35,13 @@ istället för en filterstack. Tema: "Blå Timmen"
   9 unika events i första körningen efter dedup mot FB. Vecko-cadens,
   $0.30 hard-cap per run (se §3 Instagram-sektionen).
 - **Instagram profiles (Apify) LIVE** (2026-09-18): curated allowlist
-  (`stockholm_samplesale`), `apify/instagram-post-scraper`, caption-parser/
-  mapper. Första partial snapshot: **14 raw → 12 kvar** efter dedup
+  (`stockholm_samplesale`, `stockholmsamplesale` tillagd 2026-09-19 utan
+  caption-probe), `apify/instagram-post-scraper`, caption-parser/mapper.
+  Första partial snapshot: **14 raw → 12 kvar** efter dedup
   (5781→5777 totalt). Kostnad **$0.0405**. Street-extraktion fix (2026-09-18):
   `extractStreetAddress` + geocode street-first → **10/12 med coords**
   (DEDICATED/Marimekko/A Day’s March m.fl. på kartan). Ingår i vecko-cron.
+  Nytt konto syns efter nästa `snapshot:ig-profiles` / veckokörning.
 - **Favoritpåminnelser LIVE** (2026-09-16): lokala notiser via
   `expo-notifications` — dagen före 09:00 Stockholm + 2h innan start. Kräver
   **ny native build** (plugin + POST_NOTIFICATIONS). Permission frågas vid
@@ -57,7 +59,7 @@ istället för en filterstack. Tema: "Blå Timmen"
   (location-plugin).
 - **Progressiv intresse-onboarding LIVE** (2026-09-16): ingen cold-start-wizard.
   Efter 1 favorit **eller** 3 eventöppningar → sheet “What are you into?”
-  (8 chips, Not now). Soft boost i `orderFeed` (inte hårt filter). Kompakt
+  (9 chips inkl. market + popup, Not now). Soft boost i `orderFeed` (inte hårt filter). Kompakt
   “Vibes”-länk i Home-headern. Lagras lokalt
   (`sthlmevents.interests.v1`).
 - **Share → app/web LIVE** (2026-09-16): Share delar
@@ -72,7 +74,8 @@ istället för en filterstack. Tema: "Blå Timmen"
   inte fyra always-on rader. EventPresentation-strategier: hero / poster /
   compact (map peek). Eventdetalj följer Standard 2026-mocken: 3:2-kort
   med titel på bilden, when/title/venue, pris+kategori-chips, beskrivning
-  under fakta, sticky Directions + Tickets. Saved är en kronologisk lista
+  under fakta, Directions + Tickets under beskrivningen (inte sticky footer).
+  Saved är en kronologisk lista
   (This week / Later). Ranking, Blå Timmen, weekend-default, vibes och
   påminnelser oförändrade. Event-räknaren under Home-rubriken är gömd;
   5-tap på rubriken (__DEV__) visar källfilter + räkning som tidigare.
@@ -239,10 +242,16 @@ konton först efter caption-probe (ingen OCR som default).
   `docs/design/` (`theme-proposals`, `theme-lab`, `filter-lab` — Cursor
   canvas-filer, öppnas som `.canvas.tsx`).
 - **IA v2 (2026-09-18)**: Home är algoritmiska magazine-rails (hero + Free /
-  Markets / Nightlife / Music) — inte en 5k-lista. Explore är kartan med
+  Markets & fleas / Sales & pop-ups / Nightlife / Music) — inte en 5k-lista.
+  Explore är kartan med
   overlay-chip + detent-sheet. “See all” / sök är agenda (tid-grupperade
   compact rows). En `EventPresentation`-strategy per densitet; samma
   `useFilteredEvents` för alla tre ytor så filtret inte ljuger.
+- **Kategori-split market vs popup (2026-09-19)**: `market` = loppis/marknad/
+  flea; `popup` = sample sale/utförsäljning/brand pop-up. Separata magazine-
+  rails + interest-chips. Keyword-maps + FB/IG mapper använder
+  `inferCommerceCategory`; LLM-prompten säger samma sak. Syns i data efter
+  nästa snapshot.
 - **Filter**: sammanfattningschip öppnar sheet (datum, kategori, near-me,
   dev-source). Inte always-on-stack. `reset()` rensar till kontextuell default.
 - **Feed-ranking** (`src/utils/ranking.ts`): band → tier → sortMs → featured →
@@ -296,6 +305,19 @@ curl http://127.0.0.1:8081/status
 
 adb reverse tcp:8081 tcp:8081
 adb shell am start -a android.intent.action.VIEW -d "exp+sthlmevents://expo-development-client/?url=http%3A%2F%2Flocalhost%3A8081"
+```
+
+**Kortkommando (Windows):** `scripts/usb-dev.ps1` — samma tre steg.
+Från repo-roten i PowerShell: `.\scripts\usb-dev.ps1`
+Permanent alias (en gång):
+
+```powershell
+Add-Content $PROFILE @"
+
+function sthlmdev { & 'C:\path\to\sthlmevents\scripts\usb-dev.ps1' }
+"@
+# Byt path till din Windows-sökväg (t.ex. \\wsl$\...\sthlmevents\scripts\usb-dev.ps1
+# eller en klon under C:\...). Sedan: . $PROFILE
 ```
 
 Lyckat tecken i WSL: `Android Bundled …`. Appen öppnar Discover.

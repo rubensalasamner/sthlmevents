@@ -6,6 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AddToCalendarButton } from '@/components/add-to-calendar-button';
 import { DirectionsButton } from '@/components/directions-button';
 import { EventImage } from '@/components/event-image';
+import { ExpandableText } from '@/components/expandable-text';
 import { ExternalLink } from '@/components/external-link';
 import { FavoriteButton } from '@/components/favorite-button';
 import { Icon } from '@/components/icon';
@@ -60,6 +61,7 @@ export default function EventDetailScreen() {
 
   const hasDirections = Boolean(directionsQuery(event));
   const hasTickets = Boolean(event.ticketUrl);
+  const hasSticky = hasDirections || hasTickets;
   const when = isOngoing(event, new Date())
     ? formatEventWhen(event)
     : `${formatEventDate(event.startsAt)} · ${formatEventClock(event.startsAt)}`;
@@ -71,16 +73,20 @@ export default function EventDetailScreen() {
       <ScrollView
         contentContainerStyle={[
           styles.content,
-          { paddingTop: insets.top + Spacing.two, paddingBottom: Spacing.six },
+          {
+            paddingBottom: hasSticky
+              ? Spacing.four
+              : Math.max(insets.bottom, Spacing.two) + Spacing.four,
+          },
         ]}>
         <View style={styles.hero}>
           <EventImage
             uri={event.imageUrl}
             category={event.category}
             style={styles.image}
-            decodeWidth={480}
+            decodeWidth={720}
           />
-          <View style={styles.topBar}>
+          <View style={[styles.topBar, { paddingTop: insets.top + Spacing.two }]}>
             <ThemedView style={styles.circleButton}>
               <Pressable
                 accessibilityRole="button"
@@ -98,11 +104,6 @@ export default function EventDetailScreen() {
                 <FavoriteButton eventId={event.id} />
               </ThemedView>
             </View>
-          </View>
-          <View style={styles.scrim} pointerEvents="none">
-            <ThemedText type="subtitle" numberOfLines={2} style={styles.imageTitle}>
-              {event.title}
-            </ThemedText>
           </View>
         </View>
 
@@ -126,26 +127,27 @@ export default function EventDetailScreen() {
               <ThemedText type="smallBold">{formatCategory(event.category)}</ThemedText>
             </ThemedView>
           </View>
-          {event.description ? (
-            <ThemedText type="default">{event.description}</ThemedText>
-          ) : null}
+          {event.description ? <ExpandableText>{event.description}</ExpandableText> : null}
           <AddToCalendarButton event={event} />
         </View>
       </ScrollView>
 
-      {hasDirections || hasTickets ? (
-        <ThemedView style={[styles.sticky, { paddingBottom: Math.max(insets.bottom, Spacing.two) }]}>
+      {hasSticky ? (
+        <ThemedView
+          style={[styles.sticky, { paddingBottom: Math.max(insets.bottom, Spacing.two) }]}>
           {hasDirections ? <DirectionsButton event={event} /> : null}
           {event.ticketUrl ? (
-            <ExternalLink href={event.ticketUrl} asChild>
-              <Pressable style={({ pressed }) => [styles.ticketFlex, pressed && styles.pressed]}>
-                <ThemedView type="accent" style={styles.ticketButton}>
-                  <ThemedText type="smallBold" themeColor="accentInk">
-                    {ticketCtaLabel(event)}
-                  </ThemedText>
-                </ThemedView>
-              </Pressable>
-            </ExternalLink>
+            <View style={styles.ticketFlex}>
+              <ExternalLink href={event.ticketUrl} asChild>
+                <Pressable style={({ pressed }) => [styles.ticketPress, pressed && styles.pressed]}>
+                  <ThemedView type="accent" style={styles.ticketButton}>
+                    <ThemedText type="smallBold" themeColor="accentInk" numberOfLines={1}>
+                      {ticketCtaLabel(event)}
+                    </ThemedText>
+                  </ThemedView>
+                </Pressable>
+              </ExternalLink>
+            </View>
           ) : null}
         </ThemedView>
       ) : null}
@@ -165,11 +167,9 @@ const styles = StyleSheet.create({
     padding: Spacing.four,
   },
   content: {
-    gap: Spacing.four,
+    gap: Spacing.three,
   },
   hero: {
-    marginHorizontal: Spacing.four,
-    borderRadius: Spacing.four,
     overflow: 'hidden',
   },
   image: {
@@ -184,7 +184,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    padding: Spacing.two,
+    paddingHorizontal: Spacing.three,
+    paddingBottom: Spacing.two,
   },
   topActions: {
     flexDirection: 'row',
@@ -196,22 +197,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  scrim: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    paddingHorizontal: Spacing.three,
-    paddingTop: Spacing.five,
-    paddingBottom: Spacing.three,
-    backgroundColor: 'rgba(11, 14, 20, 0.45)',
-  },
-  imageTitle: {
-    fontFamily: Fonts.display,
-    fontSize: 22,
-    lineHeight: 26,
-    color: '#F2F5F9',
   },
   body: {
     paddingHorizontal: Spacing.four,
@@ -236,16 +221,26 @@ const styles = StyleSheet.create({
   },
   sticky: {
     flexDirection: 'row',
+    alignItems: 'stretch',
     gap: Spacing.two,
     paddingHorizontal: Spacing.three,
     paddingTop: Spacing.two,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopColor: 'rgba(151, 163, 182, 0.25)',
   },
   ticketFlex: {
     flex: 1,
+    minWidth: 0,
+  },
+  ticketPress: {
+    flexGrow: 1,
   },
   ticketButton: {
     alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 48,
     paddingVertical: Spacing.three,
+    paddingHorizontal: Spacing.three,
     borderRadius: Spacing.five,
   },
   pressed: {

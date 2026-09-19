@@ -61,9 +61,10 @@ export function formatPrice(priceSek: number | undefined): string {
  * Outbound CTA label. Sources whose page needs a (free) account to act —
  * RSVP, registration — say so; plain ticket links keep the purchase framing.
  */
+/** Short sticky-bar label — must fit a half-width pill on a phone. */
 export function ticketCtaLabel(event: Pick<StockholmEvent, 'requiresAccount' | 'priceSek'>): string {
-  if (event.requiresAccount) return 'View on organizer site';
-  if (event.priceSek === 0) return 'Event page';
+  if (event.requiresAccount) return 'Organizer';
+  if (event.priceSek === 0) return 'Open';
   return 'Tickets';
 }
 
@@ -81,8 +82,8 @@ const CATEGORY_LABELS: Record<EventCategory, string> = {
   nightlife: 'Nightlife',
   family: 'Family',
   shopping: 'Shopping',
-  market: 'Market',
-  popup: 'Pop-up',
+  market: 'Markets & fleas',
+  popup: 'Sales & pop-ups',
   comedy: 'Comedy',
   other: 'Other',
 };

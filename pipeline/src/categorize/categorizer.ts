@@ -33,12 +33,15 @@ type ChatCompletionResponse = {
 
 const SYSTEM_PROMPT =
   'You classify Swedish event listings for a Stockholm events app. For each ' +
-  'item pick exactly one category from the provided list. Every concrete ' +
-  'in-person activity fits some category — e.g. a guided tour is art, a talk ' +
-  'or book circle is theatre, a tasting is food — so only use "other" when ' +
-  'the text is too vague to tell what kind of event it is, or null when ' +
-  'genuinely unclear — never invent categories. Reply with JSON only: ' +
-  '{"categories": ["music", null, ...]} with the same order and length as the items.';
+  'item pick exactly one category from the provided list. Use "market" for ' +
+  'loppis, flea markets, and outdoor/indoor marknader; use "popup" for ' +
+  'sample sales, utförsäljning, warehouse sales, and brand pop-ups — never ' +
+  'mix those two. Every concrete in-person activity fits some category — ' +
+  'e.g. a guided tour is art, a talk or book circle is theatre, a tasting is ' +
+  'food — so only use "other" when the text is too vague to tell what kind ' +
+  'of event it is, or null when genuinely unclear — never invent categories. ' +
+  'Reply with JSON only: {"categories": ["music", null, ...]} with the same ' +
+  'order and length as the items.';
 
 /** Free LLM tiers are rate-limited per minute; pause between batches. */
 const BATCH_DELAY_MS = 2_500;

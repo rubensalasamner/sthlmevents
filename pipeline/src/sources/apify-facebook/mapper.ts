@@ -1,4 +1,5 @@
 import type { StockholmEvent } from '../../shared/event.js';
+import { inferCommerceCategory } from '../../shared/commerce-category.js';
 import { fallbackImageFor } from '../../shared/images.js';
 import { APIFY_FACEBOOK_SOURCE, type ApifyFbEventRaw } from './types.js';
 
@@ -85,7 +86,8 @@ export function mapFacebookEvent(raw: ApifyFbEventRaw): StockholmEvent {
     : undefined;
   const venueText = raw['location.name'] ?? '';
   const fbEventId = raw.url.split('/').filter(Boolean).pop() ?? raw.url;
-  const category = 'popup';
+  const category =
+    inferCommerceCategory(`${raw.name} ${raw.description ?? ''}`) ?? 'popup';
 
   return {
     id: `${APIFY_FACEBOOK_SOURCE}:${fbEventId}`,

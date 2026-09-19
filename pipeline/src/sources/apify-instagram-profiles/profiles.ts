@@ -7,6 +7,6 @@
  * 2026-09-17). resultsLimit is applied across the username list as the actor's
  * per-profile cap — keep the list short.
  */
-export const CURATED_IG_PROFILES = ['stockholm_samplesale'] as const;
+export const CURATED_IG_PROFILES = ['stockholm_samplesale', 'stockholmsamplesale'] as const;
 
 export type CuratedIgProfile = (typeof CURATED_IG_PROFILES)[number];

@@ -170,13 +170,15 @@ function pinSignature(
   showTitle: boolean,
   uiScale: number,
   favoriteIds: ReadonlySet<string>,
+  selectedId: string | null,
 ): string {
   if (pin.kind === 'cluster') {
     return `${pin.id}:${pin.count}:${uiScale}`;
   }
   const content = mapBubbleContent(pin.event, { showTitle });
   const favorite = favoriteIds.has(pin.event.id) ? '1' : '0';
-  return `${pin.id}:${content.primary}|${content.secondary ?? ''}:${pin.event.category}:${favorite}:${uiScale}`;
+  const selected = pin.event.id === selectedId ? '1' : '0';
+  return `${pin.id}:${content.primary}|${content.secondary ?? ''}:${pin.event.category}:${favorite}:${selected}:${uiScale}`;
 }
 
 function usePinIcons(
@@ -184,9 +186,12 @@ function usePinIcons(
   showTitle: boolean,
   uiScale: number,
   favoriteIds: ReadonlySet<string>,
+  selectedId: string | null,
 ) {
   const [icons, setIcons] = useState<ReadonlyMap<string, ImageRef>>(new Map());
-  const signature = pins.map((pin) => pinSignature(pin, showTitle, uiScale, favoriteIds)).join('||');
+  const signature = pins
+    .map((pin) => pinSignature(pin, showTitle, uiScale, favoriteIds, selectedId))
+    .join('||');
 
   useEffect(() => {
     let cancelled = false;
@@ -203,11 +208,15 @@ function usePinIcons(
               );
               return;
             }
+            const selected = pin.event.id === selectedId;
+            const scale = selected ? uiScale * 1.35 : uiScale;
+            const color = selected
+              ? Colors.dark.accent
+              : favoriteIds.has(pin.event.id)
+                ? Colors.dark.favorite
+                : CATEGORY_BADGE_COLORS[pin.event.category];
             const content = mapBubbleContent(pin.event, { showTitle });
-            const color = favoriteIds.has(pin.event.id)
-              ? Colors.dark.favorite
-              : CATEGORY_BADGE_COLORS[pin.event.category];
-            next.set(pin.id, await loadBubbleIcon(content, color, uiScale));
+            next.set(pin.id, await loadBubbleIcon(content, color, scale));
           } catch {
             // Leave marker without a custom icon if the PNG fails to decode.
           }
@@ -266,7 +275,7 @@ function NativeEventMap({
   const pinsRef = useRef(pins);
   pinsRef.current = pins;
   const { showTitles, uiScale } = useBubbleMode(camera.zoom, mappable.length);
-  const bubbleIcons = usePinIcons(pins, showTitles, uiScale, favoriteIds);
+  const bubbleIcons = usePinIcons(pins, showTitles, uiScale, favoriteIds, selectedId);
 
   const originLat = origin.latitude;
   const originLng = origin.longitude;
@@ -295,6 +304,7 @@ function NativeEventMap({
       pins.flatMap((pin) => {
         const icon = bubbleIcons.get(pin.id);
         if (!icon) return [];
+        const selected = pin.kind === 'event' && pin.event.id === selectedId;
         return [
           {
             id: pin.id,
@@ -302,10 +312,11 @@ function NativeEventMap({
             icon,
             showCallout: false as const,
             anchor: { x: 0.5, y: 1 },
+            zIndex: selected ? 10 : 0,
           },
         ];
       }),
-    [pins, bubbleIcons],
+    [pins, bubbleIcons, selectedId],
   );
 
   const annotations = useMemo(

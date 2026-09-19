@@ -31,7 +31,9 @@ export function DirectionsButton({ event }: DirectionsButtonProps) {
       style={({ pressed }) => [styles.flex, pressed && styles.pressed]}>
       <ThemedView type="backgroundElement" style={styles.button}>
         <Icon sf="map" material="location_on" size={18} color={theme.text} />
-        <ThemedText type="smallBold">Directions</ThemedText>
+        <ThemedText type="smallBold" numberOfLines={1}>
+          Directions
+        </ThemedText>
       </ThemedView>
     </Pressable>
   );
@@ -40,13 +42,16 @@ export function DirectionsButton({ event }: DirectionsButtonProps) {
 const styles = StyleSheet.create({
   flex: {
     flex: 1,
+    minWidth: 0,
   },
   button: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     gap: Spacing.two,
+    minHeight: 48,
     paddingVertical: Spacing.three,
+    paddingHorizontal: Spacing.three,
     borderRadius: Spacing.five,
   },
   pressed: {

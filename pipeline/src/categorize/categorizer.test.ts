@@ -48,6 +48,8 @@ describe('OpenAiCategorizer', () => {
     assert.match(system, /exactly one category from the provided list/);
     assert.match(system, /only use "other" when/);
     assert.match(system, /guided tour is art/);
+    assert.match(system, /Use "market" for/);
+    assert.match(system, /use "popup" for/);
     const user = JSON.parse(request.body.messages[1].content);
     assert.deepEqual(user.items, ['Konsert på Kafé 44']);
   });

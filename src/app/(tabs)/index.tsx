@@ -110,7 +110,12 @@ export default function HomeScreen() {
                 <EventPresentation event={magazine.hero} variant="hero" />
               </View>
               {magazine.rails.map((rail) => (
-                <MagazineRailRow key={rail.id} title={rail.title} events={rail.events} />
+                <MagazineRailRow
+                  key={rail.id}
+                  title={rail.title}
+                  events={rail.events}
+                  density={rail.density}
+                />
               ))}
               <Pressable
                 accessibilityRole="button"

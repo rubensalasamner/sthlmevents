@@ -3,8 +3,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { EventCategory } from '@/types/event';
 
 /**
- * Consumer-facing interest chips — a curated subset of EventCategory so the
- * sheet stays scannable (8 vibes, not every taxonomy leaf).
+ * Consumer-facing interest chips — curated subset of EventCategory so the
+ * sheet stays scannable (markets and sales are separate vibes).
  */
 export const INTEREST_CATEGORIES = [
   'music',
@@ -14,6 +14,7 @@ export const INTEREST_CATEGORIES = [
   'theatre',
   'comedy',
   'market',
+  'popup',
   'family',
 ] as const satisfies readonly EventCategory[];
 

@@ -10,13 +10,16 @@ import { formatEventClock } from '@/utils/format';
 type PosterTileProps = {
   event: StockholmEvent;
   width?: number;
+  /** Quiet time line under the title — featured rail only. */
+  showWhen?: boolean;
 };
 
 const DEFAULT_WIDTH = 148;
 
-/** 3:4 rail tile. Title lives under the image so fallback art still reads. */
-export function PosterTile({ event, width = DEFAULT_WIDTH }: PosterTileProps) {
+/** 3:4 rail tile. Title under the image; optional time for featured rails. */
+export function PosterTile({ event, width = DEFAULT_WIDTH, showWhen = false }: PosterTileProps) {
   const imageHeight = Math.round((width * 4) / 3);
+  const featured = width > DEFAULT_WIDTH;
 
   return (
     <View style={{ width, flexShrink: 0 }}>
@@ -30,12 +33,17 @@ export function PosterTile({ event, width = DEFAULT_WIDTH }: PosterTileProps) {
             transition={0}
           />
           <View style={styles.body}>
-            <ThemedText type="smallBold" themeColor="accent" numberOfLines={1}>
-              {formatEventClock(event.startsAt)}
-            </ThemedText>
-            <ThemedText type="smallBold" numberOfLines={2} style={styles.title}>
+            <ThemedText
+              type="smallBold"
+              numberOfLines={2}
+              style={[styles.title, featured && styles.titleFeatured]}>
               {event.title}
             </ThemedText>
+            {showWhen ? (
+              <ThemedText type="small" themeColor="textSecondary" numberOfLines={1}>
+                {formatEventClock(event.startsAt)}
+              </ThemedText>
+            ) : null}
           </View>
         </Pressable>
       </Link>
@@ -53,6 +61,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 18,
     letterSpacing: -0.2,
+  },
+  titleFeatured: {
+    fontSize: 16,
+    lineHeight: 20,
   },
   pressed: {
     opacity: 0.85,
