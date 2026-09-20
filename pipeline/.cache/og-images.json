@@ -105,7 +105,7 @@
   },
   "https://www.fredriksborghotel.se/": {
     "image": null,
-    "fetchedAt": 1789115228346
+    "fetchedAt": 1789894178240
   },
   "https://malaochskala.se": {
     "image": "https://malaochskala.se/wp-content/uploads/2025/01/mala-och-skala-14.webp",
@@ -205,7 +205,7 @@
   },
   "https://toursofstockholm.com/tour/old-town-tour/": {
     "image": null,
-    "fetchedAt": 1789500640064
+    "fetchedAt": 1789894180419
   },
   "https://tumbabruksmuseum.se/utstallningar/fran-spargris-till-swish-100-ar-med-lyckoslanten/": {
     "image": "https://tumbabruksmuseum.se/wp-content/uploads/2026/02/tumba-bruksmuseum_fran-spargris-till-swish_lyckoslanten_utstallning_barnfamilj_1920x1080.avif",
@@ -253,7 +253,7 @@
   },
   "https://toursofstockholm.com/tour/stockholm-food-tour/": {
     "image": null,
-    "fetchedAt": 1789500640940
+    "fetchedAt": 1789894179522
   },
   "https://judiskamuseet.se": {
     "image": null,
@@ -325,7 +325,7 @@
   },
   "https://polkabat.se": {
     "image": null,
-    "fetchedAt": 1789503621304
+    "fetchedAt": 1789894177675
   },
   "https://kanotcenter.com/tours/kayak-tour-stockholm-archipelago/": {
     "image": "https://kanotcenter.com/wp-content/uploads/2022/01/skargardens-kanotcenter-kayak-tour-5.jpg",
@@ -1329,7 +1329,7 @@
   },
   "https://taysta.se/provningar/calvadosprovning/stockholm": {
     "image": null,
-    "fetchedAt": 1789500646472
+    "fetchedAt": 1789894179284
   },
   "https://www.berwaldhallen.se/konsert/niklas-radioapan-5?utm_source=visitstockholm&utm_medium=visitstockholm&utm_campaign=visitstockholm": {
     "image": "https://cdn-production.berwaldhallen.se/wp-content/uploads/2026/08/28141038/v.37_Radioapan_tidsmaskin_1920x1280.jpg",
@@ -1377,7 +1377,7 @@
   },
   "https://www.nationalmuseum.se/en/exhibitions/upcoming-exhibitions/colour": {
     "image": null,
-    "fetchedAt": 1789500648717
+    "fetchedAt": 1789894178510
   },
   "https://taysta.se/provningar/vinprovning/stockholm": {
     "image": null,
@@ -2477,7 +2477,7 @@
   },
   "https://taysta.se/vandringar/barrunda/stockholm": {
     "image": null,
-    "fetchedAt": 1789115251235
+    "fetchedAt": 1789894179868
   },
   "https://secure.tickster.com/8pucaj3kuc096k8": {
     "image": null,
@@ -18102,5 +18102,93 @@
   "https://fkpscorpio.se/evenemang/detail/william-shakespeares/": {
     "image": "https://fkpscorpio.se/fileadmin/_processed_/9/2/csm_R_J-FKPwebb-2000x1200_635a9b4eb3.jpg",
     "fetchedAt": 1789806140638
+  },
+  "https://www.meetup.com/ufo-consciousness-book-club-stockholm/events/316243018/": {
+    "image": "https://secure.meetupstatic.com/photos/event/e/9/2/600_535803730.jpeg",
+    "fetchedAt": 1789894177856
+  },
+  "https://lu.ma/y6bexb2h": {
+    "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/92/0d3074a5-a447-4ffb-a674-6669d1149d9d.png",
+    "fetchedAt": 1789894177871
+  },
+  "https://www.meetup.com/nordic-society/events/316056068/": {
+    "image": "https://secure.meetupstatic.com/photos/event/9/3/5/b/600_535177723.jpeg",
+    "fetchedAt": 1789894177900
+  },
+  "https://www.meetup.com/sthlm-sports-outdoors/events/316622809/": {
+    "image": "https://secure.meetupstatic.com/photos/event/8/7/9/3/600_452974707.jpeg",
+    "fetchedAt": 1789894177978
+  },
+  "https://www.meetup.com/stockholm-dance-meetup/events/312620431/": {
+    "image": "https://secure.meetupstatic.com/photos/event/8/8/1/600_535742177.jpeg",
+    "fetchedAt": 1789894177980
+  },
+  "https://www.meetup.com/stockholm-pub-crawl/events/316406473/": {
+    "image": "https://secure.meetupstatic.com/photos/event/3/e/6/f/600_529935983.jpeg",
+    "fetchedAt": 1789894178014
+  },
+  "https://lu.ma/tcjb3hjq": {
+    "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/ep/d269372c-e1c5-4b32-8113-e01cef22cfa9.png",
+    "fetchedAt": 1789894178111
+  },
+  "https://www.meetup.com/stockholm-pub-crawl/events/316434656/": {
+    "image": "https://secure.meetupstatic.com/photos/event/3/e/6/f/600_529935983.jpeg",
+    "fetchedAt": 1789894178140
+  },
+  "https://www.meetup.com/nordic-society/events/316303641/": {
+    "image": "https://secure.meetupstatic.com/photos/event/5/2/9/0/600_534861136.jpeg",
+    "fetchedAt": 1789894178198
+  },
+  "https://www.meetup.com/sthlm-sports-outdoors/events/316622625/": {
+    "image": "https://secure.meetupstatic.com/photos/event/8/7/9/3/600_452974707.jpeg",
+    "fetchedAt": 1789894178210
+  },
+  "https://www.meetup.com/stockholm-expats-events/events/316563563/": {
+    "image": "https://secure.meetupstatic.com/photos/event/e/1/f/6/600_528177846.jpeg",
+    "fetchedAt": 1789894178268
+  },
+  "https://allevents.in/stockholm/mamma-mia-the-party/210005365586418": {
+    "image": "https://cdn-az.allevents.in/events6/banners/e8c85e8e6328d70ce7d7614b6f0bf2d7d6faf3d9a80a8e5bd06dfa1adeef6350-rimg-w1024-h576-dca25e37-gmir.jpg?v=1774569025",
+    "fetchedAt": 1789894178273
+  },
+  "https://www.meetup.com/stockholm-stoic-meetup/events/316609891/": {
+    "image": "https://secure.meetupstatic.com/photos/event/8/7/2/0/600_536194592.jpeg",
+    "fetchedAt": 1789894178351
+  },
+  "https://www.meetup.com/frescati-badminton-meetup-group/events/316443354/": {
+    "image": "https://secure.meetupstatic.com/photos/event/1/4/1/5/600_489605141.jpeg",
+    "fetchedAt": 1789894178434
+  },
+  "https://www.meetup.com/stockholm-creative-people-meetup/events/316383873/": {
+    "image": "https://secure.meetupstatic.com/photos/event/b/d/5/b/600_536088475.jpeg",
+    "fetchedAt": 1789894178496
+  },
+  "https://www.meetup.com/shutupandwritestockholm/events/316540290/": {
+    "image": "https://secure.meetupstatic.com/photos/event/d/1/6/5/600_533213605.jpeg",
+    "fetchedAt": 1789894178498
+  },
+  "https://www.meetup.com/stockholm-rust/events/316570423/": {
+    "image": "https://secure.meetupstatic.com/photos/event/3/c/4/9/600_535275433.jpeg",
+    "fetchedAt": 1789894178535
+  },
+  "https://allevents.in/manage/tickets/book.php?hide_details=1&event_id=80003784529026": {
+    "image": null,
+    "fetchedAt": 1789894178557
+  },
+  "https://lu.ma/sth-hack": {
+    "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/ji/ce4ff719-5a0c-44b6-a249-63272fa2bc39.png",
+    "fetchedAt": 1789894178608
+  },
+  "https://www.meetup.com/sthlm-sports-outdoors/events/316623242/": {
+    "image": "https://secure.meetupstatic.com/photos/event/8/7/9/3/600_452974707.jpeg",
+    "fetchedAt": 1789894178696
+  },
+  "https://allevents.in/stockholm/max-raabe-andamp;-palast-orchester-max-raabe-in-stockholm/3300029499852913": {
+    "image": "https://cdn-az.allevents.in/events7/banners/4e304710-f1a5-11f0-b926-776f0d719f77-rimg-w640-h640-dc1f7b48-gmir.jpg?v=1768435273",
+    "fetchedAt": 1789894178746
+  },
+  "https://ekonomiskamuseet.se/pa-gang/hostlov-pengarnas-hemligheter/": {
+    "image": "https://ekonomiskamuseet.se/wp-content/uploads/2026/05/Ekonomiska-museet_barn_pengar.avif",
+    "fetchedAt": 1789894179356
   }
 }

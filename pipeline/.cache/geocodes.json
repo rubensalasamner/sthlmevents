@@ -1128,7 +1128,7 @@
   },
   "Fartyget Vieille Montagne, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789500586913
+    "fetchedAt": 1789894169272
   },
   "Täby, Stockholm, Sweden": {
     "value": {
@@ -2541,5 +2541,40 @@
       "longitude": 17.9568418
     },
     "fetchedAt": 1789805987488
+  },
+  "Timmermansgatan 46, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3142974,
+      "longitude": 18.0612305
+    },
+    "fetchedAt": 1789894170884
+  },
+  "Hornsgatan 66b, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3164633,
+      "longitude": 18.0436459
+    },
+    "fetchedAt": 1789894172613
+  },
+  "Norrlandsgatan 18, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3350631,
+      "longitude": 18.0712495
+    },
+    "fetchedAt": 1789894173865
+  },
+  "Långholmsmuren 21, 11733, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3219228,
+      "longitude": 18.0258021
+    },
+    "fetchedAt": 1789894175495
+  },
+  "Tegelviksgatan 40, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3093862,
+      "longitude": 18.0968174
+    },
+    "fetchedAt": 1789894177084
   }
 }
