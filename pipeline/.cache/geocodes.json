@@ -2576,5 +2576,54 @@
       "longitude": 18.0968174
     },
     "fetchedAt": 1789894177084
+  },
+  "Götgatan 15, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3182033,
+      "longitude": 18.0713838
+    },
+    "fetchedAt": 1789982284661
+  },
+  "Roslagsgatan 62, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3507377,
+      "longitude": 18.0559325
+    },
+    "fetchedAt": 1789982286128
+  },
+  "Odengatan 80, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3414259,
+      "longitude": 18.0444853
+    },
+    "fetchedAt": 1789982287387
+  },
+  "Odengatan 81, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3420483,
+      "longitude": 18.0481949
+    },
+    "fetchedAt": 1789982288877
+  },
+  "Folkungagatan 125, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.315982,
+      "longitude": 18.0889766
+    },
+    "fetchedAt": 1789982290242
+  },
+  "Arenaslingan 9, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.2921065,
+      "longitude": 18.0831699
+    },
+    "fetchedAt": 1789982291773
+  },
+  "Hantverkargatan 1, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3274942,
+      "longitude": 18.0542148
+    },
+    "fetchedAt": 1789982293282
   }
 }

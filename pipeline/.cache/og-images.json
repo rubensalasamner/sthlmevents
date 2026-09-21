@@ -13,7 +13,7 @@
   },
   "https://historiska.se/utstallningar/ny-utstallning-vikingar-2021/": {
     "image": null,
-    "fetchedAt": 1789720214930
+    "fetchedAt": 1789982293975
   },
   "https://www.sightseeingride.com/en/tours/stockholm-archipelago-tour/": {
     "image": "https://www.sightseeingride.com/uploads/og-image-sightseeing-ride.avif",
@@ -137,7 +137,7 @@
   },
   "https://gustavsbergsporslinsmuseum.se/en/what-to-see-and-do/the-joyful-world-of-stig-lindberg": {
     "image": null,
-    "fetchedAt": 1789503621313
+    "fetchedAt": 1789982294447
   },
   "https://stockholmguidedtours.com/stockholm-walking-tours/sodermalm-heights-city-walk-with-a-view": {
     "image": "https://vnankvhzxsqxxwrziwww.supabase.co/storage/v1/object/public/images/sag/S_dermalmstorg_iStock-458722737-2.webp",
@@ -8557,7 +8557,7 @@
   },
   "https://www.ticketmaster.se/event/good-charlotte-motel-du-cap-eu-uk-tour-platinum-tickets-tickets/1861192020?language=en-us": {
     "image": null,
-    "fetchedAt": 1789500676960
+    "fetchedAt": 1789982296663
   },
   "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32314/131673/": {
     "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32314/131673/Kulturhuset%20Stadsteatern",
@@ -8693,7 +8693,7 @@
   },
   "https://www.ticketmaster.se/event/don-toliver-nitrous-octane-world-tour-leg-2-platinum-tickets-tickets/932410413?language=en-us": {
     "image": null,
-    "fetchedAt": 1789500677608
+    "fetchedAt": 1789982296814
   },
   "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32413/132145/": {
     "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32413/132145/Kulturhuset%20Stadsteatern",
@@ -9853,7 +9853,7 @@
   },
   "https://www.ticketmaster.se/event/bryson-tiller-presents-the-neo-trapsoul-tour-platinum-tickets-tickets/1865126368?language=en-us": {
     "image": null,
-    "fetchedAt": 1789500681926
+    "fetchedAt": 1789982297321
   },
   "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/1048242312?language=en-us": {
     "image": null,
@@ -10469,7 +10469,7 @@
   },
   "https://www.ticketmaster.se/event/noah-kahan-the-great-divide-world-tour-platinum-tickets-tickets/49217657?language=en-us": {
     "image": null,
-    "fetchedAt": 1789500684503
+    "fetchedAt": 1789982297432
   },
   "https://biljett.debaser.se/p5ttuvrdl5le0fe": {
     "image": null,
@@ -17409,7 +17409,7 @@
   },
   "https://www.ticketmaster.se/artist/mamma-mia-the-party-biljetter/962519?language=en-us": {
     "image": null,
-    "fetchedAt": 1789635299852
+    "fetchedAt": 1789982294933
   },
   "https://www.meetup.com/the_fantasy_bookclub/events/316481286/": {
     "image": "https://secure.meetupstatic.com/photos/event/1/6/f/2/600_530405874.jpeg",
@@ -17464,16 +17464,16 @@
     "fetchedAt": 1789635300448
   },
   "https://www.debaser.se/events/jared-james-nichols": {
-    "image": null,
-    "fetchedAt": 1789635300474
+    "image": "https://admin.debaser.se/uploads/img/30216_20260623093710.png",
+    "fetchedAt": 1789982295261
   },
   "https://cardexposweden.carrd.co/": {
     "image": "https://cardexposweden.carrd.co/assets/images/card.jpg?v=416b8d4f",
     "fetchedAt": 1789635300504
   },
   "https://www.debaser.se/events/mulaa-joans": {
-    "image": null,
-    "fetchedAt": 1789635300536
+    "image": "https://admin.debaser.se/uploads/img/30054_20260518111328.jpg",
+    "fetchedAt": 1789982295013
   },
   "https://lu.ma/jr9gwcr7": {
     "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/t0/3603914e-dc81-475a-8196-4405531f215f.png",
@@ -17492,8 +17492,8 @@
     "fetchedAt": 1789635300669
   },
   "https://www.debaser.se/events/bass-drum-of-death": {
-    "image": null,
-    "fetchedAt": 1789635300725
+    "image": "https://admin.debaser.se/uploads/img/30259_20260715111134.jpg",
+    "fetchedAt": 1789982295745
   },
   "https://lu.ma/72olzj6f": {
     "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/2b/c3860ba1-2845-4919-84a8-a65f0e12a578.png",
@@ -17508,8 +17508,8 @@
     "fetchedAt": 1789635300781
   },
   "https://www.debaser.se/events/dizzee-rascal": {
-    "image": null,
-    "fetchedAt": 1789635300885
+    "image": "https://admin.debaser.se/uploads/img/29637_20260603085950.jpeg",
+    "fetchedAt": 1789982296119
   },
   "https://kulturbiljetter.se/evenemang/9043/spelmansmusik-på-åsen-säsongskort": {
     "image": "https://kulturbiljetter.se/storage/2cf0b5b12291f3f36c6a-thumb2.png",
@@ -17549,7 +17549,7 @@
   },
   "https://livrustkammaren.se/utstallningar/i-kunglig-tjanst-drabanter-hovfroknar-och-lakejer/": {
     "image": null,
-    "fetchedAt": 1789635302450
+    "fetchedAt": 1789982297221
   },
   "https://berns.se/calendar/candlelight-the-best-of-hans-zimmer/": {
     "image": "https://berns.se/wp-content/uploads/2026/05/571746-Candlelight_MEDIAKIT_UNITED-STATES_2024_01_25_The-Fleet-Science-Center_SAN-DIEGO_US_06-e4d5b0-original-1737470330-ezgif.com-jpg-to-webp-converter-1535x1024.webp",
@@ -17564,36 +17564,36 @@
     "fetchedAt": 1789635302600
   },
   "https://www.debaser.se/events/elgrandetoto": {
-    "image": null,
-    "fetchedAt": 1789635302656
+    "image": "https://admin.debaser.se/uploads/img/29725_20260713095758.png",
+    "fetchedAt": 1789982297133
   },
   "https://www.axs.com/se/events/1438952/tove-lo-tickets?__cf_chl_rt_tk=49A.a.w37iNJ0bLgvfRNfRyFsezz4Y4HuCzXzxVr9bw-1779104883-1.0.1.1-1li7UzsNWdsfzipTdKjpbXL5agDs1wjlHtcztn4RyaM": {
     "image": null,
-    "fetchedAt": 1789635302742
+    "fetchedAt": 1789982297296
   },
   "https://www.debaser.se/events/c-o-f-f-i-n": {
-    "image": null,
-    "fetchedAt": 1789635302763
+    "image": "https://admin.debaser.se/uploads/img/30153_20260601093643.jpg",
+    "fetchedAt": 1789982297528
   },
   "https://www.debaser.se/events/dea-matrona-cb85a": {
-    "image": null,
-    "fetchedAt": 1789635302865
+    "image": "https://admin.debaser.se/uploads/img/30221_20260701083914.jpeg",
+    "fetchedAt": 1789982297737
   },
   "https://www.debaser.se/events/dead-poet-society": {
-    "image": null,
-    "fetchedAt": 1789635302971
+    "image": "https://admin.debaser.se/uploads/img/30122_20260629095655.jpg",
+    "fetchedAt": 1789982298258
   },
   "https://syfestivalen.se/": {
     "image": null,
-    "fetchedAt": 1789635303063
+    "fetchedAt": 1789982297338
   },
   "https://www.ticketmaster.se/artist/teddy-swims-tickets/1020380": {
     "image": null,
-    "fetchedAt": 1789635303071
+    "fetchedAt": 1789982297779
   },
   "https://secure.tickster.com/sv/f0y1l8pd2dxz118/eventsaleclosed": {
     "image": null,
-    "fetchedAt": 1789635303227
+    "fetchedAt": 1789982298640
   },
   "https://www.thielskagalleriet.se/utstallningar/kommande-utstallningar/": {
     "image": "https://www.thielskagalleriet.se/wp-content/uploads/2013/10/Thielska_Galleriet.jpg",
@@ -17601,7 +17601,7 @@
   },
   "https://aviciiarena.se/en/events/music-show/benjamin-ingrosso-2/": {
     "image": null,
-    "fetchedAt": 1789635303633
+    "fetchedAt": 1789982297937
   },
   "https://www.fasching.se/miles-davis-100-ar-milestones-kind-of-blue-2026-10-28/#2026-10-28T20-00": {
     "image": "https://www.fasching.se/wp-content/uploads/2026/09/fm_fasching-2026-10-28-miles-davis-100-r-1200x628.png",
@@ -17616,16 +17616,16 @@
     "fetchedAt": 1789635303810
   },
   "https://www.debaser.se/events/john-vincent-iii-b24dc": {
-    "image": null,
-    "fetchedAt": 1789635303827
+    "image": "https://admin.debaser.se/uploads/img/29013_20260216083450.jpeg",
+    "fetchedAt": 1789982298035
   },
   "https://www.livenation.se/event/morgan-jay-la-dolce-vita-tour-stockholm-tickets-edp1676235": {
     "image": "https://dynamicmedia.livenationinternational.com/e/d/l/a8731dba-2b1b-4179-af38-9f3323882e60.jpg",
     "fetchedAt": 1789635303968
   },
   "https://kanotcenter.com/tours/hike-cooking-floating/": {
-    "image": null,
-    "fetchedAt": 1789635303982
+    "image": "https://kanotcenter.com/wp-content/uploads/2025/11/floating-in-stockholm-archipelago-02.jpg",
+    "fetchedAt": 1789982294412
   },
   "https://www.livenation.se/olivia-rodrigo-tickets-adp1357074": {
     "image": "https://dynamicmedia.livenationinternational.com/o/a/a/024e825c-9691-4b66-884b-cde6271c7fe0.jpg",
@@ -17641,11 +17641,11 @@
   },
   "https://scenkonstmuseet.se/att-gora-det-omojliga-fem-decennier-med-efva-lilja/": {
     "image": null,
-    "fetchedAt": 1789635306506
+    "fetchedAt": 1789982301012
   },
   "https://www.scandichotels.com/en/hotels/downtown-camper-by-scandic": {
     "image": null,
-    "fetchedAt": 1789635309559
+    "fetchedAt": 1789982300354
   },
   "https://www.meetup.com/stockholm-intj-meetup/events/315825736/": {
     "image": "https://secure.meetupstatic.com/photos/event/2/1/5/2/600_471548530.jpeg",
@@ -17697,7 +17697,7 @@
   },
   "https://ejbla.com/sv/c/5116": {
     "image": null,
-    "fetchedAt": 1789720215456
+    "fetchedAt": 1789982294961
   },
   "https://www.instagram.com/tropical_pirate_nights": {
     "image": "https://static.cdninstagram.com/rsrc.php/v4/yD/r/R0fBIMurK8v.png",
@@ -17720,8 +17720,8 @@
     "fetchedAt": 1789720215771
   },
   "https://artipelag.se/pa-gang/aktivitet/after-hours-onsdagskvallar-pa-artipelag/": {
-    "image": null,
-    "fetchedAt": 1789720215778
+    "image": "https://artipelag.se/app/uploads/2026/09/Artipelag_After-Hours_1920x1080_Stillbild_2026-scaled.webp",
+    "fetchedAt": 1789982295039
   },
   "https://elverket.com/produktioner/prehistoric-planet-discovering-dinosaurs": {
     "image": "https://cdn.sanity.io/images/nvb5rzwz/production/3eee5f8bc63bae22066f769263e99ffecc3f275a-2000x1414.png?rect=0,182,2000,1050&w=1200&h=630&fit=crop&auto=format",
@@ -17745,11 +17745,11 @@
   },
   "https://ra.co/events/2539816": {
     "image": null,
-    "fetchedAt": 1789720216239
+    "fetchedAt": 1789982295797
   },
   "https://www.konsthallc.se/en/program/messiah": {
     "image": null,
-    "fetchedAt": 1789720216249
+    "fetchedAt": 1789982295443
   },
   "https://allevents.in/stockholm/masego-fix-your-face-tour/210001331311061": {
     "image": "https://cdn-az.allevents.in/events9/banners/190a738024f3d47560b63b03e0ce46357d16c9be93e463b7f3075ab8e3da36fe-rimg-w1024-h576-dc5f4237-gmir.jpg?v=1781320291",
@@ -17773,7 +17773,7 @@
   },
   "https://www.dougseegersmusic.com/": {
     "image": null,
-    "fetchedAt": 1789720216513
+    "fetchedAt": 1789982296437
   },
   "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32698/134811/": {
     "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32698/134811/Kulturhuset%20Stadsteatern",
@@ -17793,7 +17793,7 @@
   },
   "https://seniorfestivalen.se/stockholm/": {
     "image": null,
-    "fetchedAt": 1789720217187
+    "fetchedAt": 1789982296546
   },
   "https://stadsmuseet.stockholm/aktuellt/kalendarium/2026/10/spokvisning-for-hela-familjen/": {
     "image": "https://stadsmuseet.stockholm/optimized/large/globalassets/aktuellt/kalendarium/stadsmuseet/hosten-2026/spok-2.jpg",
@@ -17805,7 +17805,7 @@
   },
   "https://stadsmuseet.stockholm/aktuellt/?t=event&c=367": {
     "image": null,
-    "fetchedAt": 1789720217924
+    "fetchedAt": 1789982298099
   },
   "https://stadsmuseet.stockholm/aktuellt/kalendarium/2026/10/rollspel-pa-hostlovet/": {
     "image": "https://stadsmuseet.stockholm/optimized/large/globalassets/aktuellt/kalendarium/stadsmuseet/var-2026/sverol_miljo_48.jpg",
@@ -17821,7 +17821,7 @@
   },
   "https://judiskamuseet.se/kalendarium/": {
     "image": null,
-    "fetchedAt": 1789720218428
+    "fetchedAt": 1789982297211
   },
   "https://musikal-30-dagar-kvar.lovable.app/": {
     "image": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/06a16af807d0f23ce1439c27dc2df51a/id-preview-e2b1bef8--5c3acd7f-512e-49e1-a470-0cfc2f2bcb52.lovable.app-1789036711264.png",
@@ -18190,5 +18190,93 @@
   "https://ekonomiskamuseet.se/pa-gang/hostlov-pengarnas-hemligheter/": {
     "image": "https://ekonomiskamuseet.se/wp-content/uploads/2026/05/Ekonomiska-museet_barn_pengar.avif",
     "fetchedAt": 1789894179356
+  },
+  "https://www.meetup.com/stockholm-science-and-spirituality-meetup-group/events/316371425/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/b/9/c/600_535751164.jpeg",
+    "fetchedAt": 1789982294294
+  },
+  "https://www.meetup.com/japanese-chess-in-stockholm/events/316359624/": {
+    "image": "https://secure.meetupstatic.com/photos/event/5/7/6/d/600_457042381.jpeg",
+    "fetchedAt": 1789982294318
+  },
+  "https://www.meetup.com/stockholm-riichi/events/316371091/": {
+    "image": "https://secure.meetupstatic.com/photos/event/9/3/8/8/600_535597768.jpeg",
+    "fetchedAt": 1789982294336
+  },
+  "https://www.meetup.com/stockholm-speakers-club/events/316543246/": {
+    "image": "https://secure.meetupstatic.com/photos/event/4/5/4/a/600_526457738.jpeg",
+    "fetchedAt": 1789982294337
+  },
+  "https://www.meetup.com/library/events/316384274/": {
+    "image": "https://secure.meetupstatic.com/photos/event/6/c/6/5/600_535887749.jpeg",
+    "fetchedAt": 1789982294352
+  },
+  "https://www.meetup.com/klustret/events/316480850/": {
+    "image": "https://secure.meetupstatic.com/photos/event/5/6/a/e/600_536062190.jpeg",
+    "fetchedAt": 1789982294417
+  },
+  "https://www.meetup.com/meet-stockholm/events/316609792/": {
+    "image": "https://secure.meetupstatic.com/photos/event/b/f/b/a/600_535849082.jpeg",
+    "fetchedAt": 1789982294561
+  },
+  "https://www.meetup.com/sans-studio-paint-and-sip/events/316513342/": {
+    "image": "https://secure.meetupstatic.com/photos/event/d/4/7/4/600_536154388.jpeg",
+    "fetchedAt": 1789982294734
+  },
+  "https://allevents.in/stockholm/candlelight-tribute-to-adele-stockholm/200030348287801": {
+    "image": "https://cdn-az.allevents.in/events7/banners/77529418489c5c6923ec3a14f4533dac0540d7052eb46151bc66f8cfd6147dc9-rimg-w768-h768-dc080808-gmir?v=1788181593",
+    "fetchedAt": 1789982294966
+  },
+  "https://www.meetup.com/sthlm-outdoor/events/316632431/": {
+    "image": "https://secure.meetupstatic.com/photos/event/6/d/b/c/600_502888092.jpeg",
+    "fetchedAt": 1789982294997
+  },
+  "https://www.meetup.com/frescati-badminton-meetup-group/events/316457819/": {
+    "image": "https://secure.meetupstatic.com/photos/event/6/d/9/7/600_519628055.jpeg",
+    "fetchedAt": 1789982295530
+  },
+  "https://www.meetup.com/meetup-group-cqgqwmcw/events/316639939/": {
+    "image": "https://secure.meetupstatic.com/photos/event/3/7/9/2/600_536234226.jpeg",
+    "fetchedAt": 1789982295720
+  },
+  "https://www.meetup.com/psychology-discussion-fika/events/316586401/": {
+    "image": "https://secure.meetupstatic.com/photos/event/7/7/5/e/600_533970558.jpeg",
+    "fetchedAt": 1789982295821
+  },
+  "https://www.vrak.se/sv/besok-museet/utstallningar/vikingar-fore-vikingar/": {
+    "image": "https://www.vrak.se/siteassets/start-vrak/bilder/besok---bilder/utstallningar-bilder/vikings-before-vikings---bilder/vrak_vikings-before-vikings_interaktiv-spade_foto_birgit-walsh.jpg/width1200w",
+    "fetchedAt": 1789982296055
+  },
+  "http://www.operacongrazia.com": {
+    "image": null,
+    "fetchedAt": 1789982296095
+  },
+  "https://allevents.in/stockholm/hot-wheels-live-in-action-stockholm/200030286929304": {
+    "image": "https://cdn-az.allevents.in/events5/banners/43fea9c29d99603c4c5e7b4689ee94cc1dfe642f2cc192bd9855c5df8a9f40e5-rimg-w1200-h628-dc080808-gmir?v=1786768269",
+    "fetchedAt": 1789982296170
+  },
+  "https://fb.me/e/6xOe2rx0K": {
+    "image": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1621194806714049",
+    "fetchedAt": 1789982296366
+  },
+  "https://fb.me/e/4NZUS3o6S": {
+    "image": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=2148124332447444",
+    "fetchedAt": 1789982296500
+  },
+  "https://stockholmbeautyweek.se/kontakt/": {
+    "image": null,
+    "fetchedAt": 1789982296748
+  },
+  "https://confidencen.se/event/alltid-densamme-drottning-kristina-av-sverige-400-ar-event/": {
+    "image": null,
+    "fetchedAt": 1789982297663
+  },
+  "https://confidencen.se/event/adventskonsert-i-barockprakt/": {
+    "image": null,
+    "fetchedAt": 1789982298287
+  },
+  "https://tickets.nortic.se/ticket/event/85559": {
+    "image": "https://branding.nortic.io/organizer/421/event/85559?redirect",
+    "fetchedAt": 1789982298351
   }
 }
