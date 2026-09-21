@@ -2625,5 +2625,23 @@
       "longitude": 18.0542148
     },
     "fetchedAt": 1789982293282
+  },
+  "Söder Mälarstrand 25, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3210447,
+      "longitude": 18.0559517
+    },
+    "fetchedAt": 1789982444662
+  },
+  "Hägerstensvägen 100, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3059297,
+      "longitude": 18.0065703
+    },
+    "fetchedAt": 1789982445998
+  },
+  "St Eriksgatan 79, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1789982447504
   }
 }
