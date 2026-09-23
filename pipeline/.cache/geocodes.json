@@ -1128,7 +1128,7 @@
   },
   "Fartyget Vieille Montagne, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789894169272
+    "fetchedAt": 1790153423728
   },
   "Täby, Stockholm, Sweden": {
     "value": {
@@ -1897,7 +1897,7 @@
   },
   "Bottom floor of Kulturhuset, Sergels Torg, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789500560983
+    "fetchedAt": 1790153413976
   },
   "Kafé Plattan, Stockholm, Sweden": {
     "value": {
@@ -2334,7 +2334,7 @@
   },
   "Söder Mälarstrand kajplats 15, 118 20 Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1789729865507
+    "fetchedAt": 1790153422288
   },
   "Narvavägen 17, Stockholm, Sweden": {
     "value": {
@@ -2678,5 +2678,47 @@
       "longitude": 18.0288121
     },
     "fetchedAt": 1790066992898
+  },
+  "Sankt Eriksgatan 119, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3476622,
+      "longitude": 18.0400704
+    },
+    "fetchedAt": 1790153412724
+  },
+  "Wallingatan 2, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3375849,
+      "longitude": 18.0586651
+    },
+    "fetchedAt": 1790153415372
+  },
+  "Kungsholms strand 167, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3383355,
+      "longitude": 18.0248134
+    },
+    "fetchedAt": 1790153416819
+  },
+  "kärsön ö, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.323116,
+      "longitude": 17.9067037
+    },
+    "fetchedAt": 1790153418215
+  },
+  "Mejeriv. 4,, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3134022,
+      "longitude": 18.0250816
+    },
+    "fetchedAt": 1790153419680
+  },
+  "Turegatan 1, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.335134,
+      "longitude": 18.0745777
+    },
+    "fetchedAt": 1790153420930
   }
 }

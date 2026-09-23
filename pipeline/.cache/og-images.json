@@ -25,7 +25,7 @@
   },
   "http://flatenbastun.se/allmanhetens-bastupass/": {
     "image": null,
-    "fetchedAt": 1789805992821
+    "fetchedAt": 1790153424661
   },
   "https://iicstoccolma.esteri.it/sv/news/dall_istituto/2026/04/blowing-figures-into-space/": {
     "image": "https://iicstoccolma.esteri.it/wp-content/uploads/2026/04/Davide-Rivalta-Stockholm-First-Highlights-38.jpg",
@@ -105,7 +105,7 @@
   },
   "https://www.fredriksborghotel.se/": {
     "image": null,
-    "fetchedAt": 1789894178240
+    "fetchedAt": 1790153424400
   },
   "https://malaochskala.se": {
     "image": "https://malaochskala.se/wp-content/uploads/2025/01/mala-och-skala-14.webp",
@@ -205,7 +205,7 @@
   },
   "https://toursofstockholm.com/tour/old-town-tour/": {
     "image": null,
-    "fetchedAt": 1789894180419
+    "fetchedAt": 1790153424768
   },
   "https://tumbabruksmuseum.se/utstallningar/fran-spargris-till-swish-100-ar-med-lyckoslanten/": {
     "image": "https://tumbabruksmuseum.se/wp-content/uploads/2026/02/tumba-bruksmuseum_fran-spargris-till-swish_lyckoslanten_utstallning_barnfamilj_1920x1080.avif",
@@ -253,7 +253,7 @@
   },
   "https://toursofstockholm.com/tour/stockholm-food-tour/": {
     "image": null,
-    "fetchedAt": 1789894179522
+    "fetchedAt": 1790153425545
   },
   "https://judiskamuseet.se": {
     "image": null,
@@ -1241,7 +1241,7 @@
   },
   "https://www.skarholmensgard.se/fest-event/vara-events": {
     "image": null,
-    "fetchedAt": 1789806011841
+    "fetchedAt": 1790153424466
   },
   "https://solvallaloppis.se": {
     "image": null,
@@ -1289,7 +1289,7 @@
   },
   "https://taysta.se/vandringar/food-tour/stockholm": {
     "image": null,
-    "fetchedAt": 1789805996154
+    "fetchedAt": 1790153425886
   },
   "https://vadhanderisverige.understory.io/experience/0b8166132c46c20b9f9687fa4e48d8af": {
     "image": "https://media.understory.io/experience/0b8166132c46c20b9f9687fa4e48d8af/cover/mqMEoxEvojr3.jpeg",
@@ -1329,7 +1329,7 @@
   },
   "https://taysta.se/provningar/calvadosprovning/stockholm": {
     "image": null,
-    "fetchedAt": 1789894179284
+    "fetchedAt": 1790153425711
   },
   "https://www.berwaldhallen.se/konsert/niklas-radioapan-5?utm_source=visitstockholm&utm_medium=visitstockholm&utm_campaign=visitstockholm": {
     "image": "https://cdn-production.berwaldhallen.se/wp-content/uploads/2026/08/28141038/v.37_Radioapan_tidsmaskin_1920x1280.jpg",
@@ -1377,11 +1377,11 @@
   },
   "https://www.nationalmuseum.se/en/exhibitions/upcoming-exhibitions/colour": {
     "image": null,
-    "fetchedAt": 1789894178510
+    "fetchedAt": 1790153427537
   },
   "https://taysta.se/provningar/vinprovning/stockholm": {
     "image": null,
-    "fetchedAt": 1789805998193
+    "fetchedAt": 1790153426551
   },
   "https://secure.tickster.com/8kn21lcx4ev76u9": {
     "image": null,
@@ -2477,7 +2477,7 @@
   },
   "https://taysta.se/vandringar/barrunda/stockholm": {
     "image": null,
-    "fetchedAt": 1789894179868
+    "fetchedAt": 1790153426583
   },
   "https://secure.tickster.com/8pucaj3kuc096k8": {
     "image": null,
@@ -4817,7 +4817,7 @@
   },
   "https://www.eventim.se/event/21084812/?affiliate=FKS": {
     "image": null,
-    "fetchedAt": 1789806031634
+    "fetchedAt": 1790153430994
   },
   "https://historiska.se/en/visit/whats-on/friends-in-high-places-excavations-at-a-bishops-residence-in-iceland/": {
     "image": null,
@@ -11705,7 +11705,7 @@
   },
   "https://www.ticketmaster.se/event/happy-new-year-mamma-mia-the-party-tickets/422302255?language=en-us": {
     "image": null,
-    "fetchedAt": 1789806128359
+    "fetchedAt": 1790153426124
   },
   "https://www.operan.se/forestallningar/laderlappen": {
     "image": "https://www.operan.se/media/zjibeec2/l&#xE4;derlappen-g&#xE4;stspel.jpg?width=1220&height=630",
@@ -18173,7 +18173,7 @@
   },
   "https://allevents.in/manage/tickets/book.php?hide_details=1&event_id=80003784529026": {
     "image": null,
-    "fetchedAt": 1789894178557
+    "fetchedAt": 1790153424904
   },
   "https://lu.ma/sth-hack": {
     "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/ji/ce4ff719-5a0c-44b6-a249-63272fa2bc39.png",
@@ -18366,5 +18366,121 @@
   "https://www.renaramarydberg.se/": {
     "image": null,
     "fetchedAt": 1790067158976
+  },
+  "https://www.meetup.com/hop-vine-events/events/316085377/": {
+    "image": "https://secure.meetupstatic.com/photos/event/5/f/f/1/600_530484561.jpeg",
+    "fetchedAt": 1790153424166
+  },
+  "https://www.meetup.com/west-forest-tech-meetup-hw-sw-mek/events/313851918/": {
+    "image": "https://secure.meetupstatic.com/photos/event/e/0/f/4/600_533277588.jpeg",
+    "fetchedAt": 1790153424178
+  },
+  "https://www.meetup.com/prata-svenska/events/316287739/": {
+    "image": "https://secure.meetupstatic.com/photos/event/7/7/a/4/600_499230628.jpeg",
+    "fetchedAt": 1790153424182
+  },
+  "https://www.meetup.com/stockholm-sql/events/316428577/": {
+    "image": "https://secure.meetupstatic.com/photos/event/3/2/2/0/600_535992832.jpeg",
+    "fetchedAt": 1790153424201
+  },
+  "https://www.meetup.com/intercambio/events/316279209/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/2/f/d/600_529628957.jpeg",
+    "fetchedAt": 1790153424242
+  },
+  "https://www.meetup.com/stockholmexpat/events/316585376/": {
+    "image": "https://secure.meetupstatic.com/photos/event/a/e/0/1/600_535964545.jpeg",
+    "fetchedAt": 1790153424320
+  },
+  "https://www.meetup.com/sans-studio-paint-and-sip/events/316458108/": {
+    "image": "https://secure.meetupstatic.com/photos/event/5/4/3/8/600_536061560.jpeg",
+    "fetchedAt": 1790153424348
+  },
+  "https://www.meetup.com/intercambio/events/316195709/": {
+    "image": "https://secure.meetupstatic.com/photos/event/9/f/b/9/600_531640889.jpeg",
+    "fetchedAt": 1790153424370
+  },
+  "https://www.meetup.com/prata-svenska/events/316325069/": {
+    "image": "https://secure.meetupstatic.com/photos/event/7/7/a/4/600_499230628.jpeg",
+    "fetchedAt": 1790153424379
+  },
+  "https://lu.ma/qtg6p1y0": {
+    "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/83/c143f4d6-df3f-4081-a261-12deecf61cc8.png",
+    "fetchedAt": 1790153424515
+  },
+  "https://www.preks.se/aktiviteter/roof-of-reflection": {
+    "image": null,
+    "fetchedAt": 1790153424731
+  },
+  "https://www.meetup.com/sthlm-outdoor/events/316660865/": {
+    "image": "https://secure.meetupstatic.com/photos/event/a/5/7/d/600_536262365.jpeg",
+    "fetchedAt": 1790153424732
+  },
+  "https://www.meetup.com/leaddev-meetup-stockholm/events/316655866/": {
+    "image": "https://secure.meetupstatic.com/photos/event/f/0/9/600_534123849.jpeg",
+    "fetchedAt": 1790153424969
+  },
+  "https://www.meetup.com/sthlm-sports-outdoors/events/316668056/": {
+    "image": "https://secure.meetupstatic.com/photos/event/6/f/4/b/600_532708491.jpeg",
+    "fetchedAt": 1790153424994
+  },
+  "https://www.meetup.com/stockholm-music-and-culture-meetup/events/316662192/": {
+    "image": "https://secure.meetupstatic.com/photos/event/a/9/b/6/600_536263446.jpeg",
+    "fetchedAt": 1790153425101
+  },
+  "https://www.meetup.com/afterwork-coding/events/316663180/": {
+    "image": "https://secure.meetupstatic.com/photos/event/e/7/5/9/600_526019225.jpeg",
+    "fetchedAt": 1790153425207
+  },
+  "https://allevents.in/stockholm/operagala-till-förmån-för-kvinnofridsfonden/200030175277733": {
+    "image": "https://cdn-az.allevents.in/events7/banners/8f3fb08d345b19aa4f06dc6d19c823fd5420223a285d2ec3e488e2bc1855d74d-rimg-w1200-h446-dc080808-gmir?v=1788330332",
+    "fetchedAt": 1790153425395
+  },
+  "https://allevents.in/stockholm/simple-plan-stockholm/200029362453007": {
+    "image": "https://cdn-az.allevents.in/events1/banners/ecc2f445a03d9bee484270c819b84e887b084621d11219150abaf360b9489bb6-rimg-w1174-h578-dc03152e-gmir?v=1769381446",
+    "fetchedAt": 1790153425478
+  },
+  "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32752/135036/": {
+    "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32752/135036/Kulturhuset%20Stadsteatern",
+    "fetchedAt": 1790153425657
+  },
+  "https://www.meetup.com/stockholm-meetup-group/events/316661424/": {
+    "image": "https://secure.meetupstatic.com/photos/event/a/7/6/0/600_536262848.jpeg",
+    "fetchedAt": 1790153425686
+  },
+  "https://ra.co/events/2543574": {
+    "image": null,
+    "fetchedAt": 1790153425744
+  },
+  "https://allevents.in/stockholm/placebo-in-stockholm/3300029965554857": {
+    "image": "https://cdn-az.allevents.in/events8/banners/2b8df3f0-3cb0-11f1-946b-a12f2c65e4b3-rimg-w1200-h675-dcfefefe-gmir.webp?v=1776686277",
+    "fetchedAt": 1790153425828
+  },
+  "https://lu.ma/ep50u57o": {
+    "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/0a/749df774-3db8-458b-9251-5c8e4136b6d6.png",
+    "fetchedAt": 1790153425848
+  },
+  "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32757/135054/": {
+    "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32757/135054/Kulturhuset%20Stadsteatern",
+    "fetchedAt": 1790153425864
+  },
+  "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32757/135056/": {
+    "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32757/135056/Kulturhuset%20Stadsteatern",
+    "fetchedAt": 1790153425955
+  },
+  "https://lu.ma/r3nc2lkw": {
+    "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/0k/6a8086b5-c3ef-4af0-9be9-8d4f943f6dc5.png",
+    "fetchedAt": 1790153426062
+  },
+  "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32757/135055/": {
+    "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32757/135055/Kulturhuset%20Stadsteatern",
+    "fetchedAt": 1790153426257
+  },
+  "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32753/135037/": {
+    "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32753/135037/Kulturhuset%20Stadsteatern",
+    "fetchedAt": 1790153426283
+  },
+  "https://confidencen.se/event/in-a-cage-of-light-software/": {
+    "image": null,
+    "fetchedAt": 1790153428000
   }
 }
