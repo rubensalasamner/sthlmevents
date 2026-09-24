@@ -2497,7 +2497,7 @@
   },
   "https://kammarmusikens-vanner.se": {
     "image": null,
-    "fetchedAt": 1789806000233
+    "fetchedAt": 1790239532861
   },
   "https://www.ticketmaster.se/event/clapton-vs-springsteen-biljetter/1800584498": {
     "image": null,
@@ -18482,5 +18482,189 @@
   "https://confidencen.se/event/in-a-cage-of-light-software/": {
     "image": null,
     "fetchedAt": 1790153428000
+  },
+  "https://ra.co/events/2544102": {
+    "image": null,
+    "fetchedAt": 1790239528114
+  },
+  "https://ra.co/events/2544165": {
+    "image": null,
+    "fetchedAt": 1790239528156
+  },
+  "https://www.meetup.com/practical-philosophy-club-stockholm/events/316127821/": {
+    "image": "https://secure.meetupstatic.com/photos/event/9/6/b/e/600_536198590.jpeg",
+    "fetchedAt": 1790239528161
+  },
+  "https://ra.co/events/2544076": {
+    "image": null,
+    "fetchedAt": 1790239528175
+  },
+  "https://ra.co/events/2544145": {
+    "image": null,
+    "fetchedAt": 1790239528226
+  },
+  "https://ra.co/events/2544143": {
+    "image": null,
+    "fetchedAt": 1790239528262
+  },
+  "https://www.meetup.com/friends-of-46elks-stockholm/events/315424375/": {
+    "image": "https://secure.meetupstatic.com/photos/event/9/c/a/4/600_535000100.jpeg",
+    "fetchedAt": 1790239528287
+  },
+  "https://www.meetup.com/analyst-alliance-entj-entp-intj-intp/events/316127820/": {
+    "image": "https://secure.meetupstatic.com/photos/event/a/3/1/e/600_514481758.jpeg",
+    "fetchedAt": 1790239528312
+  },
+  "https://www.meetup.com/stockholm-pub-crawl/events/316668225/": {
+    "image": "https://secure.meetupstatic.com/photos/event/3/e/6/f/600_529935983.jpeg",
+    "fetchedAt": 1790239528393
+  },
+  "https://www.meetup.com/nordic-society/events/316288211/": {
+    "image": "https://secure.meetupstatic.com/photos/event/e/a/4/b/600_536039979.jpeg",
+    "fetchedAt": 1790239528434
+  },
+  "https://www.meetup.com/stockholm-philosophy-study-group/events/316125941/": {
+    "image": "https://secure.meetupstatic.com/photos/event/b/9/5/b/600_535667451.jpeg",
+    "fetchedAt": 1790239528454
+  },
+  "https://www.meetup.com/stockholm-kayak-sup-group/events/316500440/": {
+    "image": "https://secure.meetupstatic.com/photos/event/7/8/7/7/600_535950839.jpeg",
+    "fetchedAt": 1790239528473
+  },
+  "https://www.meetup.com/sthlm-sports-outdoors/events/316504411/": {
+    "image": "https://secure.meetupstatic.com/photos/event/6/f/4/b/600_532708491.jpeg",
+    "fetchedAt": 1790239528532
+  },
+  "https://ra.co/events/2544129": {
+    "image": null,
+    "fetchedAt": 1790239528608
+  },
+  "https://www.meetup.com/hack-the-box-meetup-sweden/events/316595598/": {
+    "image": "https://secure.meetupstatic.com/photos/event/5/9/5/2/600_536182866.jpeg",
+    "fetchedAt": 1790239528615
+  },
+  "https://allevents.in/stockholm/the-mountain-goats-support-craig-finn-utsÅlt-nalen-stockholm/200029387708900": {
+    "image": "https://cdn-az.allevents.in/events8/banners/03e1fa41e7059816ab5d7ade5fbe91f1fed22206294711a141398d5e67d506a6-rimg-w1080-h1080-dc080808-gmir?v=1788336230",
+    "fetchedAt": 1790239528617
+  },
+  "https://allevents.in/stockholm/1900-en-audiovisuell-konsert-stockholm-jazz-festival/200030298455605": {
+    "image": "https://cdn-az.allevents.in/events6/banners/f9b240f7e86e43c576d6f2f63e59990c1c916d66561d8ae5a773039ac44e657d-rimg-w1200-h628-dce85828-gmir?v=1786977179",
+    "fetchedAt": 1790239528632
+  },
+  "https://lu.ma/sbxue5ze": {
+    "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/xs/91cb47cd-fba4-4e53-81c1-7a9be08b0539.png",
+    "fetchedAt": 1790239528836
+  },
+  "https://hobo.se/events/hobo-market-2": {
+    "image": "https://static.thatsup.website/309/97166/responsive-images/HOBOMARKET_Poster_web___media_library_original_2250_2813.jpg?v=1787045314",
+    "fetchedAt": 1790239528842
+  },
+  "https://www.meetup.com/cocktailsinsthlm/events/316273899/": {
+    "image": "https://secure.meetupstatic.com/photos/event/a/3/8/9/600_535841865.jpeg",
+    "fetchedAt": 1790239528864
+  },
+  "https://gallerihantverket.se/event/gunilla-luiga-konsten-som-rorelse-och-upptackt/": {
+    "image": null,
+    "fetchedAt": 1790239529085
+  },
+  "https://tickets.nortic.se/ticket/event/82601": {
+    "image": "https://branding.nortic.io/organizer/3717/event/82601?redirect",
+    "fetchedAt": 1790239529218
+  },
+  "https://stockholmstadshotell.com": {
+    "image": "https://stockholmstadshotell.com/meta/",
+    "fetchedAt": 1790239529235
+  },
+  "https://www.tekniskamuseet.se/program-och-upplevelser/samtal-och-ide/techbolag-eller-politiker-vem-har-makten/": {
+    "image": "https://www.tekniskamuseet.se/app/uploads/2026/09/headerbild-samtal-dromlandet-3-1.jpg",
+    "fetchedAt": 1790239529369
+  },
+  "https://ra.co/events/2543935": {
+    "image": null,
+    "fetchedAt": 1790239529439
+  },
+  "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32754/131859/": {
+    "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32754/131859/Kulturhuset%20Stadsteatern",
+    "fetchedAt": 1790239529592
+  },
+  "https://www.osteraker.se/arkivevenemangkrisochinfo/evenemang/evenemang2026/marianneochjag.5.77c924619b9d91e3e21ac6c.html": {
+    "image": "https://www.osteraker.se/images/18.77c924619b9d91e3e21ac7a/1779200619842/M&J_web.jpg",
+    "fetchedAt": 1790239529883
+  },
+  "https://vadhanderisverige.understory.io/experience/aab65cb822fa54d4e1fb50ac9404a656": {
+    "image": "https://media.understory.io/experience//cover/JAWyIPcsBjSz.false",
+    "fetchedAt": 1790239530149
+  },
+  "https://www.riksdagen.se/en/contact-and-visit/visit-the-riksdag/guided-tours-of-the-riksdag/": {
+    "image": null,
+    "fetchedAt": 1790239530432
+  },
+  "https://www.riksdagen.se/sv/kontakt-och-besok/besok-riksdagen/": {
+    "image": "https://media.riksdagen.se/images/321a52d4a13411f1b3fc6e26682a384a",
+    "fetchedAt": 1790239530455
+  },
+  "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32793/135108/": {
+    "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32793/135108/Kulturhuset%20Stadsteatern",
+    "fetchedAt": 1790239530478
+  },
+  "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/31460/135130/": {
+    "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/31460/135130/Kulturhuset%20Stadsteatern",
+    "fetchedAt": 1790239530648
+  },
+  "https://billetto.se/e/luciashow-2026-simklubben-neptun-biljetter-1993473": {
+    "image": "https://billetto.se/e/1993473/watermark_image",
+    "fetchedAt": 1790239530760
+  },
+  "https://www.nrm.se/vart-utbud/kalendarium/evenemangsfakta/ocean-dreams": {
+    "image": "https://www.nrm.se/images/18.363c16011a0420dd86b4ea4e/1788935745792/oceandreams_Poster_UTAN_text.jpg",
+    "fetchedAt": 1790239530762
+  },
+  "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/31460/135128/": {
+    "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/31460/135128/Kulturhuset%20Stadsteatern",
+    "fetchedAt": 1790239530773
+  },
+  "https://www.kungcarl.se/en/kung-carls-jazzklubb": {
+    "image": "https://static.thatsup.website/666/95186/responsive-images/_DSF0369___media_library_original_4000_2667.jpg?v=1783581410",
+    "fetchedAt": 1790239530803
+  },
+  "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/31460/135131/": {
+    "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/31460/135131/Kulturhuset%20Stadsteatern",
+    "fetchedAt": 1790239530892
+  },
+  "https://www.tekniskamuseet.se/program-och-upplevelser/samtal-och-ide/visuell-forelasning-asteroidforsvar/": {
+    "image": "https://www.tekniskamuseet.se/app/uploads/2026/09/rymdkvall-stas-barabash-puff.jpg",
+    "fetchedAt": 1790239531226
+  },
+  "https://www.tekniskamuseet.se/program-och-upplevelser/samtal-och-ide/tekniken-som-fixar-den-perfekta-kroppen/": {
+    "image": "https://www.tekniskamuseet.se/app/uploads/2026/03/talbar_sjalvoptimering_vard.jpg",
+    "fetchedAt": 1790239531242
+  },
+  "https://biljetter.cirkus.se/sv/buyingflow/tickets/32034/131295/": {
+    "image": "https://cdn.tixly.com/assets/8add32b/Content/Images/tix_sv.svg",
+    "fetchedAt": 1790239531333
+  },
+  "https://debaser.se/events/dirty-honey": {
+    "image": "https://admin.debaser.se/uploads/img/30230_20260922111039.jpeg",
+    "fetchedAt": 1790239531549
+  },
+  "https://debaser.se/events/king-buffalo": {
+    "image": "https://admin.debaser.se/uploads/img/30135_20260922110725.jpg",
+    "fetchedAt": 1790239531556
+  },
+  "https://www.operalight.se/": {
+    "image": null,
+    "fetchedAt": 1790239531701
+  },
+  "https://www.nortic.se/ticket/show/357551?fbclid=IwY2xjawUV1GpwZG9mAWV4dG4DYWVtAjEwAGJyaWQRMTFkYndxUEk4bHFWY3VORkRzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeb0-dmYdd0HshDVn2pV_wouxdETMx9Vjv27LSsaZW0XKdE1n26o7uExs4CyI_aem_C87KgycO00jsWtNdFqL5Bg": {
+    "image": "https://branding.nortic.io/organizer/2893/event/85936?redirect",
+    "fetchedAt": 1790239531832
+  },
+  "https://fkpscorpio.se/evenemang/detail/pomme/": {
+    "image": null,
+    "fetchedAt": 1790239532890
+  },
+  "https://cameratanordica.com/sv/production/kerson-leong-camerata-nordica-goteborg-stockholm/": {
+    "image": null,
+    "fetchedAt": 1790239535441
   }
 }

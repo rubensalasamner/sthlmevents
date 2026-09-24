@@ -2720,5 +2720,30 @@
       "longitude": 18.0745777
     },
     "fetchedAt": 1790153420930
+  },
+  "Sveavägen 34, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3362926,
+      "longitude": 18.0631327
+    },
+    "fetchedAt": 1790239522815
+  },
+  "Götgatan 64, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3161081,
+      "longitude": 18.0723299
+    },
+    "fetchedAt": 1790239524415
+  },
+  "Radisson Collection Strand Hotel, Nybrokajen 9, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1790239526163
+  },
+  "The Bar & Lounge, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3392348,
+      "longitude": 18.0594384
+    },
+    "fetchedAt": 1790239527912
   }
 }
