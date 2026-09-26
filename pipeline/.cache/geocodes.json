@@ -2759,5 +2759,26 @@
       "longitude": 18.0497827
     },
     "fetchedAt": 1790327215267
+  },
+  "Rådmansgatan 12, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3433013,
+      "longitude": 18.0690103
+    },
+    "fetchedAt": 1790412609203
+  },
+  "Tantogatan 85, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.310754,
+      "longitude": 18.0421457
+    },
+    "fetchedAt": 1790412610818
+  },
+  "Brinellvägen 28A, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3520215,
+      "longitude": 18.0683801
+    },
+    "fetchedAt": 1790412612072
   }
 }
