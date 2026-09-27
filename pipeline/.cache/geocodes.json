@@ -1128,7 +1128,7 @@
   },
   "Fartyget Vieille Montagne, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1790153423728
+    "fetchedAt": 1790501504766
   },
   "Täby, Stockholm, Sweden": {
     "value": {
@@ -2334,7 +2334,7 @@
   },
   "Söder Mälarstrand kajplats 15, 118 20 Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1790153422288
+    "fetchedAt": 1790501503435
   },
   "Narvavägen 17, Stockholm, Sweden": {
     "value": {
@@ -2737,7 +2737,7 @@
   },
   "Radisson Collection Strand Hotel, Nybrokajen 9, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1790239526163
+    "fetchedAt": 1790501506241
   },
   "The Bar & Lounge, Stockholm, Sweden": {
     "value": {
@@ -2780,5 +2780,23 @@
       "longitude": 18.0683801
     },
     "fetchedAt": 1790412612072
+  },
+  "Götgatan 81, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3103936,
+      "longitude": 18.0755043
+    },
+    "fetchedAt": 1790501501997
+  },
+  "Drottning Kristinas väg 51, 114 28 Stockholm, Sweden, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1790501507653
+  },
+  "KTH R1, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.291371,
+      "longitude": 17.9250484
+    },
+    "fetchedAt": 1790501508944
   }
 }
