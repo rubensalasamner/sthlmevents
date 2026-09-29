@@ -1897,7 +1897,7 @@
   },
   "Bottom floor of Kulturhuset, Sergels Torg, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1790153413976
+    "fetchedAt": 1790676521085
   },
   "Kafé Plattan, Stockholm, Sweden": {
     "value": {
@@ -2826,5 +2826,12 @@
       "longitude": 18.0640284
     },
     "fetchedAt": 1790590224914
+  },
+  "Malmskillnadsgatan 36, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.333121,
+      "longitude": 18.066473
+    },
+    "fetchedAt": 1790676519515
   }
 }

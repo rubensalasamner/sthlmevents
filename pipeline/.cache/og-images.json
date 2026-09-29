@@ -10397,7 +10397,7 @@
   },
   "https://www.eventim.se/event/20755769/?affiliate=FKS": {
     "image": null,
-    "fetchedAt": 1790327342690
+    "fetchedAt": 1790676529593
   },
   "https://www.ticketmaster.se/event/chelsea-wolfe-the-dark-world-tour-biljetter/1401889724": {
     "image": null,
@@ -15321,7 +15321,7 @@
   },
   "https://www.nationalmuseum.se/en/exhibitions/upcoming-exhibitions/to-the-sea": {
     "image": null,
-    "fetchedAt": 1790412613935
+    "fetchedAt": 1790676523157
   },
   "https://kulturbiljetter.se/varukorg/9096/41834/in-memoriam/": {
     "image": null,
@@ -18953,7 +18953,7 @@
   },
   "https://ra.co/events/2545925": {
     "image": null,
-    "fetchedAt": 1790412612592
+    "fetchedAt": 1790676521624
   },
   "https://www.meetup.com/stockholm-helping-the-the-poor-and-needy-meetup-group/events/316580295/": {
     "image": "https://secure.meetupstatic.com/photos/event/4/d/c/e/600_534979918.jpeg",
@@ -19294,5 +19294,153 @@
   "https://fkpscorpio.se/evenemang/detail/default-33a6add5d72c7f2d31e61dc003820c30/": {
     "image": null,
     "fetchedAt": 1790590385427
+  },
+  "https://www.glennmillercafe.se": {
+    "image": null,
+    "fetchedAt": 1790676521279
+  },
+  "https://www.meetup.com/meet-stockholm/events/316738302/": {
+    "image": "https://secure.meetupstatic.com/photos/event/b/f/b/a/600_535849082.jpeg",
+    "fetchedAt": 1790676521474
+  },
+  "https://ra.co/events/2547811": {
+    "image": null,
+    "fetchedAt": 1790676521496
+  },
+  "https://www.meetup.com/create-a-game-with-bitmagic-x-aws-stockholm/events/316497730/": {
+    "image": "https://secure.meetupstatic.com/photos/event/9/1/7/c/600_536077244.jpeg",
+    "fetchedAt": 1790676521669
+  },
+  "https://ra.co/events/2547802": {
+    "image": null,
+    "fetchedAt": 1790676521678
+  },
+  "https://www.meetup.com/be-original-tours-nightlife-tours-across-europe/events/316684111/": {
+    "image": "https://secure.meetupstatic.com/photos/event/8/a/1/4/600_536195348.jpeg",
+    "fetchedAt": 1790676521698
+  },
+  "https://lu.ma/803vk4m9": {
+    "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/my/6fd65739-db0c-49bf-b7b8-b45a658dc736.png",
+    "fetchedAt": 1790676521943
+  },
+  "https://www.meetup.com/intercambio/events/316279210/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/2/f/d/600_529628957.jpeg",
+    "fetchedAt": 1790676521956
+  },
+  "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/31048/126355/": {
+    "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/31048/126355/Kulturhuset%20Stadsteatern",
+    "fetchedAt": 1790676521969
+  },
+  "https://ra.co/events/2547842": {
+    "image": null,
+    "fetchedAt": 1790676521997
+  },
+  "https://www.meetup.com/stockholm-pub-crawl/events/316753325/": {
+    "image": "https://secure.meetupstatic.com/photos/event/3/e/6/f/600_529935983.jpeg",
+    "fetchedAt": 1790676522040
+  },
+  "https://www.meetup.com/stockholm-riichi/events/316484584/": {
+    "image": "https://secure.meetupstatic.com/photos/event/9/3/c/4/600_535597828.jpeg",
+    "fetchedAt": 1790676522196
+  },
+  "https://www.meetup.com/flemingsberg-badminton-intermediate/events/316750440/": {
+    "image": "https://secure.meetupstatic.com/photos/event/e/8/7/3/600_507899507.jpeg",
+    "fetchedAt": 1790676522245
+  },
+  "https://ra.co/events/2547824": {
+    "image": null,
+    "fetchedAt": 1790676522300
+  },
+  "https://www.facebook.com/events/1083612230724481/1083612237391147/?active_tab=about&rdid=nNrAOMTpINYMhVMK": {
+    "image": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1083612230724481",
+    "fetchedAt": 1790676522464
+  },
+  "https://www.rydbo360.se/sthlmpadbolcup": {
+    "image": "http://static1.squarespace.com/static/682b22894d27765ab55d0257/t/6a8d840916cc0020d20ba4ae/1788346769461/IMG_9863.jpeg?format=1500w",
+    "fetchedAt": 1790676522508
+  },
+  "https://www.meetup.com/folkfotboll/events/316749917/": {
+    "image": "https://secure.meetupstatic.com/photos/event/1/f/f/4/600_533468180.jpeg",
+    "fetchedAt": 1790676522559
+  },
+  "https://arkdes.se/kalender/temavisning-dystopi-och-framtidshopp-i-worldglimpsing/": {
+    "image": "https://arkdes.se/wp-content/uploads/2026/02/Worldglimpsing-03_-Jean-Baptiste-Beranger.jpg",
+    "fetchedAt": 1790676522660
+  },
+  "https://waldemarsudde.se/utstallningar/den-underbara-fargen-goteborgskolorismen-i-nytt-ljus/": {
+    "image": "http://waldemarsudde.se/wp-content/uploads/2025/10/sandberg_GKM-1722-scaled.jpg",
+    "fetchedAt": 1790676522945
+  },
+  "https://www.meetup.com/meetup-group-cqgqwmcw/events/316720983/": {
+    "image": "https://secure.meetupstatic.com/photos/event/8/8/2/d/600_536314861.jpeg",
+    "fetchedAt": 1790676522953
+  },
+  "https://www.bellmanhuset.se": {
+    "image": null,
+    "fetchedAt": 1790676523021
+  },
+  "https://www.meetup.com/klustret/events/316594544/": {
+    "image": "https://secure.meetupstatic.com/photos/event/5/6/8/f/600_536182159.jpeg",
+    "fetchedAt": 1790676523091
+  },
+  "https://riddarholmenskammarkor.se/": {
+    "image": null,
+    "fetchedAt": 1790676523422
+  },
+  "https://allevents.in/stockholm/cortoalto-stockholm-jazz-festival/200030181997434": {
+    "image": "https://cdn-az.allevents.in/events9/banners/b236c92e98ac06bb7851de2faf4037465aafb62f31ae5d788bce168c4bdbfc99-rimg-w1200-h628-dc18b8e8-gmir?v=1788448379",
+    "fetchedAt": 1790676523468
+  },
+  "Https://www.storieswetellanthologies.com": {
+    "image": null,
+    "fetchedAt": 1790676523534
+  },
+  "https://fargfabriken.se/sv/pa-gang/det-trollfuturistiska-stadsbyggnadskontoret/": {
+    "image": "https://fargfabriken.se/wp-content/uploads/2026/09/vejde-scaled.jpg",
+    "fetchedAt": 1790676523591
+  },
+  "https://www.fjarilshuset.se": {
+    "image": "https://cdn.prod.website-files.com/5e2861598f1044a014f854f4/6228b18732de9f1d1cb86554_Makaofj%C3%A4ril.jpg",
+    "fetchedAt": 1790676523728
+  },
+  "https://matmilen.info/experience/5e2ea3e05c553c48afb501552fdd2eac": {
+    "image": "https://media.understory.io/experience//cover/6s8Jn59MAUWC.false",
+    "fetchedAt": 1790676523864
+  },
+  "https://valeriaclarinetta.com/": {
+    "image": null,
+    "fetchedAt": 1790676523926
+  },
+  "https://matmilen.info/experience/a84a05e4618b4e89c2459221c874ef17": {
+    "image": "https://media.understory.io/experience//cover/we8TJEwoNX15.false",
+    "fetchedAt": 1790676523959
+  },
+  "https://allevents.in/stockholm/ison-andamp;-fille-in-stockholm/3300030367041650": {
+    "image": "https://cdn-az.allevents.in/events10/banners/be798b30-79a4-11f1-ae36-5d54fcd89069-rimg-w1200-h675-dc171717-gmir.webp?v=1783388390",
+    "fetchedAt": 1790676524076
+  },
+  "https://kulturhusetstadsteatern.se/teater/jag-ar-gasen": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-08/Jag%20%C3%A4r%20g%C3%A5sen_KNEGET_Ebba%20M%C3%B6hle%20_Emma%20Behrendtz.JPG",
+    "fetchedAt": 1790676524311
+  },
+  "https://matmilen.info/experience/ebf905851d443fa9c83589afc6e77c4e": {
+    "image": "https://media.understory.io/experience//cover/LYoOzyS_TI-A.false",
+    "fetchedAt": 1790676524433
+  },
+  "https://matmilen.info/experience/3348efd3668cb6d6a8f8e92f914ff966": {
+    "image": "https://media.understory.io/experience//cover/TnL2-9-ZmbWs.false",
+    "fetchedAt": 1790676524552
+  },
+  "https://matmilen.info/experience/80c2f8fc67b851c5e3b850bd9cead9d9": {
+    "image": "https://media.understory.io/experience//cover/YOgb6rADVD7G.false",
+    "fetchedAt": 1790676524795
+  },
+  "https://fkpscorpio.se/evenemang/detail/erasure/": {
+    "image": "https://fkpscorpio.se/fileadmin/_processed_/3/7/csm_Erasure-FKPwebb-2000x1200_8e3d43988d.jpg",
+    "fetchedAt": 1790676524870
+  },
+  "https://www.tjamigo.com/events/stockholm-bradspelskvall-hos-honey-honey-pa-sodermalm-TJPz": {
+    "image": "https://www.tjamigo.com/events/stockholm-bradspelskvall-hos-honey-honey-pa-sodermalm-TJPz/opengraph-image?2f01a9419abebd61",
+    "fetchedAt": 1790676525884
   }
 }
