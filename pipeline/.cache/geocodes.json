@@ -2865,5 +2865,56 @@
       "longitude": 18.0374037
     },
     "fetchedAt": 1790850492620
+  },
+  "Hantverkargatan 20, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3289382,
+      "longitude": 18.0442211
+    },
+    "fetchedAt": 1790920191688
+  },
+  "UGGELVIKSGATAN 2A, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.343526,
+      "longitude": 18.0686718
+    },
+    "fetchedAt": 1790920192907
+  },
+  "T-BANA MARIATORGET, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1790920194650
+  },
+  "Hudiksvallsgatan 4, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3460384,
+      "longitude": 18.0382
+    },
+    "fetchedAt": 1790920196023
+  },
+  "Kvarngatan 8b, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.317432,
+      "longitude": 18.0672884
+    },
+    "fetchedAt": 1790920197263
+  },
+  "APLACE Studio, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1790920198886
+  },
+  "Liljeholmstorget Gallerias parkeringshus, plan 2., Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1790920200633
+  },
+  "Äntligen är loppisen tillbaka i Vällingby Centrum!, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1790920202401
+  },
+  "Heliosgatan 1, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3009712,
+      "longitude": 18.0947162
+    },
+    "fetchedAt": 1790920203713
   }
 }
