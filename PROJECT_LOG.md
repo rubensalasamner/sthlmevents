@@ -25,7 +25,8 @@ istället för en filterstack. Tema: "Blå Timmen"
 - **Daglig cron frisk** t.o.m. 2026-10-01. **Weekly Apify**: 09-21 OK;
   **09-28 FAIL** (FB `Invalid time value` + push-race mot daily). Fix 2026-10-02:
   skippa bad `utcStartDate` i FB-adaptern; weekly cron flyttad till **05:00 UTC**
-  mån (bort från daily 03:40). Manuell re-run triggad efter push.
+  mån. Manuell re-run **lyckades** (FB 10 + IG 11 + profiles 14 → 5408 events,
+  commit + R2-upload).
 - **14 aktiva källor** (13 + curated IG-profiler). Snapshot-räkning oförändrad
   tills nästa `snapshot:apify` / veckokörning plockar in profil-events.
 - **Facebook-källan (Apify) är LIVE**: adapter + filter + mapper + datumfönster
@@ -357,9 +358,8 @@ Nya adapters följer mönstret: `types.ts` (rå shape + klient) → `mapper.ts`
 
 ## 6. Nästa steg (prioriterat)
 
-1. **Bekräfta manuell weekly re-run** (triggas 2026-10-02 efter FB date-guard
-   + cron-offset). `APIFY_TOKEN` är redan repo-secret. Nästa schemalagda:
-   mån 05:00 UTC. Daily: `snapshot.yml` exkluderar Apify via `--only`.
+1. **Weekly Apify re-run OK 2026-10-02** (FB date-guard + cron 05:00 UTC).
+   Nästa schemalagda: mån 05:00 UTC. Daily exkluderar Apify via `--only`.
 2. **Ny EAS-build** — `expo-notifications` + `expo-calendar` + `expo-location`
    är native; JS-only reload räcker inte. Efter build: favorisera → notiser;
    eventdetalj → Add to calendar; Discover → Near me → GPS-prompt. Sätt också
