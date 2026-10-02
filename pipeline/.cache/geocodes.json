@@ -366,7 +366,7 @@
   },
   "Hagagatan, 113 48 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1790590239968
+    "fetchedAt": 1790935389175
   },
   "Hammarby Slussväg 17, Stockholm, Sweden": {
     "value": {
@@ -871,7 +871,7 @@
   },
   "Secret Restaurant Location in  Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1790590241712
+    "fetchedAt": 1790935390768
   },
   "Kungstensgatan 45, 11359 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
@@ -2916,5 +2916,52 @@
       "longitude": 18.0947162
     },
     "fetchedAt": 1790920203713
+  },
+  "Fjällgatan 23B, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3174768,
+      "longitude": 18.0839108
+    },
+    "fetchedAt": 1790935380556
+  },
+  "Patentgatan 2, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3229315,
+      "longitude": 18.005623
+    },
+    "fetchedAt": 1790935382034
+  },
+  "Sankt Paulsgatan 39A, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.31716,
+      "longitude": 18.0602701
+    },
+    "fetchedAt": 1790935383531
+  },
+  "Tomtebogatan 2, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3413859,
+      "longitude": 18.0369147
+    },
+    "fetchedAt": 1790935385002
+  },
+  "Bromma, Stockholm, Sweden, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1790935386217
+  },
+  "Bromma, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.339769,
+      "longitude": 17.9395411
+    },
+    "fetchedAt": 1790935387597
+  },
+  "Hallgränd 19, 121 62 Johanneshov, Sweden, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1790935392355
+  },
+  "BAR15, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1790935393651
   }
 }
