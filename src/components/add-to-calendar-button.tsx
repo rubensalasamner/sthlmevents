@@ -50,7 +50,7 @@ export function AddToCalendarButton({ event }: AddToCalendarButtonProps) {
       ) : (
         <>
           <Icon sf="calendar.badge.plus" material="calendar_add_on" size={16} color={theme.accent} />
-          <ThemedText type="smallBold" themeColor="accent">
+          <ThemedText type="link">
             Add to calendar
           </ThemedText>
         </>

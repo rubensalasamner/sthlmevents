@@ -13,6 +13,7 @@ type EventImageProps = {
   category: EventCategory;
   style?: StyleProp<ImageStyle>;
   contentFit?: ImageProps['contentFit'];
+  contentPosition?: ImageProps['contentPosition'];
   transition?: ImageProps['transition'];
   /** Logical CSS px used for decode size. List thumbs should pass ~56. */
   decodeWidth?: number;
@@ -28,6 +29,7 @@ export function EventImage({
   category,
   style,
   contentFit = 'cover',
+  contentPosition,
   transition = 200,
   decodeWidth = 400,
 }: EventImageProps) {
@@ -52,6 +54,7 @@ export function EventImage({
       source={image}
       style={style}
       contentFit={contentFit}
+      contentPosition={contentPosition}
       transition={transition}
       recyclingKey={sourceUri}
     />

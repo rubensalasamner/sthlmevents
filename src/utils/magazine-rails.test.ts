@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
 
-import { buildMagazine, featuredWindowRailTitle } from './magazine-rails.js';
+import { buildMagazine, featuredWindowRailTitle, railCategoryFilter } from './magazine-rails.js';
 import type { StockholmEvent } from '@/types/event';
 
 function event(overrides: Partial<StockholmEvent> = {}): StockholmEvent {
@@ -131,6 +131,15 @@ describe('buildMagazine', () => {
     assert.equal(popup?.title, 'Sales & pop-ups');
     assert.deepEqual(market?.events.map((e) => e.id).sort(), ['m1', 'm2']);
     assert.deepEqual(popup?.events.map((e) => e.id).sort(), ['p1', 'p2']);
+  });
+
+  test('railCategoryFilter maps thematic rails only', () => {
+    assert.equal(railCategoryFilter('market'), 'market');
+    assert.equal(railCategoryFilter('popup'), 'popup');
+    assert.equal(railCategoryFilter('nightlife'), 'nightlife');
+    assert.equal(railCategoryFilter('music'), 'music');
+    assert.equal(railCategoryFilter('window'), null);
+    assert.equal(railCategoryFilter('free'), null);
   });
 
   test('empty feed yields no hero and no rails', () => {

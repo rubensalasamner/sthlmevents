@@ -3,8 +3,9 @@ import { FlatList, StyleSheet, View } from 'react-native';
 
 import { AttributionFooter } from '@/components/attribution-footer';
 import { CompactRow } from '@/components/event-presentation/compact-row';
+import { EmptyEventsState } from '@/components/empty-events-state';
 import { ThemedText } from '@/components/themed-text';
-import { BottomTabInset, Fonts, Spacing } from '@/constants/theme';
+import { BottomTabInset, Spacing } from '@/constants/theme';
 import { getEventSource } from '@/data/event-repository';
 import type { StockholmEvent } from '@/types/event';
 
@@ -21,6 +22,8 @@ type EventSectionListProps = {
   sections: EventSection[];
   ListHeaderComponent?: ReactElement | null;
   emptyMessage?: string;
+  showEmptyReset?: boolean;
+  showEmptyExplore?: boolean;
   contentBottomInset?: number;
 };
 
@@ -40,6 +43,8 @@ export function EventSectionList({
   sections,
   ListHeaderComponent,
   emptyMessage = 'No events match your filters.',
+  showEmptyReset = false,
+  showEmptyExplore = false,
   contentBottomInset = BottomTabInset + Spacing.four,
 }: EventSectionListProps) {
   const rows = useMemo(() => flatten(sections), [sections]);
@@ -50,7 +55,7 @@ export function EventSectionList({
       keyExtractor={(item) => item.key}
       renderItem={({ item }) =>
         item.kind === 'header' ? (
-          <ThemedText type="smallBold" themeColor="textSecondary" style={styles.section}>
+          <ThemedText type="metaBold" themeColor="textSecondary" style={styles.section}>
             {item.title}
           </ThemedText>
         ) : (
@@ -60,11 +65,11 @@ export function EventSectionList({
       ListHeaderComponent={ListHeaderComponent}
       ListFooterComponent={<AttributionFooter attribution={getEventSource().attribution} />}
       ListEmptyComponent={
-        <View style={styles.empty}>
-          <ThemedText themeColor="textSecondary" style={styles.emptyText}>
-            {emptyMessage}
-          </ThemedText>
-        </View>
+        <EmptyEventsState
+          message={emptyMessage}
+          showReset={showEmptyReset}
+          showExplore={showEmptyExplore}
+        />
       }
       contentContainerStyle={[styles.content, { paddingBottom: contentBottomInset }]}
       initialNumToRender={12}
@@ -81,18 +86,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.three,
   },
   section: {
-    fontFamily: Fonts.display,
     letterSpacing: 0.06,
     textTransform: 'uppercase',
     paddingHorizontal: Spacing.two,
     paddingTop: Spacing.three,
     paddingBottom: Spacing.one,
-  },
-  empty: {
-    paddingVertical: Spacing.six,
-    alignItems: 'center',
-  },
-  emptyText: {
-    textAlign: 'center',
   },
 });

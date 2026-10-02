@@ -1,4 +1,4 @@
-import type { StockholmEvent } from '@/types/event';
+import type { EventCategory, StockholmEvent } from '@/types/event';
 
 export type MagazineRail = {
   id: string;
@@ -15,6 +15,22 @@ export type MagazineLayout = {
 
 const RAIL_SIZE = 8;
 const MIN_RAIL = 2;
+
+/** Category to apply when tapping See all on a thematic rail. */
+export function railCategoryFilter(railId: string): EventCategory | null {
+  switch (railId) {
+    case 'market':
+      return 'market';
+    case 'popup':
+      return 'popup';
+    case 'nightlife':
+      return 'nightlife';
+    case 'music':
+      return 'music';
+    default:
+      return null;
+  }
+}
 
 /** Featured rail label — never "More all events". */
 export function featuredWindowRailTitle(windowTitle: string): string {

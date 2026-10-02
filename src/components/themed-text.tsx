@@ -3,26 +3,64 @@ import { Platform, StyleSheet, Text, type TextProps } from 'react-native';
 import { Fonts, ThemeColor } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
 
+/**
+ * Locked type scale for Blå Timmen:
+ * display (screen) → section (rail/sheet) → card (titles) → body → meta.
+ */
+export type ThemedTextType =
+  | 'display'
+  | 'section'
+  | 'card'
+  | 'body'
+  | 'meta'
+  | 'metaBold'
+  | 'link'
+  | 'code'
+  /** @deprecated Use display */
+  | 'title'
+  /** @deprecated Use section */
+  | 'subtitle'
+  /** @deprecated Use body */
+  | 'default'
+  /** @deprecated Use meta */
+  | 'small'
+  /** @deprecated Use metaBold */
+  | 'smallBold'
+  /** @deprecated Use link */
+  | 'linkPrimary';
+
+const ALIASES: Record<string, Exclude<ThemedTextType, 'title' | 'subtitle' | 'default' | 'small' | 'smallBold' | 'linkPrimary'>> = {
+  title: 'display',
+  subtitle: 'section',
+  default: 'body',
+  small: 'meta',
+  smallBold: 'metaBold',
+  linkPrimary: 'link',
+};
+
 export type ThemedTextProps = TextProps & {
-  type?: 'default' | 'title' | 'small' | 'smallBold' | 'subtitle' | 'link' | 'linkPrimary' | 'code';
+  type?: ThemedTextType;
   themeColor?: ThemeColor;
 };
 
-export function ThemedText({ style, type = 'default', themeColor, ...rest }: ThemedTextProps) {
+export function ThemedText({ style, type = 'body', themeColor, ...rest }: ThemedTextProps) {
   const theme = useTheme();
+  const resolved = ALIASES[type] ?? type;
+  const colorKey: ThemeColor =
+    themeColor ?? (resolved === 'link' ? 'accent' : 'text');
 
   return (
     <Text
       style={[
-        { color: theme[themeColor ?? 'text'] },
-        type === 'default' && styles.default,
-        type === 'title' && styles.title,
-        type === 'small' && styles.small,
-        type === 'smallBold' && styles.smallBold,
-        type === 'subtitle' && styles.subtitle,
-        type === 'link' && styles.link,
-        type === 'linkPrimary' && styles.linkPrimary,
-        type === 'code' && styles.code,
+        { color: theme[colorKey] },
+        resolved === 'display' && styles.display,
+        resolved === 'section' && styles.section,
+        resolved === 'card' && styles.card,
+        resolved === 'body' && styles.body,
+        resolved === 'meta' && styles.meta,
+        resolved === 'metaBold' && styles.metaBold,
+        resolved === 'link' && styles.link,
+        resolved === 'code' && styles.code,
         style,
       ]}
       {...rest}
@@ -31,43 +69,46 @@ export function ThemedText({ style, type = 'default', themeColor, ...rest }: The
 }
 
 const styles = StyleSheet.create({
-  small: {
-    fontSize: 14,
-    lineHeight: 20,
-    fontWeight: 500,
+  display: {
+    fontFamily: Fonts.display,
+    fontSize: 28,
+    lineHeight: 32,
+    fontWeight: '700',
+    letterSpacing: -0.5,
   },
-  smallBold: {
-    fontSize: 14,
-    lineHeight: 20,
-    fontWeight: 700,
+  section: {
+    fontFamily: Fonts.display,
+    fontSize: 20,
+    lineHeight: 24,
+    fontWeight: '700',
+    letterSpacing: -0.3,
   },
-  default: {
+  card: {
+    fontFamily: Fonts.display,
+    fontSize: 16,
+    lineHeight: 20,
+    fontWeight: '700',
+    letterSpacing: -0.2,
+  },
+  body: {
     fontSize: 16,
     lineHeight: 24,
     fontWeight: 500,
   },
-  title: {
-    fontFamily: Fonts.display,
-    fontSize: 48,
-    fontWeight: '700',
-    lineHeight: 52,
-    letterSpacing: -1,
+  meta: {
+    fontSize: 14,
+    lineHeight: 20,
+    fontWeight: 500,
   },
-  subtitle: {
-    fontFamily: Fonts.display,
-    fontSize: 32,
-    lineHeight: 40,
-    fontWeight: '700',
-    letterSpacing: -0.5,
+  metaBold: {
+    fontSize: 14,
+    lineHeight: 20,
+    fontWeight: 700,
   },
   link: {
-    lineHeight: 30,
     fontSize: 14,
-  },
-  linkPrimary: {
-    lineHeight: 30,
-    fontSize: 14,
-    color: '#3c87f7',
+    lineHeight: 20,
+    fontWeight: 700,
   },
   code: {
     fontFamily: Fonts.mono,

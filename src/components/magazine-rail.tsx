@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
 import { PosterTile } from '@/components/event-presentation';
 import { ThemedText } from '@/components/themed-text';
@@ -13,9 +13,16 @@ type MagazineRailRowProps = {
   title: string;
   events: StockholmEvent[];
   density?: MagazineRail['density'];
+  /** Optional deep-link into agenda with this rail's filter applied. */
+  onSeeAll?: () => void;
 };
 
-export function MagazineRailRow({ title, events, density = 'compact' }: MagazineRailRowProps) {
+export function MagazineRailRow({
+  title,
+  events,
+  density = 'compact',
+  onSeeAll,
+}: MagazineRailRowProps) {
   if (events.length === 0) return null;
 
   const featured = density === 'featured';
@@ -23,12 +30,24 @@ export function MagazineRailRow({ title, events, density = 'compact' }: Magazine
 
   return (
     <View style={styles.wrap}>
-      <ThemedText
-        type="subtitle"
-        themeColor={featured ? 'accent' : 'text'}
-        style={[styles.heading, featured && styles.headingFeatured]}>
-        {title}
-      </ThemedText>
+      <View style={styles.headingRow}>
+        <ThemedText
+          type="section"
+          themeColor={featured ? 'accent' : 'text'}
+          style={[styles.heading, featured && styles.headingFeatured]}>
+          {title}
+        </ThemedText>
+        {onSeeAll ? (
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={`See all ${title}`}
+            onPress={onSeeAll}
+            hitSlop={Spacing.two}
+            style={({ pressed }) => pressed && styles.pressed}>
+            <ThemedText type="link">See all</ThemedText>
+          </Pressable>
+        ) : null}
+      </View>
       <ScrollView
         horizontal
         nestedScrollEnabled
@@ -36,7 +55,7 @@ export function MagazineRailRow({ title, events, density = 'compact' }: Magazine
         style={styles.scroller}
         contentContainerStyle={styles.row}>
         {events.map((event) => (
-          <PosterTile key={event.id} event={event} width={width} showWhen={featured} />
+          <PosterTile key={event.id} event={event} width={width} />
         ))}
       </ScrollView>
     </View>
@@ -47,10 +66,15 @@ const styles = StyleSheet.create({
   wrap: {
     gap: Spacing.two,
   },
-  heading: {
+  headingRow: {
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    justifyContent: 'space-between',
     paddingHorizontal: Spacing.four,
-    fontSize: 20,
-    lineHeight: 24,
+    gap: Spacing.two,
+  },
+  heading: {
+    flex: 1,
   },
   headingFeatured: {
     fontSize: 24,
@@ -65,5 +89,8 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     gap: Spacing.three,
     paddingHorizontal: Spacing.four,
+  },
+  pressed: {
+    opacity: 0.7,
   },
 });

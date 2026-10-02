@@ -11,6 +11,7 @@ import { Colors, Spacing } from '@/constants/theme';
 import type { StockholmEvent } from '@/types/event';
 import { CATEGORY_BADGE_COLORS } from '@/utils/category-colors';
 import type { GeoPoint } from '@/utils/geo';
+import { eventPoint } from '@/utils/geo';
 import { loadBubbleIcon } from '@/utils/map-bubble-icon';
 import {
   boundsAround,
@@ -50,6 +51,8 @@ export type EventMapProps = {
   favoriteIds?: ReadonlySet<string>;
   /** When set, the camera opens on the user instead of city centre. */
   userLocation?: GeoPoint | null;
+  /** Open the peek for this event when present on the map. */
+  focusEventId?: string | null;
   /** Accepted for a shared interface with the web fallback; unused natively. */
   loading?: boolean;
   error?: Error | null;
@@ -79,8 +82,8 @@ function hasNativeMaps(): boolean {
 function MapUnavailable({ title = 'Map unavailable' }: { title?: string }) {
   return (
     <ThemedView style={styles.unavailable}>
-      <ThemedText type="subtitle">{title}</ThemedText>
-      <ThemedText type="small" themeColor="textSecondary" style={styles.unavailableText}>
+      <ThemedText type="section">{title}</ThemedText>
+      <ThemedText type="meta" themeColor="textSecondary" style={styles.unavailableText}>
         {title === 'Map not configured'
           ? 'The maps API key is missing in this build. Everything else works — browse events from Home.'
           : 'Maps can’t run inside Expo Go. Everything else works — browse events from Home.'}
@@ -99,8 +102,14 @@ function hasMapsApiKey(): boolean {
   return Constants.expoConfig?.extra?.mapsConfigured === true;
 }
 
-function useSelectedEvent(events: StockholmEvent[]) {
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+function useSelectedEvent(events: StockholmEvent[], focusEventId?: string | null) {
+  const [selectedId, setSelectedId] = useState<string | null>(focusEventId ?? null);
+
+  useEffect(() => {
+    if (focusEventId && events.some((event) => event.id === focusEventId)) {
+      setSelectedId(focusEventId);
+    }
+  }, [focusEventId, events]);
 
   useEffect(() => {
     if (selectedId && !events.some((event) => event.id === selectedId)) {
@@ -234,7 +243,7 @@ function usePinIcons(
   return icons;
 }
 
-export function EventMap({ events, favoriteIds, userLocation }: EventMapProps) {
+export function EventMap({ events, favoriteIds, userLocation, focusEventId }: EventMapProps) {
   if (!hasNativeMaps()) {
     return <MapUnavailable />;
   }
@@ -249,6 +258,7 @@ export function EventMap({ events, favoriteIds, userLocation }: EventMapProps) {
       events={events}
       favoriteIds={favoriteIds ?? new Set()}
       userLocation={userLocation ?? null}
+      focusEventId={focusEventId ?? null}
     />
   );
 }
@@ -257,16 +267,23 @@ function NativeEventMap({
   events,
   favoriteIds,
   userLocation,
+  focusEventId,
 }: {
   events: StockholmEvent[];
   favoriteIds: ReadonlySet<string>;
   userLocation: GeoPoint | null;
+  focusEventId: string | null;
 }) {
   const { AppleMaps, GoogleMaps } = require('expo-maps') as typeof import('expo-maps');
-  const origin = userLocation ?? STOCKHOLM;
+  const focusPoint = useMemo(() => {
+    if (!focusEventId) return null;
+    const event = events.find((item) => item.id === focusEventId);
+    return event ? eventPoint(event) ?? null : null;
+  }, [events, focusEventId]);
+  const origin = focusPoint ?? userLocation ?? STOCKHOLM;
   const mapRef = useRef<MapCameraHandle>(null);
   const mappable = useMemo(() => mappableEvents(events), [events]);
-  const { selectedId, selected, select, clear } = useSelectedEvent(mappable);
+  const { selectedId, selected, select, clear } = useSelectedEvent(mappable, focusEventId);
   const { camera, cameraRef, onCameraMove } = useMapCamera(origin);
   const pins = useMemo(
     () => visibleMapPins(mappable, camera, { selectedId }),
@@ -276,6 +293,14 @@ function NativeEventMap({
   pinsRef.current = pins;
   const { showTitles, uiScale } = useBubbleMode(camera.zoom, mappable.length);
   const bubbleIcons = usePinIcons(pins, showTitles, uiScale, favoriteIds, selectedId);
+
+  useEffect(() => {
+    if (!focusPoint) return;
+    mapRef.current?.setCameraPosition?.({
+      coordinates: focusPoint,
+      zoom: MAP_NEIGHBOURHOOD_ZOOM,
+    });
+  }, [focusPoint]);
 
   const originLat = origin.latitude;
   const originLng = origin.longitude;

@@ -1,4 +1,4 @@
-import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
+import { Stack, useLocalSearchParams, useRouter, type Href } from 'expo-router';
 import { useEffect } from 'react';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -13,12 +13,14 @@ import { Icon } from '@/components/icon';
 import { ShareButton } from '@/components/share-button';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { Fonts, Spacing } from '@/constants/theme';
+import { Spacing } from '@/constants/theme';
 import { useInterests } from '@/context/interests-context';
 import { useEvent } from '@/hooks/use-events';
 import { useTheme } from '@/hooks/use-theme';
+import { BADGE_INK, CATEGORY_BADGE_COLORS } from '@/utils/category-colors';
 import { directionsQuery } from '@/utils/directions';
 import { isOngoing } from '@/utils/event-interval';
+import { eventPoint } from '@/utils/geo';
 import {
   formatCategory,
   formatEventClock,
@@ -54,7 +56,9 @@ export default function EventDetailScreen() {
     return (
       <ThemedView style={styles.centered}>
         <Stack.Screen options={{ title: 'Not found' }} />
-        <ThemedText themeColor="textSecondary">This event could not be found.</ThemedText>
+        <ThemedText type="meta" themeColor="textSecondary">
+          This event could not be found.
+        </ThemedText>
       </ThemedView>
     );
   }
@@ -62,6 +66,7 @@ export default function EventDetailScreen() {
   const hasDirections = Boolean(directionsQuery(event));
   const hasTickets = Boolean(event.ticketUrl);
   const hasSticky = hasDirections || hasTickets;
+  const onMap = Boolean(eventPoint(event));
   const when = isOngoing(event, new Date())
     ? formatEventWhen(event)
     : `${formatEventDate(event.startsAt)} · ${formatEventClock(event.startsAt)}`;
@@ -84,6 +89,7 @@ export default function EventDetailScreen() {
             uri={event.imageUrl}
             category={event.category}
             style={styles.image}
+            contentPosition="top"
             decodeWidth={720}
           />
           <View style={[styles.topBar, { paddingTop: insets.top + Spacing.two }]}>
@@ -108,27 +114,42 @@ export default function EventDetailScreen() {
         </View>
 
         <View style={styles.body}>
-          <ThemedText type="smallBold" themeColor="accent">
+          <ThemedText type="metaBold" themeColor="accent">
             {when}
           </ThemedText>
-          <ThemedText type="subtitle" style={styles.title}>
-            {event.title}
-          </ThemedText>
+          <ThemedText type="display">{event.title}</ThemedText>
           {venue ? (
-            <ThemedText type="small" themeColor="textSecondary">
+            <ThemedText type="meta" themeColor="textSecondary">
               {venue}
             </ThemedText>
           ) : null}
           <View style={styles.pillRow}>
             <ThemedView type="backgroundSelected" style={styles.chip}>
-              <ThemedText type="smallBold">{formatPrice(event.priceSek)}</ThemedText>
+              <ThemedText type="metaBold">{formatPrice(event.priceSek)}</ThemedText>
             </ThemedView>
-            <ThemedView type="backgroundSelected" style={styles.chip}>
-              <ThemedText type="smallBold">{formatCategory(event.category)}</ThemedText>
-            </ThemedView>
+            <View style={[styles.chip, { backgroundColor: CATEGORY_BADGE_COLORS[event.category] }]}>
+              <ThemedText type="metaBold" style={styles.categoryInk}>
+                {formatCategory(event.category)}
+              </ThemedText>
+            </View>
           </View>
           {event.description ? <ExpandableText>{event.description}</ExpandableText> : null}
-          <AddToCalendarButton event={event} />
+          <View style={styles.secondaryActions}>
+            <AddToCalendarButton event={event} />
+            {onMap ? (
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel="Show on map"
+                onPress={() =>
+                  router.push({ pathname: '/(tabs)/map', params: { eventId: event.id } } as Href)
+                }
+                hitSlop={Spacing.two}
+                style={({ pressed }) => [styles.mapLink, pressed && styles.pressed]}>
+                <Icon sf="map" material="map" size={16} color={theme.accent} />
+                <ThemedText type="link">Show on map</ThemedText>
+              </Pressable>
+            ) : null}
+          </View>
         </View>
       </ScrollView>
 
@@ -141,7 +162,7 @@ export default function EventDetailScreen() {
               <ExternalLink href={event.ticketUrl} asChild>
                 <Pressable style={({ pressed }) => [styles.ticketPress, pressed && styles.pressed]}>
                   <ThemedView type="accent" style={styles.ticketButton}>
-                    <ThemedText type="smallBold" themeColor="accentInk" numberOfLines={1}>
+                    <ThemedText type="metaBold" themeColor="accentInk" numberOfLines={1}>
                       {ticketCtaLabel(event)}
                     </ThemedText>
                   </ThemedView>
@@ -202,11 +223,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.four,
     gap: Spacing.two,
   },
-  title: {
-    fontFamily: Fonts.display,
-    fontSize: 26,
-    lineHeight: 30,
-  },
   pillRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -218,6 +234,20 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.two,
     paddingVertical: Spacing.half,
     borderRadius: Spacing.five,
+  },
+  categoryInk: {
+    color: BADGE_INK,
+  },
+  secondaryActions: {
+    gap: Spacing.one,
+    paddingTop: Spacing.one,
+  },
+  mapLink: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+    gap: Spacing.one,
+    paddingVertical: Spacing.two,
   },
   sticky: {
     flexDirection: 'row',

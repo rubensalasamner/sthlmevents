@@ -1,10 +1,11 @@
+import { useLocalSearchParams } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { EventMap } from '@/components/event-map';
+import { FilterBar } from '@/components/filter-bar';
 import { FilterSheet } from '@/components/filter-sheet';
-import { FilterSummaryChip } from '@/components/filter-summary-chip';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 import { useFavorites } from '@/context/favorites-context';
@@ -12,6 +13,8 @@ import { useFilteredEvents } from '@/hooks/use-filtered-events';
 import { mappableEvents } from '@/utils/map-marker';
 
 export default function MapScreen() {
+  const { eventId } = useLocalSearchParams<{ eventId?: string | string[] }>();
+  const focusEventId = typeof eventId === 'string' ? eventId : Array.isArray(eventId) ? eventId[0] : undefined;
   const { events, listEvents, loading, error, reload, nearStatus, location } = useFilteredEvents();
   const { favoriteIds } = useFavorites();
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -24,6 +27,7 @@ export default function MapScreen() {
           events={mappable}
           favoriteIds={favoriteIds}
           userLocation={location}
+          focusEventId={focusEventId}
           loading={loading}
           error={error}
           onRetry={reload}
@@ -31,7 +35,7 @@ export default function MapScreen() {
       </View>
       <SafeAreaView edges={['top']} style={styles.overlay} pointerEvents="box-none">
         <View style={styles.chipRow} pointerEvents="auto">
-          <FilterSummaryChip onPress={() => setFiltersOpen(true)} />
+          <FilterBar onPress={() => setFiltersOpen(true)} />
         </View>
       </SafeAreaView>
       <FilterSheet
@@ -39,6 +43,7 @@ export default function MapScreen() {
         visible={filtersOpen}
         onClose={() => setFiltersOpen(false)}
         nearStatus={nearStatus}
+        resultCount={mappable.length}
       />
     </ThemedView>
   );
@@ -61,7 +66,6 @@ const styles = StyleSheet.create({
     pointerEvents: 'box-none',
   },
   chipRow: {
-    paddingHorizontal: Spacing.four,
     paddingTop: Spacing.two,
     pointerEvents: 'box-none',
   },

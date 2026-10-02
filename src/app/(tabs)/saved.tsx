@@ -9,6 +9,7 @@ import { Spacing } from '@/constants/theme';
 import { useFavorites } from '@/context/favorites-context';
 import { useEvents } from '@/hooks/use-events';
 import { stockholmMidnight } from '@/utils/date-range';
+import { eventInterval } from '@/utils/event-interval';
 
 export default function SavedScreen() {
   const { data: events, loading, error, reload } = useEvents();
@@ -23,10 +24,32 @@ export default function SavedScreen() {
   );
 
   const sections = useMemo(() => {
-    const weekEnd = stockholmMidnight(7, new Date()).getTime();
+    const now = new Date();
+    const weekEnd = stockholmMidnight(7, now).getTime();
+    const past: typeof saved = [];
+    const thisWeek: typeof saved = [];
+    const later: typeof saved = [];
+
+    for (const event of saved) {
+      const { endMs } = eventInterval(event);
+      if (endMs < now.getTime()) {
+        past.push(event);
+      } else if (new Date(event.startsAt).getTime() < weekEnd) {
+        thisWeek.push(event);
+      } else {
+        later.push(event);
+      }
+    }
+
     return [
-      { title: 'This week', data: saved.filter((event) => new Date(event.startsAt).getTime() < weekEnd) },
-      { title: 'Later', data: saved.filter((event) => new Date(event.startsAt).getTime() >= weekEnd) },
+      { title: 'This week', data: thisWeek },
+      { title: 'Later', data: later },
+      {
+        title: 'Past',
+        data: [...past].sort(
+          (a, b) => eventInterval(b).endMs - eventInterval(a).endMs,
+        ),
+      },
     ];
   }, [saved]);
 
@@ -35,17 +58,17 @@ export default function SavedScreen() {
       <SafeAreaView edges={['top']} style={styles.safe}>
         <EventSectionList
           sections={sections}
-          emptyMessage="Never miss a happening! You'll find all your saved events here."
+          emptyMessage="Save events you care about — they'll show up here."
           ListHeaderComponent={
             <View style={styles.pad}>
-              <ThemedText type="title" style={styles.title}>
-                Saved
-              </ThemedText>
+              <ThemedText type="display">Saved</ThemedText>
               {loading && saved.length === 0 ? (
-                <ThemedText themeColor="textSecondary">Loading…</ThemedText>
+                <ThemedText type="meta" themeColor="textSecondary">
+                  Loading…
+                </ThemedText>
               ) : null}
               {error ? (
-                <ThemedText themeColor="textSecondary" onPress={reload}>
+                <ThemedText type="meta" themeColor="textSecondary" onPress={reload}>
                   Could not load events. Tap to retry.
                 </ThemedText>
               ) : null}
@@ -69,9 +92,5 @@ const styles = StyleSheet.create({
     paddingTop: Spacing.three,
     paddingBottom: Spacing.two,
     gap: Spacing.two,
-  },
-  title: {
-    fontSize: 28,
-    lineHeight: 32,
   },
 });

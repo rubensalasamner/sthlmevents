@@ -13,11 +13,7 @@ type ScreenHeaderProps = {
 };
 
 export function ScreenHeader({ title, subtitle, children, onTitlePress }: ScreenHeaderProps) {
-  const titleNode = (
-    <ThemedText type="title" style={styles.title}>
-      {title}
-    </ThemedText>
-  );
+  const titleNode = <ThemedText type="display">{title}</ThemedText>;
 
   return (
     <View style={styles.container}>
@@ -34,7 +30,7 @@ export function ScreenHeader({ title, subtitle, children, onTitlePress }: Screen
         titleNode
       )}
       {subtitle && (
-        <ThemedText type="small" themeColor="textSecondary">
+        <ThemedText type="meta" themeColor="textSecondary">
           {subtitle}
         </ThemedText>
       )}
@@ -48,10 +44,6 @@ const styles = StyleSheet.create({
     paddingTop: Spacing.four,
     paddingHorizontal: Spacing.four,
     gap: Spacing.two,
-  },
-  title: {
-    fontSize: 36,
-    lineHeight: 42,
   },
   titlePressed: {
     opacity: 0.85,

@@ -72,17 +72,13 @@ istället för en filterstack. Tema: "Blå Timmen"
 - UI (2026-09-18): **Magazine home + map peek + agenda**. Tabs Home /
   Explore / Saved. Filter ligger i ett sheet bakom en sammanfattningschip —
   inte fyra always-on rader. EventPresentation-strategier: hero / poster /
-  compact (map peek). Eventdetalj följer Standard 2026-mocken: 3:2-kort
-  med titel på bilden, when/title/venue, pris+kategori-chips, beskrivning
-  under fakta, Directions + Tickets under beskrivningen (inte sticky footer).
-  Saved är en kronologisk lista
-  (This week / Later). Ranking, Blå Timmen, weekend-default, vibes och
-  påminnelser oförändrade. Event-räknaren under Home-rubriken är gömd;
-  5-tap på rubriken (__DEV__) visar källfilter + räkning som tidigare.
-  Explore: ingen sök-overlay, ingen half-sheet. Defaultkamera neighbourhood
-  (zoom 13). `expo-maps` v57 saknar native clustering — JS-rutnät med
-  räknebubblor under zoom 13, därefter närmaste ~40 pins i viewport.
-  Pin-tap → peek-kort.
+  compact (map peek). Eventdetalj: 3:2-hero, kategori-färgad chip (samma
+  språk som map-peek), sticky Directions + Tickets, ExpandableText,
+  “Show on map” när coords finns. Saved: This week / Later / Past.
+  Type scale låst i `ThemedText` (display/section/card/body/meta).
+  Agenda: sök + filter-chip (ingen separat DateFilter-rad). Tomma lägen
+  erbjuder Reset filters + Open Explore. Ranking, Blå Timmen, weekend-
+  default, vibes och påminnelser oförändrade.
 - Känd bugg-kvarleva: IG-titlar kan innehålla emoji/skräprader —
   `firstTitleLine` hackar vid 80 tecken men rensar inte alla emoji. Kosmetiskt.
 - **Android OOM på IG-bilder** (2026-09-18): `Canvas: trying to draw too large
@@ -252,6 +248,13 @@ konton först efter caption-probe (ingen OCR som default).
   rails + interest-chips. Keyword-maps + FB/IG mapper använder
   `inferCommerceCategory`; LLM-prompten säger samma sak. Syns i data efter
   nästa snapshot.
+- **App variants (2026-10-02)**: EAS `development` sätter `APP_VARIANT=development`
+  → Android/iOS id `app.sthlmevents.dev`, app-namn “sthlmevents Dev”. Play /
+  production behåller `app.sthlmevents`. Då kan Internal Testing och lokal
+  hot-reload-klient sitta sida vid sida. Kräver **en** ny
+  `eas build -p android --profile development`. Metro: `npm run start:usb`.
+  USB: `scripts/usb-dev.ps1` (öppnar bara `.dev`-paketet). Lägg till
+  `app.sthlmevents.dev` SHA-1 i Google Maps API-nyckelrestriktionen.
 - **Filter**: sammanfattningschip öppnar sheet (datum, kategori, near-me,
   dev-source). Inte always-on-stack. `reset()` rensar till kontextuell default.
 - **Feed-ranking** (`src/utils/ranking.ts`): band → tier → sortMs → featured →

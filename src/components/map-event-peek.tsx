@@ -3,10 +3,11 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { EventImage } from '@/components/event-image';
+import { FadeInView } from '@/components/fade-in-view';
 import { Icon } from '@/components/icon';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { BottomTabInset, Fonts, Spacing } from '@/constants/theme';
+import { BottomTabInset, Spacing } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
 import type { StockholmEvent } from '@/types/event';
 import { BADGE_INK, CATEGORY_BADGE_COLORS } from '@/utils/category-colors';
@@ -28,35 +29,39 @@ export function MapEventPeek({ event, onDismiss }: Props) {
   const bottomPad = Math.max(insets.bottom, Spacing.two) + BottomTabInset + Spacing.two;
 
   return (
-    <View style={[styles.wrap, { paddingBottom: bottomPad }]} pointerEvents="box-none">
+    <FadeInView
+      duration={280}
+      fromY={18}
+      style={[styles.wrap, { paddingBottom: bottomPad }]}
+      pointerEvents="box-none">
       <ThemedView type="backgroundElement" style={styles.card}>
         <Pressable
           style={({ pressed }) => [styles.row, pressed && styles.pressed]}
           onPress={() => router.push(`/event/${event.id}`)}
           accessibilityRole="button"
-          accessibilityLabel={`Open ${event.title}`}
-        >
+          accessibilityLabel={`Open ${event.title}`}>
           <EventImage
             uri={event.imageUrl}
             category={event.category}
             style={styles.thumb}
+            contentPosition="top"
+            decodeWidth={88}
             transition={150}
           />
           <View style={styles.body}>
             <ThemedView
-              style={[styles.badge, { backgroundColor: CATEGORY_BADGE_COLORS[event.category] }]}
-            >
-              <ThemedText type="smallBold" style={styles.badgeText}>
+              style={[styles.badge, { backgroundColor: CATEGORY_BADGE_COLORS[event.category] }]}>
+              <ThemedText type="metaBold" style={styles.badgeText}>
                 {formatCategory(event.category).toUpperCase()}
               </ThemedText>
             </ThemedView>
-            <ThemedText type="smallBold" themeColor="accent" numberOfLines={1}>
+            <ThemedText type="metaBold" themeColor="accent" numberOfLines={1}>
               {formatEventWhen(event)}
             </ThemedText>
-            <ThemedText type="subtitle" numberOfLines={2} style={styles.title}>
+            <ThemedText type="card" numberOfLines={2}>
               {event.title}
             </ThemedText>
-            <ThemedText type="small" themeColor="textSecondary" numberOfLines={1}>
+            <ThemedText type="meta" themeColor="textSecondary" numberOfLines={1}>
               {venueLine([event.venue.name, event.venue.district])} · {formatPrice(event.priceSek)}
             </ThemedText>
           </View>
@@ -66,12 +71,11 @@ export function MapEventPeek({ event, onDismiss }: Props) {
           style={styles.dismiss}
           hitSlop={12}
           accessibilityRole="button"
-          accessibilityLabel="Dismiss"
-        >
+          accessibilityLabel="Dismiss">
           <Icon sf="xmark" material="close" size={18} color={theme.textSecondary} />
         </Pressable>
       </ThemedView>
-    </View>
+    </FadeInView>
   );
 }
 
@@ -116,12 +120,6 @@ const styles = StyleSheet.create({
     fontSize: 10,
     lineHeight: 12,
     letterSpacing: 0.5,
-  },
-  title: {
-    fontFamily: Fonts.display,
-    fontSize: 16,
-    lineHeight: 20,
-    letterSpacing: -0.2,
   },
   dismiss: {
     position: 'absolute',

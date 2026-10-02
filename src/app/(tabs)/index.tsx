@@ -3,20 +3,21 @@ import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from 'reac
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, type Href } from 'expo-router';
 
+import { EmptyEventsState } from '@/components/empty-events-state';
 import { EventPresentation } from '@/components/event-presentation';
+import { FilterBar } from '@/components/filter-bar';
 import { FilterSheet } from '@/components/filter-sheet';
-import { FilterSummaryChip } from '@/components/filter-summary-chip';
 import { Icon } from '@/components/icon';
 import { InterestsEntry } from '@/components/interests-entry';
 import { MagazineRailRow } from '@/components/magazine-rail';
 import { SourceFilter } from '@/components/source-filter';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { Fonts, Spacing } from '@/constants/theme';
+import { Spacing } from '@/constants/theme';
 import { useFilters } from '@/context/filters-context';
 import { useFilteredEvents } from '@/hooks/use-filtered-events';
 import { useTheme } from '@/hooks/use-theme';
-import { buildMagazine } from '@/utils/magazine-rails';
+import { buildMagazine, railCategoryFilter } from '@/utils/magazine-rails';
 
 const TITLE_UNLOCK_TAPS = 5;
 const TITLE_UNLOCK_MS = 1600;
@@ -32,12 +33,14 @@ export default function HomeScreen() {
     listPending,
     nearStatus,
   } = useFilteredEvents();
-  const { source, setSource, devSourcesUnlocked, toggleDevSources } = useFilters();
+  const { source, setSource, setCategory, devSourcesUnlocked, toggleDevSources } = useFilters();
   const [filtersOpen, setFiltersOpen] = useState(false);
   const router = useRouter();
   const theme = useTheme();
   const magazine = useMemo(() => buildMagazine(listEvents, heading), [listEvents, heading]);
   const taps = useRef({ count: 0, at: 0 });
+
+  const openAgenda = () => router.push('/agenda' as Href);
 
   const onHeadingPress = () => {
     if (!__DEV__) return;
@@ -51,6 +54,12 @@ export default function HomeScreen() {
     }
   };
 
+  const onRailSeeAll = (railId: string) => {
+    const category = railCategoryFilter(railId);
+    if (category) setCategory(category);
+    openAgenda();
+  };
+
   return (
     <ThemedView style={styles.container}>
       <SafeAreaView edges={['top']} style={styles.safe}>
@@ -60,12 +69,10 @@ export default function HomeScreen() {
               <Pressable
                 onPress={onHeadingPress}
                 style={({ pressed }) => pressed && styles.pressed}>
-                <ThemedText type="subtitle" style={styles.title}>
-                  {heading}
-                </ThemedText>
+                <ThemedText type="display">{heading}</ThemedText>
               </Pressable>
               {devSourcesUnlocked ? (
-                <ThemedText type="small" themeColor="textSecondary">
+                <ThemedText type="meta" themeColor="textSecondary">
                   {listEvents.length} events
                 </ThemedText>
               ) : null}
@@ -75,8 +82,8 @@ export default function HomeScreen() {
               <InterestsEntry />
               <Pressable
                 accessibilityRole="button"
-                accessibilityLabel="Search all events"
-                onPress={() => router.push('/agenda' as Href)}
+                accessibilityLabel="Browse all events"
+                onPress={openAgenda}
                 hitSlop={Spacing.two}
                 style={({ pressed }) => pressed && styles.pressed}>
                 <Icon sf="magnifyingglass" material="search" size={22} color={theme.text} />
@@ -84,9 +91,7 @@ export default function HomeScreen() {
             </View>
           </View>
 
-          <View style={styles.chipRow}>
-            <FilterSummaryChip onPress={() => setFiltersOpen(true)} />
-          </View>
+          <FilterBar hideDate onPress={() => setFiltersOpen(true)} />
           <SourceFilter
             events={events}
             value={source}
@@ -98,12 +103,16 @@ export default function HomeScreen() {
             <ActivityIndicator color={theme.textSecondary} style={styles.loader} />
           ) : error ? (
             <Pressable onPress={reload} style={styles.messageWrap}>
-              <ThemedText themeColor="textSecondary">Could not load events. Tap to retry.</ThemedText>
+              <ThemedText type="meta" themeColor="textSecondary">
+                Could not load events. Tap to retry.
+              </ThemedText>
             </Pressable>
           ) : !magazine.hero ? (
-            <View style={styles.messageWrap}>
-              <ThemedText themeColor="textSecondary">No events match your filters.</ThemedText>
-            </View>
+            <EmptyEventsState
+              message="No events match your filters."
+              showReset
+              showExplore
+            />
           ) : (
             <>
               <View style={styles.hero}>
@@ -115,16 +124,15 @@ export default function HomeScreen() {
                   title={rail.title}
                   events={rail.events}
                   density={rail.density}
+                  onSeeAll={() => onRailSeeAll(rail.id)}
                 />
               ))}
               <Pressable
                 accessibilityRole="button"
-                accessibilityLabel="See all events"
-                onPress={() => router.push('/agenda' as Href)}
+                accessibilityLabel="Browse all events"
+                onPress={openAgenda}
                 style={({ pressed }) => [styles.seeAll, pressed && styles.pressed]}>
-                <ThemedText type="smallBold" themeColor="accent">
-                  See all
-                </ThemedText>
+                <ThemedText type="link">Browse all</ThemedText>
                 <Icon sf="chevron.right" material="arrow_forward" size={16} color={theme.accent} />
               </Pressable>
             </>
@@ -136,6 +144,7 @@ export default function HomeScreen() {
         visible={filtersOpen}
         onClose={() => setFiltersOpen(false)}
         nearStatus={nearStatus}
+        resultCount={listEvents.length}
       />
     </ThemedView>
   );
@@ -164,19 +173,11 @@ const styles = StyleSheet.create({
     gap: Spacing.half,
     flex: 1,
   },
-  title: {
-    fontFamily: Fonts.display,
-    fontSize: 28,
-    lineHeight: 32,
-  },
   headerActions: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: Spacing.three,
     paddingTop: Spacing.one,
-  },
-  chipRow: {
-    paddingHorizontal: Spacing.four,
   },
   hero: {
     paddingHorizontal: Spacing.four,

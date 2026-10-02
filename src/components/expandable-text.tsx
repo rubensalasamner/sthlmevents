@@ -43,7 +43,7 @@ export function ExpandableText({
           onPress={() => setExpanded((open) => !open)}
           hitSlop={Spacing.two}
           style={({ pressed }) => pressed && styles.pressed}>
-          <ThemedText type="smallBold" themeColor="accent">
+          <ThemedText type="link">
             {expanded ? 'Show less' : 'Read more'}
           </ThemedText>
         </Pressable>

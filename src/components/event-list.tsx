@@ -47,7 +47,7 @@ export function EventList({
         </ThemedText>
         {onRetry && (
           <Pressable onPress={onRetry} style={({ pressed }) => pressed && styles.pressed}>
-            <ThemedText type="linkPrimary">Try again</ThemedText>
+            <ThemedText type="link">Try again</ThemedText>
           </Pressable>
         )}
       </View>

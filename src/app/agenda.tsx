@@ -3,10 +3,9 @@ import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Stack } from 'expo-router';
 
-import { DateFilter } from '@/components/date-filter';
 import { EventSectionList } from '@/components/event-section-list';
+import { FilterBar } from '@/components/filter-bar';
 import { FilterSheet } from '@/components/filter-sheet';
-import { FilterSummaryChip } from '@/components/filter-summary-chip';
 import { SearchBar } from '@/components/search-bar';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
@@ -17,7 +16,7 @@ import { useTheme } from '@/hooks/use-theme';
 import { groupAgenda } from '@/utils/agenda-groups';
 
 export default function AgendaScreen() {
-  const { query, dateRange, setQuery, setDateRange } = useFilters();
+  const { query, setQuery } = useFilters();
   const { events, loading, error, reload, listEvents, listPending, nearStatus, now } =
     useFilteredEvents();
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -34,21 +33,28 @@ export default function AgendaScreen() {
         <EventSectionList
           sections={sections}
           emptyMessage="No events match your filters."
+          showEmptyReset
+          showEmptyExplore
           ListHeaderComponent={
             <View style={styles.header}>
               <SearchBar value={query} onChange={setQuery} />
-              <DateFilter value={dateRange} onChange={setDateRange} />
               <View style={styles.chipRow}>
-                <FilterSummaryChip onPress={() => setFiltersOpen(true)} />
+                <View style={styles.bar}>
+                  <FilterBar onPress={() => setFiltersOpen(true)} />
+                </View>
                 {listPending ? <ActivityIndicator size="small" color={theme.textSecondary} /> : null}
               </View>
               {loading && listEvents.length === 0 ? (
-                <ThemedText themeColor="textSecondary" style={styles.message}>
+                <ThemedText type="meta" themeColor="textSecondary" style={styles.message}>
                   Loading…
                 </ThemedText>
               ) : null}
               {error ? (
-                <ThemedText themeColor="textSecondary" style={styles.message} onPress={reload}>
+                <ThemedText
+                  type="meta"
+                  themeColor="textSecondary"
+                  style={styles.message}
+                  onPress={reload}>
                   Could not load events. Tap to retry.
                 </ThemedText>
               ) : null}
@@ -61,6 +67,7 @@ export default function AgendaScreen() {
         visible={filtersOpen}
         onClose={() => setFiltersOpen(false)}
         nearStatus={nearStatus}
+        resultCount={listEvents.length}
       />
     </ThemedView>
   );
@@ -82,7 +89,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: Spacing.two,
-    paddingHorizontal: Spacing.four,
+    paddingRight: Spacing.four,
+  },
+  bar: {
+    flex: 1,
+    minWidth: 0,
   },
   message: {
     paddingHorizontal: Spacing.four,

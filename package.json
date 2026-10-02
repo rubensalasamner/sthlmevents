@@ -46,6 +46,7 @@
   },
   "scripts": {
     "start": "expo start",
+    "start:usb": "APP_VARIANT=development expo start --port 8081 --dev-client --localhost",
     "test": "node --import tsx --test src/**/*.test.ts src/data/*.test.ts",
     "lint": "expo lint"
   },

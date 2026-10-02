@@ -23,7 +23,7 @@ export function InterestsEntry() {
       hitSlop={Spacing.two}
       onPress={openEditor}
       style={({ pressed }) => [styles.hit, pressed && styles.pressed]}>
-      <ThemedText type="small" themeColor="accent">
+      <ThemedText type="link">
         {label}
       </ThemedText>
     </Pressable>

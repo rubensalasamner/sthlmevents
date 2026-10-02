@@ -68,13 +68,13 @@ export function InterestsPrompt() {
           type="backgroundElement"
           style={[styles.sheet, { paddingBottom: Math.max(insets.bottom, Spacing.four) }]}>
           <View style={styles.handle} />
-          <ThemedText type="subtitle" style={styles.title}>
+          <ThemedText type="section" style={styles.title}>
             {isFirstPrompt ? 'What are you into?' : 'Your vibes'}
           </ThemedText>
-          <ThemedText type="small" themeColor="textSecondary" style={styles.subtitle}>
+          <ThemedText type="meta" themeColor="textSecondary" style={styles.subtitle}>
             {isFirstPrompt
-              ? 'We’ll gently boost these in your feed. Skip anytime — you can change this later.'
-              : 'Boost these categories in Discover. Not a hard filter.'}
+              ? 'We’ll gently boost these on Home. Skip anytime — you can change this later.'
+              : 'Boost these categories on Home. Not a hard filter.'}
           </ThemedText>
 
           <View style={styles.chipWrap}>
@@ -97,7 +97,7 @@ export function InterestsPrompt() {
                 { backgroundColor: theme.accent },
                 pressed && styles.pressed,
               ]}>
-              <ThemedText type="smallBold" style={{ color: theme.accentInk }}>
+              <ThemedText type="metaBold" style={{ color: theme.accentInk }}>
                 {draft.size === 0 ? 'Save' : 'Save preferences'}
               </ThemedText>
             </Pressable>
@@ -106,7 +106,7 @@ export function InterestsPrompt() {
                 accessibilityRole="button"
                 onPress={skipOnboarding}
                 style={({ pressed }) => [styles.secondary, pressed && styles.pressed]}>
-                <ThemedText type="small" themeColor="textSecondary">
+                <ThemedText type="meta" themeColor="textSecondary">
                   Not now
                 </ThemedText>
               </Pressable>
@@ -115,7 +115,7 @@ export function InterestsPrompt() {
                 accessibilityRole="button"
                 onPress={closeEditor}
                 style={({ pressed }) => [styles.secondary, pressed && styles.pressed]}>
-                <ThemedText type="small" themeColor="textSecondary">
+                <ThemedText type="meta" themeColor="textSecondary">
                   Cancel
                 </ThemedText>
               </Pressable>

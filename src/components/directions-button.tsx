@@ -31,7 +31,7 @@ export function DirectionsButton({ event }: DirectionsButtonProps) {
       style={({ pressed }) => [styles.flex, pressed && styles.pressed]}>
       <ThemedView type="backgroundElement" style={styles.button}>
         <Icon sf="map" material="location_on" size={18} color={theme.text} />
-        <ThemedText type="smallBold" numberOfLines={1}>
+        <ThemedText type="metaBold" numberOfLines={1}>
           Directions
         </ThemedText>
       </ThemedView>

@@ -5,7 +5,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { EventImage } from '@/components/event-image';
 import { MoreDatesBadge } from '@/components/more-dates-badge';
 import { ThemedText } from '@/components/themed-text';
-import { Fonts, Spacing } from '@/constants/theme';
+import { Spacing } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
 import type { StockholmEvent } from '@/types/event';
 import { isOngoing } from '@/utils/event-interval';
@@ -43,21 +43,22 @@ export const CompactRow = memo(function CompactRow({
         styles.row,
         selected ? { backgroundColor: theme.backgroundSelected } : null,
       ]}>
-      <ThemedText type="smallBold" themeColor="accent" style={styles.time}>
+      <ThemedText type="metaBold" themeColor="accent" style={styles.time}>
         {time}
       </ThemedText>
       <EventImage
         uri={event.imageUrl}
         category={event.category}
         style={styles.thumb}
+        contentPosition="top"
         decodeWidth={56}
         transition={0}
       />
       <View style={styles.body}>
-        <ThemedText type="smallBold" numberOfLines={2} style={styles.title}>
+        <ThemedText type="card" numberOfLines={2}>
           {event.title}
         </ThemedText>
-        <ThemedText type="small" themeColor="textSecondary" numberOfLines={1}>
+        <ThemedText type="meta" themeColor="textSecondary" numberOfLines={1}>
           {meta}
         </ThemedText>
         {event.nextDates && event.nextDates.length > 0 ? (
@@ -108,12 +109,6 @@ const styles = StyleSheet.create({
     flex: 1,
     minWidth: 0,
     gap: 2,
-  },
-  title: {
-    fontFamily: Fonts.display,
-    fontSize: 15,
-    lineHeight: 19,
-    letterSpacing: -0.2,
   },
   pressed: {
     opacity: 0.85,
