@@ -3,7 +3,7 @@
 > **Syfte:** den här filen är projektets "minne" mellan datorer och sessioner.
 > Läs den först om du (människa eller AI-agent) plockar upp projektet efter en
 > paus. Den uppdateras när vi fattar beslut eller når slutsatser — inte för
-> varje kodändring. Senast uppdaterad: **2026-09-18**.
+> varje kodändring. Senast uppdaterad: **2026-10-02**.
 
 ---
 
@@ -20,8 +20,12 @@ istället för en filterstack. Tema: "Blå Timmen"
 - Pipeline-README (`pipeline/README.md`): arkitektur, källor, usage.
 - **Denna fil**: beslut, kostnadsfakta, kvarvarande steg, gotchas.
 
-## 2. Nuvarande läge (2026-09-17)
+## 2. Nuvarande läge (2026-10-02)
 
+- **Daglig cron frisk** t.o.m. 2026-10-01. **Weekly Apify**: 09-21 OK;
+  **09-28 FAIL** (FB `Invalid time value` + push-race mot daily). Fix 2026-10-02:
+  skippa bad `utcStartDate` i FB-adaptern; weekly cron flyttad till **05:00 UTC**
+  mån (bort från daily 03:40). Manuell re-run triggad efter push.
 - **14 aktiva källor** (13 + curated IG-profiler). Snapshot-räkning oförändrad
   tills nästa `snapshot:apify` / veckokörning plockar in profil-events.
 - **Facebook-källan (Apify) är LIVE**: adapter + filter + mapper + datumfönster
@@ -266,6 +270,14 @@ npm run snapshot      # ~4.5 min, gratis, alla 12 källor
 snapshot och byter bara ut valda. Misslyckas Apify-runen behålls gamla
 FB-events (stale beats missing). Output: `src/data/events.snapshot.json`.
 
+### CI — weekly vs daily race (2026-09-28)
+
+Weekly (då 03:50 UTC) och daily (03:40 UTC) överlappade: daily pushade medan
+weekly commitade → non-fast-forward, scrape gick förlorad. **Fix:** weekly
+cron → `0 5 * * 1` (05:00 UTC). Samma körning failade också FB med
+`Invalid time value` (en rad utan parsebar `utcStartDate`); adaptern filtrerar
+nu bort sådana rader innan map.
+
 ### Starta development build (WSL2 + Android) — verifierat 2026-09-16
 
 **Det som funkade** (USB, efter ny EAS development-build):
@@ -345,11 +357,9 @@ Nya adapters följer mönstret: `types.ts` (rå shape + klient) → `mapper.ts`
 
 ## 6. Nästa steg (prioriterat)
 
-1. **Lägg till `APIFY_TOKEN` som repo-secret** (endast manuell kvarvarande
-   steg): Settings → Secrets and variables → Actions → New repository secret.
-   Workflows är redan uppsatta: `apify-weekly.yml` (måndagar 03:50 UTC, FB+IG
-   ~$0.90/run) + `snapshot.yml` (daglig, exkluderar Apify-källorna via
-   `--only <free sources>`). Testa med "Run workflow" på `apify-weekly.yml`.
+1. **Bekräfta manuell weekly re-run** (triggas 2026-10-02 efter FB date-guard
+   + cron-offset). `APIFY_TOKEN` är redan repo-secret. Nästa schemalagda:
+   mån 05:00 UTC. Daily: `snapshot.yml` exkluderar Apify via `--only`.
 2. **Ny EAS-build** — `expo-notifications` + `expo-calendar` + `expo-location`
    är native; JS-only reload räcker inte. Efter build: favorisera → notiser;
    eventdetalj → Add to calendar; Discover → Near me → GPS-prompt. Sätt också

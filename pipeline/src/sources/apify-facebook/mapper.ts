@@ -47,9 +47,22 @@ function parseDurationMs(duration: string | null | undefined): number | undefine
 }
 
 /**
+ * Drop rows whose start instant cannot be parsed. Apify occasionally returns
+ * null/empty/`Invalid Date` strings; `new Date(...).toISOString()` then throws
+ * `RangeError: Invalid time value` and used to abort the whole Facebook source
+ * (2026-09-28 weekly run). Filter these before mapping so one bad row cannot
+ * kill the batch.
+ */
+export function hasValidUtcStartDate(raw: ApifyFbEventRaw): boolean {
+  const value = raw.utcStartDate;
+  if (value == null || value === '') return false;
+  return Number.isFinite(Date.parse(value));
+}
+
+/**
  * Pure transform: one raw Facebook event -> shared `StockholmEvent`.
- * Stockholm filtering happens BEFORE this in the adapter; the mapper stays
- * total and testable against any fixture row.
+ * Stockholm + date filtering happen BEFORE this in the adapter; the mapper
+ * stays total and testable against any fixture row.
  *
  * Documented source gaps handled here:
  *  - venue is a free-text address (no lat/lon, no city) -> geocode stage
@@ -62,6 +75,9 @@ function parseDurationMs(duration: string | null | undefined): number | undefine
  *  - no price anywhere -> `priceSek` stays undefined ("See details")
  */
 export function mapFacebookEvent(raw: ApifyFbEventRaw): StockholmEvent {
+  if (!hasValidUtcStartDate(raw)) {
+    throw new Error(`Invalid utcStartDate: ${String(raw.utcStartDate)}`);
+  }
   const startsAt = new Date(raw.utcStartDate).toISOString();
   const durationMs = parseDurationMs(raw.duration);
   const endsAt = durationMs

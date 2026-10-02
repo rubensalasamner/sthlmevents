@@ -3,8 +3,12 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
-import { mapFacebookEvent, qualityScoreOf } from './mapper.js';
-import { looksLikeStockholmEvent as isStockholmEvent } from './mapper.js';
+import {
+  hasValidUtcStartDate,
+  mapFacebookEvent,
+  qualityScoreOf,
+  looksLikeStockholmEvent as isStockholmEvent,
+} from './mapper.js';
 import type { ApifyFbEventRaw } from './types.js';
 
 const fixture = JSON.parse(
@@ -48,6 +52,27 @@ describe('apify-facebook adapter filter', () => {
       'location.countryCode': null,
     };
     assert.equal(isStockholmEvent(melbourneTitleOnly), false);
+  });
+});
+
+describe('apify-facebook start-date guard', () => {
+  it('accepts parseable ISO instants', () => {
+    assert.equal(hasValidUtcStartDate(row('ARAKII Sample Sale')), true);
+  });
+
+  it('rejects null, empty, and garbage dates', () => {
+    const base = row('ARAKII Sample Sale');
+    assert.equal(hasValidUtcStartDate({ ...base, utcStartDate: null }), false);
+    assert.equal(hasValidUtcStartDate({ ...base, utcStartDate: '' }), false);
+    assert.equal(hasValidUtcStartDate({ ...base, utcStartDate: 'not-a-date' }), false);
+    assert.equal(hasValidUtcStartDate({ ...base, utcStartDate: undefined }), false);
+  });
+
+  it('mapFacebookEvent throws on invalid dates (adapter filters first)', () => {
+    assert.throws(
+      () => mapFacebookEvent({ ...row('ARAKII Sample Sale'), utcStartDate: null }),
+      /Invalid utcStartDate/,
+    );
   });
 });
 

@@ -10,9 +10,10 @@ name: Weekly Apify refresh
 
 on:
   schedule:
-    # Mondays 03:50 UTC ≈ 05:50 Stockholm — off the busy minutes, after the
-    # weekend (IG posts about upcoming events cluster early in the week).
-    - cron: '50 3 * * 1'
+    # Mondays 05:00 UTC ≈ 07:00 Stockholm — intentionally well after the daily
+    # free-source cron (03:40 UTC, up to ~45 min). Overlap caused a
+    # non-fast-forward push failure on 2026-09-28 after a successful scrape.
+    - cron: '0 5 * * 1'
   workflow_dispatch: {}
 
 permissions:

@@ -1,7 +1,11 @@
 import type { FetchOptions, SourceAdapter } from '../source-adapter.js';
 import type { StockholmEvent } from '../../shared/event.js';
 import { APIFY_FACEBOOK_SOURCE, type ApifyFbEventRaw } from './types.js';
-import { looksLikeStockholmEvent, mapFacebookEvent } from './mapper.js';
+import {
+  hasValidUtcStartDate,
+  looksLikeStockholmEvent,
+  mapFacebookEvent,
+} from './mapper.js';
 import { queriesForTier } from './queries.js';
 import { facebookEventsSearchUrl } from './search-url.js';
 import { runEventsScraper } from './types.js';
@@ -83,6 +87,9 @@ export class ApifyFacebookAdapter implements SourceAdapter {
       fetchImpl: this.fetchImpl,
     });
 
-    return raw.filter(looksLikeStockholmEvent).map(mapFacebookEvent);
+    return raw
+      .filter(looksLikeStockholmEvent)
+      .filter(hasValidUtcStartDate)
+      .map(mapFacebookEvent);
   }
 }

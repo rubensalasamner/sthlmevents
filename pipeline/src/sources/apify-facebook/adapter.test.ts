@@ -58,6 +58,22 @@ describe('ApifyFacebookAdapter', () => {
     assert.equal(events[0]?.source, 'apify-facebook');
   });
 
+  it('skips Stockholm rows with unparseable utcStartDate instead of aborting', async () => {
+    const badDate: ApifyFbEventRaw = {
+      ...STOCKHOLM_ROW,
+      url: 'https://www.facebook.com/events/333/',
+      utcStartDate: null,
+    };
+    const adapter = new ApifyFacebookAdapter({
+      token: 'test-token',
+      queries: ['utförsäljning Stockholm'],
+      fetchImpl: fetchImplWith([badDate, STOCKHOLM_ROW]),
+    });
+    const events = await adapter.fetch();
+    assert.equal(events.length, 1);
+    assert.equal(events[0]?.sourceId, '111');
+  });
+
   it('runs date-windowed search URLs instead of raw queries', async () => {
     const captured: { value?: unknown } = {};
     const adapter = new ApifyFacebookAdapter({

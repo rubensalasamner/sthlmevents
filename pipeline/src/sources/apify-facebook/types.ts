@@ -12,8 +12,11 @@ export type ApifyFbEventRaw = {
   url: string;
   imageUrl?: string;
   description?: string;
-  /** ISO-8601 UTC instant, e.g. "2026-09-18T09:30:00.000Z". */
-  utcStartDate: string;
+  /**
+   * ISO-8601 UTC instant, e.g. "2026-09-18T09:30:00.000Z".
+   * Occasionally missing/unparseable from the actor — filtered before map.
+   */
+  utcStartDate?: string | null;
   /** Human text, e.g. "3 days" | "11 hr" | null. */
   duration?: string | null;
   usersGoing?: number;
