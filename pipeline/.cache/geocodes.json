@@ -238,7 +238,7 @@
   },
   "Mariatorget 10, Sankt Pauls Kyrkan, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791046371415
+    "fetchedAt": 1789500595952
   },
   "Mötesplats Mariatorget, Stockholm, Sweden": {
     "value": {
@@ -444,7 +444,7 @@
   },
   "Bibliotekslabbet, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791046386514
+    "fetchedAt": 1791108388244
   },
   "Hamngatan 4, Stockholm, Sweden": {
     "value": {
@@ -1160,7 +1160,7 @@
   },
   "Sergels torg, Foajé 3, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791046405120
+    "fetchedAt": 1791108400213
   },
   "Stallgatan 7, Stockholm, Sweden": {
     "value": {
@@ -1238,7 +1238,7 @@
   },
   "Tel: 08-751 09 65 - Stjärntorget 2, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791046372758
+    "fetchedAt": 1789500602670
   },
   "La Botanica, Stockholm, Sweden": {
     "value": {
@@ -1612,7 +1612,7 @@
   },
   "Ankdamsgatan 46, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791046417570
+    "fetchedAt": 1789500637457
   },
   "Solnahallen, Solna, Stockholm, Sweden": {
     "value": {
@@ -1781,7 +1781,7 @@
   },
   "St Eriksgatan 84, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791046374164
+    "fetchedAt": 1789114879645
   },
   "Påfågeln, Stockholm, Sweden": {
     "value": {
@@ -1980,11 +1980,11 @@
   },
   "Kungsstensgatan 45, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791046409211
+    "fetchedAt": 1789503618711
   },
   "Folkuniversitetets tornrum plan 7, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791046410420
+    "fetchedAt": 1789503619897
   },
   "Bråvallagatan 12, Stockholm, Sweden": {
     "value": {
@@ -2737,7 +2737,7 @@
   },
   "Radisson Collection Strand Hotel, Nybrokajen 9, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791046379385
+    "fetchedAt": 1791108394063
   },
   "The Bar & Lounge, Stockholm, Sweden": {
     "value": {
@@ -2790,7 +2790,7 @@
   },
   "Drottning Kristinas väg 51, 114 28 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791046397780
+    "fetchedAt": 1791108398732
   },
   "KTH R1, Stockholm, Sweden": {
     "value": {
@@ -2964,182 +2964,43 @@
     "value": null,
     "fetchedAt": 1790935393651
   },
-  "Götgatan 49, Stockholm, Sweden": {
+  "Vikingagatan 18, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.314553,
-      "longitude": 18.0735572
+      "latitude": 59.3410544,
+      "longitude": 18.0331141
     },
-    "fetchedAt": 1791046365393
+    "fetchedAt": 1791108386794
   },
-  "Järnvägsgatan 35, Stockholm, Sweden": {
+  "Wallingatan 34, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.3346629,
-      "longitude": 18.0534616
+      "latitude": 59.336236,
+      "longitude": 18.053661
     },
-    "fetchedAt": 1791046366752
+    "fetchedAt": 1791108389703
   },
-  "Kasernvägen 7, Stockholm, Sweden": {
+  "Sergels Torg, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.3768553,
-      "longitude": 17.9375018
+      "latitude": 59.3322005,
+      "longitude": 18.0640284
     },
-    "fetchedAt": 1791046367965
+    "fetchedAt": 1791108391151
   },
-  "Ringvägen 70, Stockholm, Sweden": {
+  "Sveavägen 17, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.3078633,
-      "longitude": 18.065941
+      "latitude": 59.3340255,
+      "longitude": 18.0644709
     },
-    "fetchedAt": 1791046370104
+    "fetchedAt": 1791108392761
   },
-  "Eriksgatan 84, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.3403831,
-      "longitude": 18.0374122
-    },
-    "fetchedAt": 1791046375482
-  },
-  "Jarlsgatan 37, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.338393,
-      "longitude": 18.0683078
-    },
-    "fetchedAt": 1791046376758
-  },
-  "Welanders väg 2, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.3350671,
-      "longitude": 18.0235194
-    },
-    "fetchedAt": 1791046377998
-  },
-  "Hagagatan 48, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.3483656,
-      "longitude": 18.0489993
-    },
-    "fetchedAt": 1791046380596
-  },
-  "Slupskjulsvägen 34, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.3267512,
-      "longitude": 18.0843273
-    },
-    "fetchedAt": 1791046382325
-  },
-  "Brunkebergstorg 6, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.3310524,
-      "longitude": 18.0668846
-    },
-    "fetchedAt": 1791046383515
-  },
-  "Karlbergsvägen 1, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.5184531,
-      "longitude": 17.9044731
-    },
-    "fetchedAt": 1791046384878
-  },
-  "Söder Mälarstrand 29, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.3206016,
-      "longitude": 18.0540494
-    },
-    "fetchedAt": 1791046387723
-  },
-  "Torsgatan 19, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.3371302,
-      "longitude": 18.0425517
-    },
-    "fetchedAt": 1791046389003
-  },
-  "stermalmsgatan 20, Stockholm, Sweden": {
+  "Hagalund, Solna, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791046390237
+    "fetchedAt": 1791108395518
   },
-  "Kungstensgatan 17, Stockholm, Sweden": {
+  "Hagalund, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.3423986,
-      "longitude": 18.0628277
+      "latitude": 59.3626188,
+      "longitude": 18.0133957
     },
-    "fetchedAt": 1791046391515
-  },
-  "Zoom, Stockholm, Sweden": {
-    "value": null,
-    "fetchedAt": 1791046393355
-  },
-  "Zoom - Svenska Enneagramföreningens digitala rum, Stockholm, Sweden": {
-    "value": null,
-    "fetchedAt": 1791046394671
-  },
-  "Riddargatan 35, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.3326603,
-      "longitude": 18.0858918
-    },
-    "fetchedAt": 1791046395947
-  },
-  "Borgvägen 1, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.3397772,
-      "longitude": 18.104173
-    },
-    "fetchedAt": 1791046399107
-  },
-  "Söder Mälarstrand Kajplats 19, Stockholm, Sweden": {
-    "value": null,
-    "fetchedAt": 1791046400838
-  },
-  "Patricia, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.3153425,
-      "longitude": 18.0760029
-    },
-    "fetchedAt": 1791046402134
-  },
-  "Tegelbacken 6, 101 23 Stockholm, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.3288525,
-      "longitude": 18.0618596
-    },
-    "fetchedAt": 1791046403867
-  },
-  "Marcusplatsen 17, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.3049731,
-      "longitude": 18.1203282
-    },
-    "fetchedAt": 1791046406329
-  },
-  "Sankt Göransgatan 92, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.334041,
-      "longitude": 18.0268959
-    },
-    "fetchedAt": 1791046407583
-  },
-  "Meddelas eventdagen, Stockholm, Sweden": {
-    "value": null,
-    "fetchedAt": 1791046412055
-  },
-  "Hemlig venue, Stockholm, Sweden": {
-    "value": null,
-    "fetchedAt": 1791046413789
-  },
-  "Linnégatan 18, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.33756,
-      "longitude": 18.0782378
-    },
-    "fetchedAt": 1791046415042
-  },
-  "Jarlsgatan 20, Stockholm, Sweden": {
-    "value": {
-      "latitude": 59.3365771,
-      "longitude": 18.0720115
-    },
-    "fetchedAt": 1791046416274
+    "fetchedAt": 1791108397005
   }
 }
