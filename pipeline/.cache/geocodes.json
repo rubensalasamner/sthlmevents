@@ -444,7 +444,7 @@
   },
   "Bibliotekslabbet, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1790762423374
+    "fetchedAt": 1791108388244
   },
   "Hamngatan 4, Stockholm, Sweden": {
     "value": {
@@ -1160,7 +1160,7 @@
   },
   "Sergels torg, Foajé 3, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1790762427564
+    "fetchedAt": 1791108400213
   },
   "Stallgatan 7, Stockholm, Sweden": {
     "value": {
@@ -2737,7 +2737,7 @@
   },
   "Radisson Collection Strand Hotel, Nybrokajen 9, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1790762424696
+    "fetchedAt": 1791108394063
   },
   "The Bar & Lounge, Stockholm, Sweden": {
     "value": {
@@ -2790,7 +2790,7 @@
   },
   "Drottning Kristinas väg 51, 114 28 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1790762426307
+    "fetchedAt": 1791108398732
   },
   "KTH R1, Stockholm, Sweden": {
     "value": {
@@ -2963,5 +2963,44 @@
   "BAR15, Stockholm, Sweden": {
     "value": null,
     "fetchedAt": 1790935393651
+  },
+  "Vikingagatan 18, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3410544,
+      "longitude": 18.0331141
+    },
+    "fetchedAt": 1791108386794
+  },
+  "Wallingatan 34, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.336236,
+      "longitude": 18.053661
+    },
+    "fetchedAt": 1791108389703
+  },
+  "Sergels Torg, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3322005,
+      "longitude": 18.0640284
+    },
+    "fetchedAt": 1791108391151
+  },
+  "Sveavägen 17, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3340255,
+      "longitude": 18.0644709
+    },
+    "fetchedAt": 1791108392761
+  },
+  "Hagalund, Solna, Sweden, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1791108395518
+  },
+  "Hagalund, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3626188,
+      "longitude": 18.0133957
+    },
+    "fetchedAt": 1791108397005
   }
 }
