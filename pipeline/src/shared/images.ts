@@ -23,3 +23,53 @@ const FALLBACK_IMAGES: Record<EventCategory, string> = {
 export function fallbackImageFor(category: EventCategory): string {
   return FALLBACK_IMAGES[category];
 }
+
+/** True when `imageUrl` is still one of our Unsplash category placeholders. */
+export function isCategoryFallbackImage(url: string): boolean {
+  return (Object.values(FALLBACK_IMAGES) as string[]).includes(url);
+}
+
+/**
+ * Heuristic: is this URL usable as an event cover image?
+ * Rejects ticket/checkout pages that some sites (Kulturhuset tix) wrongly put
+ * in og:image — those are HTML routes, not media.
+ */
+export function isPlausibleImageUrl(url: string): boolean {
+  let parsed: URL;
+  try {
+    parsed = new URL(url);
+  } catch {
+    return false;
+  }
+  if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return false;
+
+  const host = parsed.hostname.toLowerCase();
+  const path = parsed.pathname;
+
+  // Ticket checkout flows — never images (seen as bogus og:image on tix.*).
+  if (host.startsWith('tix.') || host.includes('.tix.')) return false;
+  if (/\/buyingflow\//i.test(path)) return false;
+
+  if (/\.(jpe?g|png|webp|gif|avif)(?:$|\?)/i.test(path)) return true;
+
+  // Extension-less but known image CDNs / social share hosts.
+  if (
+    host === 'images.unsplash.com' ||
+    host.includes('fbcdn.net') ||
+    host.includes('cdninstagram.com') ||
+    host.includes('fbsbx.com') ||
+    host.endsWith('meetupstatic.com') ||
+    host.endsWith('ticketm.net') ||
+    host.endsWith('lumacdn.com') ||
+    host.includes('allevents.in') ||
+    host.endsWith('tickster.com')
+  ) {
+    return true;
+  }
+
+  // Common CMS / CDN upload paths without a clear extension.
+  if (/\/(uploads?|files|images?|media|cdn\/|static\/|assets\/)/i.test(path)) return true;
+  if (/\/sites\/default\/files\//i.test(path)) return true;
+
+  return false;
+}

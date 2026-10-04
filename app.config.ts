@@ -31,6 +31,14 @@ const androidPackage = IS_DEV ? 'app.sthlmevents.dev' : appJson.android.package;
 const iosBundle = IS_DEV ? 'app.sthlmevents.dev' : appJson.ios.bundleIdentifier;
 const scheme = IS_DEV ? 'sthlmevents-dev' : appJson.scheme;
 
+const icon = IS_DEV ? './assets/images/icon-dev.png' : appJson.icon;
+const splashImage = IS_DEV
+  ? './assets/images/splash-icon-dev.png'
+  : './assets/images/splash-icon.png';
+const androidForeground = IS_DEV
+  ? './assets/images/android-icon-foreground-dev.png'
+  : appJson.android?.adaptiveIcon?.foregroundImage;
+
 let webHost: string | null = null;
 if (webOrigin) {
   try {
@@ -48,12 +56,28 @@ if (!mapsApiKey) {
   );
 }
 
+const plugins = (appJson.plugins ?? []).map((plugin: unknown) => {
+  if (!Array.isArray(plugin) || plugin[0] !== 'expo-splash-screen') return plugin;
+  const [, options = {}] = plugin as [string, Record<string, unknown>];
+  return [
+    'expo-splash-screen',
+    {
+      ...options,
+      image: splashImage,
+    },
+  ];
+});
+
 export default {
   ...appJson,
   name: appName,
   scheme,
+  icon,
+  plugins,
   ios: {
     ...appJson.ios,
+    // Prefer PNG icon for the Dev variant (expo.icon still ships the store mark).
+    ...(IS_DEV ? { icon } : null),
     bundleIdentifier: iosBundle,
     ...(webHost
       ? {
@@ -66,6 +90,10 @@ export default {
   android: {
     ...appJson.android,
     package: androidPackage,
+    adaptiveIcon: {
+      ...appJson.android?.adaptiveIcon,
+      foregroundImage: androidForeground,
+    },
     config: {
       ...appJson.android?.config,
       googleMaps: {

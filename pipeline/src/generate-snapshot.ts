@@ -241,8 +241,10 @@ async function main(): Promise<void> {
     await hostedCache.save();
     afterHost = hostedResult.events;
     console.log(
-      `Hosted ${hostedResult.hosted}/${hostedResult.attempted} fragile images on R2` +
-        (hostedResult.failed > 0 ? ` (${hostedResult.failed} → category fallback)` : ''),
+      `Hosted ${hostedResult.hosted}/${hostedResult.attempted} images on R2` +
+        (hostedResult.failed > 0
+          ? ` (${hostedResult.failed} failed — fragile→fallback, others keep source URL)`
+          : ''),
     );
   } else {
     console.log('R2 image hosting skipped (R2_* / R2_PUBLIC_BASE_URL not set)');

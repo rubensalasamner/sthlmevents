@@ -4,6 +4,8 @@
  * the organizer page's social-share image to give the feed real artwork.
  */
 
+import { isPlausibleImageUrl } from '../shared/images.js';
+
 const META_TAG = /<meta\b[^>]*>/gi;
 const ATTR = /([a-zA-Z:_-]+)\s*=\s*("([^"]*)"|'([^']*)'|([^\s"'>]+))/g;
 
@@ -60,7 +62,8 @@ export function parseOgImage(html: string, baseUrl: string): string | null {
     if (!raw) continue;
     try {
       const absolute = new URL(raw, baseUrl).toString();
-      if (absolute.startsWith('http')) return absolute;
+      // Skip ticket-flow / non-media og:image values (Kulturhuset tix).
+      if (absolute.startsWith('http') && isPlausibleImageUrl(absolute)) return absolute;
     } catch {
       // ignore malformed URL, try next key
     }

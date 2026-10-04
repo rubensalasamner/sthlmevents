@@ -39,15 +39,26 @@ stages that run over the combined event set.
 ### Image enrichment
 
 Sources like Visit Stockholm ship no images. The enrichment stage scrapes each
-event's `ticketUrl` for its Open Graph / Twitter card image, deduplicating by
-URL and caching results in `.cache/og-images.json` (30-day TTL, 3-day negative
-TTL). Events with no resolvable image keep their category fallback.
+event's editorial `sourceUrl` (else `ticketUrl`) for its Open Graph / Twitter
+card image, deduplicating by URL and caching results in `.cache/og-images.json`
+(30-day TTL, 3-day negative TTL). Only category-fallback or non-image
+`imageUrl`s are replaced — a real source hero is never overwritten. Bogus
+og:image values (e.g. Kulturhuset tix buying-flow URLs) are rejected.
+Events with no resolvable image keep their category fallback.
 
-Facebook/Instagram CDN URLs expire (signed `oe=` params). When `R2_*` and
-`R2_PUBLIC_BASE_URL` are set, `hostFragileImages` downloads those assets,
-uploads them under `images/` on R2, and rewrites `imageUrl`. Failures become
-the category fallback so the snapshot never keeps a dying link. Cache:
-`.cache/hosted-images.json`.
+When `R2_*` and `R2_PUBLIC_BASE_URL` are set, `hostFragileImages` downloads
+images the web client can't reliably use, uploads them under `images/` on R2,
+and rewrites `imageUrl`:
+
+- **Fragile CDNs** (Facebook/Instagram signed `oe=` URLs) — expire; failures
+  become the category fallback so the snapshot never keeps a dying link.
+- **Non-CORS hosts** (organizer WordPress sites, many municipal CDNs) —
+  `expo-image`'s `useImage` fetches with CORS on web; without
+  `Access-Control-Allow-Origin` the card falls back to a category placeholder.
+  Known-safe hosts (Unsplash, Ticketmaster, Tickster, …) are skipped.
+  Download failures keep the original URL (native still works).
+
+Cache: `.cache/hosted-images.json`.
 ### Snapshot -> app
 
 `generate-snapshot` runs a source + enrichment pass and writes

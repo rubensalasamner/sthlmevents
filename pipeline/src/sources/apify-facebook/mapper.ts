@@ -69,8 +69,8 @@ export function hasValidUtcStartDate(raw: ApifyFbEventRaw): boolean {
  *  - venue is a free-text address (no lat/lon, no city) -> geocode stage
  *    resolves coordinates later, keyed on this text
  *  - fbcdn imageUrl is signed and expires (oe param) — `hostFragileImages`
- *    re-hosts these on R2 when credentials are present; otherwise refreshed
- *    each Apify snapshot run
+ *    re-hosts these (and other non-CORS hosts) on R2 when credentials are
+ *    present; otherwise refreshed each Apify snapshot run
  *  - no description in search results -> empty string; LLM categorizer and
  *    og:image enrichment (over the event URL) fill the gap
  *  - no price anywhere -> `priceSek` stays undefined ("See details")

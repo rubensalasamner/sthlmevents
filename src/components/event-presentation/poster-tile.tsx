@@ -14,11 +14,11 @@ type PosterTileProps = {
 const DEFAULT_WIDTH = 148;
 
 /**
- * 3:4 rail tile. One-line caption under the image — keeps every tile the same
- * height so gaps between rails stay even.
+ * 3:2 rail tile. Landscape-ish so typical event photos stay readable under
+ * cover-crop; one-line caption under the image keeps rail heights even.
  */
 export function PosterTile({ event, width = DEFAULT_WIDTH }: PosterTileProps) {
-  const imageHeight = Math.round((width * 4) / 3);
+  const imageHeight = Math.round((width * 2) / 3);
 
   return (
     <View style={{ width, flexShrink: 0 }}>
@@ -28,7 +28,7 @@ export function PosterTile({ event, width = DEFAULT_WIDTH }: PosterTileProps) {
             uri={event.imageUrl}
             category={event.category}
             style={{ width, height: imageHeight, borderRadius: Spacing.three }}
-            contentPosition="top"
+            contentPosition="center"
             decodeWidth={width}
             transition={0}
           />

@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import type { StockholmEvent } from '../shared/event.js';
 import { fallbackImageFor } from '../shared/images.js';
 import type { KeyedCache } from '../shared/file-cache.js';
-import { imageExtension, isFragileImageUrl } from './fragile-image.js';
+import { imageExtension, isFragileImageUrl, shouldHostImageUrl } from './fragile-image.js';
 import { putR2Object, type R2Config } from './r2-client.js';
 
 export type HostFragileImagesOptions = {
@@ -40,9 +40,13 @@ async function mapWithConcurrency<T>(
 }
 
 /**
- * Download Facebook/Instagram CDN images and re-host on R2 so signed URLs
- * don't rot in the snapshot. Failures fall back to the category placeholder —
- * a stable Unsplash beat a broken frame.
+ * Download images that the web client can't reliably use and re-host on R2:
+ *  - Facebook/Instagram CDN URLs (signed, expire)
+ *  - third-party hosts that don't send CORS (expo-image `useImage` needs it)
+ *
+ * Failures on fragile URLs become the category placeholder so the snapshot
+ * never keeps a dying link. Failures on CORS-only hosts keep the original URL
+ * (native can still load it; web has EventImage onError→fallback).
  */
 export async function hostFragileImages(
   events: readonly StockholmEvent[],
@@ -52,9 +56,14 @@ export async function hostFragileImages(
   const concurrency = options.concurrency ?? 4;
   const timeoutMs = options.timeoutMs ?? 12_000;
   const maxBytes = options.maxBytes ?? 5 * 1024 * 1024;
+  const publicBaseUrl = options.r2.publicBaseUrl;
 
-  const fragileUrls = [
-    ...new Set(events.map((e) => e.imageUrl).filter((url) => isFragileImageUrl(url))),
+  const hostUrls = [
+    ...new Set(
+      events
+        .map((e) => e.imageUrl)
+        .filter((url) => shouldHostImageUrl(url, publicBaseUrl)),
+    ),
   ];
 
   const hostedBySource = new Map<string, string | null>();
@@ -62,14 +71,14 @@ export async function hostFragileImages(
   let hosted = 0;
   let failed = 0;
 
-  await mapWithConcurrency(fragileUrls, concurrency, async (sourceUrl) => {
+  await mapWithConcurrency(hostUrls, concurrency, async (sourceUrl) => {
     const cached = options.cache?.get(sourceUrl);
     if (cached !== undefined) {
       hostedBySource.set(sourceUrl, cached);
       if (cached) hosted += 1;
       else failed += 1;
       done += 1;
-      options.onProgress?.(done, fragileUrls.length);
+      options.onProgress?.(done, hostUrls.length);
       return;
     }
 
@@ -89,18 +98,22 @@ export async function hostFragileImages(
       failed += 1;
     }
     done += 1;
-    options.onProgress?.(done, fragileUrls.length);
+    options.onProgress?.(done, hostUrls.length);
   });
 
   const next = events.map((event) => {
-    if (!isFragileImageUrl(event.imageUrl)) return event;
+    if (!shouldHostImageUrl(event.imageUrl, publicBaseUrl)) return event;
     const hostedUrl = hostedBySource.get(event.imageUrl);
     if (hostedUrl) return { ...event, imageUrl: hostedUrl };
-    // Download/upload failed — don't leave a dying CDN link in the snapshot.
-    return { ...event, imageUrl: fallbackImageFor(event.category) };
+    // Fragile CDN failed — don't leave a dying link in the snapshot.
+    if (isFragileImageUrl(event.imageUrl)) {
+      return { ...event, imageUrl: fallbackImageFor(event.category) };
+    }
+    // CORS-only host failed — keep the original for native; web falls back in UI.
+    return event;
   });
 
-  return { events: next, hosted, failed, attempted: fragileUrls.length };
+  return { events: next, hosted, failed, attempted: hostUrls.length };
 }
 
 async function downloadAndUpload(

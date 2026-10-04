@@ -3,7 +3,7 @@
 > **Syfte:** den här filen är projektets "minne" mellan datorer och sessioner.
 > Läs den först om du (människa eller AI-agent) plockar upp projektet efter en
 > paus. Den uppdateras när vi fattar beslut eller når slutsatser — inte för
-> varje kodändring. Senast uppdaterad: **2026-10-02**.
+> varje kodändring. Senast uppdaterad: **2026-10-03**.
 
 ---
 
@@ -69,6 +69,17 @@ istället för en filterstack. Tema: "Blå Timmen"
 - **Fragile image hosting** (2026-09-16): pipeline-steg hostar fbcdn/IG-bilder
   till R2 när `R2_*` + `R2_PUBLIC_BASE_URL` är satta; misslyckanden →
   kategori-fallback. Appen har `EventImage` onError→fallback som säkerhetsnät.
+- **R2 hostar även non-CORS-bilder** (2026-10-03): `shouldHostImageUrl` utöver
+  fragile CDN:er — tredjepartshostar utan `Access-Control-Allow-Origin`
+  (t.ex. bondensegen.com, biblioteket.stockholm.se) skrivs om till R2 så web
+  (`expo-image`/`useImage`) inte faller tillbaka till kategori-placeholder.
+  CORS-säkra CDN:er (Unsplash, Ticketmaster, Tickster, …) skippas. Misslyckad
+  non-fragile-download behåller original-URL (native funkar fortfarande).
+- **og:image-enrichment fix** (2026-10-03): scrape `sourceUrl` före `ticketUrl`;
+  skriv bara över kategori-fallback / icke-plausibla URL:er; rejecta tix
+  buyingflow-og:image (Kulturhuset giftade ~1095 events med checkout-URL:er
+  som `imageUrl` → samma art-placeholder på web). Poisoned cache-entries
+  re-scrapas.
 - UI (2026-09-18): **Magazine home + map peek + agenda**. Tabs Home /
   Explore / Saved. Filter ligger i ett sheet bakom en sammanfattningschip —
   inte fyra always-on rader. EventPresentation-strategier: hero / poster /
@@ -121,8 +132,9 @@ körningar/mån). Input-schema (build 0.0.83, verifierad): `searchQueries`,
 7. Ingen beskrivning i sökresultaten → `description` tom, `priceSek` förblir
    undefined ("See details" i UI:t). LLM-kategorisering senare kan förbättra.
 8. fbcdn-bild-URL:er är signerade med utgångsdatum (oe-param). Pipeline-steget
-   `hostFragileImages` laddar ner och lägger dem på R2 när credentials finns;
-   annars ligger de kvar (appen har onError-fallback).
+   `hostFragileImages` laddar ner och lägger dem på R2 när credentials finns
+   (även non-CORS-hostar sedan 2026-10-03); annars ligger de kvar (appen har
+   onError-fallback).
 9. Interest-signal: `usersGoing + usersInterested` är en stark kvalitetsproxy
    (ARAKII 1326 vs US-fundraiser-brus <10). Mapper ger 0–100-poäng.
 
@@ -291,76 +303,64 @@ cron → `0 5 * * 1` (05:00 UTC). Samma körning failade också FB med
 `Invalid time value` (en rad utan parsebar `utcStartDate`); adaptern filtrerar
 nu bort sådana rader innan map.
 
-### Starta development build (WSL2 + Android) — verifierat 2026-09-16
+### Starta development build (WSL2 + Android) — USB + wifi
 
-**Det som funkade** (USB, efter ny EAS development-build):
+Två lägen, samma development client (`app.sthlmevents.dev`).
+
+#### USB (daglig driver — verifierat 2026-09-16)
 
 ```bash
 # WSL — --localhost är viktigt (annars blir QR/URL WSL-bridge 172.x)
-npx expo start --port 8081 --dev-client --localhost
+npm run start:usb
 # Metro ska visa: …/?url=http%3A%2F%2F127.0.0.1%3A8081
 ```
 
 ```powershell
-# Windows PowerShell (USB + USB-felsökning; adb måste lista telefonen)
-curl http://127.0.0.1:8081/status
-# → packager-status:running
-
-adb reverse tcp:8081 tcp:8081
-adb shell am start -a android.intent.action.VIEW -d "exp+sthlmevents://expo-development-client/?url=http%3A%2F%2Flocalhost%3A8081"
+# Windows PowerShell (USB + USB-felsökning)
+.\scripts\usb-dev.ps1
+# hittar adb på PATH eller %LOCALAPPDATA%\Android\Sdk\platform-tools\adb.exe
 ```
 
-**Kortkommando (Windows):** `scripts/usb-dev.ps1` — samma tre steg.
-Från repo-roten i PowerShell: `.\scripts\usb-dev.ps1`
-Permanent alias (en gång):
-
-```powershell
-Add-Content $PROFILE @"
-
-function sthlmdev { & 'C:\path\to\sthlmevents\scripts\usb-dev.ps1' }
-"@
-# Byt path till din Windows-sökväg (t.ex. \\wsl$\...\sthlmevents\scripts\usb-dev.ps1
-# eller en klon under C:\...). Sedan: . $PROFILE
-```
-
-Lyckat tecken i WSL: `Android Bundled …`. Appen öppnar Discover.
+Scanna **inte** QR i USB-läge. Lyckat tecken i WSL: `Android Bundled …`.
 
 **APK-install (när Expo Install-sidan hänger på telefon-WiFi):** ladda ner
 APK på PC från build-sidan, sen:
 `adb install -r "$env:USERPROFILE\Downloads\application-<build-id>.apk"`
 (`~` funkar inte till adb.exe på Windows.)
 
+#### Utan USB / wifi (Cloudflare tunnel — Metro-sida verifierad 2026-10-03)
+
+Stock Expo-ngrok (riktiga `@expo/ngrok`) är trasigt. Vi aliasar
+`@expo/ngrok` → `expo-cloudflared` så `expo start --tunnel` ger
+`https://….trycloudflare.com` utan ngrok-konto.
+
+```bash
+# WSL
+npm run start:wifi
+# Vänta på: Tunnel URL: https://….trycloudflare.com  +  Tunnel connected.
+```
+
+```powershell
+# Telefon: öppna app.sthlmevents.dev → Enter URL → klistra in HTTPS-URL:en
+# Valfritt om adb ser telefonen (Wi‑Fi debugging):
+.\scripts\wifi-open.ps1 -Url 'https://xxxx.trycloudflare.com'
+```
+
+Verifierat 2026-10-03: `curl https://….trycloudflare.com/status` →
+`packager-status:running`. Telefon → `Android Bundled…` kvar att bekräfta
+när development client är igång.
+
 #### Fel vi såg och varför
 
 | Symptom | Orsak | Fix |
 |---|---|---|
-| “problem loading the project” efter QR utan tunnel | Metro ger `http://172.19.0.1:8081` (WSL-bridge); telefonen når den inte | `--localhost` + `adb reverse` + öppna via `am start` (scanna inte QR) |
-| Samma fel med `adb reverse` men Metro utan `--localhost` | Appen öppnas men Metro-loggen får **inga** Bundled-rader | Lägg till `--localhost`; verifiera `curl` från Windows |
-| `npx expo start --tunnel` → `Cannot read properties of undefined (reading 'body')` | Expo:s delade ngrok trasig/överbelastad (känd 2026) | Skippa `--tunnel` tills vidare; USB-receptet ovan |
-| Tunnel droppar mid-session (`Tunnel connection has been closed`) | Instabil ngrok | Starta om eller använd USB |
-| `adb: no devices` i WSL | USB sitter på Windows, inte WSL | Kör `adb` i **Windows** PowerShell |
+| “problem loading the project” efter QR utan tunnel | Metro ger `http://172.19.0.1:8081` (WSL-bridge); telefonen når den inte | USB: `--localhost` + `adb reverse` + `usb-dev.ps1` (scanna inte QR). Wifi: `start:wifi` |
+| Samma fel med `adb reverse` men Metro utan `--localhost` | Appen öppnas men Metro-loggen får **inga** Bundled-rader | `npm run start:usb` (inkl. `--localhost`) |
+| Stock `expo start --tunnel` → `reading 'body'` | Expo:s delade ngrok trasig | Använd `npm run start:wifi` (Cloudflare via `expo-cloudflared`) |
+| Tunnel droppar mid-session | Instabil quick-tunnel | Starta om `start:wifi`, eller USB |
+| `adb: no devices` / adb saknas | USB på Windows; adb ofta inte på PATH | Kör `usb-dev.ps1` (SDK-path fallback); installera platform-tools om saknas |
 | Expo Install på telefon hänger vid nedladdning | CDN/redirect via mobil-WiFi | Ladda ner APK på PC → `adb install` |
 
-#### Utan USB (nästa steg att testa)
-
-Expo `--tunnel` är opålitlig just nu. Alternativ när kabeln ska bort:
-
-1. **Egen ngrok** (rekommenderat): konto + authtoken → `ngrok http 8081`, sen
-   starta Metro med `EXPO_PACKAGER_PROXY_URL=https://<din-ngrok-url>` och öppna
-   den URL:en i development client (Enter URL / `am start` med https-URL).
-2. **LAN** om telefon + PC på samma WiFi *utan* client isolation: hitta
-   Windows LAN-IP, portforward WSL:8081 → Windows om behövs, starta med
-   `REACT_NATIVE_PACKAGER_HOSTNAME=<lan-ip>`, öppna `http://<lan-ip>:8081`
-   i dev client. Fungerar ofta sämre på företags-WiFi.
-3. **Cloudflare Tunnel** (`cloudflared tunnel --url http://localhost:8081`) —
-   samma mönster som egen ngrok.
-
-När trådlöst är verifierat: uppdatera den här sektionen med det recept som
-faktiskt fungerade (kommando + URL-form).
-
-**Äldre gotcha (tunnel-QR):** rekonstruerad URL från `.expo/settings.json` saknar
-ngrok-suffix — hämta riktig URL från `curl -s http://127.0.0.1:4040/api/tunnels`
-när en egen/fungerande tunnel kör.
 ### Miljövariabler
 
 - `pipeline/.env` (gitignored): `APIFY_TOKEN`, TICKETMASTER_*, EVENEMANGSKOLLEN_*,
@@ -369,6 +369,19 @@ när en egen/fungerande tunnel kör.
 - **OBS**: rotens `.env.local` läses av Expo-appen, INTE av pipeline.
 - Adaptern läser `APIFY_TOKEN` lazily i `fetch()` (inte konstruktorn) —
   eftersom modul-import körs före `loadEnv()`.
+- **`.cursorignore` (2026-10-03):** blockerar agent/index från riktiga `.env*`;
+  `!.env.example` håller mallen synlig. Påverkar inte terminal/pipeline —
+  bara att AI:n inte kan läsa hemligheter (bra inför remote-chat MCP).
+
+### App-ikon (2026-10-03)
+
+Bytte Expo-placeholder mot Blå Timmen-mark (isblå **S** + amber prick på
+`#0B0E14`). Assets: `assets/images/icon.png` + Android adaptive
+foreground/background/monochrome; `adaptiveIcon.backgroundColor` → `#0B0E14`.
+Syns först efter **ny native build** (dev + Play Internal Testing). Dev-varianten
+(`APP_VARIANT=development`) använder badgade assets (`icon-dev.png`,
+`android-icon-foreground-dev.png`, `splash-icon-dev.png`) via `app.config.ts`
+— amber **DEV**-pill under S-märket. Store/Play behåller utan badge.
 
 ### Testing
 
@@ -389,10 +402,10 @@ Nya adapters följer mönstret: `types.ts` (rå shape + klient) → `mapper.ts`
    är native; JS-only reload räcker inte. Efter build: favorisera → notiser;
    eventdetalj → Add to calendar; Discover → Near me → GPS-prompt. Sätt också
    `EXPO_PUBLIC_WEB_ORIGIN` (Vercel-URL) i EAS env så Share/App Links pekar rätt.
-   Dev-loop (WSL): se §5 “Starta development build” — USB + `--localhost` +
-   `adb reverse` är verifierat; trådlöst (egen ngrok/LAN) kvar att testa.
+   Dev-loop (WSL): se §5 — USB (`start:usb`) + wifi-tunnel (`start:wifi` /
+   Cloudflare). Bekräfta `Android Bundled…` på telefon via tunnel-URL.
 3. **R2_PUBLIC_BASE_URL** som repo-secret (utöver befintliga R2_*) — aktiverar
-   FB/IG-bildhosting i daglig + veckovis snapshot. Utan den behålls signerade
+   bildhosting (FB/IG + non-CORS) i daglig + veckovis snapshot. Utan den behålls signerade
    CDN-URL:er (appen faller tillbaka till kategori-bild vid 404).
 4. **LLM-kategorisering** (CATEGORIZER_API_KEY): förbättrar FB-events
    (alla har `popup`-default). Groq gratisnivå räcker (llama-3.3-70b).

@@ -1,7 +1,12 @@
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
 
-import { imageExtension, isFragileImageUrl } from './fragile-image.js';
+import {
+  imageExtension,
+  isCorsSafeImageHost,
+  isFragileImageUrl,
+  shouldHostImageUrl,
+} from './fragile-image.js';
 import { hostFragileImages } from './host-fragile-images.js';
 import type { StockholmEvent } from '../shared/event.js';
 import type { R2Config } from './r2-client.js';
@@ -20,12 +25,47 @@ describe('isFragileImageUrl', () => {
       isFragileImageUrl('https://instagram.fyhz1-1.fna.fbcdn.net/v/t51/x.jpg'),
       true,
     );
+    assert.equal(isFragileImageUrl('https://lookaside.fbsbx.com/lookaside/x.jpg'), true);
   });
 
   test('leaves stable hosts alone', () => {
     assert.equal(isFragileImageUrl('https://s1.ticketm.net/large.jpg'), false);
     assert.equal(isFragileImageUrl('https://images.unsplash.com/photo-1'), false);
     assert.equal(isFragileImageUrl('not-a-url'), false);
+  });
+});
+
+describe('shouldHostImageUrl', () => {
+  test('hosts fragile CDNs', () => {
+    assert.equal(
+      shouldHostImageUrl('https://scontent.xx.fbcdn.net/v/photo.jpg'),
+      true,
+    );
+  });
+
+  test('hosts third-party hosts without CORS (og:image sites)', () => {
+    assert.equal(
+      shouldHostImageUrl('https://bondensegen.com/wp-content/uploads/2026/04/BONDENS-scaled.jpg'),
+      true,
+    );
+    assert.equal(
+      shouldHostImageUrl('https://biblioteket.stockholm.se/cdn/strapi/x.png'),
+      true,
+    );
+  });
+
+  test('skips known CORS-safe CDNs and Unsplash placeholders', () => {
+    assert.equal(isCorsSafeImageHost('https://images.unsplash.com/photo-1'), true);
+    assert.equal(shouldHostImageUrl('https://images.unsplash.com/photo-1'), false);
+    assert.equal(shouldHostImageUrl('https://s1.ticketm.net/large.jpg'), false);
+    assert.equal(shouldHostImageUrl('https://static.tickster.com/img.jpg'), false);
+  });
+
+  test('skips URLs already on our R2 public base', () => {
+    assert.equal(
+      shouldHostImageUrl('https://pub.example/images/abc.jpg', 'https://pub.example'),
+      false,
+    );
   });
 });
 
@@ -97,7 +137,35 @@ describe('hostFragileImages', () => {
     assert.match(result.events[0]!.imageUrl, /^https:\/\/pub\.example\/images\/[a-f0-9]+\.png$/);
   });
 
-  test('leaves stable URLs untouched', async () => {
+  test('rewrites non-CORS organizer images to R2', async () => {
+    const source = 'https://bondensegen.com/wp-content/uploads/x.jpg';
+    const jpeg = Buffer.from([0xff, 0xd8, 0xff, 0xd9]);
+
+    const fetchImpl: typeof fetch = async (input, init) => {
+      const url = String(input);
+      if (url === source) {
+        return new Response(jpeg, {
+          status: 200,
+          headers: { 'content-type': 'image/jpeg' },
+        });
+      }
+      if (url.includes('r2.cloudflarestorage.com')) {
+        assert.equal(init?.method, 'PUT');
+        return new Response(null, { status: 200 });
+      }
+      throw new Error(`unexpected fetch ${url}`);
+    };
+
+    const result = await hostFragileImages(
+      [event({ imageUrl: source, category: 'market', source: 'visit-stockholm' })],
+      { r2: R2, fetchImpl },
+    );
+
+    assert.equal(result.hosted, 1);
+    assert.match(result.events[0]!.imageUrl, /^https:\/\/pub\.example\/images\/[a-f0-9]+\.jpg$/);
+  });
+
+  test('leaves CORS-safe URLs untouched', async () => {
     const stable = event({
       imageUrl: 'https://s1.ticketm.net/large.jpg',
       category: 'music',
@@ -119,5 +187,18 @@ describe('hostFragileImages', () => {
     });
     assert.equal(result.failed, 1);
     assert.match(result.events[0]!.imageUrl, /unsplash/);
+  });
+
+  test('keeps original URL when a non-fragile host download fails', async () => {
+    const source = 'https://bondensegen.com/wp-content/uploads/x.jpg';
+    const result = await hostFragileImages(
+      [event({ imageUrl: source, category: 'market' })],
+      {
+        r2: R2,
+        fetchImpl: async () => new Response(null, { status: 403 }),
+      },
+    );
+    assert.equal(result.failed, 1);
+    assert.equal(result.events[0]!.imageUrl, source);
   });
 });

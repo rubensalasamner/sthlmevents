@@ -1,6 +1,6 @@
 import { Image, useImage, type ImageProps } from 'expo-image';
 import { useEffect, useState } from 'react';
-import { PixelRatio, type ImageStyle, type StyleProp } from 'react-native';
+import { PixelRatio, Platform, type ImageStyle, type StyleProp } from 'react-native';
 
 import type { EventCategory } from '@/types/event';
 import { fallbackImageFor } from '@/utils/fallback-image';
@@ -20,11 +20,45 @@ type EventImageProps = {
 };
 
 /**
- * Event cover with forced downscale. Instagram/fbcdn URLs are often several
- * thousand px; putting `width`/`height` on `source` alone does NOT limit
- * Android decode size — `useImage({ maxWidth })` does (Expo Image docs).
+ * Event cover. Native uses `useImage({ maxWidth })` so huge IG/FB assets don't
+ * OOM Android. Web skips that path — `useImage` fetches with CORS and many
+ * organizer/municipal hosts omit ACAO, which made every card fall back to the
+ * same category placeholder. Plain `source={{ uri }}` uses `<img>` (no CORS).
  */
-export function EventImage({
+export function EventImage(props: EventImageProps) {
+  if (Platform.OS === 'web') {
+    return <EventImageWeb {...props} />;
+  }
+  return <EventImageNative {...props} />;
+}
+
+function EventImageWeb({
+  uri,
+  category,
+  style,
+  contentFit = 'cover',
+  contentPosition,
+  transition = 200,
+}: EventImageProps) {
+  const [failed, setFailed] = useState(false);
+  useEffect(() => setFailed(false), [uri]);
+
+  const sourceUri = failed ? fallbackImageFor(category) : uri;
+
+  return (
+    <Image
+      source={{ uri: sourceUri }}
+      style={style}
+      contentFit={contentFit}
+      contentPosition={contentPosition}
+      transition={transition}
+      recyclingKey={sourceUri}
+      onError={() => setFailed(true)}
+    />
+  );
+}
+
+function EventImageNative({
   uri,
   category,
   style,
