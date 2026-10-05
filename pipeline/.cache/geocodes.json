@@ -3010,5 +3010,45 @@
   "undefined, Stockholm, Sweden": {
     "value": null,
     "fetchedAt": 1791197533757
+  },
+  "Stockholm, ni är fantastiska! 💙💛, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1791201292239
+  },
+  "APLACE Studio., Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1791201293493
+  },
+  "Stureplan 19, 111 45, Stockholm., Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3360056,
+      "longitude": 18.072219
+    },
+    "fetchedAt": 1791201294744
+  },
+  "Roslagsgatan 14, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3459735,
+      "longitude": 18.0605102
+    },
+    "fetchedAt": 1791201296189
+  },
+  "Riddargatan 19, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3334102,
+      "longitude": 18.0821746
+    },
+    "fetchedAt": 1791201297635
+  },
+  "@erikshjalpenvarby gatan ovanför när man svänger in finns även en butik som köper hem. Dock inte öppet så ofta., Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1791201298872
+  },
+  "Karlavägen 62, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3387644,
+      "longitude": 18.0837911
+    },
+    "fetchedAt": 1791201300161
   }
 }
