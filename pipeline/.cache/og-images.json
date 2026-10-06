@@ -19349,7 +19349,7 @@
   },
   "https://ra.co/events/2547824": {
     "image": null,
-    "fetchedAt": 1791019555695
+    "fetchedAt": 1791283583987
   },
   "https://www.facebook.com/events/1083612230724481/1083612237391147/?active_tab=about&rdid=nNrAOMTpINYMhVMK": {
     "image": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1083612230724481",
@@ -20209,7 +20209,7 @@
   },
   "https://ra.co/events/2551780": {
     "image": null,
-    "fetchedAt": 1791019556877
+    "fetchedAt": 1791283585766
   },
   "https://sparvagsmuseet.se/se-och-gora/aktuellt/50-tal-pa-museet/": {
     "image": null,
@@ -20229,7 +20229,7 @@
   },
   "https://ra.co/events/2552374": {
     "image": null,
-    "fetchedAt": 1791019557703
+    "fetchedAt": 1791283586480
   },
   "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32938/135513/": {
     "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32938/135513/Kulturhuset%20Stadsteatern",
@@ -35614,5 +35614,381 @@
   "https://www.instagram.com/p/DZGRSqbujyD/": {
     "image": "https://scontent-ord5-2.cdninstagram.com/v/t51.71878-15/712543240_1768471187849137_7501284386264510109_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=KYujFyt0g-UQ7kNvwH7uuUv&_nc_oc=AdrkhkQibvztotWcfrCZgW2ZS-xnL_zo9rSAxj0uHehM1J1TYp0iVcxZGQhhQR3N8j8&_nc_zt=23&_nc_ht=scontent-ord5-2.cdninstagram.com&_nc_gid=XdYG1cy84rU28p0_3KQzvQ&_nc_ss=7c689&oh=00_AQN9FgFrxr9-c5AOvukGcCWN9sEIOydhtPq5syJhBhbsVg&oe=6AC96541",
     "fetchedAt": 1791201301502
+  },
+  "https://www.meetup.com/tough-guy-book-club/events/316793451/": {
+    "image": "https://secure.meetupstatic.com/photos/event/b/8/e/9/600_535367337.jpeg",
+    "fetchedAt": 1791283584314
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/f1a1858d-5d2f-48cb-835f-4a0e032870fd/": {
+    "image": null,
+    "fetchedAt": 1791283584392
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/e685696d-19d0-475e-97ee-f7c9fb72b624/": {
+    "image": null,
+    "fetchedAt": 1791283584404
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/1c3a40d7-e231-42e5-bce1-97693b9e227a/": {
+    "image": null,
+    "fetchedAt": 1791283584410
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/652dda5f-d20d-4820-9457-291971aeceae/": {
+    "image": null,
+    "fetchedAt": 1791283584620
+  },
+  "https://www.meetup.com/be-original-tours-nightlife-tours-across-europe/events/316785346/": {
+    "image": "https://secure.meetupstatic.com/photos/event/8/a/1/4/600_536195348.jpeg",
+    "fetchedAt": 1791283584656
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/4fb354e9-5d88-43af-ad09-4f56bb13a165/": {
+    "image": null,
+    "fetchedAt": 1791283584673
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/1f325693-c23f-4c3c-9671-05dbcdcb0b1f/": {
+    "image": null,
+    "fetchedAt": 1791283584692
+  },
+  "https://www.meetup.com/intercambio/events/316582668/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/a/f/1/600_500410993.jpeg",
+    "fetchedAt": 1791283584761
+  },
+  "https://www.meetup.com/frenchconnectionstockholm/events/316752505/": {
+    "image": "https://secure.meetupstatic.com/photos/event/4/f/3/5/600_536360277.jpeg",
+    "fetchedAt": 1791283584762
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/744f5c11-9c11-4002-9c28-64b91c073cbd/": {
+    "image": null,
+    "fetchedAt": 1791283584803
+  },
+  "https://biblioteket.stockholm.se/evenemang/sprakcafe-pa-svenska-1785": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_kategori_sprakcafe_2_b582f176a7.jpg",
+    "fetchedAt": 1791283584819
+  },
+  "https://www.meetup.com/hop-vine-events/events/316085380/": {
+    "image": "https://secure.meetupstatic.com/photos/event/5/f/f/1/600_530484561.jpeg",
+    "fetchedAt": 1791283584863
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/ca56616d-df2b-410f-a406-95857c27c96d/": {
+    "image": null,
+    "fetchedAt": 1791283584890
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/d99d133a-374a-4004-be6c-01c96309624b/": {
+    "image": null,
+    "fetchedAt": 1791283584911
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/126a3534-e0a5-49c5-9717-4d03b9861c18/": {
+    "image": null,
+    "fetchedAt": 1791283585004
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/9b811f6d-d48b-4851-866a-3035ae6414ca/": {
+    "image": null,
+    "fetchedAt": 1791283585010
+  },
+  "https://www.meetup.com/flemingsberg-badminton-intermediate/events/316851809/": {
+    "image": "https://secure.meetupstatic.com/photos/event/e/8/7/3/600_507899507.jpeg",
+    "fetchedAt": 1791283585057
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/8560de0f-7855-4b5d-be49-7c51dc82d4cc/": {
+    "image": null,
+    "fetchedAt": 1791283585107
+  },
+  "https://allevents.in/stockholm/simple-plan-stockholm-tickets/100029407156350": {
+    "image": "https://cdn-az.allevents.in/events1/banners/2444c600-9cfa-11f1-80bb-ebfa6612c095-rimg-w1200-h1200-dc080818-gmir.jpg?v=1787273358",
+    "fetchedAt": 1791283585121
+  },
+  "https://www.meetup.com/stockholmexpat/events/316784902/": {
+    "image": "https://secure.meetupstatic.com/photos/event/a/e/0/1/600_535964545.jpeg",
+    "fetchedAt": 1791283585251
+  },
+  "https://biblioteket.stockholm.se/evenemang/sprakcafe-pa-svenska-1786": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_kategori_sprakcafe_2_b582f176a7.jpg",
+    "fetchedAt": 1791283585263
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/22907de2-0c59-4aae-8a82-36fd0644f7ee/": {
+    "image": null,
+    "fetchedAt": 1791283585319
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/85308bd9-9902-44ec-bc02-47906d908063/": {
+    "image": null,
+    "fetchedAt": 1791283585331
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/80c73d6b-946b-479f-a5ef-313da661c2e8/": {
+    "image": null,
+    "fetchedAt": 1791283585351
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/ee93a642-8fb9-4f36-ab2b-aaf3bc3a513d/": {
+    "image": null,
+    "fetchedAt": 1791283585357
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/8a528f74-570b-45c1-b551-0cfcb4f3690d/": {
+    "image": null,
+    "fetchedAt": 1791283585438
+  },
+  "https://www.meetup.com/practical-psychology-club/events/316327340/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/c/f/a/600_535331514.jpeg",
+    "fetchedAt": 1791283585460
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/9f4b5133-3539-4751-bb63-eb93e6d02925/": {
+    "image": null,
+    "fetchedAt": 1791283585472
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/f4a186ca-2481-4d4f-90e8-1310fdef2fa4/": {
+    "image": null,
+    "fetchedAt": 1791283585492
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/db7a65e5-7843-4a1e-8f07-066ab2ca595f/": {
+    "image": null,
+    "fetchedAt": 1791283585528
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/5d19ec3d-36c8-454b-b9f9-159539d1eeb6/": {
+    "image": null,
+    "fetchedAt": 1791283585532
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/b2b32b41-5507-48aa-baef-b3fb0a29d024/": {
+    "image": null,
+    "fetchedAt": 1791283585533
+  },
+  "https://allevents.in/stockholm/skydd-och-totaltförsvarsmässan/200030694462755": {
+    "image": "https://cdn-az.allevents.in/events8/banners/e0acad7702294e983705d74b00e9d44c3c6ff0d2f8780c947ff5c59618401b06-rimg-w1200-h800-dce81818-gmir?v=1789339135",
+    "fetchedAt": 1791283585549
+  },
+  "https://allevents.in/stockholm/placebo/3200030669417623": {
+    "image": "https://cdn-az.allevents.in/events7/banners/2b42dc00-aa9f-11f1-abda-d1c1d0c990ef-rimg-w1200-h1200-dc080808-gmir.jpg?v=1788773602",
+    "fetchedAt": 1791283585564
+  },
+  "https://biblioteket.stockholm.se/evenemang/utblick-fran-anstalten-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Utblick_av_anstalten_fotograf_Adam_Alaga_1827498742.jpg",
+    "fetchedAt": 1791283585588
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/2317fb54-59cc-4d68-990e-3c04857567dc/": {
+    "image": null,
+    "fetchedAt": 1791283585666
+  },
+  "https://ra.co/events/2553430": {
+    "image": null,
+    "fetchedAt": 1791283585706
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/05c5e7ad-1e75-4a8f-807f-8c7aa7dbed2f/": {
+    "image": null,
+    "fetchedAt": 1791283585725
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/f8491d4e-f816-4f6c-b2ca-08023d709161/": {
+    "image": null,
+    "fetchedAt": 1791283585738
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/5bc7bff1-777f-4c1c-9335-d74648e77d30/": {
+    "image": null,
+    "fetchedAt": 1791283585745
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/c53b79ee-6351-4d99-83f0-ddeb2e35f712/": {
+    "image": null,
+    "fetchedAt": 1791283585783
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/bd32cc6f-bdf1-41e0-b34a-1be4c72eb406/": {
+    "image": null,
+    "fetchedAt": 1791283585796
+  },
+  "https://allevents.in/stockholm/brandi-carlile-in-stockholm/3300029307608706": {
+    "image": "https://cdn-az.allevents.in/events6/banners/2b796830-d20d-11f0-8847-13c74ce67ee0-rimg-w1200-h675-dcdadada-gmir.webp?v=1764961445",
+    "fetchedAt": 1791283585822
+  },
+  "https://www.meetup.com/sthlm-outdoor/events/314904965/": {
+    "image": "https://secure.meetupstatic.com/photos/event/6/d/b/c/600_502888092.jpeg",
+    "fetchedAt": 1791283585992
+  },
+  "https://kulturhusetstadsteatern.se/bio/toxic-avenger-gastas-av-lloyd-kaufman-monsters-of-film": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/MoF2026-affisch-50x70-webb.jpg",
+    "fetchedAt": 1791283585994
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/b9167b9a-ba05-40a8-89d8-ad532fefb607/": {
+    "image": null,
+    "fetchedAt": 1791283586006
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/21337c5e-ec44-4d79-842d-673e456f623b/": {
+    "image": null,
+    "fetchedAt": 1791283586026
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/973ad868-fe12-48e3-8e51-5d0782df51d5/": {
+    "image": null,
+    "fetchedAt": 1791283586048
+  },
+  "https://biblioteket.stockholm.se/evenemang/invasion-livet-i-krigets-skugga-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_livetikrigetsskugga_26a573d918.png",
+    "fetchedAt": 1791283586140
+  },
+  "https://ra.co/events/2553941": {
+    "image": null,
+    "fetchedAt": 1791283586176
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/55a20b35-30d5-403a-b08b-c98ef3fff99b/": {
+    "image": null,
+    "fetchedAt": 1791283586189
+  },
+  "https://biblioteket.stockholm.se/evenemang/hoglasning-valj-ditt-aventyr-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_monster_a964b7a466.jpg",
+    "fetchedAt": 1791283586218
+  },
+  "https://biblioteket.stockholm.se/evenemang/sprakcafe-pa-svenska-1787": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_kategori_sprakcafe_2_b582f176a7.jpg",
+    "fetchedAt": 1791283586241
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/cb6b1394-2aa2-42c0-978b-76bfb1ef9977/": {
+    "image": null,
+    "fetchedAt": 1791283586433
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/a12c6039-45a5-4444-8e54-f4ec95313b3e/": {
+    "image": null,
+    "fetchedAt": 1791283586439
+  },
+  "https://biblioteket.stockholm.se/evenemang/sprakcafe-pa-svenska-1791": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_kategori_sprakcafe_2_b582f176a7.jpg",
+    "fetchedAt": 1791283586441
+  },
+  "https://biblioteket.stockholm.se/evenemang/spookyhour-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Spookyhour_314cfe2911.png",
+    "fetchedAt": 1791283586451
+  },
+  "https://biblioteket.stockholm.se/evenemang/sprakcafe-pa-svenska-1789": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_kategori_sprakcafe_2_b582f176a7.jpg",
+    "fetchedAt": 1791283586493
+  },
+  "https://biblioteket.stockholm.se/evenemang/sang-och-sagostund-2": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Sang_och_sagostund2026_8f2541a25c.png",
+    "fetchedAt": 1791283586685
+  },
+  "https://biblioteket.stockholm.se/evenemang/hang-pa-bibblan-222": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Kalender_HT_25_Haeng_pa_bibblan_c6efd09b72.jpg",
+    "fetchedAt": 1791283586697
+  },
+  "https://biblioteket.stockholm.se/evenemang/hemliga-skapets-bokcirkel-19": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Hemliga_skapet_Bild_till_webben_2345dbdaf0.png",
+    "fetchedAt": 1791283586744
+  },
+  "https://biblioteket.stockholm.se/evenemang/filosofikafe-33": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_jpg_c36c9e3a56.jpg",
+    "fetchedAt": 1791283586746
+  },
+  "https://biblioteket.stockholm.se/evenemang/sprakcafe-pa-svenska-1793": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_kategori_sprakcafe_2_b582f176a7.jpg",
+    "fetchedAt": 1791283586775
+  },
+  "https://biblioteket.stockholm.se/evenemang/jag-ar-en-manniska-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Programpunkt_pressbild_gra_bakgrund_2_579bfd6dbe.jpg",
+    "fetchedAt": 1791283586778
+  },
+  "https://biblioteket.stockholm.se/evenemang/sang-och-sagostund-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Sang_och_sagostund2026_8f2541a25c.png",
+    "fetchedAt": 1791283586793
+  },
+  "https://biblioteket.stockholm.se/evenemang/sprakcafe-pa-svenska-1790": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_kategori_sprakcafe_2_b582f176a7.jpg",
+    "fetchedAt": 1791283586860
+  },
+  "https://biblioteket.stockholm.se/evenemang/codex-community-meetup-stockholm-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Webheader_Codexevent11_Nov_1_c6becfee78.png",
+    "fetchedAt": 1791283586889
+  },
+  "https://biblioteket.stockholm.se/evenemang/sprakcafe-pa-svenska-1792": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_kategori_sprakcafe_2_b582f176a7.jpg",
+    "fetchedAt": 1791283586902
+  },
+  "https://biblioteket.stockholm.se/evenemang/sjung-pa-svenska-practice-swedish-by-singing-28": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Sjung_pa_svenska_ead1d31e65.png",
+    "fetchedAt": 1791283586912
+  },
+  "https://biblioteket.stockholm.se/evenemang/bokcirkel-vaggen-av-marlen-haushofer-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_oestberga_evenemang_6_d739d39fee.png",
+    "fetchedAt": 1791283586970
+  },
+  "https://biblioteket.stockholm.se/evenemang/laxhjalp-1229": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Webbpuff_Laexhjaelp_d4c36ea5c0.png",
+    "fetchedAt": 1791283586979
+  },
+  "https://biblioteket.stockholm.se/evenemang/torsdagsklubben-158": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Kopia_av_Bild_evenemang_hemsidan_aa7105d938.png",
+    "fetchedAt": 1791283586986
+  },
+  "https://biblioteket.stockholm.se/evenemang/kreativ-torsdag-pa-ostberga-bibliotek-123": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_1_8e92524472.png",
+    "fetchedAt": 1791283587009
+  },
+  "https://biblioteket.stockholm.se/evenemang/laxhjalp-1259": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Webbpuff_Laexhjaelp_d4c36ea5c0.png",
+    "fetchedAt": 1791283587047
+  },
+  "https://biblioteket.stockholm.se/evenemang/svenskt-sprakcafe-pa-ryska-51": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Sprakcafe1_7154d1a56b.png",
+    "fetchedAt": 1791283587054
+  },
+  "https://biblioteket.stockholm.se/evenemang/sci-fi-och-fantasybokklubb-3": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_sci_fi_och_fantasybokklubb_d8ed6c311e.png",
+    "fetchedAt": 1791283587123
+  },
+  "https://biblioteket.stockholm.se/evenemang/bibblerians-lasklubb-63": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_laesklubben_39a77860cb.png",
+    "fetchedAt": 1791283587159
+  },
+  "https://biblioteket.stockholm.se/evenemang/poesicirkel-pa-persiska--24": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_poesicirkel_e907282f17.png",
+    "fetchedAt": 1791283587189
+  },
+  "https://biblioteket.stockholm.se/evenemang/bagis-i-varlden-14": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_bild_vaerldsbokcirkel_c973e84d73.png",
+    "fetchedAt": 1791283587203
+  },
+  "https://biblioteket.stockholm.se/evenemang/persisk-bokcirkel-125": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_persisk_bokcirkel_webheader_1_bf606cc105.jpg",
+    "fetchedAt": 1791283587258
+  },
+  "https://biblioteket.stockholm.se/evenemang/hoglasning-84": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Hoeglaesning_1_dafb6d607c.png",
+    "fetchedAt": 1791283587259
+  },
+  "https://biblioteket.stockholm.se/evenemang/poesikvall-med-oppen-scen-59": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Poesikvaell_med_oeppen_scen_2097141de6.png",
+    "fetchedAt": 1791283587260
+  },
+  "https://biblioteket.stockholm.se/evenemang/sprakcafe-pa-portugisiska-13": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_strapisprakcafebild_cd2f2de9a7.jpg",
+    "fetchedAt": 1791283587308
+  },
+  "https://biblioteket.stockholm.se/evenemang/sprakcafe-pa-svenska-1794": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_kategori_sprakcafe_2_b582f176a7.jpg",
+    "fetchedAt": 1791283587311
+  },
+  "https://biblioteket.stockholm.se/evenemang/punktskapar-70": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Punkt_skapar1200x630_cee38b1b5f.jpg",
+    "fetchedAt": 1791283587325
+  },
+  "https://biblioteket.stockholm.se/evenemang/english-bookclub-4": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_zmonika_ai_generated_8421117_c4f9a3f3b4.png",
+    "fetchedAt": 1791283587362
+  },
+  "https://biblioteket.stockholm.se/evenemang/studiecirkel-sagan-om-ringen-4": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Sagan_om_ringen_1d07a00f27.jpg",
+    "fetchedAt": 1791283587372
+  },
+  "https://biblioteket.stockholm.se/evenemang/sprakcafe-pa-engelska-301": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_England3_webb_8334373b0c.jpg",
+    "fetchedAt": 1791283587444
+  },
+  "https://biblioteket.stockholm.se/evenemang/babybabbel-57": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_hemsidan_babybabbel_392482455b.png",
+    "fetchedAt": 1791283587457
+  },
+  "https://biblioteket.stockholm.se/evenemang/hosthang-pa-oppna-forskolan-kulan-2": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Webben_evenemang_Skaerholmens_bibliotek_barn_och_ungdom_2026_09_04_T183301_315_6400b5178e.png",
+    "fetchedAt": 1791283587513
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/19d177d2-2e26-4f30-a369-890027a942b0/": {
+    "image": null,
+    "fetchedAt": 1791283587645
+  },
+  "https://kulturhusetstadsteatern.se/bio/barnvagnsbio-love-actually": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/love-actually-poster.jpg",
+    "fetchedAt": 1791283587792
+  },
+  "https://kulturhusetstadsteatern.se/bio/stickbio-love-actually": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/love-actually-poster.jpg",
+    "fetchedAt": 1791283588352
   }
 }

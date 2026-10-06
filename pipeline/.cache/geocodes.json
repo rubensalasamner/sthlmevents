@@ -3050,5 +3050,19 @@
       "longitude": 18.0837911
     },
     "fetchedAt": 1791201300161
+  },
+  "Centralplan 25, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3308734,
+      "longitude": 18.0581688
+    },
+    "fetchedAt": 1791283582290
+  },
+  "Upplandsgatan 7, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3367543,
+      "longitude": 18.054246
+    },
+    "fetchedAt": 1791283583624
   }
 }
