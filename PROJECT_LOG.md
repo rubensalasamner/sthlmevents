@@ -3,7 +3,7 @@
 > **Syfte:** den här filen är projektets "minne" mellan datorer och sessioner.
 > Läs den först om du (människa eller AI-agent) plockar upp projektet efter en
 > paus. Den uppdateras när vi fattar beslut eller når slutsatser — inte för
-> varje kodändring. Senast uppdaterad: **2026-10-03**.
+> varje kodändring. Senast uppdaterad: **2026-10-06**.
 
 ---
 
@@ -371,7 +371,13 @@ när development client är igång.
   eftersom modul-import körs före `loadEnv()`.
 - **`.cursorignore` (2026-10-03):** blockerar agent/index från riktiga `.env*`;
   `!.env.example` håller mallen synlig. Påverkar inte terminal/pipeline —
-  bara att AI:n inte kan läsa hemligheter (bra inför remote-chat MCP).
+  bara att AI:n inte kan läsa hemligheter.
+- **Remote control (2026-10-06):** bytte från `udah1/cursor-chat-bridge` till
+  **nitech/auto** (MIT; Telegram kan vidarebefordra Approve/Run).
+  Full setup + **local secrets checklist** (token, chat id, CDP, supervise):
+  **`docs/auto-telegram-setup.md`**. Denna maskin:
+  `C:\Users\rus\programming\personal\auto`, `AUTO_POLICY=ask-on-write`,
+  chat-bridge purged. En bot = en poller (kör inte två laptops samtidigt).
 
 ### App-ikon (2026-10-03)
 
