@@ -17,8 +17,10 @@ import { AnimatedSplashOverlay } from '@/components/animated-icon';
 import { InterestsPrompt } from '@/components/interests-prompt';
 import { Colors } from '@/constants/theme';
 import { FavoritesProvider } from '@/context/favorites-context';
+import { FilteredEventsProvider } from '@/context/filtered-events-context';
 import { FiltersProvider } from '@/context/filters-context';
 import { InterestsProvider } from '@/context/interests-context';
+import { FavoriteReminders } from '@/notifications/favorite-reminders';
 import { NotificationBootstrap } from '@/notifications/notification-bootstrap';
 
 SplashScreen.preventAutoHideAsync();
@@ -73,20 +75,23 @@ export default function RootLayout() {
       <FavoritesProvider>
         <InterestsProvider>
           <FiltersProvider>
-            <ThemeProvider value={colorScheme === 'dark' ? BlaTimmenDark : BlaTimmenLight}>
-              {fontsLoaded || fontsError ? (
-                <>
-                  <NotificationBootstrap />
-                  <InterestsPrompt />
-                  <AnimatedSplashOverlay />
-                  <Stack>
-                    <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-                    <Stack.Screen name="agenda" options={{ title: 'All events' }} />
-                    <Stack.Screen name="event/[id]" options={{ headerShown: false }} />
-                  </Stack>
-                </>
-              ) : null}
-            </ThemeProvider>
+            <FilteredEventsProvider>
+              <ThemeProvider value={colorScheme === 'dark' ? BlaTimmenDark : BlaTimmenLight}>
+                {fontsLoaded || fontsError ? (
+                  <>
+                    <NotificationBootstrap />
+                    <FavoriteReminders />
+                    <InterestsPrompt />
+                    <AnimatedSplashOverlay />
+                    <Stack>
+                      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+                      <Stack.Screen name="agenda" options={{ title: 'All events' }} />
+                      <Stack.Screen name="event/[id]" options={{ headerShown: false }} />
+                    </Stack>
+                  </>
+                ) : null}
+              </ThemeProvider>
+            </FilteredEventsProvider>
           </FiltersProvider>
         </InterestsProvider>
       </FavoritesProvider>

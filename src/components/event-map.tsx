@@ -1,44 +1,34 @@
-import Constants from 'expo-constants';
 import type { ImageRef } from 'expo-image';
-import { requireNativeModule } from 'expo-modules-core';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactElement,
+  type RefObject,
+} from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 
+import { hasMapsApiKey, hasNativeMaps, MapUnavailable } from '@/components/map/map-availability';
 import { MapEventPeek } from '@/components/map-event-peek';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Colors, Spacing } from '@/constants/theme';
+import { useMapCamera } from '@/hooks/use-map-camera';
+import { usePinIcons } from '@/hooks/use-pin-icons';
 import type { StockholmEvent } from '@/types/event';
-import { CATEGORY_BADGE_COLORS } from '@/utils/category-colors';
 import type { GeoPoint } from '@/utils/geo';
 import { eventPoint } from '@/utils/geo';
-import { loadBubbleIcon } from '@/utils/map-bubble-icon';
 import {
-  boundsAround,
-  boundsFromDeltas,
-  cameraMovedEnough,
   MAP_CLUSTER_BELOW_ZOOM,
   MAP_NEIGHBOURHOOD_ZOOM,
   visibleMapPins,
-  type MapCameraSnapshot,
-  type MapPin,
 } from '@/utils/map-density';
 import {
   MAP_BUBBLE_SCALE,
   MAP_TITLE_MAX_EVENTS,
-  mapBubbleContent,
   mapBubbleSizeTier,
   type MapBubbleSizeTier,
 } from '@/utils/map-marker';
 
 const STOCKHOLM = { latitude: 59.3293, longitude: 18.0686 };
-
-type CameraMoveEvent = {
-  zoom?: number;
-  coordinates?: { latitude?: number; longitude?: number };
-  latitudeDelta?: number;
-  longitudeDelta?: number;
-};
 
 type MapCameraHandle = {
   setCameraPosition?: (config: { coordinates: GeoPoint; zoom: number }) => void;
@@ -46,60 +36,62 @@ type MapCameraHandle = {
 
 export type EventMapProps = {
   events: StockholmEvent[];
-  /** Favourited event ids — rendered with the favorite accent bubble. */
   favoriteIds?: ReadonlySet<string>;
-  /** When set, the camera opens on the user instead of city centre. */
   userLocation?: GeoPoint | null;
-  /** Open the peek for this event when present on the map. */
   focusEventId?: string | null;
-  /** Accepted for a shared interface with the web fallback; unused natively. */
   loading?: boolean;
   error?: Error | null;
   onRetry?: () => void;
 };
 
-let nativeMapsChecked = false;
-let nativeMapsAvailable = false;
+type MapRendererProps = {
+  mapRef: RefObject<MapCameraHandle | null>;
+  cameraPosition: { coordinates: GeoPoint; zoom: number };
+  markers: Array<{
+    id: string;
+    coordinates: GeoPoint;
+    icon: ImageRef;
+    showCallout: false;
+    anchor: { x: number; y: number };
+    zIndex: number;
+  }>;
+  annotations: Array<{ id: string; coordinates: GeoPoint; icon: ImageRef }>;
+  onPinClick: (id: string | undefined) => void;
+  onMapClick: () => void;
+  onCameraMove: ReturnType<typeof useMapCamera>['onCameraMove'];
+};
 
-/**
- * Expo Go ships no native maps module; built apps do. This gate exists so the
- * map screen degrades gracefully in Expo Go instead of crashing.
- */
-function hasNativeMaps(): boolean {
-  if (!nativeMapsChecked) {
-    nativeMapsChecked = true;
-    try {
-      requireNativeModule('ExpoMaps');
-      nativeMapsAvailable = true;
-    } catch {
-      nativeMapsAvailable = false;
-    }
-  }
-  return nativeMapsAvailable;
-}
-
-function MapUnavailable({ title = 'Map unavailable' }: { title?: string }) {
-  return (
-    <ThemedView style={styles.unavailable}>
-      <ThemedText type="section">{title}</ThemedText>
-      <ThemedText type="meta" themeColor="textSecondary" style={styles.unavailableText}>
-        {title === 'Map not configured'
-          ? 'The maps API key is missing in this build. Everything else works — browse events from Home.'
-          : 'Maps can’t run inside Expo Go. Everything else works — browse events from Home.'}
-      </ThemedText>
-    </ThemedView>
-  );
-}
-
-/**
- * The native module existing is not enough: without a Google Maps key in the
- * embedded manifest, mounting GoogleMaps.View crashes the whole app natively.
- * Expo strips the key itself from the JS-visible config in built apps, so the
- * gate reads the `extra.mapsConfigured` flag baked in at build time.
- */
-function hasMapsApiKey(): boolean {
-  return Constants.expoConfig?.extra?.mapsConfigured === true;
-}
+/** Platform map strategy — Apple annotations vs Google markers. */
+const mapRenderers: Record<'ios' | 'android', (props: MapRendererProps) => ReactElement> = {
+  ios: ({ mapRef, cameraPosition, annotations, onPinClick, onMapClick, onCameraMove }) => {
+    const { AppleMaps } = require('expo-maps') as typeof import('expo-maps');
+    return (
+      <AppleMaps.View
+        ref={mapRef as never}
+        style={styles.map}
+        cameraPosition={cameraPosition}
+        annotations={annotations}
+        onAnnotationClick={(annotation) => onPinClick(annotation.id)}
+        onMapClick={onMapClick}
+        onCameraMove={onCameraMove}
+      />
+    );
+  },
+  android: ({ mapRef, cameraPosition, markers, onPinClick, onMapClick, onCameraMove }) => {
+    const { GoogleMaps } = require('expo-maps') as typeof import('expo-maps');
+    return (
+      <GoogleMaps.View
+        ref={mapRef as never}
+        style={styles.map}
+        cameraPosition={cameraPosition}
+        markers={markers}
+        onMarkerClick={(marker) => onPinClick(marker.id)}
+        onMapClick={onMapClick}
+        onCameraMove={onCameraMove}
+      />
+    );
+  },
+};
 
 function useSelectedEvent(events: StockholmEvent[], focusEventId?: string | null) {
   const [selectedId, setSelectedId] = useState<string | null>(focusEventId ?? null);
@@ -129,37 +121,6 @@ function useSelectedEvent(events: StockholmEvent[], focusEventId?: string | null
   };
 }
 
-function snapshotFromMove(event: CameraMoveEvent, fallback: MapCameraSnapshot): MapCameraSnapshot {
-  const latitude = event.coordinates?.latitude ?? fallback.center.latitude;
-  const longitude = event.coordinates?.longitude ?? fallback.center.longitude;
-  const center = { latitude, longitude };
-  const zoom = event.zoom ?? fallback.zoom;
-  const bounds =
-    event.latitudeDelta != null && event.longitudeDelta != null
-      ? boundsFromDeltas(center, event.latitudeDelta, event.longitudeDelta)
-      : boundsAround(center, zoom);
-  return { center, zoom, bounds };
-}
-
-function useMapCamera(origin: GeoPoint) {
-  const [camera, setCamera] = useState<MapCameraSnapshot>(() => ({
-    center: origin,
-    zoom: MAP_NEIGHBOURHOOD_ZOOM,
-    bounds: boundsAround(origin, MAP_NEIGHBOURHOOD_ZOOM),
-  }));
-  const cameraRef = useRef(camera);
-  cameraRef.current = camera;
-
-  const onCameraMove = (event: CameraMoveEvent) => {
-    const next = snapshotFromMove(event, cameraRef.current);
-    if (!cameraMovedEnough(cameraRef.current, next)) return;
-    cameraRef.current = next;
-    setCamera(next);
-  };
-
-  return { camera, cameraRef, onCameraMove };
-}
-
 function useBubbleMode(zoom: number, totalEvents: number) {
   const [tier, setTier] = useState<MapBubbleSizeTier>(() => mapBubbleSizeTier(zoom));
   const showTitles = totalEvents <= MAP_TITLE_MAX_EVENTS || zoom >= MAP_NEIGHBOURHOOD_ZOOM;
@@ -171,75 +132,6 @@ function useBubbleMode(zoom: number, totalEvents: number) {
   }, [zoom]);
 
   return { showTitles, uiScale };
-}
-
-function pinSignature(
-  pin: MapPin,
-  showTitle: boolean,
-  uiScale: number,
-  favoriteIds: ReadonlySet<string>,
-  selectedId: string | null,
-): string {
-  if (pin.kind === 'cluster') {
-    return `${pin.id}:${pin.count}:${uiScale}`;
-  }
-  const content = mapBubbleContent(pin.event, { showTitle });
-  const favorite = favoriteIds.has(pin.event.id) ? '1' : '0';
-  const selected = pin.event.id === selectedId ? '1' : '0';
-  return `${pin.id}:${content.primary}|${content.secondary ?? ''}:${pin.event.category}:${favorite}:${selected}:${uiScale}`;
-}
-
-function usePinIcons(
-  pins: readonly MapPin[],
-  showTitle: boolean,
-  uiScale: number,
-  favoriteIds: ReadonlySet<string>,
-  selectedId: string | null,
-) {
-  const [icons, setIcons] = useState<ReadonlyMap<string, ImageRef>>(new Map());
-  const signature = pins
-    .map((pin) => pinSignature(pin, showTitle, uiScale, favoriteIds, selectedId))
-    .join('||');
-
-  useEffect(() => {
-    let cancelled = false;
-
-    void (async () => {
-      const next = new Map<string, ImageRef>();
-      await Promise.all(
-        pins.map(async (pin) => {
-          try {
-            if (pin.kind === 'cluster') {
-              next.set(
-                pin.id,
-                await loadBubbleIcon({ primary: String(pin.count) }, Colors.dark.accent, uiScale),
-              );
-              return;
-            }
-            const selected = pin.event.id === selectedId;
-            const scale = selected ? uiScale * 1.35 : uiScale;
-            const color = selected
-              ? Colors.dark.accent
-              : favoriteIds.has(pin.event.id)
-                ? Colors.dark.favorite
-                : CATEGORY_BADGE_COLORS[pin.event.category];
-            const content = mapBubbleContent(pin.event, { showTitle });
-            next.set(pin.id, await loadBubbleIcon(content, color, scale));
-          } catch {
-            // Leave marker without a custom icon if the PNG fails to decode.
-          }
-        }),
-      );
-      if (!cancelled) setIcons(next);
-    })();
-
-    return () => {
-      cancelled = true;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- keyed by signature
-  }, [signature]);
-
-  return icons;
 }
 
 export function EventMap({ events, favoriteIds, userLocation, focusEventId }: EventMapProps) {
@@ -272,7 +164,6 @@ function NativeEventMap({
   userLocation: GeoPoint | null;
   focusEventId: string | null;
 }) {
-  const { AppleMaps, GoogleMaps } = require('expo-maps') as typeof import('expo-maps');
   const focusPoint = useMemo(() => {
     if (!focusEventId) return null;
     const event = events.find((item) => item.id === focusEventId);
@@ -280,7 +171,6 @@ function NativeEventMap({
   }, [events, focusEventId]);
   const origin = focusPoint ?? userLocation ?? STOCKHOLM;
   const mapRef = useRef<MapCameraHandle>(null);
-  // Caller (Explore) already passes mappableEvents — don't re-filter.
   const { selectedId, selected, select, clear } = useSelectedEvent(events, focusEventId);
   const { camera, cameraRef, onCameraMove } = useMapCamera(origin);
   const pins = useMemo(
@@ -355,41 +245,24 @@ function NativeEventMap({
       pins.flatMap((pin) => {
         const icon = bubbleIcons.get(pin.id);
         if (!icon) return [];
-        return [
-          {
-            id: pin.id,
-            coordinates: pin.point,
-            icon,
-          },
-        ];
+        return [{ id: pin.id, coordinates: pin.point, icon }];
       }),
     [pins, bubbleIcons],
   );
 
+  const renderMap = Platform.OS === 'ios' ? mapRenderers.ios : mapRenderers.android;
+
   return (
     <View style={styles.root}>
-      {Platform.OS === 'ios' ? (
-        <AppleMaps.View
-          // Native view handle; typed as never because expo-maps is required lazily.
-          ref={mapRef as never}
-          style={styles.map}
-          cameraPosition={cameraPosition}
-          annotations={annotations}
-          onAnnotationClick={(annotation) => onPinClick(annotation.id)}
-          onMapClick={clear}
-          onCameraMove={onCameraMove}
-        />
-      ) : (
-        <GoogleMaps.View
-          ref={mapRef as never}
-          style={styles.map}
-          cameraPosition={cameraPosition}
-          markers={markers}
-          onMarkerClick={(marker) => onPinClick(marker.id)}
-          onMapClick={clear}
-          onCameraMove={onCameraMove}
-        />
-      )}
+      {renderMap({
+        mapRef,
+        cameraPosition,
+        markers,
+        annotations,
+        onPinClick,
+        onMapClick: clear,
+        onCameraMove,
+      })}
       {selected ? <MapEventPeek event={selected} onDismiss={clear} /> : null}
     </View>
   );
@@ -401,15 +274,5 @@ const styles = StyleSheet.create({
   },
   map: {
     flex: 1,
-  },
-  unavailable: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: Spacing.two,
-    padding: Spacing.four,
-  },
-  unavailableText: {
-    textAlign: 'center',
   },
 });

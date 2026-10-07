@@ -11,7 +11,7 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 import { useFilters } from '@/context/filters-context';
-import { useFilteredEvents } from '@/hooks/use-filtered-events';
+import { useFilteredEvents } from '@/context/filtered-events-context';
 import { useTheme } from '@/hooks/use-theme';
 import { EVENT_CATEGORIES, type EventCategory } from '@/types/event';
 import { groupAgenda } from '@/utils/agenda-groups';

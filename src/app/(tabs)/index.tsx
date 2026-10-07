@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect, useRouter, type Href } from 'expo-router';
 
 import { EmptyEventsState } from '@/components/empty-events-state';
-import { EventPresentation } from '@/components/event-presentation';
+import { HeroPoster } from '@/components/event-presentation/hero-poster';
 import { FilterBar } from '@/components/filter-bar';
 import { FilterSheet } from '@/components/filter-sheet';
 import { Icon } from '@/components/icon';
@@ -13,9 +13,9 @@ import { MagazineRailRow } from '@/components/magazine-rail';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
+import { useFilteredEvents } from '@/context/filtered-events-context';
 import { useFilters } from '@/context/filters-context';
 import { useInterests } from '@/context/interests-context';
-import { useFilteredEvents } from '@/hooks/use-filtered-events';
 import { useTheme } from '@/hooks/use-theme';
 import { buildMagazine, railCategoryFilter, railShowsCategory } from '@/utils/magazine-rails';
 
@@ -105,7 +105,7 @@ export default function HomeScreen() {
           ) : (
             <>
               <View style={styles.hero}>
-                <EventPresentation event={magazine.hero} variant="hero" />
+                <HeroPoster event={magazine.hero} />
               </View>
               {magazine.rails.map((rail) => (
                 <MagazineRailRow

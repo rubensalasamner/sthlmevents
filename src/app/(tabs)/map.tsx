@@ -11,7 +11,7 @@ import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 import { useFavorites } from '@/context/favorites-context';
 import { useFilters } from '@/context/filters-context';
-import { useFilteredEvents } from '@/hooks/use-filtered-events';
+import { useFilteredEvents } from '@/context/filtered-events-context';
 import { mappableEvents } from '@/utils/map-marker';
 
 export default function MapScreen() {

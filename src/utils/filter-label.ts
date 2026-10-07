@@ -1,5 +1,4 @@
-import type { CategoryFilterValue } from '@/components/category-filter';
-import type { NearRadiusKm } from '@/components/near-me-filter';
+import type { CategoryFilterValue, NearRadiusKm } from '@/types/filters';
 import { dateRangeHeading, type DateRangeValue } from '@/utils/date-range';
 import { formatCategory } from '@/utils/format';
 

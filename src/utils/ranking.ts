@@ -99,8 +99,3 @@ export function rankEvents(events: readonly StockholmEvent[]): StockholmEvent[] 
     return a.id.localeCompare(b.id);
   });
 }
-
-/** Featured events only, ordered by soonest — used by the Discover carousel. */
-export function featuredEvents(events: readonly StockholmEvent[]): StockholmEvent[] {
-  return rankEvents(events.filter((event) => event.isFeatured));
-}

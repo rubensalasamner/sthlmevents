@@ -4,7 +4,6 @@ import { describe, test } from 'node:test';
 import type { StockholmEvent } from '@/types/event';
 import {
   defaultDateRange,
-  filterByDateRange,
   splitByDateRange,
   stockholmWeekday,
   windowFor,
@@ -71,22 +70,6 @@ describe('splitByDateRange', () => {
     const { primary, secondary } = splitByDateRange([e], 'all', SATURDAY_NOON);
     assert.deepEqual(primary, [e]);
     assert.deepEqual(secondary, []);
-  });
-});
-
-describe('filterByDateRange parity with splitByDateRange', () => {
-  test('primary first, secondary after', () => {
-    const startsToday = event({ id: 'a', startsAt: '2026-09-12T10:00:00.000Z' });
-    const ongoing = event({
-      id: 'b',
-      startsAt: '2026-09-11T18:00:00.000Z',
-      endsAt: '2026-09-11T23:00:00.000Z',
-    });
-    const combined = filterByDateRange([ongoing, startsToday], 'today', SATURDAY_NOON);
-    assert.deepEqual(
-      combined.map((e) => e.id),
-      ['a', 'b'],
-    );
   });
 });
 

@@ -7,9 +7,8 @@ import {
   type ReactNode,
 } from 'react';
 
-import type { CategoryFilterValue } from '@/components/category-filter';
-import type { NearRadiusKm } from '@/components/near-me-filter';
 import type { SourceFilterValue } from '@/components/source-filter';
+import type { CategoryFilterValue, NearRadiusKm } from '@/types/filters';
 import { defaultDateRange, type DateRangeValue } from '@/utils/date-range';
 
 export type FiltersState = {

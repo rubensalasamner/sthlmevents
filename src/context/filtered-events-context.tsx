@@ -1,35 +1,43 @@
-import { useDeferredValue, useMemo } from 'react';
+import { createContext, useContext, useDeferredValue, useMemo, type ReactNode } from 'react';
 
 import { useFilters } from '@/context/filters-context';
 import { useInterests } from '@/context/interests-context';
 import { useEvents } from '@/hooks/use-events';
 import { useUserLocation } from '@/hooks/use-user-location';
+import type { StockholmEvent } from '@/types/event';
 import { collapseSeries } from '@/utils/collapse-series';
 import { dateRangeHeading, splitByDateRange } from '@/utils/date-range';
-import { filterByDistance, sortByDistance } from '@/utils/geo';
-import { featuredEvents, orderFeed } from '@/utils/ranking';
+import { filterByDistance, sortByDistance, type GeoPoint } from '@/utils/geo';
+import { orderFeed } from '@/utils/ranking';
 import { searchEvents } from '@/utils/search';
 
+type FilteredEventsValue = {
+  events: StockholmEvent[];
+  loading: boolean;
+  error: Error | null;
+  reload: () => void;
+  listEvents: StockholmEvent[];
+  listPending: boolean;
+  nearStatus: string | null;
+  location: GeoPoint | null;
+  heading: string;
+  now: Date;
+};
+
+const FilteredEventsContext = createContext<FilteredEventsValue | null>(null);
+
 /**
- * Shared Discover / Explore / agenda pipeline so the three surfaces never
- * disagree about the active filters.
+ * One filter/rank pipeline (and one GPS fix) shared by Home, Explore and the
+ * agenda so the surfaces never disagree and ~5k events are ranked once.
  */
-export function useFilteredEvents() {
+export function FilteredEventsProvider({ children }: { children: ReactNode }) {
   const { data: events, loading, error, reload } = useEvents();
-  const {
-    category,
-    query,
-    dateRange,
-    source,
-    nearMe,
-    nearRadiusKm,
-    contextualDateDefault,
-  } = useFilters();
+  const { category, query, dateRange, source, nearMe, nearRadiusKm } = useFilters();
   const now = useMemo(() => new Date(), []);
   const { location, loading: locating, error: locationError } = useUserLocation(nearMe);
   const { categories: interestCategories } = useInterests();
-  const deferredInterests = useDeferredValue(interestCategories);
 
+  const deferredInterests = useDeferredValue(interestCategories);
   const deferredQuery = useDeferredValue(query);
   const deferredCategory = useDeferredValue(category);
   const deferredSource = useDeferredValue(source);
@@ -47,13 +55,6 @@ export function useFilteredEvents() {
     deferredNearRadiusKm !== nearRadiusKm ||
     deferredLocation !== location;
 
-  const isDefaultView =
-    deferredCategory === 'all' &&
-    deferredDateRange === contextualDateDefault &&
-    deferredSource === 'all' &&
-    !deferredNearMe &&
-    deferredQuery.trim() === '';
-
   const baseFiltered = useMemo(() => {
     let result = searchEvents(events, deferredQuery);
     if (deferredCategory !== 'all') {
@@ -65,16 +66,9 @@ export function useFilteredEvents() {
     return result;
   }, [events, deferredQuery, deferredCategory, deferredSource]);
 
-  const featured = useMemo(() => {
-    if (!isDefaultView) return [];
-    const { primary, secondary } = splitByDateRange(baseFiltered, deferredDateRange);
-    return featuredEvents([...primary, ...secondary]);
-  }, [baseFiltered, isDefaultView, deferredDateRange]);
-
   const feedEvents = useMemo(() => {
-    const { primary, secondary } = splitByDateRange(baseFiltered, deferredDateRange);
-    const merged = [...primary, ...secondary];
-    const { events: collapsed } = collapseSeries(merged);
+    const { primary, secondary } = splitByDateRange(baseFiltered, deferredDateRange, now);
+    const { events: collapsed } = collapseSeries([...primary, ...secondary]);
     return orderFeed(collapsed, now, { preferredCategories: deferredInterests });
   }, [baseFiltered, deferredDateRange, now, deferredInterests]);
 
@@ -86,27 +80,41 @@ export function useFilteredEvents() {
     );
   }, [feedEvents, deferredNearMe, deferredLocation, deferredNearRadiusKm]);
 
-  const nearStatus =
-    nearMe && locating
+  const nearStatus = !nearMe
+    ? null
+    : locating
       ? 'Locating…'
-      : nearMe && locationError === 'denied'
+      : locationError === 'denied'
         ? 'Location denied — enable it in Settings'
-        : nearMe && locationError
+        : locationError
           ? 'Location unavailable'
           : null;
 
-  return {
-    events,
-    loading,
-    error,
-    reload,
-    listEvents,
-    featured,
-    isDefaultView,
-    listPending,
-    nearStatus,
-    location,
-    heading: dateRangeHeading(dateRange),
-    now,
-  };
+  const heading = dateRangeHeading(dateRange);
+
+  const value = useMemo<FilteredEventsValue>(
+    () => ({
+      events,
+      loading,
+      error,
+      reload,
+      listEvents,
+      listPending,
+      nearStatus,
+      location,
+      heading,
+      now,
+    }),
+    [events, loading, error, reload, listEvents, listPending, nearStatus, location, heading, now],
+  );
+
+  return <FilteredEventsContext.Provider value={value}>{children}</FilteredEventsContext.Provider>;
+}
+
+export function useFilteredEvents(): FilteredEventsValue {
+  const context = useContext(FilteredEventsContext);
+  if (!context) {
+    throw new Error('useFilteredEvents must be used within a FilteredEventsProvider');
+  }
+  return context;
 }

@@ -279,6 +279,10 @@ konton först efter caption-probe (ingen OCR som default).
   event-detalj deep-link back + “Browse events”.
 - **UX P2 (2026-10-07)**: Home-rubrik öppnar filter; remiss-preprompt före
   notis-permission; CTA “RSVP”/“Event page”; gutter `Spacing.four` 24→18.
+- **UX P3 (2026-10-07)**: `FilteredEventsProvider` (en pipeline + GPS);
+  map split (`map-availability` / `use-map-camera` / `use-pin-icons` +
+  Apple/Google strategy); favorit-påminnelser i `FavoriteReminders`;
+  död kod bort (filter-typer → `types/filters.ts`).
 - **Feed-ranking** (`src/utils/ranking.ts`): band → tier → sortMs → featured →
   quality → id. Band: programme → outOfTown → longRunning (>30 dagar).
   Tier inom band: upcoming (startsAt) → ongoing (endsAt snarast) → past.

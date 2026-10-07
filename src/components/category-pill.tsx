@@ -11,14 +11,17 @@ type CategoryPillProps = {
   onPress?: () => void;
 };
 
+/** Selectable chip — filter sheet, interests, and source filter. */
 export function CategoryPill({ label, selected = false, onPress }: CategoryPillProps) {
   const theme = useTheme();
 
   const content = (
     <ThemedView
-      type={selected ? 'backgroundElement' : 'backgroundElement'}
-      style={[styles.pill, selected && { backgroundColor: theme.accent }]}>
-      <ThemedText type="small" themeColor={selected ? 'accentInk' : 'textSecondary'}>
+      style={[
+        styles.pill,
+        { backgroundColor: selected ? theme.accent : theme.backgroundElement },
+      ]}>
+      <ThemedText type="metaBold" themeColor={selected ? 'accentInk' : 'text'}>
         {label}
       </ThemedText>
     </ThemedView>
@@ -39,7 +42,7 @@ export function CategoryPill({ label, selected = false, onPress }: CategoryPillP
 
 const styles = StyleSheet.create({
   pill: {
-    paddingVertical: Spacing.one,
+    paddingVertical: Spacing.two,
     paddingHorizontal: Spacing.three,
     borderRadius: Spacing.five,
   },

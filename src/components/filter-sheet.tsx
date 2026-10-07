@@ -2,14 +2,16 @@ import { type ReactNode, useMemo } from 'react';
 import { Pressable, ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native';
 
 import { BottomSheet } from '@/components/bottom-sheet';
+import { CategoryPill } from '@/components/category-pill';
 import { SourceFilter } from '@/components/source-filter';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import { Toggle } from '@/components/toggle';
 import { Spacing } from '@/constants/theme';
 import { useFilters } from '@/context/filters-context';
 import { useTheme } from '@/hooks/use-theme';
-import type { NearRadiusKm } from '@/components/near-me-filter';
-import { EVENT_CATEGORIES, type EventCategory, type StockholmEvent } from '@/types/event';
+import { EVENT_CATEGORIES, type StockholmEvent } from '@/types/event';
+import type { NearRadiusKm } from '@/types/filters';
 import { dateRangeHeading, dateRangeHint, type DateRangeValue } from '@/utils/date-range';
 import { formatCategory } from '@/utils/format';
 
@@ -37,35 +39,6 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
       </ThemedText>
       {children}
     </View>
-  );
-}
-
-function ChoiceChip({
-  label,
-  selected,
-  onPress,
-}: {
-  label: string;
-  selected: boolean;
-  onPress: () => void;
-}) {
-  const theme = useTheme();
-  return (
-    <Pressable
-      accessibilityRole="button"
-      accessibilityState={{ selected }}
-      onPress={onPress}
-      style={({ pressed }) => pressed && styles.pressed}>
-      <View
-        style={[
-          styles.choiceChip,
-          { backgroundColor: selected ? theme.accent : theme.backgroundElement },
-        ]}>
-        <ThemedText type="metaBold" themeColor={selected ? 'accentInk' : 'text'}>
-          {label}
-        </ThemedText>
-      </View>
-    </Pressable>
   );
 }
 
@@ -165,13 +138,13 @@ export function FilterSheet({
 
         <Section title="What">
           <View style={styles.wrapChips}>
-            <ChoiceChip
+            <CategoryPill
               label="All"
               selected={category === 'all'}
               onPress={() => setCategory('all')}
             />
-            {EVENT_CATEGORIES.filter((c) => c !== 'other').map((value: EventCategory) => (
-              <ChoiceChip
+            {EVENT_CATEGORIES.filter((c) => c !== 'other').map((value) => (
+              <CategoryPill
                 key={value}
                 label={formatCategory(value)}
                 selected={category === value}
@@ -182,41 +155,16 @@ export function FilterSheet({
         </Section>
 
         <Section title="Nearby">
-          <Pressable
-            accessibilityRole="switch"
-            accessibilityState={{ checked: nearMe }}
-            onPress={() => setNearMe(!nearMe)}
-            style={({ pressed }) => [
-              styles.nearRow,
-              { backgroundColor: theme.backgroundElement },
-              pressed && styles.pressed,
-            ]}>
-            <View style={styles.nearCopy}>
-              <ThemedText type="card">Near me</ThemedText>
-              <ThemedText type="meta" themeColor="textSecondary">
-                {nearStatus ?? 'Closest events first'}
-              </ThemedText>
-            </View>
-            <View
-              style={[
-                styles.toggle,
-                { backgroundColor: nearMe ? theme.accent : theme.backgroundSelected },
-              ]}>
-              <View
-                style={[
-                  styles.toggleKnob,
-                  {
-                    backgroundColor: nearMe ? theme.accentInk : theme.textSecondary,
-                    alignSelf: nearMe ? 'flex-end' : 'flex-start',
-                  },
-                ]}
-              />
-            </View>
-          </Pressable>
+          <Toggle
+            label="Near me"
+            description={nearStatus ?? 'Closest events first'}
+            checked={nearMe}
+            onChange={setNearMe}
+          />
           {nearMe ? (
             <View style={styles.wrapChips}>
               {RADIUS.map((option) => (
-                <ChoiceChip
+                <CategoryPill
                   key={String(option.value)}
                   label={option.label}
                   selected={nearRadiusKm === option.value}
@@ -292,36 +240,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: Spacing.two,
-  },
-  choiceChip: {
-    borderRadius: Spacing.five,
-    paddingHorizontal: Spacing.three,
-    paddingVertical: Spacing.two,
-  },
-  nearRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: Spacing.three,
-    borderRadius: Spacing.three,
-    paddingHorizontal: Spacing.three,
-    paddingVertical: Spacing.three,
-  },
-  nearCopy: {
-    flex: 1,
-    gap: 2,
-    minWidth: 0,
-  },
-  toggle: {
-    width: 48,
-    height: 28,
-    borderRadius: 14,
-    padding: 3,
-    justifyContent: 'center',
-  },
-  toggleKnob: {
-    width: 22,
-    height: 22,
-    borderRadius: 11,
   },
   footer: {
     paddingHorizontal: Spacing.four,
