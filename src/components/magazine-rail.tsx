@@ -13,6 +13,8 @@ type MagazineRailRowProps = {
   title: string;
   events: StockholmEvent[];
   density?: MagazineRail['density'];
+  /** Mixed rails — show category badge on each tile. */
+  showCategory?: boolean;
   /** Optional deep-link into agenda with this rail's filter applied. */
   onSeeAll?: () => void;
 };
@@ -21,13 +23,13 @@ export function MagazineRailRow({
   title,
   events,
   density = 'compact',
+  showCategory = false,
   onSeeAll,
 }: MagazineRailRowProps) {
   if (events.length === 0) return null;
 
   const featured = density === 'featured';
   const width = featured ? FEATURED_WIDTH : COMPACT_WIDTH;
-
   return (
     <View style={styles.wrap}>
       <View style={styles.headingRow}>
@@ -55,7 +57,12 @@ export function MagazineRailRow({
         style={styles.scroller}
         contentContainerStyle={styles.row}>
         {events.map((event) => (
-          <PosterTile key={event.id} event={event} width={width} />
+          <PosterTile
+            key={event.id}
+            event={event}
+            width={width}
+            showCategory={showCategory}
+          />
         ))}
       </ScrollView>
     </View>

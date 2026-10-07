@@ -1,7 +1,12 @@
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
 
-import { buildMagazine, featuredWindowRailTitle, railCategoryFilter } from './magazine-rails.js';
+import {
+  buildMagazine,
+  featuredWindowRailTitle,
+  railCategoryFilter,
+  railShowsCategory,
+} from './magazine-rails.js';
 import type { StockholmEvent } from '@/types/event';
 
 function event(overrides: Partial<StockholmEvent> = {}): StockholmEvent {
@@ -140,6 +145,13 @@ describe('buildMagazine', () => {
     assert.equal(railCategoryFilter('music'), 'music');
     assert.equal(railCategoryFilter('window'), null);
     assert.equal(railCategoryFilter('free'), null);
+  });
+
+  test('railShowsCategory only on mixed window/free rails', () => {
+    assert.equal(railShowsCategory('window'), true);
+    assert.equal(railShowsCategory('free'), true);
+    assert.equal(railShowsCategory('music'), false);
+    assert.equal(railShowsCategory('market'), false);
   });
 
   test('empty feed yields no hero and no rails', () => {

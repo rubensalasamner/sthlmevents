@@ -32,6 +32,14 @@ export function railCategoryFilter(railId: string): EventCategory | null {
   }
 }
 
+/**
+ * Window + Free mix categories; thematic rails already name the type in the
+ * heading — badge only where the heading doesn't say it.
+ */
+export function railShowsCategory(railId: string): boolean {
+  return railId === 'window' || railId === 'free';
+}
+
 /** Featured rail label — never "More all events". */
 export function featuredWindowRailTitle(windowTitle: string): string {
   if (windowTitle === 'All events') return 'Up next';

@@ -2,6 +2,7 @@ import { useRouter } from 'expo-router';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { CategoryBadge } from '@/components/category-badge';
 import { EventImage } from '@/components/event-image';
 import { FadeInView } from '@/components/fade-in-view';
 import { Icon } from '@/components/icon';
@@ -10,8 +11,7 @@ import { ThemedView } from '@/components/themed-view';
 import { BottomTabInset, Spacing } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
 import type { StockholmEvent } from '@/types/event';
-import { BADGE_INK, CATEGORY_BADGE_COLORS } from '@/utils/category-colors';
-import { formatCategory, formatEventWhen, formatPrice, venueLine } from '@/utils/format';
+import { formatEventWhen, formatPrice, venueLine } from '@/utils/format';
 
 type Props = {
   event: StockholmEvent;
@@ -49,12 +49,7 @@ export function MapEventPeek({ event, onDismiss }: Props) {
             transition={150}
           />
           <View style={styles.body}>
-            <ThemedView
-              style={[styles.badge, { backgroundColor: CATEGORY_BADGE_COLORS[event.category] }]}>
-              <ThemedText type="metaBold" style={styles.badgeText}>
-                {formatCategory(event.category).toUpperCase()}
-              </ThemedText>
-            </ThemedView>
+            <CategoryBadge category={event.category} />
             <ThemedText type="metaBold" themeColor="accent" numberOfLines={1}>
               {formatEventWhen(event)}
             </ThemedText>
@@ -108,18 +103,6 @@ const styles = StyleSheet.create({
     flex: 1,
     gap: Spacing.half,
     justifyContent: 'center',
-  },
-  badge: {
-    alignSelf: 'flex-start',
-    paddingVertical: Spacing.half,
-    paddingHorizontal: Spacing.two,
-    borderRadius: Spacing.one,
-  },
-  badgeText: {
-    color: BADGE_INK,
-    fontSize: 10,
-    lineHeight: 12,
-    letterSpacing: 0.5,
   },
   dismiss: {
     position: 'absolute',

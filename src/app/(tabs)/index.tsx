@@ -17,7 +17,7 @@ import { Spacing } from '@/constants/theme';
 import { useFilters } from '@/context/filters-context';
 import { useFilteredEvents } from '@/hooks/use-filtered-events';
 import { useTheme } from '@/hooks/use-theme';
-import { buildMagazine, railCategoryFilter } from '@/utils/magazine-rails';
+import { buildMagazine, railCategoryFilter, railShowsCategory } from '@/utils/magazine-rails';
 
 const TITLE_UNLOCK_TAPS = 5;
 const TITLE_UNLOCK_MS = 1600;
@@ -124,6 +124,7 @@ export default function HomeScreen() {
                   title={rail.title}
                   events={rail.events}
                   density={rail.density}
+                  showCategory={railShowsCategory(rail.id)}
                   onSeeAll={() => onRailSeeAll(rail.id)}
                 />
               ))}
