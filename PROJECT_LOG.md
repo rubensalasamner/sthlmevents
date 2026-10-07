@@ -49,10 +49,11 @@ istället för en filterstack. Tema: "Blå Timmen"
 - **Lägg till i kalender LIVE** (2026-09-16): `Add to calendar` på eventdetaljen
   öppnar OS-kalenderdialog (förifyllt) via `expo-calendar/legacy`; web → Google
   Calendar-URL. Samma native build som notiser.
-- **Helg-/kvälls-default** (uppdaterad 2026-10-07): Home öppnar på `weekend`
-  **fredag–söndag** (Stockholm-weekday), annars `today`. Weekend-fönstret är
-  Fre 00:00 → Mån 00:00; inne i helgen startar fönstret idag så passerade
-  dagar inte återkommer. Magazine-hero + fönster-rail speglar fönstret.
+- **Helg-/vecko-default** (uppdaterad 2026-10-07): Home öppnar på `weekend`
+  **fredag–söndag** (Stockholm-weekday), annars `week` (Mon–Thu). Weekend-
+  fönstret är Fre 00:00 → Mån 00:00; inne i helgen startar fönstret idag så
+  passerade dagar inte återkommer. Magazine-hero + fönster-rail speglar
+  fönstret.
 - **Närhet LIVE** (2026-09-16): “Near me” + ≤2/5 km på Discover (lazy GPS via
   `expo-location`); kartan zoomar mot användaren. Favoriter får accent-bubbla
   **bara när de matchar aktiva filter** (bypass borttagen 2026-09-18 — annars
@@ -271,8 +272,8 @@ konton först efter caption-probe (ingen OCR som default).
 - **Filter**: sammanfattningschip öppnar sheet (datum, kategori, near-me,
   dev-source). Inte always-on-stack. `reset()` rensar till kontextuell default.
 - **Helgfönster (2026-10-07)**: `weekend` = Fre→sön (inte lör→sön). Default
-  Fri–Sun → weekend, Mon–Thu → today — så “tonight” alltid ingår. Hints i
-  sheet via `dateRangeHint` (samma källa som heading).
+  Fri–Sun → weekend, Mon–Thu → week (stadskalender, inte “bara ikväll”).
+  Hints i sheet via `dateRangeHint` (samma källa som heading).
 - **UX P1 (2026-10-07)**: transparent `BottomSheet`; interests-prompt via
   `maybePrompt` på Home-focus (inte samtidigt som notis-permission); agenda
   scope (`?category=` + clear query on leave); Saved använder `groupAgenda`;

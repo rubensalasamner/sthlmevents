@@ -105,10 +105,10 @@ describe('windowFor weekend (Fri 00:00 → Mon 00:00 Stockholm)', () => {
 
 describe('defaultDateRange (Stockholm weekday)', () => {
   // Civil dates in Stockholm; times chosen so UTC still lands on that local day.
-  test('Mon–Thu → today', () => {
-    assert.equal(defaultDateRange(new Date('2026-09-14T10:00:00.000Z')), 'today'); // Mon
-    assert.equal(defaultDateRange(new Date('2026-09-16T10:00:00.000Z')), 'today'); // Wed
-    assert.equal(defaultDateRange(new Date('2026-09-17T10:00:00.000Z')), 'today'); // Thu
+  test('Mon–Thu → week', () => {
+    assert.equal(defaultDateRange(new Date('2026-09-14T10:00:00.000Z')), 'week'); // Mon
+    assert.equal(defaultDateRange(new Date('2026-09-16T10:00:00.000Z')), 'week'); // Wed
+    assert.equal(defaultDateRange(new Date('2026-09-17T10:00:00.000Z')), 'week'); // Thu
   });
 
   test('Fri–Sun → weekend', () => {

@@ -140,11 +140,11 @@ function isWeekendDay(weekday: number): boolean {
 }
 
 /**
- * Contextual Home default: Fri–Sun open on the weekend, Mon–Thu on today —
- * both windows always include tonight.
+ * Contextual Home default: Fri–Sun open on the weekend, Mon–Thu on this week —
+ * planning ahead mid-week; both windows always include tonight.
  */
 export function defaultDateRange(now: Date = new Date()): DateRangeValue {
-  return isWeekendDay(stockholmWeekday(now)) ? 'weekend' : 'today';
+  return isWeekendDay(stockholmWeekday(now)) ? 'weekend' : 'week';
 }
 
 /** Section / hero copy for the active date window. */
