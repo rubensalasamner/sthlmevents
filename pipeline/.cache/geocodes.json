@@ -444,7 +444,7 @@
   },
   "Bibliotekslabbet, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791108388244
+    "fetchedAt": 1791369268302
   },
   "Hamngatan 4, Stockholm, Sweden": {
     "value": {
@@ -1160,7 +1160,7 @@
   },
   "Sergels torg, Foajé 3, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791108400213
+    "fetchedAt": 1791369281438
   },
   "Stallgatan 7, Stockholm, Sweden": {
     "value": {
@@ -1897,7 +1897,7 @@
   },
   "Bottom floor of Kulturhuset, Sergels Torg, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1790676521085
+    "fetchedAt": 1791369269842
   },
   "Kafé Plattan, Stockholm, Sweden": {
     "value": {
@@ -2737,7 +2737,7 @@
   },
   "Radisson Collection Strand Hotel, Nybrokajen 9, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791108394063
+    "fetchedAt": 1791369277621
   },
   "The Bar & Lounge, Stockholm, Sweden": {
     "value": {
@@ -2790,7 +2790,7 @@
   },
   "Drottning Kristinas väg 51, 114 28 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791108398732
+    "fetchedAt": 1791369279079
   },
   "KTH R1, Stockholm, Sweden": {
     "value": {
@@ -3064,5 +3064,24 @@
       "longitude": 18.054246
     },
     "fetchedAt": 1791283583624
+  },
+  "Vasagatan 1, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3314817,
+      "longitude": 18.0581849
+    },
+    "fetchedAt": 1791369271434
+  },
+  "stgötagatan 12, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1791369272955
+  },
+  "Östgötagatan 12, 116 25 Stockholm, Sweden, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1791369274399
+  },
+  "Embassy House Coworking Medborgarplatsen, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1791369276029
   }
 }
