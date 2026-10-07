@@ -283,6 +283,21 @@ konton först efter caption-probe (ingen OCR som default).
   map split (`map-availability` / `use-map-camera` / `use-pin-icons` +
   Apple/Google strategy); favorit-påminnelser i `FavoriteReminders`;
   död kod bort (filter-typer → `types/filters.ts`).
+- **Sparade events överlever slut (2026-10-07)**: källorna filtrerar bort
+  avslutade events, så favoriter (bara id) försvann ur Saved och detalj-404:ade.
+  `SavedEventsProvider` sparar en snapshot per favorit
+  (`sthlmevents.favorites.snapshots.v1`), live-kopian vinner; Past visar
+  avslutade i 30 dagar. Detaljen faller tillbaka på snapshot (“Ended · datum”,
+  ingen biljett/kalender/karta).
+- **Relaterade events på detalj (2026-10-07)**: `RelatedStrategy`
+  (`utils/related-events.ts`): samma venue → samma arrangör (skippas om
+  arrangör = venue; 1040 av ~4.9k) → samma dag inom 1.5 km (ej ≥30-dagars
+  körningar). Rails dedupar serier sinsemellan. Paraplyarrangörer
+  (Stadsbiblioteket 1638, Kulturhuset 1244) ger breda arrangörsrails.
+- **Agenda dag-strip, gemensam FilterSheet, `EventsStatus` (2026-10-07)**:
+  en `FilterSheetProvider` (`openFilters(counter?)` — kartan räknar pins);
+  `resolveEventsStatus` = innehåll vinner över spinner/fel. Tab-bar
+  `minimizeBehavior="onScrollDown"` (endast iOS 26+, ingen effekt på Android).
 - **Feed-ranking** (`src/utils/ranking.ts`): band → tier → sortMs → featured →
   quality → id. Band: programme → outOfTown → longRunning (>30 dagar).
   Tier inom band: upcoming (startsAt) → ongoing (endsAt snarast) → past.

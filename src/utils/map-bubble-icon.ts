@@ -3,7 +3,7 @@ import { Image, type ImageRef } from 'expo-image';
 import { buildBubblePng, type BubblePngContent } from '@/utils/map-bubble-png';
 
 const cache = new Map<string, Promise<ImageRef>>();
-const CACHE_VERSION = 'frost-v1';
+const CACHE_VERSION = 'solid-v2';
 
 /**
  * Map markers take a bitmap icon (Google has no text annotations; we also use

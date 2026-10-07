@@ -1,18 +1,18 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo } from 'react';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect, useRouter, type Href } from 'expo-router';
 
-import { EmptyEventsState } from '@/components/empty-events-state';
 import { HeroPoster } from '@/components/event-presentation/hero-poster';
+import { EventsStatus } from '@/components/events-status';
 import { FilterBar } from '@/components/filter-bar';
-import { FilterSheet } from '@/components/filter-sheet';
 import { Icon } from '@/components/icon';
 import { InterestsEntry } from '@/components/interests-entry';
 import { MagazineRailRow } from '@/components/magazine-rail';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
+import { useFilterSheet } from '@/context/filter-sheet-context';
 import { useFilteredEvents } from '@/context/filtered-events-context';
 import { useFilters } from '@/context/filters-context';
 import { useInterests } from '@/context/interests-context';
@@ -20,19 +20,10 @@ import { useTheme } from '@/hooks/use-theme';
 import { buildMagazine, railCategoryFilter, railShowsCategory } from '@/utils/magazine-rails';
 
 export default function HomeScreen() {
-  const {
-    events,
-    loading,
-    error,
-    reload,
-    listEvents,
-    heading,
-    listPending,
-    nearStatus,
-  } = useFilteredEvents();
+  const { loading, error, reload, listEvents, heading, listPending } = useFilteredEvents();
   const { devSourcesUnlocked } = useFilters();
   const { maybePrompt } = useInterests();
-  const [filtersOpen, setFiltersOpen] = useState(false);
+  const { openFilters } = useFilterSheet();
   const router = useRouter();
   const theme = useTheme();
   const magazine = useMemo(() => buildMagazine(listEvents, heading), [listEvents, heading]);
@@ -61,7 +52,7 @@ export default function HomeScreen() {
               <Pressable
                 accessibilityRole="button"
                 accessibilityLabel={`Filters, ${heading}`}
-                onPress={() => setFiltersOpen(true)}
+                onPress={() => openFilters()}
                 style={({ pressed }) => [styles.headingHit, pressed && styles.pressed]}>
                 <ThemedText type="display">{heading}</ThemedText>
                 <Icon sf="chevron.down" material="expand_more" size={20} color={theme.textSecondary} />
@@ -86,56 +77,41 @@ export default function HomeScreen() {
             </View>
           </View>
 
-          <FilterBar hideDate onPress={() => setFiltersOpen(true)} />
+          <FilterBar hideDate onPress={() => openFilters()} />
 
-          {loading && listEvents.length === 0 ? (
-            <ActivityIndicator color={theme.textSecondary} style={styles.loader} />
-          ) : error ? (
-            <Pressable onPress={reload} style={styles.messageWrap}>
-              <ThemedText type="meta" themeColor="textSecondary">
-                Could not load events. Tap to retry.
-              </ThemedText>
-            </Pressable>
-          ) : !magazine.hero ? (
-            <EmptyEventsState
-              message="No events match your filters."
-              showReset
-              showExplore
-            />
-          ) : (
-            <>
+          <EventsStatus
+            loading={loading}
+            error={error}
+            empty={!magazine.hero}
+            onRetry={reload}
+            showReset
+            showExplore>
+            {magazine.hero ? (
               <View style={styles.hero}>
                 <HeroPoster event={magazine.hero} />
               </View>
-              {magazine.rails.map((rail) => (
-                <MagazineRailRow
-                  key={rail.id}
-                  title={rail.title}
-                  events={rail.events}
-                  density={rail.density}
-                  showCategory={railShowsCategory(rail.id)}
-                  onSeeAll={() => onRailSeeAll(rail.id)}
-                />
-              ))}
-              <Pressable
-                accessibilityRole="button"
-                accessibilityLabel="Browse all events"
-                onPress={() => openAgenda()}
-                style={({ pressed }) => [styles.seeAll, pressed && styles.pressed]}>
-                <ThemedText type="link">Browse all</ThemedText>
-                <Icon sf="chevron.right" material="arrow_forward" size={16} color={theme.accent} />
-              </Pressable>
-            </>
-          )}
+            ) : null}
+            {magazine.rails.map((rail) => (
+              <MagazineRailRow
+                key={rail.id}
+                title={rail.title}
+                events={rail.events}
+                density={rail.density}
+                showCategory={railShowsCategory(rail.id)}
+                onSeeAll={() => onRailSeeAll(rail.id)}
+              />
+            ))}
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel="Browse all events"
+              onPress={() => openAgenda()}
+              style={({ pressed }) => [styles.seeAll, pressed && styles.pressed]}>
+              <ThemedText type="link">Browse all</ThemedText>
+              <Icon sf="chevron.right" material="arrow_forward" size={16} color={theme.accent} />
+            </Pressable>
+          </EventsStatus>
         </ScrollView>
       </SafeAreaView>
-      <FilterSheet
-        events={events}
-        visible={filtersOpen}
-        onClose={() => setFiltersOpen(false)}
-        nearStatus={nearStatus}
-        resultCount={listEvents.length}
-      />
     </ThemedView>
   );
 }
@@ -184,13 +160,6 @@ const styles = StyleSheet.create({
     gap: Spacing.one,
     paddingHorizontal: Spacing.four,
     paddingTop: Spacing.two,
-  },
-  loader: {
-    marginTop: Spacing.six,
-  },
-  messageWrap: {
-    paddingHorizontal: Spacing.four,
-    paddingVertical: Spacing.six,
   },
   pressed: {
     opacity: 0.7,

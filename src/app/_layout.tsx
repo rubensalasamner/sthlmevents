@@ -17,9 +17,11 @@ import { AnimatedSplashOverlay } from '@/components/animated-icon';
 import { InterestsPrompt } from '@/components/interests-prompt';
 import { Colors } from '@/constants/theme';
 import { FavoritesProvider } from '@/context/favorites-context';
+import { FilterSheetProvider } from '@/context/filter-sheet-context';
 import { FilteredEventsProvider } from '@/context/filtered-events-context';
 import { FiltersProvider } from '@/context/filters-context';
 import { InterestsProvider } from '@/context/interests-context';
+import { SavedEventsProvider } from '@/context/saved-events-context';
 import { FavoriteReminders } from '@/notifications/favorite-reminders';
 import { NotificationBootstrap } from '@/notifications/notification-bootstrap';
 
@@ -73,27 +75,31 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <FavoritesProvider>
-        <InterestsProvider>
-          <FiltersProvider>
-            <FilteredEventsProvider>
-              <ThemeProvider value={colorScheme === 'dark' ? BlaTimmenDark : BlaTimmenLight}>
-                {fontsLoaded || fontsError ? (
-                  <>
-                    <NotificationBootstrap />
-                    <FavoriteReminders />
-                    <InterestsPrompt />
-                    <AnimatedSplashOverlay />
-                    <Stack>
-                      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-                      <Stack.Screen name="agenda" options={{ title: 'All events' }} />
-                      <Stack.Screen name="event/[id]" options={{ headerShown: false }} />
-                    </Stack>
-                  </>
-                ) : null}
-              </ThemeProvider>
-            </FilteredEventsProvider>
-          </FiltersProvider>
-        </InterestsProvider>
+        <SavedEventsProvider>
+          <InterestsProvider>
+            <FiltersProvider>
+              <FilteredEventsProvider>
+                <FilterSheetProvider>
+                  <ThemeProvider value={colorScheme === 'dark' ? BlaTimmenDark : BlaTimmenLight}>
+                    {fontsLoaded || fontsError ? (
+                      <>
+                        <NotificationBootstrap />
+                        <FavoriteReminders />
+                        <InterestsPrompt />
+                        <AnimatedSplashOverlay />
+                        <Stack>
+                          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+                          <Stack.Screen name="agenda" options={{ title: 'All events' }} />
+                          <Stack.Screen name="event/[id]" options={{ headerShown: false }} />
+                        </Stack>
+                      </>
+                    ) : null}
+                  </ThemeProvider>
+                </FilterSheetProvider>
+              </FilteredEventsProvider>
+            </FiltersProvider>
+          </InterestsProvider>
+        </SavedEventsProvider>
       </FavoritesProvider>
     </GestureHandlerRootView>
   );

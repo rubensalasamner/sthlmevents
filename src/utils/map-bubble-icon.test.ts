@@ -31,8 +31,7 @@ describe('buildBubblePng', () => {
     assert.ok(large.height > small.height);
   });
 
-  test('frost bubble differs from a solid category wash of the same label', () => {
-    // Same inputs always produce frost chrome now; sanity-check non-empty PNG.
+  test('different category fills produce different bitmaps', () => {
     const a = buildBubblePng('Nu', '#C9B8FF', 1.55);
     const b = buildBubblePng('Nu', '#7CD4FF', 1.55);
     assert.notEqual(a.uri, b.uri);

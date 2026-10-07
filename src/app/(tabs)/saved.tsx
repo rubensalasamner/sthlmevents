@@ -6,19 +6,12 @@ import { EventSectionList } from '@/components/event-section-list';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
-import { useFavorites } from '@/context/favorites-context';
-import { useEvents } from '@/hooks/use-events';
+import { useSavedEvents } from '@/context/saved-events-context';
 import { groupAgenda } from '@/utils/agenda-groups';
 import { eventInterval } from '@/utils/event-interval';
 
 export default function SavedScreen() {
-  const { data: events, loading, error, reload } = useEvents();
-  const { favoriteIds } = useFavorites();
-
-  const saved = useMemo(
-    () => events.filter((event) => favoriteIds.has(event.id)),
-    [events, favoriteIds],
-  );
+  const { saved, loading, error, reload } = useSavedEvents();
 
   const grouped = useMemo(() => {
     const now = new Date();
@@ -31,6 +24,7 @@ export default function SavedScreen() {
     }
 
     const upcomingSections = groupAgenda(upcoming, now).map((group) => ({
+      key: group.id,
       title: group.label,
       data: group.events,
     }));
@@ -40,6 +34,7 @@ export default function SavedScreen() {
       sections: [
         ...upcomingSections,
         {
+          key: 'past',
           title: 'Past',
           data: [...past].sort((a, b) => eventInterval(b).endMs - eventInterval(a).endMs),
         },
@@ -52,17 +47,14 @@ export default function SavedScreen() {
       <SafeAreaView edges={['top']} style={styles.safe}>
         <EventSectionList
           sections={grouped.sections}
-          loading={loading && saved.length === 0}
+          loading={loading}
+          error={error}
+          onRetry={reload}
           emptyMessage="Save events you care about — they'll show up here."
           now={grouped.now}
           ListHeaderComponent={
             <View style={styles.header}>
               <ThemedText type="display">Saved</ThemedText>
-              {error ? (
-                <ThemedText type="meta" themeColor="textSecondary" onPress={reload}>
-                  Could not load events. Tap to retry.
-                </ThemedText>
-              ) : null}
             </View>
           }
         />
@@ -83,6 +75,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.four,
     paddingTop: Spacing.three,
     paddingBottom: Spacing.two,
-    gap: Spacing.two,
   },
 });

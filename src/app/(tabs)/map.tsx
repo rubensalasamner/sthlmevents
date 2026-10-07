@@ -1,41 +1,38 @@
 import { useLocalSearchParams } from 'expo-router';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { EventMap } from '@/components/event-map';
 import { FilterBar } from '@/components/filter-bar';
-import { FilterSheet } from '@/components/filter-sheet';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 import { useFavorites } from '@/context/favorites-context';
+import { useFilterSheet, type ResultCounter } from '@/context/filter-sheet-context';
 import { useFilters } from '@/context/filters-context';
 import { useFilteredEvents } from '@/context/filtered-events-context';
+import { resolveEventsStatus, type EventsStatusKind } from '@/utils/events-status';
 import { mappableEvents } from '@/utils/map-marker';
+
+const countMappable: ResultCounter = (events) => mappableEvents(events).length;
 
 export default function MapScreen() {
   const { eventId } = useLocalSearchParams<{ eventId?: string | string[] }>();
   const focusEventId =
     typeof eventId === 'string' ? eventId : Array.isArray(eventId) ? eventId[0] : undefined;
-  const { events, listEvents, loading, error, reload, nearStatus, location } = useFilteredEvents();
+  const { listEvents, loading, error, reload, location } = useFilteredEvents();
   const { isActive, reset } = useFilters();
   const { favoriteIds } = useFavorites();
-  const [filtersOpen, setFiltersOpen] = useState(false);
+  const { openFilters } = useFilterSheet();
   const mappable = useMemo(() => mappableEvents(listEvents), [listEvents]);
 
-  const status = loading
-    ? { text: 'Loading events…', onPress: undefined as (() => void) | undefined }
-    : error
-      ? { text: "Couldn't load events · Retry", onPress: reload }
-      : !loading && mappable.length === 0
-        ? {
-            text: isActive
-              ? 'No events on the map for these filters · Reset'
-              : 'No events with a location for this window',
-            onPress: isActive ? reset : undefined,
-          }
-        : null;
+  const status = mapStatus(
+    resolveEventsStatus({ loading, error, empty: mappable.length === 0 }),
+    isActive,
+    reload,
+    reset,
+  );
 
   return (
     <ThemedView style={styles.container}>
@@ -49,7 +46,7 @@ export default function MapScreen() {
       </View>
       <SafeAreaView edges={['top']} style={styles.overlay} pointerEvents="box-none">
         <View style={styles.chipRow} pointerEvents="auto">
-          <FilterBar onPress={() => setFiltersOpen(true)} />
+          <FilterBar onPress={() => openFilters(countMappable)} />
           {status ? (
             <Pressable
               accessibilityRole={status.onPress ? 'button' : undefined}
@@ -65,15 +62,30 @@ export default function MapScreen() {
           ) : null}
         </View>
       </SafeAreaView>
-      <FilterSheet
-        events={events}
-        visible={filtersOpen}
-        onClose={() => setFiltersOpen(false)}
-        nearStatus={nearStatus}
-        resultCount={mappable.length}
-      />
     </ThemedView>
   );
+}
+
+type MapStatus = { text: string; onPress?: () => void } | null;
+
+function mapStatus(
+  kind: EventsStatusKind,
+  filtersActive: boolean,
+  retry: () => void,
+  reset: () => void,
+): MapStatus {
+  switch (kind) {
+    case 'ready':
+      return null;
+    case 'loading':
+      return { text: 'Loading events…' };
+    case 'error':
+      return { text: "Couldn't load events · Retry", onPress: retry };
+    case 'empty':
+      return filtersActive
+        ? { text: 'No events on the map for these filters · Reset', onPress: reset }
+        : { text: 'No events with a location for this window' };
+  }
 }
 
 const styles = StyleSheet.create({

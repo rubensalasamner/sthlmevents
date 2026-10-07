@@ -1,25 +1,28 @@
-import { Stack, useLocalSearchParams, useRouter, type Href } from 'expo-router';
-import { useEffect } from 'react';
+import { useLocalSearchParams, useRouter, type Href } from 'expo-router';
+import { useEffect, type ReactNode } from 'react';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { AddToCalendarButton } from '@/components/add-to-calendar-button';
+import { CircleSurface, DetailTopBar } from '@/components/detail-top-bar';
 import { DirectionsButton } from '@/components/directions-button';
 import { EventImage } from '@/components/event-image';
 import { ExpandableText } from '@/components/expandable-text';
 import { ExternalLink } from '@/components/external-link';
 import { FavoriteButton } from '@/components/favorite-button';
 import { Icon } from '@/components/icon';
+import { RelatedEvents } from '@/components/related-events';
 import { ShareButton } from '@/components/share-button';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 import { useInterests } from '@/context/interests-context';
-import { useEvent } from '@/hooks/use-events';
+import { useSavedEvents } from '@/context/saved-events-context';
+import { decodeRouteId, useEvent } from '@/hooks/use-events';
 import { useTheme } from '@/hooks/use-theme';
 import { BADGE_INK, CATEGORY_BADGE_COLORS } from '@/utils/category-colors';
 import { directionsQuery } from '@/utils/directions';
-import { isOngoing } from '@/utils/event-interval';
+import { eventInterval, isOngoing } from '@/utils/event-interval';
 import { eventPoint } from '@/utils/geo';
 import {
   formatCategory,
@@ -31,13 +34,24 @@ import {
   venueLine,
 } from '@/utils/format';
 
+function CenteredState({ onBack, children }: { onBack: () => void; children: ReactNode }) {
+  return (
+    <ThemedView style={styles.centered}>
+      <DetailTopBar onBack={onBack} />
+      {children}
+    </ThemedView>
+  );
+}
+
 export default function EventDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const { data: event, loading, error } = useEvent(id);
+  const { data, loading } = useEvent(id);
+  const { snapshotFor } = useSavedEvents();
   const { recordEventOpen } = useInterests();
   const theme = useTheme();
   const router = useRouter();
   const insets = useSafeAreaInsets();
+  const event = data ?? (loading || !id ? null : snapshotFor(decodeRouteId(id)));
 
   useEffect(() => {
     if (event?.id) recordEventOpen(event.id);
@@ -50,39 +64,15 @@ export default function EventDetailScreen() {
 
   if (loading) {
     return (
-      <ThemedView style={styles.centered}>
-        <Stack.Screen options={{ headerShown: false }} />
-        <View style={[styles.topBar, styles.standaloneTop, { paddingTop: insets.top + Spacing.two }]}>
-          <ThemedView style={styles.circleButton}>
-            <Pressable
-              accessibilityRole="button"
-              accessibilityLabel="Go back"
-              onPress={goBack}
-              style={({ pressed }) => pressed && styles.pressed}>
-              <Icon sf="chevron.left" material="arrow_back" size={20} color={theme.text} />
-            </Pressable>
-          </ThemedView>
-        </View>
+      <CenteredState onBack={goBack}>
         <ActivityIndicator color={theme.textSecondary} />
-      </ThemedView>
+      </CenteredState>
     );
   }
 
-  if (error || !event) {
+  if (!event) {
     return (
-      <ThemedView style={styles.centered}>
-        <Stack.Screen options={{ headerShown: false }} />
-        <View style={[styles.topBar, styles.standaloneTop, { paddingTop: insets.top + Spacing.two }]}>
-          <ThemedView style={styles.circleButton}>
-            <Pressable
-              accessibilityRole="button"
-              accessibilityLabel="Go back"
-              onPress={goBack}
-              style={({ pressed }) => pressed && styles.pressed}>
-              <Icon sf="chevron.left" material="arrow_back" size={20} color={theme.text} />
-            </Pressable>
-          </ThemedView>
-        </View>
+      <CenteredState onBack={goBack}>
         <ThemedText type="meta" themeColor="textSecondary">
           This event could not be found.
         </ThemedText>
@@ -93,22 +83,25 @@ export default function EventDetailScreen() {
           style={({ pressed }) => pressed && styles.pressed}>
           <ThemedText type="link">Browse events</ThemedText>
         </Pressable>
-      </ThemedView>
+      </CenteredState>
     );
   }
 
-  const hasDirections = Boolean(directionsQuery(event));
-  const hasTickets = Boolean(event.ticketUrl);
+  const now = new Date();
+  const ended = eventInterval(event).endMs < now.getTime();
+  const hasDirections = !ended && Boolean(directionsQuery(event));
+  const hasTickets = !ended && Boolean(event.ticketUrl);
   const hasSticky = hasDirections || hasTickets;
-  const onMap = Boolean(eventPoint(event));
-  const when = isOngoing(event, new Date())
-    ? formatEventWhen(event)
-    : `${formatEventDate(event.startsAt)} · ${formatEventClock(event.startsAt)}`;
+  const onMap = !ended && Boolean(eventPoint(event));
+  const when = ended
+    ? `Ended · ${formatEventDate(event.startsAt)}`
+    : isOngoing(event, now)
+      ? formatEventWhen(event, now)
+      : `${formatEventDate(event.startsAt)} · ${formatEventClock(event.startsAt)}`;
   const venue = venueLine([event.venue.name, event.venue.address, event.venue.district]);
 
   return (
     <ThemedView style={styles.container}>
-      <Stack.Screen options={{ headerShown: false }} />
       <ScrollView
         contentContainerStyle={[
           styles.content,
@@ -126,25 +119,14 @@ export default function EventDetailScreen() {
             contentPosition="top"
             decodeWidth={720}
           />
-          <View style={[styles.topBar, { paddingTop: insets.top + Spacing.two }]}>
-            <ThemedView style={styles.circleButton}>
-              <Pressable
-                accessibilityRole="button"
-                accessibilityLabel="Go back"
-                onPress={goBack}
-                style={({ pressed }) => pressed && styles.pressed}>
-                <Icon sf="chevron.left" material="arrow_back" size={20} color={theme.text} />
-              </Pressable>
-            </ThemedView>
-            <View style={styles.topActions}>
-              <ThemedView style={styles.circleButton}>
-                <ShareButton event={event} />
-              </ThemedView>
-              <ThemedView style={styles.circleButton}>
-                <FavoriteButton eventId={event.id} />
-              </ThemedView>
-            </View>
-          </View>
+          <DetailTopBar onBack={goBack}>
+            <CircleSurface>
+              <ShareButton event={event} />
+            </CircleSurface>
+            <CircleSurface>
+              <FavoriteButton eventId={event.id} />
+            </CircleSurface>
+          </DetailTopBar>
         </View>
 
         <View style={styles.body}>
@@ -169,7 +151,7 @@ export default function EventDetailScreen() {
           </View>
           {event.description ? <ExpandableText>{event.description}</ExpandableText> : null}
           <View style={styles.secondaryActions}>
-            <AddToCalendarButton event={event} />
+            {ended ? null : <AddToCalendarButton event={event} />}
             {onMap ? (
               <Pressable
                 accessibilityRole="button"
@@ -185,6 +167,7 @@ export default function EventDetailScreen() {
             ) : null}
           </View>
         </View>
+        <RelatedEvents event={event} />
       </ScrollView>
 
       {hasSticky ? (
@@ -230,31 +213,6 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     aspectRatio: 3 / 2,
-  },
-  topBar: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    paddingHorizontal: Spacing.three,
-    paddingBottom: Spacing.two,
-  },
-  standaloneTop: {
-    position: 'absolute',
-  },
-  topActions: {
-    flexDirection: 'row',
-    gap: Spacing.two,
-  },
-  circleButton: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   body: {
     paddingHorizontal: Spacing.four,

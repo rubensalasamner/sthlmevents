@@ -1,8 +1,7 @@
 import { BADGE_INK } from '@/utils/category-colors';
 
-/** Blå Timmen frost surface — high contrast on the dark map. */
-const FROST_FILL = '#F2F5F9';
-const TIME_INK = '#57667A';
+/** Secondary line on a pastel fill — same family as BADGE_INK, slightly softer. */
+const TIME_INK = '#1A2A3A';
 const SHADOW = '#000000';
 
 export const BUBBLE_HEIGHT = 40;
@@ -109,6 +108,19 @@ function parseHexColor(hex: string): [number, number, number] {
   ];
 }
 
+/** Pastel fills → dark ink; deeper fills (favorite/selected) → white. */
+function contrastInk(fillHex: string): [number, number, number] {
+  const [r, g, b] = parseHexColor(fillHex);
+  const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+  return luminance > 0.55 ? parseHexColor(BADGE_INK) : parseHexColor('#FFFFFF');
+}
+
+function secondaryInk(primary: [number, number, number]): [number, number, number] {
+  // Soften primary ink ~35% toward the fill-agnostic mid slate / white.
+  if (primary[0] > 200) return parseHexColor('#E8EEF4');
+  return parseHexColor(TIME_INK);
+}
+
 function setPixel(
   data: Uint8Array,
   width: number,
@@ -207,52 +219,27 @@ function fillTriangleTip(
   }
 }
 
-/** Draw a frost card with category border, left accent, tip, and soft shadow. */
+/** Solid category pill + tip + soft shadow. Pastel fills → dark ink (not white). */
 function paintChrome(
   data: Uint8Array,
   width: number,
   height: number,
   pillHeight: number,
-  accent: [number, number, number],
+  fill: [number, number, number],
   uiScale: number,
 ) {
-  const [ar, ag, ab] = accent;
-  const [fr, fg, fb] = parseHexColor(FROST_FILL);
+  const [fr, fg, fb] = fill;
   const [sr, sg, sb] = parseHexColor(SHADOW);
-  const border = Math.max(2, Math.round(2 * uiScale));
-  const accentW = Math.max(4, Math.round(5 * uiScale));
   const shadowOx = Math.max(1, Math.round(1.5 * uiScale));
   const shadowOy = Math.max(2, Math.round(2.5 * uiScale));
 
-  // Soft drop shadow (under card + tip).
   fillPill(data, width, height, shadowOx, shadowOy, width - shadowOx, pillHeight, sr, sg, sb, 50);
   fillTriangleTip(data, width, height, pillHeight + shadowOy, sr, sg, sb, 40);
 
-  // Category-coloured outer shell + tip.
-  fillPill(data, width, height, 0, 0, width, pillHeight, ar, ag, ab);
-  fillTriangleTip(data, width, height, pillHeight, ar, ag, ab);
+  fillPill(data, width, height, 0, 0, width, pillHeight, fr, fg, fb);
+  fillTriangleTip(data, width, height, pillHeight, fr, fg, fb);
 
-  // Frost inset.
-  fillPill(
-    data,
-    width,
-    height,
-    border,
-    border,
-    width - border * 2,
-    pillHeight - border * 2,
-    fr,
-    fg,
-    fb,
-  );
-
-  // Left accent strip inside the frost.
-  const stripX = border;
-  const stripY = border;
-  const stripH = pillHeight - border * 2;
-  fillRect(data, width, height, stripX, stripY, stripX + accentW, stripY + stripH, ar, ag, ab);
-
-  return { contentLeft: border + accentW + Math.round(8 * uiScale), border };
+  return { contentLeft: Math.round(12 * uiScale) };
 }
 
 function drawGlyph(
@@ -437,8 +424,8 @@ export type BubblePngContent = {
 };
 
 /**
- * Frost map pill (Blå Timmen): light surface, category border/accent, dark title,
- * muted time — readable on the dark basemap without pastel washout.
+ * Solid category map pill: fill = category hue, dark title/time for contrast
+ * on the pastel badge palette (white would fail WCAG on these fills).
  */
 export function buildBubblePng(
   content: BubblePngContent | string,
@@ -456,9 +443,7 @@ export function buildBubblePng(
   const padRight = Math.round(12 * uiScale);
   const lineGap = twoLine ? Math.round(5 * uiScale) : 0;
   const tip = Math.max(10, Math.round(TIP_HEIGHT * uiScale));
-  const accentGuess = Math.max(4, Math.round(5 * uiScale));
-  const borderGuess = Math.max(2, Math.round(2 * uiScale));
-  const contentLeftGuess = borderGuess + accentGuess + Math.round(8 * uiScale);
+  const contentLeftGuess = Math.round(12 * uiScale);
 
   const primary = lineMetrics(bubble.primary, primaryFont);
   const secondary = bubble.secondary
@@ -479,12 +464,12 @@ export function buildBubblePng(
   const shadowPad = Math.max(2, Math.round(3 * uiScale));
   const height = pillHeight + tip + shadowPad;
 
-  const accent = parseHexColor(categoryColor);
-  const titleInk = parseHexColor(BADGE_INK);
-  const timeInk = parseHexColor(TIME_INK);
+  const fill = parseHexColor(categoryColor);
+  const titleInk = contrastInk(categoryColor);
+  const timeInk = secondaryInk(titleInk);
   const rgba = new Uint8Array(width * height * 4);
 
-  const { contentLeft } = paintChrome(rgba, width, height, pillHeight, accent, uiScale);
+  const { contentLeft } = paintChrome(rgba, width, height, pillHeight, fill, uiScale);
 
   const primaryY = padY;
   drawLabelAt(

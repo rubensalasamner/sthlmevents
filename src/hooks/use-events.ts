@@ -51,7 +51,7 @@ export function useEvents() {
 }
 
 export function useEvent(id: string | undefined) {
-  const decoded = id ? safeDecode(id) : undefined;
+  const decoded = id ? decodeRouteId(id) : undefined;
   const loader = useCallback(
     () => (decoded ? getEventSource().getById(decoded) : Promise.resolve(null)),
     [decoded],
@@ -60,7 +60,7 @@ export function useEvent(id: string | undefined) {
 }
 
 /** Share / deep-link paths use encodeURIComponent; list links may already be plain. */
-function safeDecode(value: string): string {
+export function decodeRouteId(value: string): string {
   try {
     return decodeURIComponent(value);
   } catch {
