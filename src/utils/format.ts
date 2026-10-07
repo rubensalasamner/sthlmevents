@@ -63,8 +63,8 @@ export function formatPrice(priceSek: number | undefined): string {
  */
 /** Short sticky-bar label — must fit a half-width pill on a phone. */
 export function ticketCtaLabel(event: Pick<StockholmEvent, 'requiresAccount' | 'priceSek'>): string {
-  if (event.requiresAccount) return 'Organizer';
-  if (event.priceSek === 0) return 'Open';
+  if (event.requiresAccount) return 'RSVP';
+  if (event.priceSek === 0) return 'Event page';
   return 'Tickets';
 }
 

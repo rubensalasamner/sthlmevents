@@ -16,14 +16,14 @@ describe('venueLine', () => {
 });
 
 describe('ticketCtaLabel', () => {
-  test('account-required sources get a short organizer label', () => {
-    assert.equal(ticketCtaLabel({ requiresAccount: true, priceSek: undefined }), 'Organizer');
-    assert.equal(ticketCtaLabel({ requiresAccount: true, priceSek: 0 }), 'Organizer');
-    assert.equal(ticketCtaLabel({ requiresAccount: true, priceSek: 150 }), 'Organizer');
+  test('account-required sources ask for an RSVP', () => {
+    assert.equal(ticketCtaLabel({ requiresAccount: true, priceSek: undefined }), 'RSVP');
+    assert.equal(ticketCtaLabel({ requiresAccount: true, priceSek: 0 }), 'RSVP');
+    assert.equal(ticketCtaLabel({ requiresAccount: true, priceSek: 150 }), 'RSVP');
   });
 
   test('free events open the source page', () => {
-    assert.equal(ticketCtaLabel({ requiresAccount: undefined, priceSek: 0 }), 'Open');
+    assert.equal(ticketCtaLabel({ requiresAccount: undefined, priceSek: 0 }), 'Event page');
   });
 
   test('paid events keep the purchase framing', () => {

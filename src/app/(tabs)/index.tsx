@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect, useRouter, type Href } from 'expo-router';
@@ -10,7 +10,6 @@ import { FilterSheet } from '@/components/filter-sheet';
 import { Icon } from '@/components/icon';
 import { InterestsEntry } from '@/components/interests-entry';
 import { MagazineRailRow } from '@/components/magazine-rail';
-import { SourceFilter } from '@/components/source-filter';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
@@ -19,9 +18,6 @@ import { useInterests } from '@/context/interests-context';
 import { useFilteredEvents } from '@/hooks/use-filtered-events';
 import { useTheme } from '@/hooks/use-theme';
 import { buildMagazine, railCategoryFilter, railShowsCategory } from '@/utils/magazine-rails';
-
-const TITLE_UNLOCK_TAPS = 5;
-const TITLE_UNLOCK_MS = 1600;
 
 export default function HomeScreen() {
   const {
@@ -34,13 +30,12 @@ export default function HomeScreen() {
     listPending,
     nearStatus,
   } = useFilteredEvents();
-  const { source, setSource, devSourcesUnlocked, toggleDevSources } = useFilters();
+  const { devSourcesUnlocked } = useFilters();
   const { maybePrompt } = useInterests();
   const [filtersOpen, setFiltersOpen] = useState(false);
   const router = useRouter();
   const theme = useTheme();
   const magazine = useMemo(() => buildMagazine(listEvents, heading), [listEvents, heading]);
-  const taps = useRef({ count: 0, at: 0 });
 
   useFocusEffect(
     useCallback(() => {
@@ -50,18 +45,6 @@ export default function HomeScreen() {
 
   const openAgenda = (params?: { category?: string; focus?: string }) => {
     router.push({ pathname: '/agenda', params } as Href);
-  };
-
-  const onHeadingPress = () => {
-    if (!__DEV__) return;
-    const now = Date.now();
-    if (now - taps.current.at > TITLE_UNLOCK_MS) taps.current.count = 0;
-    taps.current.at = now;
-    taps.current.count += 1;
-    if (taps.current.count >= TITLE_UNLOCK_TAPS) {
-      taps.current.count = 0;
-      toggleDevSources();
-    }
   };
 
   const onRailSeeAll = (railId: string) => {
@@ -76,9 +59,12 @@ export default function HomeScreen() {
           <View style={styles.header}>
             <View style={styles.titleBlock}>
               <Pressable
-                onPress={onHeadingPress}
-                style={({ pressed }) => pressed && styles.pressed}>
+                accessibilityRole="button"
+                accessibilityLabel={`Filters, ${heading}`}
+                onPress={() => setFiltersOpen(true)}
+                style={({ pressed }) => [styles.headingHit, pressed && styles.pressed]}>
                 <ThemedText type="display">{heading}</ThemedText>
+                <Icon sf="chevron.down" material="expand_more" size={20} color={theme.textSecondary} />
               </Pressable>
               {devSourcesUnlocked ? (
                 <ThemedText type="meta" themeColor="textSecondary">
@@ -101,12 +87,6 @@ export default function HomeScreen() {
           </View>
 
           <FilterBar hideDate onPress={() => setFiltersOpen(true)} />
-          <SourceFilter
-            events={events}
-            value={source}
-            onChange={setSource}
-            unlocked={devSourcesUnlocked}
-          />
 
           {loading && listEvents.length === 0 ? (
             <ActivityIndicator color={theme.textSecondary} style={styles.loader} />
@@ -182,6 +162,12 @@ const styles = StyleSheet.create({
   titleBlock: {
     gap: Spacing.half,
     flex: 1,
+  },
+  headingHit: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Spacing.one,
+    alignSelf: 'flex-start',
   },
   headerActions: {
     flexDirection: 'row',

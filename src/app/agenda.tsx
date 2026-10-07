@@ -60,9 +60,11 @@ export default function AgendaScreen() {
       <SafeAreaView edges={['bottom']} style={styles.safe}>
         <EventSectionList
           sections={sections}
+          loading={loading && listEvents.length === 0}
           emptyMessage="No events match your filters."
           showEmptyReset
           showEmptyExplore
+          now={now}
           ListHeaderComponent={
             <View style={styles.header}>
               <SearchBar value={query} onChange={setQuery} autoFocus={params.focus === 'search'} />
@@ -72,11 +74,6 @@ export default function AgendaScreen() {
                 </View>
                 {listPending ? <ActivityIndicator size="small" color={theme.textSecondary} /> : null}
               </View>
-              {loading && listEvents.length === 0 ? (
-                <ThemedText type="meta" themeColor="textSecondary" style={styles.message}>
-                  Loading…
-                </ThemedText>
-              ) : null}
               {error ? (
                 <ThemedText
                   type="meta"

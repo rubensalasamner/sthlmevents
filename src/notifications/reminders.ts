@@ -1,4 +1,4 @@
-import { Platform } from 'react-native';
+import { Alert, Platform } from 'react-native';
 
 import type { StockholmEvent } from '@/types/event';
 import { formatEventDate, formatEventTimeRange } from '@/utils/format';
@@ -13,6 +13,20 @@ const CHANNEL_ID = 'event-reminders';
 /** Lazy-load so web / tests that never touch reminders don't pull native code. */
 async function Notifications() {
   return import('expo-notifications');
+}
+
+/** Soft pre-prompt before the OS dialog — explain why we ask. */
+function confirmReminderPermission(): Promise<boolean> {
+  return new Promise((resolve) => {
+    Alert.alert(
+      'Reminders for saved events?',
+      'We’ll nudge you the day before and two hours before it starts.',
+      [
+        { text: 'Not now', style: 'cancel', onPress: () => resolve(false) },
+        { text: 'Allow', onPress: () => resolve(true) },
+      ],
+    );
+  });
 }
 
 /**
@@ -62,6 +76,9 @@ export async function ensureReminderPermissions(): Promise<boolean> {
   if (!current.canAskAgain && current.status === 'denied') {
     return false;
   }
+  const wantsReminders = await confirmReminderPermission();
+  if (!wantsReminders) return false;
+
   const requested = await NotificationsMod.requestPermissionsAsync();
   return (
     requested.granted ||

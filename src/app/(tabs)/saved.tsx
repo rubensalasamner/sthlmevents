@@ -20,7 +20,7 @@ export default function SavedScreen() {
     [events, favoriteIds],
   );
 
-  const sections = useMemo(() => {
+  const grouped = useMemo(() => {
     const now = new Date();
     const upcoming: typeof saved = [];
     const past: typeof saved = [];
@@ -35,29 +35,29 @@ export default function SavedScreen() {
       data: group.events,
     }));
 
-    return [
-      ...upcomingSections,
-      {
-        title: 'Past',
-        data: [...past].sort((a, b) => eventInterval(b).endMs - eventInterval(a).endMs),
-      },
-    ];
+    return {
+      now,
+      sections: [
+        ...upcomingSections,
+        {
+          title: 'Past',
+          data: [...past].sort((a, b) => eventInterval(b).endMs - eventInterval(a).endMs),
+        },
+      ],
+    };
   }, [saved]);
 
   return (
     <ThemedView style={styles.container}>
       <SafeAreaView edges={['top']} style={styles.safe}>
         <EventSectionList
-          sections={sections}
+          sections={grouped.sections}
+          loading={loading && saved.length === 0}
           emptyMessage="Save events you care about — they'll show up here."
+          now={grouped.now}
           ListHeaderComponent={
-            <View style={styles.pad}>
+            <View style={styles.header}>
               <ThemedText type="display">Saved</ThemedText>
-              {loading && saved.length === 0 ? (
-                <ThemedText type="meta" themeColor="textSecondary">
-                  Loading…
-                </ThemedText>
-              ) : null}
               {error ? (
                 <ThemedText type="meta" themeColor="textSecondary" onPress={reload}>
                   Could not load events. Tap to retry.
@@ -78,8 +78,9 @@ const styles = StyleSheet.create({
   safe: {
     flex: 1,
   },
-  pad: {
-    paddingHorizontal: Spacing.two,
+  header: {
+    marginHorizontal: -Spacing.three,
+    paddingHorizontal: Spacing.four,
     paddingTop: Spacing.three,
     paddingBottom: Spacing.two,
     gap: Spacing.two,

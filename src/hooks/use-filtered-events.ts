@@ -90,7 +90,7 @@ export function useFilteredEvents() {
     nearMe && locating
       ? 'Locating…'
       : nearMe && locationError === 'denied'
-        ? 'Location denied'
+        ? 'Location denied — enable it in Settings'
         : nearMe && locationError
           ? 'Location unavailable'
           : null;

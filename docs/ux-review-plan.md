@@ -3,10 +3,10 @@
 Review of the app's current UX (Home, Explore, Agenda, Saved, Event detail,
 filter sheet, interests prompt). Findings verified against commit `34bf338`.
 
-**Progress (2026-10-07):** All **P1** done (weekend window, Saved agenda
-grouping, interests `maybePrompt`, transparent BottomSheet, agenda scope, map
-status pill + no GPS remount, event deep-link back). Also P2 search polish
-(autoFocus, no dual clear). Still open: remaining P2/P3.
+**Progress (2026-10-07):** All **P1** done. All **P2** done (search polish,
+Home heading → filters, dev unlock on sheet title only, fresh NOW labels,
+CTA copy, loading vs empty, location denied copy, reminder pre-prompt, Saved
+gutter). Still open: **P3** (provider lift, map split, dead code).
 
 Priority: **P1** = user-visible bug / broken flow, **P2** = friction,
 **P3** = cleanup / structure.

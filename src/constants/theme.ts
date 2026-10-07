@@ -70,7 +70,8 @@ export const Spacing = {
   one: 4,
   two: 8,
   three: 16,
-  four: 24,
+  /** Screen gutters / section insets — was 24; tightened for denser phone edges. */
+  four: 18,
   five: 32,
   six: 64,
 } as const;

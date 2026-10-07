@@ -1,5 +1,5 @@
 import { useMemo, type ReactElement } from 'react';
-import { FlatList, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, FlatList, StyleSheet } from 'react-native';
 
 import { AttributionFooter } from '@/components/attribution-footer';
 import { CompactRow } from '@/components/event-presentation/compact-row';
@@ -7,6 +7,7 @@ import { EmptyEventsState } from '@/components/empty-events-state';
 import { ThemedText } from '@/components/themed-text';
 import { BottomTabInset, Spacing } from '@/constants/theme';
 import { getEventSource } from '@/data/event-repository';
+import { useTheme } from '@/hooks/use-theme';
 import type { StockholmEvent } from '@/types/event';
 
 export type EventSection = {
@@ -21,10 +22,13 @@ type Row =
 type EventSectionListProps = {
   sections: EventSection[];
   ListHeaderComponent?: ReactElement | null;
+  /** Suppresses the empty state until the first load settles. */
+  loading?: boolean;
   emptyMessage?: string;
   showEmptyReset?: boolean;
   showEmptyExplore?: boolean;
   contentBottomInset?: number;
+  now?: Date;
 };
 
 function flatten(sections: readonly EventSection[]): Row[] {
@@ -42,12 +46,16 @@ function flatten(sections: readonly EventSection[]): Row[] {
 export function EventSectionList({
   sections,
   ListHeaderComponent,
+  loading = false,
   emptyMessage = 'No events match your filters.',
   showEmptyReset = false,
   showEmptyExplore = false,
   contentBottomInset = BottomTabInset + Spacing.four,
+  now,
 }: EventSectionListProps) {
+  const theme = useTheme();
   const rows = useMemo(() => flatten(sections), [sections]);
+  const clock = now ?? new Date();
 
   return (
     <FlatList
@@ -59,17 +67,21 @@ export function EventSectionList({
             {item.title}
           </ThemedText>
         ) : (
-          <CompactRow event={item.event} />
+          <CompactRow event={item.event} now={clock} />
         )
       }
       ListHeaderComponent={ListHeaderComponent}
       ListFooterComponent={<AttributionFooter attribution={getEventSource().attribution} />}
       ListEmptyComponent={
-        <EmptyEventsState
-          message={emptyMessage}
-          showReset={showEmptyReset}
-          showExplore={showEmptyExplore}
-        />
+        loading ? (
+          <ActivityIndicator color={theme.textSecondary} style={styles.loader} />
+        ) : (
+          <EmptyEventsState
+            message={emptyMessage}
+            showReset={showEmptyReset}
+            showExplore={showEmptyExplore}
+          />
+        )
       }
       contentContainerStyle={[styles.content, { paddingBottom: contentBottomInset }]}
       initialNumToRender={12}
@@ -91,5 +103,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.two,
     paddingTop: Spacing.three,
     paddingBottom: Spacing.one,
+  },
+  loader: {
+    marginTop: Spacing.six,
   },
 });

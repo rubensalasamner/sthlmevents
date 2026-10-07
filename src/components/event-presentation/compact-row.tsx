@@ -12,13 +12,13 @@ import { isOngoing } from '@/utils/event-interval';
 import { formatEventClock, formatPrice, venueLine } from '@/utils/format';
 import { formatDistanceKm } from '@/utils/geo';
 
-const LIST_NOW = new Date();
-
 type CompactRowProps = {
   event: StockholmEvent;
   selected?: boolean;
   distanceKm?: number;
   onPress?: () => void;
+  /** Defaults to now so "NOW" stays correct after long sessions. */
+  now?: Date;
 };
 
 /** Dense agenda / sheet / saved row. Time gutter + square thumb. */
@@ -27,9 +27,10 @@ export const CompactRow = memo(function CompactRow({
   selected = false,
   distanceKm,
   onPress,
+  now = new Date(),
 }: CompactRowProps) {
   const theme = useTheme();
-  const time = isOngoing(event, LIST_NOW) ? 'NOW' : formatEventClock(event.startsAt);
+  const time = isOngoing(event, now) ? 'NOW' : formatEventClock(event.startsAt);
   const meta = [
     venueLine([event.venue.name, event.venue.district]),
     distanceKm !== undefined ? formatDistanceKm(distanceKm) : formatPrice(event.priceSek),

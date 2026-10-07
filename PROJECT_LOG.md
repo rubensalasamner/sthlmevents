@@ -277,6 +277,8 @@ konton först efter caption-probe (ingen OCR som default).
   `maybePrompt` på Home-focus (inte samtidigt som notis-permission); agenda
   scope (`?category=` + clear query on leave); Saved använder `groupAgenda`;
   event-detalj deep-link back + “Browse events”.
+- **UX P2 (2026-10-07)**: Home-rubrik öppnar filter; remiss-preprompt före
+  notis-permission; CTA “RSVP”/“Event page”; gutter `Spacing.four` 24→18.
 - **Feed-ranking** (`src/utils/ranking.ts`): band → tier → sortMs → featured →
   quality → id. Band: programme → outOfTown → longRunning (>30 dagar).
   Tier inom band: upcoming (startsAt) → ongoing (endsAt snarast) → past.
