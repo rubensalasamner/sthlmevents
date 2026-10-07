@@ -1,24 +1,41 @@
 import { useLocalSearchParams } from 'expo-router';
 import { useMemo, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { EventMap } from '@/components/event-map';
 import { FilterBar } from '@/components/filter-bar';
 import { FilterSheet } from '@/components/filter-sheet';
+import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 import { useFavorites } from '@/context/favorites-context';
+import { useFilters } from '@/context/filters-context';
 import { useFilteredEvents } from '@/hooks/use-filtered-events';
 import { mappableEvents } from '@/utils/map-marker';
 
 export default function MapScreen() {
   const { eventId } = useLocalSearchParams<{ eventId?: string | string[] }>();
-  const focusEventId = typeof eventId === 'string' ? eventId : Array.isArray(eventId) ? eventId[0] : undefined;
+  const focusEventId =
+    typeof eventId === 'string' ? eventId : Array.isArray(eventId) ? eventId[0] : undefined;
   const { events, listEvents, loading, error, reload, nearStatus, location } = useFilteredEvents();
+  const { isActive, reset } = useFilters();
   const { favoriteIds } = useFavorites();
   const [filtersOpen, setFiltersOpen] = useState(false);
   const mappable = useMemo(() => mappableEvents(listEvents), [listEvents]);
+
+  const status = loading
+    ? { text: 'Loading events…', onPress: undefined as (() => void) | undefined }
+    : error
+      ? { text: "Couldn't load events · Retry", onPress: reload }
+      : !loading && mappable.length === 0
+        ? {
+            text: isActive
+              ? 'No events on the map for these filters · Reset'
+              : 'No events with a location for this window',
+            onPress: isActive ? reset : undefined,
+          }
+        : null;
 
   return (
     <ThemedView style={styles.container}>
@@ -28,14 +45,24 @@ export default function MapScreen() {
           favoriteIds={favoriteIds}
           userLocation={location}
           focusEventId={focusEventId}
-          loading={loading}
-          error={error}
-          onRetry={reload}
         />
       </View>
       <SafeAreaView edges={['top']} style={styles.overlay} pointerEvents="box-none">
         <View style={styles.chipRow} pointerEvents="auto">
           <FilterBar onPress={() => setFiltersOpen(true)} />
+          {status ? (
+            <Pressable
+              accessibilityRole={status.onPress ? 'button' : undefined}
+              onPress={status.onPress}
+              disabled={!status.onPress}
+              style={({ pressed }) => pressed && status.onPress && styles.pressed}>
+              <ThemedView type="backgroundElement" style={styles.status}>
+                <ThemedText type="meta" themeColor="textSecondary">
+                  {status.text}
+                </ThemedText>
+              </ThemedView>
+            </Pressable>
+          ) : null}
         </View>
       </SafeAreaView>
       <FilterSheet
@@ -67,6 +94,17 @@ const styles = StyleSheet.create({
   },
   chipRow: {
     paddingTop: Spacing.two,
+    gap: Spacing.two,
     pointerEvents: 'box-none',
+  },
+  status: {
+    marginHorizontal: Spacing.four,
+    paddingHorizontal: Spacing.three,
+    paddingVertical: Spacing.two,
+    borderRadius: Spacing.five,
+    alignSelf: 'flex-start',
+  },
+  pressed: {
+    opacity: 0.75,
   },
 });

@@ -28,7 +28,6 @@ import {
   MAP_TITLE_MAX_EVENTS,
   mapBubbleContent,
   mapBubbleSizeTier,
-  mappableEvents,
   type MapBubbleSizeTier,
 } from '@/utils/map-marker';
 
@@ -254,7 +253,6 @@ export function EventMap({ events, favoriteIds, userLocation, focusEventId }: Ev
 
   return (
     <NativeEventMap
-      key={userLocation ? 'near' : 'city'}
       events={events}
       favoriteIds={favoriteIds ?? new Set()}
       userLocation={userLocation ?? null}
@@ -282,16 +280,16 @@ function NativeEventMap({
   }, [events, focusEventId]);
   const origin = focusPoint ?? userLocation ?? STOCKHOLM;
   const mapRef = useRef<MapCameraHandle>(null);
-  const mappable = useMemo(() => mappableEvents(events), [events]);
-  const { selectedId, selected, select, clear } = useSelectedEvent(mappable, focusEventId);
+  // Caller (Explore) already passes mappableEvents — don't re-filter.
+  const { selectedId, selected, select, clear } = useSelectedEvent(events, focusEventId);
   const { camera, cameraRef, onCameraMove } = useMapCamera(origin);
   const pins = useMemo(
-    () => visibleMapPins(mappable, camera, { selectedId }),
-    [mappable, camera, selectedId],
+    () => visibleMapPins(events, camera, { selectedId }),
+    [events, camera, selectedId],
   );
   const pinsRef = useRef(pins);
   pinsRef.current = pins;
-  const { showTitles, uiScale } = useBubbleMode(camera.zoom, mappable.length);
+  const { showTitles, uiScale } = useBubbleMode(camera.zoom, events.length);
   const bubbleIcons = usePinIcons(pins, showTitles, uiScale, favoriteIds, selectedId);
 
   useEffect(() => {
@@ -301,6 +299,14 @@ function NativeEventMap({
       zoom: MAP_NEIGHBOURHOOD_ZOOM,
     });
   }, [focusPoint]);
+
+  useEffect(() => {
+    if (focusPoint || !userLocation) return;
+    mapRef.current?.setCameraPosition?.({
+      coordinates: userLocation,
+      zoom: MAP_NEIGHBOURHOOD_ZOOM,
+    });
+  }, [userLocation, focusPoint]);
 
   const originLat = origin.latitude;
   const originLng = origin.longitude;

@@ -43,10 +43,26 @@ export default function EventDetailScreen() {
     if (event?.id) recordEventOpen(event.id);
   }, [event?.id, recordEventOpen]);
 
+  const goBack = () => {
+    if (router.canGoBack()) router.back();
+    else router.replace('/' as Href);
+  };
+
   if (loading) {
     return (
       <ThemedView style={styles.centered}>
-        <Stack.Screen options={{ title: 'Event' }} />
+        <Stack.Screen options={{ headerShown: false }} />
+        <View style={[styles.topBar, styles.standaloneTop, { paddingTop: insets.top + Spacing.two }]}>
+          <ThemedView style={styles.circleButton}>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel="Go back"
+              onPress={goBack}
+              style={({ pressed }) => pressed && styles.pressed}>
+              <Icon sf="chevron.left" material="arrow_back" size={20} color={theme.text} />
+            </Pressable>
+          </ThemedView>
+        </View>
         <ActivityIndicator color={theme.textSecondary} />
       </ThemedView>
     );
@@ -55,10 +71,28 @@ export default function EventDetailScreen() {
   if (error || !event) {
     return (
       <ThemedView style={styles.centered}>
-        <Stack.Screen options={{ title: 'Not found' }} />
+        <Stack.Screen options={{ headerShown: false }} />
+        <View style={[styles.topBar, styles.standaloneTop, { paddingTop: insets.top + Spacing.two }]}>
+          <ThemedView style={styles.circleButton}>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel="Go back"
+              onPress={goBack}
+              style={({ pressed }) => pressed && styles.pressed}>
+              <Icon sf="chevron.left" material="arrow_back" size={20} color={theme.text} />
+            </Pressable>
+          </ThemedView>
+        </View>
         <ThemedText type="meta" themeColor="textSecondary">
           This event could not be found.
         </ThemedText>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Browse events"
+          onPress={() => router.replace('/' as Href)}
+          style={({ pressed }) => pressed && styles.pressed}>
+          <ThemedText type="link">Browse events</ThemedText>
+        </Pressable>
       </ThemedView>
     );
   }
@@ -97,7 +131,7 @@ export default function EventDetailScreen() {
               <Pressable
                 accessibilityRole="button"
                 accessibilityLabel="Go back"
-                onPress={() => router.back()}
+                onPress={goBack}
                 style={({ pressed }) => pressed && styles.pressed}>
                 <Icon sf="chevron.left" material="arrow_back" size={20} color={theme.text} />
               </Pressable>
@@ -207,6 +241,9 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     paddingHorizontal: Spacing.three,
     paddingBottom: Spacing.two,
+  },
+  standaloneTop: {
+    position: 'absolute',
   },
   topActions: {
     flexDirection: 'row',

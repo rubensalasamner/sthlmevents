@@ -1,15 +1,9 @@
 import { useEffect, useState } from 'react';
-import {
-  Modal,
-  Pressable,
-  StyleSheet,
-  View,
-} from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Pressable, StyleSheet, View } from 'react-native';
 
+import { BottomSheet } from '@/components/bottom-sheet';
 import { CategoryPill } from '@/components/category-pill';
 import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
 import { Fonts, Spacing } from '@/constants/theme';
 import { useInterests } from '@/context/interests-context';
 import {
@@ -33,7 +27,6 @@ export function InterestsPrompt() {
     skipOnboarding,
   } = useInterests();
   const theme = useTheme();
-  const insets = useSafeAreaInsets();
   const [draft, setDraft] = useState<Set<InterestCategory>>(() => new Set(categories));
 
   useEffect(() => {
@@ -41,6 +34,7 @@ export function InterestsPrompt() {
   }, [editorOpen, categories]);
 
   const isFirstPrompt = onboarding === 'pending';
+  const dismiss = isFirstPrompt ? skipOnboarding : closeEditor;
 
   const toggle = (category: InterestCategory) => {
     setDraft((current) => {
@@ -52,104 +46,57 @@ export function InterestsPrompt() {
   };
 
   return (
-    <Modal
-      visible={editorOpen}
-      animationType="slide"
-      transparent
-      onRequestClose={isFirstPrompt ? skipOnboarding : closeEditor}
-      statusBarTranslucent>
-      <View style={styles.root}>
-        <Pressable
-          style={styles.backdrop}
-          onPress={isFirstPrompt ? skipOnboarding : closeEditor}
-          accessibilityLabel="Dismiss"
-        />
-        <ThemedView
-          type="backgroundElement"
-          style={[styles.sheet, { paddingBottom: Math.max(insets.bottom, Spacing.four) }]}>
-          <View style={styles.handle} />
-          <ThemedText type="section" style={styles.title}>
-            {isFirstPrompt ? 'What are you into?' : 'Your vibes'}
-          </ThemedText>
-          <ThemedText type="meta" themeColor="textSecondary" style={styles.subtitle}>
-            {isFirstPrompt
-              ? 'We’ll gently boost these on Home. Skip anytime — you can change this later.'
-              : 'Boost these categories on Home. Not a hard filter.'}
-          </ThemedText>
+    <BottomSheet visible={editorOpen} onDismiss={dismiss} style={styles.sheet}>
+      <ThemedText type="section" style={styles.title}>
+        {isFirstPrompt ? 'What are you into?' : 'Your vibes'}
+      </ThemedText>
+      <ThemedText type="meta" themeColor="textSecondary" style={styles.subtitle}>
+        {isFirstPrompt
+          ? 'We’ll show more of these on Home. You can change this later.'
+          : 'Shown higher on Home. Nothing is hidden.'}
+      </ThemedText>
 
-          <View style={styles.chipWrap}>
-            {INTEREST_CATEGORIES.map((category) => (
-              <CategoryPill
-                key={category}
-                label={formatCategory(category)}
-                selected={draft.has(category)}
-                onPress={() => toggle(category)}
-              />
-            ))}
-          </View>
-
-          <View style={styles.actions}>
-            <Pressable
-              accessibilityRole="button"
-              onPress={() => saveInterests([...draft])}
-              style={({ pressed }) => [
-                styles.primary,
-                { backgroundColor: theme.accent },
-                pressed && styles.pressed,
-              ]}>
-              <ThemedText type="metaBold" style={{ color: theme.accentInk }}>
-                {draft.size === 0 ? 'Save' : 'Save preferences'}
-              </ThemedText>
-            </Pressable>
-            {isFirstPrompt ? (
-              <Pressable
-                accessibilityRole="button"
-                onPress={skipOnboarding}
-                style={({ pressed }) => [styles.secondary, pressed && styles.pressed]}>
-                <ThemedText type="meta" themeColor="textSecondary">
-                  Not now
-                </ThemedText>
-              </Pressable>
-            ) : (
-              <Pressable
-                accessibilityRole="button"
-                onPress={closeEditor}
-                style={({ pressed }) => [styles.secondary, pressed && styles.pressed]}>
-                <ThemedText type="meta" themeColor="textSecondary">
-                  Cancel
-                </ThemedText>
-              </Pressable>
-            )}
-          </View>
-        </ThemedView>
+      <View style={styles.chipWrap}>
+        {INTEREST_CATEGORIES.map((category) => (
+          <CategoryPill
+            key={category}
+            label={formatCategory(category)}
+            selected={draft.has(category)}
+            onPress={() => toggle(category)}
+          />
+        ))}
       </View>
-    </Modal>
+
+      <View style={styles.actions}>
+        <Pressable
+          accessibilityRole="button"
+          onPress={() => saveInterests([...draft])}
+          style={({ pressed }) => [
+            styles.primary,
+            { backgroundColor: theme.accent },
+            pressed && styles.pressed,
+          ]}>
+          <ThemedText type="metaBold" style={{ color: theme.accentInk }}>
+            Save
+          </ThemedText>
+        </Pressable>
+        <Pressable
+          accessibilityRole="button"
+          onPress={dismiss}
+          style={({ pressed }) => [styles.secondary, pressed && styles.pressed]}>
+          <ThemedText type="meta" themeColor="textSecondary">
+            {isFirstPrompt ? 'Not now' : 'Cancel'}
+          </ThemedText>
+        </Pressable>
+      </View>
+    </BottomSheet>
   );
 }
 
 const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    justifyContent: 'flex-end',
-  },
-  backdrop: {
-    ...StyleSheet.absoluteFill,
-    backgroundColor: 'rgba(0,0,0,0.45)',
-  },
   sheet: {
-    borderTopLeftRadius: Spacing.five,
-    borderTopRightRadius: Spacing.five,
     paddingHorizontal: Spacing.four,
-    paddingTop: Spacing.two,
     gap: Spacing.two,
-  },
-  handle: {
-    alignSelf: 'center',
-    width: 40,
-    height: 4,
-    borderRadius: 2,
-    backgroundColor: 'rgba(128,128,128,0.35)',
-    marginBottom: Spacing.two,
   },
   title: {
     fontFamily: Fonts.display,

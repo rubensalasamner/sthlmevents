@@ -75,17 +75,12 @@ export function windowFor(range: DateRangeValue, now: Date): { from: Date; to: D
     case 'week':
       return { from: stockholmMidnight(0, now), to: stockholmMidnight(7, now) };
     case 'weekend': {
-      // Saturday 00:00 → Monday 00:00 of the upcoming weekend, in the city's
-      // calendar: on a Stockholm Saturday/Sunday, "this weekend" is the
-      // weekend already in progress (the old `(6 - day + 7) % 7` math using
-      // the phone's weekday pushed Sunday users to next weekend).
-      const [year, month, day] = localDate.format(now).split('-').map(Number);
-      const weekday = new Date(Date.UTC(year, month - 1, day)).getUTCDay();
-      // On a Stockholm Sunday the weekend in progress started yesterday;
-      // any other day points at the upcoming Saturday.
-      const daysUntilSaturday = weekday === 0 ? -1 : (6 - weekday) % 7;
-      const saturday = stockholmMidnight(daysUntilSaturday, now);
-      return { from: saturday, to: stockholmMidnight(daysUntilSaturday + 2, now) };
+      // Friday 00:00 → Monday 00:00 in the city's calendar. Inside the
+      // weekend the window starts today so days already over don't resurface.
+      const weekday = stockholmWeekday(now);
+      const daysUntilMonday = weekday === 0 ? 1 : 8 - weekday;
+      const from = isWeekendDay(weekday) ? 0 : daysUntilMonday - 3;
+      return { from: stockholmMidnight(from, now), to: stockholmMidnight(daysUntilMonday, now) };
     }
     case 'all':
     default:
@@ -155,15 +150,17 @@ export function stockholmDateKey(now: Date): string {
   return localDate.format(now);
 }
 
+/** Fri / Sat / Sun as `getUTCDay` numbers. */
+function isWeekendDay(weekday: number): boolean {
+  return weekday === 0 || weekday >= 5;
+}
+
 /**
- * Contextual Discover default: Thu–Sun open on "Helgen", Mon–Wed on "Idag".
- * Habit loop — open the app and see what's relevant *now*, not the full dump.
+ * Contextual Home default: Fri–Sun open on the weekend, Mon–Thu on today —
+ * both windows always include tonight.
  */
 export function defaultDateRange(now: Date = new Date()): DateRangeValue {
-  const weekday = stockholmWeekday(now);
-  // Sun=0, Thu=4, Fri=5, Sat=6
-  if (weekday === 0 || weekday >= 4) return 'weekend';
-  return 'today';
+  return isWeekendDay(stockholmWeekday(now)) ? 'weekend' : 'today';
 }
 
 /** Section / hero copy for the active date window. */
@@ -181,16 +178,17 @@ export function dateRangeHeading(range: DateRangeValue): string {
   }
 }
 
-export function dateRangeSubtitle(range: DateRangeValue): string {
+/** Short window description for the filter sheet's date cards. */
+export function dateRangeHint(range: DateRangeValue): string {
   switch (range) {
     case 'today':
-      return 'What’s happening today';
+      return 'Until midnight';
     case 'weekend':
-      return 'What’s on this weekend';
+      return 'Fri → Sun';
     case 'week':
-      return 'What’s on this week';
+      return 'Next 7 days';
     case 'all':
     default:
-      return 'What’s on in the city';
+      return 'Everything ahead';
   }
 }

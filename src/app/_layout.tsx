@@ -82,7 +82,7 @@ export default function RootLayout() {
                   <Stack>
                     <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
                     <Stack.Screen name="agenda" options={{ title: 'All events' }} />
-                    <Stack.Screen name="event/[id]" options={{ title: 'Event' }} />
+                    <Stack.Screen name="event/[id]" options={{ headerShown: false }} />
                   </Stack>
                 </>
               ) : null}

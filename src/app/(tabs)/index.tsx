@@ -1,7 +1,7 @@
-import { useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useRouter, type Href } from 'expo-router';
+import { useFocusEffect, useRouter, type Href } from 'expo-router';
 
 import { EmptyEventsState } from '@/components/empty-events-state';
 import { EventPresentation } from '@/components/event-presentation';
@@ -15,6 +15,7 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 import { useFilters } from '@/context/filters-context';
+import { useInterests } from '@/context/interests-context';
 import { useFilteredEvents } from '@/hooks/use-filtered-events';
 import { useTheme } from '@/hooks/use-theme';
 import { buildMagazine, railCategoryFilter, railShowsCategory } from '@/utils/magazine-rails';
@@ -33,14 +34,23 @@ export default function HomeScreen() {
     listPending,
     nearStatus,
   } = useFilteredEvents();
-  const { source, setSource, setCategory, devSourcesUnlocked, toggleDevSources } = useFilters();
+  const { source, setSource, devSourcesUnlocked, toggleDevSources } = useFilters();
+  const { maybePrompt } = useInterests();
   const [filtersOpen, setFiltersOpen] = useState(false);
   const router = useRouter();
   const theme = useTheme();
   const magazine = useMemo(() => buildMagazine(listEvents, heading), [listEvents, heading]);
   const taps = useRef({ count: 0, at: 0 });
 
-  const openAgenda = () => router.push('/agenda' as Href);
+  useFocusEffect(
+    useCallback(() => {
+      maybePrompt();
+    }, [maybePrompt]),
+  );
+
+  const openAgenda = (params?: { category?: string; focus?: string }) => {
+    router.push({ pathname: '/agenda', params } as Href);
+  };
 
   const onHeadingPress = () => {
     if (!__DEV__) return;
@@ -56,8 +66,7 @@ export default function HomeScreen() {
 
   const onRailSeeAll = (railId: string) => {
     const category = railCategoryFilter(railId);
-    if (category) setCategory(category);
-    openAgenda();
+    openAgenda(category ? { category } : undefined);
   };
 
   return (
@@ -83,7 +92,7 @@ export default function HomeScreen() {
               <Pressable
                 accessibilityRole="button"
                 accessibilityLabel="Browse all events"
-                onPress={openAgenda}
+                onPress={() => openAgenda({ focus: 'search' })}
                 hitSlop={Spacing.two}
                 style={({ pressed }) => pressed && styles.pressed}>
                 <Icon sf="magnifyingglass" material="search" size={22} color={theme.text} />
@@ -131,7 +140,7 @@ export default function HomeScreen() {
               <Pressable
                 accessibilityRole="button"
                 accessibilityLabel="Browse all events"
-                onPress={openAgenda}
+                onPress={() => openAgenda()}
                 style={({ pressed }) => [styles.seeAll, pressed && styles.pressed]}>
                 <ThemedText type="link">Browse all</ThemedText>
                 <Icon sf="chevron.right" material="arrow_forward" size={16} color={theme.accent} />

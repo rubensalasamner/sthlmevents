@@ -25,6 +25,8 @@ type InterestsContextValue = {
   onboarding: OnboardingStatus;
   /** True when the progressive sheet should present itself. */
   shouldPrompt: boolean;
+  /** Opens the progressive sheet once per session when `shouldPrompt`; call from a calm moment. */
+  maybePrompt: () => void;
   /** User opened the editor manually (chips row / “For you”). */
   editorOpen: boolean;
   openEditor: () => void;
@@ -115,7 +117,7 @@ export function InterestsProvider({ children }: { children: ReactNode }) {
   const shouldPrompt = hydrated && shouldOfferInterestsPrompt(snapshot);
 
   const autoPromptedRef = useRef(false);
-  useEffect(() => {
+  const maybePrompt = useCallback(() => {
     if (!shouldPrompt || autoPromptedRef.current) return;
     autoPromptedRef.current = true;
     setEditorOpen(true);
@@ -129,6 +131,7 @@ export function InterestsProvider({ children }: { children: ReactNode }) {
       categories,
       onboarding: snapshot.onboarding,
       shouldPrompt,
+      maybePrompt,
       editorOpen,
       openEditor: () => setEditorOpen(true),
       closeEditor: () => setEditorOpen(false),
@@ -142,6 +145,7 @@ export function InterestsProvider({ children }: { children: ReactNode }) {
       categories,
       snapshot.onboarding,
       shouldPrompt,
+      maybePrompt,
       editorOpen,
       saveInterests,
       skipOnboarding,

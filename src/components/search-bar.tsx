@@ -9,12 +9,14 @@ type SearchBarProps = {
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
+  autoFocus?: boolean;
 };
 
 export function SearchBar({
   value,
   onChange,
-  placeholder = 'What are you looking for?',
+  placeholder = 'Search events, venues, organizers',
+  autoFocus = false,
 }: SearchBarProps) {
   const theme = useTheme();
 
@@ -30,7 +32,7 @@ export function SearchBar({
           returnKeyType="search"
           autoCapitalize="none"
           autoCorrect={false}
-          clearButtonMode="while-editing"
+          autoFocus={autoFocus}
           style={[styles.input, { color: theme.text }]}
         />
         {value.length > 0 && (

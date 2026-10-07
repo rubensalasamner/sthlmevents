@@ -8,7 +8,7 @@ import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 import { useFavorites } from '@/context/favorites-context';
 import { useEvents } from '@/hooks/use-events';
-import { stockholmMidnight } from '@/utils/date-range';
+import { groupAgenda } from '@/utils/agenda-groups';
 import { eventInterval } from '@/utils/event-interval';
 
 export default function SavedScreen() {
@@ -16,39 +16,30 @@ export default function SavedScreen() {
   const { favoriteIds } = useFavorites();
 
   const saved = useMemo(
-    () =>
-      events
-        .filter((event) => favoriteIds.has(event.id))
-        .sort((a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime()),
+    () => events.filter((event) => favoriteIds.has(event.id)),
     [events, favoriteIds],
   );
 
   const sections = useMemo(() => {
     const now = new Date();
-    const weekEnd = stockholmMidnight(7, now).getTime();
+    const upcoming: typeof saved = [];
     const past: typeof saved = [];
-    const thisWeek: typeof saved = [];
-    const later: typeof saved = [];
 
     for (const event of saved) {
-      const { endMs } = eventInterval(event);
-      if (endMs < now.getTime()) {
-        past.push(event);
-      } else if (new Date(event.startsAt).getTime() < weekEnd) {
-        thisWeek.push(event);
-      } else {
-        later.push(event);
-      }
+      if (eventInterval(event).endMs < now.getTime()) past.push(event);
+      else upcoming.push(event);
     }
 
+    const upcomingSections = groupAgenda(upcoming, now).map((group) => ({
+      title: group.label,
+      data: group.events,
+    }));
+
     return [
-      { title: 'This week', data: thisWeek },
-      { title: 'Later', data: later },
+      ...upcomingSections,
       {
         title: 'Past',
-        data: [...past].sort(
-          (a, b) => eventInterval(b).endMs - eventInterval(a).endMs,
-        ),
+        data: [...past].sort((a, b) => eventInterval(b).endMs - eventInterval(a).endMs),
       },
     ];
   }, [saved]);
