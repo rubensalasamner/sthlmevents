@@ -39,6 +39,14 @@ export type EventMapProps = {
   favoriteIds?: ReadonlySet<string>;
   userLocation?: GeoPoint | null;
   focusEventId?: string | null;
+  /** Controlled selection — when set with onSelectedIdChange, parent owns it. */
+  selectedId?: string | null;
+  onSelectedIdChange?: (id: string | null) => void;
+  /**
+   * Floating one-event peek. Off when Explore shows the detent list sheet
+   * (peek and sheet both claim the bottom edge).
+   */
+  showPeek?: boolean;
   loading?: boolean;
   error?: Error | null;
   onRetry?: () => void;
@@ -93,8 +101,9 @@ const mapRenderers: Record<'ios' | 'android', (props: MapRendererProps) => React
   },
 };
 
-function useSelectedEvent(events: StockholmEvent[], focusEventId?: string | null) {
-  const [selectedId, setSelectedId] = useState<string | null>(focusEventId ?? null);
+/** Uncontrolled selection when Explore does not own the sheet. */
+function useInternalSelection(events: StockholmEvent[], focusEventId: string | null) {
+  const [selectedId, setSelectedId] = useState<string | null>(focusEventId);
 
   useEffect(() => {
     if (focusEventId && events.some((event) => event.id === focusEventId)) {
@@ -116,7 +125,7 @@ function useSelectedEvent(events: StockholmEvent[], focusEventId?: string | null
   return {
     selectedId,
     selected,
-    select: (id: string | null) => setSelectedId(id),
+    select: setSelectedId,
     clear: () => setSelectedId(null),
   };
 }
@@ -134,7 +143,15 @@ function useBubbleMode(zoom: number, totalEvents: number) {
   return { showTitles, uiScale };
 }
 
-export function EventMap({ events, favoriteIds, userLocation, focusEventId }: EventMapProps) {
+export function EventMap({
+  events,
+  favoriteIds,
+  userLocation,
+  focusEventId,
+  selectedId,
+  onSelectedIdChange,
+  showPeek = true,
+}: EventMapProps) {
   if (!hasNativeMaps()) {
     return <MapUnavailable />;
   }
@@ -149,6 +166,9 @@ export function EventMap({ events, favoriteIds, userLocation, focusEventId }: Ev
       favoriteIds={favoriteIds ?? new Set()}
       userLocation={userLocation ?? null}
       focusEventId={focusEventId ?? null}
+      selectedId={selectedId}
+      onSelectedIdChange={onSelectedIdChange}
+      showPeek={showPeek}
     />
   );
 }
@@ -158,11 +178,17 @@ function NativeEventMap({
   favoriteIds,
   userLocation,
   focusEventId,
+  selectedId: controlledId,
+  onSelectedIdChange,
+  showPeek,
 }: {
   events: StockholmEvent[];
   favoriteIds: ReadonlySet<string>;
   userLocation: GeoPoint | null;
   focusEventId: string | null;
+  selectedId?: string | null;
+  onSelectedIdChange?: (id: string | null) => void;
+  showPeek: boolean;
 }) {
   const focusPoint = useMemo(() => {
     if (!focusEventId) return null;
@@ -171,7 +197,19 @@ function NativeEventMap({
   }, [events, focusEventId]);
   const origin = focusPoint ?? userLocation ?? STOCKHOLM;
   const mapRef = useRef<MapCameraHandle>(null);
-  const { selectedId, selected, select, clear } = useSelectedEvent(events, focusEventId);
+  const controlled = onSelectedIdChange !== undefined;
+  const internal = useInternalSelection(events, focusEventId);
+  const selectedId = controlled
+    ? controlledId && events.some((event) => event.id === controlledId)
+      ? controlledId
+      : null
+    : internal.selectedId;
+  const selected = useMemo(
+    () => events.find((event) => event.id === selectedId) ?? null,
+    [events, selectedId],
+  );
+  const select = controlled ? onSelectedIdChange : internal.select;
+  const clear = controlled ? () => onSelectedIdChange(null) : internal.clear;
   const { camera, cameraRef, onCameraMove } = useMapCamera(origin);
   const pins = useMemo(
     () => visibleMapPins(events, camera, { selectedId }),
@@ -263,7 +301,7 @@ function NativeEventMap({
         onMapClick: clear,
         onCameraMove,
       })}
-      {selected ? <MapEventPeek event={selected} onDismiss={clear} /> : null}
+      {showPeek && selected ? <MapEventPeek event={selected} onDismiss={clear} /> : null}
     </View>
   );
 }

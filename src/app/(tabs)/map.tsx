@@ -1,10 +1,11 @@
 import { useLocalSearchParams } from 'expo-router';
-import { useMemo } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { EventMap } from '@/components/event-map';
 import { FilterBar } from '@/components/filter-bar';
+import { MapEventSheet, type MapEventSheetHandle } from '@/components/map/map-event-sheet';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
@@ -17,15 +18,38 @@ import { mappableEvents } from '@/utils/map-marker';
 
 const countMappable: ResultCounter = (events) => mappableEvents(events).length;
 
+function resolveSelection(
+  selectedId: string | null,
+  focusEventId: string | undefined,
+  ids: ReadonlySet<string>,
+): string | null {
+  if (selectedId && ids.has(selectedId)) return selectedId;
+  if (focusEventId && ids.has(focusEventId)) return focusEventId;
+  return null;
+}
+
 export default function MapScreen() {
   const { eventId } = useLocalSearchParams<{ eventId?: string | string[] }>();
   const focusEventId =
     typeof eventId === 'string' ? eventId : Array.isArray(eventId) ? eventId[0] : undefined;
-  const { listEvents, loading, error, reload, location } = useFilteredEvents();
-  const { isActive, reset } = useFilters();
+  const { listEvents, loading, error, reload, location, now } = useFilteredEvents();
+  const { nearMe, isActive, reset } = useFilters();
   const { favoriteIds } = useFavorites();
   const { openFilters } = useFilterSheet();
   const mappable = useMemo(() => mappableEvents(listEvents), [listEvents]);
+  const mappableIds = useMemo(() => new Set(mappable.map((event) => event.id)), [mappable]);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [seenFocus, setSeenFocus] = useState<string | undefined>(undefined);
+  const sheetRef = useRef<MapEventSheetHandle>(null);
+  const prevSelected = useRef<string | null>(null);
+
+  // Deep-link focus wins once per eventId; user taps still override via setSelectedId.
+  if (focusEventId !== seenFocus) {
+    setSeenFocus(focusEventId);
+    if (focusEventId && mappableIds.has(focusEventId)) setSelectedId(focusEventId);
+  }
+
+  const activeId = resolveSelection(selectedId, focusEventId, mappableIds);
 
   const status = mapStatus(
     resolveEventsStatus({ loading, error, empty: mappable.length === 0 }),
@@ -33,6 +57,13 @@ export default function MapScreen() {
     reload,
     reset,
   );
+
+  useEffect(() => {
+    if (activeId && activeId !== prevSelected.current) {
+      sheetRef.current?.revealEvent(activeId);
+    }
+    prevSelected.current = activeId;
+  }, [activeId]);
 
   return (
     <ThemedView style={styles.container}>
@@ -42,6 +73,9 @@ export default function MapScreen() {
           favoriteIds={favoriteIds}
           userLocation={location}
           focusEventId={focusEventId}
+          selectedId={activeId}
+          onSelectedIdChange={setSelectedId}
+          showPeek={false}
         />
       </View>
       <SafeAreaView edges={['top']} style={styles.overlay} pointerEvents="box-none">
@@ -62,6 +96,17 @@ export default function MapScreen() {
           ) : null}
         </View>
       </SafeAreaView>
+      {mappable.length > 0 ? (
+        <MapEventSheet
+          ref={sheetRef}
+          events={mappable}
+          selectedId={activeId}
+          onSelect={setSelectedId}
+          userLocation={location}
+          nearMe={nearMe}
+          now={now}
+        />
+      ) : null}
     </ThemedView>
   );
 }

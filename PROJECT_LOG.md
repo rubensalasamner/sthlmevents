@@ -298,6 +298,11 @@ konton först efter caption-probe (ingen OCR som default).
   en `FilterSheetProvider` (`openFilters(counter?)` — kartan räknar pins);
   `resolveEventsStatus` = innehåll vinner över spinner/fel. Tab-bar
   `minimizeBehavior="onScrollDown"` (endast iOS 26+, ingen effekt på Android).
+- **Explore map + sheet (2026-10-07)**: Layout Proposals "pair" — detent-lista
+  (`DetentSheet` peek/half/full via RNGH + Reanimated) över kartan med
+  `CompactRow`. Pin-val synkas med highlight + scroll; `MapEventPeek` avstängd
+  på Explore (båda vill ha nederkanten). Near me → titel "N nearby" +
+  avstånd i raderna. Ingen ny dependency (`@gorhom/bottom-sheet` skippad).
 - **Feed-ranking** (`src/utils/ranking.ts`): band → tier → sortMs → featured →
   quality → id. Band: programme → outOfTown → longRunning (>30 dagar).
   Tier inom band: upcoming (startsAt) → ongoing (endsAt snarast) → past.
