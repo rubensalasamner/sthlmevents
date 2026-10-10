@@ -3097,5 +3097,19 @@
       "longitude": 18.0593636
     },
     "fetchedAt": 1791543287829
+  },
+  "Götgatan 45, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3154374,
+      "longitude": 18.0741365
+    },
+    "fetchedAt": 1791626861046
+  },
+  "Valhallavägen 65, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3466365,
+      "longitude": 18.0689388
+    },
+    "fetchedAt": 1791626862501
   }
 }

@@ -1701,7 +1701,7 @@
   },
   "https://www.meetup.com/stockholm-brunch-club/events/314957027/": {
     "image": "https://secure.meetupstatic.com/photos/event/d/b/8/9/600_529676201.jpeg",
-    "fetchedAt": 1788796171835
+    "fetchedAt": 1791626862878
   },
   "https://www.meetup.com/meetup-group-cqgqwmcw/events/316375457/": {
     "image": "https://secure.meetupstatic.com/photos/event/7/6/4/7/600_535950279.jpeg",
@@ -21557,7 +21557,7 @@
   },
   "https://api.visitstockholm.com/api/public-v1/events/0afbf109-a94f-418f-9bd4-80cb6fb1c9bf/": {
     "image": null,
-    "fetchedAt": 1791197555674
+    "fetchedAt": 1791626863236
   },
   "https://api.visitstockholm.com/api/public-v1/events/092d0d65-89db-4116-94af-42437676ae6d/": {
     "image": null,
@@ -21765,7 +21765,7 @@
   },
   "https://api.visitstockholm.com/api/public-v1/events/99e1ec2e-c2d5-4e3d-ad99-30561bd16986/": {
     "image": null,
-    "fetchedAt": 1791197557614
+    "fetchedAt": 1791626863334
   },
   "https://api.visitstockholm.com/api/public-v1/events/972a8199-3ec5-4c02-907d-e1fce0606fb7/": {
     "image": null,
@@ -37054,5 +37054,165 @@
   "https://kulturhusetstadsteatern.se/konserter/silent-night-med-christian-kjellvander": {
     "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/Christian%20Kjellvander%20webb.png",
     "fetchedAt": 1791543296714
+  },
+  "https://www.meetup.com/sohersociety/events/316142515/": {
+    "image": "https://secure.meetupstatic.com/photos/event/c/2/5/a/600_535669754.jpeg",
+    "fetchedAt": 1791626862887
+  },
+  "https://www.meetup.com/outinsthlm/events/316840335/": {
+    "image": "https://secure.meetupstatic.com/photos/event/b/7/1/7/600_533566871.jpeg",
+    "fetchedAt": 1791626862936
+  },
+  "https://www.meetup.com/stockholmexpat/events/316636275/": {
+    "image": "https://secure.meetupstatic.com/photos/event/6/6/5/b/600_519626203.jpeg",
+    "fetchedAt": 1791626863069
+  },
+  "https://www.meetup.com/intercambio/events/316648148/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/a/f/1/600_500410993.jpeg",
+    "fetchedAt": 1791626863157
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/8215a672-49d6-4580-afb8-f6d85154e664/": {
+    "image": null,
+    "fetchedAt": 1791626863259
+  },
+  "https://www.meetup.com/stockholm-polyglot-meetup-group/events/316850581/": {
+    "image": "https://secure.meetupstatic.com/photos/event/1/f/f/c/600_521048188.jpeg",
+    "fetchedAt": 1791626863268
+  },
+  "https://ra.co/events/2557737": {
+    "image": null,
+    "fetchedAt": 1791626863307
+  },
+  "https://www.meetup.com/afterwork-coding/events/316907815/": {
+    "image": "https://secure.meetupstatic.com/photos/event/e/7/5/9/600_526019225.jpeg",
+    "fetchedAt": 1791626863371
+  },
+  "https://www.meetup.com/frescati-badminton-meetup-group/events/316908385/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/7/b/5/600_529570165.jpeg",
+    "fetchedAt": 1791626863456
+  },
+  "https://www.meetup.com/stockholm-pub-crawl/events/316844039/": {
+    "image": "https://secure.meetupstatic.com/photos/event/1/4/1/7/600_536405143.jpeg",
+    "fetchedAt": 1791626863549
+  },
+  "https://biblioteket.stockholm.se/evenemang/advokatjour-671": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Juridisk_radgivning_1200x630_b6ae6ff52d.jpg",
+    "fetchedAt": 1791626863558
+  },
+  "https://www.meetup.com/walking-in-stockholm/events/316909765/": {
+    "image": "https://secure.meetupstatic.com/photos/event/6/4/8/a/600_530245738.jpeg",
+    "fetchedAt": 1791626863567
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/c296706a-e88e-4384-a127-c09c1ea35872/": {
+    "image": null,
+    "fetchedAt": 1791626863639
+  },
+  "https://biblioteket.stockholm.se/evenemang/fraga-logopeden-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Fraga_logopeden_2_eb28974245.jpg",
+    "fetchedAt": 1791626863659
+  },
+  "https://biblioteket.stockholm.se/evenemang/gor-din-egen-stop-motion-film-2": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_stopmotion_f9fea6c28b.jpg",
+    "fetchedAt": 1791626863737
+  },
+  "https://biblioteket.stockholm.se/evenemang/las-knyt-makrame-och-fika-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Webbkalender_ideer_7_1637fc2631.png",
+    "fetchedAt": 1791626863879
+  },
+  "https://biblioteket.stockholm.se/evenemang/gor-din-egen-stop-motion-film-4": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_stopmotion_f9fea6c28b.jpg",
+    "fetchedAt": 1791626863914
+  },
+  "https://biblioteket.stockholm.se/evenemang/liberroll-1318-ar-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Kopia_av_Bild_evenemang_hemsidan_23_e7f0519d71.png",
+    "fetchedAt": 1791626863918
+  },
+  "https://biblioteket.stockholm.se/evenemang/ortmagi-for-13-19-ar-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Webbkalender_ideer_8_ca71c7efdb.png",
+    "fetchedAt": 1791626863981
+  },
+  "https://biblioteket.stockholm.se/evenemang/gor-din-egen-stop-motion-film-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_stopmotion_f9fea6c28b.jpg",
+    "fetchedAt": 1791626863993
+  },
+  "https://ra.co/events/2557780": {
+    "image": null,
+    "fetchedAt": 1791626863999
+  },
+  "https://biblioteket.stockholm.se/evenemang/disco-4": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Disco_webb_4f8a7655e2.png",
+    "fetchedAt": 1791626864030
+  },
+  "https://www.meetup.com/sthlm-outdoor/events/316912836/": {
+    "image": "https://secure.meetupstatic.com/photos/event/6/d/b/c/600_502888092.jpeg",
+    "fetchedAt": 1791626864077
+  },
+  "https://biblioteket.stockholm.se/evenemang/komma-igang-med-slaktforskning-en-introduktion-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_hembygd_webb_784be79701.png",
+    "fetchedAt": 1791626864094
+  },
+  "https://biblioteket.stockholm.se/evenemang/mellan-raderna-skrivarworkshop-med-sara-villius-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_sara2_277025759e.jpg",
+    "fetchedAt": 1791626864138
+  },
+  "https://lu.ma/aira-stockholm-nationalmuseum": {
+    "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/vf/87dc55ae-a9e1-4a6c-80e2-30312ad6bfa6.png",
+    "fetchedAt": 1791626864165
+  },
+  "https://allevents.in/stockholm/tyla-annexet-stockholm/200030570590653": {
+    "image": "https://cdn-az.allevents.in/events10/banners/b51d0d3b288b8ea90e8707d0d4d007b6a2539798b430f803a0e510c78eead7e9-rimg-w1200-h628-dcf8e8c8-gmir?v=1786912544",
+    "fetchedAt": 1791626864176
+  },
+  "https://biblioteket.stockholm.se/evenemang/berwaldhallen-och-dramaten-i-hogdalen-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Lana_en_kulturupplevelse_9b9c5c78b2.png",
+    "fetchedAt": 1791626864194
+  },
+  "https://biblioteket.stockholm.se/evenemang/advokatjour-673": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Juridisk_radgivning_1200x630_b6ae6ff52d.jpg",
+    "fetchedAt": 1791626864265
+  },
+  "https://lu.ma/mmmjntc0": {
+    "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/po/1e05f3f1-4d5a-4c72-8e00-d3327abcfd0d.png",
+    "fetchedAt": 1791626864295
+  },
+  "https://ra.co/events/2557775": {
+    "image": null,
+    "fetchedAt": 1791626864312
+  },
+  "https://biblioteket.stockholm.se/evenemang/farsta-samtalar-folkbildning-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_samtalsgrupp_ad19abe783.png",
+    "fetchedAt": 1791626864327
+  },
+  "https://biblioteket.stockholm.se/evenemang/advokatjour-674": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Juridisk_radgivning_1200x630_b6ae6ff52d.jpg",
+    "fetchedAt": 1791626864331
+  },
+  "https://biblioteket.stockholm.se/evenemang/mellan-raderna-skrivarworkshop-med-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_mellanraderna_1cf272815c.png",
+    "fetchedAt": 1791626864403
+  },
+  "https://biblioteket.stockholm.se/evenemang/gor-din-egen-stop-motion-film-3": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_stopmotion_f9fea6c28b.jpg",
+    "fetchedAt": 1791626864404
+  },
+  "https://biblioteket.stockholm.se/evenemang/advokatjour-672": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Juridisk_radgivning_1200x630_b6ae6ff52d.jpg",
+    "fetchedAt": 1791626864430
+  },
+  "https://biblioteket.stockholm.se/evenemang/advokatjour-675": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Juridisk_radgivning_1200x630_b6ae6ff52d.jpg",
+    "fetchedAt": 1791626864449
+  },
+  "https://www.meetup.com/scbcfootball/events/316911064/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/6/d/600_535560621.jpeg",
+    "fetchedAt": 1791626864721
+  },
+  "https://kulturhusetstadsteatern.se/bio/julkul-med-greta-bioupplevelsen": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/Peppa-1080x1350-SWEDISH.jpg",
+    "fetchedAt": 1791626864966
+  },
+  "https://kulturhusetstadsteatern.se/konserter/rubem-farias-trio": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/Rubem%20Farias%20Trio%20Foto%20Jonas%20Andre.jpg",
+    "fetchedAt": 1791626865035
   }
 }
