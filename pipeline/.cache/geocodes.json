@@ -1128,7 +1128,7 @@
   },
   "Fartyget Vieille Montagne, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1790762420643
+    "fetchedAt": 1791713953881
   },
   "Täby, Stockholm, Sweden": {
     "value": {
@@ -1160,7 +1160,7 @@
   },
   "Sergels torg, Foajé 3, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791369281438
+    "fetchedAt": 1791713969552
   },
   "Stallgatan 7, Stockholm, Sweden": {
     "value": {
@@ -1865,7 +1865,7 @@
       "latitude": 59.3324814,
       "longitude": 18.0626743
     },
-    "fetchedAt": 1788855686150
+    "fetchedAt": 1791713961613
   },
   "Ebba Bååts Torg 20, Huddinge, Stockholm, Sweden": {
     "value": {
@@ -1991,7 +1991,7 @@
       "latitude": 59.3389509,
       "longitude": 18.0355014
     },
-    "fetchedAt": 1789114809583
+    "fetchedAt": 1791713956656
   },
   "Coming soon, Stockholm, Sweden": {
     "value": null,
@@ -2042,7 +2042,7 @@
       "latitude": 59.3358309,
       "longitude": 18.0512964
     },
-    "fetchedAt": 1789114840859
+    "fetchedAt": 1791713955044
   },
   "C/O Uusiteatteri, Västmannagatan 56, Stockholm, Sweden": {
     "value": null,
@@ -2334,7 +2334,7 @@
   },
   "Söder Mälarstrand kajplats 15, 118 20 Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1790762419066
+    "fetchedAt": 1791713952148
   },
   "Narvavägen 17, Stockholm, Sweden": {
     "value": {
@@ -2737,7 +2737,7 @@
   },
   "Radisson Collection Strand Hotel, Nybrokajen 9, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791369277621
+    "fetchedAt": 1791713963334
   },
   "The Bar & Lounge, Stockholm, Sweden": {
     "value": {
@@ -2790,7 +2790,7 @@
   },
   "Drottning Kristinas väg 51, 114 28 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791369279079
+    "fetchedAt": 1791713968236
   },
   "KTH R1, Stockholm, Sweden": {
     "value": {
@@ -2994,7 +2994,7 @@
   },
   "Hagalund, Solna, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791108395518
+    "fetchedAt": 1791713964908
   },
   "Hagalund, Stockholm, Sweden": {
     "value": {
@@ -3111,5 +3111,23 @@
       "longitude": 18.0689388
     },
     "fetchedAt": 1791626862501
+  },
+  "Alstaviksvägen, 117 33 Stockholm, Sweden, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1791713958399
+  },
+  "Långholmens bollplan, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3205322,
+      "longitude": 18.0291328
+    },
+    "fetchedAt": 1791713960031
+  },
+  "Valborgsmässovägen 32, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.2997773,
+      "longitude": 17.9989677
+    },
+    "fetchedAt": 1791713966492
   }
 }
