@@ -2298,7 +2298,7 @@
   },
   "Uggleviksgatan 2A, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791197468651
+    "fetchedAt": 1791808339202
   },
   "A-house, Uggleviksgatan 2A, Stockholm., Stockholm, Sweden": {
     "value": null,
@@ -3136,5 +3136,47 @@
       "longitude": 17.9470373
     },
     "fetchedAt": 1791804014010
+  },
+  "Skånegatan 86, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3123277,
+      "longitude": 18.0806274
+    },
+    "fetchedAt": 1791808330916
+  },
+  "Augustendalsvägen 7, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3152273,
+      "longitude": 18.1604162
+    },
+    "fetchedAt": 1791808332411
+  },
+  "Rådmansgatan 35, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3409714,
+      "longitude": 18.0611271
+    },
+    "fetchedAt": 1791808333687
+  },
+  "Folkungagatan 122, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3154583,
+      "longitude": 18.0864173
+    },
+    "fetchedAt": 1791808335169
+  },
+  "Västmannagatan 10, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3369086,
+      "longitude": 18.0525784
+    },
+    "fetchedAt": 1791808336533
+  },
+  "Textilgatan 33, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.302182,
+      "longitude": 18.0895945
+    },
+    "fetchedAt": 1791808337877
   }
 }
