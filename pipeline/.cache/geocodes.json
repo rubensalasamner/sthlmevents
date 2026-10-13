@@ -408,7 +408,7 @@
       "latitude": 59.314623,
       "longitude": 18.0668593
     },
-    "fetchedAt": 1788794716921
+    "fetchedAt": 1791889493847
   },
   "Hagsätra bibliotek, Stockholm, Sweden": {
     "value": {
@@ -1911,7 +1911,7 @@
       "latitude": 59.3347713,
       "longitude": 18.0909854
     },
-    "fetchedAt": 1788942236928
+    "fetchedAt": 1791889495121
   },
   "Various venues, Stockholm, Sweden": {
     "value": null,
@@ -3178,5 +3178,37 @@
       "longitude": 18.0895945
     },
     "fetchedAt": 1791808337877
+  },
+  "Västerlånggatan 79, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3229741,
+      "longitude": 18.0724231
+    },
+    "fetchedAt": 1791889491235
+  },
+  "Rörstrandsgatan 4, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3397898,
+      "longitude": 18.0356203
+    },
+    "fetchedAt": 1791889492616
+  },
+  "Slottsvägen, Tyresö,, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.2384025,
+      "longitude": 18.3070203
+    },
+    "fetchedAt": 1791889496332
+  },
+  "Sergels torg, Galleriet Vällingby, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1791889497568
+  },
+  "Torekällberget, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.1917447,
+      "longitude": 17.6161394
+    },
+    "fetchedAt": 1791889498828
   }
 }
