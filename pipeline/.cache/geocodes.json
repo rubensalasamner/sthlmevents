@@ -1855,10 +1855,10 @@
   },
   "Tellusgången, Hägersten, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.298983,
-      "longitude": 17.9924024
+      "latitude": 59.2990596,
+      "longitude": 17.9930151
     },
-    "fetchedAt": 1788855684952
+    "fetchedAt": 1791968496483
   },
   "Klarabergsgatan 50, Stockholm, Sweden": {
     "value": {
@@ -1886,25 +1886,25 @@
       "latitude": 59.3339549,
       "longitude": 18.0651906
     },
-    "fetchedAt": 1788942230494
+    "fetchedAt": 1791968490723
   },
   "Kungsgatan 53, Stockholm, Sweden": {
     "value": {
       "latitude": 59.3343411,
       "longitude": 18.0591021
     },
-    "fetchedAt": 1788942231766
+    "fetchedAt": 1791968495135
   },
   "Bottom floor of Kulturhuset, Sergels Torg, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791369269842
+    "fetchedAt": 1791968492332
   },
   "Kafé Plattan, Stockholm, Sweden": {
     "value": {
       "latitude": 59.3319164,
       "longitude": 18.0644231
     },
-    "fetchedAt": 1788942234599
+    "fetchedAt": 1791968493525
   },
   "Narvavägen 13, Stockholm, Sweden": {
     "value": {
@@ -1955,7 +1955,7 @@
       "latitude": 59.316064,
       "longitude": 18.0724738
     },
-    "fetchedAt": 1789028671780
+    "fetchedAt": 1791968499604
   },
   "Kornhamnstorg 6, Stockholm, Sweden": {
     "value": {
@@ -3074,15 +3074,15 @@
   },
   "stgötagatan 12, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791369272955
+    "fetchedAt": 1791968500794
   },
   "Östgötagatan 12, 116 25 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791369274399
+    "fetchedAt": 1791968502110
   },
   "Embassy House Coworking Medborgarplatsen, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791369276029
+    "fetchedAt": 1791968503848
   },
   "Kammakargatan 9A, Stockholm, Sweden": {
     "value": {
@@ -3210,5 +3210,38 @@
       "longitude": 17.6161394
     },
     "fetchedAt": 1791889498828
+  },
+  "Evenemangsgatan 48, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3733316,
+      "longitude": 17.9976315
+    },
+    "fetchedAt": 1791968497863
+  },
+  "139 37 Värmdö, Sweden, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1791968505779
+  },
+  "Ålstäket, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3129481,
+      "longitude": 18.4603866
+    },
+    "fetchedAt": 1791968507414
+  },
+  "Stortorget 2, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3251699,
+      "longitude": 18.0707795
+    },
+    "fetchedAt": 1791968508631
+  },
+  "Various places in Stockholm, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1791968510464
+  },
+  "Several cinemas in Stockholm, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1791968512098
   }
 }
