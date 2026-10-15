@@ -18449,7 +18449,7 @@
   },
   "https://ra.co/events/2543574": {
     "image": null,
-    "fetchedAt": 1791713970725
+    "fetchedAt": 1792053353242
   },
   "https://allevents.in/stockholm/placebo-in-stockholm/3300029965554857": {
     "image": "https://cdn-az.allevents.in/events8/banners/2b8df3f0-3cb0-11f1-946b-a12f2c65e4b3-rimg-w1200-h675-dcfefefe-gmir.webp?v=1776686277",
@@ -18581,7 +18581,7 @@
   },
   "https://ra.co/events/2543935": {
     "image": null,
-    "fetchedAt": 1791713970848
+    "fetchedAt": 1792053354348
   },
   "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32754/131859/": {
     "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32754/131859/Kulturhuset%20Stadsteatern",
@@ -19093,7 +19093,7 @@
   },
   "https://ra.co/events/2546368": {
     "image": null,
-    "fetchedAt": 1791713970228
+    "fetchedAt": 1792053352220
   },
   "https://lu.ma/ehq2wltc": {
     "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/tn/6c2a7543-d104-47e6-960c-539d1ec0fb79.png",
@@ -19101,7 +19101,7 @@
   },
   "https://ra.co/events/2546350": {
     "image": null,
-    "fetchedAt": 1791713970711
+    "fetchedAt": 1792053353259
   },
   "https://www.meetup.com/stockholm-mlops-community/events/316706637/": {
     "image": "https://secure.meetupstatic.com/photos/event/5/9/2/7/600_536302823.jpeg",
@@ -20349,7 +20349,7 @@
   },
   "https://ra.co/events/2552384": {
     "image": null,
-    "fetchedAt": 1791713970691
+    "fetchedAt": 1792053353192
   },
   "https://www.meetup.com/meetup-group-cqgqwmcw/events/316639953/": {
     "image": "https://secure.meetupstatic.com/photos/event/3/7/d/d/600_536234301.jpeg",
@@ -21633,7 +21633,7 @@
   },
   "https://api.visitstockholm.com/api/public-v1/events/4181df9a-7c9c-44b2-a809-6cb101a566fe/": {
     "image": null,
-    "fetchedAt": 1791713970410
+    "fetchedAt": 1792053352801
   },
   "https://api.visitstockholm.com/api/public-v1/events/198f2609-9c32-4c89-852b-1d3546f76f84/": {
     "image": null,
@@ -36037,7 +36037,7 @@
   },
   "https://ra.co/events/2554958": {
     "image": null,
-    "fetchedAt": 1791713970715
+    "fetchedAt": 1792053353296
   },
   "https://www.meetup.com/frescati-badminton-meetup-group/events/316814905/": {
     "image": "https://secure.meetupstatic.com/photos/event/2/7/b/5/600_529570165.jpeg",
@@ -36049,11 +36049,11 @@
   },
   "https://api.visitstockholm.com/api/public-v1/events/6181233d-b63f-40ff-a582-a28441435cec/": {
     "image": null,
-    "fetchedAt": 1791713970720
+    "fetchedAt": 1792053353148
   },
   "https://api.visitstockholm.com/api/public-v1/events/302093cf-ab0a-4548-b8d5-14ce6d0c9c69/": {
     "image": null,
-    "fetchedAt": 1791713970667
+    "fetchedAt": 1792053352998
   },
   "https://biblioteket.stockholm.se/evenemang/tipsrunda-om-spel-2": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Webbpuff_Tipsrunda_Laeslov_20216_92db79a2ba.png",
@@ -36125,7 +36125,7 @@
   },
   "https://ra.co/events/2554772": {
     "image": null,
-    "fetchedAt": 1791713970749
+    "fetchedAt": 1792053354203
   },
   "https://biblioteket.stockholm.se/evenemang/legimusregistrering-3": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Hornstull_Legimus_1cd2a920d9.png",
@@ -36181,7 +36181,7 @@
   },
   "https://ra.co/events/2554444": {
     "image": null,
-    "fetchedAt": 1791713970888
+    "fetchedAt": 1792053355910
   },
   "https://biblioteket.stockholm.se/evenemang/legimusregistrering-6": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Hornstull_Legimus_1cd2a920d9.png",
@@ -37277,7 +37277,7 @@
   },
   "https://ra.co/events/2558263": {
     "image": null,
-    "fetchedAt": 1791713970727
+    "fetchedAt": 1792053353290
   },
   "https://www.meetup.com/stockholm-pub-crawl/events/316901202/": {
     "image": "https://secure.meetupstatic.com/photos/event/1/4/1/7/600_536405143.jpeg",
@@ -38162,5 +38162,433 @@
   "https://api.visitstockholm.com/api/public-v1/events/b57a1bda-7d18-4eec-b0fe-d99e2edea19d/": {
     "image": null,
     "fetchedAt": 1791968515086
+  },
+  "https://www.meetup.com/stockholm-ai-safety/events/316864900/": {
+    "image": "https://secure.meetupstatic.com/photos/event/4/3/6/3/600_536477251.jpeg",
+    "fetchedAt": 1792053352258
+  },
+  "https://ra.co/events/2561392": {
+    "image": null,
+    "fetchedAt": 1792053352307
+  },
+  "https://www.meetup.com/nordic-society/events/316222512/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/b/3/0/600_536531056.jpeg",
+    "fetchedAt": 1792053352492
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/9a506110-d5aa-4b72-985d-d970a4fc2925/": {
+    "image": null,
+    "fetchedAt": 1792053352779
+  },
+  "https://www.meetup.com/shutupandwritestockholm/events/316676911/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/6/a/5/600_527229893.jpeg",
+    "fetchedAt": 1792053352913
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/1f375899-9264-4161-959c-8012a64e5be6/": {
+    "image": null,
+    "fetchedAt": 1792053352975
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/c52edf4a-52f9-4623-b39d-4b74a9426142/": {
+    "image": null,
+    "fetchedAt": 1792053353125
+  },
+  "https://www.meetup.com/stockholm-art-hobby-group/events/316972283/": {
+    "image": "https://secure.meetupstatic.com/photos/event/4/b/4/2/600_536599266.jpeg",
+    "fetchedAt": 1792053353164
+  },
+  "https://www.meetup.com/prata-svenska/events/315345832/": {
+    "image": "https://secure.meetupstatic.com/photos/event/7/7/a/4/600_499230628.jpeg",
+    "fetchedAt": 1792053353164
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/54577036-dd4f-4f9b-a83b-cb5cdfb5a663/": {
+    "image": null,
+    "fetchedAt": 1792053353235
+  },
+  "https://www.meetup.com/stockholm-social-life/events/316972362/": {
+    "image": "https://secure.meetupstatic.com/photos/event/a/7/0/3/600_530802755.jpeg",
+    "fetchedAt": 1792053353254
+  },
+  "https://ra.co/events/2561193": {
+    "image": null,
+    "fetchedAt": 1792053353309
+  },
+  "https://www.meetup.com/nordic-society/events/316174783/": {
+    "image": "https://secure.meetupstatic.com/photos/event/9/3/5/b/600_535177723.jpeg",
+    "fetchedAt": 1792053353320
+  },
+  "https://www.meetup.com/stockholm-sprakfika-meetup-group/events/316020615/": {
+    "image": "https://secure.meetupstatic.com/photos/event/4/e/f/3/600_498860211.jpeg",
+    "fetchedAt": 1792053353449
+  },
+  "https://www.meetup.com/stockholm-roller-skating/events/316798243/": {
+    "image": "https://secure.meetupstatic.com/photos/event/3/9/c/600_535560924.jpeg",
+    "fetchedAt": 1792053353489
+  },
+  "https://www.meetup.com/sthlm-sports-outdoors/events/316801881/": {
+    "image": "https://secure.meetupstatic.com/photos/event/6/f/4/b/600_532708491.jpeg",
+    "fetchedAt": 1792053353490
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/809f4caa-daa0-4f55-b23f-2f8f28c21f1a/": {
+    "image": null,
+    "fetchedAt": 1792053353514
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/99bafddf-1ea2-4300-93f1-e6e0da3e6950/": {
+    "image": null,
+    "fetchedAt": 1792053353527
+  },
+  "https://www.meetup.com/sthlm-outdoor/events/316974198/": {
+    "image": "https://secure.meetupstatic.com/photos/event/5/3/7/a/600_536601370.jpeg",
+    "fetchedAt": 1792053353598
+  },
+  "https://www.meetup.com/prata-svenska/events/316151270/": {
+    "image": "https://secure.meetupstatic.com/photos/event/7/7/a/4/600_499230628.jpeg",
+    "fetchedAt": 1792053353708
+  },
+  "https://www.meetup.com/stockholm-pub-crawl/events/316915003/": {
+    "image": "https://secure.meetupstatic.com/photos/event/1/4/1/7/600_536405143.jpeg",
+    "fetchedAt": 1792053354082
+  },
+  "https://biblioteket.stockholm.se/evenemang/halloweenpyssel-3": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_L_Ae_SLOV_hemsida_7769e57660.png",
+    "fetchedAt": 1792053354134
+  },
+  "https://ra.co/events/2561387": {
+    "image": null,
+    "fetchedAt": 1792053354165
+  },
+  "https://biblioteket.stockholm.se/evenemang/laslov-kalasvecka-for-sommarskuggan-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Sommarskuggan_Illustration_Johanna_Arpiainen_a9b1c2ed2b.jpg",
+    "fetchedAt": 1792053354169
+  },
+  "https://www.meetup.com/swedish-power-bi-user-group/events/316293627/": {
+    "image": "https://secure.meetupstatic.com/photos/event/a/6/8/3/600_531282627.jpeg",
+    "fetchedAt": 1792053354262
+  },
+  "https://biblioteket.stockholm.se/evenemang/skapa-sjalvlysande-gipsspoken-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Spoekpyssel_hemsidan_e4c74e2b90.png",
+    "fetchedAt": 1792053354267
+  },
+  "https://www.meetup.com/stockholm-philosophy-study-group/events/316632872/": {
+    "image": "https://secure.meetupstatic.com/photos/event/e/5/4/600_536223668.jpeg",
+    "fetchedAt": 1792053354278
+  },
+  "https://biblioteket.stockholm.se/evenemang/tisdagspyssel-laslovsspecial-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_2_17df1d5f13.png",
+    "fetchedAt": 1792053354292
+  },
+  "https://ra.co/events/2561379": {
+    "image": null,
+    "fetchedAt": 1792053354305
+  },
+  "https://biblioteket.stockholm.se/evenemang/tarningsmonster-hoglasning-och-spel-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Webben_evenemang_Skaerholmens_bibliotek_barn_och_ungdom_2026_09_26_T002551_560_b4c336b414.png",
+    "fetchedAt": 1792053354315
+  },
+  "https://ra.co/events/2561470": {
+    "image": null,
+    "fetchedAt": 1792053354334
+  },
+  "https://www.meetup.com/frescati-badminton-meetup-group/events/316899120/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/7/b/5/600_529570165.jpeg",
+    "fetchedAt": 1792053354339
+  },
+  "https://biblioteket.stockholm.se/evenemang/mala-en-tygkasse-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_L_Ae_SLOV_5c108e4dca.png",
+    "fetchedAt": 1792053354377
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/2ff87f48-ddf9-4b82-96cd-ea612166af7c/": {
+    "image": null,
+    "fetchedAt": 1792053354399
+  },
+  "https://biblioteket.stockholm.se/evenemang/kan-fred-skapas-utan-vald-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Webbkalender_ideer_9_59a1c8cf68.png",
+    "fetchedAt": 1792053354479
+  },
+  "https://kulturhusetstadsteatern.se/skapa/traffa-en-kostymor": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/_DSC0712.jpg",
+    "fetchedAt": 1792053354614
+  },
+  "https://kulturhusetstadsteatern.se/dans/halloween-k-pop-dance-event": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/Halloween%20Kpop.jpg",
+    "fetchedAt": 1792053354644
+  },
+  "https://biblioteket.stockholm.se/evenemang/las-samtala-och-upplev-havet-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Hemsida_47_e793701ca9.png",
+    "fetchedAt": 1792053354835
+  },
+  "https://biblioteket.stockholm.se/evenemang/bokhang-pa-fredag-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Bokhaeng_pa_fredag_hemsidan_d4d2e1d8de.png",
+    "fetchedAt": 1792053354873
+  },
+  "https://lu.ma/founderslive-stockholm-2026-11": {
+    "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/f3/b489bd9a-ee91-4a27-bd59-187ef08f0047.png",
+    "fetchedAt": 1792053355026
+  },
+  "https://biblioteket.stockholm.se/evenemang/filmvisning-palestine-stereo-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Kopia_av_Bild_evenemang_hemsidan_61_a222c95a9b.png",
+    "fetchedAt": 1792053355066
+  },
+  "https://kulturhusetstadsteatern.se/bio/welcome-yiddishland-yiddish-film-festival": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/Welcome%20to%20Yiddishland.jpg",
+    "fetchedAt": 1792053355312
+  },
+  "https://kulturhusetstadsteatern.se/bio/karlek-over-tanger-0": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/Ka%CC%88rlek_o%CC%88ver_tanger_a3.jpg",
+    "fetchedAt": 1792053355386
+  },
+  "https://kulturhusetstadsteatern.se/bio/knattebio-vi-passar-ihop-0": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-03/Vi%20passar%20ihop.jpg",
+    "fetchedAt": 1792053355470
+  },
+  "https://kulturhusetstadsteatern.se/bio/vigil-five-gefilte-samtal-yiddish-film-festival": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/The-Vigil%20%282%29.jpg",
+    "fetchedAt": 1792053355500
+  },
+  "https://biblioteket.stockholm.se/evenemang/kreativ-verkstad-12": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Kreativ_verkstad_fa7fb6b433.png",
+    "fetchedAt": 1792053355537
+  },
+  "https://kulturhusetstadsteatern.se/bio/brivele-der-mamen-letter-mother-yiddish-film-festival": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/A%20brivele%20der%20mamen%20%28A%20Letter%20to%20Mother%29.jpg",
+    "fetchedAt": 1792053355542
+  },
+  "https://kulturhusetstadsteatern.se/bio/lilla-amelie-eller-tecknet-for-regn": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/poster-lillaamelie.jpg",
+    "fetchedAt": 1792053355579
+  },
+  "https://kulturhusetstadsteatern.se/bio/shttl-qa-yiddish-film-festival": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/Shttl.jpg",
+    "fetchedAt": 1792053355622
+  },
+  "https://kulturhusetstadsteatern.se/bio/moishe-badkhn-intro-dockan-glick": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/The%20Wedding%20Entertainer.jpg",
+    "fetchedAt": 1792053355648
+  },
+  "https://ra.co/events/2561074": {
+    "image": null,
+    "fetchedAt": 1792053355653
+  },
+  "https://kulturhusetstadsteatern.se/bio/nuisance-bear-stockholms-filmfestival": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/WIcker%20SOME.jpg",
+    "fetchedAt": 1792053355683
+  },
+  "https://ra.co/events/2561084": {
+    "image": null,
+    "fetchedAt": 1792053355686
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/9afb1b41-dde9-49e4-8ef2-7de6cd870e1e/": {
+    "image": null,
+    "fetchedAt": 1792053355701
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/f756fae0-041c-4849-86e7-8f903bf36539/": {
+    "image": null,
+    "fetchedAt": 1792053355765
+  },
+  "https://kulturhusetstadsteatern.se/bio/social-reckoning": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/thesocialreckoning_1440x2057_fs_bio.se_.jpg",
+    "fetchedAt": 1792053355790
+  },
+  "https://biblioteket.stockholm.se/evenemang/forfattartraff-gun-britt-sundstrom-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_ESS_webb_2_303b7dde2c.png",
+    "fetchedAt": 1792053355883
+  },
+  "https://lu.ma/vfz7qk7u": {
+    "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/hs/025cbcc4-08a1-469f-ba7b-117038c68f89.png",
+    "fetchedAt": 1792053355981
+  },
+  "https://kulturhusetstadsteatern.se/bio/papaya-ett-fro-pa-aventyr": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/PAPAYA%20A3.jpg",
+    "fetchedAt": 1792053356080
+  },
+  "https://kulturhusetstadsteatern.se/bio/knattebio-stora-galaxer-ater-stjarnor-0": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2022-09/acc8aka-ner-focc88r-regnbacc8agen_.jpg",
+    "fetchedAt": 1792053356106
+  },
+  "https://kulturhusetstadsteatern.se/bio/bortglomda": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/forgottenisland_trio_digitalaffisch_1440x2160.jpg",
+    "fetchedAt": 1792053356123
+  },
+  "https://kulturhusetstadsteatern.se/bio/film-samtal-nipster": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/NIPSTER%20A3.jpg",
+    "fetchedAt": 1792053356129
+  },
+  "https://biblioteket.stockholm.se/evenemang/blod-inget-tvivel-om-den-saken-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Ture_Sventon_Agaton_Sax_och_Kalle_Blomkvist_d049976409.jpg",
+    "fetchedAt": 1792053356189
+  },
+  "https://kulturhusetstadsteatern.se/bio/naza": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/Naza_ny_a3_rec_textkonturer.jpg",
+    "fetchedAt": 1792053356209
+  },
+  "https://kulturhusetstadsteatern.se/bio/odyssey": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/Digital_ODY_crt.1Sheet_crn.Horse_siz.1440x2160_cta.Release-Date_cou.SE_Swedish.des_.jpg",
+    "fetchedAt": 1792053356244
+  },
+  "https://kulturhusetstadsteatern.se/bio/knattebio-kalles-fodelsedagsaventyr-knattefilmen": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/affisch-kalles-fodelsedags-aventyr-knattefilmen-a3.jpg",
+    "fetchedAt": 1792053356276
+  },
+  "https://kulturhusetstadsteatern.se/bio/nelly-rapp-porten-till-underjorden-0": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/nellyrapp-portentillunderjorden_1440x2057.jpg",
+    "fetchedAt": 1792053356305
+  },
+  "https://biblioteket.stockholm.se/evenemang/las-samtala-och-upplev-havet-5": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Hemsida_47_e793701ca9.png",
+    "fetchedAt": 1792053356316
+  },
+  "https://biblioteket.stockholm.se/evenemang/bokhang-pa-fredag-2": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Bokhaeng_pa_fredag_hemsidan_d4d2e1d8de.png",
+    "fetchedAt": 1792053356317
+  },
+  "https://biblioteket.stockholm.se/evenemang/bokklubben-latta-tyngden-29": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Bild_av_Keren_Socadjo_4630751b41.png",
+    "fetchedAt": 1792053356373
+  },
+  "https://biblioteket.stockholm.se/evenemang/sprakcafe-pa-svenska-1795": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_kategori_sprakcafe_2_b582f176a7.jpg",
+    "fetchedAt": 1792053356448
+  },
+  "https://kulturhusetstadsteatern.se/bio/knattebio-radda-julen-0": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2024-11/radda-julen-a3-2.jpg",
+    "fetchedAt": 1792053356453
+  },
+  "https://biblioteket.stockholm.se/evenemang/laxhjalp-1230": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Webbpuff_Laexhjaelp_d4c36ea5c0.png",
+    "fetchedAt": 1792053356454
+  },
+  "https://biblioteket.stockholm.se/evenemang/advokatjour-650": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Juridiskradgivningwebb_3afeb1a5a7.png",
+    "fetchedAt": 1792053356525
+  },
+  "https://biblioteket.stockholm.se/evenemang/punktgaming-108": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_T_Vspel_till_webben_1_d48ee3ccfc.png",
+    "fetchedAt": 1792053356533
+  },
+  "https://biblioteket.stockholm.se/evenemang/familjefredag-33": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Kopia_av_Bild_evenemang_hemsidan_56_5dbcf17bec.png",
+    "fetchedAt": 1792053356541
+  },
+  "https://biblioteket.stockholm.se/evenemang/fredagsklubben-185": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Fredagsklubben_ny_7d185a9e0e.jpg",
+    "fetchedAt": 1792053356618
+  },
+  "https://kulturhusetstadsteatern.se/bio/knattebio-djurens-magiska-jul": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2025-10/Djurens%20magiska%20jul%2C%20A3.jpg",
+    "fetchedAt": 1792053356681
+  },
+  "https://biblioteket.stockholm.se/evenemang/helgpyssel-61": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_pyssel_d0d2294e63.jpg",
+    "fetchedAt": 1792053356685
+  },
+  "https://biblioteket.stockholm.se/evenemang/gretas-gamlingar-63": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_large_Gretas_gamlingar_a57677faed_326c6f6398.png",
+    "fetchedAt": 1792053356699
+  },
+  "https://biblioteket.stockholm.se/evenemang/fredagsmys-21": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Familjefredagar_1_818ecce31c.png",
+    "fetchedAt": 1792053356770
+  },
+  "https://biblioteket.stockholm.se/evenemang/familjehelg-213": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Familjehelg_bc2fdd6723.png",
+    "fetchedAt": 1792053356771
+  },
+  "https://biblioteket.stockholm.se/evenemang/stickcafe-406": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Stickcafe_62e8d44026.jpg",
+    "fetchedAt": 1792053356799
+  },
+  "https://biblioteket.stockholm.se/evenemang/tornedalsk-lasecirkel-4": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_tornedalsk_laesecirkel_e7e691b002.png",
+    "fetchedAt": 1792053356833
+  },
+  "https://biblioteket.stockholm.se/evenemang/lust-att-skapa-lordagar-for-barn-och-deras-vuxna-15": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_2_84dc72bf19.png",
+    "fetchedAt": 1792053356846
+  },
+  "https://biblioteket.stockholm.se/evenemang/oppen-atelje-for-barn-i-alla-aldrar-50": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_skapande_9cdc158a1e.png",
+    "fetchedAt": 1792053356925
+  },
+  "https://biblioteket.stockholm.se/evenemang/extraoppet-for-familjer-med-npf-160": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_6b818c33_9b51_4ffc_abe0_e8fc49b6d774_52c60ef814.png",
+    "fetchedAt": 1792053356938
+  },
+  "https://biblioteket.stockholm.se/evenemang/helgpyssel-79": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_pyssel_d0d2294e63.jpg",
+    "fetchedAt": 1792053356990
+  },
+  "https://biblioteket.stockholm.se/evenemang/sprakcafe-pa-svenska-1735": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_large_sprakcafe_736930daf1_ab6cf5ade1.jpg",
+    "fetchedAt": 1792053357002
+  },
+  "https://biblioteket.stockholm.se/evenemang/familjelordag-88": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Familjeloerdag_eb9ca0daee.jpg",
+    "fetchedAt": 1792053357044
+  },
+  "https://biblioteket.stockholm.se/evenemang/extraoppet-for-familjer-med-npf-181": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_NPF_b97213dd8a.png",
+    "fetchedAt": 1792053357075
+  },
+  "https://biblioteket.stockholm.se/evenemang/familjehelg-214": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Familjehelg_bc2fdd6723.png",
+    "fetchedAt": 1792053357093
+  },
+  "https://biblioteket.stockholm.se/evenemang/sagolika-sondagar-45": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_sagolik_soendag_0bae9e16af.jpg",
+    "fetchedAt": 1792053357151
+  },
+  "https://biblioteket.stockholm.se/evenemang/extraoppet-for-familjer-med-npf-169": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_NPF_webben_20d2f799b9.png",
+    "fetchedAt": 1792053357158
+  },
+  "https://biblioteket.stockholm.se/evenemang/boktips-till-kaffet-72": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Poesifika_bdda6e13dd.png",
+    "fetchedAt": 1792053357195
+  },
+  "https://biblioteket.stockholm.se/evenemang/sprakcafe-pa-tyska-112": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_kategori_sprakcafe_te_a20bd120a6.jpg",
+    "fetchedAt": 1792053357225
+  },
+  "https://biblioteket.stockholm.se/evenemang/stickcafe-for-nyborjare-7": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_stickcafe_webb_9fee017666.png",
+    "fetchedAt": 1792053357238
+  },
+  "https://biblioteket.stockholm.se/evenemang/sportklubb-3": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_sportklubben_webb_22b3cf8bb4.png",
+    "fetchedAt": 1792053357247
+  },
+  "https://biblioteket.stockholm.se/evenemang/bokcirkel-oppen-bok-4": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_kammakargatan_1f7c500a64.jpg",
+    "fetchedAt": 1792053357286
+  },
+  "https://biblioteket.stockholm.se/evenemang/sprakcafe-pa-svenska-1699": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_sprakcafeny_d02e0f7319_bfc4662936_a32d027944.jpg",
+    "fetchedAt": 1792053357305
+  },
+  "https://biblioteket.stockholm.se/evenemang/oppen-atelje-for-6-106-aringar-30": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_oeppen_atelje_20367a1076.png",
+    "fetchedAt": 1792053357317
+  },
+  "https://biblioteket.stockholm.se/evenemang/familjelordag-69": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Familjesoendag_Bredaeng_4b595e8278.jpg",
+    "fetchedAt": 1792053357388
+  },
+  "https://biblioteket.stockholm.se/evenemang/laxhjalp-1343": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Webbpuff_Laexhjaelp_d4c36ea5c0.png",
+    "fetchedAt": 1792053357399
+  },
+  "https://biblioteket.stockholm.se/evenemang/mandaghang-aktiviteter-for-dig-mellan-7-9-ar-52": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Webben_evenemang_Skaerholmens_bibliotek_barn_och_ungdom_2025_12_10_T155949_124_3529baf2fd.png",
+    "fetchedAt": 1792053357417
+  },
+  "https://biblioteket.stockholm.se/evenemang/kortfilmsdagen-pa-egna-villkor-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Kortfilmsdagen_BRE_2025_1_de26862ec6.jpg",
+    "fetchedAt": 1792053357420
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/16bffbed-af27-49b9-bb48-13268448913d/": {
+    "image": null,
+    "fetchedAt": 1792053357430
+  },
+  "https://api.visitstockholm.com/api/public-v1/events/962f9045-1ddb-443c-9dd9-75afe55d41c2/": {
+    "image": null,
+    "fetchedAt": 1792053357440
   }
 }

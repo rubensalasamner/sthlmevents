@@ -514,11 +514,11 @@
   },
   "Medborgareplatsen 4, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791197508213
+    "fetchedAt": 1792053342242
   },
   "Sensus Studieförbund, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791197509639
+    "fetchedAt": 1792053343871
   },
   "Smedsuddsvägen 23, Stockholm, Sweden": {
     "value": {
@@ -796,7 +796,7 @@
       "latitude": 59.3323221,
       "longitude": 18.0657354
     },
-    "fetchedAt": 1788794808444
+    "fetchedAt": 1792053350527
   },
   "Jakobsgatan 6, Stockholm, Sweden": {
     "value": {
@@ -1160,7 +1160,7 @@
   },
   "Sergels torg, Foajé 3, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791713969552
+    "fetchedAt": 1792053347340
   },
   "Stallgatan 7, Stockholm, Sweden": {
     "value": {
@@ -2737,7 +2737,7 @@
   },
   "Radisson Collection Strand Hotel, Nybrokajen 9, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791713963334
+    "fetchedAt": 1792053337735
   },
   "The Bar & Lounge, Stockholm, Sweden": {
     "value": {
@@ -2790,7 +2790,7 @@
   },
   "Drottning Kristinas väg 51, 114 28 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791713968236
+    "fetchedAt": 1792053345606
   },
   "KTH R1, Stockholm, Sweden": {
     "value": {
@@ -3243,5 +3243,30 @@
   "Several cinemas in Stockholm, Stockholm, Sweden": {
     "value": null,
     "fetchedAt": 1791968512098
+  },
+  "142 60 Trångsund, Sweden, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1792053338987
+  },
+  "Trångsund, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3253409,
+      "longitude": 18.0701217
+    },
+    "fetchedAt": 1792053340618
+  },
+  "Jarlsgatan 9, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3340202,
+      "longitude": 18.0744996
+    },
+    "fetchedAt": 1792053348934
+  },
+  "Lilla Essingen 1, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3245384,
+      "longitude": 18.0063166
+    },
+    "fetchedAt": 1792053352053
   }
 }
