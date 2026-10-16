@@ -38,16 +38,16 @@ istället för en filterstack. Tema: "Blå Timmen"
   hamnar varken i `sources` eller `failures`, så deras gamla events tappas
   ur nästa `--only`-snapshot i stället för att behållas stale (endast
   riktiga failures behålls). Det är därför TM/EB försvann helt 2026-09-18→19.
-- **Teater-täckning (2026-10-16):** Dramaten är i praktiken borta ur datan —
-  1–2 venue-events (visit-stockholm) mot t.ex. Cirkus 54, Göta Lejon 78,
-  Orionteatern 35, Vasateatern 22, Södra Teatern 52, Dansens Hus 28,
-  Stadsteatern/Kulturhuset ~1300 (egen källa). evenemangskollen live har
-  Göta Lejon/Cirkus/Vasateatern men **noll** Dramaten-venue-events. Ticket-
-  master (big houses) är den käll som skulle bära Dramaten — just den är
-  avstängd i CI. dramaten.se är Next.js: hemsidans `__NEXT_DATA__` innehåller
-  en strukturerad `performances`-lista (titel, venueName, purchaseUrl, dag/tid,
-  poster) — scrapbar utan nyckel; biljetter.dramaten.se SPA:ns API är dolt
-  (returnerar HTML-shell för alla paths).
+- **Källor återställda i CI (2026-10-16):** ROOT CAUSE: repo-secrets fanns men
+  var aldrig mappade i snapshot.yml-stegets `env:` → TM/EK/kulturbiljetter
+  skippades varje dag. Fixar: (1) `TICKETMASTER_API_KEY`,
+  `EVENEMANGSKOLLEN_ANON_KEY` satta som repo-secrets (värden från lokal
+  `pipeline/.env`), (2) `env:`-mappning för TM/EK/KB i snapshot.yml,
+  (3) keep-stale-buggen i `generate-snapshot.ts` fixad (skipped sourcen
+  behåller gamla events). Verifierat i run 38880574358: TM 115, EK 1843,
+  KB 277 events → snapshot 5698. eventbrite fortfarande 405 i CI (bot-filter,
+  funkar lokalt). Dramaten fortfarande ~1 venue-event — kräver egen
+  dramaten.se-adapter (se ovan), Ticketmaster saknar deras utbud.
 - **Facebook-källan (Apify) är LIVE**: adapter + filter + mapper + datumfönster
   byggt, testat och verifierad i flera riktiga snapshot-körningar.
 - **Instagram keyword (Apify) är LIVE** (2026-09-16): caption-parsing-adapter,
@@ -471,6 +471,34 @@ Syns först efter **ny native build** (dev + Play Internal Testing). Dev-variant
 (`APP_VARIANT=development`) använder badgade assets (`icon-dev.png`,
 `android-icon-foreground-dev.png`, `splash-icon-dev.png`) via `app.config.ts`
 — amber **DEV**-pill under S-märket. Store/Play behåller utan badge.
+
+### Web-mappen (2026-10-16) — testa kartan i webbläsaren
+
+`expo-maps` har ingen web-implementation, så webben byggde tidigare en
+plattform-override (`event-map.web.tsx`) som renderade en eventlista. Nu finns
+en riktig web-karta: **Google Maps JS API** i `src/components/map/web-event-map.tsx`
+(+ `web-event-map-host.tsx` som kör samma pin-/kluster-/kamera-pipeline som
+native). Pinnarna återanvänder exakt samma PNG-bubbles som native
+(`loadBubbleIconUrl` → data-URI:er som Google-markers-icon) — visuell paritet
+utan extra kod.
+
+**Nyckel:** webben behöver en egen, webbrestrictad nyckel i `.env.local`:
+
+```
+EXPO_PUBLIC_GOOGLE_MAPS_KEY=<browser key>
+```
+
+- Native-bygget använder fortfarande `GOOGLE_MAPS_API_KEY` (SHA-1-restrictad,
+  via app.config.ts) — de två nycklarna är separata.
+- Utan `EXPO_PUBLIC_GOOGLE_MAPS_KEY` faller webben tillbaka till eventlistan
+  (samma fallback som förut) med en notis som namnger den saknade variabeln.
+- Styrka till web-kartan (filter, kluster, peek-sheet) kan testas direkt i
+  webbläsaren; bara native-specifika saker (GPS, notiser) kräver fortfarande
+  telefon.
+- Arkitektur: plattformsstrategi — `mapRenderers` (ios/android) i
+  `event-map.tsx` + web-strategi via `event-map.web.tsx`-overriden. Delade
+  hooks: `useBubbleMode` (rubrik-/skala-trösklar), `useMapSelection`
+  (urval) används av både native och web — en källa, ingen dubblering.
 
 ### Testing
 
