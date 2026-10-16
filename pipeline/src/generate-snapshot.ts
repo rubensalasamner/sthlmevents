@@ -92,6 +92,7 @@ async function main(): Promise<void> {
   const collected: StockholmEvent[] = [];
   const sources: string[] = [];
   const failures: string[] = [];
+  const skipped: string[] = [];
   for (const adapter of adapters) {
     process.stdout.write(`Fetching "${adapter.id}"... `);
     let events: StockholmEvent[];
@@ -103,6 +104,7 @@ async function main(): Promise<void> {
       // skip that source, not kill the whole snapshot.
       if (/API_KEY/.test(message)) {
         console.log(`skipped (${message.split('. ')[0]})`);
+        skipped.push(adapter.id);
         continue;
       }
       // A blocked or down source (bot protection, 5xx) must not abort the
@@ -117,20 +119,25 @@ async function main(): Promise<void> {
     sources.push(adapter.id);
   }
 
-  // In --only mode a failed refresh keeps the previous events for that source
-  // (stale beats missing); a successful run replaces them wholesale.
+  // In --only mode a failed OR skipped refresh keeps the previous events for
+  // that source (stale beats missing); a successful run replaces them
+  // wholesale. Skipped sources used to fall through here and silently drop
+  // all their previous events (ticketmaster disappeared this way 2026-09-18).
+  const refreshedOrLost = [...failures, ...skipped];
   const keptFromPrevious =
     onlyIds && previous
       ? previous.events.filter(
           (event) =>
             !onlyIds.includes(event.source) ||
-            (failures.includes(event.source) && !sources.includes(event.source)),
+            (refreshedOrLost.includes(event.source) && !sources.includes(event.source)),
         )
       : previous?.events ?? [];
   if (onlyIds) {
     console.log(
       `Keeping ${keptFromPrevious.length} events from untouched sources` +
-        (failures.length > 0 ? `; stale data kept for failed: ${failures.join(', ')}` : ''),
+        (refreshedOrLost.length > 0
+          ? `; stale data kept for failed/skipped: ${refreshedOrLost.join(', ')}`
+          : ''),
     );
   }
   if (collected.length === 0 && keptFromPrevious.length === 0) {
@@ -140,9 +147,9 @@ async function main(): Promise<void> {
         : 'All sources returned zero events — refusing to overwrite the snapshot',
     );
   }
-  if (failures.length > 0 && !onlyIds) {
+  if (refreshedOrLost.length > 0 && !onlyIds) {
     console.warn(
-      `WARNING: ${failures.length} source(s) failed and are missing from this snapshot: ${failures.join(', ')}`,
+      `WARNING: ${refreshedOrLost.length} source(s) failed/skipped and are missing from this snapshot: ${refreshedOrLost.join(', ')}`,
     );
   }
 

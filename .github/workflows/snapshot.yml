@@ -56,6 +56,14 @@ jobs:
         # run weekly in apify-weekly.yml — a daily run would burn the $5
         # monthly credit in under a week. A partial refresh skips them without
         # touching their committed events.
+        #
+        # Repo secrets are not visible to steps unless mapped here. Without
+        # these mappings ticketmaster/evenemangskollen are silently skipped
+        # every run (verified 2026-10-16, run 38880174133).
+        env:
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+          EVENEMANGSKOLLEN_ANON_KEY: ${{ secrets.EVENEMANGSKOLLEN_ANON_KEY }}
+          KULTURBILJETTER_API_KEY: ${{ secrets.KULTURBILJETTER_API_KEY }}
         run: npm run snapshot --prefix pipeline -- --only visit-stockholm,loppiskartan,eventbrite,resident-advisor,ticketmaster,luma,meetup,allevents,evenemangskollen,biblioteket,kulturhuset,kulturbiljetter
 
       - name: Ensure cache files exist

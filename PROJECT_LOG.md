@@ -27,8 +27,27 @@ istället för en filterstack. Tema: "Blå Timmen"
   skippa bad `utcStartDate` i FB-adaptern; weekly cron flyttad till **05:00 UTC**
   mån. Manuell re-run **lyckades** (FB 10 + IG 11 + profiles 14 → 5408 events,
   commit + R2-upload).
-- **14 aktiva källor** (13 + curated IG-profiler). Snapshot-räkning oförändrad
-  tills nästa `snapshot:apify` / veckokörning plockar in profil-events.
+- **CI-källstatus (granskad 2026-10-16 via run-logg 38873985474):** daily-cronen
+  (`--only` fria källor) har sedan 2026-09-18 körts utan tre källor:
+  `ticketmaster` **skippas** (TICKETMASTER_API_KEY saknas som repo-secret),
+  `eventbrite` **failar 405** (bot-skydd mot CI-IP:n), `evenemangskollen`
+  **skippas** (EVENEMANGSKOLLEN_ANON_KEY saknas som secret) → dess ~1539
+  events i snapshoten är frysta från en lokal körning 2026-09-18. Båda
+  adapterna verifierade fungerande lokalt 2026-10-16 (TM 100 events/page,
+  EB 40). Bugg i `generate-snapshot.ts`: skippade (saknad nyckel) källor
+  hamnar varken i `sources` eller `failures`, så deras gamla events tappas
+  ur nästa `--only`-snapshot i stället för att behållas stale (endast
+  riktiga failures behålls). Det är därför TM/EB försvann helt 2026-09-18→19.
+- **Teater-täckning (2026-10-16):** Dramaten är i praktiken borta ur datan —
+  1–2 venue-events (visit-stockholm) mot t.ex. Cirkus 54, Göta Lejon 78,
+  Orionteatern 35, Vasateatern 22, Södra Teatern 52, Dansens Hus 28,
+  Stadsteatern/Kulturhuset ~1300 (egen källa). evenemangskollen live har
+  Göta Lejon/Cirkus/Vasateatern men **noll** Dramaten-venue-events. Ticket-
+  master (big houses) är den käll som skulle bära Dramaten — just den är
+  avstängd i CI. dramaten.se är Next.js: hemsidans `__NEXT_DATA__` innehåller
+  en strukturerad `performances`-lista (titel, venueName, purchaseUrl, dag/tid,
+  poster) — scrapbar utan nyckel; biljetter.dramaten.se SPA:ns API är dolt
+  (returnerar HTML-shell för alla paths).
 - **Facebook-källan (Apify) är LIVE**: adapter + filter + mapper + datumfönster
   byggt, testat och verifierad i flera riktiga snapshot-körningar.
 - **Instagram keyword (Apify) är LIVE** (2026-09-16): caption-parsing-adapter,
@@ -363,27 +382,55 @@ APK på PC från build-sidan, sen:
 `adb install -r "$env:USERPROFILE\Downloads\application-<build-id>.apk"`
 (`~` funkar inte till adb.exe på Windows.)
 
-#### Utan USB / wifi (Cloudflare tunnel — Metro-sida verifierad 2026-10-03)
+#### Utan USB / wifi (tunnel — server- + tunnelsida verifierad 2026-10-16)
 
-Stock Expo-ngrok (riktiga `@expo/ngrok`) är trasigt. Vi aliasar
-`@expo/ngrok` → `expo-cloudflared` så `expo start --tunnel` ger
-`https://….trycloudflare.com` utan ngrok-konto.
+`npm run start:wifi` kör `expo start --tunnel` (Expo-ngrok, riktiga
+`@expo/ngrok`; det gamla Cloudflare-aliaset är borttaget). Tunnel-subdomainen
+är **deterministisk**: `<urlRandomness>-<username>-<port>.exp.direct`, där
+`urlRandomness` lagras i `.expo/settings.json` — URL:en ändras alltså inte
+mellan omstartar, så länge randomnessen inte nollställs.
 
 ```bash
 # WSL
 npm run start:wifi
-# Vänta på: Tunnel URL: https://….trycloudflare.com  +  Tunnel connected.
+# Vänta på: Tunnel connected. + Tunnel ready. + Waiting on http://localhost:8081
 ```
 
 ```powershell
 # Telefon: öppna app.sthlmevents.dev → Enter URL → klistra in HTTPS-URL:en
-# Valfritt om adb ser telefonen (Wi‑Fi debugging):
-.\scripts\wifi-open.ps1 -Url 'https://xxxx.trycloudflare.com'
+# QR/deep link-alternativ (URL:en måste URL-encodas):
+#   sthlmevents-dev://expo-development-client/?url=https%3A%2F%2F<tunnelhost>
 ```
 
-Verifierat 2026-10-03: `curl https://….trycloudflare.com/status` →
-`packager-status:running`. Telefon → `Android Bundled…` kvar att bekräfta
-när development client är igång.
+**Verifiera innan telefonförsök** (sparar gissningar — allt ska vara 200,
+annars är problemet server-/tunnelsidan, inte telefonen):
+
+```bash
+TUN=https://<randomness>-<user>-8081.exp.direct
+curl -s $TUN/status                        # → packager-status:running
+curl -s -H 'expo-platform: android' $TUN/  # → manifest-JSON med launchAsset
+```
+
+**Diagnostikregel efter misslyckat telefonförsök** — kolla Metro-loggen först:
+- **Inga nya requests/Bundled-rader** → telefonen nådde aldrig servern.
+  Kända orsak: underscore i tunnel-hostnamen (se nedan) eller nätväg.
+- **Requests + error-rader** → serversidan; felraden namnger problemet.
+- Fel-skärmens **Copy-knapp** ("There was a problem loading the project")
+  ger stack trace:n — den verkliga diagnosen. T.ex. `Android internal error`
+  med `Invalid input to toASCII` = TLS-vägrat hostname, inte Expo/nätverk.
+- Web-appen som referens: öppna samma tunnel-URL i telefon-Chrome. Laddar
+  webben men inte dev client → app-/TLS-sidigt problem, inte nätvägen.
+
+**Underscore-fällan (2026-10-16, rotorsak via copy-stack):** Expo genererar
+`urlRandomness` som base64url (alfabetet innehåller `_`). Androids SSL-stack
+(`SNIHostName` → `IDN.toASCII`, STD-3-regler) vägrar underscore-hostnames →
+OkHttp kastar *innan* anslutningen; servern ser inget. Fix: byt till
+underscore-fritt värde i `.expo/settings.json` (t.ex. `z8ynht4`) och starta
+om. Expo-buggen: generatorn validarar bara första tecknet, inte hela
+strängen. Lärda lektioner: (1) dev client-validering är strictare än
+webbläsare — testa alltid manifest-URL:en med `curl` ovan; (2) app-state
+(Clear storage) var INTE problemet här — copy-stack hoppade direkt till
+rotorsaken utan den averingen.
 
 #### Fel vi såg och varför
 
@@ -391,7 +438,8 @@ när development client är igång.
 |---|---|---|
 | “problem loading the project” efter QR utan tunnel | Metro ger `http://172.19.0.1:8081` (WSL-bridge); telefonen når den inte | USB: `--localhost` + `adb reverse` + `usb-dev.ps1` (scanna inte QR). Wifi: `start:wifi` |
 | Samma fel med `adb reverse` men Metro utan `--localhost` | Appen öppnas men Metro-loggen får **inga** Bundled-rader | `npm run start:usb` (inkl. `--localhost`) |
-| Stock `expo start --tunnel` → `reading 'body'` | Expo:s delade ngrok trasig | Använd `npm run start:wifi` (Cloudflare via `expo-cloudflared`) |
+| Stock `expo start --tunnel` → `reading 'body'` (2026-10-03) | Expo:s delade ngrok var då trasig; löstes då via Cloudflare-alias |Aliaset är numera borttaget — `start:wifi` kör riktiga `@expo/ngrok` och funkar (verifierat 2026-10-16) |
+| Dev client "There was a problem loading the project" + copy-stack `Invalid input to toASCII: z_ynht4-…exp.direct` (2026-10-16) | `urlRandomness` i `.expo/settings.json` innehöll `_` (base64url-alfabetet). Android SSL (`SNIHostName` → `IDN.toASCII`, STD-3) vägrar underscore-hostnames → OkHttp kastar innan anslutning; serverloggen får **inga** requests. Chrome laddar samma URL fint (tillämpar inte STD-3) | Byt `urlRandomness` till underscore-fritt värde (t.ex. `z8ynht4`) i `.expo/settings.json`, starta om `start:wifi`, använd nya URL:en. Expo-bugg: generatoren guardar bara första tecknet |
 | Tunnel droppar mid-session | Instabil quick-tunnel | Starta om `start:wifi`, eller USB |
 | `adb: no devices` / adb saknas | USB på Windows; adb ofta inte på PATH | Kör `usb-dev.ps1` (SDK-path fallback); installera platform-tools om saknas |
 | Expo Install på telefon hänger vid nedladdning | CDN/redirect via mobil-WiFi | Ladda ner APK på PC → `adb install` |
