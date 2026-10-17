@@ -2072,7 +2072,7 @@
       "latitude": 59.3193166,
       "longitude": 18.0722002
     },
-    "fetchedAt": 1789200516759
+    "fetchedAt": 1792224178652
   },
   "Mäster Pers gränd 17, Stockholm, Sweden": {
     "value": {
@@ -3202,7 +3202,7 @@
   },
   "Sergels torg, Galleriet Vällingby, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791889497568
+    "fetchedAt": 1792224182742
   },
   "Torekällberget, Stockholm, Sweden": {
     "value": {
@@ -3528,5 +3528,26 @@
       "longitude": 18.130222
     },
     "fetchedAt": 1792143130977
+  },
+  "111 47, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3324974,
+      "longitude": 18.0719991
+    },
+    "fetchedAt": 1792224179861
+  },
+  "Katarinavägen 15, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3190713,
+      "longitude": 18.0751146
+    },
+    "fetchedAt": 1792224181112
+  },
+  "Valhallavägen 105, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3444675,
+      "longitude": 18.0817243
+    },
+    "fetchedAt": 1792224184101
   }
 }
