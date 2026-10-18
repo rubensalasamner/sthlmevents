@@ -729,7 +729,7 @@
       "latitude": 59.3251172,
       "longitude": 18.0710935
     },
-    "fetchedAt": 1788794793484
+    "fetchedAt": 1792311658297
   },
   "stromgatan, Stockholm, Sweden": {
     "value": {
@@ -2111,14 +2111,14 @@
       "latitude": 59.335207,
       "longitude": 18.0626348
     },
-    "fetchedAt": 1789200525239
+    "fetchedAt": 1792311651116
   },
   "Hammarby Slussväg 17, 118 60, Stockholm, Sweden": {
     "value": {
       "latitude": 59.3038408,
       "longitude": 18.0699831
     },
-    "fetchedAt": 1789200526655
+    "fetchedAt": 1792311652309
   },
   "Folkungagatan 45, 118 26 Stockholm, Stockholm, Sweden": {
     "value": {
@@ -3238,11 +3238,11 @@
   },
   "Various places in Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791968510464
+    "fetchedAt": 1792311663577
   },
   "Several cinemas in Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791968512098
+    "fetchedAt": 1792311662243
   },
   "142 60 Trångsund, Sweden, Stockholm, Sweden": {
     "value": null,
@@ -3549,5 +3549,37 @@
       "longitude": 18.0817243
     },
     "fetchedAt": 1792224184101
+  },
+  "Instrumentvägen 4, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3058937,
+      "longitude": 17.9862285
+    },
+    "fetchedAt": 1792311653499
+  },
+  "Valborgsmässovägen 34, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.2995931,
+      "longitude": 17.998632
+    },
+    "fetchedAt": 1792311655091
+  },
+  "Skogskyrkogården, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.2710468,
+      "longitude": 18.1024886
+    },
+    "fetchedAt": 1792311656684
+  },
+  "Södermanagatan 42, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1792311659443
+  },
+  "Älskade Traditioner, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3110932,
+      "longitude": 18.0814571
+    },
+    "fetchedAt": 1792311661034
   }
 }
