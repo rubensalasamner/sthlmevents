@@ -1,5 +1,6 @@
 import { createContext, useContext, useDeferredValue, useMemo, type ReactNode } from 'react';
 
+import { useAffinity } from '@/context/affinity-context';
 import { useFilters } from '@/context/filters-context';
 import { useInterests } from '@/context/interests-context';
 import { useEvents } from '@/hooks/use-events';
@@ -36,8 +37,11 @@ export function FilteredEventsProvider({ children }: { children: ReactNode }) {
   const now = useMemo(() => new Date(), []);
   const { location, loading: locating, error: locationError } = useUserLocation(nearMe);
   const { categories: interestCategories } = useInterests();
+  const { keyScores, snapshot: affinitySnapshot } = useAffinity();
 
   const deferredInterests = useDeferredValue(interestCategories);
+  const deferredAffinityKeys = useDeferredValue(keyScores);
+  const deferredAffinitySnapshot = useDeferredValue(affinitySnapshot);
   const deferredQuery = useDeferredValue(query);
   const deferredCategory = useDeferredValue(category);
   const deferredSource = useDeferredValue(source);
@@ -69,8 +73,24 @@ export function FilteredEventsProvider({ children }: { children: ReactNode }) {
   const feedEvents = useMemo(() => {
     const { primary, secondary } = splitByDateRange(baseFiltered, deferredDateRange, now);
     const { events: collapsed } = collapseSeries([...primary, ...secondary]);
-    return orderFeed(collapsed, now, { preferredCategories: deferredInterests });
-  }, [baseFiltered, deferredDateRange, now, deferredInterests]);
+    return orderFeed(collapsed, now, {
+      preferredCategories: deferredInterests,
+      affinityKeyScores: deferredAffinityKeys,
+      affinitySnapshot: deferredAffinitySnapshot,
+      // Soft distance only when Near me is off — hard distance sort wins otherwise.
+      userLocation: deferredNearMe ? null : deferredLocation,
+      diversify: true,
+    });
+  }, [
+    baseFiltered,
+    deferredDateRange,
+    now,
+    deferredInterests,
+    deferredAffinityKeys,
+    deferredAffinitySnapshot,
+    deferredNearMe,
+    deferredLocation,
+  ]);
 
   const listEvents = useMemo(() => {
     if (!deferredNearMe || !deferredLocation) return feedEvents;

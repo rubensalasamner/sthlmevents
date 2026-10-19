@@ -36,7 +36,7 @@ export function HeroPoster({ event }: HeroPosterProps) {
                   </ThemedText>
                 </ThemedView>
                 <ThemedView style={styles.fav}>
-                  <FavoriteButton eventId={event.id} />
+                  <FavoriteButton event={event} />
                 </ThemedView>
               </View>
             </View>

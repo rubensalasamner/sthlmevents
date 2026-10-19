@@ -12,21 +12,34 @@ import { MagazineRailRow } from '@/components/magazine-rail';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
+import { useAffinity } from '@/context/affinity-context';
 import { useFilterSheet } from '@/context/filter-sheet-context';
 import { useFilteredEvents } from '@/context/filtered-events-context';
 import { useFilters } from '@/context/filters-context';
 import { useInterests } from '@/context/interests-context';
+import { useSavedEvents } from '@/context/saved-events-context';
 import { useTheme } from '@/hooks/use-theme';
 import { buildMagazine, railCategoryFilter, railShowsCategory } from '@/utils/magazine-rails';
 
 export default function HomeScreen() {
-  const { loading, error, reload, listEvents, heading, listPending } = useFilteredEvents();
+  const { loading, error, reload, listEvents, heading, listPending, now } = useFilteredEvents();
   const { devSourcesUnlocked } = useFilters();
-  const { maybePrompt } = useInterests();
+  const { maybePrompt, categories: interestCategories } = useInterests();
+  const { categoryScores } = useAffinity();
+  const { saved } = useSavedEvents();
   const { openFilters } = useFilterSheet();
   const router = useRouter();
   const theme = useTheme();
-  const magazine = useMemo(() => buildMagazine(listEvents, heading), [listEvents, heading]);
+  const magazine = useMemo(
+    () =>
+      buildMagazine(listEvents, heading, {
+        preferredCategories: interestCategories,
+        categoryScores,
+        savedAnchors: saved.slice(0, 5),
+        now,
+      }),
+    [listEvents, heading, interestCategories, categoryScores, saved, now],
+  );
 
   useFocusEffect(
     useCallback(() => {

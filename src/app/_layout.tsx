@@ -16,6 +16,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { AnimatedSplashOverlay } from '@/components/animated-icon';
 import { InterestsPrompt } from '@/components/interests-prompt';
 import { Colors } from '@/constants/theme';
+import { AffinityProvider } from '@/context/affinity-context';
 import { FavoritesProvider } from '@/context/favorites-context';
 import { FilterSheetProvider } from '@/context/filter-sheet-context';
 import { FilteredEventsProvider } from '@/context/filtered-events-context';
@@ -76,29 +77,31 @@ export default function RootLayout() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <FavoritesProvider>
         <SavedEventsProvider>
-          <InterestsProvider>
-            <FiltersProvider>
-              <FilteredEventsProvider>
-                <FilterSheetProvider>
-                  <ThemeProvider value={colorScheme === 'dark' ? BlaTimmenDark : BlaTimmenLight}>
-                    {fontsLoaded || fontsError ? (
-                      <>
-                        <NotificationBootstrap />
-                        <FavoriteReminders />
-                        <InterestsPrompt />
-                        <AnimatedSplashOverlay />
-                        <Stack>
-                          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-                          <Stack.Screen name="agenda" options={{ title: 'All events' }} />
-                          <Stack.Screen name="event/[id]" options={{ headerShown: false }} />
-                        </Stack>
-                      </>
-                    ) : null}
-                  </ThemeProvider>
-                </FilterSheetProvider>
-              </FilteredEventsProvider>
-            </FiltersProvider>
-          </InterestsProvider>
+          <AffinityProvider>
+            <InterestsProvider>
+              <FiltersProvider>
+                <FilteredEventsProvider>
+                  <FilterSheetProvider>
+                    <ThemeProvider value={colorScheme === 'dark' ? BlaTimmenDark : BlaTimmenLight}>
+                      {fontsLoaded || fontsError ? (
+                        <>
+                          <NotificationBootstrap />
+                          <FavoriteReminders />
+                          <InterestsPrompt />
+                          <AnimatedSplashOverlay />
+                          <Stack>
+                            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+                            <Stack.Screen name="agenda" options={{ title: 'All events' }} />
+                            <Stack.Screen name="event/[id]" options={{ headerShown: false }} />
+                          </Stack>
+                        </>
+                      ) : null}
+                    </ThemeProvider>
+                  </FilterSheetProvider>
+                </FilteredEventsProvider>
+              </FiltersProvider>
+            </InterestsProvider>
+          </AffinityProvider>
         </SavedEventsProvider>
       </FavoritesProvider>
     </GestureHandlerRootView>

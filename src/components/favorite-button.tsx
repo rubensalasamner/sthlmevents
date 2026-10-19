@@ -1,21 +1,24 @@
 import { Pressable, StyleSheet } from 'react-native';
 
 import { Icon } from '@/components/icon';
+import { useAffinity } from '@/context/affinity-context';
 import { useFavorites } from '@/context/favorites-context';
 import { useInterests } from '@/context/interests-context';
 import { Spacing } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
+import type { StockholmEvent } from '@/types/event';
 
 type FavoriteButtonProps = {
-  eventId: string;
+  event: StockholmEvent;
   size?: number;
 };
 
-export function FavoriteButton({ eventId, size = 22 }: FavoriteButtonProps) {
+export function FavoriteButton({ event, size = 22 }: FavoriteButtonProps) {
   const { isFavorite, toggleFavorite } = useFavorites();
   const { recordFavoriteAdd } = useInterests();
+  const { recordFavorite } = useAffinity();
   const theme = useTheme();
-  const active = isFavorite(eventId);
+  const active = isFavorite(event.id);
 
   return (
     <Pressable
@@ -23,8 +26,11 @@ export function FavoriteButton({ eventId, size = 22 }: FavoriteButtonProps) {
       accessibilityLabel={active ? 'Remove from saved' : 'Save event'}
       hitSlop={Spacing.two}
       onPress={() => {
-        if (!active) recordFavoriteAdd();
-        toggleFavorite(eventId);
+        if (!active) {
+          recordFavoriteAdd();
+          recordFavorite(event);
+        }
+        toggleFavorite(event.id);
       }}
       style={({ pressed }) => [styles.button, pressed && styles.pressed]}>
       <Icon

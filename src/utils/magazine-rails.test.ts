@@ -159,6 +159,47 @@ describe('buildMagazine', () => {
     assert.equal(hero, null);
     assert.deepEqual(rails, []);
   });
+
+  test('For you rail appears when vibes match enough events', () => {
+    const events = [
+      event({ id: 'h', isFeatured: true, category: 'other' }),
+      event({ id: 't1', category: 'theatre' }),
+      event({ id: 't2', category: 'theatre' }),
+      event({ id: 't3', category: 'theatre' }),
+      ...Array.from({ length: 8 }, (_, i) =>
+        event({ id: `pad${i}`, category: 'music', priceSek: 100 }),
+      ),
+    ];
+    const { rails } = buildMagazine(events, 'Tonight', {
+      preferredCategories: new Set(['theatre']),
+    });
+    const forYou = rails.find((rail) => rail.id === 'for-you');
+    assert.ok(forYou);
+    assert.equal(forYou!.title, 'For you');
+    assert.ok(forYou!.events.every((e) => e.category === 'theatre'));
+  });
+
+  test('thematic rails reorder by affinity score', () => {
+    const events = [
+      event({ id: 'h', isFeatured: true, category: 'other' }),
+      ...Array.from({ length: 8 }, (_, i) =>
+        event({ id: `pad${i}`, category: 'other', priceSek: 100 }),
+      ),
+      event({ id: 'n1', category: 'nightlife' }),
+      event({ id: 'n2', category: 'nightlife' }),
+      event({ id: 'm1', category: 'music' }),
+      event({ id: 'm2', category: 'music' }),
+    ];
+    // Score below For-you floor so events stay in thematic rails.
+    const { rails } = buildMagazine(events, 'Tonight', {
+      categoryScores: new Map([['music', 0.4]]),
+    });
+    const ids = rails.map((rail) => rail.id);
+    const musicIdx = ids.indexOf('music');
+    const nightlifeIdx = ids.indexOf('nightlife');
+    assert.ok(musicIdx >= 0 && nightlifeIdx >= 0);
+    assert.ok(musicIdx < nightlifeIdx);
+  });
 });
 
 describe('featuredWindowRailTitle', () => {

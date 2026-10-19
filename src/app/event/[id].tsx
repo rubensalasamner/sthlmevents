@@ -10,12 +10,14 @@ import { EventImage } from '@/components/event-image';
 import { ExpandableText } from '@/components/expandable-text';
 import { ExternalLink } from '@/components/external-link';
 import { FavoriteButton } from '@/components/favorite-button';
+import { FollowChip } from '@/components/follow-chip';
 import { Icon } from '@/components/icon';
 import { RelatedEvents } from '@/components/related-events';
 import { ShareButton } from '@/components/share-button';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
+import { useAffinity } from '@/context/affinity-context';
 import { useInterests } from '@/context/interests-context';
 import { useSavedEvents } from '@/context/saved-events-context';
 import { decodeRouteId, useEvent } from '@/hooks/use-events';
@@ -48,14 +50,25 @@ export default function EventDetailScreen() {
   const { data, loading } = useEvent(id);
   const { snapshotFor } = useSavedEvents();
   const { recordEventOpen } = useInterests();
+  const {
+    recordOpen,
+    isFollowingVenue,
+    isFollowingOrganizer,
+    toggleFollowVenue,
+    toggleFollowOrganizer,
+  } = useAffinity();
   const theme = useTheme();
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const event = data ?? (loading || !id ? null : snapshotFor(decodeRouteId(id)));
 
   useEffect(() => {
-    if (event?.id) recordEventOpen(event.id);
-  }, [event?.id, recordEventOpen]);
+    if (!event) return;
+    recordEventOpen(event.id);
+    recordOpen(event);
+    // Intentionally key off id — a new object for the same event must not re-count.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [event?.id, recordEventOpen, recordOpen]);
 
   const goBack = () => {
     if (router.canGoBack()) router.back();
@@ -124,7 +137,7 @@ export default function EventDetailScreen() {
               <ShareButton event={event} />
             </CircleSurface>
             <CircleSurface>
-              <FavoriteButton eventId={event.id} />
+              <FavoriteButton event={event} />
             </CircleSurface>
           </DetailTopBar>
         </View>
@@ -139,6 +152,23 @@ export default function EventDetailScreen() {
               {venue}
             </ThemedText>
           ) : null}
+          <View style={styles.followRow}>
+            {event.venue.name.trim() ? (
+              <FollowChip
+                label={event.venue.name.trim()}
+                active={isFollowingVenue(event.venue.name)}
+                onPress={() => toggleFollowVenue(event.venue.name)}
+              />
+            ) : null}
+            {event.organizer.trim() &&
+            event.organizer.trim().toLowerCase() !== event.venue.name.trim().toLowerCase() ? (
+              <FollowChip
+                label={event.organizer.trim()}
+                active={isFollowingOrganizer(event.organizer)}
+                onPress={() => toggleFollowOrganizer(event.organizer)}
+              />
+            ) : null}
+          </View>
           <View style={styles.pillRow}>
             <ThemedView type="backgroundSelected" style={styles.chip}>
               <ThemedText type="metaBold">{formatPrice(event.priceSek)}</ThemedText>
@@ -216,6 +246,12 @@ const styles = StyleSheet.create({
   },
   body: {
     paddingHorizontal: Spacing.four,
+    gap: Spacing.two,
+  },
+  followRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
     gap: Spacing.two,
   },
   pillRow: {

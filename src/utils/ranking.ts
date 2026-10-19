@@ -1,6 +1,9 @@
+import type { AffinitySnapshot } from '@/data/affinity-storage';
 import type { EventCategory, StockholmEvent } from '@/types/event';
+import { diversifyFeed, preferenceScore } from '@/utils/affinity';
 import { eventInterval, isLongRunning } from '@/utils/event-interval';
 import { isOutOfTown } from '@/utils/event-locality';
+import type { GeoPoint } from '@/utils/geo';
 
 /** Lifecycle of an event relative to `now` — the axis of the Discover feed. */
 export type FeedTier = 'upcoming' | 'ongoing' | 'past';
@@ -15,6 +18,13 @@ export type OrderFeedOptions = {
    * only when the date/near filters say so.
    */
   preferredCategories?: ReadonlySet<EventCategory>;
+  /** Decayed open/favorite/follow key scores from affinity storage. */
+  affinityKeyScores?: ReadonlyMap<string, number>;
+  affinitySnapshot?: AffinitySnapshot;
+  /** Soft proximity when known (Near me hard-filter is applied separately). */
+  userLocation?: GeoPoint | null;
+  /** Cap consecutive same-category items after the primary sort. Default 2. */
+  diversify?: boolean | number;
 };
 
 const TIER_ORDER: Record<FeedTier, number> = { upcoming: 0, ongoing: 1, past: 2 };
@@ -47,15 +57,15 @@ export function feedBand(event: StockholmEvent, now: Date): FeedBand {
  * Final Discover-feed order, date-first per product spec: everything not yet
  * started (soonest first), then what is running right now ordered by how soon
  * it ENDS — an event dying tonight must surface above a months-long run —
- * then the recently ended. Within a band: featured leads, optional interest
- * boost, quality breaks date ties, id keeps the order deterministic.
+ * then the recently ended. Within a band: featured leads, soft preference
+ * (vibes + affinity + time + distance), quality breaks date ties, id keeps
+ * the order deterministic. Optional diversity pass spreads categories.
  */
 export function orderFeed(
   events: readonly StockholmEvent[],
   now: Date,
   options: OrderFeedOptions = {},
 ): StockholmEvent[] {
-  const preferred = options.preferredCategories;
   const decorated = events.map((event) => {
     const { startMs, endMs } = eventInterval(event);
     const tier = feedTier(event, now);
@@ -63,9 +73,13 @@ export function orderFeed(
       event,
       band: BAND_ORDER[feedBand(event, now)],
       tier: TIER_ORDER[tier],
-      // 0 = matches interests (sorts first); 1 = no preference / no match.
-      interestRank:
-        preferred && preferred.size > 0 ? (preferred.has(event.category) ? 0 : 1) : 0,
+      preference: preferenceScore(event, {
+        preferredCategories: options.preferredCategories,
+        keyScores: options.affinityKeyScores,
+        snapshot: options.affinitySnapshot,
+        userLocation: options.userLocation,
+        now,
+      }),
       // Ongoing events compete on their end date; past ones run most recent
       // first. Negating folds both into the one ascending comparator.
       sortMs: tier === 'ongoing' ? endMs : tier === 'past' ? -startMs : startMs,
@@ -75,14 +89,17 @@ export function orderFeed(
     if (a.band !== b.band) return a.band - b.band;
     if (a.tier !== b.tier) return a.tier - b.tier;
     if (a.event.isFeatured !== b.event.isFeatured) return a.event.isFeatured ? -1 : 1;
-    if (a.interestRank !== b.interestRank) return a.interestRank - b.interestRank;
+    if (a.preference !== b.preference) return b.preference - a.preference;
     if (a.sortMs !== b.sortMs) return a.sortMs - b.sortMs;
     if (b.event.qualityScore !== a.event.qualityScore) {
       return b.event.qualityScore - a.event.qualityScore;
     }
     return a.event.id.localeCompare(b.event.id);
   });
-  return decorated.map(({ event }) => event);
+  const ordered = decorated.map(({ event }) => event);
+  if (options.diversify === false) return ordered;
+  const maxRun = typeof options.diversify === 'number' ? options.diversify : 2;
+  return diversifyFeed(ordered, maxRun);
 }
 
 /**

@@ -3,7 +3,7 @@
 > **Syfte:** den här filen är projektets "minne" mellan datorer och sessioner.
 > Läs den först om du (människa eller AI-agent) plockar upp projektet efter en
 > paus. Den uppdateras när vi fattar beslut eller når slutsatser — inte för
-> varje kodändring. Senast uppdaterad: **2026-10-06**.
+> varje kodändring. Senast uppdaterad: **2026-10-19**.
 
 ---
 
@@ -83,6 +83,13 @@ istället för en filterstack. Tema: "Blå Timmen"
   (9 chips inkl. market + popup, Not now). Soft boost i `orderFeed` (inte hårt filter). Kompakt
   “Vibes”-länk i Home-headern. Lagras lokalt
   (`sthlmevents.interests.v1`).
+- **On-device feed personalization LIVE** (2026-10-19): utöver vibes —
+  `AffinityProvider` (`sthlmevents.affinity.v1`) lär kategori/venue/organizer
+  från opens + favorites (21-dagars half-life) + explicit Follow på detalj.
+  `orderFeed` blandar vibes + affinity + tids-/helgprior + soft avstånd
+  (när GPS finns men Near me är av) + diversify (max 2 samma kategori i rad).
+  Magazine: **For you**-rail, **Because you saved**-rail, tematiska rails
+  omordnade efter affinity (theatre/comedy/art/food/family tillagda).
 - **Share → app/web LIVE** (2026-09-16): Share delar
   `https://<web>/event/<id>` (eller `sthlmevents://…` utan web-origin), inte
   Ticketmaster. `EXPO_PUBLIC_WEB_ORIGIN` sätter App Links / Universal Links-

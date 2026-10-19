@@ -82,9 +82,27 @@ describe('orderFeed — the reported bug', () => {
   test('preferred categories soft-boost within the same tier', () => {
     const art = event({ id: 'art', category: 'art', startsAt: '2026-09-13T18:00Z', qualityScore: 90 });
     const music = event({ id: 'music', category: 'music', startsAt: '2026-09-13T20:00Z', qualityScore: 40 });
-    assert.deepEqual(orderFeed([music, art], NOW).map((e) => e.id), ['art', 'music']);
     assert.deepEqual(
-      orderFeed([music, art], NOW, { preferredCategories: new Set(['music']) }).map((e) => e.id),
+      orderFeed([music, art], NOW, { diversify: false }).map((e) => e.id),
+      ['art', 'music'],
+    );
+    assert.deepEqual(
+      orderFeed([music, art], NOW, {
+        preferredCategories: new Set(['music']),
+        diversify: false,
+      }).map((e) => e.id),
+      ['music', 'art'],
+    );
+  });
+
+  test('affinity key scores soft-boost within the same tier', () => {
+    const art = event({ id: 'art', category: 'art', startsAt: '2026-09-13T18:00Z' });
+    const music = event({ id: 'music', category: 'music', startsAt: '2026-09-13T18:00Z' });
+    assert.deepEqual(
+      orderFeed([art, music], NOW, {
+        affinityKeyScores: new Map([['music', 8]]),
+        diversify: false,
+      }).map((e) => e.id),
       ['music', 'art'],
     );
   });
