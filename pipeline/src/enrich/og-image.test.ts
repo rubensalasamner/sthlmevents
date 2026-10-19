@@ -6,6 +6,8 @@ import { fallbackImageFor } from '../shared/images.js';
 import {
   enrichEventsWithImages,
   enrichmentPageUrl,
+  enrichmentPageUrls,
+  isScrapableEnrichmentUrl,
   shouldReplaceEventImage,
 } from './enrich-images.js';
 import { FileImageCache } from './image-cache.js';
@@ -79,7 +81,21 @@ function makeEvent(overrides: Partial<StockholmEvent>): StockholmEvent {
 }
 
 describe('enrichmentPageUrl / shouldReplaceEventImage', () => {
-  test('prefers sourceUrl over ticketUrl', () => {
+  test('isScrapableEnrichmentUrl rejects APIs and ticket checkouts', () => {
+    assert.equal(isScrapableEnrichmentUrl('https://editorial.example/show'), true);
+    assert.equal(
+      isScrapableEnrichmentUrl(
+        'https://api.visitstockholm.com/api/public-v1/events/06cc88b5/',
+      ),
+      false,
+    );
+    assert.equal(
+      isScrapableEnrichmentUrl('https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/1/2/'),
+      false,
+    );
+  });
+
+  test('prefers editorial sourceUrl over ticket checkout', () => {
     assert.equal(
       enrichmentPageUrl(
         makeEvent({
@@ -89,9 +105,31 @@ describe('enrichmentPageUrl / shouldReplaceEventImage', () => {
       ),
       'https://editorial.example/show',
     );
+    assert.deepEqual(
+      enrichmentPageUrls(
+        makeEvent({
+          sourceUrl: 'https://editorial.example/show',
+          ticketUrl: 'https://tix.example/buy',
+        }),
+      ),
+      ['https://editorial.example/show'],
+    );
+  });
+
+  test('Visit Stockholm: skips API sourceUrl, uses organizer ticketUrl', () => {
+    const event = makeEvent({
+      source: 'visit-stockholm',
+      sourceUrl: 'https://api.visitstockholm.com/api/public-v1/events/06cc88b5-c56f/',
+      ticketUrl: 'https://www.millesgarden.se/en/exhibitions',
+    });
+    assert.deepEqual(enrichmentPageUrls(event), ['https://www.millesgarden.se/en/exhibitions']);
+    assert.equal(enrichmentPageUrl(event), 'https://www.millesgarden.se/en/exhibitions');
+  });
+
+  test('skips enrichment when only a ticket checkout URL exists', () => {
     assert.equal(
       enrichmentPageUrl(makeEvent({ ticketUrl: 'https://tix.example/buy' })),
-      'https://tix.example/buy',
+      undefined,
     );
   });
 
@@ -167,6 +205,35 @@ describe('enrichEventsWithImages', () => {
     );
   });
 
+  test('Visit Stockholm: scrapes organizer ticketUrl, not the API sourceUrl', async () => {
+    const calls: string[] = [];
+    const fakeFetch = (async (url: string | URL) => {
+      calls.push(String(url));
+      return new Response(
+        '<meta property="og:image" content="https://cdn.millesgarden.se/robert-barbro.jpg">',
+        { status: 200, headers: { 'content-type': 'text/html' } },
+      );
+    }) as unknown as typeof fetch;
+
+    const result = await enrichEventsWithImages(
+      [
+        makeEvent({
+          id: 'vs-1',
+          source: 'visit-stockholm',
+          category: 'art',
+          imageUrl: fallbackImageFor('art'),
+          sourceUrl: 'https://api.visitstockholm.com/api/public-v1/events/06cc88b5/',
+          ticketUrl: 'https://www.millesgarden.se/en/exhibitions',
+        }),
+      ],
+      { fetchImpl: fakeFetch },
+    );
+
+    assert.deepEqual(calls, ['https://www.millesgarden.se/en/exhibitions']);
+    assert.equal(result.resolved, 1);
+    assert.equal(result.events[0]!.imageUrl, 'https://cdn.millesgarden.se/robert-barbro.jpg');
+  });
+
   test('does not overwrite a plausible source-provided hero', async () => {
     const hero = 'https://biblioteket.stockholm.se/cdn/strapi/large_real.jpg';
     const fakeFetch = (async () =>
@@ -208,7 +275,7 @@ describe('enrichEventsWithImages', () => {
     const dir = await mkdtemp(join(tmpdir(), 'og-cache-'));
     const cachePath = join(dir, 'og-images.json');
     const cache = new FileImageCache(cachePath);
-    const page = 'https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/1/2/';
+    const page = 'https://kulturhusetstadsteatern.se/utstallningar/omfamnad';
     cache.set(
       page,
       'https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/1/2/Kulturhuset%20Stadsteatern',
@@ -225,7 +292,14 @@ describe('enrichEventsWithImages', () => {
 
     try {
       const result = await enrichEventsWithImages(
-        [makeEvent({ id: 'a', ticketUrl: page, imageUrl: fallbackImageFor('art'), category: 'art' })],
+        [
+          makeEvent({
+            id: 'a',
+            sourceUrl: page,
+            imageUrl: fallbackImageFor('art'),
+            category: 'art',
+          }),
+        ],
         { cache, fetchImpl: fakeFetch },
       );
       assert.equal(fetches, 1);

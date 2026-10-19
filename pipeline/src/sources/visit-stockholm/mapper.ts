@@ -45,7 +45,8 @@ function text(value: string | null | undefined): string {
 /**
  * Pure transform: one raw Visit Stockholm event -> our shared `StockholmEvent`.
  * Documented source gaps handled here:
- *  - no image  -> category fallback (enrich with og:image later)
+ *  - no image  -> category fallback; enrich scrapes og:image from `ticketUrl`
+ *    (organizer site) — `sourceUrl` is the JSON API and is not scrapable
  *  - no price  -> `priceSek` left undefined
  *  - no district / organizer -> best-available proxies (station / venue)
  */

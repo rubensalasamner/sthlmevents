@@ -20,9 +20,46 @@ export type EnrichImagesResult = {
   attempted: number;
 };
 
-/** Prefer the editorial page over a ticket checkout URL for og:image. */
+/**
+ * True when a URL is worth fetching for og:image. Rejects JSON APIs (Visit
+ * Stockholm stores its API resource as `sourceUrl`) and ticket checkout flows
+ * (Kulturhuset tix) — those never yield usable cover art.
+ */
+export function isScrapableEnrichmentUrl(url: string): boolean {
+  let parsed: URL;
+  try {
+    parsed = new URL(url);
+  } catch {
+    return false;
+  }
+  if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return false;
+
+  const host = parsed.hostname.toLowerCase();
+  const path = parsed.pathname;
+
+  if (host.startsWith('api.') || host.includes('.api.')) return false;
+  if (/\/api\//i.test(path)) return false;
+  if (host.startsWith('tix.') || host.includes('.tix.')) return false;
+  if (/\/buyingflow\//i.test(path)) return false;
+
+  return true;
+}
+
+/**
+ * Ordered HTML pages to scrape for og:image. Editorial `sourceUrl` first when
+ * it is a real page; otherwise `ticketUrl` (Visit Stockholm puts the organizer
+ * site there while `sourceUrl` is the JSON API). Checkout/API URLs are skipped.
+ */
+export function enrichmentPageUrls(event: StockholmEvent): string[] {
+  const ordered = [event.sourceUrl, event.ticketUrl].filter(
+    (u): u is string => typeof u === 'string' && u.length > 0,
+  );
+  return [...new Set(ordered.filter(isScrapableEnrichmentUrl))];
+}
+
+/** First scrapable enrichment page, if any. */
 export function enrichmentPageUrl(event: StockholmEvent): string | undefined {
-  return event.sourceUrl || event.ticketUrl || undefined;
+  return enrichmentPageUrls(event)[0];
 }
 
 /**
@@ -71,9 +108,7 @@ export async function enrichEventsWithImages(
   const cache = options.cache ?? new NullImageCache();
   const concurrency = options.concurrency ?? 8;
 
-  const uniqueUrls = [
-    ...new Set(events.map(enrichmentPageUrl).filter((u): u is string => !!u)),
-  ];
+  const uniqueUrls = [...new Set(events.flatMap(enrichmentPageUrls))];
 
   const imageByUrl = new Map<string, string | null>();
   let done = 0;
@@ -109,11 +144,12 @@ export async function enrichEventsWithImages(
 
   let resolved = 0;
   const enriched = events.map((event) => {
-    const pageUrl = enrichmentPageUrl(event);
-    const image = pageUrl ? imageByUrl.get(pageUrl) : undefined;
-    if (image && shouldReplaceEventImage(event.imageUrl, image)) {
-      resolved += 1;
-      return { ...event, imageUrl: image };
+    for (const pageUrl of enrichmentPageUrls(event)) {
+      const image = imageByUrl.get(pageUrl);
+      if (image && shouldReplaceEventImage(event.imageUrl, image)) {
+        resolved += 1;
+        return { ...event, imageUrl: image };
+      }
     }
     return event;
   });

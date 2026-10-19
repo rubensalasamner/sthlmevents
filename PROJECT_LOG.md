@@ -108,6 +108,12 @@ istället för en filterstack. Tema: "Blå Timmen"
   buyingflow-og:image (Kulturhuset giftade ~1095 events med checkout-URL:er
   som `imageUrl` → samma art-placeholder på web). Poisoned cache-entries
   re-scrapas.
+- **og:image Visit Stockholm** (2026-10-19): `enrichmentPageUrls` skippar
+  API-/tix-URL:er (`api.*`, `/api/`, `tix.*`, `/buyingflow/`). VS har
+  `sourceUrl` = JSON-API (ingen og:image) och `ticketUrl` = arrangörssida —
+  tidigare scrapades API:t → **663/663** Unsplash-placeholders. Nu scrapas
+  arrangörssidan. Kulturhuset oförändrat (editorial `sourceUrl` först).
+  Syns i appen efter nästa snapshot-körning (inte EAS-build).
 - UI (2026-09-18): **Magazine home + map peek + agenda**. Tabs Home /
   Explore / Saved. Filter ligger i ett sheet bakom en sammanfattningschip —
   inte fyra always-on rader. EventPresentation-strategier: hero / poster /
