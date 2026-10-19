@@ -1,6 +1,6 @@
 import Constants from 'expo-constants';
 import { requireNativeModule } from 'expo-modules-core';
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
@@ -36,13 +36,18 @@ export function hasMapsApiKey(): boolean {
 }
 
 export function MapUnavailable({ title = 'Map unavailable' }: { title?: string }) {
+  const isWeb = Platform.OS === 'web';
+  const fallback =
+    title === 'Map not configured'
+      ? 'The maps API key is missing in this build. Everything else works — browse events from Home.'
+      : isWeb
+        ? 'Maps are native-only on this platform. Everything else works — browse events from Home.'
+        : 'Maps can’t run inside Expo Go. Everything else works — browse events from Home.';
   return (
     <ThemedView style={styles.unavailable}>
       <ThemedText type="section">{title}</ThemedText>
       <ThemedText type="meta" themeColor="textSecondary" style={styles.unavailableText}>
-        {title === 'Map not configured'
-          ? 'The maps API key is missing in this build. Everything else works — browse events from Home.'
-          : 'Maps can’t run inside Expo Go. Everything else works — browse events from Home.'}
+        {fallback}
       </ThemedText>
     </ThemedView>
   );

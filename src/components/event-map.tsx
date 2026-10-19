@@ -11,7 +11,9 @@ import { Platform, StyleSheet, View } from 'react-native';
 
 import { hasMapsApiKey, hasNativeMaps, MapUnavailable } from '@/components/map/map-availability';
 import { MapEventPeek } from '@/components/map-event-peek';
+import { useBubbleMode } from '@/hooks/use-bubble-mode';
 import { useMapCamera } from '@/hooks/use-map-camera';
+import { useMapSelection } from '@/hooks/use-map-selection';
 import { usePinIcons } from '@/hooks/use-pin-icons';
 import type { StockholmEvent } from '@/types/event';
 import type { GeoPoint } from '@/utils/geo';
@@ -21,17 +23,14 @@ import {
   MAP_NEIGHBOURHOOD_ZOOM,
   visibleMapPins,
 } from '@/utils/map-density';
-import {
-  MAP_BUBBLE_SCALE,
-  MAP_TITLE_MAX_EVENTS,
-  mapBubbleSizeTier,
-  type MapBubbleSizeTier,
-} from '@/utils/map-marker';
 
 const STOCKHOLM = { latitude: 59.3293, longitude: 18.0686 };
 
 type MapCameraHandle = {
-  setCameraPosition?: (config: { coordinates: GeoPoint; zoom: number }) => void;
+  setCameraPosition?: (config: {
+    coordinates: GeoPoint;
+    zoom: number;
+  }) => Promise<void> | void;
 };
 
 export type EventMapProps = {
@@ -64,14 +63,15 @@ type MapRendererProps = {
     zIndex: number;
   }>;
   annotations: Array<{ id: string; coordinates: GeoPoint; icon: ImageRef }>;
+  /** Fires once the Android map has loaded — cameraState is safe to use after. */
+  onMapLoaded: () => void;
   onPinClick: (id: string | undefined) => void;
   onMapClick: () => void;
   onCameraMove: ReturnType<typeof useMapCamera>['onCameraMove'];
 };
 
 /** Platform map strategy — Apple annotations vs Google markers. */
-const mapRenderers: Record<'ios' | 'android', (props: MapRendererProps) => ReactElement> = {
-  ios: ({ mapRef, cameraPosition, annotations, onPinClick, onMapClick, onCameraMove }) => {
+const mapRenderers: Record<'ios' | 'android', (props: MapRendererProps) => ReactElement> = {  ios: ({ mapRef, cameraPosition, annotations, onPinClick, onMapClick, onCameraMove }) => {
     const { AppleMaps } = require('expo-maps') as typeof import('expo-maps');
     return (
       <AppleMaps.View
@@ -85,7 +85,7 @@ const mapRenderers: Record<'ios' | 'android', (props: MapRendererProps) => React
       />
     );
   },
-  android: ({ mapRef, cameraPosition, markers, onPinClick, onMapClick, onCameraMove }) => {
+  android: ({ mapRef, cameraPosition, markers, onPinClick, onMapClick, onCameraMove, onMapLoaded }) => {
     const { GoogleMaps } = require('expo-maps') as typeof import('expo-maps');
     return (
       <GoogleMaps.View
@@ -96,52 +96,11 @@ const mapRenderers: Record<'ios' | 'android', (props: MapRendererProps) => React
         onMarkerClick={(marker) => onPinClick(marker.id)}
         onMapClick={onMapClick}
         onCameraMove={onCameraMove}
+        onMapLoaded={onMapLoaded}
       />
     );
   },
 };
-
-/** Uncontrolled selection when Explore does not own the sheet. */
-function useInternalSelection(events: StockholmEvent[], focusEventId: string | null) {
-  const [selectedId, setSelectedId] = useState<string | null>(focusEventId);
-
-  useEffect(() => {
-    if (focusEventId && events.some((event) => event.id === focusEventId)) {
-      setSelectedId(focusEventId);
-    }
-  }, [focusEventId, events]);
-
-  useEffect(() => {
-    if (selectedId && !events.some((event) => event.id === selectedId)) {
-      setSelectedId(null);
-    }
-  }, [events, selectedId]);
-
-  const selected = useMemo(
-    () => events.find((event) => event.id === selectedId) ?? null,
-    [events, selectedId],
-  );
-
-  return {
-    selectedId,
-    selected,
-    select: setSelectedId,
-    clear: () => setSelectedId(null),
-  };
-}
-
-function useBubbleMode(zoom: number, totalEvents: number) {
-  const [tier, setTier] = useState<MapBubbleSizeTier>(() => mapBubbleSizeTier(zoom));
-  const showTitles = totalEvents <= MAP_TITLE_MAX_EVENTS || zoom >= MAP_NEIGHBOURHOOD_ZOOM;
-  const uiScale = MAP_BUBBLE_SCALE[tier];
-
-  useEffect(() => {
-    const next = mapBubbleSizeTier(zoom);
-    setTier((prev) => (prev === next ? prev : next));
-  }, [zoom]);
-
-  return { showTitles, uiScale };
-}
 
 export function EventMap({
   events,
@@ -197,8 +156,9 @@ function NativeEventMap({
   }, [events, focusEventId]);
   const origin = focusPoint ?? userLocation ?? STOCKHOLM;
   const mapRef = useRef<MapCameraHandle>(null);
+  const [mapLoaded, setMapLoaded] = useState(false);
   const controlled = onSelectedIdChange !== undefined;
-  const internal = useInternalSelection(events, focusEventId);
+  const internal = useMapSelection(events, focusEventId);
   const selectedId = controlled
     ? controlledId && events.some((event) => event.id === controlledId)
       ? controlledId
@@ -216,25 +176,23 @@ function NativeEventMap({
     [events, camera, selectedId],
   );
   const pinsRef = useRef(pins);
-  pinsRef.current = pins;
+  useEffect(() => {
+    pinsRef.current = pins;
+  }, [pins]);
   const { showTitles, uiScale } = useBubbleMode(camera.zoom, events.length);
   const bubbleIcons = usePinIcons(pins, showTitles, uiScale, favoriteIds, selectedId);
 
-  useEffect(() => {
-    if (!focusPoint) return;
-    mapRef.current?.setCameraPosition?.({
-      coordinates: focusPoint,
-      zoom: MAP_NEIGHBOURHOOD_ZOOM,
+  // Camera placement is owned entirely by the `cameraPosition` prop (derived from
+  // origin). Imperative `setCameraPosition` is reserved for cluster-tap zoom, where
+  // no prop change exists. Calling it for origin changes duplicates the prop update
+  // and races the native camera state — the pending animation is cancelled when the
+  // prop re-creates the camera state, rejecting with CancellationException.
+  const animateCamera = (config: { coordinates: GeoPoint; zoom: number }) => {
+    mapRef.current?.setCameraPosition?.(config)?.catch?.(() => {
+      // Android cancels pending animations when the camera state is recreated;
+      // harmless — the prop-driven position already reflects the new origin.
     });
-  }, [focusPoint]);
-
-  useEffect(() => {
-    if (focusPoint || !userLocation) return;
-    mapRef.current?.setCameraPosition?.({
-      coordinates: userLocation,
-      zoom: MAP_NEIGHBOURHOOD_ZOOM,
-    });
-  }, [userLocation, focusPoint]);
+  };
 
   const originLat = origin.latitude;
   const originLng = origin.longitude;
@@ -251,8 +209,11 @@ function NativeEventMap({
     const pin = pinsRef.current.find((item) => item.id === id);
     if (!pin) return;
     if (pin.kind === 'cluster') {
+      // Before onMapLoaded the native cameraState is not initialized yet;
+      // the cameraPosition prop already targets the origin, so skip the call.
+      if (!mapLoaded) return;
       const zoom = Math.min(Math.max(cameraRef.current.zoom + 2, MAP_CLUSTER_BELOW_ZOOM), 16);
-      mapRef.current?.setCameraPosition?.({ coordinates: pin.point, zoom });
+      animateCamera({ coordinates: pin.point, zoom });
       return;
     }
     select(pin.event.id);
@@ -297,6 +258,7 @@ function NativeEventMap({
         cameraPosition,
         markers,
         annotations,
+        onMapLoaded: () => setMapLoaded(true),
         onPinClick,
         onMapClick: clear,
         onCameraMove,

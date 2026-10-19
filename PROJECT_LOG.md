@@ -432,6 +432,15 @@ webbläsare — testa alltid manifest-URL:en med `curl` ovan; (2) app-state
 (Clear storage) var INTE problemet här — copy-stack hoppade direkt till
 rotorsaken utan den averingen.
 
+**Kamera-error #2 (2026-10-16, efter fix ovan):** `UninitializedPropertyAccessException:
+lateinit property cameraState has not been initialized` på `setCameraPosition`.
+Orsak i expo-maps Kotlin-källan: `cameraState` sätts först i Composable
+`Content()` — imperativa anrop före first compose kraschar. Också: JS-wrappern
+`setCameraPosition` returnerar `void` (inte Promise), så `.catch()` fäster
+aldrig — felet dyker alltid som "Uncaught (in promise)". Fix: gatea
+kluster-zoom bakom `onMapLoaded`-propen (Google-only; Apple har ingen
+motsvarighet men behöver den inte — iOS är annotations-drivet).
+
 #### Fel vi såg och varför
 
 | Symptom | Orsak | Fix |

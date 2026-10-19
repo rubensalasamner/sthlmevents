@@ -4,13 +4,25 @@ import { EventList } from '@/components/event-list';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
+import { WebEventMapHost } from '@/components/map/web-event-map-host';
 import type { EventMapProps } from '@/components/event-map';
 
 /**
- * `expo-maps` has no web support, so on web we fall back to the event list with
- * a note. The native map lives in `event-map.tsx` and is used on iOS/Android.
+ * Web entry for the map. Metro platform extension resolves this file instead of
+ * `event-map.tsx` on web. Google Maps JS renders when a browser key is present
+ * (EXPO_PUBLIC_GOOGLE_MAPS_KEY); otherwise the same event list fallback as before.
  */
 export function EventMap({ events, loading, error, onRetry }: EventMapProps) {
+  if (process.env.EXPO_PUBLIC_GOOGLE_MAPS_KEY) {
+    return (
+      <WebEventMapHost
+        events={events}
+        favoriteIds={new Set()}
+        userLocation={null}
+        focusEventId={null}
+      />
+    );
+  }
   return (
     <EventList
       events={events}
@@ -21,8 +33,8 @@ export function EventMap({ events, loading, error, onRetry }: EventMapProps) {
       ListHeaderComponent={
         <ThemedView type="backgroundElement" style={styles.notice}>
           <ThemedText type="small" themeColor="textSecondary">
-            The interactive map is available in the iOS and Android app. Here are the same events
-            as a list.
+            The interactive map needs a web maps key (EXPO_PUBLIC_GOOGLE_MAPS_KEY). Here are the
+            same events as a list.
           </ThemedText>
         </ThemedView>
       }
