@@ -1980,11 +1980,11 @@
   },
   "Kungsstensgatan 45, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792143104879
+    "fetchedAt": 1792405449223
   },
   "Folkuniversitetets tornrum plan 7, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792143106389
+    "fetchedAt": 1792405450650
   },
   "Bråvallagatan 12, Stockholm, Sweden": {
     "value": {
@@ -2330,7 +2330,7 @@
       "latitude": 59.343526,
       "longitude": 18.0686718
     },
-    "fetchedAt": 1789729863630
+    "fetchedAt": 1792405443648
   },
   "Söder Mälarstrand kajplats 15, 118 20 Stockholm, Stockholm, Sweden": {
     "value": null,
@@ -2904,7 +2904,7 @@
   },
   "Liljeholmstorget Gallerias parkeringshus, plan 2., Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791803982784
+    "fetchedAt": 1792405459168
   },
   "Äntligen är loppisen tillbaka i Vällingby Centrum!, Stockholm, Sweden": {
     "value": null,
@@ -3345,11 +3345,11 @@
   },
   "Zoom, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792143021325
+    "fetchedAt": 1792405434980
   },
   "Zoom - Svenska Enneagramföreningens digitala rum, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792143022823
+    "fetchedAt": 1792405436410
   },
   "Riddargatan 35, Stockholm, Sweden": {
     "value": {
@@ -3455,11 +3455,11 @@
   },
   "Meddelas eventdagen, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792143109122
+    "fetchedAt": 1792405451946
   },
   "Hemlig venue, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792143110663
+    "fetchedAt": 1792405453429
   },
   "Tyska Brinken 13, Stockholm, Sweden": {
     "value": {
@@ -3520,7 +3520,7 @@
   },
   "Upsell 545, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792143129437
+    "fetchedAt": 1792405454849
   },
   "Frihamnsgatan 66, Stockholm, Sweden": {
     "value": {
@@ -3588,5 +3588,77 @@
       "longitude": 18.0610178
     },
     "fetchedAt": 1792401618997
+  },
+  "stgötagatan 100, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1792405437835
+  },
+  "Turegatan 30, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3371061,
+      "longitude": 18.0771224
+    },
+    "fetchedAt": 1792405439334
+  },
+  "Odengatan 78, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3415477,
+      "longitude": 18.0449762
+    },
+    "fetchedAt": 1792405440823
+  },
+  "Hälsingegatan 12, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.344174,
+      "longitude": 18.041235
+    },
+    "fetchedAt": 1792405442287
+  },
+  "Mässhallen, Münchenbryggeriet, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1792405444962
+  },
+  "Torsgatan 4, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3354334,
+      "longitude": 18.0526836
+    },
+    "fetchedAt": 1792405446448
+  },
+  "Lexington Company Pop-Up Archive & Sample Sale 2026 at Stockholm Quality Outlet., Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1792405447984
+  },
+  "Sturegatan 28, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3391767,
+      "longitude": 18.0754903
+    },
+    "fetchedAt": 1792405456191
+  },
+  "triewaldsgränd 2, stockholm, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3224877,
+      "longitude": 18.0723719
+    },
+    "fetchedAt": 1792405457657
+  },
+  "✨️ Click here to see all the markets and loppis happening this weekend in Stockholm ( 26 & 27 April) ✨️, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1792405460613
+  },
+  "Katarinavägen 19, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3189012,
+      "longitude": 18.0768885
+    },
+    "fetchedAt": 1792405461934
+  },
+  "Uggelviksgatan 2F, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3441134,
+      "longitude": 18.0691018
+    },
+    "fetchedAt": 1792405463417
   }
 }
