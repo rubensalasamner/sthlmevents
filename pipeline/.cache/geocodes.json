@@ -238,7 +238,7 @@
   },
   "Mariatorget 10, Sankt Pauls Kyrkan, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792142962246
+    "fetchedAt": 1792486394786
   },
   "Mötesplats Mariatorget, Stockholm, Sweden": {
     "value": {
@@ -387,7 +387,7 @@
       "latitude": 59.3250056,
       "longitude": 18.0713248
     },
-    "fetchedAt": 1788794712646
+    "fetchedAt": 1792486398899
   },
   "Sigtunagatan 16, Stockholm, Sweden": {
     "value": {
@@ -1156,7 +1156,7 @@
       "latitude": 59.331327,
       "longitude": 18.0453713
     },
-    "fetchedAt": 1788794890007
+    "fetchedAt": 1792486397439
   },
   "Sergels torg, Foajé 3, Stockholm, Sweden": {
     "value": null,
@@ -1238,7 +1238,7 @@
   },
   "Tel: 08-751 09 65 - Stjärntorget 2, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792143086595
+    "fetchedAt": 1792486407228
   },
   "La Botanica, Stockholm, Sweden": {
     "value": {
@@ -1612,7 +1612,7 @@
   },
   "Ankdamsgatan 46, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792143136480
+    "fetchedAt": 1792486411446
   },
   "Solnahallen, Solna, Stockholm, Sweden": {
     "value": {
@@ -1781,7 +1781,7 @@
   },
   "St Eriksgatan 84, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792143049263
+    "fetchedAt": 1792486392163
   },
   "Påfågeln, Stockholm, Sweden": {
     "value": {
@@ -2551,10 +2551,10 @@
   },
   "Hornsgatan 66b, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.3164633,
-      "longitude": 18.0436459
+      "latitude": 59.3195125,
+      "longitude": 18.067158
     },
-    "fetchedAt": 1789894172613
+    "fetchedAt": 1792486390836
   },
   "Norrlandsgatan 18, Stockholm, Sweden": {
     "value": {
@@ -3114,7 +3114,7 @@
   },
   "Alstaviksvägen, 117 33 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791713958399
+    "fetchedAt": 1792486401726
   },
   "Långholmens bollplan, Stockholm, Sweden": {
     "value": {
@@ -3202,7 +3202,7 @@
   },
   "Sergels torg, Galleriet Vällingby, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792224182742
+    "fetchedAt": 1792486393369
   },
   "Torekällberget, Stockholm, Sweden": {
     "value": {
@@ -3334,7 +3334,7 @@
   },
   "stermalmsgatan 20, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792143009775
+    "fetchedAt": 1792486404326
   },
   "Kungstensgatan 17, Stockholm, Sweden": {
     "value": {
@@ -3409,7 +3409,7 @@
   },
   "Söder Mälarstrand Kajplats 19, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792143080372
+    "fetchedAt": 1792486396192
   },
   "Patricia, Stockholm, Sweden": {
     "value": {
@@ -3477,11 +3477,11 @@
   },
   "Katarina Kyrkogårds Södra Sida, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792143118095
+    "fetchedAt": 1792486408625
   },
   "Benhuset, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792143119400
+    "fetchedAt": 1792486410045
   },
   "Södermalm, Stockholm, Sweden": {
     "value": {
@@ -3660,5 +3660,26 @@
       "longitude": 18.0691018
     },
     "fetchedAt": 1792405463417
+  },
+  "Fleminggatan 7, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3323304,
+      "longitude": 18.0480569
+    },
+    "fetchedAt": 1792486400372
+  },
+  "Humlegårdsgatan 13, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3366321,
+      "longitude": 18.0755002
+    },
+    "fetchedAt": 1792486403117
+  },
+  "Malmvägen 1, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3474553,
+      "longitude": 18.1107759
+    },
+    "fetchedAt": 1792486405791
   }
 }
