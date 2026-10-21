@@ -1897,7 +1897,7 @@
   },
   "Bottom floor of Kulturhuset, Sergels Torg, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791968492332
+    "fetchedAt": 1792572790674
   },
   "Kafé Plattan, Stockholm, Sweden": {
     "value": {
@@ -3238,11 +3238,11 @@
   },
   "Various places in Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792311663577
+    "fetchedAt": 1792572802875
   },
   "Several cinemas in Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792311662243
+    "fetchedAt": 1792572801623
   },
   "142 60 Trångsund, Sweden, Stockholm, Sweden": {
     "value": null,
@@ -3573,7 +3573,7 @@
   },
   "Södermanagatan 42, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792311659443
+    "fetchedAt": 1792572792281
   },
   "Älskade Traditioner, Stockholm, Sweden": {
     "value": {
@@ -3681,5 +3681,40 @@
       "longitude": 18.1107759
     },
     "fetchedAt": 1792486405791
+  },
+  "Regeringsgatan 107A, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3331353,
+      "longitude": 18.0679747
+    },
+    "fetchedAt": 1792572793911
+  },
+  "Högbergsgatan 13A, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3170019,
+      "longitude": 18.0777077
+    },
+    "fetchedAt": 1792572795308
+  },
+  "Söder Mälarstrand 250, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3206037,
+      "longitude": 18.0443203
+    },
+    "fetchedAt": 1792572797043
+  },
+  "Karlbergsvagen 41, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3423573,
+      "longitude": 18.0379674
+    },
+    "fetchedAt": 1792572798778
+  },
+  "Observatoriegatan 4, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3409188,
+      "longitude": 18.0519435
+    },
+    "fetchedAt": 1792572800031
   }
 }

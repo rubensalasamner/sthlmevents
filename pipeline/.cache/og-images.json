@@ -37957,7 +37957,7 @@
   },
   "https://ra.co/events/2560539": {
     "image": null,
-    "fetchedAt": 1792311665816
+    "fetchedAt": 1792572804816
   },
   "https://biblioteket.stockholm.se/evenemang/skapa-pins-och-magneter-1": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Skaparverkstad_1bfb94a70b.jpg",
@@ -41809,7 +41809,7 @@
   },
   "https://www.ticketmaster.se/event/soppgirobygget-bussbiljett-ostgotatrafiken-biljetter/1632052559": {
     "image": null,
-    "fetchedAt": 1792311666365
+    "fetchedAt": 1792572806758
   },
   "https://www.tickster.com/se/sv/events/9d1g1hm4dghkz1z/2026-12-16/kris-kaos-and-katastrof": {
     "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/21/2be54c61758303bba59fd3bba5dbc006c41c78",
@@ -41821,11 +41821,11 @@
   },
   "https://www.ticketmaster.se/event/laberos-magic-world-biljetter/293657947": {
     "image": null,
-    "fetchedAt": 1792311666434
+    "fetchedAt": 1792572807035
   },
   "https://www.ticketmaster.se/event/laberos-magic-world-biljetter/77552049": {
     "image": null,
-    "fetchedAt": 1792311666467
+    "fetchedAt": 1792572807107
   },
   "https://www.tickster.com/se/sv/events/y7jcdh8mtxy0muv/2027-04-30/tomma-intet": {
     "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/5f/b7821bc225e70fad6374b751b86bdb1bf37217",
@@ -44658,5 +44658,321 @@
   "https://kulturhusetstadsteatern.se/teater/nihilisten": {
     "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/lanseringsbild-nihilisten-059%20B_press.jpg",
     "fetchedAt": 1792486415644
+  },
+  "https://www.meetup.com/hop-vine-events/events/316376823/": {
+    "image": "https://secure.meetupstatic.com/photos/event/5/f/f/1/600_530484561.jpeg",
+    "fetchedAt": 1792572803257
+  },
+  "https://www.meetup.com/intercambio/events/316279214/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/2/f/d/600_529628957.jpeg",
+    "fetchedAt": 1792572803262
+  },
+  "https://www.meetup.com/prata-svenska/events/316288202/": {
+    "image": "https://secure.meetupstatic.com/photos/event/7/7/a/4/600_499230628.jpeg",
+    "fetchedAt": 1792572803293
+  },
+  "https://www.meetup.com/prata-svenska/events/316325078/": {
+    "image": "https://secure.meetupstatic.com/photos/event/7/7/a/4/600_499230628.jpeg",
+    "fetchedAt": 1792572803422
+  },
+  "https://www.meetup.com/intercambio/events/316195713/": {
+    "image": "https://secure.meetupstatic.com/photos/event/9/f/b/9/600_531640889.jpeg",
+    "fetchedAt": 1792572803433
+  },
+  "https://lu.ma/tw5gfl2d": {
+    "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/ah/15240f08-61ed-43ef-ae99-3cb550c34570.png",
+    "fetchedAt": 1792572803438
+  },
+  "https://www.tickster.com/se/sv/events/yc5vx02k4bd03h5/2026-10-22/22-10-klara-hammarstrom-debaser-nova": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/e6/55231c377bfe33c03e8e92385694671dbfa72b",
+    "fetchedAt": 1792572803516
+  },
+  "https://www.meetup.com/stockholm-art-hobby-group/events/317063633/": {
+    "image": "https://secure.meetupstatic.com/photos/event/4/1/3/4/600_536716692.jpeg",
+    "fetchedAt": 1792572803519
+  },
+  "https://allevents.in/stockholm/damn-fasching-stockholm/200030287648427": {
+    "image": "https://cdn-az.allevents.in/events2/banners/e7fe280e59fec1970539dedac51abd24d0e0f3aa9e2dc00ac608882e053a5202-rimg-w1200-h628-dc080808-gmir?v=1788583546",
+    "fetchedAt": 1792572803787
+  },
+  "https://www.meetup.com/avanza-tech-meet-up/events/316564355/": {
+    "image": "https://secure.meetupstatic.com/photos/event/4/a/6/7/600_536599047.jpeg",
+    "fetchedAt": 1792572803791
+  },
+  "https://www.facebook.com/events/2857667114599800": {
+    "image": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=2857667114599800",
+    "fetchedAt": 1792572803862
+  },
+  "https://www.ticketmaster.se/event/minneskonsert-cornelis-vreeswijk-i-katarina-kyrka-%7C-onsdag-11-november-biljetter/1678063041": {
+    "image": null,
+    "fetchedAt": 1792572803972
+  },
+  "https://www.meetup.com/stockholm-outdoor-adventures-and-healthy-living-meetup-group/events/317024044/": {
+    "image": "https://secure.meetupstatic.com/photos/event/1/7/7/3/600_534066003.jpeg",
+    "fetchedAt": 1792572804080
+  },
+  "https://www.ticketmaster.se/event/behemoth--dimmu-borgir-in-league-with-satan-tour-2026-biljetter/1045938307": {
+    "image": null,
+    "fetchedAt": 1792572804204
+  },
+  "https://biblioteket.stockholm.se/evenemang/ta-chansen-att-paverka-kista-2": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Medborgarbudget_Kista_kalendarium_e0e9fa1273.jpg",
+    "fetchedAt": 1792572804262
+  },
+  "https://allevents.in/stockholm/behemoth-dimmu-borgir-b-k-stockholm/200029352809021": {
+    "image": "https://cdn-az.allevents.in/events6/banners/7d39ed21db289ff72be50a4bd17bfa6a53007014ac349fea473c922841595f9c-rimg-w1200-h628-dceb1c1b-gmir?v=1768100075",
+    "fetchedAt": 1792572804289
+  },
+  "https://sven-harrys.se/": {
+    "image": null,
+    "fetchedAt": 1792572804353
+  },
+  "https://www.meetup.com/stockholm-board-games-new-friends/events/316174831/": {
+    "image": "https://secure.meetupstatic.com/photos/event/6/5/2/8/600_534565896.jpeg",
+    "fetchedAt": 1792572804506
+  },
+  "https://kulturhusetstadsteatern.se/barn-ung/mysteriet-med-den-forsvunna-boken": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/escape%20room%20kvadrat.jpg",
+    "fetchedAt": 1792572804543
+  },
+  "https://allevents.in/stockholm/icona-pop-berns-stockholm/200030400123934": {
+    "image": "https://dyn-image.allevents.in/generate-image?v=4&title=Icona+Pop+%7C+Berns%2C+Stockholm+&date=Sat%2C+07+Nov%2C+2026+at+08%3A00+pm&bg=5",
+    "fetchedAt": 1792572804571
+  },
+  "https://kulturhusetstadsteatern.se/bio/smugglaren-regissorsbesok": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/smugglaren-70x100.jpg",
+    "fetchedAt": 1792572804580
+  },
+  "https://biblioteket.stockholm.se/evenemang/utforska-rymden-med-peter-ekberg-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Mall_Strapi_bild_3_6fd78fe544.jpg",
+    "fetchedAt": 1792572804736
+  },
+  "https://kulturhusetstadsteatern.se/konserter/lunchkonserter-med-kungliga-operan": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2023-12/kungliga-operan-lunchkonsert-mars-2022-002_press.jpg",
+    "fetchedAt": 1792572804767
+  },
+  "https://easytic.se/event-organizer/bjorklunds-hage-4h/": {
+    "image": "https://s0.wp.com/i/blank.jpg",
+    "fetchedAt": 1792572804779
+  },
+  "https://www.meetup.com/ableton-stockholm/events/311362350/": {
+    "image": "https://secure.meetupstatic.com/photos/event/7/3/6/2/600_493109538.jpeg",
+    "fetchedAt": 1792572804820
+  },
+  "https://www.ticketmaster.se/event/murda-uzay-tour-biljetter/57346824": {
+    "image": null,
+    "fetchedAt": 1792572804850
+  },
+  "https://biblioteket.stockholm.se/evenemang/konsert-eon-guitar-quartet-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_EON_guitar_quartet_6551c2e095.png",
+    "fetchedAt": 1792572805001
+  },
+  "https://operacongrazia.com/": {
+    "image": null,
+    "fetchedAt": 1792572805014
+  },
+  "https://kulturhusetstadsteatern.se/bibliotek/not-forever-med-mats-jonsson": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/NotForever.jpg",
+    "fetchedAt": 1792572805102
+  },
+  "https://biblioteket.stockholm.se/evenemang/bokcirkel-hittebarnet-av-stacey-halls-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Hittebarnet_B_456a21769a.png",
+    "fetchedAt": 1792572805113
+  },
+  "https://www.tickster.com/se/sv/events/5xfnggp1zjl3y0b/2026-11-27/specialvisning-pa-andras-axlar-lars-von-trier": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/75/23c708b1156838d73c75ff66a65b00d1dfa9b9",
+    "fetchedAt": 1792572805156
+  },
+  "https://www.tickster.com/se/sv/events/v7xd7kah2a7k8bj/2026-11-27/27-11-klubb-common-people-10-ar-den-sista-festen": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/d4/c41b3d8b6bb4275465ea2dbdf1bebb676b8e7c",
+    "fetchedAt": 1792572805180
+  },
+  "https://biblioteket.stockholm.se/evenemang/utstallning-om-barns-rattigheter-2": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Nyhetsbrev_webb_1920_x_1005_px_1200_x_630_px_57_1872e4b82b.png",
+    "fetchedAt": 1792572805297
+  },
+  "https://biljett.debaser.se/yc5vx02k4bd03h5": {
+    "image": null,
+    "fetchedAt": 1792572805390
+  },
+  "https://www.tickster.com/se/sv/events/wcl909wm1gd6npn/2026-11-27/raw-christmas-marten-andersson-kodjo-akolor-mfl": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/06/1c0dd377c4406f4fc3cfa4dd1d49e8dd1864db",
+    "fetchedAt": 1792572805409
+  },
+  "https://www.tickster.com/se/sv/events/xrbwkbl0ph8rlax/2026-11-27/paper-tiger": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/03/9ff2f60e21dfe9cf90d5c21f15cb5bed51abf1",
+    "fetchedAt": 1792572805424
+  },
+  "https://www.tickster.com/se/sv/events/x149zj6w8p14v9a/2026-11-29/wicker": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/a7/dda64116558d49cfa72ad31ca3ef45c375bf5c",
+    "fetchedAt": 1792572805456
+  },
+  "https://yeshinnorbu.se/event/joyful-mondays/2026-10-26/": {
+    "image": "https://yeshinnorbu.se/wp-content/uploads/2026/10/Joyful-Mondays_Web-1024x512.png",
+    "fetchedAt": 1792572805482
+  },
+  "https://www.tickster.com/se/sv/events/ewte4vkf0kptxb9/2026-12-01/moraliskt-ansvar-en-kvall-om-mansklig-kompass": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/95/ce1ee02538ae698d2cc682bec3fa3e1eff4c5b",
+    "fetchedAt": 1792572805602
+  },
+  "https://www.tickster.com/se/sv/events/6ynukcgwaytg90c/2026-12-04/vasakarens-jul-2026": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/25/83cb683fbdca1a52a3850e687e8e03f345c0de",
+    "fetchedAt": 1792572805704
+  },
+  "https://www.tickster.com/se/sv/events/bvu44gt0ug18nwk/2026-12-05/vasakarens-jul-2026": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/25/83cb683fbdca1a52a3850e687e8e03f345c0de",
+    "fetchedAt": 1792572805796
+  },
+  "https://kulturhusetstadsteatern.se/teater/jonas-karlsson-om-skrivandet-och-scenkonsten": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-09/GodJul_montage_7x5_press.jpg",
+    "fetchedAt": 1792572805990
+  },
+  "https://www.tickster.com/se/sv/events/bdtuma2trt1cwwe/2026-12-12/kris-kaos-and-katastrof": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/21/2be54c61758303bba59fd3bba5dbc006c41c78",
+    "fetchedAt": 1792572806076
+  },
+  "https://biljett.debaser.se/v7xd7kah2a7k8bj": {
+    "image": null,
+    "fetchedAt": 1792572806252
+  },
+  "https://www.ticketmaster.se/event/julkonsert-i-filadelfia-biljetter/1258535628": {
+    "image": null,
+    "fetchedAt": 1792572806390
+  },
+  "https://kulturhusetstadsteatern.se/bio/notknapparen": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/N%C3%B6tkn%C3%A4pparen_A3_utan%20dike_h%C3%B6guppl%C3%B6st.jpg",
+    "fetchedAt": 1792572806613
+  },
+  "https://billetto.se/e/pow-gospel-something-s-in-the-air-biljetter-2028381?utm_source=organiser&utm_medium=share&utm_campaign=copy_link&utm_content=1": {
+    "image": null,
+    "fetchedAt": 1792572806640
+  },
+  "https://biblioteket.stockholm.se/evenemang/tisdagsklubben-204": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_tisdagsklubben_4f6265d7eb.png",
+    "fetchedAt": 1792572806652
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/1377317077?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572806803
+  },
+  "https://secure.tickster.com/bvu44gt0ug18nwk": {
+    "image": null,
+    "fetchedAt": 1792572806859
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/764445755?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572806907
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/2030444173?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572806918
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/1732938106?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572806971
+  },
+  "https://secure.tickster.com/ewte4vkf0kptxb9": {
+    "image": null,
+    "fetchedAt": 1792572806994
+  },
+  "https://secure.tickster.com/5xfnggp1zjl3y0b": {
+    "image": null,
+    "fetchedAt": 1792572806998
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/1361976124?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807051
+  },
+  "https://secure.tickster.com/6ynukcgwaytg90c": {
+    "image": null,
+    "fetchedAt": 1792572807052
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/1871103980?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807083
+  },
+  "https://secure.tickster.com/xrbwkbl0ph8rlax": {
+    "image": null,
+    "fetchedAt": 1792572807086
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/1582100590?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807150
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/323343198?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807163
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/852488861?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807164
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/433653662?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807184
+  },
+  "https://secure.tickster.com/x149zj6w8p14v9a": {
+    "image": null,
+    "fetchedAt": 1792572807191
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/848182154?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807211
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/1332899815?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807245
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/1936706652?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807247
+  },
+  "https://secure.tickster.com/bdtuma2trt1cwwe": {
+    "image": null,
+    "fetchedAt": 1792572807250
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/1351256459?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807261
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/2036656550?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807284
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/1931513434?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807285
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/1447597585?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807296
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/1593885773?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807364
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/1838463390?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807365
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/1574695155?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807366
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/2007032554?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807367
+  },
+  "https://www.ticketmaster.se/event/mamma-mia-the-party-tickets/1407094275?language=en-us": {
+    "image": null,
+    "fetchedAt": 1792572807375
+  },
+  "https://www.ticketmaster.se/event/hurula-biljetter/318716658": {
+    "image": null,
+    "fetchedAt": 1792572807413
+  },
+  "https://biblioteket.stockholm.se/evenemang/tween-klubben-aktiviteter-for-dig-mellan-10-12-ar-55": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Webben_evenemang_Skaerholmens_bibliotek_barn_och_ungdom_2025_12_10_T150906_276_b4a314c3b4.png",
+    "fetchedAt": 1792572807534
   }
 }
