@@ -2161,7 +2161,7 @@
       "latitude": 59.3399816,
       "longitude": 18.0596602
     },
-    "fetchedAt": 1789500567889
+    "fetchedAt": 1792659350850
   },
   "Sveavägen 44, Stockholm, Sweden": {
     "value": {
@@ -2624,7 +2624,7 @@
       "latitude": 59.3274942,
       "longitude": 18.0542148
     },
-    "fetchedAt": 1789982293282
+    "fetchedAt": 1792659357893
   },
   "Söder Mälarstrand 25, Stockholm, Sweden": {
     "value": {
@@ -2670,7 +2670,7 @@
       "latitude": 59.2189231,
       "longitude": 17.9497146
     },
-    "fetchedAt": 1790066984575
+    "fetchedAt": 1792659353382
   },
   "Sankt Eriksgatan 1, Stockholm, Sweden": {
     "value": {
@@ -3716,5 +3716,26 @@
       "longitude": 18.0519435
     },
     "fetchedAt": 1792572800031
+  },
+  "Spånga bibliotek, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3825302,
+      "longitude": 17.8980006
+    },
+    "fetchedAt": 1792659352104
+  },
+  "Yxkullsgatan 10, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3168777,
+      "longitude": 18.0627109
+    },
+    "fetchedAt": 1792659354646
+  },
+  "Tulegatan 4, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.364306,
+      "longitude": 17.9769187
+    },
+    "fetchedAt": 1792659356287
   }
 }
