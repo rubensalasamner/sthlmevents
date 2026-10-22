@@ -70,6 +70,9 @@ export function isPlausibleImageUrl(url: string): boolean {
   // Common CMS / CDN upload paths without a clear extension.
   if (/\/(uploads?|files|images?|media|cdn\/|static\/|assets\/)/i.test(path)) return true;
   if (/\/sites\/default\/files\//i.test(path)) return true;
+  // Billetto (and similar) og:image is `/e/<id>/watermark_image` — no extension,
+  // 302 to a real CDN asset. Do not allow bare billetto event page URLs.
+  if (/\/watermark_image\/?$/i.test(path)) return true;
 
   return false;
 }

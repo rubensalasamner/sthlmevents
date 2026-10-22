@@ -40,6 +40,28 @@ describe('isPlausibleImageUrl', () => {
     assert.equal(isPlausibleImageUrl('https://bondensegen.com/stockholm/'), false);
     assert.equal(isPlausibleImageUrl('not-a-url'), false);
   });
+
+  test('accepts Billetto extension-less watermark og:image URLs', () => {
+    assert.equal(
+      isPlausibleImageUrl('https://billetto.se/e/1983788/watermark_image'),
+      true,
+    );
+    assert.equal(
+      isPlausibleImageUrl('https://www.billetto.se/e/1983788/watermark_image'),
+      true,
+    );
+    assert.equal(
+      isPlausibleImageUrl('https://tickets.example/e/99/watermark_image'),
+      true,
+    );
+    // Billetto HTML event page is not an image.
+    assert.equal(
+      isPlausibleImageUrl(
+        'https://billetto.se/e/vinprovning-med-amfora-i-stockholm-biljetter-1983788',
+      ),
+      false,
+    );
+  });
 });
 
 describe('isCategoryFallbackImage', () => {

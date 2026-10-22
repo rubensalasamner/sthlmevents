@@ -114,6 +114,10 @@ istället för en filterstack. Tema: "Blå Timmen"
   tidigare scrapades API:t → **663/663** Unsplash-placeholders. Nu scrapas
   arrangörssidan. Kulturhuset oförändrat (editorial `sourceUrl` först).
   Syns i appen efter nästa snapshot-körning (inte EAS-build).
+- **Billetto watermark og:image** (2026-10-19): `isPlausibleImageUrl` accepterar
+  `/watermark_image` (extension-less; 302 → unik CDN-bild). Annars rejectades
+  Billetto-covers → VS food-events (Amfora m.fl.) stannade på kategori-
+  Unsplash trots lyckad scrape.
 - UI (2026-09-18): **Magazine home + map peek + agenda**. Tabs Home /
   Explore / Saved. Filter ligger i ett sheet bakom en sammanfattningschip —
   inte fyra always-on rader. EventPresentation-strategier: hero / poster /
