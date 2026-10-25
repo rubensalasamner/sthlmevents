@@ -3238,11 +3238,11 @@
   },
   "Various places in Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792572802875
+    "fetchedAt": 1792917863434
   },
   "Several cinemas in Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792572801623
+    "fetchedAt": 1792917861825
   },
   "142 60 Trångsund, Sweden, Stockholm, Sweden": {
     "value": null,
@@ -3797,5 +3797,23 @@
       "longitude": 18.072392
     },
     "fetchedAt": 1792830292759
+  },
+  "Stadsgårdshamnen 22, 116 45 Stockholm, Sweden, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1792917857076
+  },
+  "Fotografiska, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3180039,
+      "longitude": 18.0847007
+    },
+    "fetchedAt": 1792917858634
+  },
+  "Brinellvägen 38, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3519706,
+      "longitude": 18.0691368
+    },
+    "fetchedAt": 1792917860229
   }
 }
