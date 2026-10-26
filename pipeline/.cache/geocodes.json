@@ -3822,5 +3822,40 @@
       "longitude": 18.0284888
     },
     "fetchedAt": 1793006624552
+  },
+  "Regeringsgatan 48, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3344006,
+      "longitude": 18.0679575
+    },
+    "fetchedAt": 1793011063612
+  },
+  "Eriksbergsgatan 10, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3402363,
+      "longitude": 18.0688334
+    },
+    "fetchedAt": 1793011064915
+  },
+  "Kammakargatan 52, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3373942,
+      "longitude": 18.05528
+    },
+    "fetchedAt": 1793011066134
+  },
+  "Skeppargatan 12, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3329719,
+      "longitude": 18.0822375
+    },
+    "fetchedAt": 1793011067626
+  },
+  "Söder Mälarstrand 71d, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3206973,
+      "longitude": 18.0448951
+    },
+    "fetchedAt": 1793011069009
   }
 }
