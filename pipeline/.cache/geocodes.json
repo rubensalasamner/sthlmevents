@@ -1651,7 +1651,7 @@
       "latitude": 59.3404784,
       "longitude": 18.0381837
     },
-    "fetchedAt": 1788809958691
+    "fetchedAt": 1793181693745
   },
   "Renstiernas Gata 48, Stockholm, Sweden": {
     "value": {
@@ -1897,7 +1897,7 @@
   },
   "Bottom floor of Kulturhuset, Sergels Torg, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792572790674
+    "fetchedAt": 1793181688917
   },
   "Kafé Plattan, Stockholm, Sweden": {
     "value": {
@@ -3238,11 +3238,11 @@
   },
   "Various places in Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792917863434
+    "fetchedAt": 1793181696489
   },
   "Several cinemas in Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1792917861825
+    "fetchedAt": 1793181694962
   },
   "142 60 Trångsund, Sweden, Stockholm, Sweden": {
     "value": null,
@@ -3875,5 +3875,13 @@
       "longitude": 17.9375018
     },
     "fetchedAt": 1793092879135
+  },
+  "59.307437, 18, 055406, 118 60 Stockholm, Sweden, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1793181690232
+  },
+  "Folkbastu - Castor & Pollux, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1793181691721
   }
 }
