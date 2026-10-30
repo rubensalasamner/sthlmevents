@@ -238,7 +238,7 @@
   },
   "Mariatorget 10, Sankt Pauls Kyrkan, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793092866052
+    "fetchedAt": 1793356073494
   },
   "Mötesplats Mariatorget, Stockholm, Sweden": {
     "value": {
@@ -1238,7 +1238,7 @@
   },
   "Tel: 08-751 09 65 - Stjärntorget 2, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793092875528
+    "fetchedAt": 1793356078843
   },
   "La Botanica, Stockholm, Sweden": {
     "value": {
@@ -1612,7 +1612,7 @@
   },
   "Ankdamsgatan 46, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793092883118
+    "fetchedAt": 1793356088212
   },
   "Solnahallen, Solna, Stockholm, Sweden": {
     "value": {
@@ -1781,7 +1781,7 @@
   },
   "St Eriksgatan 84, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793092862034
+    "fetchedAt": 1793356063040
   },
   "Påfågeln, Stockholm, Sweden": {
     "value": {
@@ -2491,7 +2491,7 @@
   },
   "Styckmästergatan 10, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793006612097
+    "fetchedAt": 1793356080163
   },
   "T-Centralen, Stockholm, Sweden": {
     "value": {
@@ -2561,7 +2561,7 @@
       "latitude": 59.3350631,
       "longitude": 18.0712495
     },
-    "fetchedAt": 1789894173865
+    "fetchedAt": 1793356071041
   },
   "Långholmsmuren 21, 11733, Stockholm, Sweden": {
     "value": {
@@ -2836,10 +2836,10 @@
   },
   "Götgatan 78, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.3119109,
-      "longitude": 18.0737399
+      "latitude": 59.3120319,
+      "longitude": 18.0740049
     },
-    "fetchedAt": 1790762417724
+    "fetchedAt": 1793356068073
   },
   "Hornsbergs Strand 101, Stockholm, Sweden": {
     "value": {
@@ -3202,7 +3202,7 @@
   },
   "Sergels torg, Galleriet Vällingby, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793092863475
+    "fetchedAt": 1793356064241
   },
   "Torekällberget, Stockholm, Sweden": {
     "value": {
@@ -3334,7 +3334,7 @@
   },
   "stermalmsgatan 20, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793092873928
+    "fetchedAt": 1793356077408
   },
   "Kungstensgatan 17, Stockholm, Sweden": {
     "value": {
@@ -3409,7 +3409,7 @@
   },
   "Söder Mälarstrand Kajplats 19, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793092867471
+    "fetchedAt": 1793356074975
   },
   "Patricia, Stockholm, Sweden": {
     "value": {
@@ -3477,11 +3477,11 @@
   },
   "Katarina Kyrkogårds Södra Sida, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793092880560
+    "fetchedAt": 1793356085641
   },
   "Benhuset, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793092881922
+    "fetchedAt": 1793356087011
   },
   "Södermalm, Stockholm, Sweden": {
     "value": {
@@ -3775,7 +3775,7 @@
   },
   "Arninge, 187 66 Täby, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793092877674
+    "fetchedAt": 1793356081751
   },
   "Arninge, Stockholm, Sweden": {
     "value": {
@@ -3860,7 +3860,7 @@
   },
   "Sockenvägen, Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793092864698
+    "fetchedAt": 1793356072266
   },
   "Guldgränd 8,, Stockholm, Sweden": {
     "value": {
@@ -3901,5 +3901,41 @@
       "longitude": 18.0729301
     },
     "fetchedAt": 1793269567400
+  },
+  "Sergels torg, Stockholm, Sweden, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1793356065450
+  },
+  "Södra Hamnvägen 5, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3488693,
+      "longitude": 18.1072518
+    },
+    "fetchedAt": 1793356066691
+  },
+  "19149 Sollentuna, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.4429221,
+      "longitude": 17.9358664
+    },
+    "fetchedAt": 1793356069653
+  },
+  "Klara Norra kyrkogata 33, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3345926,
+      "longitude": 18.0576338
+    },
+    "fetchedAt": 1793356076211
+  },
+  "Regeringsgatan 29, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3322756,
+      "longitude": 18.0679455
+    },
+    "fetchedAt": 1793356082978
+  },
+  "Sergels torg, Extern scen, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1793356084373
   }
 }

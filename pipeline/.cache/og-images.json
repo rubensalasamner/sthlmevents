@@ -101,7 +101,7 @@
   },
   "https://waldemarsudde.se/": {
     "image": null,
-    "fetchedAt": 1793092884602
+    "fetchedAt": 1793356089036
   },
   "https://www.fredriksborghotel.se/": {
     "image": null,
@@ -137,7 +137,7 @@
   },
   "https://gustavsbergsporslinsmuseum.se/en/what-to-see-and-do/the-joyful-world-of-stig-lindberg": {
     "image": null,
-    "fetchedAt": 1793092885111
+    "fetchedAt": 1793356089724
   },
   "https://stockholmguidedtours.com/stockholm-walking-tours/sodermalm-heights-city-walk-with-a-view": {
     "image": "https://vnankvhzxsqxxwrziwww.supabase.co/storage/v1/object/public/images/sag/S_dermalmstorg_iStock-458722737-2.webp",
@@ -173,7 +173,7 @@
   },
   "https://www.levandehistoria.se/utstallning/utstallningar-som-visas-hos-oss/gilla-dela-hata": {
     "image": null,
-    "fetchedAt": 1793092885605
+    "fetchedAt": 1793356090257
   },
   "https://stockholmguidedtours.com/stockholm-walking-tours/from-city-hall-tower-to-storkyrkan-silhouette": {
     "image": "https://vnankvhzxsqxxwrziwww.supabase.co/storage/v1/object/public/images/sag/20230606_145654-2-2.webp",
@@ -257,7 +257,7 @@
   },
   "https://judiskamuseet.se": {
     "image": null,
-    "fetchedAt": 1793006633198
+    "fetchedAt": 1793356091083
   },
   "https://stockholm.fotografiska.com/en/exhibitions/lebohang-kganye": {
     "image": "https://cdn.sanity.io/images/2xi539qp/production/ad470735c84b04d12097f410b6d5ecebbc13292c-4000x2666.png?w=1200&q=80",
@@ -845,7 +845,7 @@
   },
   "https://turteatern.se/": {
     "image": null,
-    "fetchedAt": 1793092884036
+    "fetchedAt": 1793356089613
   },
   "https://lu.ma/vhm81qt9": {
     "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/4u/e6433108-75df-4fd5-8be6-388e4dcbe1cd.png",
@@ -933,7 +933,7 @@
   },
   "https://www.nationalmuseum.se/en/thursday-evenings-at-nationalmuseum": {
     "image": null,
-    "fetchedAt": 1793006664760
+    "fetchedAt": 1793356092311
   },
   "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32038/130213/": {
     "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32038/130213/Kulturhuset%20Stadsteatern",
@@ -1241,7 +1241,7 @@
   },
   "https://www.skarholmensgard.se/fest-event/vara-events": {
     "image": null,
-    "fetchedAt": 1793092885633
+    "fetchedAt": 1793356092058
   },
   "https://solvallaloppis.se": {
     "image": null,
@@ -3661,7 +3661,7 @@
   },
   "https://www.chiseldesign.se/sip-paint/": {
     "image": null,
-    "fetchedAt": 1793006715650
+    "fetchedAt": 1793356098720
   },
   "https://secure.tickster.com/9lv457p3dru9ty4": {
     "image": null,
@@ -8281,7 +8281,7 @@
   },
   "https://www.ticketmaster.se/event/nemzzz-tickets/915066118?language=en-us": {
     "image": null,
-    "fetchedAt": 1793006673985
+    "fetchedAt": 1793356091864
   },
   "https://shop.showtic.se/u0emxmg4pmj3znk": {
     "image": null,
@@ -9893,7 +9893,7 @@
   },
   "https://apotekarsocieteten.museum/besok-oss/visningar-aktiviteter/": {
     "image": null,
-    "fetchedAt": 1793092887612
+    "fetchedAt": 1793356099443
   },
   "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32167/131046/": {
     "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32167/131046/Kulturhuset%20Stadsteatern",
@@ -10421,7 +10421,7 @@
   },
   "https://secure.tickster.com/km5917tm6ufhwmv": {
     "image": null,
-    "fetchedAt": 1793006718401
+    "fetchedAt": 1793356094945
   },
   "https://secure.tickster.com/l58nakbmn3129xp": {
     "image": null,
@@ -15949,7 +15949,7 @@
   },
   "https://ra.co/events/2534573": {
     "image": null,
-    "fetchedAt": 1793092883627
+    "fetchedAt": 1793356090008
   },
   "https://ra.co/events/2534594": {
     "image": null,
@@ -17173,7 +17173,7 @@
   },
   "https://tellusbio.nu/program/jazzsalong-exklusive-3-ratterssupe-connecting-2-erykah-badu/": {
     "image": null,
-    "fetchedAt": 1793006715637
+    "fetchedAt": 1793356095403
   },
   "https://secure.tickster.com/pcegxpnhtz869hu": {
     "image": null,
@@ -17564,8 +17564,8 @@
     "fetchedAt": 1789635302600
   },
   "https://www.debaser.se/events/elgrandetoto": {
-    "image": "https://admin.debaser.se/uploads/img/29725_20260713095758.png",
-    "fetchedAt": 1789982297133
+    "image": null,
+    "fetchedAt": 1793356094345
   },
   "https://www.axs.com/se/events/1438952/tove-lo-tickets?__cf_chl_rt_tk=49A.a.w37iNJ0bLgvfRNfRyFsezz4Y4HuCzXzxVr9bw-1779104883-1.0.1.1-1li7UzsNWdsfzipTdKjpbXL5agDs1wjlHtcztn4RyaM": {
     "image": null,
@@ -17965,7 +17965,7 @@
   },
   "https://zita.se/start/info/svensk-kortfilm": {
     "image": null,
-    "fetchedAt": 1793092883751
+    "fetchedAt": 1793356090614
   },
   "https://bioskandia.se/nordic-council-film-prize/": {
     "image": null,
@@ -18593,7 +18593,7 @@
   },
   "https://vadhanderisverige.understory.io/experience/aab65cb822fa54d4e1fb50ac9404a656": {
     "image": null,
-    "fetchedAt": 1793092883796
+    "fetchedAt": 1793356089728
   },
   "https://www.riksdagen.se/en/contact-and-visit/visit-the-riksdag/guided-tours-of-the-riksdag/": {
     "image": null,
@@ -19257,7 +19257,7 @@
   },
   "https://tedxstockholm.com": {
     "image": "https://www-static.tedxstockholm.com/wp-content/uploads/2014/09/463165088_1280x720.jpg",
-    "fetchedAt": 1790590344727
+    "fetchedAt": 1793356093533
   },
   "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/21842/135261/": {
     "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/21842/135261/Kulturhuset%20Stadsteatern",
@@ -19353,7 +19353,7 @@
   },
   "https://www.facebook.com/events/1083612230724481/1083612237391147/?active_tab=about&rdid=nNrAOMTpINYMhVMK": {
     "image": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1083612230724481",
-    "fetchedAt": 1790676522464
+    "fetchedAt": 1793356091344
   },
   "https://www.rydbo360.se/sthlmpadbolcup": {
     "image": "http://static1.squarespace.com/static/682b22894d27765ab55d0257/t/6a8d840916cc0020d20ba4ae/1788346769461/IMG_9863.jpeg?format=1500w",
@@ -19457,7 +19457,7 @@
   },
   "https://promenad.app": {
     "image": "https://freight.cargo.site/i/5da4e7b39f810305af9e51f5fffb00a885c6825657dd518d79c30555caeedd4f/Promenad_logotyp_gul_2020-1.png",
-    "fetchedAt": 1790762428577
+    "fetchedAt": 1793356089402
   },
   "https://www.meetup.com/intercambio/events/316500902/": {
     "image": "https://secure.meetupstatic.com/photos/event/5/3/4/600_502321332.jpeg",
@@ -19485,11 +19485,11 @@
   },
   "https://www.capitolbio.se/filmfeber?utm_source=meta&utm_medium=cpc&utm_campaign=filmfeber&fbclid=IwYW9leAUoq7hleHRuA2FlbQEwAHBkb2YFZmRpZBZQ9V6knHcrZJUBsSWDcEgs2m5naOxLYWRpZAGrN40obS1Hc3J0YwZhcHBfaWQKNjYyODU2ODM3OQABHpO8EYuPCXsWI4cBfDu9carCMRwH43OipzPavefMqHi_1q2JFPsHVbWhemfE_aem_smn9sBKx-EB5-x9ptlqqeg&utm_id=120243445412260183&utm_content=120250894340390183&utm_term=120243445412300183": {
     "image": "https://cdn.sanity.io/images/jvrg8n8q/production/de90a6a78604d0b8fddbc1f3b17bc7f9b5b6f91d-1200x630.png?w=1200&h=630&q=100&fit=crop&crop=center&auto=format",
-    "fetchedAt": 1790762430252
+    "fetchedAt": 1793356092289
   },
   "https://www.stockholmadventures.com/kayaking/stockholm-winter-city-kayak-tour/": {
     "image": "https://www.stockholmadventures.com/wp-content/uploads/sites/3906/2022/11/winter-kayak-scaled.jpg?w=700&h=700&zoom=2",
-    "fetchedAt": 1790762430706
+    "fetchedAt": 1793356095428
   },
   "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32590/134464/": {
     "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32590/134464/Kulturhuset%20Stadsteatern",
@@ -19557,7 +19557,7 @@
   },
   "https://chiselstudios.confetti.events/": {
     "image": "https://images.confetticdn.com/images/scale/w_2000,f_auto/event-147246/image-41f67cc8-b366-40e9-93ea-d83c15787775/with-black-c-logo.jpeg",
-    "fetchedAt": 1790762433105
+    "fetchedAt": 1793356093245
   },
   "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32806/135161/": {
     "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32806/135161/Kulturhuset%20Stadsteatern",
@@ -19585,7 +19585,7 @@
   },
   "https://www.su.se/enheter/fysikum/om-institutionen/samarbeten/fysiktavling-pa-fysikum": {
     "image": null,
-    "fetchedAt": 1793092890739
+    "fetchedAt": 1793356095651
   },
   "https://www.stockholmadventures.com/ice-skating/introduction-to-ice-skating/": {
     "image": "https://www.stockholmadventures.com/wp-content/uploads/sites/3906/2020/03/Private-Ice-Skating-Day-Tour-image-3.jpg?w=700&h=700&zoom=2",
@@ -19597,7 +19597,7 @@
   },
   "https://www.stockholmadventures.com/ice-skating/day-on-ice-guided-tour/": {
     "image": "https://www.stockholmadventures.com/wp-content/uploads/sites/3906/2020/03/A-Day-On-The-Ice-Guided-Tour-image-1.jpg?w=700&h=700&zoom=2",
-    "fetchedAt": 1790762434125
+    "fetchedAt": 1793356096641
   },
   "https://www.pushplaytheatre.se": {
     "image": null,
@@ -19641,7 +19641,7 @@
   },
   "https://debaser.se/events/funeral": {
     "image": "https://admin.debaser.se/uploads/img/30330_20260929105346.jpeg",
-    "fetchedAt": 1790762434459
+    "fetchedAt": 1793356096238
   },
   "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32884/135370/": {
     "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32884/135370/Kulturhuset%20Stadsteatern",
@@ -19661,7 +19661,7 @@
   },
   "https://www.stockholmadventures.com/nature-adventures-stockholm/snowshoe-adventure/": {
     "image": "https://www.stockholmadventures.com/wp-content/uploads/sites/3906/2020/03/Snow-shoeing_20180303-7-of-18-copy.jpg?w=700&h=700&zoom=2",
-    "fetchedAt": 1790762434628
+    "fetchedAt": 1793356096601
   },
   "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32884/135361/": {
     "image": "https://tix.kulturhusetstadsteatern.se/sv/buyingflow/tickets/32884/135361/Kulturhuset%20Stadsteatern",
@@ -20265,7 +20265,7 @@
   },
   "https://sparvagsmuseet.biljetto.com/evenemang/0013-/": {
     "image": null,
-    "fetchedAt": 1793092888931
+    "fetchedAt": 1793356094886
   },
   "https://sparvagsmuseet.biljetto.com/evenemang/0058-/": {
     "image": null,
@@ -37137,7 +37137,7 @@
   },
   "https://ra.co/events/2557780": {
     "image": null,
-    "fetchedAt": 1793092885343
+    "fetchedAt": 1793356091889
   },
   "https://biblioteket.stockholm.se/evenemang/disco-4": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Disco_webb_4f8a7655e2.png",
@@ -41433,7 +41433,7 @@
   },
   "https://ra.co/events/2563060": {
     "image": null,
-    "fetchedAt": 1793092885098
+    "fetchedAt": 1793356091340
   },
   "https://api.visitstockholm.com/api/public-v1/events/b28f46c2-d7ef-464b-adbc-673ed5565876/": {
     "image": null,
@@ -41449,7 +41449,7 @@
   },
   "https://ra.co/events/2563067": {
     "image": null,
-    "fetchedAt": 1793092886296
+    "fetchedAt": 1793356092579
   },
   "https://biblioteket.stockholm.se/evenemang/fraga-en-psykolog-3": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Kopia_av_Kopia_av_Bild_evenemang_hemsidan_ef9ead4a45.png",
@@ -41461,7 +41461,7 @@
   },
   "https://ra.co/events/2563070": {
     "image": null,
-    "fetchedAt": 1793092886447
+    "fetchedAt": 1793356092828
   },
   "https://biblioteket.stockholm.se/evenemang/fraga-en-psykolog-4": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Kopia_av_Kopia_av_Bild_evenemang_hemsidan_ef9ead4a45.png",
@@ -42173,7 +42173,7 @@
   },
   "https://mariasjodin.com/news-29435031": {
     "image": null,
-    "fetchedAt": 1793006630977
+    "fetchedAt": 1793356088847
   },
   "https://www.dalashop.nu/book-online": {
     "image": null,
@@ -42689,7 +42689,7 @@
   },
   "https://www.aliasteatern.com": {
     "image": null,
-    "fetchedAt": 1793092883927
+    "fetchedAt": 1793356090363
   },
   "https://secure.tickster.com/yxfpnzpr6c0hp5t": {
     "image": null,
@@ -44473,7 +44473,7 @@
   },
   "https://secure.tickster.com/lbp9xhh0nfgf4bz": {
     "image": null,
-    "fetchedAt": 1793092886842
+    "fetchedAt": 1793356093021
   },
   "https://kulturbiljetter.se/evenemang/9202/engelsk-och-svensk-k%C3%B6rmusik/": {
     "image": "https://kulturbiljetter.se/storage/f51765682417f2c0ca2b-thumb2.jpg",
@@ -44493,7 +44493,7 @@
   },
   "https://secure.tickster.com/mhnm1p4cxk9pt87": {
     "image": null,
-    "fetchedAt": 1793092884569
+    "fetchedAt": 1793356090856
   },
   "https://allevents.in/stockholm/miss-li-in-stockholm/3300029965607948": {
     "image": "https://cdn-az.allevents.in/events9/banners/0485fb80-3cb6-11f1-aafe-8d25a272ea36-rimg-w1200-h675-dcd8051d-gmir.webp?v=1776688788",
@@ -44501,15 +44501,15 @@
   },
   "https://secure.tickster.com/4v50t0f9yurtblu": {
     "image": null,
-    "fetchedAt": 1793092886793
+    "fetchedAt": 1793356093045
   },
   "https://www.tickster.com/se/sv/events/pcvj55d4y2tebta/2026-11-06/6-11-cumbia-nena-debaser-klubben": {
     "image": null,
-    "fetchedAt": 1793092885319
+    "fetchedAt": 1793356091686
   },
   "https://ra.co/events/2563720": {
     "image": null,
-    "fetchedAt": 1793092886448
+    "fetchedAt": 1793356092852
   },
   "https://kulturhusetstadsteatern.se/samtal-debatt/idebaren38-regeringsbildningen-forhandling-blockad-eller-teater": {
     "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-05/Idebaren-2025-018_press.jpg",
@@ -44553,7 +44553,7 @@
   },
   "https://secure.tickster.com/1gtxrlu07phcyaj": {
     "image": null,
-    "fetchedAt": 1793092885986
+    "fetchedAt": 1793356094421
   },
   "https://ssfsweden.com": {
     "image": "https://ssfsweden.com/assets/smashfest-2025-group.jpg",
@@ -44581,7 +44581,7 @@
   },
   "https://biljett.debaser.se/pcvj55d4y2tebta": {
     "image": null,
-    "fetchedAt": 1793092886064
+    "fetchedAt": 1793356092397
   },
   "https://biblioteket.stockholm.se/evenemang/majas-alfabetssanger-1": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi/large_2_3cd5729778.png",
@@ -44597,15 +44597,15 @@
   },
   "https://secure.tickster.com/jnt86tx3a41lt74": {
     "image": null,
-    "fetchedAt": 1793092887111
+    "fetchedAt": 1793356093582
   },
   "https://secure.tickster.com/aggpdpb61tam7x7": {
     "image": null,
-    "fetchedAt": 1793092887598
+    "fetchedAt": 1793356093820
   },
   "https://secure.tickster.com/d2uck9l8zbwmlfa": {
     "image": null,
-    "fetchedAt": 1793092887721
+    "fetchedAt": 1793356093853
   },
   "https://biblioteket.stockholm.se/evenemang/invasion-livet-i-krigets-skugga-2": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi/large_TV_cirkel_nobody_572e74ebac.png",
@@ -45577,7 +45577,7 @@
   },
   "https://secure.tickster.com/wwhku22tx3xgk3u": {
     "image": null,
-    "fetchedAt": 1793092884718
+    "fetchedAt": 1793356091162
   },
   "https://www.tickster.com/se/sv/events/12kapeag8dmy6xm/2026-11-14/workshop-mongolisk-kalligrafi": {
     "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/05/429d35dcf0a466ed6baeee5d0caebbcce2a633",
@@ -45589,11 +45589,11 @@
   },
   "https://secure.tickster.com/fwa0ul236b12cz5": {
     "image": null,
-    "fetchedAt": 1793092886368
+    "fetchedAt": 1793356092749
   },
   "https://secure.tickster.com/xxhecnn1geavkef": {
     "image": null,
-    "fetchedAt": 1793092884734
+    "fetchedAt": 1793356090944
   },
   "https://www.meetup.com/sthlm-outdoor/events/317101350/": {
     "image": "https://secure.meetupstatic.com/photos/event/6/d/b/c/600_502888092.jpeg",
@@ -45613,11 +45613,11 @@
   },
   "https://secure.tickster.com/12kapeag8dmy6xm": {
     "image": null,
-    "fetchedAt": 1793092887609
+    "fetchedAt": 1793356093865
   },
   "https://secure.tickster.com/bmmrzkrauwtyc9x": {
     "image": null,
-    "fetchedAt": 1793092887639
+    "fetchedAt": 1793356094071
   },
   "https://www.meetup.com/intercambio/events/316852253/": {
     "image": "https://secure.meetupstatic.com/photos/event/2/a/f/1/600_500410993.jpeg",
@@ -45625,7 +45625,7 @@
   },
   "https://biljett.debaser.se/ka6klkd6uabrypa": {
     "image": null,
-    "fetchedAt": 1793092886420
+    "fetchedAt": 1793356092806
   },
   "https://www.meetup.com/intercambio/events/316811597/": {
     "image": "https://secure.meetupstatic.com/photos/event/9/f/e/e/600_505540942.jpeg",
@@ -45649,7 +45649,7 @@
   },
   "https://biljett.debaser.se/vv5vt8nzgur78e4": {
     "image": null,
-    "fetchedAt": 1793092886424
+    "fetchedAt": 1793356092829
   },
   "https://www.meetup.com/spanish-conversation-walks-stockholm/events/317051694/": {
     "image": "https://secure.meetupstatic.com/photos/event/d/6/2/7/600_536694823.jpeg",
@@ -45685,7 +45685,7 @@
   },
   "https://secure.tickster.com/bbwavnt736y5jm9": {
     "image": null,
-    "fetchedAt": 1793092885579
+    "fetchedAt": 1793356091914
   },
   "https://biblioteket.stockholm.se/evenemang/forelasning-jan-zettergren-och-ann-pettersson-1": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi/large_zetter_webb_4dda98f855.png",
@@ -45701,7 +45701,7 @@
   },
   "https://secure.tickster.com/1v13tp23m1uuzta": {
     "image": null,
-    "fetchedAt": 1793092885821
+    "fetchedAt": 1793356092012
   },
   "https://allevents.in/stockholm/tomas-ledins-symphonia-politropou/200030418295755": {
     "image": "https://cdn-az.allevents.in/events9/banners/4ed50871f8726f33047e486ce18f1371bb0c492ec0d13734e2ca85ff6d3a0542-rimg-w1200-h832-dc282828-gmir?v=1789448129",
@@ -45709,7 +45709,7 @@
   },
   "https://secure.tickster.com/tzf9etcbem90bf6": {
     "image": null,
-    "fetchedAt": 1793092886100
+    "fetchedAt": 1793356092556
   },
   "https://biblioteket.stockholm.se/evenemang/bygg-och-koda-ett-eget-instrument-1": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Mall_Strapi_bild_4_e8b84cf2b1.jpg",
@@ -45729,11 +45729,11 @@
   },
   "https://secure.tickster.com/9kbnuzed1xct93m": {
     "image": null,
-    "fetchedAt": 1793092886945
+    "fetchedAt": 1793356093369
   },
   "https://secure.tickster.com/v5vf2rj65bcrb7r": {
     "image": null,
-    "fetchedAt": 1793092886950
+    "fetchedAt": 1793356093681
   },
   "https://kulturhusetstadsteatern.se/konserter/tigran-hamasyan": {
     "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/N1_5892_99120_press.jpg",
@@ -45993,7 +45993,7 @@
   },
   "https://www.etnografiskamuseet.se/utstallningar/yokai/": {
     "image": null,
-    "fetchedAt": 1793006631185
+    "fetchedAt": 1793356088957
   },
   "https://livrustkammaren.se/utstallningar/hatt-couture/": {
     "image": "https://livrustkammaren.se/wp-content/uploads/2025/09/Livrustkammaren-Toppbild-Hatt-Couture-rosa-1920x1080-1-jpg.webp",
@@ -46329,7 +46329,7 @@
   },
   "https://ra.co/events/2569699": {
     "image": null,
-    "fetchedAt": 1793092883630
+    "fetchedAt": 1793356091912
   },
   "https://www.tickster.com/se/sv/events/p35ccvymvh0k3k0/2026-10-30/30-10-bodies-that-move-debaser-klubben": {
     "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/b3/4df08825cb08bd7ff7a6c1167162657ff97d5f",
@@ -46365,7 +46365,7 @@
   },
   "https://biljett.debaser.se/p35ccvymvh0k3k0": {
     "image": null,
-    "fetchedAt": 1793092884533
+    "fetchedAt": 1793356090794
   },
   "https://www.meetup.com/odoo-business-show-academies/events/316366797/": {
     "image": "https://secure.meetupstatic.com/photos/event/5/9/a/e/600_535942958.jpeg",
@@ -46381,7 +46381,7 @@
   },
   "https://secure.tickster.com/bn8cthwzzpm5grm": {
     "image": null,
-    "fetchedAt": 1793092884763
+    "fetchedAt": 1793356091580
   },
   "https://www.meetup.com/stockholm-riichi/events/316883840/": {
     "image": "https://secure.meetupstatic.com/photos/event/9/3/c/4/600_535597828.jpeg",
@@ -46421,7 +46421,7 @@
   },
   "https://www.axs.com/se/events/1373153/miss-li-tickets": {
     "image": null,
-    "fetchedAt": 1793092885488
+    "fetchedAt": 1793356091993
   },
   "https://biblioteket.stockholm.se/evenemang/advokatjour-683": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Juridisk_radgivning_1200x630_b6ae6ff52d.jpg",
@@ -46445,7 +46445,7 @@
   },
   "https://www.ticketmaster.se/event/1678063041": {
     "image": null,
-    "fetchedAt": 1793092886046
+    "fetchedAt": 1793356092127
   },
   "https://billetto.se/en/e/charity-art-expo-n-7-biljetter-1915153": {
     "image": "https://billetto.se/e/1915153/watermark_image",
@@ -46457,7 +46457,7 @@
   },
   "https://widget.elyrasystems.com/bank?lang=en": {
     "image": null,
-    "fetchedAt": 1793092886287
+    "fetchedAt": 1793356092508
   },
   "https://salongensthlm.com": {
     "image": "https://salongensthlm.com/og-image.jpg",
@@ -46477,7 +46477,7 @@
   },
   "https://www.ticketmaster.se/event/tinie-tempah-biljetter/1103379333": {
     "image": null,
-    "fetchedAt": 1793092887208
+    "fetchedAt": 1793356093442
   },
   "https://biblioteket.stockholm.se/evenemang/advokatjour-685": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Juridisk_radgivning_1200x630_b6ae6ff52d.jpg",
@@ -46493,7 +46493,7 @@
   },
   "https://kulturbiljetter.se/varukorg/9229/42331/klassiska-toner/": {
     "image": null,
-    "fetchedAt": 1793092887779
+    "fetchedAt": 1793356094840
   },
   "https://biblioteket.stockholm.se/evenemang/advokatjour-687": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Juridisk_radgivning_1200x630_b6ae6ff52d.jpg",
@@ -46513,7 +46513,7 @@
   },
   "https://ra.co/events/2569712": {
     "image": null,
-    "fetchedAt": 1793092888240
+    "fetchedAt": 1793356095882
   },
   "https://billetto.se/e/share-the-joy-sthlm-east-gospel-choir-biljetter-2019966?bref=eyJzIjoiYmlsbGV0dG8iLCJtIjoiYmlsbGV0dG8iLCJjIjoiZmluZCIsImNvIjoiM1NFIiwidCI6MTc5MjkzNzIyOX0%3D": {
     "image": "https://billetto.se/e/2019966/watermark_image",
@@ -46524,20 +46524,20 @@
     "fetchedAt": 1793092888617
   },
   "https://www.nrm.se/vart-utbud/utstallningar/wildlife-photographer-of-the-year": {
-    "image": null,
-    "fetchedAt": 1793092888636
+    "image": "https://www.nrm.se/images/18.2c068cc51a12f6b87b5100e8/1792046951714/%C2%A9_Audun_Rikardsen_Wildlife_Photographer_of_the_Year_(Image_18).jpg",
+    "fetchedAt": 1793356092996
   },
   "https://www.janneskor.se": {
     "image": null,
-    "fetchedAt": 1793092888673
+    "fetchedAt": 1793356096060
   },
   "https://www.tjamigo.com/events/stockholm-walk-with-us-on-djurgarden-rZUF": {
     "image": null,
-    "fetchedAt": 1793092888738
+    "fetchedAt": 1793356093874
   },
   "https://vadhanderisverige.understory.io/experience/f8a7453e-b9cc-5541-9055-83abd84611dc": {
     "image": null,
-    "fetchedAt": 1793092888950
+    "fetchedAt": 1793356096581
   },
   "https://www.swehockey.se/beijer-hockey-games/": {
     "image": "https://www.swehockey.se/media/tysnbrgo/sif_gul_nyhet_800.jpg",
@@ -46549,19 +46549,19 @@
   },
   "https://tickets.nortic.se/ticket/event/86713": {
     "image": null,
-    "fetchedAt": 1793092889129
+    "fetchedAt": 1793356096644
   },
   "https://vadhanderisverige.understory.io/experience/ba776ac7-f5b3-5063-a98b-c7ac1178d633": {
     "image": null,
-    "fetchedAt": 1793092889154
+    "fetchedAt": 1793356097130
   },
   "https://www.ticketmaster.se/event/maffia-comedy-superweekend-med-diyari-mahmoud-mfl-biljetter/1939067771": {
     "image": null,
-    "fetchedAt": 1793092889159
+    "fetchedAt": 1793356097269
   },
   "https://www.ticketmaster.se/event/maffia-comedy-superweekend-med-diyari-mahmoud-biljetter/1182827969": {
     "image": null,
-    "fetchedAt": 1793092889242
+    "fetchedAt": 1793356097354
   },
   "https://mammutmarsch.se/events/mammutmarsch-stockholm": {
     "image": "https://saklvorssihgyemargcd.supabase.co/storage/v1/object/public/packages/1790961706769-fb95fde0-f5f7-46d6-b8e2-7424503a28f7-stockholm-2027.png",
@@ -46569,7 +46569,7 @@
   },
   "https://vadhanderisverige.understory.io/experience/d5bcb78b-21f8-56ff-8465-a3a0a620ee86": {
     "image": null,
-    "fetchedAt": 1793092889347
+    "fetchedAt": 1793356096451
   },
   "https://ksss.se/": {
     "image": "https://ksss.se/static/gfx/ksss_default.jpg",
@@ -46577,15 +46577,15 @@
   },
   "https://vadhanderisverige.understory.io/experience/6601f59c-01fe-500b-8e52-d656e018f668": {
     "image": null,
-    "fetchedAt": 1793092889431
+    "fetchedAt": 1793356096904
   },
   "https://www.ticketmaster.se/event/fullt-ozz-biljetter/1987722243": {
     "image": null,
-    "fetchedAt": 1793092889441
+    "fetchedAt": 1793356097685
   },
   "https://vadhanderisverige.understory.io/experience/39991f3c-b844-552e-bbd0-21559743748c": {
     "image": null,
-    "fetchedAt": 1793092889456
+    "fetchedAt": 1793356097362
   },
   "https://kulturbiljetter.se/evenemang/9228/h%C3%B6kis-visrum-presenterar-presenterar-hasse-lind/": {
     "image": "https://kulturbiljetter.se/storage/798c41241cdbc00b05e2-thumb2.png",
@@ -46593,7 +46593,7 @@
   },
   "https://www.ticketmaster.se/event/fullt-ozz-biljetter/1698185370": {
     "image": null,
-    "fetchedAt": 1793092889505
+    "fetchedAt": 1793356097839
   },
   "https://debaser.se/events/steget-30076": {
     "image": "https://admin.debaser.se/uploads/img/30076_20261023102335_crop.jpg",
@@ -46601,7 +46601,7 @@
   },
   "https://vadhanderisverige.understory.io/experience/d6c8be29-1601-5f54-ae83-a8f91b764b49": {
     "image": null,
-    "fetchedAt": 1793092889604
+    "fetchedAt": 1793356097185
   },
   "https://biblioteket.stockholm.se/evenemang/gemensam-monstermalning-1": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi/large_vvaavas_konst_internet_1_f0650007d5.png",
@@ -46613,7 +46613,7 @@
   },
   "https://kulturbiljetter.se/varukorg/9228/42330/h%C3%B6kis-visrum-presenterar-presenterar-hasse-lind/": {
     "image": null,
-    "fetchedAt": 1793092889668
+    "fetchedAt": 1793356097905
   },
   "https://biblioteket.stockholm.se/evenemang/advokatjour-688": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Juridisk_radgivning_1200x630_b6ae6ff52d.jpg",
@@ -46633,7 +46633,7 @@
   },
   "https://secure.tickster.com/tpyew8nnklh8jhz": {
     "image": null,
-    "fetchedAt": 1793092890255
+    "fetchedAt": 1793356098760
   },
   "https://biblioteket.stockholm.se/evenemang/mandaghang-aktiviteter-for-dig-mellan-7-9-ar-57": {
     "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Webben_evenemang_Skaerholmens_bibliotek_barn_och_ungdom_2025_12_10_T155949_124_3529baf2fd.png",
@@ -47866,5 +47866,313 @@
   "https://www.tickster.com/se/sv/events/y83fhnfv11mw1bt/2026-12-10/julbord-eftermiddag-afternoon-14-00": {
     "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/cd/48d8157e0dcd184b2b5c75682f1b46b9f78a17",
     "fetchedAt": 1793269677716
+  },
+  "https://www.tickster.com/se/sv/events/kfk2l41lpu60803/2026-10-30/gro-gastspel-av-big-wind": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/70/3d7d8fa1bb5ab3849eace3362b384805eb4eb8",
+    "fetchedAt": 1793356089417
+  },
+  "https://allevents.in/stockholm/comic-con-stockholm-winter-2026/200030316995355": {
+    "image": "https://cdn-az.allevents.in/events7/banners/fea591c40adc57db9276bfd97c56d5a49590b00600a87880b13334287777df6b-rimg-w1200-h628-dc483888-gmir?v=1787836995",
+    "fetchedAt": 1793356089442
+  },
+  "https://www.meetup.com/prata-svenska/events/315345834/": {
+    "image": "https://secure.meetupstatic.com/photos/event/7/7/a/4/600_499230628.jpeg",
+    "fetchedAt": 1793356089928
+  },
+  "https://www.meetup.com/blivande-frihamnstorget/events/316974294/": {
+    "image": "https://secure.meetupstatic.com/photos/event/4/e/e/e/600_536600206.jpeg",
+    "fetchedAt": 1793356089949
+  },
+  "https://www.meetup.com/outinsthlm/events/317059358/": {
+    "image": "https://secure.meetupstatic.com/photos/event/1/9/6/8/600_536706504.jpeg",
+    "fetchedAt": 1793356089951
+  },
+  "https://ra.co/events/2573127": {
+    "image": null,
+    "fetchedAt": 1793356089985
+  },
+  "https://www.meetup.com/voltstockholm/events/316722053/": {
+    "image": "https://secure.meetupstatic.com/photos/event/8/e/3/f/600_536316415.jpeg",
+    "fetchedAt": 1793356089988
+  },
+  "https://www.meetup.com/stockholm-rust/events/316721062/": {
+    "image": "https://secure.meetupstatic.com/photos/event/3/c/4/9/600_535275433.jpeg",
+    "fetchedAt": 1793356089991
+  },
+  "https://tickets-stockholm.fotografiska.com/productDetail/219275": {
+    "image": "https://da28ojrjakn6f.cloudfront.net/tickets/53883/NEW/img_1789124090_1789124209__venusprio.png?v=1.1.0",
+    "fetchedAt": 1793356090030
+  },
+  "https://www.meetup.com/meet-stockholm/events/317091762/": {
+    "image": "https://secure.meetupstatic.com/photos/event/a/9/9/8/600_536743416.jpeg",
+    "fetchedAt": 1793356090570
+  },
+  "https://secure.tickster.com/kfk2l41lpu60803": {
+    "image": null,
+    "fetchedAt": 1793356090725
+  },
+  "https://gallerihind.se": {
+    "image": null,
+    "fetchedAt": 1793356090806
+  },
+  "https://www.meetup.com/frescati-badminton-meetup-group/events/317013207/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/7/b/5/600_529570165.jpeg",
+    "fetchedAt": 1793356090990
+  },
+  "https://www.meetup.com/func-prog-sweden/events/316293102/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/1/b/0/600_536768624.jpeg",
+    "fetchedAt": 1793356091045
+  },
+  "https://biljett.debaser.se/urpu5ckg00lyp8c": {
+    "image": null,
+    "fetchedAt": 1793356091053
+  },
+  "https://www.meetup.com/stockholm-art-hobby-group/events/317172904/": {
+    "image": "https://secure.meetupstatic.com/photos/event/5/9/3/6/600_536842838.jpeg",
+    "fetchedAt": 1793356091300
+  },
+  "https://www.meetup.com/practical-psychology-club/events/316925574/": {
+    "image": "https://secure.meetupstatic.com/photos/event/7/d/4/3/600_536852067.jpeg",
+    "fetchedAt": 1793356091387
+  },
+  "https://kulturhusetstadsteatern.se/bio/sheep-box": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/Sheep%20in%20the%20Box%E2%8F%90%20Affisch%2001%20%C2%A9TriArt%20Film.jpg",
+    "fetchedAt": 1793356091733
+  },
+  "https://biblioteket.stockholm.se/evenemang/familjefredag-med-tekniska-museet-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Kopia_av_Bild_evenemang_hemsidan_68_760d4ed22f.png",
+    "fetchedAt": 1793356091911
+  },
+  "https://www.colabstockholm.com/k18-vin": {
+    "image": null,
+    "fetchedAt": 1793356091962
+  },
+  "https://www.junibacken.se/upplevelse/trollvinter-i-mumindalen/": {
+    "image": "https://www.junibacken.se/wp-content/uploads/2026/07/img_5506.jpeg",
+    "fetchedAt": 1793356091992
+  },
+  "https://biblioteket.stockholm.se/evenemang/filosofi-fika-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Filosofi_Fika_0e68f95ee0.png",
+    "fetchedAt": 1793356092170
+  },
+  "https://www.riksidrottsmuseum.se/riksidrottsmuseum/utstallningar-och-samlingar/utstallningar/shiso-kanakuri---japanen-som-inte-forsvann": {
+    "image": "https://www.rf.se/images/18.587112fd18fa42b9333221ae/1716559101422/06888x.jpg",
+    "fetchedAt": 1793356092544
+  },
+  "https://www.meetup.com/hiq-tech-meetup/events/316461144/": {
+    "image": "https://secure.meetupstatic.com/photos/event/c/0/1/4/600_536569172.jpeg",
+    "fetchedAt": 1793356092675
+  },
+  "https://biblioteket.stockholm.se/evenemang/workshop-i-karaktarsdesign-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Karaktaersdesign_32273d19b6.png",
+    "fetchedAt": 1793356093008
+  },
+  "https://allevents.in/stockholm/tomas-ledin-in-stockholm/3300029955370632": {
+    "image": "https://cdn-az.allevents.in/events3/banners/dd569bd0-39c4-11f1-bd1f-f1e10f03be6f-rimg-w1200-h675-dc2e2b2e-gmir.webp?v=1776365311",
+    "fetchedAt": 1793356093025
+  },
+  "https://biblioteket.stockholm.se/evenemang/bokfika-for-dig-som-gar-i-gymnasiet-2": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Webbkalender_ideer_11_a0fe2021b0.png",
+    "fetchedAt": 1793356093397
+  },
+  "https://www.konsthallc.se/en/program/kif-2026": {
+    "image": null,
+    "fetchedAt": 1793356093896
+  },
+  "https://biblioteket.stockholm.se/evenemang/fira-vinnaren-av-barnens-val-sommarskuggan-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Kopia_av_Barnens_val_1_d3e614bb1e.png",
+    "fetchedAt": 1793356093998
+  },
+  "https://www.meetup.com/stockholm-rust/events/317161063/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/d/e/c/600_536831756.jpeg",
+    "fetchedAt": 1793356094093
+  },
+  "https://billetto.se/e/dark-mode-forfattarkvall-biljetter-2024636?bref=eyJzIjoib3JnYW5pc2VyIiwibSI6InNoYXJlIiwiYyI6Im1hbmFnZV92aXNpdCIsImNvIjoiMSIsInQiOjE3OTMyNjQxMjd9": {
+    "image": "https://billetto.se/e/2024636/watermark_image",
+    "fetchedAt": 1793356094390
+  },
+  "https://biblioteket.stockholm.se/evenemang/dansa-spraka-med-bebis-a-bollis-2": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_virveldans_67ea8b3223.png",
+    "fetchedAt": 1793356094545
+  },
+  "https://kulturhusetstadsteatern.se/bio/lilla-amelie-eller-tecknet-for-regn-0": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/poster-lillaamelie_0.jpg",
+    "fetchedAt": 1793356094713
+  },
+  "https://biblioteket.stockholm.se/evenemang/bokcirkel-i-samarbete-med-nationalmuseum-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Vi_kom_oever_havet_ff64b985cb.jpg",
+    "fetchedAt": 1793356094879
+  },
+  "https://kulturhusetstadsteatern.se/teater/kargt-och-blasigt": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2025-11/margaretabsandeback_251009_MBS9263%201-re-edit%201_press.jpg",
+    "fetchedAt": 1793356095398
+  },
+  "https://kulturhusetstadsteatern.se/bio/woman-and-child": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/Woman%20and%20Child%E2%8F%90Affisch%20%C2%A9TriArt%20Film.jpg",
+    "fetchedAt": 1793356095503
+  },
+  "https://kulturbiljetter.se/evenemang/9237/a-night-of-improv/": {
+    "image": "https://kulturbiljetter.se/storage/471b5df9577b134e1637-thumb2.png",
+    "fetchedAt": 1793356095637
+  },
+  "https://kulturhusetstadsteatern.se/kulturhuset-stadsteatern/ortens-basta-poet-finalen": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/noise.png",
+    "fetchedAt": 1793356095816
+  },
+  "https://biblioteket.stockholm.se/evenemang/bokfika-for-dig-som-gar-i-gymnasiet-3": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Webbkalender_ideer_11_a0fe2021b0.png",
+    "fetchedAt": 1793356095824
+  },
+  "https://www.tyresohandelstradgard.se/": {
+    "image": null,
+    "fetchedAt": 1793356095846
+  },
+  "https://www.earlymusicsweden.se/": {
+    "image": null,
+    "fetchedAt": 1793356095877
+  },
+  "https://www.ticketmaster.se/event/christmas-day-at-berns-x-samm--meera-tickets/1536209111?language=en-us": {
+    "image": null,
+    "fetchedAt": 1793356095892
+  },
+  "https://www.sjohistoriska.se/": {
+    "image": "https://www.sjohistoriska.se/globalassets/sjohistoriska-museet/bilder/start/sjohistoriska_logo_blue.png",
+    "fetchedAt": 1793356095906
+  },
+  "https://kulturbiljetter.se/varukorg/9237/42355/a-night-of-improv/": {
+    "image": null,
+    "fetchedAt": 1793356095978
+  },
+  "https://debaser.se/events/new-wave-of-death-metal---impurity-swe-xorsist-swe-cryptorium-swe-malformed-fin-azatoth-fin-disguised-malignance-fin": {
+    "image": "https://admin.debaser.se/uploads/img/29809_20261029072715.png",
+    "fetchedAt": 1793356096061
+  },
+  "https://www.ticketmaster.se/event/carmen--ballet-flamenco-de-catalunya-tickets/1358383701?language=en-us": {
+    "image": null,
+    "fetchedAt": 1793356096138
+  },
+  "https://kulturhusetstadsteatern.se/teater/vannaminne": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-01/Lanseringsbild-vannaliteter-041_press.jpg",
+    "fetchedAt": 1793356096450
+  },
+  "https://www.sjohistoriska.se": {
+    "image": "https://www.sjohistoriska.se/globalassets/sjohistoriska-museet/bilder/start/sjohistoriska_logo_blue.png",
+    "fetchedAt": 1793356096654
+  },
+  "https://www.tickster.com/se/sv/events/ppkuycnvu3nldta/2027-02-12/yttling-jazz-sodra-teatern": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/30/28cbf1b2143cd6f04a2e2ef929b4b036c63819",
+    "fetchedAt": 1793356096663
+  },
+  "https://kulturhusetstadsteatern.se/teater/sven-inte-sven": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-03/SVEN%2C%20inte%20SVEN%20illustration%20%28utan%20ram%2C%20st%C3%A5ende%29_press.jpg",
+    "fetchedAt": 1793356096675
+  },
+  "https://www.ticketmaster.se/event/torka-aldrig-tarar-utan-handskar-biljetter/926514769": {
+    "image": null,
+    "fetchedAt": 1793356096735
+  },
+  "https://www.ticketmaster.se/event/torka-aldrig-tarar-utan-handskar-biljetter/1589869562": {
+    "image": null,
+    "fetchedAt": 1793356096751
+  },
+  "https://www.tickster.com/se/sv/events/d2xalb07wne4px3/2027-03-05/bunt-b-k-stockholm": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/26/6b31c1ca29e6112c811b5dde918f00dabdf2e3",
+    "fetchedAt": 1793356096857
+  },
+  "https://www.ticketmaster.se/event/maffia-comedy-superweekend-ann-westin-mfl-biljetter/177039605": {
+    "image": null,
+    "fetchedAt": 1793356096932
+  },
+  "https://www.ticketmaster.se/event/torka-aldrig-tarar-utan-handskar-biljetter/971803566": {
+    "image": null,
+    "fetchedAt": 1793356096977
+  },
+  "https://www.tickster.com/se/sv/events/ag8xy5d9u174xvw/2027-02-13/balnatt-i-wien-wienerbal-2027": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/f6/b8ee8e7bd6673b99f46c4d32c8d5a7617e7676",
+    "fetchedAt": 1793356097143
+  },
+  "https://www.tickster.com/se/sv/events/l1r73haf8a5x3be/2027-04-03/det-stora-monstret": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/08/27a5d80470d46e64c3b4d2b0efb9510d2b9216",
+    "fetchedAt": 1793356097189
+  },
+  "https://secure.tickster.com/ppkuycnvu3nldta": {
+    "image": null,
+    "fetchedAt": 1793356097427
+  },
+  "https://www.ticketmaster.se/event/u2-the-greatest-show-on-earth-world-tour-tickets/1656128289?language=en-us": {
+    "image": null,
+    "fetchedAt": 1793356097430
+  },
+  "https://secure.tickster.com/l1r73haf8a5x3be": {
+    "image": null,
+    "fetchedAt": 1793356097432
+  },
+  "https://www.ticketmaster.se/event/noah-gundersen-tickets/1817061697?language=en-us": {
+    "image": null,
+    "fetchedAt": 1793356097442
+  },
+  "https://www.tickster.com/se/sv/events/2z4z3c68kjv787w/2027-04-22/sync24-x-aes-dana": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/b4/522722276c207f06067ce9b8e83724aedcc867",
+    "fetchedAt": 1793356097468
+  },
+  "https://www.ticketmaster.se/event/maffia-comedy-superweekend-ann-westin-mfl-biljetter/1391136993": {
+    "image": null,
+    "fetchedAt": 1793356097542
+  },
+  "https://secure.tickster.com/d2xalb07wne4px3": {
+    "image": null,
+    "fetchedAt": 1793356097546
+  },
+  "https://secure.tickster.com/ag8xy5d9u174xvw": {
+    "image": null,
+    "fetchedAt": 1793356097563
+  },
+  "https://www.ticketmaster.se/event/u2-the-greatest-show-on-earth-world-tour-tickets/1852040169?language=en-us": {
+    "image": null,
+    "fetchedAt": 1793356097613
+  },
+  "https://biblioteket.stockholm.se/evenemang/advokatjour-653": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Juridiskradgivningwebb_3afeb1a5a7.png",
+    "fetchedAt": 1793356097640
+  },
+  "https://www.tickster.com/se/sv/events/mwcungvkpw7f7gm/2027-03-06/dance-your-heart-out-stockholm": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/7d/311a6f3d172951977d3dacb8b3034ac2e0cbf0",
+    "fetchedAt": 1793356097664
+  },
+  "https://www.ticketmaster.se/event/torka-aldrig-tarar-utan-handskar-biljetter/1712901449": {
+    "image": null,
+    "fetchedAt": 1793356097763
+  },
+  "https://www.tickster.com/se/sv/events/l63dmhlfzfvtgye/2027-05-08/paranormal-festival": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/f0/34ff8168aa1cf62bf89d08b4c4361fb3dfadfb",
+    "fetchedAt": 1793356097853
+  },
+  "https://biblioteket.stockholm.se/evenemang/pepparkakor-mat-och-maltidens-mening-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_mat_program_93a2da424f.png",
+    "fetchedAt": 1793356097955
+  },
+  "https://biblioteket.stockholm.se/evenemang/hang-pa-bibblan-283": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi//large_Kalender_HT_25_Haeng_pa_bibblan_c6efd09b72.jpg",
+    "fetchedAt": 1793356098000
+  },
+  "https://secure.tickster.com/2z4z3c68kjv787w": {
+    "image": null,
+    "fetchedAt": 1793356098012
+  },
+  "https://www.tickster.com/se/sv/events/326v2lmhxzv1ebw/2027-03-09/saint-etienne": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/03/a55ae913ef76680c4a38ae2744aaf4844c1525",
+    "fetchedAt": 1793356098046
+  },
+  "https://secure.tickster.com/mwcungvkpw7f7gm": {
+    "image": null,
+    "fetchedAt": 1793356098280
+  },
+  "https://secure.tickster.com/l63dmhlfzfvtgye": {
+    "image": null,
+    "fetchedAt": 1793356098522
+  },
+  "https://shop.showtic.se/326v2lmhxzv1ebw": {
+    "image": null,
+    "fetchedAt": 1793356099245
   }
 }
