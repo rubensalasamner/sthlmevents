@@ -3937,5 +3937,12 @@
   "Sergels torg, Extern scen, Stockholm, Sweden": {
     "value": null,
     "fetchedAt": 1793356084373
+  },
+  "slussen, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3193166,
+      "longitude": 18.0722002
+    },
+    "fetchedAt": 1793440700528
   }
 }

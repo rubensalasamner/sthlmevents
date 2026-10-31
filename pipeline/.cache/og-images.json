@@ -13,7 +13,7 @@
   },
   "https://historiska.se/utstallningar/ny-utstallning-vikingar-2021/": {
     "image": null,
-    "fetchedAt": 1792401676470
+    "fetchedAt": 1793440701410
   },
   "https://www.sightseeingride.com/en/tours/stockholm-archipelago-tour/": {
     "image": "https://www.sightseeingride.com/uploads/og-image-sightseeing-ride.avif",
@@ -17889,7 +17889,7 @@
   },
   "https://www.spangakonst.se": {
     "image": null,
-    "fetchedAt": 1793092883814
+    "fetchedAt": 1793440701237
   },
   "https://www.kvinnohistoriska.se/kalendarium/stadsvandring-mellan-husen-26-sep": {
     "image": "http://static1.squarespace.com/static/5c3ef1d2cef3726aa36088c4/5c4dd9ee0ebbe8fdff88754b/6aa7da654e9b196d80384e3d/1789729162650/sv_mellan_husen_webb_banner.png?format=1500w",
@@ -48174,5 +48174,137 @@
   "https://shop.showtic.se/326v2lmhxzv1ebw": {
     "image": null,
     "fetchedAt": 1793356099245
+  },
+  "https://www.tickster.com/se/sv/events/76j4tkgg34mvnlp/2026-10-31/fiesta-en-el-cementerio-fest-pa-kyrkogarden": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/55/7afecf88890bd97d26e597618bca5f12ef23dd",
+    "fetchedAt": 1793440701167
+  },
+  "https://www.meetup.com/outinsthlm/events/316627843/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/1/1/600_475620529.jpeg",
+    "fetchedAt": 1793440701170
+  },
+  "https://www.meetup.com/stockholm-pub-crawl/events/316939017/": {
+    "image": "https://secure.meetupstatic.com/photos/event/1/4/1/7/600_536405143.jpeg",
+    "fetchedAt": 1793440701207
+  },
+  "https://www.meetup.com/stockholm-roller-skating/events/317166094/": {
+    "image": "https://secure.meetupstatic.com/photos/event/3/f/3/6/600_536836182.jpeg",
+    "fetchedAt": 1793440701233
+  },
+  "https://lu.ma/4xuug6h2": {
+    "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=420/event-social/al/4e5ac49c-7b5b-4fe7-b1c0-f136d1e07618.png",
+    "fetchedAt": 1793440701369
+  },
+  "https://www.meetup.com/stockholm-roller-skating/events/316964478/": {
+    "image": "https://secure.meetupstatic.com/photos/event/3/9/c/600_535560924.jpeg",
+    "fetchedAt": 1793440701421
+  },
+  "https://www.meetup.com/intercambio/events/316811598/": {
+    "image": "https://secure.meetupstatic.com/photos/event/9/f/e/e/600_505540942.jpeg",
+    "fetchedAt": 1793440701522
+  },
+  "https://www.meetup.com/los-suecanoles/events/316739508/": {
+    "image": "https://secure.meetupstatic.com/photos/event/a/a/b/d/600_498943709.jpeg",
+    "fetchedAt": 1793440701543
+  },
+  "https://www.tickster.com/se/sv/events/z2jgwe32zbh7m7x/2026-11-03/oppen-kroki": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/a2/55830dcb2547e26d3ae5fe4cd4121e7e155460",
+    "fetchedAt": 1793440701590
+  },
+  "https://www.meetup.com/intercambio/events/316945853/": {
+    "image": "https://secure.meetupstatic.com/photos/event/2/a/f/1/600_500410993.jpeg",
+    "fetchedAt": 1793440701649
+  },
+  "https://www.meetup.com/intercambio/events/316748688/": {
+    "image": "https://secure.meetupstatic.com/photos/event/4/e/9/f/600_525500127.jpeg",
+    "fetchedAt": 1793440701654
+  },
+  "https://www.meetup.com/stockholm-queer-fika-group/events/317191118/": {
+    "image": "https://secure.meetupstatic.com/photos/event/a/0/e/d/600_522761197.jpeg",
+    "fetchedAt": 1793440701690
+  },
+  "https://www.kvinnohistoriska.se": {
+    "image": "http://static1.squarespace.com/static/5c3ef1d2cef3726aa36088c4/t/5f88765d9e5162762a3ebab7/1702902650227/fb+cover.png?format=1500w",
+    "fetchedAt": 1793440701760
+  },
+  "https://www.tickster.com/se/sv/events/77dznfv89ex57hf/2026-11-06/6-11-edm-night-debaser-klubben": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/18/a3dcb195e0b93b6753f07f05d05bf68893a88a",
+    "fetchedAt": 1793440701796
+  },
+  "https://www.tickster.com/se/sv/events/x19ltm25z3rcw22/2026-11-07/releasefest-rum-for-dramatik": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/c1/2db265b0574351a814a83732a12fdb54dfa0ce",
+    "fetchedAt": 1793440701842
+  },
+  "https://www.meetup.com/stockholm-sprakfika-meetup-group/events/317173851/": {
+    "image": "https://secure.meetupstatic.com/photos/event/c/d/8/d/600_530512621.jpeg",
+    "fetchedAt": 1793440701977
+  },
+  "https://allevents.in/stockholm/kaj-stockholm-extra-datum/200030155352534": {
+    "image": "https://cdn-az.allevents.in/events8/banners/b732823dbfb847f1295771afd1bc099410eec8e02b43fd363ff0b82c4aff090a-rimg-w1200-h628-dc4878b8-gmir?v=1787434811",
+    "fetchedAt": 1793440702164
+  },
+  "https://allevents.in/stockholm/sissels-jul-2026-konserthuset-stockholm-221126/200029936602323": {
+    "image": "https://cdn-az.allevents.in/events6/banners/29852edc59ce292809066278504ad2d6eb19be74bf355b77243814caa1e71fec-rimg-w1200-h628-dc080808-gmir?v=1788252967",
+    "fetchedAt": 1793440702182
+  },
+  "https://secure.tickster.com/76j4tkgg34mvnlp": {
+    "image": null,
+    "fetchedAt": 1793440702321
+  },
+  "https://allevents.in/stockholm/kaj-stockholm-utsÅlt/200029949879011": {
+    "image": "https://cdn-az.allevents.in/events8/banners/e65ff93d9a340eb139a3b22a44bf762cd1fa12e37c97ef0ddd09c06ca3f47cdb-rimg-w1200-h628-dc4878b8-gmir?v=1788481107",
+    "fetchedAt": 1793440702496
+  },
+  "https://www.junibacken.se/upplevelse/hur-gick-det-sen/": {
+    "image": "https://www.junibacken.se/wp-content/uploads/2026/09/tom-final-skugga-100.png",
+    "fetchedAt": 1793440702521
+  },
+  "https://planketsthlm.se/": {
+    "image": "https://impro.usercontent.one/appid/oneComWsb/domain/planketsthlm.se/media/planketsthlm.se/onewebmedia/image0.jpeg?etag=%221775e-68a4a030%22&sourceContentType=image%2Fjpeg&quality=85",
+    "fetchedAt": 1793440702537
+  },
+  "https://biblioteket.stockholm.se/evenemang/schlager-yra-pa-biblioteket-1": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_schlager_webb_8bfa985d5d.jpg",
+    "fetchedAt": 1793440702682
+  },
+  "https://secure.tickster.com/x19ltm25z3rcw22": {
+    "image": null,
+    "fetchedAt": 1793440702704
+  },
+  "https://www.junibacken.se/upplevelse/far-man-skratta-i-krig-och-far-man-grata-i-fred-eller/": {
+    "image": "https://www.junibacken.se/wp-content/uploads/2026/08/malawi.jpg",
+    "fetchedAt": 1793440702809
+  },
+  "https://biljett.debaser.se/77dznfv89ex57hf": {
+    "image": null,
+    "fetchedAt": 1793440702887
+  },
+  "https://biblioteket.stockholm.se/evenemang/tipsrunda-8": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Webbpuff_Tipsrunda_Laeslov_20216_92db79a2ba.png",
+    "fetchedAt": 1793440702943
+  },
+  "https://secure.tickster.com/z2jgwe32zbh7m7x": {
+    "image": null,
+    "fetchedAt": 1793440702962
+  },
+  "https://gallerijosephine.se/": {
+    "image": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b3080f6a-f1b2-4047-93d1-a98cf5cc9233/id-preview-73f26d60--e8ad6d9f-7f82-43e7-ab50-4335841b2c16.lovable.app-1776722094017.png",
+    "fetchedAt": 1793440703024
+  },
+  "https://kulturhusetstadsteatern.se/konserter/blomqvist": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-10/a-blom.jpg",
+    "fetchedAt": 1793440703668
+  },
+  "https://confidencen.se/event/det-stralar-en-stjarna/": {
+    "image": null,
+    "fetchedAt": 1793440703894
+  },
+  "https://confidencen.se/event/fran-morker-till-ljus/": {
+    "image": null,
+    "fetchedAt": 1793440704597
+  },
+  "https://confidencen.se/event/vanforeningen-redivivas-nyarskonsert/": {
+    "image": null,
+    "fetchedAt": 1793440705589
   }
 }
