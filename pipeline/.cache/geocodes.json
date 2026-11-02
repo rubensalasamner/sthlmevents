@@ -2889,7 +2889,7 @@
       "latitude": 59.3460384,
       "longitude": 18.0382
     },
-    "fetchedAt": 1790920196023
+    "fetchedAt": 1793624175513
   },
   "Kvarngatan 8b, Stockholm, Sweden": {
     "value": {
@@ -3013,7 +3013,7 @@
   },
   "Stockholm, ni är fantastiska! 💙💛, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791803977432
+    "fetchedAt": 1793624186944
   },
   "APLACE Studio., Stockholm, Sweden": {
     "value": null,
@@ -3987,5 +3987,62 @@
       "longitude": 18.0713398
     },
     "fetchedAt": 1793619711666
+  },
+  "Sankt Eriksplan 4, 113 20, Stockholm., Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3398045,
+      "longitude": 18.0378893
+    },
+    "fetchedAt": 1793624177046
+  },
+  "Skeppargatan 22, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.334001,
+      "longitude": 18.0830512
+    },
+    "fetchedAt": 1793624178655
+  },
+  "Bakluckeloppisen Liljeholmstorget, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1793624180129
+  },
+  "Vasagatan 28, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3322954,
+      "longitude": 18.0580946
+    },
+    "fetchedAt": 1793624181441
+  },
+  "Döbelnsgatan 40, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3439977,
+      "longitude": 18.0586538
+    },
+    "fetchedAt": 1793624182963
+  },
+  "Dialoggatan 2, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.2669654,
+      "longitude": 17.9101328
+    },
+    "fetchedAt": 1793624184278
+  },
+  "Strandvägen 19, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3318165,
+      "longitude": 18.0841744
+    },
+    "fetchedAt": 1793624185633
+  },
+  "regrundsgatan 3, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1793624188430
+  },
+  "Öregrundsgatan 3, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3456557,
+      "longitude": 18.1110623
+    },
+    "fetchedAt": 1793624189768
   }
 }
