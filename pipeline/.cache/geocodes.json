@@ -2603,7 +2603,7 @@
       "latitude": 59.3420483,
       "longitude": 18.0481949
     },
-    "fetchedAt": 1789982288877
+    "fetchedAt": 1793704830394
   },
   "Folkungagatan 125, Stockholm, Sweden": {
     "value": {
@@ -4044,5 +4044,33 @@
       "longitude": 18.1110623
     },
     "fetchedAt": 1793624189768
+  },
+  "Lindhagensgatan 112, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3361412,
+      "longitude": 18.0117468
+    },
+    "fetchedAt": 1793704826290
+  },
+  "Elersvägen 37, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3376785,
+      "longitude": 18.002976
+    },
+    "fetchedAt": 1793704827765
+  },
+  "Kornhamnstorg 59, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3225226,
+      "longitude": 18.0720262
+    },
+    "fetchedAt": 1793704829167
+  },
+  "Munkbrohamnen, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3230352,
+      "longitude": 18.06649
+    },
+    "fetchedAt": 1793704831723
   }
 }
