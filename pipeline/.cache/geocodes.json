@@ -1142,7 +1142,7 @@
       "latitude": 59.3425028,
       "longitude": 17.9291627
     },
-    "fetchedAt": 1788794887316
+    "fetchedAt": 1793878197816
   },
   "Fredsgatan 2, Stockholm, Sweden": {
     "value": {
@@ -2730,10 +2730,10 @@
   },
   "Götgatan 64, Stockholm, Sweden": {
     "value": {
-      "latitude": 59.3161081,
-      "longitude": 18.0723299
+      "latitude": 59.3105227,
+      "longitude": 18.0750062
     },
-    "fetchedAt": 1790239524415
+    "fetchedAt": 1793878190534
   },
   "Radisson Collection Strand Hotel, Nybrokajen 9, Stockholm, Sweden": {
     "value": null,
@@ -2853,7 +2853,7 @@
       "latitude": 59.3147549,
       "longitude": 18.072032
     },
-    "fetchedAt": 1790850481167
+    "fetchedAt": 1793878192089
   },
   "Bergshamra, Solna, Sweden, Stockholm, Sweden": {
     "value": null,
@@ -4079,5 +4079,26 @@
       "longitude": 18.0750667
     },
     "fetchedAt": 1793792103473
+  },
+  "Stjärntorget 2, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3708061,
+      "longitude": 18.0003805
+    },
+    "fetchedAt": 1793878193482
+  },
+  "Tyrgatan 8, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3462246,
+      "longitude": 18.0673383
+    },
+    "fetchedAt": 1793878194859
+  },
+  "Dag Hammarskjölds väg 14, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.33266,
+      "longitude": 18.1023985
+    },
+    "fetchedAt": 1793878196261
   }
 }
