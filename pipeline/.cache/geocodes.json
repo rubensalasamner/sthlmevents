@@ -238,7 +238,7 @@
   },
   "Mariatorget 10, Sankt Pauls Kyrkan, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793619691927
+    "fetchedAt": 1793964577523
   },
   "Mötesplats Mariatorget, Stockholm, Sweden": {
     "value": {
@@ -1238,7 +1238,7 @@
   },
   "Tel: 08-751 09 65 - Stjärntorget 2, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793619697698
+    "fetchedAt": 1793964565743
   },
   "La Botanica, Stockholm, Sweden": {
     "value": {
@@ -1612,7 +1612,7 @@
   },
   "Ankdamsgatan 46, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793619713060
+    "fetchedAt": 1793964587692
   },
   "Solnahallen, Solna, Stockholm, Sweden": {
     "value": {
@@ -1781,7 +1781,7 @@
   },
   "St Eriksgatan 84, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793619700410
+    "fetchedAt": 1793964572672
   },
   "Påfågeln, Stockholm, Sweden": {
     "value": {
@@ -2491,7 +2491,7 @@
   },
   "Styckmästergatan 10, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793619698987
+    "fetchedAt": 1793964568645
   },
   "T-Centralen, Stockholm, Sweden": {
     "value": {
@@ -2663,7 +2663,7 @@
       "latitude": 59.3358906,
       "longitude": 18.019543
     },
-    "fetchedAt": 1790066971772
+    "fetchedAt": 1793964569884
   },
   "Bååts Torg 20, Stockholm, Sweden": {
     "value": {
@@ -3013,7 +3013,7 @@
   },
   "Stockholm, ni är fantastiska! 💙💛, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793624186944
+    "fetchedAt": 1793964563035
   },
   "APLACE Studio., Stockholm, Sweden": {
     "value": null,
@@ -3202,7 +3202,7 @@
   },
   "Sergels torg, Galleriet Vällingby, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793619694713
+    "fetchedAt": 1793964567380
   },
   "Torekällberget, Stockholm, Sweden": {
     "value": {
@@ -3334,7 +3334,7 @@
   },
   "stermalmsgatan 20, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793619706166
+    "fetchedAt": 1793964580057
   },
   "Kungstensgatan 17, Stockholm, Sweden": {
     "value": {
@@ -3477,11 +3477,11 @@
   },
   "Katarina Kyrkogårds Södra Sida, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793619709063
+    "fetchedAt": 1793964583261
   },
   "Benhuset, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793619710283
+    "fetchedAt": 1793964584518
   },
   "Södermalm, Stockholm, Sweden": {
     "value": {
@@ -3775,7 +3775,7 @@
   },
   "Arninge, 187 66 Täby, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793619702162
+    "fetchedAt": 1793964578841
   },
   "Arninge, Stockholm, Sweden": {
     "value": {
@@ -3936,7 +3936,7 @@
   },
   "Sergels torg, Extern scen, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793619707605
+    "fetchedAt": 1793964581653
   },
   "slussen, Stockholm, Sweden": {
     "value": {
@@ -4004,7 +4004,7 @@
   },
   "Bakluckeloppisen Liljeholmstorget, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793624180129
+    "fetchedAt": 1793964564244
   },
   "Vasagatan 28, Stockholm, Sweden": {
     "value": {
@@ -4100,5 +4100,33 @@
       "longitude": 18.1023985
     },
     "fetchedAt": 1793878196261
+  },
+  "Zinkens Väg 20, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3148632,
+      "longitude": 18.04416
+    },
+    "fetchedAt": 1793964571170
+  },
+  "Essingestråket 1, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3190353,
+      "longitude": 17.9891409
+    },
+    "fetchedAt": 1793964574338
+  },
+  "T-bana, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.4033386,
+      "longitude": 17.9420668
+    },
+    "fetchedAt": 1793964575896
+  },
+  "Jakobsbergsgatan 17, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3347012,
+      "longitude": 18.0690018
+    },
+    "fetchedAt": 1793964586141
   }
 }
