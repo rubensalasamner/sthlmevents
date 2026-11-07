@@ -13,7 +13,7 @@
   },
   "https://historiska.se/utstallningar/ny-utstallning-vikingar-2021/": {
     "image": null,
-    "fetchedAt": 1793704832796
+    "fetchedAt": 1794048115021
   },
   "https://www.sightseeingride.com/en/tours/stockholm-archipelago-tour/": {
     "image": "https://www.sightseeingride.com/uploads/og-image-sightseeing-ride.avif",
@@ -825,7 +825,7 @@
   },
   "https://garageimprovcomedy.com/": {
     "image": null,
-    "fetchedAt": 1793619714438
+    "fetchedAt": 1794048117359
   },
   "https://allevents.in/stockholm/markus-krunegÅrd-grÖnan-live-2026/200029737315430": {
     "image": "https://cdn-az.allevents.in/events4/banners/ae8bfdb679bdf34bdbcdbacb612f0b0a327327da73fa1ded30c27d56a5d393b9-rimg-w1200-h628-dc080808-gmir?v=1787326776",
@@ -49966,5 +49966,201 @@
   "https://secure.tickster.com/1k04cnd5dgdkbvj": {
     "image": null,
     "fetchedAt": 1793964609260
+  },
+  "https://www.meetup.com/intercambio/events/316811599/": {
+    "image": "https://secure.meetupstatic.com/photos/event/9/f/e/e/600_505540942.jpeg",
+    "fetchedAt": 1794048114392
+  },
+  "https://www.meetup.com/stockholm-helping-the-the-poor-and-needy-meetup-group/events/317174416/": {
+    "image": "https://secure.meetupstatic.com/photos/event/4/d/c/e/600_534979918.jpeg",
+    "fetchedAt": 1794048114559
+  },
+  "https://www.meetup.com/outinsthlm/events/317117653/": {
+    "image": "https://secure.meetupstatic.com/photos/event/9/1/6/d/600_536557229.jpeg",
+    "fetchedAt": 1794048114562
+  },
+  "https://www.meetup.com/los-suecanoles/events/316739509/": {
+    "image": "https://secure.meetupstatic.com/photos/event/a/a/b/d/600_498943709.jpeg",
+    "fetchedAt": 1794048114564
+  },
+  "https://www.tickster.com/se/sv/events/rnnnz912fdrab8c/2026-11-07/javla-karlar-med-besok-av-filip-berg": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/2c/b2a2748c68ee5d445b58d207fc73cc327796b0",
+    "fetchedAt": 1794048114576
+  },
+  "https://www.tickster.com/se/sv/events/2bdn21x8vb0khbr/2026-11-10/oppen-kroki": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/a2/55830dcb2547e26d3ae5fe4cd4121e7e155460",
+    "fetchedAt": 1794048114578
+  },
+  "https://www.meetup.com/afterwork-coding/events/317274602/": {
+    "image": "https://secure.meetupstatic.com/photos/event/6/4/f/3/600_536965843.jpeg",
+    "fetchedAt": 1794048114632
+  },
+  "https://www.meetup.com/stockholm-pub-crawl/events/317038312/": {
+    "image": "https://secure.meetupstatic.com/photos/event/1/4/1/7/600_536405143.jpeg",
+    "fetchedAt": 1794048114642
+  },
+  "https://www.tickster.com/se/sv/events/8k9apyexuzty41l/2026-11-10/jazzklubb-hjorthagen-gunilla-tornfeldt": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/93/d54f976416adce0fc002d75a50b44da0709004",
+    "fetchedAt": 1794048114680
+  },
+  "https://www.tickster.com/se/sv/events/m84t0tkuh4np4am/2026-11-12/kris-kaos-and-katastrof": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/21/2be54c61758303bba59fd3bba5dbc006c41c78",
+    "fetchedAt": 1794048114848
+  },
+  "https://www.tickster.com/se/sv/events/hpbhvudey83u2d6/2026-11-11/klang-systematiek": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/4c/048a72ca5af6778f4208b50d31621895050ac3",
+    "fetchedAt": 1794048114917
+  },
+  "https://www.meetup.com/scbcfootball/events/317315022/": {
+    "image": "https://secure.meetupstatic.com/photos/event/c/6/7/4/600_536990804.jpeg",
+    "fetchedAt": 1794048114936
+  },
+  "https://www.tickster.com/se/sv/events/kt15064j4pbvu1n/2026-11-19/henrik-hjelt-antligen": {
+    "image": "https://static.tickster.com/cdn-cgi/image/format=auto,width=960,height=540,fit=scale-down/89/3f3322603fdba876bfb1df47ea98a06ae9d5d2",
+    "fetchedAt": 1794048115229
+  },
+  "https://allevents.in/stockholm/allhelgonaserien-sophie-zelmani-x-2-extrakonsert-släppt/200030185123938": {
+    "image": "https://cdn-az.allevents.in/events4/banners/799f720d24fa9f2e93fbb333e515e1abe13319aca6ddfafe2d9f4c941637fd70-rimg-w1200-h830-dc080808-gmir?v=1788477998",
+    "fetchedAt": 1794048115567
+  },
+  "https://www.hagerius.nu/galleriet": {
+    "image": null,
+    "fetchedAt": 1794048115611
+  },
+  "https://allevents.in/stockholm/valter-nilsson-fållan-stockholm-extrakonsert/200030959713829": {
+    "image": "https://cdn-az.allevents.in/events1/banners/7adb161c89a9cf273b40b0ea33c8a64dc1605b0a4cff9b91eae9b50b03968a11-rimg-w1200-h628-dc181818-gmir?v=1793662828",
+    "fetchedAt": 1794048115779
+  },
+  "https://allevents.in/stockholm/80s-silent-disco-inside-fotografiska-museum-stockholm-on-sale-now/200030246208609": {
+    "image": "https://cdn-az.allevents.in/events10/banners/8be6b0ab0efdd727c4ae0a2b38504327875c9c0b4bd774120ff4d92289daac97-rimg-w1200-h800-dc080818-gmir?v=1786784371",
+    "fetchedAt": 1794048115808
+  },
+  "https://ra.co/events/2579076": {
+    "image": null,
+    "fetchedAt": 1794048115812
+  },
+  "https://www.tjamigo.com/events/stockholm-mushroom-hike-3-pIDn": {
+    "image": null,
+    "fetchedAt": 1794048115896
+  },
+  "https://secure.tickster.com/hpbhvudey83u2d6": {
+    "image": null,
+    "fetchedAt": 1794048115934
+  },
+  "https://secure.tickster.com/m84t0tkuh4np4am": {
+    "image": null,
+    "fetchedAt": 1794048115960
+  },
+  "https://biblioteket.stockholm.se/evenemang/mysteriet-med-den-forsvunna-boken-2": {
+    "image": "https://biblioteket.stockholm.se/cdn/strapi/large_Mysteriet_med_den_foersvunna_boken_1_07f93aee4b.png",
+    "fetchedAt": 1794048116113
+  },
+  "https://secure.tickster.com/2bdn21x8vb0khbr": {
+    "image": null,
+    "fetchedAt": 1794048116211
+  },
+  "https://kulturbiljetter.se/evenemang/9262/mycket-mera-mig/": {
+    "image": "https://kulturbiljetter.se/storage/18ab9b7b5d8f96e1c88c-thumb2.jpg",
+    "fetchedAt": 1794048116480
+  },
+  "https://sollidenpaskansen.se/julbord": {
+    "image": "https://sollidenpaskansen.se/wp-content/uploads/2026/10/DSC09988-2-1-576x1024.webp",
+    "fetchedAt": 1794048116737
+  },
+  "https://kulturhusetstadsteatern.se/kulturhuset-stadsteatern/ortens-basta-poet-semifinal-vallingby": {
+    "image": "https://kulturhusetstadsteatern.se/sites/default/files/2026-11/noise_green.png",
+    "fetchedAt": 1794048116756
+  },
+  "https://kulturbiljetter.se/varukorg/9262/42448/mycket-mera-mig/": {
+    "image": null,
+    "fetchedAt": 1794048116809
+  },
+  "https://kulturbiljetter.se/varukorg/9262/42449/mycket-mera-mig/": {
+    "image": null,
+    "fetchedAt": 1794048116848
+  },
+  "https://ra.co/events/2546738": {
+    "image": null,
+    "fetchedAt": 1794048116869
+  },
+  "https://biljett.kulturaktiebolaget.se/kt15064j4pbvu1n": {
+    "image": null,
+    "fetchedAt": 1794048116887
+  },
+  "https://ra.co/events/2546744": {
+    "image": null,
+    "fetchedAt": 1794048116901
+  },
+  "https://kulturbiljetter.se/varukorg/9262/42451/mycket-mera-mig/": {
+    "image": null,
+    "fetchedAt": 1794048116915
+  },
+  "https://kulturbiljetter.se/varukorg/9262/42450/mycket-mera-mig/": {
+    "image": null,
+    "fetchedAt": 1794048116990
+  },
+  "https://kulturbiljetter.se/varukorg/9194/42462/aldrig-mer-ett-ont-ord-om-trasiga-fioler/": {
+    "image": null,
+    "fetchedAt": 1794048117003
+  },
+  "https://kulturbiljetter.se/varukorg/9262/42447/mycket-mera-mig/": {
+    "image": null,
+    "fetchedAt": 1794048117071
+  },
+  "https://www.ticketmaster.se/event/everybody-knows-leonard-cohen-biljetter/1002845326": {
+    "image": null,
+    "fetchedAt": 1794048117072
+  },
+  "https://www.ticketmaster.se/event/melfest-wknd-2027-pre-party-biljetter/43408127": {
+    "image": null,
+    "fetchedAt": 1794048117093
+  },
+  "https://kulturbiljetter.se/varukorg/9194/42463/aldrig-mer-ett-ont-ord-om-trasiga-fioler/": {
+    "image": null,
+    "fetchedAt": 1794048117096
+  },
+  "https://www.ticketmaster.se/event/-maffia-comedy-alla-hjartans-dag-special-biljetter/1642112706": {
+    "image": null,
+    "fetchedAt": 1794048117109
+  },
+  "https://www.ticketmaster.se/event/melfest-wknd-2027-%7C-after-party-biljetter/1506126199": {
+    "image": null,
+    "fetchedAt": 1794048117136
+  },
+  "https://kulturbiljetter.se/varukorg/9263/42455/messias-av-georg-friedrich-h%C3%A4ndel/": {
+    "image": null,
+    "fetchedAt": 1794048117166
+  },
+  "https://www.ticketmaster.se/event/the-dark-side-of-the-moon-performed-by-friends-of-floyd-biljetter/805337883": {
+    "image": null,
+    "fetchedAt": 1794048117203
+  },
+  "https://www.ticketmaster.se/event/u2-the-greatest-show-on-earth-world-tour-tickets/1067729046?language=en-us": {
+    "image": null,
+    "fetchedAt": 1794048117211
+  },
+  "https://kulturbiljetter.se/evenemang/9266/gaga-movement-research-intensive-stockholm-20-22-august-2027/": {
+    "image": "https://kulturbiljetter.se/storage/ce7c1e43ce699446578c-thumb2.png",
+    "fetchedAt": 1794048117274
+  },
+  "https://kulturbiljetter.se/varukorg/9194/42464/aldrig-mer-ett-ont-ord-om-trasiga-fioler/": {
+    "image": null,
+    "fetchedAt": 1794048117449
+  },
+  "https://kulturbiljetter.se/evenemang/9263/messias-av-georg-friedrich-h%C3%A4ndel/": {
+    "image": null,
+    "fetchedAt": 1794048117450
+  },
+  "https://kulturbiljetter.se/varukorg/9266/42461/gaga-movement-research-intensive-stockholm-20-22-august-2027/": {
+    "image": null,
+    "fetchedAt": 1794048117464
+  },
+  "https://kulturbiljetter.se/varukorg/9263/42454/messias-av-georg-friedrich-h%C3%A4ndel/": {
+    "image": null,
+    "fetchedAt": 1794048117500
+  },
+  "https://debaser.se/events/30495": {
+    "image": "https://admin.debaser.se/uploads/img/30495_20261106095530_crop.jpg",
+    "fetchedAt": 1794048117729
   }
 }

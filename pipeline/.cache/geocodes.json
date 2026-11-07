@@ -2765,7 +2765,7 @@
       "latitude": 59.3433013,
       "longitude": 18.0690103
     },
-    "fetchedAt": 1790412609203
+    "fetchedAt": 1794048110215
   },
   "Tantogatan 85, Stockholm, Sweden": {
     "value": {
@@ -3074,7 +3074,7 @@
   },
   "stgötagatan 12, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791968500794
+    "fetchedAt": 1794048111373
   },
   "Östgötagatan 12, 116 25 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
@@ -4128,5 +4128,19 @@
       "longitude": 18.0690018
     },
     "fetchedAt": 1793964586141
+  },
+  "Östgötagatan 12, 11625 Stockholm, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.316393,
+      "longitude": 18.0755267
+    },
+    "fetchedAt": 1794048112591
+  },
+  "Holländargatan 14, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3377235,
+      "longitude": 18.0594749
+    },
+    "fetchedAt": 1794048114206
   }
 }
