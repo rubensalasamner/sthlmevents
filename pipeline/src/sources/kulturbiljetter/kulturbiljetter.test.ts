@@ -63,6 +63,10 @@ describe('mapKulturbiljetterCategory', () => {
     assert.equal(mapKulturbiljetterCategory('Föreläsning om hösten'), 'other');
     assert.equal(mapKulturbiljetterCategory('Okategoriserad quizkväll'), 'other');
   });
+
+  test('theatre compounds beat live-musik wording', () => {
+    assert.equal(mapKulturbiljetterCategory('Hundliv — teaterföreställning med live musik'), 'theatre');
+  });
 });
 
 describe('mapKulturbiljetterEvent', () => {

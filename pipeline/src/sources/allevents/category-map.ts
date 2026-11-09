@@ -4,14 +4,14 @@ import type { AeEvent } from './types.js';
 /**
  * allevents.in tags events with its own free-form category slugs (mixed case,
  * often several per event) plus a `merged_lookup`. We match those and the title
- * against an ordered table; first match wins, so specific music/nightlife tags
- * beat the generic `entertainment`. Kept standalone so the source owns its map.
+ * against an ordered table; comedy/theatre beat music so mixed tags do not
+ * collapse to music. Kept standalone so the source owns its map.
  */
 const KEYWORD_TO_CATEGORY: readonly (readonly [RegExp, EventCategory])[] = [
   [/\b(rave|parties|party|club|clubbing|nattklubb|techno|house|dj)\b/i, 'nightlife'],
-  [/\b(concert|concerts|live-?music|gig|music|musik|festival)\b/i, 'music'],
   [/\b(comedy|stand-?up|standup|improv)\b/i, 'comedy'],
   [/\b(theatre|theater|performances?|opera|dance|dans|ballet)\b/i, 'theatre'],
+  [/\b(concert|concerts|live-?music|gig|music|musik|festival)\b/i, 'music'],
   [/\b(food|dining|dinner|tasting|wine|brunch|restaurant)\b/i, 'food'],
   [/\b(art|arts|art exhibitions?|utställning|gallery|galleri|vernissage|design)\b/i, 'art'],
   [/\b(sample sale|utförsäljning|warehouse sale|pop-?ups?)\b/i, 'popup'],

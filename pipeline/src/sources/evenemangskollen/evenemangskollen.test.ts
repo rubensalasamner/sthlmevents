@@ -47,6 +47,16 @@ describe('mapEkCategory', () => {
     assert.equal(mapEkCategory(ekRow({ name: 'Standup-kväll', tags: [] })), 'comedy');
     assert.equal(mapEkCategory(ekRow({ name: 'Något annat', tags: [] })), 'other');
   });
+
+  test('theatre compounds beat musik in tags', () => {
+    assert.equal(
+      mapEkCategory({
+        name: 'Hundliv',
+        tags: ['teaterföreställning med mycket musik'],
+      }),
+      'theatre',
+    );
+  });
 });
 
 describe('isListableEkRow', () => {

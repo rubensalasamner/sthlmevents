@@ -46,6 +46,17 @@ describe('mapKhsCategory', () => {
     assert.equal(mapKhsCategory([], 'Sagostund på Lava', ''), 'family');
     assert.equal(mapKhsCategory([], 'Något helt annat', ''), 'other');
   });
+
+  test('theatre compounds beat incidental musik in the lead (Hundliv)', () => {
+    const lead =
+      'Humoristisk teaterföreställning berättad med mycket musik, färgstarka ' +
+      'skuggor och skådespeleri. Gästspel från Ölands Dramatiska Teater.';
+    assert.equal(mapKhsCategory([], 'Hundliv', lead), 'theatre');
+  });
+
+  test('plain music leads still map to music', () => {
+    assert.equal(mapKhsCategory([], 'Kvällskonsert', 'Live musik i Hörsalen'), 'music');
+  });
 });
 
 describe('mapKhsEvent', () => {

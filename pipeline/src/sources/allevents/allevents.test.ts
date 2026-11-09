@@ -66,6 +66,14 @@ describe('mapAlleventsCategory', () => {
     const raw = { eventname: 'Föreläsning', categories: ['nonprofit'] } as never;
     assert.equal(mapAlleventsCategory(raw), 'other');
   });
+
+  test('theatre tags beat music when both are present', () => {
+    const raw = {
+      eventname: 'Hundliv',
+      categories: ['theatre', 'music'],
+    } as never;
+    assert.equal(mapAlleventsCategory(raw), 'theatre');
+  });
 });
 
 describe('mapAlleventsEvent', () => {

@@ -50,6 +50,26 @@ describe('mapBibCategory', () => {
     assert.equal(mapBibCategory('Vernissage', 'Ny utställning öppnar'), 'art');
     assert.equal(mapBibCategory('Föreläsning om AI', ''), 'other');
   });
+
+  test('ignores incidental musik in the preamble (IT-stöd)', () => {
+    const preamble =
+      'Yusuf hjälper dig med IT-frågor. Lära dig appar, e-post, bank-id, ' +
+      'se film och lyssna på musik. Tjänsten är kostnadsfri.';
+    assert.equal(mapBibCategory('IT-stöd för alla över 68 år', preamble), 'other');
+  });
+
+  test('still matches strong music signals in the preamble', () => {
+    assert.equal(mapBibCategory('Kväll på biblioteket', 'Live jazz i foajén'), 'music');
+    assert.equal(mapBibCategory('Musikcirkel', 'Vi lyssnar och pratar'), 'music');
+  });
+
+  test('maps theatre titles and beats incidental musik in the body', () => {
+    assert.equal(mapBibCategory('Öppen Kulturskola - Prova på teater', ''), 'theatre');
+    assert.equal(
+      mapBibCategory('Workshop', 'Upptäck teater, konst och musik — prova på skapande.'),
+      'theatre',
+    );
+  });
 });
 
 describe('mapBibEvent', () => {

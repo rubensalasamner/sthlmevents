@@ -46,6 +46,11 @@ describe('mapMeetupCategory', () => {
     assert.equal(mapMeetupCategory('Sunday Football'), 'sports');
     assert.equal(mapMeetupCategory('Model Optimization & CPU Based Inferencing'), 'other');
   });
+
+  test('theatre titles beat generic music, salsa stays music', () => {
+    assert.equal(mapMeetupCategory('Theatre performance with live music'), 'theatre');
+    assert.equal(mapMeetupCategory('Bachata dance social'), 'music');
+  });
 });
 
 describe('mapMeetupEvent', () => {

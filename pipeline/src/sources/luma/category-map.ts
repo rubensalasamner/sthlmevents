@@ -3,14 +3,14 @@ import type { EventCategory } from '../../shared/event.js';
 /**
  * Luma's discovery entries carry no category, so we infer one from the title.
  * The Stockholm place skews tech/startup/community — those have no dedicated
- * category and correctly fall back to `other`. Kept as a standalone ordered
- * table (strategy) so the source owns its own mapping; first match wins.
+ * category and correctly fall back to `other`. Theatre before music; first
+ * match wins.
  */
 const KEYWORD_TO_CATEGORY: readonly (readonly [RegExp, EventCategory])[] = [
   [/\b(club|rave|nattklubb|techno|house|dj|after ?party|nightlife)\b/i, 'nightlife'],
-  [/\b(concert|live music|gig|musik|band|festival|jam session)\b/i, 'music'],
   [/\b(comedy|stand-?up|improv|open mic)\b/i, 'comedy'],
   [/\b(theatre|theater|opera|dance|dans|performance)\b/i, 'theatre'],
+  [/\b(concert|live music|gig|musik|band|festival|jam session)\b/i, 'music'],
   [/\b(dinner|brunch|supper|tasting|food|wine|coffee|fika|mingle dinner)\b/i, 'food'],
   [/\b(art|exhibition|gallery|vernissage|design|photo walk)\b/i, 'art'],
   [/\b(sample sale|utförsäljning|warehouse sale|pop-?ups?)\b/i, 'popup'],

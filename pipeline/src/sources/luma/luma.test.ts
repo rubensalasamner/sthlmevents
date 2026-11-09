@@ -40,6 +40,10 @@ describe('mapLumaCategory', () => {
     assert.equal(mapLumaCategory('Techno all night'), 'nightlife');
     assert.equal(mapLumaCategory('Security in the AI era'), 'other');
   });
+
+  test('theatre beats music when both appear in the title', () => {
+    assert.equal(mapLumaCategory('Theatre performance with live music'), 'theatre');
+  });
 });
 
 describe('mapLumaEntry', () => {

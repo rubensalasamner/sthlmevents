@@ -53,6 +53,17 @@ describe('mapEventbriteCategory', () => {
     assert.equal(mapEventbriteCategory('Vernissage & konst'), 'art');
     assert.equal(mapEventbriteCategory('Retail Hub Breakfast'), 'other');
   });
+
+  test('ignores incidental musik in the description and prefers theatre', () => {
+    assert.equal(
+      mapEventbriteCategory('IT support for seniors', 'Learn apps, bank-id, and lyssna på musik'),
+      'other',
+    );
+    assert.equal(
+      mapEventbriteCategory('Hundliv', 'En teaterföreställning med mycket musik'),
+      'theatre',
+    );
+  });
 });
 
 describe('mapEventbriteEvent', () => {

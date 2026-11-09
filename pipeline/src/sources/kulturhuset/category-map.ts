@@ -4,6 +4,10 @@ import type { EventCategory } from '../../shared/event.js';
  * Kulturhuset's own category taxonomy (drupalCategory.label) is rich and
  * machine-readable — no keyword guessing needed for the common cases. Unmapped
  * labels fall through to keyword heuristics, then 'other'.
+ *
+ * Keyword order matters: theatre/family/comedy beat music, because leads often
+ * say "teaterföreställning … med mycket musik" (Hundliv). `\bteater` (no
+ * trailing boundary) matches compounds like teaterföreställning.
  */
 
 const LABEL_MAP: Record<string, EventCategory> = {
@@ -48,10 +52,10 @@ const LABEL_MAP: Record<string, EventCategory> = {
 
 const KEYWORDS: Array<[RegExp, EventCategory]> = [
   [/\bstandup\b|\bkomedi\b|\bhumor\b/i, 'comedy'],
+  [/\bteater|\bdansföreställning\b|\bmonolog\b/i, 'theatre'],
+  [/\bsagostund\b|\bpyssel\b|\bfamilj(e)?\b/i, 'family'],
   [/\bkonsert\b|\bmusik\b|\bjazz\b|\bkvintett\b|\bkörsång\b/i, 'music'],
   [/\butställning\b|\bvernissage\b|\bkonstnär/i, 'art'],
-  [/\bteater\b|\bdansföreställning\b|\bmonolog\b/i, 'theatre'],
-  [/\bsagostund\b|\bpyssel\b|\bfamilj(e)?\b/i, 'family'],
   [/\bmarknad\b|\bloppis\b/i, 'market'],
 ];
 

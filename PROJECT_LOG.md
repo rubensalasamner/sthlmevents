@@ -3,7 +3,7 @@
 > **Syfte:** den här filen är projektets "minne" mellan datorer och sessioner.
 > Läs den först om du (människa eller AI-agent) plockar upp projektet efter en
 > paus. Den uppdateras när vi fattar beslut eller når slutsatser — inte för
-> varje kodändring. Senast uppdaterad: **2026-10-19**.
+> varje kodändring. Senast uppdaterad: **2026-10-26**.
 
 ---
 
@@ -298,6 +298,14 @@ konton först efter caption-probe (ingen OCR som default).
   rails + interest-chips. Keyword-maps + FB/IG mapper använder
   `inferCommerceCategory`; LLM-prompten säger samma sak. Syns i data efter
   nästa snapshot.
+- **Keyword-kategori false positives (2026-10-26)**: fritext-`musik` + music-
+  före-theatre i keyword-maps märkte IT-stöd/Hundliv (m.fl.) som `music`.
+  Fix i alla fritext-maps (bib, khs, ek, eventbrite, luma, allevents, meetup,
+  kulturbiljetter): comedy/theatre före music; `\bteater` matchar compounds;
+  bib+eventbrite matchar titel först och kräver starkare musiksignal i body.
+  Meetup: salsa/bachata behålls music före generisk `dance`. Bib fick även
+  `theatre` (saknades). VS/TM oförändrade (taxonomi, inte keywords). Syns
+  efter nästa snapshot — ingen app-deploy.
 - **App variants (2026-10-02)**: EAS `development` sätter `APP_VARIANT=development`
   → Android/iOS id `app.sthlmevents.dev`, app-namn “sthlmevents Dev”. Play /
   production behåller `app.sthlmevents`. Då kan Internal Testing och lokal
@@ -344,9 +352,11 @@ konton först efter caption-probe (ingen OCR som default).
   quality → id. Band: programme → outOfTown → longRunning (>30 dagar).
   Tier inom band: upcoming (startsAt) → ongoing (endsAt snarast) → past.
   Syfte: "händer nu" överst, månads-långa events längst ner.
-- **Kartmarkörer v1**: frost-pills (Blå Timmen-yta `#F2F5F9`) med kategori-
-  border/accent-stripe, titel i mörk ink + tid i secondary. Default = tid;
-  från zoom ≥13 / ≤20 events: titel+tid två rader. Storlek sm/md/lg med zoom.
+- **Kartmarkörer v2 (2026-10-26)**: quiet dots — city zoom = amber count-
+  clusters; neighbourhood+ = kategori-/fav-/selected-dots utan text. Titlar
+  bor i sheet/peek. Center-anchor. Kod: `map-pin-icon` + `buildEventDotPng` /
+  `buildClusterDotPng`. Frost-pills (`buildBubblePng`) kvar som legacy/test.
+  Lab: `docs/design/map-marker-lab.canvas.tsx` (hybrid A).
 - **Dedup**: normaliserad titel + Stockholm-lokal dag; rikaste data vinner.
   Facebook-vs-loppiskartan: noll kollisioner hittills (olika eventtyper).
 - **Snapshot**: minifierad JSON, appen läser via `StaticEventSource` vid
