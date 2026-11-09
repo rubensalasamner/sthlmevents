@@ -3031,7 +3031,7 @@
       "latitude": 59.3459735,
       "longitude": 18.0605102
     },
-    "fetchedAt": 1791201296189
+    "fetchedAt": 1794230909826
   },
   "Riddargatan 19, Stockholm, Sweden": {
     "value": {
@@ -4036,7 +4036,7 @@
   },
   "regrundsgatan 3, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793624188430
+    "fetchedAt": 1794230903020
   },
   "Öregrundsgatan 3, Stockholm, Sweden": {
     "value": {
@@ -4160,5 +4160,27 @@
       "longitude": 18.0781478
     },
     "fetchedAt": 1794134929422
+  },
+  "Tips på utförsäljning som startar på fredag i Haninge. @livly_stockholm #utförsäljning #samplesale, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1794230904392
+  },
+  "Hötorget: 1, 8, 15, 22 & 29 november, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1794230905752
+  },
+  "Roslagsgatan 56, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3502206,
+      "longitude": 18.0564294
+    },
+    "fetchedAt": 1794230906962
+  },
+  "Humlegårdsgatan 6, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3364367,
+      "longitude": 18.0769946
+    },
+    "fetchedAt": 1794230908357
   }
 }
