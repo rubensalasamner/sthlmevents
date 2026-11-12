@@ -1911,7 +1911,7 @@
       "latitude": 59.3347713,
       "longitude": 18.0909854
     },
-    "fetchedAt": 1791889495121
+    "fetchedAt": 1794484236201
   },
   "Various venues, Stockholm, Sweden": {
     "value": null,
@@ -3209,7 +3209,7 @@
       "latitude": 59.1917447,
       "longitude": 17.6161394
     },
-    "fetchedAt": 1791889498828
+    "fetchedAt": 1794484240725
   },
   "Evenemangsgatan 48, Stockholm, Sweden": {
     "value": {
@@ -4197,5 +4197,26 @@
   "Stockholm, 111 20 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
     "fetchedAt": 1794396473498
+  },
+  "Kungsgatan 62, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3343209,
+      "longitude": 18.0583234
+    },
+    "fetchedAt": 1794484234900
+  },
+  "Kommunalvägen 21, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.2391573,
+      "longitude": 17.9845636
+    },
+    "fetchedAt": 1794484237825
+  },
+  "Laboratoriegatan 1, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3323828,
+      "longitude": 18.1024836
+    },
+    "fetchedAt": 1794484239438
   }
 }
