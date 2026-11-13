@@ -94,6 +94,7 @@ export default function RootLayout() {
                             <Stack.Screen name="agenda" options={{ title: 'All events' }} />
                             <Stack.Screen name="event/[id]" options={{ headerShown: false }} />
                             <Stack.Screen name="privacy" options={{ title: 'Privacy Policy' }} />
+                            <Stack.Screen name="about" options={{ title: 'About' }} />
                           </Stack>
                         </>
                       ) : null}

@@ -122,6 +122,9 @@ istället för en filterstack. Tema: "Blå Timmen"
   Play kräver publik HTTPS-URL. Innehåll speglar faktisk app: lokala favoriter/
   affinity, lazy GPS, lokala notiser, kalender-skriv, ingen kontologin/annons-
   SDK. Kontakt via GitHub issues. `vercel.json` rewrite → `privacy.html`.
+- **About page** (2026-11-13): `/about` för Play “Website”-fältet (bättre än
+  privacy-URL). Kort produktbeskrivning + länkar till web-appen, privacy,
+  GitHub issues.
 - UI (2026-09-18): **Magazine home + map peek + agenda**. Tabs Home /
   Explore / Saved. Filter ligger i ett sheet bakom en sammanfattningschip —
   inte fyra always-on rader. EventPresentation-strategier: hero / poster /

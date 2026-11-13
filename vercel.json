@@ -19,7 +19,11 @@
       "destination": "/privacy.html"
     },
     {
-      "source": "/((?!event/|privacy|events\\.snapshot\\.json|_expo/|assets/|data/|favicon|.*\\.\\w+$).*)",
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/((?!event/|privacy|about|events\\.snapshot\\.json|_expo/|assets/|data/|favicon|.*\\.\\w+$).*)",
       "destination": "/index.html"
     }
   ],

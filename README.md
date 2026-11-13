@@ -32,7 +32,8 @@ and routes:
 
 - `/` — the web app (clean URLs, SPA fallback for unknown routes)
 - `/event/:id` — event detail deep links
-- `/privacy` — privacy policy (Play / App Store listing URL)
+- `/privacy` — privacy policy (Play / App Store privacy URL)
+- `/about` — product page (Play / App Store website URL)
 - `/events.snapshot.json` — the snapshot, served with CORS `*` so installed
   native apps can fetch it too
 
