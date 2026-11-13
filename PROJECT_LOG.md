@@ -3,7 +3,7 @@
 > **Syfte:** den här filen är projektets "minne" mellan datorer och sessioner.
 > Läs den först om du (människa eller AI-agent) plockar upp projektet efter en
 > paus. Den uppdateras när vi fattar beslut eller når slutsatser — inte för
-> varje kodändring. Senast uppdaterad: **2026-10-26**.
+> varje kodändring. Senast uppdaterad: **2026-11-13**.
 
 ---
 
@@ -118,6 +118,10 @@ istället för en filterstack. Tema: "Blå Timmen"
   `/watermark_image` (extension-less; 302 → unik CDN-bild). Annars rejectades
   Billetto-covers → VS food-events (Amfora m.fl.) stannade på kategori-
   Unsplash trots lyckad scrape.
+- **Privacy policy page** (2026-11-13): `/privacy` i Expo web-exporten (Vercel).
+  Play kräver publik HTTPS-URL. Innehåll speglar faktisk app: lokala favoriter/
+  affinity, lazy GPS, lokala notiser, kalender-skriv, ingen kontologin/annons-
+  SDK. Kontakt via GitHub issues. `vercel.json` rewrite → `privacy.html`.
 - UI (2026-09-18): **Magazine home + map peek + agenda**. Tabs Home /
   Explore / Saved. Filter ligger i ett sheet bakom en sammanfattningschip —
   inte fyra always-on rader. EventPresentation-strategier: hero / poster /

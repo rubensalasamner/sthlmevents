@@ -15,7 +15,11 @@
       "destination": "/event/[id].html"
     },
     {
-      "source": "/((?!event/|events\\.snapshot\\.json|_expo/|assets/|data/|favicon|.*\\.\\w+$).*)",
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/((?!event/|privacy|events\\.snapshot\\.json|_expo/|assets/|data/|favicon|.*\\.\\w+$).*)",
       "destination": "/index.html"
     }
   ],
