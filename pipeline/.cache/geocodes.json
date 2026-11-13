@@ -238,7 +238,7 @@
   },
   "Mariatorget 10, Sankt Pauls Kyrkan, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794226053664
+    "fetchedAt": 1794569530931
   },
   "Mötesplats Mariatorget, Stockholm, Sweden": {
     "value": {
@@ -514,11 +514,11 @@
   },
   "Medborgareplatsen 4, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793792084289
+    "fetchedAt": 1794569543354
   },
   "Sensus Studieförbund, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793792085694
+    "fetchedAt": 1794569544640
   },
   "Smedsuddsvägen 23, Stockholm, Sweden": {
     "value": {
@@ -1128,7 +1128,7 @@
   },
   "Fartyget Vieille Montagne, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791713953881
+    "fetchedAt": 1794569547471
   },
   "Täby, Stockholm, Sweden": {
     "value": {
@@ -1216,7 +1216,7 @@
       "latitude": 59.3349264,
       "longitude": 18.0635012
     },
-    "fetchedAt": 1788794903047
+    "fetchedAt": 1794569535415
   },
   "Ringvägen 147, Stockholm, Sweden": {
     "value": {
@@ -1238,7 +1238,7 @@
   },
   "Tel: 08-751 09 65 - Stjärntorget 2, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794226055468
+    "fetchedAt": 1794569516240
   },
   "La Botanica, Stockholm, Sweden": {
     "value": {
@@ -1612,7 +1612,7 @@
   },
   "Ankdamsgatan 46, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794226068666
+    "fetchedAt": 1794569550342
   },
   "Solnahallen, Solna, Stockholm, Sweden": {
     "value": {
@@ -1781,7 +1781,7 @@
   },
   "St Eriksgatan 84, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794226057166
+    "fetchedAt": 1794569529621
   },
   "Påfågeln, Stockholm, Sweden": {
     "value": {
@@ -2334,7 +2334,7 @@
   },
   "Söder Mälarstrand kajplats 15, 118 20 Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791713952148
+    "fetchedAt": 1794569546035
   },
   "Narvavägen 17, Stockholm, Sweden": {
     "value": {
@@ -3013,7 +3013,7 @@
   },
   "Stockholm, ni är fantastiska! 💙💛, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794226046469
+    "fetchedAt": 1794569513647
   },
   "APLACE Studio., Stockholm, Sweden": {
     "value": null,
@@ -3202,7 +3202,7 @@
   },
   "Sergels torg, Galleriet Vällingby, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794226051067
+    "fetchedAt": 1794569517690
   },
   "Torekällberget, Stockholm, Sweden": {
     "value": {
@@ -3234,7 +3234,7 @@
       "latitude": 59.3251699,
       "longitude": 18.0707795
     },
-    "fetchedAt": 1791968508631
+    "fetchedAt": 1794569548916
   },
   "Various places in Stockholm, Stockholm, Sweden": {
     "value": null,
@@ -3334,7 +3334,7 @@
   },
   "stermalmsgatan 20, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794226062776
+    "fetchedAt": 1794569538084
   },
   "Kungstensgatan 17, Stockholm, Sweden": {
     "value": {
@@ -3477,11 +3477,11 @@
   },
   "Katarina Kyrkogårds Södra Sida, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794226065645
+    "fetchedAt": 1794569540713
   },
   "Benhuset, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794226067157
+    "fetchedAt": 1794569542133
   },
   "Södermalm, Stockholm, Sweden": {
     "value": {
@@ -3775,7 +3775,7 @@
   },
   "Arninge, 187 66 Täby, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794226058887
+    "fetchedAt": 1794569532617
   },
   "Arninge, Stockholm, Sweden": {
     "value": {
@@ -3936,7 +3936,7 @@
   },
   "Sergels torg, Extern scen, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794226064102
+    "fetchedAt": 1794569539418
   },
   "slussen, Stockholm, Sweden": {
     "value": {
@@ -4036,7 +4036,7 @@
   },
   "regrundsgatan 3, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794230903020
+    "fetchedAt": 1794569514851
   },
   "Öregrundsgatan 3, Stockholm, Sweden": {
     "value": {
@@ -4163,11 +4163,11 @@
   },
   "Tips på utförsäljning som startar på fredag i Haninge. @livly_stockholm #utförsäljning #samplesale, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794230904392
+    "fetchedAt": 1794569528099
   },
   "Hötorget: 1, 8, 15, 22 & 29 november, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794230905752
+    "fetchedAt": 1794569536795
   },
   "Roslagsgatan 56, Stockholm, Sweden": {
     "value": {
@@ -4218,5 +4218,45 @@
       "longitude": 18.1024836
     },
     "fetchedAt": 1794484239438
+  },
+  "Stubbhagsvägen 6, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.44488,
+      "longitude": 17.9518668
+    },
+    "fetchedAt": 1794569519010
+  },
+  "Hallonbergsplan 7 - 3rd Floor, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1794569520336
+  },
+  "CasaTua Hub, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1794569521666
+  },
+  "Stockholm County, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3382751,
+      "longitude": 18.0718928
+    },
+    "fetchedAt": 1794569523458
+  },
+  "Tyghusplan 4, 111 49 Stockholm, Sweden, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1794569525230
+  },
+  "Östasiatiska museet, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3273849,
+      "longitude": 18.0816743
+    },
+    "fetchedAt": 1794569526696
+  },
+  "Göransgatan 92, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.334041,
+      "longitude": 18.0268959
+    },
+    "fetchedAt": 1794569533946
   }
 }
