@@ -3267,7 +3267,7 @@
       "latitude": 59.3245384,
       "longitude": 18.0063166
     },
-    "fetchedAt": 1792053352053
+    "fetchedAt": 1794653752518
   },
   "Hamngatan 37, Stockholm, Sweden": {
     "value": {
@@ -4185,7 +4185,7 @@
   },
   "rsta Torg 5, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794311138815
+    "fetchedAt": 1794653759269
   },
   "Årsta Torg 5, Stockholm, Sweden": {
     "value": {
@@ -4258,5 +4258,47 @@
       "longitude": 18.0268959
     },
     "fetchedAt": 1794569533946
+  },
+  "Trubadurvägen 3, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3521416,
+      "longitude": 18.0055658
+    },
+    "fetchedAt": 1794653749588
+  },
+  "Götgatan 61, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3131263,
+      "longitude": 18.074158
+    },
+    "fetchedAt": 1794653751292
+  },
+  "Björngårdsgatan 1A, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3176319,
+      "longitude": 18.0650779
+    },
+    "fetchedAt": 1794653754171
+  },
+  "Pipersgatan 4, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3290522,
+      "longitude": 18.045121
+    },
+    "fetchedAt": 1794653755784
+  },
+  "Hornsgatan 65, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3176613,
+      "longitude": 18.0536892
+    },
+    "fetchedAt": 1794653757526
+  },
+  "Berzelii Park 9, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.332622,
+      "longitude": 18.0734543
+    },
+    "fetchedAt": 1794653760601
   }
 }
