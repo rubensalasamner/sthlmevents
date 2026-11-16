@@ -2638,7 +2638,7 @@
       "latitude": 59.3059297,
       "longitude": 18.0065703
     },
-    "fetchedAt": 1789982445998
+    "fetchedAt": 1794834860602
   },
   "St Eriksgatan 79, Stockholm, Sweden": {
     "value": null,
@@ -3142,7 +3142,7 @@
       "latitude": 59.3123277,
       "longitude": 18.0806274
     },
-    "fetchedAt": 1791808330916
+    "fetchedAt": 1794834868797
   },
   "Augustendalsvägen 7, Stockholm, Sweden": {
     "value": {
@@ -3156,21 +3156,21 @@
       "latitude": 59.3409714,
       "longitude": 18.0611271
     },
-    "fetchedAt": 1791808333687
+    "fetchedAt": 1794834867493
   },
   "Folkungagatan 122, Stockholm, Sweden": {
     "value": {
       "latitude": 59.3154583,
       "longitude": 18.0864173
     },
-    "fetchedAt": 1791808335169
+    "fetchedAt": 1794834864604
   },
   "Västmannagatan 10, Stockholm, Sweden": {
     "value": {
       "latitude": 59.3369086,
       "longitude": 18.0525784
     },
-    "fetchedAt": 1791808336533
+    "fetchedAt": 1794834863386
   },
   "Textilgatan 33, Stockholm, Sweden": {
     "value": {
@@ -4343,5 +4343,26 @@
       "longitude": 18.0901882
     },
     "fetchedAt": 1794830590569
+  },
+  "Polhemsgatan 20A, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3294333,
+      "longitude": 18.036216
+    },
+    "fetchedAt": 1794834859105
+  },
+  "Regeringsgatan 91, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3378948,
+      "longitude": 18.0671478
+    },
+    "fetchedAt": 1794834861918
+  },
+  "Drottninggatan 92, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3326531,
+      "longitude": 18.0626317
+    },
+    "fetchedAt": 1794834865996
   }
 }
