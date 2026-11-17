@@ -514,11 +514,11 @@
   },
   "Medborgareplatsen 4, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794569543354
+    "fetchedAt": 1794918426203
   },
   "Sensus Studieförbund, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794569544640
+    "fetchedAt": 1794918427426
   },
   "Smedsuddsvägen 23, Stockholm, Sweden": {
     "value": {
@@ -729,7 +729,7 @@
       "latitude": 59.3251172,
       "longitude": 18.0710935
     },
-    "fetchedAt": 1792311658297
+    "fetchedAt": 1794918419383
   },
   "stromgatan, Stockholm, Sweden": {
     "value": {
@@ -2656,7 +2656,7 @@
       "latitude": 59.3341688,
       "longitude": 18.0661754
     },
-    "fetchedAt": 1790066970436
+    "fetchedAt": 1794918428679
   },
   "Göransgatan 130, Stockholm, Sweden": {
     "value": {
@@ -3074,7 +3074,7 @@
   },
   "stgötagatan 12, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794311133376
+    "fetchedAt": 1794918423525
   },
   "Östgötagatan 12, 116 25 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
@@ -4185,7 +4185,7 @@
   },
   "rsta Torg 5, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794653759269
+    "fetchedAt": 1794918429922
   },
   "Årsta Torg 5, Stockholm, Sweden": {
     "value": {
@@ -4364,5 +4364,26 @@
       "longitude": 18.0626317
     },
     "fetchedAt": 1794834865996
+  },
+  "Rödabergsgatan 11, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3437807,
+      "longitude": 18.0350804
+    },
+    "fetchedAt": 1794918420772
+  },
+  "Södra Hamnvägen 9, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3428245,
+      "longitude": 18.1173269
+    },
+    "fetchedAt": 1794918422209
+  },
+  "Hornsgatan 88, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3178766,
+      "longitude": 18.0535791
+    },
+    "fetchedAt": 1794918424841
   }
 }
