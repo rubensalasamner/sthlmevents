@@ -1156,7 +1156,7 @@
       "latitude": 59.331327,
       "longitude": 18.0453713
     },
-    "fetchedAt": 1792486397439
+    "fetchedAt": 1795176627811
   },
   "Sergels torg, Foajé 3, Stockholm, Sweden": {
     "value": null,
@@ -2072,7 +2072,7 @@
       "latitude": 59.3193166,
       "longitude": 18.0722002
     },
-    "fetchedAt": 1792224178652
+    "fetchedAt": 1795176619624
   },
   "Mäster Pers gränd 17, Stockholm, Sweden": {
     "value": {
@@ -2751,7 +2751,7 @@
       "latitude": 59.3457214,
       "longitude": 18.0497839
     },
-    "fetchedAt": 1790327213828
+    "fetchedAt": 1795176618360
   },
   "Hornsgatan 104, Stockholm, Sweden": {
     "value": {
@@ -3715,7 +3715,7 @@
       "latitude": 59.3409188,
       "longitude": 18.0519435
     },
-    "fetchedAt": 1792572800031
+    "fetchedAt": 1795176623904
   },
   "Spånga bibliotek, Stockholm, Sweden": {
     "value": {
@@ -4418,5 +4418,37 @@
       "longitude": 18.0699986
     },
     "fetchedAt": 1795090088272
+  },
+  "Riksgatan 3, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3277947,
+      "longitude": 18.0673311
+    },
+    "fetchedAt": 1795176621065
+  },
+  "Regeringsgatan 52, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3348812,
+      "longitude": 18.0678711
+    },
+    "fetchedAt": 1795176622455
+  },
+  "Regereringsgatan 74, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1795176625082
+  },
+  "Nalen Restaurang, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3371633,
+      "longitude": 18.0675518
+    },
+    "fetchedAt": 1795176626343
+  },
+  "s torg 5, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3300118,
+      "longitude": 18.0722204
+    },
+    "fetchedAt": 1795176629126
   }
 }
