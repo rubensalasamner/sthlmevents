@@ -2111,14 +2111,14 @@
       "latitude": 59.335207,
       "longitude": 18.0626348
     },
-    "fetchedAt": 1792311651116
+    "fetchedAt": 1795261591105
   },
   "Hammarby Slussväg 17, 118 60, Stockholm, Sweden": {
     "value": {
       "latitude": 59.3038408,
       "longitude": 18.0699831
     },
-    "fetchedAt": 1792311652309
+    "fetchedAt": 1795261592744
   },
   "Folkungagatan 45, 118 26 Stockholm, Stockholm, Sweden": {
     "value": {
@@ -2624,7 +2624,7 @@
       "latitude": 59.3274942,
       "longitude": 18.0542148
     },
-    "fetchedAt": 1792659357893
+    "fetchedAt": 1795261586520
   },
   "Söder Mälarstrand 25, Stockholm, Sweden": {
     "value": {
@@ -3729,7 +3729,7 @@
       "latitude": 59.3168777,
       "longitude": 18.0627109
     },
-    "fetchedAt": 1792659354646
+    "fetchedAt": 1795261589497
   },
   "Tulegatan 4, Stockholm, Sweden": {
     "value": {
@@ -4185,7 +4185,7 @@
   },
   "rsta Torg 5, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794918429922
+    "fetchedAt": 1795261594377
   },
   "Årsta Torg 5, Stockholm, Sweden": {
     "value": {
@@ -4196,7 +4196,7 @@
   },
   "Stockholm, 111 20 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794742234905
+    "fetchedAt": 1795261588303
   },
   "Kungsgatan 62, Stockholm, Sweden": {
     "value": {
@@ -4450,5 +4450,24 @@
       "longitude": 18.0722204
     },
     "fetchedAt": 1795176629126
+  },
+  "Vasaplan 7, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.332537,
+      "longitude": 18.057104
+    },
+    "fetchedAt": 1795261595558
+  },
+  "Knutssongatan 2, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1795261597133
+  },
+  "Torkel Knutssongatan 2, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1795261598292
+  },
+  "Münchenbryggeriet Mässhallen, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1795261599505
   }
 }
