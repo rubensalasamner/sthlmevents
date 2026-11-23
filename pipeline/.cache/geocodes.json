@@ -2330,7 +2330,7 @@
       "latitude": 59.343526,
       "longitude": 18.0686718
     },
-    "fetchedAt": 1792405443648
+    "fetchedAt": 1795448007169
   },
   "Söder Mälarstrand kajplats 15, 118 20 Stockholm, Stockholm, Sweden": {
     "value": null,
@@ -3598,14 +3598,14 @@
       "latitude": 59.3371061,
       "longitude": 18.0771224
     },
-    "fetchedAt": 1792405439334
+    "fetchedAt": 1795448008394
   },
   "Odengatan 78, Stockholm, Sweden": {
     "value": {
       "latitude": 59.3415477,
       "longitude": 18.0449762
     },
-    "fetchedAt": 1792405440823
+    "fetchedAt": 1795448009867
   },
   "Hälsingegatan 12, Stockholm, Sweden": {
     "value": {
@@ -3623,7 +3623,7 @@
       "latitude": 59.3354334,
       "longitude": 18.0526836
     },
-    "fetchedAt": 1792405446448
+    "fetchedAt": 1795448005660
   },
   "Lexington Company Pop-Up Archive & Sample Sale 2026 at Stockholm Quality Outlet., Stockholm, Sweden": {
     "value": null,
@@ -4551,5 +4551,12 @@
       "longitude": 18.1326665
     },
     "fetchedAt": 1795441160382
+  },
+  "Skånegatan 90, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3125229,
+      "longitude": 18.0820801
+    },
+    "fetchedAt": 1795448011174
   }
 }
