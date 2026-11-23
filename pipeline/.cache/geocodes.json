@@ -238,7 +238,7 @@
   },
   "Mariatorget 10, Sankt Pauls Kyrkan, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795090074841
+    "fetchedAt": 1795441144423
   },
   "Mötesplats Mariatorget, Stockholm, Sweden": {
     "value": {
@@ -366,7 +366,7 @@
   },
   "Hagagatan, 113 48 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795090084973
+    "fetchedAt": 1795441154272
   },
   "Hammarby Slussväg 17, Stockholm, Sweden": {
     "value": {
@@ -444,7 +444,7 @@
   },
   "Bibliotekslabbet, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1791369268302
+    "fetchedAt": 1795441172841
   },
   "Hamngatan 4, Stockholm, Sweden": {
     "value": {
@@ -871,7 +871,7 @@
   },
   "Secret Restaurant Location in  Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795090086511
+    "fetchedAt": 1795441155931
   },
   "Kungstensgatan 45, 11359 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
@@ -1238,7 +1238,7 @@
   },
   "Tel: 08-751 09 65 - Stjärntorget 2, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795090097730
+    "fetchedAt": 1795441171350
   },
   "La Botanica, Stockholm, Sweden": {
     "value": {
@@ -1612,7 +1612,7 @@
   },
   "Ankdamsgatan 46, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795090099051
+    "fetchedAt": 1795441174014
   },
   "Solnahallen, Solna, Stockholm, Sweden": {
     "value": {
@@ -1781,7 +1781,7 @@
   },
   "St Eriksgatan 84, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795090089763
+    "fetchedAt": 1795441162051
   },
   "Påfågeln, Stockholm, Sweden": {
     "value": {
@@ -2459,7 +2459,7 @@
       "latitude": 59.3142373,
       "longitude": 18.0727889
     },
-    "fetchedAt": 1792830279268
+    "fetchedAt": 1795441147321
   },
   "Sjötullsbacken 8, Stockholm, Sweden": {
     "value": {
@@ -3202,7 +3202,7 @@
   },
   "Sergels torg, Galleriet Vällingby, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795090070648
+    "fetchedAt": 1795441145939
   },
   "Torekällberget, Stockholm, Sweden": {
     "value": {
@@ -3334,7 +3334,7 @@
   },
   "stermalmsgatan 20, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795090090964
+    "fetchedAt": 1795441163531
   },
   "Kungstensgatan 17, Stockholm, Sweden": {
     "value": {
@@ -3477,11 +3477,11 @@
   },
   "Katarina Kyrkogårds Södra Sida, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795090095199
+    "fetchedAt": 1795441168172
   },
   "Benhuset, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795090096407
+    "fetchedAt": 1795441169662
   },
   "Södermalm, Stockholm, Sweden": {
     "value": {
@@ -3936,7 +3936,7 @@
   },
   "Sergels torg, Extern scen, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795090092378
+    "fetchedAt": 1795441165038
   },
   "slussen, Stockholm, Sweden": {
     "value": {
@@ -4036,7 +4036,7 @@
   },
   "regrundsgatan 3, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795090069227
+    "fetchedAt": 1795441141145
   },
   "Öregrundsgatan 3, Stockholm, Sweden": {
     "value": {
@@ -4167,7 +4167,7 @@
   },
   "Hötorget: 1, 8, 15, 22 & 29 november, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795090073442
+    "fetchedAt": 1795441142878
   },
   "Roslagsgatan 56, Stockholm, Sweden": {
     "value": {
@@ -4435,7 +4435,7 @@
   },
   "Regereringsgatan 74, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795176625082
+    "fetchedAt": 1795441166554
   },
   "Nalen Restaurang, Stockholm, Sweden": {
     "value": {
@@ -4511,5 +4511,45 @@
       "longitude": 17.8430932
     },
     "fetchedAt": 1795348839124
+  },
+  "Rösjön, Sjöberg, Sollentuna, Sweden, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1795441148663
+  },
+  "Rösjön, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.44471,
+      "longitude": 17.995278
+    },
+    "fetchedAt": 1795441149938
+  },
+  "Häggvik station, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.4437915,
+      "longitude": 17.9328751
+    },
+    "fetchedAt": 1795441151295
+  },
+  "Regeringsgatan 47, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3331998,
+      "longitude": 18.0677824
+    },
+    "fetchedAt": 1795441152813
+  },
+  "Sergels Torg, 111 57 Stockholm, Sweden, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1795441157587
+  },
+  "Kulturhuset Stadsteatern, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1795441159178
+  },
+  "Lillåvägen 44, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.2768735,
+      "longitude": 18.1326665
+    },
+    "fetchedAt": 1795441160382
   }
 }
