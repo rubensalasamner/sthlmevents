@@ -387,7 +387,7 @@
       "latitude": 59.3250056,
       "longitude": 18.0713248
     },
-    "fetchedAt": 1792486398899
+    "fetchedAt": 1795529772912
   },
   "Sigtunagatan 16, Stockholm, Sweden": {
     "value": {
@@ -2480,7 +2480,7 @@
       "latitude": 59.3323032,
       "longitude": 18.0733441
     },
-    "fetchedAt": 1789805964785
+    "fetchedAt": 1795529781335
   },
   "Lilla Allmänna Gränd 2, Stockholm, Sweden": {
     "value": {
@@ -2670,7 +2670,7 @@
       "latitude": 59.2189231,
       "longitude": 17.9497146
     },
-    "fetchedAt": 1792659353382
+    "fetchedAt": 1795529775705
   },
   "Sankt Eriksgatan 1, Stockholm, Sweden": {
     "value": {
@@ -3074,7 +3074,7 @@
   },
   "stgötagatan 12, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794918423525
+    "fetchedAt": 1795529774074
   },
   "Östgötagatan 12, 116 25 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
@@ -3814,7 +3814,7 @@
       "latitude": 59.3519706,
       "longitude": 18.0691368
     },
-    "fetchedAt": 1792917860229
+    "fetchedAt": 1795529777275
   },
   "Fridhemsgatan 17, Stockholm, Sweden": {
     "value": {
@@ -4185,7 +4185,7 @@
   },
   "rsta Torg 5, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795261594377
+    "fetchedAt": 1795529778918
   },
   "Årsta Torg 5, Stockholm, Sweden": {
     "value": {
@@ -4460,15 +4460,15 @@
   },
   "Knutssongatan 2, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795261597133
+    "fetchedAt": 1795529782501
   },
   "Torkel Knutssongatan 2, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795261598292
+    "fetchedAt": 1795529783628
   },
   "Münchenbryggeriet Mässhallen, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795261599505
+    "fetchedAt": 1795529785215
   },
   "Kungsgatan 24, Stockholm, Sweden": {
     "value": {
@@ -4558,5 +4558,41 @@
       "longitude": 18.0820801
     },
     "fetchedAt": 1795448011174
+  },
+  "Norrtullsgatan 12N, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3449695,
+      "longitude": 18.0491121
+    },
+    "fetchedAt": 1795529780142
+  },
+  "Teaterbrasseriet, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3338375,
+      "longitude": 18.0561556
+    },
+    "fetchedAt": 1795529786825
+  },
+  "Bio Skandia, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1795529788173
+  },
+  "Orionteatern, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3082954,
+      "longitude": 18.0901758
+    },
+    "fetchedAt": 1795529789359
+  },
+  "Clarion Hotel Sign, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3346948,
+      "longitude": 18.0533268
+    },
+    "fetchedAt": 1795529790525
+  },
+  "Unga Klara, Kulturhuset Stadsteatern, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1795529798290
   }
 }
