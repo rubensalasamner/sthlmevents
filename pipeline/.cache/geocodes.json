@@ -408,7 +408,7 @@
       "latitude": 59.314623,
       "longitude": 18.0668593
     },
-    "fetchedAt": 1791889493847
+    "fetchedAt": 1795698512128
   },
   "Hagsätra bibliotek, Stockholm, Sweden": {
     "value": {
@@ -2168,7 +2168,7 @@
       "latitude": 59.3368083,
       "longitude": 18.062649
     },
-    "fetchedAt": 1793092872731
+    "fetchedAt": 1795698513350
   },
   "Hägerstensvägen 100A, Stockholm, Sweden": {
     "value": {
@@ -4196,7 +4196,7 @@
   },
   "Stockholm, 111 20 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795261588303
+    "fetchedAt": 1795698516217
   },
   "Kungsgatan 62, Stockholm, Sweden": {
     "value": {
@@ -4399,11 +4399,11 @@
   },
   "rgatan 2C, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795348824787
+    "fetchedAt": 1795698517401
   },
   "Tegnérgatan 2C, 113 58 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795348826210
+    "fetchedAt": 1795698518893
   },
   "Man in the Moon, Stockholm, Sweden": {
     "value": {
@@ -4616,5 +4616,34 @@
       "longitude": 18.7260274
     },
     "fetchedAt": 1795613447624
+  },
+  "rgatan 35, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1795698507989
+  },
+  "Tegnérgatan 35, 111 61 Stockholm, Sweden, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1795698509295
+  },
+  "Tegnérgatan 35, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3389362,
+      "longitude": 18.0578913
+    },
+    "fetchedAt": 1795698510701
+  },
+  "Västgötagatan 2, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3135007,
+      "longitude": 18.0705395
+    },
+    "fetchedAt": 1795698514564
+  },
+  "Sveavägen 90, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3413206,
+      "longitude": 18.0583979
+    },
+    "fetchedAt": 1795698520256
   }
 }
