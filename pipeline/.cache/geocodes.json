@@ -238,7 +238,7 @@
   },
   "Mariatorget 10, Sankt Pauls Kyrkan, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795441144423
+    "fetchedAt": 1795784813875
   },
   "Mötesplats Mariatorget, Stockholm, Sweden": {
     "value": {
@@ -366,7 +366,7 @@
   },
   "Hagagatan, 113 48 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795441154272
+    "fetchedAt": 1795784808862
   },
   "Hammarby Slussväg 17, Stockholm, Sweden": {
     "value": {
@@ -444,7 +444,7 @@
   },
   "Bibliotekslabbet, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795441172841
+    "fetchedAt": 1795784829269
   },
   "Hamngatan 4, Stockholm, Sweden": {
     "value": {
@@ -514,11 +514,11 @@
   },
   "Medborgareplatsen 4, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794918426203
+    "fetchedAt": 1795784815134
   },
   "Sensus Studieförbund, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1794918427426
+    "fetchedAt": 1795784816759
   },
   "Smedsuddsvägen 23, Stockholm, Sweden": {
     "value": {
@@ -871,7 +871,7 @@
   },
   "Secret Restaurant Location in  Stockholm, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795441155931
+    "fetchedAt": 1795784810590
   },
   "Kungstensgatan 45, 11359 Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
@@ -1238,7 +1238,7 @@
   },
   "Tel: 08-751 09 65 - Stjärntorget 2, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795441171350
+    "fetchedAt": 1795784827980
   },
   "La Botanica, Stockholm, Sweden": {
     "value": {
@@ -1612,7 +1612,7 @@
   },
   "Ankdamsgatan 46, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795441174014
+    "fetchedAt": 1795784830498
   },
   "Solnahallen, Solna, Stockholm, Sweden": {
     "value": {
@@ -1781,7 +1781,7 @@
   },
   "St Eriksgatan 84, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795441162051
+    "fetchedAt": 1795784818515
   },
   "Påfågeln, Stockholm, Sweden": {
     "value": {
@@ -3202,7 +3202,7 @@
   },
   "Sergels torg, Galleriet Vällingby, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795441145939
+    "fetchedAt": 1795784802677
   },
   "Torekällberget, Stockholm, Sweden": {
     "value": {
@@ -3281,7 +3281,7 @@
       "latitude": 59.3099757,
       "longitude": 18.0729442
     },
-    "fetchedAt": 1792139458510
+    "fetchedAt": 1795784804251
   },
   "Hornsgatan 32, Stockholm, Sweden": {
     "value": {
@@ -3334,7 +3334,7 @@
   },
   "stermalmsgatan 20, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795441163531
+    "fetchedAt": 1795784819778
   },
   "Kungstensgatan 17, Stockholm, Sweden": {
     "value": {
@@ -3477,11 +3477,11 @@
   },
   "Katarina Kyrkogårds Södra Sida, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795441168172
+    "fetchedAt": 1795784824519
   },
   "Benhuset, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795441169662
+    "fetchedAt": 1795784826114
   },
   "Södermalm, Stockholm, Sweden": {
     "value": {
@@ -3789,7 +3789,7 @@
       "latitude": 59.330381,
       "longitude": 18.058744
     },
-    "fetchedAt": 1792830291224
+    "fetchedAt": 1795784812245
   },
   "Trädgårdsgatan 1, Stockholm, Sweden": {
     "value": {
@@ -3904,7 +3904,7 @@
   },
   "Sergels torg, Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1793356065450
+    "fetchedAt": 1795784805845
   },
   "Södra Hamnvägen 5, Stockholm, Sweden": {
     "value": {
@@ -3936,7 +3936,7 @@
   },
   "Sergels torg, Extern scen, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795441165038
+    "fetchedAt": 1795784821589
   },
   "slussen, Stockholm, Sweden": {
     "value": {
@@ -4036,7 +4036,7 @@
   },
   "regrundsgatan 3, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795441141145
+    "fetchedAt": 1795784799287
   },
   "Öregrundsgatan 3, Stockholm, Sweden": {
     "value": {
@@ -4167,7 +4167,7 @@
   },
   "Hötorget: 1, 8, 15, 22 & 29 november, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795441142878
+    "fetchedAt": 1795784801040
   },
   "Roslagsgatan 56, Stockholm, Sweden": {
     "value": {
@@ -4435,7 +4435,7 @@
   },
   "Regereringsgatan 74, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795441166554
+    "fetchedAt": 1795784823186
   },
   "Nalen Restaurang, Stockholm, Sweden": {
     "value": {
@@ -4514,7 +4514,7 @@
   },
   "Rösjön, Sjöberg, Sollentuna, Sweden, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795441148663
+    "fetchedAt": 1795784807516
   },
   "Rösjön, Stockholm, Sweden": {
     "value": {
