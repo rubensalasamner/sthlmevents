@@ -715,7 +715,7 @@
       "latitude": 59.326678,
       "longitude": 18.0254969
     },
-    "fetchedAt": 1792139457260
+    "fetchedAt": 1795868425931
   },
   "Järntorgsgatan 5, Stockholm, Sweden": {
     "value": {
@@ -3900,7 +3900,7 @@
       "latitude": 59.3145793,
       "longitude": 18.0729301
     },
-    "fetchedAt": 1793269567400
+    "fetchedAt": 1795868430584
   },
   "Sergels torg, Stockholm, Sweden, Stockholm, Sweden": {
     "value": null,
@@ -4185,7 +4185,7 @@
   },
   "rsta Torg 5, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795529778918
+    "fetchedAt": 1795868432089
   },
   "Årsta Torg 5, Stockholm, Sweden": {
     "value": {
@@ -4460,15 +4460,15 @@
   },
   "Knutssongatan 2, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795529782501
+    "fetchedAt": 1795868433375
   },
   "Torkel Knutssongatan 2, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795529783628
+    "fetchedAt": 1795868434659
   },
   "Münchenbryggeriet Mässhallen, Stockholm, Sweden": {
     "value": null,
-    "fetchedAt": 1795529785215
+    "fetchedAt": 1795868436093
   },
   "Kungsgatan 24, Stockholm, Sweden": {
     "value": {
@@ -4645,5 +4645,30 @@
       "longitude": 18.0583979
     },
     "fetchedAt": 1795698520256
+  },
+  "s torg 9, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3300118,
+      "longitude": 18.0722204
+    },
+    "fetchedAt": 1795868427637
+  },
+  "Hornsgatan 90, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.3178287,
+      "longitude": 18.053197
+    },
+    "fetchedAt": 1795868429127
+  },
+  "Sankt Paulsgatan 39, Stockholm, Sweden": {
+    "value": {
+      "latitude": 59.31716,
+      "longitude": 18.0602701
+    },
+    "fetchedAt": 1795868437572
+  },
+  "A house Ark, Stockholm, Sweden": {
+    "value": null,
+    "fetchedAt": 1795868439450
   }
 }
